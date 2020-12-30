@@ -1,0 +1,10 @@
+ignores:
+  [
+    "@semantic-release/*",
+    "@typescript-eslint/*",
+    "commitizen",
+    "git-cz",
+    "typescript",
+  ]
+ignore-path: .gitignore
+skip-missing: true

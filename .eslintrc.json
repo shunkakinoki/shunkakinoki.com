@@ -1,0 +1,97 @@
+{
+  "extends": [
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "prettier"
+  ],
+  "overrides": [
+    {
+      "extends": [
+        "airbnb-typescript",
+        "plugin:prettier/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "plugin:jsx-a11y/recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:typescript-sort-keys/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@next/eslint-plugin-next/recommended",
+        "prettier/@typescript-eslint",
+        "prettier",
+        "prettier/react"
+      ],
+      "files": ["src/**/*.ts", "src/**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "tsconfig.json"
+      },
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "import/order": [
+          "error",
+          {
+            "alphabetize": {
+              "caseInsensitive": true,
+              "order": "asc"
+            },
+            "groups": [
+              "external",
+              "internal",
+              "parent",
+              "sibling",
+              "builtin",
+              "index"
+            ],
+            "pathGroups": [
+              {
+                "pattern": "@/**",
+                "group": "external",
+                "position": "after"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": ["builtin"],
+            "newlines-between": "always"
+          }
+        ],
+        "react/jsx-sort-props": [
+          "error",
+          {
+            "callbacksLast": true,
+            "shorthandFirst": true,
+            "shorthandLast": true,
+            "ignoreCase": true,
+            "noSortAlphabetically": true,
+            "reservedFirst": true
+          }
+        ],
+        "jsx-a11y/anchor-is-valid": 0,
+        "react/react-in-jsx-scope": 0,
+        "react-hooks/exhaustive-deps": [
+          "error",
+          {
+            "additionalHooks": "useRecoilCallback"
+          }
+        ],
+        "sort-keys": [
+          "error",
+          "asc",
+          { "caseSensitive": true, "natural": true, "minKeys": 3 }
+        ],
+        "sort-vars": ["error", { "ignoreCase": false }]
+      },
+      "settings": {
+        "import/resolver": {
+          "typescript": {}
+        },
+        "react": {
+          "version": "detect"
+        }
+      }
+    }
+  ],
+  "root": true
+}
