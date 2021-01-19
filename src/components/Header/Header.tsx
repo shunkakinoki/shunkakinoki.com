@@ -8,7 +8,7 @@ interface HeaderLinkProps extends LinkProps {
 
 export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
   return (
-    <li className="px-3 leading-5 text-left text-gray-500 align-baseline hover:text-gray-800 dark:text-gray-500 dark:hover:text-gray-200">
+    <li className="px-3 leading-5 text-left text-gray-500 align-baseline hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">
       <Link href={href}>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a className="text-sm font-medium no-underline cursor-pointer md:text-base lg:text-md">
@@ -34,7 +34,7 @@ export default function Header(): JSX.Element {
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
               aria-current="page"
-              className="text-base text-gray-500 lg:text-2xl md:text-xl hover:underline hover:text-indigo-600 dark:text-gray-400 dark:hover:text-gray-100"
+              className="text-base text-gray-600 lg:text-2xl md:text-xl hover:underline hover:text-indigo-600 dark:text-gray-400 dark:hover:text-gray-100"
             >
               shunkakinoki
             </a>
