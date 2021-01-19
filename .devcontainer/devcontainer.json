@@ -1,13 +1,5 @@
 {
   "dockerComposeFile": "docker-compose.yml",
-  "extensions": [
-    "eamodio.gitlens",
-    "GitHub.vscode-pull-request-github",
-    "ms-azuretools.vscode-docker",
-    "oderwat.indent-rainbow",
-    "timonwong.shellcheck",
-    "VisualStudioExptTeam.vscodeintellicode"
-  ],
   "name": "codespaces",
   "postCreateCommand": "uname -a",
   "runServices": [],

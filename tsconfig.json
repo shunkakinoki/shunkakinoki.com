@@ -25,5 +25,5 @@
     "target": "ESNext"
   },
   "exclude": ["node_modules"],
-  "include": ["*.d.ts", "src/**/*"]
+  "include": ["next-env.d.ts", "src/**/*"]
 }

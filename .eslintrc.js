@@ -36,6 +36,7 @@ module.exports = {
         "plugin:import/errors",
         "plugin:import/typescript",
         "plugin:import/warnings",
+        "plugin:prettier/react",
         "plugin:prettier/recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",

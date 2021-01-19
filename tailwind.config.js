@@ -1,6 +1,6 @@
 module.exports = {
   darkMode: "class",
-  purge: ["src/**/*.tsx"],
+  purge: ["src/**/*.{js,ts,jsx,tsx}"],
   plugins: [
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/forms"),
