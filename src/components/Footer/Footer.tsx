@@ -70,7 +70,7 @@ export default function Footer(): JSX.Element {
         </FooterIconLink>
       </div>
       <p className="mt-8 text-base text-center text-gray-400">
-        &copy; 2021 Shun Kakinoki. All rights reserved.
+        &copy; Shun Kakinoki. All rights reserved.
       </p>
     </footer>
   );
