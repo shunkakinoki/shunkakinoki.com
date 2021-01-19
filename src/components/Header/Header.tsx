@@ -28,7 +28,7 @@ export default function Header(): JSX.Element {
       >
         <div className="flex items-center flex-grow flex-shrink-0 max-w-screen-sm align-baseline">
           <span className="pr-2 sm:pr-3 md:pr-5">
-            <DarkModeButton></DarkModeButton>
+            <DarkModeButton />
           </span>
           <Link href="/">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

@@ -41,9 +41,12 @@ module.exports = {
         "plugin:react-hooks/recommended",
         "plugin:tailwind/recommended",
         "prettier/@typescript-eslint",
+        "prettier",
+        "prettier/react",
       ],
       rules: {
         "react/react-in-jsx-scope": 0,
+        "react/self-closing-comp": 1,
       },
     },
   ],

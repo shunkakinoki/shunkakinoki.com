@@ -54,19 +54,19 @@ export default function Footer(): JSX.Element {
       <div className="flex justify-center mt-8 space-x-6">
         <FooterIconLink href={Social.facebook}>
           <span className="sr-only">Facebook</span>
-          <Facebook></Facebook>
+          <Facebook />
         </FooterIconLink>
         <FooterIconLink href={Social.instagram}>
           <span className="sr-only">Instagram</span>
-          <Instagram></Instagram>
+          <Instagram />
         </FooterIconLink>
         <FooterIconLink href={Social.github}>
           <span className="sr-only">GitHub</span>
-          <Github></Github>
+          <Github />
         </FooterIconLink>
         <FooterIconLink href={Social.twitter}>
           <span className="sr-only">Twitter</span>
-          <Twitter></Twitter>
+          <Twitter />
         </FooterIconLink>
       </div>
       <p className="mt-8 text-base text-center text-gray-400">
