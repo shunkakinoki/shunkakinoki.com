@@ -13,8 +13,8 @@ export default function LandingScreen(): JSX.Element {
           <h2 className="text-base text-gray-600 md:text-lg dark:text-gray-300">
             I am an entrepreneur striving to obliterate the galaxy. I have spent
             my childhood years in Silicon Valley (Cupertino City) from 4 to 10
-            years old and have 3+ years of experience in AI/CV/Deep Learning,
-            Mobile/Web Development &amp; Devops/Infrastructure. Love open source
+            years old and have 3+ years of experience in AI/CV/DL, Fullstack Web
+            Development &amp; and Cloud (especially DevOps). Love open source
             and extremely passionate about the potential of startups towards the
             future of the world.
           </h2>
