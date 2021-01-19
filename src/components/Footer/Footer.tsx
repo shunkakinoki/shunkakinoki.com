@@ -27,7 +27,12 @@ function FooterLink({ children, href }: FooterLinkProps): JSX.Element {
 
 function FooterIconLink({ children, href }: FooterIconLinkProps): JSX.Element {
   return (
-    <a href={href} className="text-gray-400 hover:text-gray-500">
+    <a
+      href={href}
+      className="text-gray-400 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-200"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {children}
     </a>
   );
