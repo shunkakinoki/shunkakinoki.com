@@ -11,7 +11,7 @@ export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
     <li className="px-3 leading-5 text-left text-gray-500 align-baseline hover:text-gray-800 dark:text-gray-500 dark:hover:text-gray-200">
       <Link href={href}>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className="text-xs font-medium no-underline uppercase cursor-pointer md:text-sm lg:text-md">
+        <a className="text-sm font-medium no-underline cursor-pointer md:text-base lg:text-md">
           {children}
         </a>
       </Link>
