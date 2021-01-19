@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Social from "@/components/Social";
 
 export default function LandingScreen(): JSX.Element {
   return (
@@ -19,6 +20,7 @@ export default function LandingScreen(): JSX.Element {
             future of the world.
           </h2>
         </div>
+        <Social />
       </div>
       <Footer />
     </>

@@ -1,7 +1,7 @@
 import Link, { LinkProps } from "next/link";
 import { Facebook, Github, Instagram, Medium, Twitter } from "@/icons";
 import { ReactNode } from "react";
-import { Social } from "@/const";
+import { SocialLinks } from "@/const";
 
 interface FooterLinkProps extends LinkProps {
   children: string;
@@ -52,23 +52,23 @@ export default function Footer(): JSX.Element {
         <FooterLink href="/social">Social</FooterLink>
       </nav>
       <div className="flex justify-center mt-8 space-x-6">
-        <FooterIconLink href={Social.facebook}>
+        <FooterIconLink href={SocialLinks.facebook}>
           <span className="sr-only">Facebook</span>
           <Facebook />
         </FooterIconLink>
-        <FooterIconLink href={Social.instagram}>
+        <FooterIconLink href={SocialLinks.instagram}>
           <span className="sr-only">Instagram</span>
           <Instagram />
         </FooterIconLink>
-        <FooterIconLink href={Social.github}>
+        <FooterIconLink href={SocialLinks.github}>
           <span className="sr-only">GitHub</span>
           <Github />
         </FooterIconLink>
-        <FooterIconLink href={Social.twitter}>
+        <FooterIconLink href={SocialLinks.twitter}>
           <span className="sr-only">Twitter</span>
           <Twitter />
         </FooterIconLink>
-        <FooterIconLink href={Social.medium}>
+        <FooterIconLink href={SocialLinks.medium}>
           <span className="sr-only">Medium</span>
           <Medium />
         </FooterIconLink>
