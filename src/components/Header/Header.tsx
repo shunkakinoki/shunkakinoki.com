@@ -1,6 +1,6 @@
 import Link, { LinkProps } from "next/link";
 import s from "./Header.module.css";
-import { useTheme } from "next-themes";
+import DarkModeButton from "@/components/Header/DarkModeButton";
 
 interface HeaderLinkProps extends LinkProps {
   children: string;
@@ -8,7 +8,7 @@ interface HeaderLinkProps extends LinkProps {
 
 export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
   return (
-    <li className="px-3 leading-5 text-left text-gray-400 align-baseline hover:text-gray-600">
+    <li className="px-3 leading-5 text-left text-gray-400 align-baseline hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-200">
       <Link href={href}>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a className="text-sm font-medium no-underline uppercase cursor-pointer ">
@@ -21,17 +21,20 @@ export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
 
 export default function Header(): JSX.Element {
   return (
-    <div className="bg-white dark:bg-black">
+    <div className={(s.nav, "bg-white dark:bg-black")}>
       <header
         role="banner"
         className="box-border sticky z-30 flex items-center justify-between w-full max-w-3xl p-8 px-6 py-3 mx-auto my-0 mb-3 leading-5 text-gray-400 align-baseline transition ease-in sm:mb-6 sticky-nav md:my-8 bg-opacity-60"
       >
         <div className="items-center flex-grow flex-shrink-0 max-w-screen-sm align-baseline">
+          <span className="pr-2 sm:pr-3 md:pr-5">
+            <DarkModeButton></DarkModeButton>
+          </span>
           <Link href="/">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
               aria-current="page"
-              className="text-xl font-medium leading-loose text-gray-400 no-underline align-baseline hover:text-gray-600"
+              className="text-xl font-medium leading-loose text-gray-500 no-underline align-baseline hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-100"
             >
               shunkakinoki
             </a>
