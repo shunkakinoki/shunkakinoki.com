@@ -1,0 +1,32 @@
+{
+  "eslint.lintTask.options": ". -c .eslintrc.json --ext .js,.ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "terminal.integrated.env.linux": {
+    "ZSH_INIT_COMMAND": "mux start shunkakinoki.com"
+  },
+  "terminal.integrated.env.osx": {
+    "ZSH_INIT_COMMAND": "mux start shunkakinoki.com"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#1f6fd0",
+    "activityBar.activeBorder": "#ee90bb",
+    "activityBar.background": "#1f6fd0",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#ee90bb",
+    "activityBarBadge.foreground": "#15202b",
+    "editorGroup.border": "#1f6fd0",
+    "panel.border": "#1f6fd0",
+    "sideBar.border": "#1f6fd0",
+    "tab.activeBorder": "#1f6fd0",
+    "titleBar.activeBackground": "#1857a4",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#1857a499",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#1857a4",
+}
