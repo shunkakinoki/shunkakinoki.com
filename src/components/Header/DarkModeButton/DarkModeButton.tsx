@@ -13,7 +13,7 @@ export default function DarkModeButton(): JSX.Element {
     <button
       aria-label="Dark Mode Button"
       type="button"
-      className="w-10 h-10 p-3 bg-gray-300 rounded dark:bg-gray-700"
+      className="w-10 h-10 p-3 bg-gray-300 rounded dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {resolvedTheme && (
