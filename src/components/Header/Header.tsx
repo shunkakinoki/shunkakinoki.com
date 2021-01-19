@@ -1,4 +1,6 @@
 import Link, { LinkProps } from "next/link";
+import s from "./Header.module.css";
+import { useTheme } from "next-themes";
 
 interface HeaderLinkProps extends LinkProps {
   children: string;
@@ -19,30 +21,30 @@ export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
 
 export default function Header(): JSX.Element {
   return (
-    <header
-      role="banner"
-      className="box-border sticky flex items-center px-6 py-3 mb-2 leading-5 text-gray-400 align-baseline sm:mb-6"
-    >
-      <div className="items-center flex-grow flex-shrink-0 max-w-screen-sm align-baseline">
-        <h1 className="text-xl font-medium leading-loose text-gray-400 hover:text-gray-600">
+    <div className="bg-white dark:bg-black">
+      <header
+        role="banner"
+        className="box-border sticky z-30 flex items-center justify-between w-full max-w-3xl p-8 px-6 py-3 mx-auto my-0 mb-3 leading-5 text-gray-400 align-baseline transition ease-in sm:mb-6 sticky-nav md:my-8 bg-opacity-60"
+      >
+        <div className="items-center flex-grow flex-shrink-0 max-w-screen-sm align-baseline">
           <Link href="/">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
               aria-current="page"
-              className="text-xl no-underline align-baseline cursor-pointer "
+              className="text-xl font-medium leading-loose text-gray-400 no-underline align-baseline hover:text-gray-600"
             >
               shunkakinoki
             </a>
           </Link>
-        </h1>
-      </div>
-      <nav className="flex-grow flex-shrink-0 block align-baseline">
-        <ul className="flex items-center justify-end leading-5 ">
-          <HeaderLink href="/about">About</HeaderLink>
-          <HeaderLink href="/blog">Blog</HeaderLink>
-          <HeaderLink href="/social">Social</HeaderLink>
-        </ul>
-      </nav>
-    </header>
+        </div>
+        <nav className="flex-grow flex-shrink-0 block align-baseline">
+          <ul className="flex items-center justify-end leading-5 ">
+            <HeaderLink href="/about">About</HeaderLink>
+            <HeaderLink href="/blog">Blog</HeaderLink>
+            <HeaderLink href="/dashboard">Dashboard</HeaderLink>
+          </ul>
+        </nav>
+      </header>
+    </div>
   );
 }
