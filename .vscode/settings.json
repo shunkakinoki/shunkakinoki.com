@@ -6,10 +6,10 @@
     }
   ],
   "terminal.integrated.env.linux": {
-    "ZSH_INIT_COMMAND": "mux start shunkakinoki.com"
+    "ZSH_INIT_COMMAND": "mux start shunkakinokicom"
   },
   "terminal.integrated.env.osx": {
-    "ZSH_INIT_COMMAND": "mux start shunkakinoki.com"
+    "ZSH_INIT_COMMAND": "mux start shunkakinokicom"
   },
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#1f6fd0",
