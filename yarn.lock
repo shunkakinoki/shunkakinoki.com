@@ -253,13 +253,6 @@
     update-notifier "^2.2.0"
     yargs "^8.0.2"
 
-"@icons-pack/react-simple-icons@^3.13.0":
-  version "3.13.0"
-  resolved "https://registry.yarnpkg.com/@icons-pack/react-simple-icons/-/react-simple-icons-3.13.0.tgz#7ffe6c7f8500329d86ae1265e5d8a1af12ac122b"
-  integrity sha512-y66dozS9pBBMDopswZfrdDnDXqrlc+XL8LSmKZTJngtdHPL+WJoBTzXTQVzc7H3NyVGJQWhQuqt09CgnbPwNZw==
-  dependencies:
-    prop-types "^15.7.2"
-
 "@next/env@10.0.5":
   version "10.0.5"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-10.0.5.tgz#446e59ee7a8d05061be784b24732c369653038ab"
