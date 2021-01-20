@@ -1,8 +1,12 @@
 ignores:
   [
+    "@next/*",
     "@semantic-release/*",
     "@typescript-eslint/*",
+    "autoprefixer",
+    "eslint-*",
     "commitizen",
+    "postcss",
     "git-cz",
     "typescript",
   ]
