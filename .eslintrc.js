@@ -5,6 +5,7 @@ module.exports = {
     browser: true,
     node: true,
   },
+  ignorePatterns: ["**/node_modules/**/*", "**/.next/**/*"],
   extends: ["prettier", "plugin:prettier/recommended"],
   overrides: [
     {
