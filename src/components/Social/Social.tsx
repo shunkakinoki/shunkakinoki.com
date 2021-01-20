@@ -31,7 +31,7 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
   return (
     <section className={clsx("w-full mb-6", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
-        <h3 className="my-3 text-lg font-medium leading-loose text-gray-600 align-baseline md:text-xl dark:text-gray-400">
+        <h3 className="my-3 text-lg font-medium leading-loose text-gray-600 align-baseline md:text-xl dark:text-gray-300">
           Social Accounts
         </h3>
       </div>
