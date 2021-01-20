@@ -1,9 +1,9 @@
 import { NextPage } from "next";
 
-import ErrorScreen from "@/screens/ErrorScreen";
+import SocialScreen from "@/screens/SocialScreen";
 
-const Error: NextPage = () => {
-  return <ErrorScreen />;
+const Social: NextPage = () => {
+  return <SocialScreen />;
 };
 
-export default Error;
+export default Social;

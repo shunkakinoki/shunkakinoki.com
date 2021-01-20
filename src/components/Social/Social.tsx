@@ -9,6 +9,7 @@ import {
 } from "@/icons/Social";
 import Link from "next/link";
 import { SocialLinks } from "@/const";
+import clsx from "clsx";
 
 interface Props {
   isPartial?: boolean;
@@ -16,7 +17,7 @@ interface Props {
 
 export default function Social({ isPartial = false }: Props): JSX.Element {
   return (
-    <section className="w-full my-6">
+    <section className={clsx("w-full mb-6", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
         <h3 className="my-3 text-lg font-medium leading-loose text-gray-600 align-baseline md:text-xl dark:text-gray-400">
           Social Accounts
