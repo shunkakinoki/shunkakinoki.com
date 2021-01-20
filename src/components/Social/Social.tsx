@@ -11,7 +11,7 @@ import { SocialLinks } from "@/const";
 
 export default function Social(): JSX.Element {
   return (
-    <section className="my-6">
+    <section className="w-full my-6">
       <div className="px-3 md:px-0">
         <h3 className="my-3 text-lg font-medium leading-loose text-gray-600 align-baseline md:text-xl dark:text-gray-400">
           Social Accounts
