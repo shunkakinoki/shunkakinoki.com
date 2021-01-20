@@ -17,8 +17,8 @@ export default function Social(): JSX.Element {
           Social Accounts
         </h3>
       </div>
-      <div className="flex-col items-center w-full max-w-xl px-3 mx-auto">
-        <ul className="grid w-full grid-cols-2 gap-4 my-2 mt-4 md:gap-6 sm:grid-cols-3">
+      <div className="flex-col items-center w-full max-w-xl px-3 mx-auto sm:px-0">
+        <ul className="grid w-full grid-cols-2 gap-3 my-2 mt-4 md:gap-3 sm:grid-cols-3">
           <SocialCard
             href={SocialLinks.email}
             title="Email"
