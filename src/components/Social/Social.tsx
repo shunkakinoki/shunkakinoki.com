@@ -7,9 +7,14 @@ import {
   Medium,
   Twitter,
 } from "@/icons/Social";
+import Link from "next/link";
 import { SocialLinks } from "@/const";
 
-export default function Social(): JSX.Element {
+interface Props {
+  isPartial?: boolean;
+}
+
+export default function Social({ isPartial = false }: Props): JSX.Element {
   return (
     <section className="w-full my-6">
       <div className="px-3 md:px-0">
@@ -43,6 +48,16 @@ export default function Social(): JSX.Element {
           </SocialCard>
         </ul>
       </div>
+      {isPartial && (
+        <div className="w-full pt-3 my-3 leading-5 text-center">
+          <Link href="/social">
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a className="mt-4 leading-5 text-center text-indigo-300 cursor-pointer hover:underline">
+              Show more...
+            </a>
+          </Link>
+        </div>
+      )}
     </section>
   );
 }

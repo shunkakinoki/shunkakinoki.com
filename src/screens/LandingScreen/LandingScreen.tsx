@@ -20,7 +20,7 @@ export default function LandingScreen(): JSX.Element {
             future of the world.
           </h2>
         </div>
-        <Social />
+        <Social isPartial />
       </div>
       <Footer />
     </>
