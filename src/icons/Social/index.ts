@@ -11,5 +11,6 @@ export { default as Line } from "./Line";
 export { default as Linkedin } from "./Linkedin";
 export { default as Medium } from "./Medium";
 export { default as Npm } from "./Npm";
+export { default as Patreon } from "./Patreon";
 export { default as Telegram } from "./Telegram";
 export { default as Twitter } from "./Twitter";

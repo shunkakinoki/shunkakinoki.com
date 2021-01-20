@@ -1,5 +1,5 @@
 import Link, { LinkProps } from "next/link";
-import { Facebook, Github, Instagram, Medium, Twitter } from "@/icons";
+import { Facebook, Github, Instagram, Linkedin, Twitter } from "@/icons";
 import { ReactNode } from "react";
 import { SocialLinks } from "@/const";
 
@@ -60,6 +60,10 @@ export default function Footer(): JSX.Element {
           <span className="sr-only">Instagram</span>
           <Instagram />
         </FooterIconLink>
+        <FooterIconLink href={SocialLinks.linkedin}>
+          <span className="sr-only">Linkedin</span>
+          <Linkedin />
+        </FooterIconLink>
         <FooterIconLink href={SocialLinks.github}>
           <span className="sr-only">GitHub</span>
           <Github />
@@ -67,10 +71,6 @@ export default function Footer(): JSX.Element {
         <FooterIconLink href={SocialLinks.twitter}>
           <span className="sr-only">Twitter</span>
           <Twitter />
-        </FooterIconLink>
-        <FooterIconLink href={SocialLinks.medium}>
-          <span className="sr-only">Medium</span>
-          <Medium />
         </FooterIconLink>
       </div>
       <p className="mt-8 text-base text-center text-gray-400">
