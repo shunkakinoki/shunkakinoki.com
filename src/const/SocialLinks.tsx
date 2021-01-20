@@ -1,8 +1,14 @@
+import Social from "@/components/Social";
+
 export default class SocialLinks {
   static readonly shunkakinoki = "shunkakinoki";
+  static readonly crypto = "3CfSsG4MGs9VP588j6KaPsphtMb1JceAcB";
   static readonly gmail = `${SocialLinks.shunkakinoki}@gmail.com`;
+
   static readonly email = `mailto:${SocialLinks.gmail}`;
 
+  static readonly bitcoin = `https://www.blockchain.com/btc/address/${SocialLinks.crypto}`;
+  static readonly discord = `https://discord.com/users/${SocialLinks.shunkakinoki}`;
   static readonly docker = `https://hub.docker.com/u/${SocialLinks.shunkakinoki}`;
   static readonly facebook = `https://facebook.com/${SocialLinks.shunkakinoki}`;
   static readonly github = `https://github.com/${SocialLinks.shunkakinoki}`;
@@ -14,6 +20,8 @@ export default class SocialLinks {
   static readonly medium = `https://medium.com/@${SocialLinks.shunkakinoki}`;
   static readonly npm = `https://npmjs.com/~${SocialLinks.shunkakinoki}`;
   static readonly patreon = `https://patreon.com/${SocialLinks.shunkakinoki}`;
+  static readonly paypal = `https://paypal.me/${SocialLinks.shunkakinoki}`;
   static readonly telegram = `https://t.me/${SocialLinks.shunkakinoki}`;
   static readonly twitter = `https://twitter.com/${SocialLinks.shunkakinoki}`;
+  static readonly wechat = "https://u.wechat.com/IOTi43ThkZ9OEqC8IcYcmiQ";
 }

@@ -12,5 +12,7 @@ export { default as Linkedin } from "./Linkedin";
 export { default as Medium } from "./Medium";
 export { default as Npm } from "./Npm";
 export { default as Patreon } from "./Patreon";
+export { default as Paypal } from "./Paypal";
 export { default as Telegram } from "./Telegram";
 export { default as Twitter } from "./Twitter";
+export { default as Wechat } from "./Wechat";

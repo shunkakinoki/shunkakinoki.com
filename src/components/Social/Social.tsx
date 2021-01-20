@@ -1,5 +1,6 @@
 import SocialCard from "@/components/Social/SocialCard";
 import {
+  Bitcoin,
   Discord,
   Docker,
   Email,
@@ -13,8 +14,10 @@ import {
   Medium,
   Npm,
   Patreon,
+  Paypal,
   Telegram,
   Twitter,
+  Wechat,
 } from "@/icons/Social";
 import Link from "next/link";
 import { SocialLinks } from "@/const";
@@ -64,32 +67,45 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
           </SocialCard>
           {!isPartial && (
             <>
-              <SocialCard href={SocialLinks.medium} title="Medium">
-                <Medium />
+              <SocialCard
+                href={SocialLinks.bitcoin}
+                title="Bitcoin"
+                username={SocialLinks.crypto}
+              >
+                <Bitcoin />
               </SocialCard>
-              <SocialCard href={SocialLinks.gitlab} title="Gitlab">
-                <Gitlab />
+              <SocialCard href={SocialLinks.paypal} title="Paypal">
+                <Paypal />
               </SocialCard>
               <SocialCard href={SocialLinks.keybase} title="Keybase">
                 <Keybase />
               </SocialCard>
-              <SocialCard href={SocialLinks.line} title="Line">
-                <Line />
+              <SocialCard href={SocialLinks.gitlab} title="Gitlab">
+                <Gitlab />
               </SocialCard>
               <SocialCard href={SocialLinks.npm} title="Npm">
                 <Npm />
               </SocialCard>
-              <SocialCard href={SocialLinks.patreon} title="Patreon">
-                <Patreon />
-              </SocialCard>
-              <SocialCard href={SocialLinks.instagram} title="Discord">
-                <Discord />
-              </SocialCard>
               <SocialCard href={SocialLinks.docker} title="Docker">
                 <Docker />
               </SocialCard>
+              <SocialCard href={SocialLinks.discord} title="Discord">
+                <Discord />
+              </SocialCard>
+              <SocialCard href={SocialLinks.medium} title="Medium">
+                <Medium />
+              </SocialCard>
+              <SocialCard href={SocialLinks.patreon} title="Patreon">
+                <Patreon />
+              </SocialCard>
+              <SocialCard href={SocialLinks.line} title="Line">
+                <Line />
+              </SocialCard>
               <SocialCard href={SocialLinks.telegram} title="Telegram">
                 <Telegram />
+              </SocialCard>
+              <SocialCard href={SocialLinks.wechat} title="Wechat">
+                <Wechat />
               </SocialCard>
             </>
           )}
