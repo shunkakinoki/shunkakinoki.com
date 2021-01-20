@@ -5,10 +5,6 @@ import { useTheme } from "next-themes";
 export default function DarkModeButton(): JSX.Element {
   const { resolvedTheme, theme, setTheme } = useTheme();
 
-  const toggle = () => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
-  };
-
   return (
     <button
       aria-label="Dark Mode Button"
