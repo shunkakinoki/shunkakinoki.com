@@ -22,7 +22,7 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
           Social Accounts
         </h3>
       </div>
-      <div className="flex-col items-center w-full max-w-xl px-3 mx-auto sm:px-0">
+      <div className="flex-col items-center w-full max-w-2xl px-3 mx-auto sm:px-2">
         <ul className="grid w-full grid-cols-2 gap-3 my-2 mt-4 md:gap-3 sm:grid-cols-3">
           <SocialCard
             href={SocialLinks.email}
