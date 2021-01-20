@@ -1,7 +1,10 @@
 import { ReactNode } from "react";
 import { SocialLinks } from "@/const";
+import { Check } from "@/icons";
+
 export interface Props {
   children: ReactNode;
+  isPriority?: boolean;
   href: string;
   title: string;
   username?: string;
@@ -9,6 +12,7 @@ export interface Props {
 
 export default function SocialCard({
   children,
+  isPriority = false,
   href,
   title,
   username = `@${SocialLinks.shunkakinoki}`,
@@ -21,8 +25,13 @@ export default function SocialCard({
             {children}
           </div>
           <div className="overflow-hidden text-left cursor-pointer">
-            <h4 className="items-center text-sm font-medium leading-normal text-gray-400 group-hover:text-gray-500">
+            <h4 className="inline-flex items-center text-sm font-medium leading-normal text-gray-400 group-hover:text-gray-500">
               {title}
+              {isPriority && (
+                <span className="pl-2 text-green-400 dark:text-green-300">
+                  <Check />
+                </span>
+              )}
             </h4>
             <p className="block w-full text-xs text-gray-500 truncate flex-nowrap whitespace-nowrap group-hover:underline group-hover:text-gray-600">
               {username}

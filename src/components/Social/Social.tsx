@@ -18,7 +18,7 @@ import {
   Telegram,
   Twitter,
   Wechat,
-} from "@/icons/Social";
+} from "@/icons";
 import Link from "next/link";
 import { SocialLinks } from "@/const";
 import clsx from "clsx";
@@ -44,25 +44,26 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
           )}
         >
           <SocialCard
+            isPriority
             href={SocialLinks.email}
             title="Email"
             username={SocialLinks.gmail}
           >
             <Email />
           </SocialCard>
-          <SocialCard href={SocialLinks.facebook} title="Facebook">
+          <SocialCard isPriority href={SocialLinks.facebook} title="Facebook">
             <Facebook />
           </SocialCard>
-          <SocialCard href={SocialLinks.github} title="Github">
+          <SocialCard isPriority href={SocialLinks.github} title="Github">
             <Github />
           </SocialCard>
-          <SocialCard href={SocialLinks.linkedin} title="Linkedin">
+          <SocialCard isPriority href={SocialLinks.linkedin} title="Linkedin">
             <Linkedin />
           </SocialCard>
-          <SocialCard href={SocialLinks.instagram} title="Instagram">
+          <SocialCard isPriority href={SocialLinks.instagram} title="Instagram">
             <Instagram />
           </SocialCard>
-          <SocialCard href={SocialLinks.twitter} title="Twitter">
+          <SocialCard isPriority href={SocialLinks.twitter} title="Twitter">
             <Twitter />
           </SocialCard>
           {!isPartial && (
