@@ -21,10 +21,10 @@ export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
 
 export default function Header(): JSX.Element {
   return (
-    <div className={(s.nav, "bg-white dark:bg-black")}>
+    <nav className={s.glass}>
       <header
         role="banner"
-        className="box-border sticky z-30 flex items-center justify-between w-full max-w-3xl p-8 px-6 py-3 mx-auto my-0 mb-3 leading-5 text-gray-400 align-baseline transition ease-in sm:mb-6 sticky-nav md:my-8 bg-opacity-60"
+        className="box-border sticky z-30 flex items-center justify-between w-full max-w-3xl p-8 px-6 py-3 mx-auto my-0 mb-3 leading-5 text-gray-400 align-baseline transition ease-in sm:mb-6 md:my-8 bg-opacity-60"
       >
         <div className="flex items-center flex-grow flex-shrink-0 max-w-screen-sm align-baseline">
           <span className="pr-2 sm:pr-3 md:pr-5">
@@ -48,6 +48,6 @@ export default function Header(): JSX.Element {
           </ul>
         </nav>
       </header>
-    </div>
+    </nav>
   );
 }
