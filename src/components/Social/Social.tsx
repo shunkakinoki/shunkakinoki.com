@@ -116,7 +116,7 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
         <div className="w-full pt-3 my-3 leading-5 text-center">
           <Link href="/social">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a className="mt-4 leading-5 text-center text-indigo-300 cursor-pointer hover:underline">
+            <a className="mt-4 leading-5 text-center text-indigo-500 cursor-pointer dark:text-indigo-300 hover:underline">
               Show more...
             </a>
           </Link>
