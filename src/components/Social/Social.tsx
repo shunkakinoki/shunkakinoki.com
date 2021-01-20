@@ -113,10 +113,10 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
         </ul>
       </div>
       {isPartial && (
-        <div className="w-full pt-3 my-3 leading-5 text-center">
+        <div className="w-full pt-3 my-3 text-center leading-5">
           <Link href="/social">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a className="mt-4 leading-5 text-center text-indigo-500 cursor-pointer dark:text-indigo-300 hover:underline">
+            <a className="mt-4 text-center text-indigo-500 cursor-pointer leading-5 dark:text-indigo-300 hover:underline">
               Show more...
             </a>
           </Link>
