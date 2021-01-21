@@ -1,4 +1,5 @@
 .glass {
   @apply sticky top-0 z-30;
+
   backdrop-filter: saturate(180%) blur(15px);
 }
