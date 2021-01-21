@@ -6,7 +6,6 @@ export default function Seo(): JSX.Element {
       noindex={false}
       nofollow={false}
       title="Shun Kakinoki"
-      titleTemplate="shunkakinoki | %s"
       canonical="https://shunkakinoki.com"
       description="Shun Kakinoki - Obliterate the Galaxy."
       openGraph={{
