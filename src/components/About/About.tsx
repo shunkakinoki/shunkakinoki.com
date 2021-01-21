@@ -48,7 +48,7 @@ export default function About({ isPartial }: Props): JSX.Element {
           {isPartial && (
             <Link href="/about">
               {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a className="inline-block font-medium text-indigo-600 align-text-bottom animate-pulse ">
+              <a className="inline-block font-medium text-indigo-600 align-text-bottom animate-pulse dark:text-indigo-400">
                 <Chevron />
               </a>
             </Link>
