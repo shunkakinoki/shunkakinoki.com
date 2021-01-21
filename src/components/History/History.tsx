@@ -13,7 +13,7 @@ interface HistoryYearProps {
 
 function HistoryYear({ children }: HistoryYearProps): JSX.Element {
   return (
-    <h3 className="mt-2 mb-4 font-light tracking-tight text-gray-400 md:text-base dark:text-gray-300">
+    <h3 className="mt-2 mb-4 font-light tracking-tight text-gray-500 md:text-base dark:text-gray-100">
       {children}
     </h3>
   );

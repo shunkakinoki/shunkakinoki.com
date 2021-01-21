@@ -50,9 +50,11 @@ export default function HistoryStep({
           </div>
           <div className="flex justify-between flex-1 min-w-0 pt-1.5 space-x-4">
             <div>
-              <p className="text-sm text-gray-500">{children}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-300">
+                {children}
+              </p>
             </div>
-            <div className="text-sm text-right text-gray-500 whitespace-nowrap">
+            <div className="text-sm text-right text-gray-500 dark:text-gray-600 whitespace-nowrap">
               <time>{time}</time>
             </div>
           </div>
