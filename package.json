@@ -18,10 +18,10 @@
     "dev": "next dev",
     "eslint:check": "eslint src -c .eslintrc.js --ext .ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
     "eslint:fix": "eslint --fix src -c .eslintrc.js --ext .ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
-    "fix": "yarn run jsonsort:fix && yarn run sort-package-json:fix && yarn run eslint:fix && yarn run prettier:fix",
+    "fix": "yarn run jsonsort:fix && yarn run sort-package-json:fix && yarn run eslint:fix && yarn run stylelint:fix && yarn run prettier:fix",
     "jsonsort:check": "jsonsort *.json -a -c",
     "jsonsort:fix": "jsonsort *.json -a",
-    "lint": "yarn run jsonsort:check && yarn run sort-package-json:check && yarn run eslint:check && yarn run prettier:check",
+    "lint": "yarn run jsonsort:check && yarn run sort-package-json:check && yarn run eslint:check && yarn run stylelint:check && yarn run prettier:check",
     "ncu:check": "ncu -p yarn",
     "ncu:upgrade": "ncu -u -p yarn",
     "prettier:check": "prettier --check .",
@@ -30,6 +30,8 @@
     "release:check": "semantic-release -d",
     "sort-package-json:check": "sort-package-json 'package.json' --check",
     "sort-package-json:fix": "sort-package-json 'package.json'",
+    "stylelint:check": "stylelint 'src/**/*.css'",
+    "stylelint:fix": "stylelint 'src/**/*.css' --fix",
     "start": "next start",
     "tsc": "tsc --p tsconfig.json",
     "typescript": "yarn run tsc"
@@ -81,6 +83,8 @@
     "prettier": "^2.2.1",
     "semantic-release": "^17.3.3",
     "sort-package-json": "^1.48.1",
+    "stylelint": "^13.9.0",
+    "stylelint-config-standard": "^20.0.0",
     "typescript": "^4.1.3"
   }
 }
