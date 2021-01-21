@@ -22,6 +22,7 @@ import {
 import Link from "next/link";
 import { SocialLinks } from "@/const";
 import clsx from "clsx";
+import { SectionText } from "@/common/Text";
 
 interface Props {
   isPartial?: boolean;
@@ -31,9 +32,7 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
   return (
     <section className={clsx("w-full mb-6", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
-        <h3 className="my-3 text-lg font-medium leading-loose text-gray-600 align-baseline md:text-xl dark:text-gray-300">
-          Social Accounts
-        </h3>
+        <SectionText isPartial={isPartial}>Social Accounts</SectionText>
       </div>
       <div className="flex-col items-center w-full max-w-2xl px-3 mx-auto sm:px-2">
         <ul
@@ -113,10 +112,10 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
         </ul>
       </div>
       {isPartial && (
-        <div className="w-full pt-3 my-3 text-center leading-5">
+        <div className="w-full pt-3 my-3 leading-5 text-center">
           <Link href="/social">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a className="mt-4 text-center text-indigo-500 cursor-pointer leading-5 dark:text-indigo-300 hover:underline">
+            <a className="mt-4 leading-5 text-center text-indigo-500 cursor-pointer dark:text-indigo-300 hover:underline">
               Show more...
             </a>
           </Link>
