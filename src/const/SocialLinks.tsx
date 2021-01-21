@@ -21,6 +21,10 @@ export default class SocialLinks {
   static readonly patreon = `https://patreon.com/${SocialLinks.shunkakinoki}`;
   static readonly paypal = `https://paypal.me/${SocialLinks.shunkakinoki}`;
   static readonly telegram = `https://t.me/${SocialLinks.shunkakinoki}`;
+  static readonly tiktok = `https://tiktok.com/@${SocialLinks.shunkakinoki}`;
+  static readonly twitch = `https://twitch.tv/${SocialLinks.shunkakinoki}`;
   static readonly twitter = `https://twitter.com/${SocialLinks.shunkakinoki}`;
   static readonly wechat = "https://u.wechat.com/IOTi43ThkZ9OEqC8IcYcmiQ";
+  static readonly youtube =
+    "https://www.youtube.com/channel/UC34lMwRf8-TBAAnBczvYY2w";
 }

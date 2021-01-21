@@ -14,5 +14,8 @@ export { default as Npm } from "./Npm";
 export { default as Patreon } from "./Patreon";
 export { default as Paypal } from "./Paypal";
 export { default as Telegram } from "./Telegram";
+export { default as Tiktok } from "./Tiktok";
+export { default as Twitch } from "./Twitch";
 export { default as Twitter } from "./Twitter";
 export { default as Wechat } from "./Wechat";
+export { default as Youtube } from "./Youtube";

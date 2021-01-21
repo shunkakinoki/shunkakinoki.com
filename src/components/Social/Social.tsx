@@ -16,8 +16,11 @@ import {
   Patreon,
   Paypal,
   Telegram,
+  Tiktok,
+  Twitch,
   Twitter,
   Wechat,
+  Youtube,
 } from "@/icons";
 import { SocialLinks } from "@/const";
 import clsx from "clsx";
@@ -97,6 +100,15 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
               </SocialCard>
               <SocialCard href={SocialLinks.patreon} title="Patreon">
                 <Patreon />
+              </SocialCard>
+              <SocialCard href={SocialLinks.tiktok} title="Tiktok">
+                <Tiktok />
+              </SocialCard>
+              <SocialCard href={SocialLinks.twitch} title="Twitch">
+                <Twitch />
+              </SocialCard>
+              <SocialCard href={SocialLinks.youtube} title="Youtube">
+                <Youtube />
               </SocialCard>
               <SocialCard href={SocialLinks.line} title="Line">
                 <Line />
