@@ -8,7 +8,7 @@ interface HeaderLinkProps extends LinkProps {
 
 export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
   return (
-    <li className="px-3 leading-5 text-left text-gray-500 align-baseline hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">
+    <li className="px-3 text-left text-gray-500 align-baseline leading-5 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">
       <Link href={href}>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a className="text-sm font-medium no-underline cursor-pointer md:text-base lg:text-md">
@@ -24,9 +24,9 @@ export default function Header(): JSX.Element {
     <nav className={s.glass}>
       <header
         role="banner"
-        className="box-border sticky z-30 flex items-center justify-between w-full max-w-3xl p-8 px-6 py-3 mx-auto my-3 leading-5 text-gray-400 align-baseline transition ease-in md:my-8 bg-opacity-60 md:py-6 sm:py-4"
+        className="sticky z-30 flex items-center justify-between w-full max-w-3xl p-8 px-6 py-3 mx-auto my-3 text-gray-400 align-baseline box-border leading-5 transition ease-in md:my-8 bg-opacity-60 md:py-6 sm:py-4"
       >
-        <div className="flex items-center flex-grow flex-shrink-0 max-w-screen-sm align-baseline">
+        <div className="flex items-center flex-grow flex-shrink-0 align-baseline max-w-screen-sm">
           <span className="pr-2 sm:pr-3 md:pr-5">
             <DarkModeButton />
           </span>

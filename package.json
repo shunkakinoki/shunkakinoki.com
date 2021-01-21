@@ -30,9 +30,9 @@
     "release:check": "semantic-release -d",
     "sort-package-json:check": "sort-package-json 'package.json' --check",
     "sort-package-json:fix": "sort-package-json 'package.json'",
+    "start": "next start",
     "stylelint:check": "stylelint 'src/**/*.css'",
     "stylelint:fix": "stylelint 'src/**/*.css' --fix",
-    "start": "next start",
     "tsc": "tsc --p tsconfig.json",
     "typescript": "yarn run tsc"
   },

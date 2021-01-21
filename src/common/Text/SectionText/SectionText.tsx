@@ -5,7 +5,10 @@ interface Props {
   isPartial?: boolean;
 }
 
-export default function SectionText({ children, isPartial = false }: Props) {
+export default function SectionText({
+  children,
+  isPartial = false,
+}: Props): JSX.Element {
   return (
     <h3
       className={clsx(

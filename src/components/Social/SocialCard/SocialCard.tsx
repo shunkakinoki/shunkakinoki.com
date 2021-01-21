@@ -20,8 +20,8 @@ export default function SocialCard({
   return (
     <li className="col-span-1 group">
       <a href={href} target="_blank" rel="noopener noreferrer">
-        <div className="flex items-center leading-5 text-left no-underline cursor-pointer">
-          <div className="box-border flex justify-center flex-shrink-0 w-8 mr-4 text-3xl text-left text-gray-500 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-200">
+        <div className="flex items-center text-left no-underline cursor-pointer leading-5">
+          <div className="flex justify-center flex-shrink-0 w-8 mr-4 text-3xl text-left text-gray-500 box-border group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-200">
             {children}
           </div>
           <div className="overflow-hidden text-left cursor-pointer">
