@@ -1,3 +1,11 @@
+export { default as Cake } from "./Cake";
 export { default as Check } from "./Check";
 export { default as Chevron } from "./Chevron";
 export { default as External } from "./External";
+export { default as Globe } from "./Globe";
+export { default as Left } from "./Left";
+export { default as Right } from "./Right";
+export { default as School } from "./School";
+export { default as Switch } from "./Switch";
+export { default as Tag } from "./Tag";
+export { default as Work } from "./Work";

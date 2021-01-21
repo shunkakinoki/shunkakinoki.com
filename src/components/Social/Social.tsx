@@ -19,9 +19,9 @@ import {
   Twitter,
   Wechat,
 } from "@/icons";
-import Link from "next/link";
 import { SocialLinks } from "@/const";
 import clsx from "clsx";
+import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
 
 interface Props {
@@ -30,11 +30,11 @@ interface Props {
 
 export default function Social({ isPartial = false }: Props): JSX.Element {
   return (
-    <section className={clsx("w-full mb-6", isPartial && "mt-6")}>
+    <section className={clsx("w-full mb-6", isPartial && "mt-6")} id="#social">
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Social Accounts</SectionText>
       </div>
-      <div className="flex-col items-center w-full max-w-2xl px-3 mx-auto sm:px-2">
+      <div className="flex-col items-center w-full px-3 mx-auto sm:px-2">
         <ul
           className={clsx(
             "grid w-full grid-cols-2 my-2 mt-4 gap-2 sm:grid-cols-3",
@@ -111,16 +111,14 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
           )}
         </ul>
       </div>
-      {isPartial && (
-        <div className="w-full pt-3 my-3 text-center leading-5">
-          <Link href="/social">
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a className="mt-4 text-center text-indigo-500 cursor-pointer leading-5 dark:text-indigo-300 hover:underline">
-              Show more...
-            </a>
-          </Link>
+      <div className="w-full pt-3 my-3 leading-5 text-center">
+        <div className="flex justify-center w-full">
+          <SwitchButton
+            href={isPartial ? "/social" : "/#social"}
+            type={isPartial ? "right" : "left"}
+          />
         </div>
-      )}
+      </div>
     </section>
   );
 }

@@ -1,0 +1,63 @@
+import clsx from "clsx";
+import { Cake, Globe, School, Tag, Work } from "@/icons";
+
+interface Props {
+  isBottom?: boolean;
+  children: string;
+  time: string;
+  type: "cake" | "globe" | "school" | "tag" | "work";
+}
+
+function HistoryConnector(): JSX.Element {
+  return (
+    <span
+      className="absolute h-full -ml-px bg-gray-200 dark:bg-gray-500 top-4 left-4 w-0.5"
+      aria-hidden="true"
+    />
+  );
+}
+
+export default function HistoryStep({
+  isBottom = false,
+  children,
+  time,
+  type,
+}: Props): JSX.Element {
+  return (
+    <li>
+      <div
+        className={clsx("relative", isBottom && "pb-2", !isBottom && "pb-8")}
+      >
+        {!isBottom && <HistoryConnector />}
+        <div className="relative flex space-x-3">
+          <div>
+            <span
+              className={clsx(
+                "flex items-center justify-center w-8 h-8 rounded-full ring-8 ring-white dark:ring-black dark:text-gray-100",
+                type === "cake" && "bg-pink-500",
+                type === "globe" && "bg-green-500",
+                type === "school" && "bg-yellow-500",
+                type === "tag" && "bg-blue-500",
+                type === "work" && "bg-indigo-500"
+              )}
+            >
+              {type === "cake" && <Cake />}
+              {type === "globe" && <Globe />}
+              {type === "school" && <School />}
+              {type === "tag" && <Tag />}
+              {type === "work" && <Work />}
+            </span>
+          </div>
+          <div className="flex justify-between flex-1 min-w-0 pt-1.5 space-x-4">
+            <div>
+              <p className="text-sm text-gray-500">{children}</p>
+            </div>
+            <div className="text-sm text-right text-gray-500 whitespace-nowrap">
+              <time>{time}</time>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  );
+}

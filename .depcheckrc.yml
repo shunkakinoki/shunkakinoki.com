@@ -8,6 +8,7 @@ ignores:
     "commitizen",
     "postcss",
     "git-cz",
+    "stylelint-*",
     "typescript",
   ]
 ignore-path: .gitignore

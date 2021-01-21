@@ -1,6 +1,6 @@
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
 
-interface Props {
+interface Props extends LinkProps {
   children: string;
 }
 

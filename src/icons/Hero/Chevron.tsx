@@ -1,7 +1,7 @@
 export default function Chevron(): JSX.Element {
   return (
     <svg
-      className="w-4 h-4"
+      className="w-6 h-6"
       fill="currentColor"
       viewBox="0 0 24 24"
       aria-hidden="true"

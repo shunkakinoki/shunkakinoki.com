@@ -1,9 +1,9 @@
 import { NextPage } from "next";
 
-import ErrorScreen from "@/screens/ErrorScreen";
+import HistoryScreen from "@/screens/HistoryScreen";
 
-const Error: NextPage = () => {
-  return <ErrorScreen />;
+const History: NextPage = () => {
+  return <HistoryScreen />;
 };
 
-export default Error;
+export default History;
