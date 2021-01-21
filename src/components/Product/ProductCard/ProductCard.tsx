@@ -14,12 +14,12 @@ export default function ProductCard({
   href,
 }: Props): JSX.Element {
   return (
-    <li className="col-span-1 rounded-lg shadow group">
+    <li className="col-span-1 rounded-lg shadow-lg group hover:bg-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800">
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="block hover:bg-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800"
+        className="block"
       >
         <div className="flex items-center px-4 py-4 sm:px-6">
           <div className="flex items-center flex-1 min-w-0 overflow-hidden">
