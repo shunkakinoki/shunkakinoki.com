@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import { SectionText } from "@/common/Text";
 import { ProductLinks, SocialLinks } from "@/const";
+import { Chevron } from "@/icons";
+import Link from "next/link";
 
 interface Props {
   isPartial?: boolean;
@@ -42,7 +44,15 @@ export default function About({ isPartial }: Props): JSX.Element {
           I am a <AboutLink href={SocialLinks.github}>coder</AboutLink>,{" "}
           <AboutLink href={ProductLinks.sentrei}>entrepreneur</AboutLink> &amp;{" "}
           <AboutLink href={SocialLinks.pioneer}>pioneer</AboutLink> striving to
-          obliterate the galaxy.
+          obliterate the galaxy.{" "}
+          {isPartial && (
+            <Link href="/about">
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              <a className="inline-block font-medium text-indigo-600 align-text-bottom animate-pulse ">
+                <Chevron />
+              </a>
+            </Link>
+          )}
           <br />
           {!isPartial && (
             <span>
