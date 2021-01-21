@@ -25,7 +25,7 @@ export default function SocialCard({
             {children}
           </div>
           <div className="overflow-hidden text-left cursor-pointer">
-            <h4 className="inline-flex items-center text-sm font-medium leading-normal text-gray-400 group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-gray-100">
+            <h4 className="inline-flex items-center text-sm font-medium leading-normal text-gray-500 group-hover:text-gray-800 dark:text-gray-300 dark:group-hover:text-gray-100">
               {title}
               {isPriority && (
                 <span className="pl-2 text-green-400 dark:text-green-300">
@@ -33,7 +33,7 @@ export default function SocialCard({
                 </span>
               )}
             </h4>
-            <p className="block w-full text-xs text-gray-500 truncate flex-nowrap whitespace-nowrap group-hover:underline group-hover:text-gray-600 dark:text-gray-400 dark:group-hover:text-gray-200">
+            <p className="block w-full text-xs text-gray-600 truncate flex-nowrap whitespace-nowrap group-hover:underline group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-200">
               {username}
             </p>
           </div>
