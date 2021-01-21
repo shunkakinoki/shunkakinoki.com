@@ -1,5 +1,6 @@
 import ProductCard from "@/components/Product/ProductCard";
 
+import Image from "next/image";
 import clsx from "clsx";
 
 interface Props {
@@ -27,7 +28,14 @@ export default function Product({ isPartial }: Props): JSX.Element {
             name="Sentrei"
             href="https://sentrei.com"
           >
-            <></>
+            <Image
+              layout="intrinsic"
+              width={64}
+              height={64}
+              src="/sentrei.png"
+              alt="Sentrei"
+              className="inline py-1 pr-2"
+            />
           </ProductCard>
         </ul>
       </div>
