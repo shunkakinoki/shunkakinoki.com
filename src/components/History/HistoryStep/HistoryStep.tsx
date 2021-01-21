@@ -1,11 +1,11 @@
 import clsx from "clsx";
-import { Cake, Globe, School, Tag, Work } from "@/icons";
+import { Cake, Chip, Fire, Globe, School, Tag, Work } from "@/icons";
 
 interface Props {
   isBottom?: boolean;
   children: string;
   time: string;
-  type: "cake" | "globe" | "school" | "tag" | "work";
+  type: "cake" | "chip" | "fire" | "globe" | "school" | "tag" | "work";
 }
 
 function HistoryConnector(): JSX.Element {
@@ -35,6 +35,8 @@ export default function HistoryStep({
               className={clsx(
                 "flex items-center justify-center w-8 h-8 rounded-full ring-8 ring-white dark:ring-black dark:text-gray-100",
                 type === "cake" && "bg-pink-500",
+                type === "chip" && "bg-gray-500",
+                type === "fire" && "bg-red-500",
                 type === "globe" && "bg-green-500",
                 type === "school" && "bg-yellow-500",
                 type === "tag" && "bg-blue-500",
@@ -42,6 +44,8 @@ export default function HistoryStep({
               )}
             >
               {type === "cake" && <Cake />}
+              {type === "chip" && <Chip />}
+              {type === "fire" && <Fire />}
               {type === "globe" && <Globe />}
               {type === "school" && <School />}
               {type === "tag" && <Tag />}
