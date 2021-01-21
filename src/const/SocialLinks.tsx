@@ -6,6 +6,7 @@ export default class SocialLinks {
   static readonly gmail = `${SocialLinks.shunkakinoki}@gmail.com`;
 
   static readonly email = `mailto:${SocialLinks.gmail}`;
+  static readonly pioneer = "https://pioneer.app/winners/shun-kakinoki/";
 
   static readonly bitcoin = `https://www.blockchain.com/btc/address/${SocialLinks.crypto}`;
   static readonly discord = `https://discord.com/users/${SocialLinks.shunkakinoki}`;

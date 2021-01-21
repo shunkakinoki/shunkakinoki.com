@@ -1,5 +1,6 @@
 import ProductCard from "@/components/Product/ProductCard";
 import { SectionText } from "@/common/Text";
+import { ProductLinks } from "@/const";
 
 import Image from "next/image";
 import clsx from "clsx";
@@ -25,7 +26,7 @@ export default function Product({ isPartial = false }: Props): JSX.Element {
           <ProductCard
             description="Sentrei is an all-in-one serverless backend infrastructure of your dreams"
             name="Sentrei"
-            href="https://sentrei.com"
+            href={ProductLinks.sentrei}
           >
             <Image
               layout="intrinsic"

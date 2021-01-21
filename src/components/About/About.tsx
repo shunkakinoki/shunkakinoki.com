@@ -1,8 +1,27 @@
 import clsx from "clsx";
 import { SectionText } from "@/common/Text";
+import { ProductLinks, SocialLinks } from "@/const";
 
 interface Props {
   isPartial?: boolean;
+}
+
+interface AboutLinkProps {
+  children: string;
+  href: string;
+}
+
+function AboutLink({ children, href }: AboutLinkProps) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline hover:text-gray-400"
+    >
+      {children}
+    </a>
+  );
 }
 
 export default function About({ isPartial }: Props): JSX.Element {
@@ -20,7 +39,11 @@ export default function About({ isPartial }: Props): JSX.Element {
           </div>
         )}
         <h2 className="text-base text-gray-600 md:text-lg dark:text-gray-300">
-          I am an entrepreneur striving to obliterate the galaxy.
+          I am a <AboutLink href={SocialLinks.github}>coder</AboutLink>,{" "}
+          <AboutLink href={ProductLinks.sentrei}>entrepreneur</AboutLink> &amp;{" "}
+          <AboutLink href={SocialLinks.pioneer}>pioneer</AboutLink> striving to
+          obliterate the galaxy.
+          <br />
           {!isPartial && (
             <span>
               I have spent my childhood years in Silicon Valley (Cupertino City)
