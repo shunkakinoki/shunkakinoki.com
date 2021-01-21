@@ -9,7 +9,7 @@ export default function NotFoundScreen(): JSX.Element {
       <Header />
       <div className="flex flex-col items-center justify-center max-w-3xl mx-auto my-16 md:my-24 lg:my-32">
         <ErrorText>404</ErrorText>
-        <LinkButton>Go home</LinkButton>
+        <LinkButton href="/">Go home</LinkButton>
       </div>
       <Footer />
     </>
