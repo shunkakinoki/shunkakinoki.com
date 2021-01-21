@@ -29,7 +29,7 @@ export default function ProductCard({
             <h4 className="text-lg font-medium tracking-tight text-gray-900 dark:text-gray-100">
               {name}
             </h4>
-            <p className="text-base leading-5 text-gray-700 line-clamp-3 dark:text-gray-300">
+            <p className="text-base leading-5 text-gray-600 line-clamp-3 dark:text-gray-300">
               {description}
             </p>
           </div>

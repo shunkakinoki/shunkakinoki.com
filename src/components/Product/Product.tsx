@@ -23,7 +23,7 @@ export default function Product({ isPartial = false }: Props): JSX.Element {
           )}
         >
           <ProductCard
-            description="Sentrei is a all-in-one serverless backend infrastructure of your dreams"
+            description="Sentrei is an all-in-one serverless backend infrastructure of your dreams"
             name="Sentrei"
             href="https://sentrei.com"
           >
