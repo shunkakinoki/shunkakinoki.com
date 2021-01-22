@@ -25,7 +25,7 @@ export default function History({ isPartial = false }: Props): JSX.Element {
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>History</SectionText>
       </div>
-      <div className="flex-col items-center w-full px-3 md:px-0">
+      <div className="flex-col items-center w-full px-3 mt-3 md:px-0">
         <HistoryYear>Present</HistoryYear>
         <ul className="my-3">
           <HistoryStep time="March 2020 ~ Present" type="work">
