@@ -35,7 +35,7 @@ export default function DashboardCard({
                     {number}
                   </div>
                 ) : (
-                  <div className="w-9/12 h-8 bg-gray-200 rounded animate-pulse" />
+                  <div className="w-9/12 h-8 bg-gray-200 rounded animate-pulse dark:bg-gray-700" />
                 )}
               </dd>
             </div>
