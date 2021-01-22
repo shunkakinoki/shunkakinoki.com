@@ -21,7 +21,7 @@ function HistoryYear({ children }: HistoryYearProps): JSX.Element {
 
 export default function History({ isPartial = false }: Props): JSX.Element {
   return (
-    <section className={clsx("w-full mb-2", isPartial && "mt-6")} id="#history">
+    <section className={clsx("w-full mb-2", isPartial && "mt-6")} key="history">
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>History</SectionText>
       </div>

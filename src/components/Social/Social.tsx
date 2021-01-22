@@ -33,7 +33,7 @@ interface Props {
 
 export default function Social({ isPartial = false }: Props): JSX.Element {
   return (
-    <section className={clsx("w-full mb-6", isPartial && "mt-6")} id="#social">
+    <section className={clsx("w-full mb-6", isPartial && "mt-6")} key="social">
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Social Accounts</SectionText>
       </div>
