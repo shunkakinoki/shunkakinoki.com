@@ -58,7 +58,7 @@ export default function HistoryStep({
                 {children}
               </p>
             </div>
-            <div className="text-sm text-right text-gray-500 dark:text-gray-600 whitespace-nowrap">
+            <div className="text-sm text-right text-gray-500 dark:text-gray-400 whitespace-nowrap">
               <time>{time}</time>
             </div>
           </div>
