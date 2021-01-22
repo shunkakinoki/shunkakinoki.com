@@ -6,7 +6,7 @@ export default function SocialScreen(): JSX.Element {
   return (
     <>
       <Header />
-      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto">
+      <div className="flex items-start justify-center max-w-2xl mx-auto">
         <Social />
       </div>
       <Footer />

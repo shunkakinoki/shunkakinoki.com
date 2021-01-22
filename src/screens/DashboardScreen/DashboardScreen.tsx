@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import History from "@/components/History";
+import Dashboard from "@/components/Dashboard";
 
-export default function HistoryScreen(): JSX.Element {
+export default function DashboardScreen(): JSX.Element {
   return (
     <>
       <Header />
       <div className="flex items-start justify-center max-w-2xl mx-auto">
-        <History />
+        <Dashboard />
       </div>
       <Footer />
     </>
