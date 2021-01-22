@@ -10,6 +10,7 @@ ignores:
     "git-cz",
     "stylelint-*",
     "typescript",
+    "vercel"
   ]
 ignore-path: .gitignore
 skip-missing: true
