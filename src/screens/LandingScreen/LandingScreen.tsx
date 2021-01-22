@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Social from "@/components/Social";
 import History from "@/components/History";
 import Product from "@/components/Product";
+import Newsletter from "@/components/Newsletter";
 
 export default function LandingScreen(): JSX.Element {
   return (
@@ -14,6 +15,7 @@ export default function LandingScreen(): JSX.Element {
         <Product isPartial />
         <History isPartial />
         <Social isPartial />
+        <Newsletter />
       </div>
       <Footer />
     </>
