@@ -1,5 +1,5 @@
 import DashboardCard from "@/components/Dashboard/DashboardCard";
-import Github from "@/components/Dashboard/Analytics/Github";
+import { Github, Twitter } from "@/components/Dashboard/Analytics";
 import { SectionText } from "@/common/Text";
 
 export default function Dashboard(): JSX.Element {
@@ -10,6 +10,7 @@ export default function Dashboard(): JSX.Element {
       </div>
       <dl className="grid grid-cols-1 gap-5 mt-5 sm:grid-cols-2">
         <Github />
+        <Twitter />
       </dl>
     </section>
   );
