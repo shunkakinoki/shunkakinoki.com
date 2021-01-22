@@ -2,7 +2,7 @@ export default function Newsletter(): JSX.Element {
   return (
     <div className="w-full px-3 my-6">
       <div className="relative">
-        <div className="relative px-6 py-10 overflow-hidden bg-indigo-600 shadow-xl dark:bg-indigo-800 rounded-2xl sm:px-12">
+        <div className="relative px-6 py-10 overflow-hidden bg-indigo-600 border border-gray-700 shadow-xl dark:border-gray-400 dark:bg-indigo-800 rounded-2xl sm:px-12">
           <div
             aria-hidden="true"
             className="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0"
