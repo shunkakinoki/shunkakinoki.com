@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
+import { Light } from "@/icons";
 
 export default function Newsletter(): JSX.Element {
   const { data } = useSWR<{
@@ -57,13 +58,14 @@ export default function Newsletter(): JSX.Element {
               <div className="mt-4 sm:mt-0 sm:ml-3">
                 <button
                   type="submit"
-                  className="block w-full px-5 py-3 text-base font-medium text-white bg-indigo-500 border border-transparent shadow rounded-md dark:bg-indigo-600 hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 sm:px-10 dark:hover:bg-indigo-500"
+                  className="block w-full px-5 py-3 text-base font-medium text-white bg-indigo-500 border border-transparent rounded-md shadow dark:bg-indigo-600 hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 sm:px-10 dark:hover:bg-indigo-500"
                 >
                   Subscribe
                 </button>
               </div>
             </form>
-            <p className="max-w-2xl mx-auto mt-4 text-xs font-medium text-indigo-50">
+            <p className="flex max-w-2xl mx-auto mt-4 text-xs font-medium align-text-bottom text-indigo-50">
+              <Light />
               {data?.subscribers} Subscribers
             </p>
           </div>

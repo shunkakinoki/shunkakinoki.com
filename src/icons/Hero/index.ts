@@ -6,6 +6,7 @@ export { default as External } from "./External";
 export { default as Fire } from "./Fire";
 export { default as Globe } from "./Globe";
 export { default as Left } from "./Left";
+export { default as Light } from "./Light";
 export { default as Right } from "./Right";
 export { default as School } from "./School";
 export { default as Switch } from "./Switch";
