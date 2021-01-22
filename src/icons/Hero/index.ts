@@ -1,7 +1,9 @@
+export { default as Badge } from "./Badge";
 export { default as Cake } from "./Cake";
 export { default as Check } from "./Check";
 export { default as Chevron } from "./Chevron";
 export { default as Chip } from "./Chip";
+export { default as Exclamation } from "./Exclamation";
 export { default as External } from "./External";
 export { default as Fire } from "./Fire";
 export { default as Globe } from "./Globe";

@@ -1,11 +1,50 @@
 import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
-import { Light } from "@/icons";
+import { Badge, Exclamation, Light } from "@/icons";
+import { useState } from "react";
 
 export default function Newsletter(): JSX.Element {
   const { data } = useSWR<{
     subscribers: number;
   }>("/api/buttondown", fetcher);
+
+  const [form, setForm] = useState<{
+    state: "error" | "success";
+    message: string;
+  }>({ state: "success", message: "" });
+
+  const subscribe = async (e: React.FormEvent): Promise<void> => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target as HTMLFormElement);
+
+    const res = await fetch("/api/subscribe", {
+      body: JSON.stringify({
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        email: formData.get("email"),
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const { error } = await res.json();
+    if (error) {
+      setForm({
+        state: "error",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        message: error,
+      });
+      return;
+    }
+
+    setForm({
+      state: "success",
+      message: "Thank you for subscribing to the newsletter!",
+    });
+  };
 
   return (
     <div className="w-full px-3 my-6">
@@ -43,17 +82,31 @@ export default function Newsletter(): JSX.Element {
               lessons and insights regading my journey. I would love for you to
               join.
             </p>
-            <form action="#" className="mt-6 sm:mx-auto sm:max-w-lg sm:flex">
-              <div className="flex-1 min-w-0">
+            <form
+              className="mt-6 sm:mx-auto sm:max-w-lg sm:flex"
+              onSubmit={subscribe}
+            >
+              <div className="relative flex-1 min-w-0">
                 <label htmlFor="cta_email" className="sr-only">
                   Email address
                 </label>
                 <input
-                  id="cta_email"
+                  id="email"
+                  name="email"
                   type="email"
                   className="block w-full px-5 py-3 text-base text-gray-900 placeholder-gray-500 border border-transparent rounded-md shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
                   placeholder="Enter your email"
                 />
+                {form?.state === "error" && (
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-3 text-red-500 pointer-events-none">
+                    <Exclamation />
+                  </div>
+                )}
+                {form?.state === "success" && (
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-3 text-green-500 pointer-events-none">
+                    <Badge />
+                  </div>
+                )}
               </div>
               <div className="mt-4 sm:mt-0 sm:ml-3">
                 <button
@@ -64,6 +117,22 @@ export default function Newsletter(): JSX.Element {
                 </button>
               </div>
             </form>
+            {form?.state === "error" && (
+              <p
+                className="px-5 mt-2 text-sm text-red-300 dark:text-red-500"
+                id="email-error"
+              >
+                {form?.message}
+              </p>
+            )}
+            {form?.state === "success" && (
+              <p
+                className="px-5 mt-2 text-sm text-green-300 dark:text-green-500"
+                id="email-success"
+              >
+                {form?.message}
+              </p>
+            )}
             <p className="flex max-w-2xl mx-auto mt-4 text-xs font-medium align-text-bottom text-indigo-50">
               <Light />
               {data?.subscribers} Subscribers
