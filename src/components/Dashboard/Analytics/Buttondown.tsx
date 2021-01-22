@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { Email } from "@/icons";
+import { User } from "@/icons";
 import fetcher from "@/lib/fetcher";
 import DashboardCard from "@/components/Dashboard/DashboardCard";
 import { SocialLinks } from "@/const";
@@ -15,7 +15,7 @@ export default function ButtondownCard(): JSX.Element {
       href={SocialLinks.website}
       title="Newsletter Subscribers"
     >
-      <Email />
+      <User />
     </DashboardCard>
   );
 }

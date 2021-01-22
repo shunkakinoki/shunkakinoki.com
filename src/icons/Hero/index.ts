@@ -10,4 +10,5 @@ export { default as Right } from "./Right";
 export { default as School } from "./School";
 export { default as Switch } from "./Switch";
 export { default as Tag } from "./Tag";
+export { default as User } from "./User";
 export { default as Work } from "./Work";
