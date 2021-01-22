@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default async function buttondown(
   req: NextApiRequest,
   res: NextApiResponse
-) {
+): Promise<void> {
   const API_KEY = process.env.BUTTONDOWN_API_KEY;
   const newsletterResponse = await fetch(
     "https://api.buttondown.email/v1/subscribers",

@@ -4,7 +4,7 @@ import { SocialLinks } from "@/const";
 export default async function github(
   req: NextApiRequest,
   res: NextApiResponse
-) {
+): Promise<void> {
   const userResponse = await fetch(
     `https://api.github.com/users/${SocialLinks.shunkakinoki}`
   );

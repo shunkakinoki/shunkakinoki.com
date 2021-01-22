@@ -4,7 +4,7 @@ import { SocialLinks } from "@/const";
 export default async function twitter(
   req: NextApiRequest,
   res: NextApiResponse
-) {
+): Promise<void> {
   const userResponse = await fetch(
     `https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=${SocialLinks.shunkakinoki}`
   );

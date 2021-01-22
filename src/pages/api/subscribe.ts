@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default async function subscribe(
   req: NextApiRequest,
   res: NextApiResponse
-) {
+): Promise<void> {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { email } = req.body;
 
