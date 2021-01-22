@@ -1,4 +1,11 @@
+import useSWR from "swr";
+import fetcher from "@/lib/fetcher";
+
 export default function Newsletter(): JSX.Element {
+  const { data } = useSWR<{
+    subscribers: number;
+  }>("/api/buttondown", fetcher);
+
   return (
     <div className="w-full px-3 my-6">
       <div className="relative">
@@ -56,6 +63,9 @@ export default function Newsletter(): JSX.Element {
                 </button>
               </div>
             </form>
+            <p className="max-w-2xl mx-auto mt-4 text-xs font-medium text-indigo-50">
+              {data?.subscribers} Subscribers
+            </p>
           </div>
         </div>
       </div>
