@@ -52,8 +52,8 @@
     "next-seo": "^4.17.0",
     "next-themes": "^0.0.10",
     "postcss": "^8.2.4",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "react": "^0.0.0-experimental-27659559e",
+    "react-dom": "^0.0.0-experimental-27659559e",
     "sharp": "^0.27.0",
     "swr": "^0.4.0",
     "tailwindcss": "^2.0.2"
