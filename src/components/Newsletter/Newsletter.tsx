@@ -89,7 +89,7 @@ export default function Newsletter(): JSX.Element {
               onSubmit={subscribe}
             >
               <div className="relative flex-1 min-w-0">
-                <label htmlFor="cta_email" className="sr-only">
+                <label htmlFor="email" className="sr-only">
                   Email address
                 </label>
                 <input
