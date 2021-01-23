@@ -42,9 +42,10 @@
     }
   },
   "dependencies": {
+    "@headlessui/react": "^0.2.0",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/forms": "^0.2.1",
-    "@tailwindcss/line-clamp": "^0.1.0",
+    "@tailwindcss/line-clamp": "^0.2.0",
     "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.3",
     "clsx": "^1.1.1",
@@ -84,7 +85,7 @@
     "json-sort-cli": "^1.17.1",
     "npm-check-updates": "^11.0.2",
     "prettier": "^2.2.1",
-    "semantic-release": "^17.3.6",
+    "semantic-release": "^17.3.7",
     "sort-package-json": "^1.48.1",
     "stylelint": "^13.9.0",
     "stylelint-config-standard": "^20.0.0",

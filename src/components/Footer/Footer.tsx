@@ -2,6 +2,8 @@ import Link, { LinkProps } from "next/link";
 
 import { ReactNode } from "react";
 
+import LocaleSelect from "@/components/Footer/LocaleSelect";
+
 import { SocialLinks } from "@/const";
 import { Facebook, Github, Instagram, Linkedin, Twitter } from "@/icons";
 
@@ -76,9 +78,14 @@ export default function Footer(): JSX.Element {
           <Twitter />
         </FooterIconLink>
       </div>
-      <p className="mt-8 text-base text-center text-gray-400">
-        &copy; Shun Kakinoki. All rights reserved.
-      </p>
+      <div className="flex flex-col items-center justify-center max-w-3xl py-8 mx-auto space-x-6 space-y-6 sm:flex-row sm:space-y-0">
+        <p className="flex-shrink-0 text-base text-center text-gray-400">
+          &copy; Shun Kakinoki. All rights reserved.
+        </p>
+        <div className="sm:flex-grow-0">
+          <LocaleSelect />
+        </div>
+      </div>
     </footer>
   );
 }
