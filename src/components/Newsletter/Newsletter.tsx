@@ -10,9 +10,9 @@ export default function Newsletter(): JSX.Element {
   }>("/api/buttondown", fetcher);
 
   const [form, setForm] = useState<{
-    state: "error" | "success" | "loading";
+    state: "error" | "success" | "loading" | "initial";
     message: string;
-  }>({ state: "success", message: "" });
+  }>({ state: "initial", message: "" });
 
   const subscribe = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
