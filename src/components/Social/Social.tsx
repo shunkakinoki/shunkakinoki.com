@@ -38,7 +38,7 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Social Accounts</SectionText>
       </div>
-      <div className="flex-col items-center w-full px-3 mx-auto sm:px-2">
+      <div className="flex-col items-center w-full px-4 mx-auto sm:px-2 md:px-0">
         <ul
           className={clsx(
             "grid w-full grid-cols-2 my-2 mt-4 gap-2 sm:grid-cols-3",
@@ -124,7 +124,7 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
           )}
         </ul>
       </div>
-      <div className="w-full pt-3 my-3 text-center leading-5">
+      <div className="w-full pt-3 my-3 leading-5 text-center">
         <div className="flex justify-center w-full">
           <SwitchButton
             href={isPartial ? "/social" : "/#social"}

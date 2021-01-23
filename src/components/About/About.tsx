@@ -42,7 +42,7 @@ export default function About({ isPartial }: Props): JSX.Element {
             <SectionText isPartial={isPartial}>About me</SectionText>
           </div>
         )}
-        <h2 className="text-base text-gray-600 md:text-lg dark:text-gray-300">
+        <h2 className="text-base leading-loose text-gray-600 md:text-lg dark:text-gray-300">
           I am an{" "}
           <AboutLink href={ProductLinks.sentrei}>entrepreneur</AboutLink>,{" "}
           <AboutLink href={SocialLinks.github}>hacker</AboutLink>, &amp;{" "}

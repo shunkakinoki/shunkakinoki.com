@@ -15,7 +15,7 @@ export default function Product({ isPartial = false }: Props): JSX.Element {
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Products</SectionText>
       </div>
-      <div className="flex-col items-center w-full max-w-2xl px-2 mx-auto sm:px-1">
+      <div className="flex-col items-center w-full max-w-2xl px-4 mx-auto sm:px-2 md:px-0">
         <ul
           className={clsx(
             "grid grid-cols-1 gap-3",

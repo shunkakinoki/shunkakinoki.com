@@ -53,9 +53,9 @@ export default function HistoryStep({
               {type === "work" && <Work />}
             </span>
           </div>
-          <div className="flex justify-between flex-1 min-w-0 pt-1.5 space-x-4">
+          <div className="flex items-center justify-between flex-1 min-w-0 space-x-4">
             <div>
-              <p className="text-sm text-gray-500 dark:text-gray-300">
+              <p className="text-sm text-gray-500 dark:text-gray-300 line-clamp-3">
                 {children}
               </p>
             </div>
