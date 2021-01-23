@@ -46,8 +46,42 @@ module.exports = {
         "prettier/react",
       ],
       rules: {
+        "import/order": [
+          "error",
+          {
+            alphabetize: {
+              order: "asc",
+              caseInsensitive: true,
+            },
+            pathGroups: [
+              {
+                pattern: "@/**",
+                group: "internal",
+                position: "after",
+              },
+            ],
+            "newlines-between": "always-and-inside-groups",
+          },
+        ],
+        "react/jsx-sort-props": [
+          "error",
+          {
+            callbacksLast: true,
+            shorthandFirst: true,
+            shorthandLast: true,
+            ignoreCase: true,
+            noSortAlphabetically: true,
+            reservedFirst: true,
+          },
+        ],
         "react/react-in-jsx-scope": 0,
         "react/self-closing-comp": 1,
+        "sort-keys": [
+          "error",
+          "asc",
+          { caseSensitive: true, natural: true, minKeys: 2 },
+        ],
+        "sort-vars": ["error", { ignoreCase: true }],
       },
     },
   ],

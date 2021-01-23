@@ -1,8 +1,9 @@
-import useSWR from "swr";
-import fetcher from "@/lib/fetcher";
-import { Badge, Exclamation, Light } from "@/icons";
-import { useState } from "react";
 import clsx from "clsx";
+import { useState } from "react";
+import useSWR from "swr";
+
+import { Badge, Exclamation, Light } from "@/icons";
+import fetcher from "@/lib/fetcher";
 
 export default function Newsletter(): JSX.Element {
   const { data } = useSWR<{
@@ -10,13 +11,13 @@ export default function Newsletter(): JSX.Element {
   }>("/api/buttondown", fetcher);
 
   const [form, setForm] = useState<{
-    state: "error" | "success" | "loading" | "initial";
     message: string;
-  }>({ state: "initial", message: "" });
+    state: "error" | "success" | "loading" | "initial";
+  }>({ message: "", state: "initial" });
 
   const subscribe = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
-    setForm({ state: "loading", message: "" });
+    setForm({ message: "", state: "loading" });
 
     const formData = new FormData(e.target as HTMLFormElement);
 
@@ -35,16 +36,16 @@ export default function Newsletter(): JSX.Element {
     const { error } = await res.json();
     if (error) {
       setForm({
-        state: "error",
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         message: error,
+        state: "error",
       });
       return;
     }
 
     setForm({
-      state: "success",
       message: "Thank you for subscribing to the newsletter!",
+      state: "success",
     });
   };
 

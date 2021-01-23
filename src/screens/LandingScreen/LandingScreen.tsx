@@ -1,10 +1,10 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import About from "@/components/About";
-import Social from "@/components/Social";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import History from "@/components/History";
-import Product from "@/components/Product";
 import Newsletter from "@/components/Newsletter";
+import Product from "@/components/Product";
+import Social from "@/components/Social";
 
 export default function LandingScreen(): JSX.Element {
   return (

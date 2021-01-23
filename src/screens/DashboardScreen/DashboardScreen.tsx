@@ -1,6 +1,6 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Dashboard from "@/components/Dashboard";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export default function DashboardScreen(): JSX.Element {
   return (

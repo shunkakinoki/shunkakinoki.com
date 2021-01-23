@@ -1,7 +1,9 @@
 import Link, { LinkProps } from "next/link";
-import { Facebook, Github, Instagram, Linkedin, Twitter } from "@/icons";
+
 import { ReactNode } from "react";
+
 import { SocialLinks } from "@/const";
+import { Facebook, Github, Instagram, Linkedin, Twitter } from "@/icons";
 
 interface FooterLinkProps extends LinkProps {
   children: string;

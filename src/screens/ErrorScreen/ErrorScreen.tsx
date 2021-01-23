@@ -1,7 +1,7 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { LinkButton } from "@/common/Button";
 import { ErrorText } from "@/common/Text";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export default function ErrorScreen(): JSX.Element {
   return (

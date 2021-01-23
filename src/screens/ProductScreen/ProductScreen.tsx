@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import Product from "@/components/Product";
 
 export default function ProductScreen(): JSX.Element {

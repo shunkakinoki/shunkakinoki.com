@@ -1,5 +1,7 @@
 import Link, { LinkProps } from "next/link";
+
 import s from "./Header.module.css";
+
 import DarkModeButton from "@/components/Header/DarkModeButton";
 
 interface HeaderLinkProps extends LinkProps {

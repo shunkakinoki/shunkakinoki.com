@@ -1,8 +1,9 @@
 import useSWR from "swr";
-import { Github } from "@/icons";
-import fetcher from "@/lib/fetcher";
+
 import DashboardCard from "@/components/Dashboard/DashboardCard";
 import { SocialLinks } from "@/const";
+import { Github } from "@/icons";
+import fetcher from "@/lib/fetcher";
 
 export default function GithubCard(): JSX.Element {
   const { data } = useSWR<{

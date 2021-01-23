@@ -1,8 +1,8 @@
+import { ThemeProvider } from "next-themes";
 import { AppProps } from "next/app";
 
 import "@/styles/index.css";
 import Seo from "@/components/Seo";
-import { ThemeProvider } from "next-themes";
 
 const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (

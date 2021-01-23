@@ -1,7 +1,8 @@
-import HistoryStep from "@/components/History/HistoryStep";
 import clsx from "clsx";
-import { SectionText } from "@/common/Text";
+
 import { SwitchButton } from "@/common/Button";
+import { SectionText } from "@/common/Text";
+import HistoryStep from "@/components/History/HistoryStep";
 
 interface Props {
   isPartial?: boolean;
@@ -21,7 +22,7 @@ function HistoryYear({ children }: HistoryYearProps): JSX.Element {
 
 export default function History({ isPartial = false }: Props): JSX.Element {
   return (
-    <section className={clsx("w-full mb-2", isPartial && "mt-6")} key="history">
+    <section key="history" className={clsx("w-full mb-2", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>History</SectionText>
       </div>
@@ -34,7 +35,7 @@ export default function History({ isPartial = false }: Props): JSX.Element {
           <HistoryStep time="January 2020 ~ Present" type="globe">
             Living in Tokyo, Japan.
           </HistoryStep>
-          <HistoryStep time="April 2017 ~ Present" type="school" isBottom>
+          <HistoryStep isBottom time="April 2017 ~ Present" type="school">
             Keio University, Department of Law
           </HistoryStep>
         </ul>
@@ -45,7 +46,7 @@ export default function History({ isPartial = false }: Props): JSX.Element {
               <HistoryStep time="August 2020" type="tag">
                 Selected as a Pioneer at pioneer.app
               </HistoryStep>
-              <HistoryStep time="March 2020" type="work" isBottom>
+              <HistoryStep isBottom time="March 2020" type="work">
                 Founded Sentrei, Inc.
               </HistoryStep>
             </ul>
@@ -54,31 +55,31 @@ export default function History({ isPartial = false }: Props): JSX.Element {
               <HistoryStep time="June 2018" type="fire">
                 Started hacking through fast.ai
               </HistoryStep>
-              <HistoryStep time="May 2018" type="chip" isBottom>
+              <HistoryStep isBottom time="May 2018" type="chip">
                 Quit football team
               </HistoryStep>
             </ul>
             <HistoryYear>2017</HistoryYear>
             <ul className="my-3">
-              <HistoryStep time="April 2017" type="school" isBottom>
+              <HistoryStep isBottom time="April 2017" type="school">
                 Entered Keio University
               </HistoryStep>
             </ul>
             <HistoryYear>2010</HistoryYear>
             <ul className="my-3">
-              <HistoryStep time="January 2010" type="globe" isBottom>
+              <HistoryStep isBottom time="January 2010" type="globe">
                 Moved back to Japan
               </HistoryStep>
             </ul>
             <HistoryYear>2004</HistoryYear>
             <ul className="my-3">
-              <HistoryStep time="August 2004" type="globe" isBottom>
+              <HistoryStep isBottom time="August 2004" type="globe">
                 Moved to Silicon Valley
               </HistoryStep>
             </ul>
             <HistoryYear>1998</HistoryYear>
             <ul className="my-3">
-              <HistoryStep time="October 2nd, 1998" type="cake" isBottom>
+              <HistoryStep isBottom time="October 2nd, 1998" type="cake">
                 Born at Nara City in Japan
               </HistoryStep>
             </ul>

@@ -1,4 +1,9 @@
+import clsx from "clsx";
+
+import { SwitchButton } from "@/common/Button";
+import { SectionText } from "@/common/Text";
 import SocialCard from "@/components/Social/SocialCard";
+import { SocialLinks } from "@/const";
 import {
   Bitcoin,
   Discord,
@@ -22,10 +27,6 @@ import {
   Wechat,
   Youtube,
 } from "@/icons";
-import { SocialLinks } from "@/const";
-import clsx from "clsx";
-import { SwitchButton } from "@/common/Button";
-import { SectionText } from "@/common/Text";
 
 interface Props {
   isPartial?: boolean;
@@ -33,7 +34,7 @@ interface Props {
 
 export default function Social({ isPartial = false }: Props): JSX.Element {
   return (
-    <section className={clsx("w-full mb-6", isPartial && "mt-6")} key="social">
+    <section key="social" className={clsx("w-full mb-6", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Social Accounts</SectionText>
       </div>

@@ -1,5 +1,6 @@
-import { Left, Right, Switch } from "@/icons";
 import Link, { LinkProps } from "next/link";
+
+import { Left, Right, Switch } from "@/icons";
 
 interface Props extends LinkProps {
   href: string;

@@ -1,8 +1,10 @@
 import clsx from "clsx";
+
+import Link from "next/link";
+
 import { SectionText } from "@/common/Text";
 import { ProductLinks, SocialLinks } from "@/const";
 import { Chevron } from "@/icons";
-import Link from "next/link";
 
 interface Props {
   isPartial?: boolean;

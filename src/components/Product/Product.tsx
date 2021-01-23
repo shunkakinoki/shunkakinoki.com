@@ -1,9 +1,9 @@
-import ProductCard from "@/components/Product/ProductCard";
-import { SectionText } from "@/common/Text";
-import { ProductLinks } from "@/const";
-
-import Image from "next/image";
 import clsx from "clsx";
+import Image from "next/image";
+
+import { SectionText } from "@/common/Text";
+import ProductCard from "@/components/Product/ProductCard";
+import { ProductLinks } from "@/const";
 
 interface Props {
   isPartial?: boolean;
@@ -11,7 +11,7 @@ interface Props {
 
 export default function Product({ isPartial = false }: Props): JSX.Element {
   return (
-    <section className={clsx("w-full mb-6", isPartial && "mt-6")} key="product">
+    <section key="product" className={clsx("w-full mb-6", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Products</SectionText>
       </div>

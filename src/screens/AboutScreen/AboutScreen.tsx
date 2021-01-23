@@ -1,6 +1,6 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import About from "@/components/About";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export default function AboutScreen(): JSX.Element {
   return (
