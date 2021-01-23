@@ -3,8 +3,6 @@ import { DefaultSeo } from "next-seo";
 export default function Seo(): JSX.Element {
   return (
     <DefaultSeo
-      noindex={false}
-      nofollow={false}
       title="Shun Kakinoki"
       canonical="https://shunkakinoki.com"
       description="Shun Kakinoki - Obliterate the Galaxy."
