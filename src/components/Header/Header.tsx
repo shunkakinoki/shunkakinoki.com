@@ -30,7 +30,7 @@ export default function Header(): JSX.Element {
     <nav className={s.glass}>
       <header
         role="banner"
-        className="box-border sticky z-30 flex items-center justify-between w-full max-w-3xl p-8 px-6 py-3 mx-auto my-3 leading-5 text-gray-400 align-baseline transition ease-in md:my-8 bg-opacity-60 md:py-6 sm:py-4"
+        className="box-border sticky z-30 flex items-center justify-between w-full max-w-3xl p-8 px-6 py-6 mx-auto my-6 leading-5 text-gray-400 align-baseline transition ease-in md:my-8 bg-opacity-60 md:py-6 sm:py-4"
       >
         <div className="flex items-center flex-grow flex-shrink-0 max-w-screen-sm align-baseline">
           <span className="pr-2 sm:pr-3 md:pr-5">
@@ -49,7 +49,7 @@ export default function Header(): JSX.Element {
         <div className="-my-2 -mr-2 md:hidden">
           <button
             type="button"
-            className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 dark:hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
           >
             <span className="sr-only">Open menu</span>
             <Menu />
