@@ -21,7 +21,7 @@ function FooterLink({ children, href }: FooterLinkProps): JSX.Element {
     <div className="px-5 py-2">
       <Link href={href}>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className="text-base text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">
+        <a className="text-base text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">
           {children}
         </a>
       </Link>
@@ -33,7 +33,7 @@ function FooterIconLink({ children, href }: FooterIconLinkProps): JSX.Element {
   return (
     <a
       href={href}
-      className="text-gray-400 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-200"
+      className="text-gray-400 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
       target="_blank"
       rel="noopener noreferrer"
     >
