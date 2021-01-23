@@ -1,1 +1,7 @@
-{}
+{
+  "header": {
+    "about": "About",
+    "blog": "Blog",
+    "dashboard": "Dashboard"
+  }
+}
