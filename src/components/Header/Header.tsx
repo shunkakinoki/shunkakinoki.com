@@ -4,6 +4,7 @@ import Link, { LinkProps } from "next/link";
 import s from "./Header.module.css";
 
 import DarkModeButton from "@/components/Header/DarkModeButton";
+import { Menu } from "@/icons";
 
 interface HeaderLinkProps extends LinkProps {
   children: string;
@@ -45,7 +46,16 @@ export default function Header(): JSX.Element {
             </a>
           </Link>
         </div>
-        <nav className="flex-grow flex-shrink-0 block align-baseline">
+        <div className="-my-2 -mr-2 md:hidden">
+          <button
+            type="button"
+            className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+          >
+            <span className="sr-only">Open menu</span>
+            <Menu />
+          </button>
+        </div>
+        <nav className="flex-grow flex-shrink-0 hidden align-baseline md:block">
           <ul className="flex items-center justify-end leading-5">
             <HeaderLink href="/about">{t("common:header.about")}</HeaderLink>
             <HeaderLink href="/blog">{t("common:header.blog")}</HeaderLink>
