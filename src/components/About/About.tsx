@@ -31,7 +31,7 @@ function AboutLink({ children, href }: AboutLinkProps) {
 export default function About({ isPartial }: Props): JSX.Element {
   return (
     <section className={clsx("w-full mb-6", isPartial && "mt-6")}>
-      <div className="px-3 md:px-0">
+      <div className="px-4 sm:px-3 md:px-0">
         {isPartial && (
           <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl lg:text-6xl dark:text-white">
             Hi, I’m Shun Kakinoki.
