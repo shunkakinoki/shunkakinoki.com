@@ -29,5 +29,11 @@
     "tab.activeBorder": "#1f6fd0"
   },
   "peacock.color": "#1857a4",
-  "css.validate": false
+  "css.validate": false,
+  "i18n-ally.enabledFrameworks": ["i18next", "react"],
+  "i18n-ally.enabledParsers": ["js", "json", "ts"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": ["locales"],
+  "i18n-ally.namespace": true,
+  "i18n-ally.sourceLanguage": "en",
 }

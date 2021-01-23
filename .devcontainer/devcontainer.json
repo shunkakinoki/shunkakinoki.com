@@ -8,5 +8,8 @@
     "terminal.integrated.shell.linux": "/bin/zsh"
   },
   "shutdownAction": "none",
-  "workspaceFolder": "/workspace"
+"workspaceFolder": "/workspace",
+"extensions": [
+	"lokalise.i18n-ally"
+]
 }
