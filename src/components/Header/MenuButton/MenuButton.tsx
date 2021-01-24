@@ -2,7 +2,7 @@ import useMobileMenu from "@/hooks/useMobileMenu";
 import { Menu } from "@/icons";
 
 export default function MenuButton(): JSX.Element {
-  const [isMenuOpen, setMenuOpen] = useMobileMenu();
+  const [, setMenuOpen] = useMobileMenu();
 
   return (
     <button
