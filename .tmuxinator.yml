@@ -1,0 +1,7 @@
+name: shunkakinokicom
+root: ~/ghq/github.com/shunkakinoki/shunkakinoki.com
+attach: true
+windows:
+  - zsh: neofetch
+  - zsh: neofetch
+  - zsh: neofetch

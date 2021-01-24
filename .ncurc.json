@@ -1,0 +1,5 @@
+{
+  "upgrade": true,
+  "filter": "",
+  "reject": ["react", "react-dom"]
+}

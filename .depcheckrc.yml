@@ -1,0 +1,16 @@
+ignores:
+  [
+    "@next/*",
+    "@semantic-release/*",
+    "@typescript-eslint/*",
+    "autoprefixer",
+    "eslint-*",
+    "commitizen",
+    "postcss",
+    "git-cz",
+    "stylelint-*",
+    "typescript",
+    "vercel",
+  ]
+ignore-path: .gitignore
+skip-missing: true

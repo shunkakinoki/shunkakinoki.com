@@ -1,0 +1,13 @@
+{
+  "dockerComposeFile": "docker-compose.yml",
+  "name": "codespaces",
+  "postCreateCommand": "uname -a",
+  "runServices": [],
+  "service": "codespaces",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/zsh"
+  },
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace",
+  "extensions": ["lokalise.i18n-ally"]
+}
