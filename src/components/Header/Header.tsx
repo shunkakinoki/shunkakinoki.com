@@ -1,10 +1,13 @@
 import useTranslation from "next-translate/useTranslation";
+import dynamic from "next/dynamic";
 import Link, { LinkProps } from "next/link";
 
 import s from "./Header.module.css";
 
 import DarkModeButton from "@/components/Header/DarkModeButton";
-import { Menu } from "@/icons";
+import MenuButton from "@/components/Header/MenuButton";
+
+const MobileMenu = dynamic(() => import("@/components/Header/MobileMenu"));
 
 interface HeaderLinkProps extends LinkProps {
   children: string;
@@ -24,7 +27,7 @@ export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
 }
 
 export default function Header(): JSX.Element {
-  const { t } = useTranslation("header");
+  const { t } = useTranslation();
 
   return (
     <nav className={s.glass}>
@@ -47,14 +50,9 @@ export default function Header(): JSX.Element {
           </Link>
         </div>
         <div className="-my-2 -mr-2 md:hidden">
-          <button
-            type="button"
-            className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 dark:hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-          >
-            <span className="sr-only">Open menu</span>
-            <Menu />
-          </button>
+          <MenuButton />
         </div>
+        <MobileMenu />
         <nav className="flex-grow flex-shrink-0 hidden align-baseline md:block">
           <ul className="flex items-center justify-end leading-5">
             <HeaderLink href="/about">{t("common:header.about")}</HeaderLink>
