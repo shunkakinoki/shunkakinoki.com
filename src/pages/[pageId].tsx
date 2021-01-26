@@ -33,7 +33,7 @@ GetStaticPropsContext) => {
     const page = await resolveNotionPage(pageId);
 
     if (page) {
-      const { recordMap, title } = page;
+      const { recordMap } = page;
       return {
         props: {
           recordMap: JSON.stringify(recordMap),

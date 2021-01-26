@@ -12,7 +12,7 @@ export interface Props {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   try {
-    const page = await resolveNotionPage(NotionLinks.blog);
+    const page = await resolveNotionPage(NotionLinks.mission);
 
     if (page) {
       const { recordMap } = page;
@@ -34,7 +34,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   }
 };
 
-const Blog = ({
+const Mission = ({
   recordMap,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
@@ -45,4 +45,4 @@ const Blog = ({
   );
 };
 
-export default Blog;
+export default Mission;
