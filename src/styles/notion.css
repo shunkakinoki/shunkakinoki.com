@@ -18,6 +18,10 @@
   @apply border-gray-300 dark:border-gray-400;
 }
 
+.notion-collection-header {
+  @apply text-lg font-medium leading-loose text-gray-800 align-baseline dark:text-gray-300;
+}
+
 .notion-collection-row {
   @apply hidden;
 }
