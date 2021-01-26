@@ -12,7 +12,7 @@ export interface Props {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   try {
-    const page = await resolveNotionPage(NotionLinks.blog);
+    const page = await resolveNotionPage(NotionLinks.plan);
 
     if (page) {
       const { recordMap } = page;
@@ -34,15 +34,15 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   }
 };
 
-const Blog = ({
+const plan = ({
   recordMap,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <NotionScreen
-      fullPage={false}
+      fullPage
       recordMap={JSON.parse(recordMap) as ExtendedRecordMap}
     />
   );
 };
 
-export default Blog;
+export default plan;

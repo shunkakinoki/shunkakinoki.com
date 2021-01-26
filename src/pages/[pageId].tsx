@@ -1,18 +1,36 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import {
+  GetStaticProps,
+  InferGetStaticPropsType,
+  GetStaticPaths,
+  GetStaticPropsContext,
+} from "next";
 
 import { ExtendedRecordMap } from "react-notion-x";
 
-import { NotionLinks } from "@/const";
 import { resolveNotionPage } from "@/lib/notion";
+
 import NotionScreen from "@/screens/NotionScreen";
 
 export interface Props {
   recordMap: string;
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+// eslint-disable-next-line @typescript-eslint/require-await
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    fallback: "blocking",
+    paths: [],
+  };
+};
+
+export const getStaticProps: GetStaticProps<Props> = async ({
+  params,
+}: // eslint-disable-next-line @typescript-eslint/require-await
+GetStaticPropsContext) => {
+  const pageId = params?.pageId as string;
+
   try {
-    const page = await resolveNotionPage(NotionLinks.blog);
+    const page = await resolveNotionPage(pageId);
 
     if (page) {
       const { recordMap } = page;
@@ -34,15 +52,15 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   }
 };
 
-const Blog = ({
+const PageId = ({
   recordMap,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <NotionScreen
-      fullPage={false}
+      fullPage
       recordMap={JSON.parse(recordMap) as ExtendedRecordMap}
     />
   );
 };
 
-export default Blog;
+export default PageId;
