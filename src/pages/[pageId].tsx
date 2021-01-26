@@ -9,11 +9,10 @@ import { ExtendedRecordMap } from "react-notion-x";
 
 import { resolveNotionPage } from "@/lib/notion";
 
-import PageScreen from "@/screens/PageScreen";
+import NotionScreen from "@/screens/NotionScreen";
 
 export interface Props {
   recordMap: string;
-  title: string;
 }
 
 // eslint-disable-next-line @typescript-eslint/require-await
@@ -38,7 +37,6 @@ GetStaticPropsContext) => {
       return {
         props: {
           recordMap: JSON.stringify(recordMap),
-          title: JSON.stringify(title),
         },
         revalidate: 30,
       };
@@ -56,12 +54,11 @@ GetStaticPropsContext) => {
 
 const PageId = ({
   recordMap,
-  title,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <PageScreen
+    <NotionScreen
+      fullPage
       recordMap={JSON.parse(recordMap) as ExtendedRecordMap}
-      title={JSON.parse(title) as string}
     />
   );
 };

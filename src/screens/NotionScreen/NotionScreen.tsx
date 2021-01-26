@@ -5,12 +5,15 @@ import Notion, { Props as NotionProps } from "@/components/Notion";
 
 export type Props = NotionProps;
 
-export default function PageScreen({ recordMap, title }: Props): JSX.Element {
+export default function NotionScreen({
+  fullPage,
+  recordMap,
+}: Props): JSX.Element {
   return (
     <>
       <Header />
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto">
-        <Notion recordMap={recordMap} title={title} />
+        <Notion fullPage={fullPage} recordMap={recordMap} />
         <Newsletter />
       </div>
       <Footer />

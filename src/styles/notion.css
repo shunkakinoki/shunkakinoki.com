@@ -1,0 +1,47 @@
+.notion {
+  @apply bg-white dark:bg-black;
+}
+
+.notion-gallery {
+  @apply border-0;
+}
+
+.notion-collection-card {
+  @apply transform hover:bg-white hover:shadow-xl hover:opacity-80;
+}
+
+.notion-collection-card-body {
+  @apply text-gray-600 bg-gray-100 dark:bg-gray-700 dark:text-gray-300;
+}
+
+.notion-collection-card-cover {
+  @apply border-gray-300 dark:border-gray-400;
+}
+
+.notion-collection-row {
+  @apply hidden;
+}
+
+.notion-gallery-grid {
+  @apply border-transparent border-white;
+}
+
+.notion-header {
+  @apply hidden;
+}
+
+.notion-page-cover {
+  @apply rounded-sm;
+}
+
+.notion-title {
+  @apply text-3xl text-gray-700 dark:text-gray-300;
+}
+
+.notion-h {
+  @apply text-gray-600 dark:text-gray-300;
+}
+
+.notion-text {
+  @apply text-gray-500 dark:text-gray-400;
+}

@@ -4,11 +4,10 @@ import { ExtendedRecordMap } from "react-notion-x";
 
 import { NotionLinks } from "@/const";
 import { resolveNotionPage } from "@/lib/notion";
-import BlogScreen from "@/screens/BlogScreen";
+import NotionScreen from "@/screens/NotionScreen";
 
 export interface Props {
   recordMap: string;
-  title: string;
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
@@ -20,7 +19,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       return {
         props: {
           recordMap: JSON.stringify(recordMap),
-          title: JSON.stringify(title),
         },
         revalidate: 30,
       };
@@ -38,12 +36,11 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const Blog = ({
   recordMap,
-  title,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
-    <BlogScreen
+    <NotionScreen
+      fullPage={false}
       recordMap={JSON.parse(recordMap) as ExtendedRecordMap}
-      title={JSON.parse(title) as string}
     />
   );
 };
