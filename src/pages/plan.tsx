@@ -39,7 +39,7 @@ const plan = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <NotionScreen
-      fullPage={false}
+      fullPage
       recordMap={JSON.parse(recordMap) as ExtendedRecordMap}
     />
   );
