@@ -829,13 +829,13 @@
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
   integrity sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==
 
-"@typescript-eslint/eslint-plugin@^4.14.0":
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.14.0.tgz#92db8e7c357ed7d69632d6843ca70b71be3a721d"
-  integrity sha512-IJ5e2W7uFNfg4qh9eHkHRUCbgZ8VKtGwD07kannJvM5t/GU8P8+24NX8gi3Hf5jST5oWPY8kyV1s/WtfiZ4+Ww==
+"@typescript-eslint/eslint-plugin@^4.14.1":
+  version "4.14.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.14.1.tgz#22dd301ce228aaab3416b14ead10b1db3e7d3180"
+  integrity sha512-5JriGbYhtqMS1kRcZTQxndz1lKMwwEXKbwZbkUZNnp6MJX0+OVXnG0kOlBZP4LUAxEyzu3cs+EXd/97MJXsGfw==
   dependencies:
-    "@typescript-eslint/experimental-utils" "4.14.0"
-    "@typescript-eslint/scope-manager" "4.14.0"
+    "@typescript-eslint/experimental-utils" "4.14.1"
+    "@typescript-eslint/scope-manager" "4.14.1"
     debug "^4.1.1"
     functional-red-black-tree "^1.0.1"
     lodash "^4.17.15"
@@ -843,48 +843,48 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@typescript-eslint/experimental-utils@4.14.0":
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-4.14.0.tgz#5aa7b006736634f588a69ee343ca959cd09988df"
-  integrity sha512-6i6eAoiPlXMKRbXzvoQD5Yn9L7k9ezzGRvzC/x1V3650rUk3c3AOjQyGYyF9BDxQQDK2ElmKOZRD0CbtdkMzQQ==
+"@typescript-eslint/experimental-utils@4.14.1":
+  version "4.14.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-4.14.1.tgz#a5c945cb24dabb96747180e1cfc8487f8066f471"
+  integrity sha512-2CuHWOJwvpw0LofbyG5gvYjEyoJeSvVH2PnfUQSn0KQr4v8Dql2pr43ohmx4fdPQ/eVoTSFjTi/bsGEXl/zUUQ==
   dependencies:
     "@types/json-schema" "^7.0.3"
-    "@typescript-eslint/scope-manager" "4.14.0"
-    "@typescript-eslint/types" "4.14.0"
-    "@typescript-eslint/typescript-estree" "4.14.0"
+    "@typescript-eslint/scope-manager" "4.14.1"
+    "@typescript-eslint/types" "4.14.1"
+    "@typescript-eslint/typescript-estree" "4.14.1"
     eslint-scope "^5.0.0"
     eslint-utils "^2.0.0"
 
-"@typescript-eslint/parser@^4.14.0":
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-4.14.0.tgz#62d4cd2079d5c06683e9bfb200c758f292c4dee7"
-  integrity sha512-sUDeuCjBU+ZF3Lzw0hphTyScmDDJ5QVkyE21pRoBo8iDl7WBtVFS+WDN3blY1CH3SBt7EmYCw6wfmJjF0l/uYg==
+"@typescript-eslint/parser@^4.14.1":
+  version "4.14.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-4.14.1.tgz#3bd6c24710cd557d8446625284bcc9c6d52817c6"
+  integrity sha512-mL3+gU18g9JPsHZuKMZ8Z0Ss9YP1S5xYZ7n68Z98GnPq02pYNQuRXL85b9GYhl6jpdvUc45Km7hAl71vybjUmw==
   dependencies:
-    "@typescript-eslint/scope-manager" "4.14.0"
-    "@typescript-eslint/types" "4.14.0"
-    "@typescript-eslint/typescript-estree" "4.14.0"
+    "@typescript-eslint/scope-manager" "4.14.1"
+    "@typescript-eslint/types" "4.14.1"
+    "@typescript-eslint/typescript-estree" "4.14.1"
     debug "^4.1.1"
 
-"@typescript-eslint/scope-manager@4.14.0":
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/scope-manager/-/scope-manager-4.14.0.tgz#55a4743095d684e1f7b7180c4bac2a0a3727f517"
-  integrity sha512-/J+LlRMdbPh4RdL4hfP1eCwHN5bAhFAGOTsvE6SxsrM/47XQiPSgF5MDgLyp/i9kbZV9Lx80DW0OpPkzL+uf8Q==
+"@typescript-eslint/scope-manager@4.14.1":
+  version "4.14.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/scope-manager/-/scope-manager-4.14.1.tgz#8444534254c6f370e9aa974f035ced7fe713ce02"
+  integrity sha512-F4bjJcSqXqHnC9JGUlnqSa3fC2YH5zTtmACS1Hk+WX/nFB0guuynVK5ev35D4XZbdKjulXBAQMyRr216kmxghw==
   dependencies:
-    "@typescript-eslint/types" "4.14.0"
-    "@typescript-eslint/visitor-keys" "4.14.0"
+    "@typescript-eslint/types" "4.14.1"
+    "@typescript-eslint/visitor-keys" "4.14.1"
 
-"@typescript-eslint/types@4.14.0":
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-4.14.0.tgz#d8a8202d9b58831d6fd9cee2ba12f8a5a5dd44b6"
-  integrity sha512-VsQE4VvpldHrTFuVPY1ZnHn/Txw6cZGjL48e+iBxTi2ksa9DmebKjAeFmTVAYoSkTk7gjA7UqJ7pIsyifTsI4A==
+"@typescript-eslint/types@4.14.1":
+  version "4.14.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-4.14.1.tgz#b3d2eb91dafd0fd8b3fce7c61512ac66bd0364aa"
+  integrity sha512-SkhzHdI/AllAgQSxXM89XwS1Tkic7csPdndUuTKabEwRcEfR8uQ/iPA3Dgio1rqsV3jtqZhY0QQni8rLswJM2w==
 
-"@typescript-eslint/typescript-estree@4.14.0":
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-4.14.0.tgz#4bcd67486e9acafc3d0c982b23a9ab8ac8911ed7"
-  integrity sha512-wRjZ5qLao+bvS2F7pX4qi2oLcOONIB+ru8RGBieDptq/SudYwshveORwCVU4/yMAd4GK7Fsf8Uq1tjV838erag==
+"@typescript-eslint/typescript-estree@4.14.1":
+  version "4.14.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-4.14.1.tgz#20d3b8c8e3cdc8f764bdd5e5b0606dd83da6075b"
+  integrity sha512-M8+7MbzKC1PvJIA8kR2sSBnex8bsR5auatLCnVlNTJczmJgqRn8M+sAlQfkEq7M4IY3WmaNJ+LJjPVRrREVSHQ==
   dependencies:
-    "@typescript-eslint/types" "4.14.0"
-    "@typescript-eslint/visitor-keys" "4.14.0"
+    "@typescript-eslint/types" "4.14.1"
+    "@typescript-eslint/visitor-keys" "4.14.1"
     debug "^4.1.1"
     globby "^11.0.1"
     is-glob "^4.0.1"
@@ -892,18 +892,18 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@typescript-eslint/visitor-keys@4.14.0":
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-4.14.0.tgz#b1090d9d2955b044b2ea2904a22496849acbdf54"
-  integrity sha512-MeHHzUyRI50DuiPgV9+LxcM52FCJFYjJiWHtXlbyC27b80mfOwKeiKI+MHOTEpcpfmoPFm/vvQS88bYIx6PZTA==
+"@typescript-eslint/visitor-keys@4.14.1":
+  version "4.14.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-4.14.1.tgz#e93c2ff27f47ee477a929b970ca89d60a117da91"
+  integrity sha512-TAblbDXOI7bd0C/9PE1G+AFo7R5uc+ty1ArDoxmrC1ah61Hn6shURKy7gLdRb1qKJmjHkqu5Oq+e4Kt0jwf1IA==
   dependencies:
-    "@typescript-eslint/types" "4.14.0"
+    "@typescript-eslint/types" "4.14.1"
     eslint-visitor-keys "^2.0.0"
 
-"@vercel/build-utils@2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@vercel/build-utils/-/build-utils-2.7.0.tgz#b187a4ad970352d81b8f5f974c215f1268867727"
-  integrity sha512-WyTjeFpIOfUTLWB+LrJEAbs03SKD0lcA26CMt2tzPF+jaGL/hjCcRxkZJhMSRUu3LAesjKtQ7zGUuFtV0l5S3w==
+"@vercel/build-utils@2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@vercel/build-utils/-/build-utils-2.8.0.tgz#9da9d002aaa39192b4260998566b935b598fdd3e"
+  integrity sha512-iLL7GjscjZhDSiv2XOnatGw/+POnTTo/jvyJHrHGgjQPB4AvbnkvAcJrujg26cLD1S4ussfAssS938PBM+Ozdw==
 
 "@vercel/go@1.1.7":
   version "1.1.7"
@@ -7322,14 +7322,14 @@ normalize-url@^5.0.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-5.3.0.tgz#8959b3cdaa295b61592c1f245dded34b117618dd"
   integrity sha512-9/nOVLYYe/dO/eJeQUNaGUF4m4Z5E7cb9oNTKabH+bNf19mqj60txTcveQxL0GlcWLXCxkOu2/LwL8oW0idIDA==
 
-notion-client@^3.2.6:
-  version "3.2.6"
-  resolved "https://registry.yarnpkg.com/notion-client/-/notion-client-3.2.6.tgz#812277b1135ab778074163a73b3a92ffd6762876"
-  integrity sha512-HPfbaQl3AF0MG4z9BxeqGnslL0Y2sCSG4g8NZ3ggLCYUkT79/PWH5fskmz8uac6EJiDByRSncyOYFwxhAscgqw==
+notion-client@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/notion-client/-/notion-client-3.4.2.tgz#bcf3e54378a497cb039526847863ed71c3f4dfd7"
+  integrity sha512-snjvszG7xq+55ErO7CgmnOUlHJ95KR8laZ2UMjb3+Jup2ytrOjkCT6PVLE/z3IErRjkT2eLUvHrZqU2QLoW5dw==
   dependencies:
     node-fetch "^2.6.1"
     notion-types "^3.1.1"
-    notion-utils "^3.2.6"
+    notion-utils "^3.4.2"
     p-map "^4.0.0"
 
 notion-types@^3.1.1:
@@ -7337,10 +7337,10 @@ notion-types@^3.1.1:
   resolved "https://registry.yarnpkg.com/notion-types/-/notion-types-3.1.1.tgz#a617a8af0fe8b11e12d6a502ca41e6ee771370f7"
   integrity sha512-QhePG1KEela7yJ5lIH7VJG+hVM3MFcwYFsPStVliruU9aMxwNDnFJtGs3zyGWaM0l+wQNbO5EYLr2B8HdwYKSA==
 
-notion-utils@^3.2.6:
-  version "3.2.6"
-  resolved "https://registry.yarnpkg.com/notion-utils/-/notion-utils-3.2.6.tgz#aefd50da0cf9fd59335f693e30e68660d2d2f225"
-  integrity sha512-xBp6WrC1vKU0XnDnH/K8MQ8W4Wqy6SEmNCAe8e20tvZskGHGEnhc2bybFvOYE7Y/UxysoE3MSVKCxZD409kMWQ==
+notion-utils@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/notion-utils/-/notion-utils-3.4.2.tgz#71cf2fc2ed144fc85a4b485f44624aebd3e2e783"
+  integrity sha512-IyS8ZNllzHKF+XGzN5dask2Y9pMtv5paGBd5ZkM1ibWxiV9Ji5/sXzihoNEkesGjYjU0ZthOJ3sf5+RGu6hemg==
   dependencies:
     notion-types "^3.1.1"
     p-queue "^6.6.1"
@@ -7365,10 +7365,10 @@ npm-cache-filename@~1.0.2:
   resolved "https://registry.yarnpkg.com/npm-cache-filename/-/npm-cache-filename-1.0.2.tgz#ded306c5b0bfc870a9e9faf823bc5f283e05ae11"
   integrity sha1-3tMGxbC/yHCp6fr4I7xfKD4FrhE=
 
-npm-check-updates@^11.0.2:
-  version "11.0.2"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.0.2.tgz#c238efc9833a016b2e11aaec6282e79d016fc78a"
-  integrity sha512-Ck+9Yq6B/N50y6lmGN0bLX1/TEseb/0xTWSAbfia1NVDH2uAzcAhwAgJbkOTqQuM+O6KC80liXTk8tC1w2PKOA==
+npm-check-updates@^11.1.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.1.0.tgz#e5a58330cbdb1644aa09be52b859ea7c60438dc2"
+  integrity sha512-ET2ahR8L6Kzb2txzgXa2mLGkVIx+Lr23UstS5EPHhcDN1FSfhdzlNtJYsR2vvEe9Tu9AALtJp3K8AaRw2ePB9w==
   dependencies:
     chalk "^4.1.0"
     cint "^8.2.1"
@@ -8964,10 +8964,10 @@ react-modal@^3.11.2:
     react-lifecycles-compat "^3.0.0"
     warning "^4.0.3"
 
-react-notion-x@^3.3.3:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/react-notion-x/-/react-notion-x-3.3.3.tgz#57490cf86971ad05571b09f78242842fc055d54d"
-  integrity sha512-JnAhyM8/gFVDbGTrG1GDwgUvQfcq281uSybjB4j3QiZiuj5+C35e6bvjalhz9ZiDqMWoJkf5GtVCAN0ZtWc4gw==
+react-notion-x@^3.4.5:
+  version "3.4.5"
+  resolved "https://registry.yarnpkg.com/react-notion-x/-/react-notion-x-3.4.5.tgz#5d709a9110667cfc3830db2c71e20c3018ea202a"
+  integrity sha512-kOhHx/yDNBJkPXRHZptwEXeI+GoDaKC9OO8n3PdrUEGCTFCwEk/N8TZAHAm37djWm81KAoMZwGSiy+qJ1Lkv9g==
   dependencies:
     "@matejmazur/react-katex" "^3.1.3"
     date-fns "^2.15.0"
@@ -8977,7 +8977,7 @@ react-notion-x@^3.3.3:
     lodash.throttle "^4.1.1"
     medium-zoom "^1.0.6"
     notion-types "^3.1.1"
-    notion-utils "^3.2.6"
+    notion-utils "^3.4.2"
     prismjs "^1.20.0"
     rc-dropdown "^3.1.2"
     rc-menu "^8.5.2"
@@ -11382,12 +11382,12 @@ validate-npm-package-name@^3.0.0, validate-npm-package-name@~3.0.0:
   dependencies:
     builtins "^1.0.3"
 
-vercel@^21.1.0:
-  version "21.1.0"
-  resolved "https://registry.yarnpkg.com/vercel/-/vercel-21.1.0.tgz#dd118bb89b1c2eee078437eac7f6f71ff4f80ea9"
-  integrity sha512-01NKN1V7oAq4oxkm7OPw/SNMsnF+UPX2OTgq5SxUKyZlz34aqvj+LvEjs4KWNGXFzTAelmuFze7VOObvmB7mug==
+vercel@^21.2.0:
+  version "21.2.0"
+  resolved "https://registry.yarnpkg.com/vercel/-/vercel-21.2.0.tgz#c049d1ba516e75b7ea3ac0c481046db93237eead"
+  integrity sha512-r6XVbfDNCX+nyb8ljEHcl0MtggX8rgxg5N7pMgxQQDj9vofSLFf7yeUgTL4BIK/jqTFKGWe/iMmlvrCWMjpziQ==
   dependencies:
-    "@vercel/build-utils" "2.7.0"
+    "@vercel/build-utils" "2.8.0"
     "@vercel/go" "1.1.7"
     "@vercel/node" "1.9.0"
     "@vercel/python" "1.2.4"
