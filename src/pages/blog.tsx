@@ -1,13 +1,9 @@
-import {
-  NextPage,
-  GetStaticProps,
-  InferGetStaticPropsType,
-  GetStaticPropsContext,
-} from "next";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 
 import { ExtendedRecordMap } from "react-notion-x";
 
-import { resolveNotionCollection } from "@/lib/notion";
+import { NotionLinks } from "@/const";
+import { resolveNotionPage } from "@/lib/notion";
 import BlogScreen from "@/screens/BlogScreen";
 
 export interface Props {
@@ -15,21 +11,24 @@ export interface Props {
   title: string;
 }
 
-export const getStaticProps: GetStaticProps<Props> = async ({
-  params,
-}: // eslint-disable-next-line @typescript-eslint/require-await
-GetStaticPropsContext) => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   try {
-    const page = await resolveNotionCollection("blog");
-    const { recordMap, title } = page;
+    const page = await resolveNotionPage(NotionLinks.blog);
 
-    return {
-      props: {
-        recordMap: JSON.stringify(recordMap),
-        title: JSON.stringify(title),
-      },
-      revalidate: 30,
-    };
+    if (page) {
+      const { recordMap, title } = page;
+      return {
+        props: {
+          recordMap: JSON.stringify(recordMap),
+          title: JSON.stringify(title),
+        },
+        revalidate: 30,
+      };
+    } else {
+      return {
+        notFound: true,
+      };
+    }
   } catch (error) {
     return {
       notFound: true,
