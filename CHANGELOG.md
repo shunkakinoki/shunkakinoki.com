@@ -1,3 +1,23 @@
+# [1.1.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.0.0...v1.1.0) (2021-01-26)
+
+### Features
+
+- 🎸 ini notion blog ([ed2cf33](https://github.com/shunkakinoki/shunkakinoki.com/commit/ed2cf334e2f89c6eae408f2999aa26eb4619e132))
+- 🎸 ini notion blog ([f22b942](https://github.com/shunkakinoki/shunkakinoki.com/commit/f22b942a950676a505b56c682de54933e6df364f))
+- 🎸 ini notion packages ([0bbf0a9](https://github.com/shunkakinoki/shunkakinoki.com/commit/0bbf0a91a99102b325a5fce4175acb2657777086))
+- 🎸 ini notion page ([21e956e](https://github.com/shunkakinoki/shunkakinoki.com/commit/21e956efb172ffa564aaa0fdd608e8627bbfd705))
+- 🎸 ini notion pages ([415200d](https://github.com/shunkakinoki/shunkakinoki.com/commit/415200d2723432bae9ee1f53a3ca8ff2a756e622))
+- 🎸 ini notion screen ([1e3984d](https://github.com/shunkakinoki/shunkakinoki.com/commit/1e3984decac1158adf11e40f8b33e10fb3c8a7d1))
+- 🎸 ini page screen ([36b1faf](https://github.com/shunkakinoki/shunkakinoki.com/commit/36b1faff25531fa06d2070bbeb9461611aeb0122))
+
+### Performance Improvements
+
+- ⚡️ ini collection header ([ddfdd80](https://github.com/shunkakinoki/shunkakinoki.com/commit/ddfdd808483494405cd7b4d6606f1a979eaea0d9))
+- ⚡️ ini plan fullPage ([945a47d](https://github.com/shunkakinoki/shunkakinoki.com/commit/945a47d58c72883727c498c7c2ac633347da0c69))
+- ⚡️ refactor notion title ([25fe531](https://github.com/shunkakinoki/shunkakinoki.com/commit/25fe531010caf7786f212938d833697fc4963ef3))
+- ⚡️ upgrade react notion ([99c9a6c](https://github.com/shunkakinoki/shunkakinoki.com/commit/99c9a6c5ebe8028460ee24edeb2f6e5a2bc56c39))
+- ⚡️ upgrade with notion ([afa7739](https://github.com/shunkakinoki/shunkakinoki.com/commit/afa77399fdeefcbecb8090d28a1a9d0adec6511c))
+
 # 1.0.0 (2021-01-24)
 
 ### Features
