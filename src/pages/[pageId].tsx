@@ -4,10 +4,10 @@ import {
   GetStaticPaths,
   GetStaticPropsContext,
 } from "next";
-import { NotionAPI } from "notion-client";
-import { getPageTitle, getAllPagesInSpace } from "notion-utils";
 
 import { ExtendedRecordMap } from "react-notion-x";
+
+import { resolveNotionPage } from "@/lib/notion";
 
 import PageScreen from "@/screens/PageScreen";
 
@@ -15,8 +15,6 @@ export interface Props {
   recordMap: string;
   title: string;
 }
-
-const notion = new NotionAPI();
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -30,18 +28,25 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   params,
 }: // eslint-disable-next-line @typescript-eslint/require-await
 GetStaticPropsContext) => {
-  try {
-    const pageId = params?.pageId as string;
-    const recordMap = await notion.getPage(pageId);
-    const title = getPageTitle(recordMap);
+  const pageId = params?.pageId as string;
 
-    return {
-      props: {
-        recordMap: JSON.stringify(recordMap),
-        title: JSON.stringify(title),
-      },
-      revalidate: 30,
-    };
+  try {
+    const page = await resolveNotionPage(pageId);
+
+    if (page) {
+      const { recordMap, title } = page;
+      return {
+        props: {
+          recordMap: JSON.stringify(recordMap),
+          title: JSON.stringify(title),
+        },
+        revalidate: 30,
+      };
+    } else {
+      return {
+        notFound: true,
+      };
+    }
   } catch (error) {
     return {
       notFound: true,
