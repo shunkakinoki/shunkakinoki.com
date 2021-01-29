@@ -1,6 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 
-import { ExtendedRecordMap } from "react-notion-x";
+import { ExtendedRecordMap } from "notion-types";
 
 import { NotionLinks } from "@/const";
 import { resolveNotionPage } from "@/lib/notion";

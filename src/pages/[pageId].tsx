@@ -5,7 +5,7 @@ import {
   GetStaticPropsContext,
 } from "next";
 
-import { ExtendedRecordMap } from "react-notion-x";
+import { ExtendedRecordMap } from "notion-types";
 
 import { resolveNotionPage } from "@/lib/notion";
 

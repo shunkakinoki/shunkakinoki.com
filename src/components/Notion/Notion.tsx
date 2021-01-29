@@ -2,7 +2,8 @@
 
 import { useTheme } from "next-themes";
 import Link, { LinkProps } from "next/link";
-import { NotionRenderer, ExtendedRecordMap } from "react-notion-x";
+import { ExtendedRecordMap } from "notion-types";
+import { NotionRenderer } from "react-notion-x";
 import { NotionRendererProps } from "react-notion-x/build/esm/renderer";
 import "react-notion-x/src/styles.css";
 
