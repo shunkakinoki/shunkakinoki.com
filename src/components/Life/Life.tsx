@@ -21,7 +21,7 @@ interface Props {
 
 export default function Life({ isPartial = false }: Props): JSX.Element {
   return (
-    <section key="Life" className={clsx("w-full mb-6", isPartial && "mt-6")}>
+    <section key="Life" className={clsx("w-full mb-2", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Life</SectionText>
       </div>
