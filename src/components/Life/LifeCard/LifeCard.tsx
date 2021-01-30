@@ -35,14 +35,22 @@ export default function LifeCard({
         <span
           className={clsx(
             "inline-flex p-3 rounded-lg ring-4 ring-white dark:ring-black",
-            color === "blue" && "text-blue-700 bg-blue-50",
-            color === "gray" && "text-gray-700 bg-gray-50",
-            color === "green" && "text-green-700 bg-green-50",
-            color === "indigo" && "text-indigo-700 bg-indigo-50",
-            color === "pink" && "text-pink-700 bg-pink-50",
-            color === "purple" && "text-purple-700 bg-purple-50",
-            color === "red" && "text-red-700 bg-red-50",
-            color === "yellow" && "text-yellow-700 bg-yellow-50"
+            color === "blue" &&
+              "text-blue-700 bg-blue-50 dark:text-blue-50 dark:bg-blue-700",
+            color === "gray" &&
+              "text-gray-700 bg-gray-50 dark:text-gray-50 dark:bg-gray-700",
+            color === "green" &&
+              "text-green-700 bg-green-50 dark:text-green-50 dark:bg-green-700",
+            color === "indigo" &&
+              "text-indigo-700 bg-indigo-50 dark:text-indigo-50 dark:bg-indigo-700",
+            color === "pink" &&
+              "text-pink-700 bg-pink-50 dark:text-pink-50 dark:bg-pink-700",
+            color === "purple" &&
+              "text-purple-700 bg-purple-50 dark:text-purple-50 dark:bg-purple-700",
+            color === "red" &&
+              "text-red-700 bg-red-50 dark:text-red-50 dark:bg-red-700",
+            color === "yellow" &&
+              "text-yellow-700 bg-yellow-50 dark:text-yellow-50 dark:bg-yellow-700"
           )}
         >
           {children}

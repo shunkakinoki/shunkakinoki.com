@@ -56,12 +56,12 @@ export default function Life({ isPartial = false }: Props): JSX.Element {
           <Notebook />
         </LifeCard>
         {!isPartial && (
-          <LifeCard color="blue" name="Perseverance" href="/perseverance">
+          <LifeCard color="yellow" name="Perseverance" href="/perseverance">
             <Perseverance />
           </LifeCard>
         )}
         {!isPartial && (
-          <LifeCard hidden color="yellow" name="Resource" href="/resource">
+          <LifeCard hidden color="purple" name="Resource" href="/resource">
             <Resource />
           </LifeCard>
         )}

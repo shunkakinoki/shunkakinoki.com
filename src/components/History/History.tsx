@@ -88,7 +88,7 @@ export default function History({ isPartial = false }: Props): JSX.Element {
       </div>
       <div className="flex justify-center w-full">
         <SwitchButton
-          href={isPartial ? "/history" : "/"}
+          href={isPartial ? "/history" : "/#history"}
           type={isPartial ? "right" : "left"}
         />
       </div>

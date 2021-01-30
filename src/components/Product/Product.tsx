@@ -13,7 +13,7 @@ export default function Product({ isPartial = false }: Props): JSX.Element {
   return (
     <section key="product" className={clsx("w-full mb-6", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
-        <SectionText isPartial={isPartial}>Products</SectionText>
+        <SectionText isPartial={isPartial}>Product</SectionText>
       </div>
       <div className="flex-col items-center w-full px-6 mt-3 sm:px-4 md:px-0">
         <ul
