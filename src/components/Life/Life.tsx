@@ -24,7 +24,7 @@ export default function Life({ isPartial = false }: Props): JSX.Element {
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Life</SectionText>
       </div>
-      <div className="overflow-hidden bg-gray-200 rounded-lg shadow divide-y divide-gray-200 dark:bg-gray-400 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-0.5 md:grid-cols-3">
+      <div className="overflow-hidden bg-gray-200 shadow divide-y divide-gray-200 dark:bg-gray-400 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-0.5 md:grid-cols-3">
         <LifeCard color="red" name="Action" href="/action">
           <Action />
         </LifeCard>

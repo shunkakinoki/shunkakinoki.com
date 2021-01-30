@@ -23,11 +23,11 @@ export default function LifeCard({
   href,
 }: Props): JSX.Element {
   return (
-    <div className="relative p-6 bg-white sm:rounded-tr-none group focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500">
+    <div className="relative p-6 bg-white hover:bg-gray-50 dark:bg-black group dark:hover:bg-gray-900 sm:rounded-tr-none focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500">
       <div>
         <span
           className={clsx(
-            "inline-flex p-3 rounded-lg  ring-4 ring-white",
+            "inline-flex p-3 rounded-lg ring-4 ring-white dark:ring-black",
             color === "blue" && "text-blue-700 bg-blue-50",
             color === "gray" && "text-gray-700 bg-gray-50",
             color === "green" && "text-green-700 bg-green-50",
@@ -42,7 +42,7 @@ export default function LifeCard({
         </span>
       </div>
       <div className="mt-8">
-        <h3 className="text-lg font-medium text-black ">
+        <h3 className="text-lg font-medium text-black dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-100">
           <Link href={href}>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a className="focus:outline-none">
@@ -53,7 +53,7 @@ export default function LifeCard({
         </h3>
       </div>
       <span
-        className="absolute text-gray-300 pointer-events-none top-6 right-6 group-hover:text-gray-400"
+        className="absolute text-gray-300 pointer-events-none top-6 right-6 group-hover:text-gray-400 dark:text-gray-700"
         aria-hidden="true"
       >
         <svg
