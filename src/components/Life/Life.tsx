@@ -1,5 +1,6 @@
 import clsx from "clsx";
 
+import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
 import LifeCard from "@/components/Life/LifeCard";
 import {
@@ -24,9 +25,9 @@ export default function Life({ isPartial = false }: Props): JSX.Element {
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Life</SectionText>
       </div>
-      <div className="overflow-hidden bg-gray-200 shadow divide-y divide-gray-200 dark:bg-gray-400 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-0.5 md:grid-cols-3">
+      <div className="overflow-hidden bg-gray-200 shadow-lg divide-y divide-gray-200 dark:bg-gray-400 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-0.5 md:grid-cols-3">
         {!isPartial && (
-          <LifeCard color="red" name="Action" href="/action">
+          <LifeCard color="pink" name="Action" href="/action">
             <Action />
           </LifeCard>
         )}
@@ -35,7 +36,7 @@ export default function Life({ isPartial = false }: Props): JSX.Element {
             <Bible />
           </LifeCard>
         )}
-        <LifeCard color="blue" name="Diary" href="/diary">
+        <LifeCard color="red" name="Diary" href="/diary">
           <Diary />
         </LifeCard>
         {!isPartial && (
@@ -43,29 +44,35 @@ export default function Life({ isPartial = false }: Props): JSX.Element {
             <Excerpt />
           </LifeCard>
         )}
-        <LifeCard color="pink" name="Habit" href="/habit">
+        <LifeCard color="blue" name="Habit" href="/habit">
           <Habit />
         </LifeCard>
         {!isPartial && (
-          <LifeCard color="green" name="Insight" href="/insight">
+          <LifeCard color="gray" name="Insight" href="/insight">
             <Insight />
           </LifeCard>
         )}
-        {!isPartial && (
-          <LifeCard color="gray" name="Notebook" href="/notebook">
-            <Notebook />
-          </LifeCard>
-        )}
+        <LifeCard color="green" name="Notebook" href="/notebook">
+          <Notebook />
+        </LifeCard>
         {!isPartial && (
           <LifeCard color="blue" name="Perseverance" href="/perseverance">
             <Perseverance />
           </LifeCard>
         )}
         {!isPartial && (
-          <LifeCard color="yellow" name="Resource" href="/resource">
+          <LifeCard hidden color="yellow" name="Resource" href="/resource">
             <Resource />
           </LifeCard>
         )}
+      </div>
+      <div className="w-full pt-3 my-3 leading-5 text-center">
+        <div className="flex justify-center w-full">
+          <SwitchButton
+            href={isPartial ? "/about" : "/#life"}
+            type={isPartial ? "right" : "left"}
+          />
+        </div>
       </div>
     </section>
   );
