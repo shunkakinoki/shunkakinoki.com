@@ -57,7 +57,7 @@ export default function LifeCard({
         </span>
       </div>
       <div className="mt-8">
-        <h3 className="text-lg font-medium text-black dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-100">
+        <h3 className="text-lg font-medium text-black dark:text-gray-300 group-hover:text-gray-600 dark:group-hover:text-gray-100">
           <Link href={href}>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a className="focus:outline-none">
