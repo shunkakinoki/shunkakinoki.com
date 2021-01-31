@@ -43,7 +43,7 @@ export default function Header(): JSX.Element {
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
               aria-current="page"
-              className="text-base text-transparent lg:text-2xl md:text-xl hover:underline bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
+              className="text-xl text-transparent lg:text-2xl hover:underline bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
             >
               shunkakinoki
             </a>

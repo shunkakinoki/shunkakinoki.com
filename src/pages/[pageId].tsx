@@ -5,15 +5,33 @@ import {
   GetStaticPropsContext,
 } from "next";
 
-import { ExtendedRecordMap } from "react-notion-x";
+import { MdxRemote } from "next-mdx-remote/types";
+import { ExtendedRecordMap } from "notion-types";
 
+import { NotionLinks } from "@/const";
+import { getBlogContent } from "@/lib/github";
 import { resolveNotionPage } from "@/lib/notion";
-
+import BlogScreen from "@/screens/BlogScreen";
 import NotionScreen from "@/screens/NotionScreen";
 
 export interface Props {
-  recordMap: string;
+  content: string;
+  frontMatter?: string;
+  type: "blog" | "collection" | "page";
 }
+
+const notionCollections = [
+  "action",
+  "bible",
+  "diary",
+  "endeavor",
+  "excerpt",
+  "habit",
+  "insight",
+  "notebook",
+  "perseverance",
+  "resource",
+];
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -25,18 +43,85 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props> = async ({
   params,
+  locale,
 }: // eslint-disable-next-line @typescript-eslint/require-await
 GetStaticPropsContext) => {
   const pageId = params?.pageId as string;
+  let notionCollection;
+
+  if (notionCollections.includes(pageId)) {
+    switch (pageId) {
+      case "action": {
+        notionCollection = NotionLinks.action;
+        break;
+      }
+      case "bible": {
+        notionCollection = NotionLinks.bible;
+        break;
+      }
+      case "diary": {
+        notionCollection = NotionLinks.diary;
+        break;
+      }
+      case "endeavor": {
+        notionCollection = NotionLinks.endeavor;
+        break;
+      }
+      case "excerpt": {
+        notionCollection = NotionLinks.excerpt;
+        break;
+      }
+      case "habit": {
+        notionCollection = NotionLinks.habit;
+        break;
+      }
+      case "insight": {
+        notionCollection = NotionLinks.insight;
+        break;
+      }
+      case "notebook": {
+        notionCollection = NotionLinks.notebook;
+        break;
+      }
+      case "perseverance": {
+        notionCollection = NotionLinks.perseverance;
+        break;
+      }
+      case "resource": {
+        notionCollection = NotionLinks.resource;
+        break;
+      }
+      default:
+        break;
+    }
+  }
+
+  if (!notionCollection) {
+    try {
+      const result = await getBlogContent(pageId, locale);
+      if (result) {
+        const { frontMatter, source } = result;
+        return {
+          props: {
+            content: JSON.stringify(source),
+            frontMatter: JSON.stringify(frontMatter),
+            type: "blog",
+          },
+          revalidate: 30,
+        };
+      }
+    } catch {}
+  }
 
   try {
-    const page = await resolveNotionPage(pageId);
+    const page = await resolveNotionPage(notionCollection || pageId);
 
     if (page) {
       const { recordMap } = page;
       return {
         props: {
-          recordMap: JSON.stringify(recordMap),
+          content: JSON.stringify(recordMap),
+          type: notionCollection ? "collection" : "page",
         },
         revalidate: 30,
       };
@@ -53,12 +138,23 @@ GetStaticPropsContext) => {
 };
 
 const PageId = ({
-  recordMap,
+  content,
+  frontMatter,
+  type,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+  if (content && frontMatter && type === "blog") {
+    return (
+      <BlogScreen
+        frontMatter={JSON.parse(frontMatter) as { [key: string]: any }}
+        source={JSON.parse(content) as MdxRemote.Source}
+      />
+    );
+  }
+
   return (
     <NotionScreen
-      fullPage
-      recordMap={JSON.parse(recordMap) as ExtendedRecordMap}
+      fullPage={type === "collection" ? false : true}
+      recordMap={JSON.parse(content) as ExtendedRecordMap}
     />
   );
 };
