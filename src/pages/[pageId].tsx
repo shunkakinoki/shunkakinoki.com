@@ -15,8 +15,8 @@ import BlogScreen from "@/screens/BlogScreen";
 import NotionScreen from "@/screens/NotionScreen";
 
 export interface Props {
-  content: ExtendedRecordMap | MdxRemote.Source;
-  frontMatter?: { [key: string]: any };
+  content: string;
+  frontMatter?: string;
   type: "blog" | "collection" | "page";
 }
 
@@ -102,8 +102,8 @@ GetStaticPropsContext) => {
       const { frontMatter, source } = result;
       return {
         props: {
-          content: source,
-          frontMatter: frontMatter,
+          content: JSON.stringify(source),
+          frontMatter: JSON.stringify(frontMatter),
           type: "blog",
         },
         revalidate: 30,
@@ -118,7 +118,7 @@ GetStaticPropsContext) => {
       const { recordMap } = page;
       return {
         props: {
-          content: recordMap,
+          content: JSON.stringify(recordMap),
           type: notionCollection ? "collection" : "page",
         },
         revalidate: 30,
@@ -143,8 +143,8 @@ const PageId = ({
   if (content && frontMatter && type === "blog") {
     return (
       <BlogScreen
-        frontMatter={frontMatter as { [key: string]: any }}
-        source={content as MdxRemote.Source}
+        frontMatter={JSON.parse(frontMatter) as { [key: string]: any }}
+        source={JSON.parse(content) as MdxRemote.Source}
       />
     );
   }
@@ -152,7 +152,7 @@ const PageId = ({
   return (
     <NotionScreen
       fullPage={type === "collection" ? false : true}
-      recordMap={content as ExtendedRecordMap}
+      recordMap={JSON.parse(content) as ExtendedRecordMap}
     />
   );
 };
