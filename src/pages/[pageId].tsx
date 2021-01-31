@@ -121,7 +121,7 @@ const PageId = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <NotionScreen
-      fullPage={type === "collection" ? true : false}
+      fullPage={type === "collection" ? false : true}
       recordMap={JSON.parse(recordMap) as ExtendedRecordMap}
     />
   );
