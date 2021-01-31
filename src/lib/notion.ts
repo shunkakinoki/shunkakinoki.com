@@ -7,8 +7,6 @@ import {
 } from "notion-types";
 import { getPageTitle, getAllPagesInSpace, parsePageId } from "notion-utils";
 
-import { NotionLinks } from "@/const";
-
 const notion = new NotionAPI();
 
 export interface CanonicalPageMap {
@@ -32,26 +30,13 @@ export async function getAllPages(
   return pageMap;
 }
 
-export async function resolveNotionCollection(type: "blog") {
-  let pageId: string;
-
-  switch (type) {
-    case "blog":
-      pageId = NotionLinks.blog;
-    default:
-      pageId = NotionLinks.blog;
-  }
-
-  const recordMap = await getPage(pageId);
-  const title = getPageTitle(recordMap);
-
-  return {
-    recordMap,
-    title,
-  };
-}
-
-export async function resolveNotionPage(pageId: string) {
+export async function resolveNotionPage(
+  pageId: string
+): Promise<{
+  parsedPageId: string;
+  recordMap: ExtendedRecordMap;
+  title: string;
+} | null> {
   const parsedPageId = parsePageId(pageId);
 
   if (parsedPageId) {

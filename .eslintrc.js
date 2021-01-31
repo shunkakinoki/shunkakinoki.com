@@ -46,6 +46,7 @@ module.exports = {
         "prettier/react",
       ],
       rules: {
+        "@typescript-eslint/no-explicit-any": 0,
         "import/order": [
           "error",
           {

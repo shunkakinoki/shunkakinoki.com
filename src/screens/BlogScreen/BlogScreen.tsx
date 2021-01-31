@@ -1,7 +1,6 @@
 import Blog, { Props as BlogProps } from "@/components/Blog";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Life from "@/components/Life";
 
 export type Props = BlogProps;
 
