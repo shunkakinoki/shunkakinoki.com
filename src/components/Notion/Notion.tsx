@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import Link, { LinkProps } from "next/link";
 import { ExtendedRecordMap } from "notion-types";
-import { Collection, NotionRenderer } from "react-notion-x";
+import { Collection, CollectionRow, NotionRenderer } from "react-notion-x";
 import { NotionRendererProps } from "react-notion-x/build/esm/renderer";
 import "react-notion-x/src/styles.css";
 
@@ -19,6 +19,8 @@ export default function Notion({ recordMap, fullPage }: Props): JSX.Element {
       components={{
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         collection: Collection,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        collectionRow: CollectionRow,
         pageLink: ({
           href,
           as,

@@ -7,13 +7,27 @@ import {
 
 import { ExtendedRecordMap } from "notion-types";
 
+import { NotionLinks } from "@/const";
 import { resolveNotionPage } from "@/lib/notion";
-
 import NotionScreen from "@/screens/NotionScreen";
 
 export interface Props {
   recordMap: string;
+  type: "blog" | "collection" | "page";
 }
+
+const notionCollections = [
+  "action",
+  "bible",
+  "diary",
+  "endeavor",
+  "excerpt",
+  "habit",
+  "insight",
+  "notebook",
+  "perseverance",
+  "resource",
+];
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -28,15 +42,64 @@ export const getStaticProps: GetStaticProps<Props> = async ({
 }: // eslint-disable-next-line @typescript-eslint/require-await
 GetStaticPropsContext) => {
   const pageId = params?.pageId as string;
+  let notionCollection;
+
+  if (notionCollections.includes(pageId)) {
+    switch (pageId) {
+      case "action": {
+        notionCollection = NotionLinks.action;
+        break;
+      }
+      case "bible": {
+        notionCollection = NotionLinks.bible;
+        break;
+      }
+      case "diary": {
+        notionCollection = NotionLinks.diary;
+        break;
+      }
+      case "endeavor": {
+        notionCollection = NotionLinks.endeavor;
+        break;
+      }
+      case "excerpt": {
+        notionCollection = NotionLinks.excerpt;
+        break;
+      }
+      case "habit": {
+        notionCollection = NotionLinks.habit;
+        break;
+      }
+      case "insight": {
+        notionCollection = NotionLinks.insight;
+        break;
+      }
+      case "notebook": {
+        notionCollection = NotionLinks.notebook;
+        break;
+      }
+      case "perseverance": {
+        notionCollection = NotionLinks.perseverance;
+        break;
+      }
+      case "resource": {
+        notionCollection = NotionLinks.resource;
+        break;
+      }
+      default:
+        break;
+    }
+  }
 
   try {
-    const page = await resolveNotionPage(pageId);
+    const page = await resolveNotionPage(notionCollection || pageId);
 
     if (page) {
       const { recordMap } = page;
       return {
         props: {
           recordMap: JSON.stringify(recordMap),
+          type: notionCollection ? "collection" : "blog",
         },
         revalidate: 30,
       };
@@ -54,10 +117,11 @@ GetStaticPropsContext) => {
 
 const PageId = ({
   recordMap,
+  type,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <NotionScreen
-      fullPage
+      fullPage={type === "collection" ? true : false}
       recordMap={JSON.parse(recordMap) as ExtendedRecordMap}
     />
   );
