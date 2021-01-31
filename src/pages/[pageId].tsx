@@ -1,3 +1,4 @@
+import matter from "gray-matter";
 import {
   GetStaticProps,
   InferGetStaticPropsType,
@@ -5,16 +6,19 @@ import {
   GetStaticPropsContext,
 } from "next";
 
+import hydrate from "next-mdx-remote/hydrate";
+import renderToString from "next-mdx-remote/render-to-string";
 import { ExtendedRecordMap } from "notion-types";
 
 import { NotionLinks } from "@/const";
 import { resolveNotionPage } from "@/lib/notion";
+import BlogScreen, { Props as BlogScreenProps } from "@/screens/BlogScreen";
 import NotionScreen from "@/screens/NotionScreen";
 
-export interface Props {
+export type Props = {
   recordMap: string;
   type: "blog" | "collection" | "page";
-}
+} & Partial<BlogScreenProps>;
 
 const notionCollections = [
   "action",
@@ -116,9 +120,14 @@ GetStaticPropsContext) => {
 };
 
 const PageId = ({
+  content,
+  frontMatter,
   recordMap,
   type,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+  if (content && frontMatter && type === "blog") {
+    return <BlogScreen frontMatter={frontMatter} content={content} />;
+  }
   return (
     <NotionScreen
       fullPage={type === "collection" ? false : true}
