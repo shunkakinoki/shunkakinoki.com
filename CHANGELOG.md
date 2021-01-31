@@ -1,3 +1,36 @@
+# [1.2.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.1.0...v1.2.0) (2021-01-31)
+
+### Features
+
+- 🎸 ini blog screen ([3956664](https://github.com/shunkakinoki/shunkakinoki.com/commit/39566649ca155392339feb43ab9b4794cf3a83bd))
+- 🎸 ini blog screen ([1a8917c](https://github.com/shunkakinoki/shunkakinoki.com/commit/1a8917c40f3134f41f8ce8f2709b663a28036846))
+- 🎸 ini collection component ([3ec1015](https://github.com/shunkakinoki/shunkakinoki.com/commit/3ec10154ca7abf754b3988d7f418d85bef130ffa))
+- 🎸 ini credits mission and value screen ([f557f8d](https://github.com/shunkakinoki/shunkakinoki.com/commit/f557f8d4c1c5f099ac5bba50cf7e7ed4d67c1906))
+- 🎸 ini life landing ([027d385](https://github.com/shunkakinoki/shunkakinoki.com/commit/027d38586223269bb5dc93563e1f434d3fad59d8))
+- 🎸 ini life section ([d6221ac](https://github.com/shunkakinoki/shunkakinoki.com/commit/d6221ace8e657f05adde4fe25724ed3ef21d617f))
+- 🎸 ini notion links ([cdaeaaa](https://github.com/shunkakinoki/shunkakinoki.com/commit/cdaeaaadc56bcc053eb074f9ff591b1b4d31ec2c))
+- 🎸 refactor page id ([e738d37](https://github.com/shunkakinoki/shunkakinoki.com/commit/e738d379b9c30b4858513d2d44ce9d2d9d0792a3))
+
+### Performance Improvements
+
+- ⚡️ ini blog module ([df0dc17](https://github.com/shunkakinoki/shunkakinoki.com/commit/df0dc17e3b695eefa322217454b6e12049980a20))
+- ⚡️ ini json parse for page id ([8985ab2](https://github.com/shunkakinoki/shunkakinoki.com/commit/8985ab2679b5bf977b5dac99af63eacd00dbb70a))
+- ⚡️ ini throw error for lib github ([4c7ca71](https://github.com/shunkakinoki/shunkakinoki.com/commit/4c7ca71dcca4cc01b971803f53e317d91f1efbce))
+- ⚡️ migrate products product ([0373bb6](https://github.com/shunkakinoki/shunkakinoki.com/commit/0373bb62bd4124d5032d7253539d4300546e2e14))
+- ⚡️ refactor about header ([173be65](https://github.com/shunkakinoki/shunkakinoki.com/commit/173be651abb5733e199cbaef06a9bc260102a033))
+- ⚡️ refactor header text-xl ([7b31657](https://github.com/shunkakinoki/shunkakinoki.com/commit/7b31657aa872199475002d0b451ad40199253835))
+- ⚡️ refactor life card ([5afb98b](https://github.com/shunkakinoki/shunkakinoki.com/commit/5afb98bb79803dbfce8a7d82fbd207bf27ecd18e))
+- ⚡️ refactor life partial ([7c394a9](https://github.com/shunkakinoki/shunkakinoki.com/commit/7c394a972c20b6bdee094192f5f9e312a1edb5df))
+- ⚡️ refactor life styles ([77bcffa](https://github.com/shunkakinoki/shunkakinoki.com/commit/77bcffaa613cab3b3fc91d671380294e101f85c2))
+- ⚡️ refactor pageid props ([a7ba477](https://github.com/shunkakinoki/shunkakinoki.com/commit/a7ba4777fe1c8353a7a91ad2407d6e41e93d703b))
+- ⚡️ remove newsletter from notion component ([ac0d689](https://github.com/shunkakinoki/shunkakinoki.com/commit/ac0d68922c077a230230d5170d09f2a75633cb0a))
+- ⚡️ upgrade notion packages ([ad866cf](https://github.com/shunkakinoki/shunkakinoki.com/commit/ad866cfc9d8cf976daa4b306a35c61de71baefdd))
+- ⚡️ upgrade with ncu ([e8f847c](https://github.com/shunkakinoki/shunkakinoki.com/commit/e8f847caaf377225135f7da332e747bd80ed9a3b))
+- ⚡️ upgrade with ncu ([a95ff6d](https://github.com/shunkakinoki/shunkakinoki.com/commit/a95ff6ddaad9feb0f612a9eb65e8cabf49262358))
+- ⚡️ upgrade with ncu ([3334803](https://github.com/shunkakinoki/shunkakinoki.com/commit/3334803354ee9c9308197fef95f796aa8c151d96))
+- ⚡️ yarn add next-mdx-remote ([2576537](https://github.com/shunkakinoki/shunkakinoki.com/commit/2576537cee771ae19d267fad6d44cfe6e7354fcf))
+- ⚡️ yarn run fix ([210af4a](https://github.com/shunkakinoki/shunkakinoki.com/commit/210af4ac1533ebb1e200ec0111ea39438b385e7d))
+
 # [1.1.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.0.0...v1.1.0) (2021-01-26)
 
 ### Features
