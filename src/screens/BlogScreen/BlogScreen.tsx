@@ -6,15 +6,14 @@ import Life from "@/components/Life";
 export type Props = BlogProps;
 
 export default function BlogScreen({
-  content,
   frontMatter,
+  source,
 }: Props): JSX.Element {
   return (
     <>
       <Header />
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto">
-        <Blog content={content} frontMatter={frontMatter} />
-        <Life />
+        <Blog frontMatter={frontMatter} source={source} />
       </div>
       <Footer />
     </>

@@ -1,14 +1,19 @@
+import hydrate from "next-mdx-remote/hydrate";
+import { MdxRemote } from "next-mdx-remote/types";
+
 export interface Props {
-  frontMatter?: {
+  frontMatter: {
     [key: string]: any;
   };
-  content: string;
+  source: MdxRemote.Source;
 }
 
-export default function Blog({ content, frontMatter }: Props): JSX.Element {
+export default function Blog({ frontMatter, source }: Props): JSX.Element {
+  const content = hydrate(source);
+
   return (
     <>
-      <h1>{frontMatter?.title}</h1>
+      <h1>{frontMatter.title}</h1>
       {content}
     </>
   );

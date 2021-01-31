@@ -1,4 +1,3 @@
-import matter from "gray-matter";
 import {
   GetStaticProps,
   InferGetStaticPropsType,
@@ -6,19 +5,20 @@ import {
   GetStaticPropsContext,
 } from "next";
 
-import hydrate from "next-mdx-remote/hydrate";
-import renderToString from "next-mdx-remote/render-to-string";
+import { MdxRemote } from "next-mdx-remote/types";
 import { ExtendedRecordMap } from "notion-types";
 
 import { NotionLinks } from "@/const";
+import { getBlogContent } from "@/lib/github";
 import { resolveNotionPage } from "@/lib/notion";
-import BlogScreen, { Props as BlogScreenProps } from "@/screens/BlogScreen";
+import BlogScreen from "@/screens/BlogScreen";
 import NotionScreen from "@/screens/NotionScreen";
 
-export type Props = {
-  recordMap: string;
+export interface Props {
+  content: ExtendedRecordMap | MdxRemote.Source;
+  frontMatter?: { [key: string]: any };
   type: "blog" | "collection" | "page";
-} & Partial<BlogScreenProps>;
+}
 
 const notionCollections = [
   "action",
@@ -43,6 +43,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props> = async ({
   params,
+  locale,
 }: // eslint-disable-next-line @typescript-eslint/require-await
 GetStaticPropsContext) => {
   const pageId = params?.pageId as string;
@@ -95,6 +96,21 @@ GetStaticPropsContext) => {
     }
   }
 
+  if (!notionCollection) {
+    const result = await getBlogContent(pageId, locale);
+    if (result) {
+      const { frontMatter, source } = result;
+      return {
+        props: {
+          content: source,
+          frontMatter: frontMatter,
+          type: "blog",
+        },
+        revalidate: 30,
+      };
+    }
+  }
+
   try {
     const page = await resolveNotionPage(notionCollection || pageId);
 
@@ -102,8 +118,8 @@ GetStaticPropsContext) => {
       const { recordMap } = page;
       return {
         props: {
-          recordMap: JSON.stringify(recordMap),
-          type: notionCollection ? "collection" : "blog",
+          content: recordMap,
+          type: notionCollection ? "collection" : "page",
         },
         revalidate: 30,
       };
@@ -122,16 +138,21 @@ GetStaticPropsContext) => {
 const PageId = ({
   content,
   frontMatter,
-  recordMap,
   type,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   if (content && frontMatter && type === "blog") {
-    return <BlogScreen frontMatter={frontMatter} content={content} />;
+    return (
+      <BlogScreen
+        frontMatter={frontMatter as { [key: string]: any }}
+        source={content as MdxRemote.Source}
+      />
+    );
   }
+
   return (
     <NotionScreen
       fullPage={type === "collection" ? false : true}
-      recordMap={JSON.parse(recordMap) as ExtendedRecordMap}
+      recordMap={content as ExtendedRecordMap}
     />
   );
 };
