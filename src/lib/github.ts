@@ -26,6 +26,11 @@ export const getBlogContent = async (
         },
       }
     );
+
+    if (!response.ok) {
+      throw Error("Blog not found");
+    }
+
     const source = await response.text();
     const { content, data } = matter(source);
     const mdxSource = await renderToString(content, {
@@ -33,6 +38,6 @@ export const getBlogContent = async (
     });
     return { frontMatter: data, source: mdxSource };
   } catch (err) {
-    console.log(err);
+    throw Error(err);
   }
 };

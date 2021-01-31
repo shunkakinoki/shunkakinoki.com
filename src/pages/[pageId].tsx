@@ -97,18 +97,20 @@ GetStaticPropsContext) => {
   }
 
   if (!notionCollection) {
-    const result = await getBlogContent(pageId, locale);
-    if (result) {
-      const { frontMatter, source } = result;
-      return {
-        props: {
-          content: JSON.stringify(source),
-          frontMatter: JSON.stringify(frontMatter),
-          type: "blog",
-        },
-        revalidate: 30,
-      };
-    }
+    try {
+      const result = await getBlogContent(pageId, locale);
+      if (result) {
+        const { frontMatter, source } = result;
+        return {
+          props: {
+            content: JSON.stringify(source),
+            frontMatter: JSON.stringify(frontMatter),
+            type: "blog",
+          },
+          revalidate: 30,
+        };
+      }
+    } catch {}
   }
 
   try {
