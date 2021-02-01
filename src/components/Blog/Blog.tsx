@@ -13,10 +13,5 @@ export interface Props {
 export default function Blog({ frontMatter, source }: Props): JSX.Element {
   const content = hydrate(source);
 
-  return (
-    <section className={s.markdown}>
-      <h1>{frontMatter.title}</h1>
-      {content}
-    </section>
-  );
+  return <section className={s.markdown}>{content}</section>;
 }
