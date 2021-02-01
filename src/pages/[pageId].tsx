@@ -8,6 +8,8 @@ import {
 import { MdxRemote } from "next-mdx-remote/types";
 import { ExtendedRecordMap } from "notion-types";
 
+import validator from "validator";
+
 import { NotionLinks } from "@/const";
 import { getGithubContent } from "@/lib/github";
 import { resolveNotionPage } from "@/lib/notion";
@@ -96,7 +98,7 @@ GetStaticPropsContext) => {
     }
   }
 
-  if (!notionCollection) {
+  if (!validator.isUUID(pageId) && !notionCollection) {
     try {
       const result = await getGithubContent("blog", pageId, locale);
       if (result) {
