@@ -2,7 +2,8 @@ import matter from "gray-matter";
 import renderToString from "next-mdx-remote/render-to-string";
 import { MdxRemote } from "next-mdx-remote/types";
 
-export const getBlogContent = async (
+export const getGithubContent = async (
+  dir: string,
   pageId: string,
   locale?: string
 ): Promise<
@@ -16,7 +17,7 @@ export const getBlogContent = async (
 > => {
   try {
     const response = await fetch(
-      `https://raw.githubusercontent.com/shunkakinoki/shunkakinoki/main/blog/${
+      `https://raw.githubusercontent.com/shunkakinoki/shunkakinoki/main/${dir}/${
         locale ?? "en"
       }/${pageId}.md`,
       {
@@ -28,7 +29,7 @@ export const getBlogContent = async (
     );
 
     if (!response.ok) {
-      throw Error("Blog not found");
+      throw Error(`${dir} not found`);
     }
 
     const source = await response.text();
