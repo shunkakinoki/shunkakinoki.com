@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.2.0...v1.3.0) (2021-02-01)
+
+### Features
+
+- 🎸 ini github content ([69b2abf](https://github.com/shunkakinoki/shunkakinoki.com/commit/69b2abf875f661224dab7a8d359ea2d1ee51380e))
+- 🎸 ini validator pageid ([c8d47da](https://github.com/shunkakinoki/shunkakinoki.com/commit/c8d47dadc5c0959b890435e71ee524b8ec665893))
+
+### Performance Improvements
+
+- ⚡️ refactor blog title ([b3f74c4](https://github.com/shunkakinoki/shunkakinoki.com/commit/b3f74c418c97b935ee84ef664146a2a5d184af5b))
+- ⚡️ refactor macos gitignore ([a58feeb](https://github.com/shunkakinoki/shunkakinoki.com/commit/a58feeb502ed141ba2621e21f4e12b309be15922))
+
 # [1.2.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.1.0...v1.2.0) (2021-01-31)
 
 ### Features
