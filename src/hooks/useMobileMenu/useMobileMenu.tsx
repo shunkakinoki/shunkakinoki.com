@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { useRecoilState, atom, SetterOrUpdater } from "recoil";
 
 export const mobileMenuAtom = atom<boolean>({
@@ -6,5 +8,20 @@ export const mobileMenuAtom = atom<boolean>({
 });
 
 export default function useMobileMenu(): [boolean, SetterOrUpdater<boolean>] {
-  return useRecoilState(mobileMenuAtom);
+  const router = useRouter();
+  const [isMenuOpen, setMenuOpen] = useRecoilState(mobileMenuAtom);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setMenuOpen(false);
+    };
+
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, []);
+
+  return [isMenuOpen, setMenuOpen];
 }
