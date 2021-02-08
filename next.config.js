@@ -17,6 +17,12 @@ module.exports = nextTranslate({
           "https://drive.google.com/file/d/1WORDhsxecjjhElXfXQw8lapxxaaFrKM8/view",
         permanent: true,
       },
+      {
+        source: "/where",
+        destination:
+          "https://zen.ly/shunkakinoki",
+        permanent: true,
+      },
     ];
   },
 });
