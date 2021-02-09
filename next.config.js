@@ -47,6 +47,12 @@ module.exports = nextTranslate({
         destination: "/value",
         permanent: true,
       },
+      {
+        source: "/where",
+        destination:
+          "https://zen.ly/shunkakinoki",
+        permanent: true,
+      },
     ];
   },
 });
