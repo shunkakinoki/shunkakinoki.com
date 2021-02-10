@@ -24,7 +24,7 @@ module.exports = nextTranslate({
       },
       {
         source: "/what",
-        destination: "/about",
+        destination: "/credits",
         permanent: true,
       },
       {
@@ -39,7 +39,7 @@ module.exports = nextTranslate({
       },
       {
         source: "/who",
-        destination: "/credits",
+        destination: "/about",
         permanent: true,
       },
       {
@@ -49,8 +49,7 @@ module.exports = nextTranslate({
       },
       {
         source: "/where",
-        destination:
-          "https://zen.ly/shunkakinoki",
+        destination: "https://zen.ly/shunkakinoki",
         permanent: true,
       },
     ];
