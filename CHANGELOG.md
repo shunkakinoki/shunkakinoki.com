@@ -1,3 +1,20 @@
+# [1.4.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.3.0...v1.4.0) (2021-02-10)
+
+### Features
+
+- 🎸 complete refactor redirects ([98aa5cb](https://github.com/shunkakinoki/shunkakinoki.com/commit/98aa5cba7f088671986b9054b103cc86269be854))
+- 🎸 refactor life shadow ([a1cc505](https://github.com/shunkakinoki/shunkakinoki.com/commit/a1cc505738d7b5fa241ef8d5dc3f16f1c4a0f44c))
+
+### Performance Improvements
+
+- ⚡️ larger text about ([2f8d93f](https://github.com/shunkakinoki/shunkakinoki.com/commit/2f8d93f41d0b7457e6657789d6fb8791042044c8))
+- ⚡️ refactor dark link button text color ([229a198](https://github.com/shunkakinoki/shunkakinoki.com/commit/229a19886c70289475c6df1f63a128ffd24a5d99))
+- ⚡️ refactor moble menu hooks for state ([148b084](https://github.com/shunkakinoki/shunkakinoki.com/commit/148b0846ef6aabad8bc2edf53fb94f60cf7a0d26))
+- ⚡️ refactor notion styles ([5731220](https://github.com/shunkakinoki/shunkakinoki.com/commit/5731220ba104a990a2c2e91418e465045994dd33))
+- ⚡️ upgrade with ncu ([b87d2ef](https://github.com/shunkakinoki/shunkakinoki.com/commit/b87d2ef4f0e01037308e529a3edac19214bfe820))
+- ⚡️ upgrade with ncu ([686de0f](https://github.com/shunkakinoki/shunkakinoki.com/commit/686de0f47e87094970a4eb25ef16e1989fdd9b58))
+- ⚡️ upgrade with ncu ([4894a7f](https://github.com/shunkakinoki/shunkakinoki.com/commit/4894a7fdd5b2e5381ea34e98fa8eff434207c609))
+
 # [1.3.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.2.0...v1.3.0) (2021-02-01)
 
 ### Features
