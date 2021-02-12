@@ -5,7 +5,8 @@ import { MdxRemote } from "next-mdx-remote/types";
 export const getGithubContent = async (
   dir: string,
   pageId: string,
-  locale?: string
+  locale?: string,
+  range?: number[]
 ): Promise<
   | {
       frontMatter: {
@@ -32,7 +33,12 @@ export const getGithubContent = async (
       throw Error(`${dir} not found`);
     }
 
-    const source = await response.text();
+    let source = await response.text();
+
+    if (range) {
+      source = source.split("\n").slice(range[0], range[1]).join();
+    }
+
     const { content, data } = matter(source);
     const mdxSource = await renderToString(content, {
       scope: data,

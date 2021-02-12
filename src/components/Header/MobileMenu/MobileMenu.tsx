@@ -38,7 +38,7 @@ export default function MobileMenu(): JSX.Element {
       leaveTo="opacity-0"
     >
       <div className="absolute inset-x-0 top-0 p-2 transition origin-top-right transform md:hidden">
-        <div className="bg-white divide-y-2 rounded-lg shadow-lg dark:bg-black ring-1 ring-black ring-opacity-5 divide-gray-50">
+        <div className="bg-white rounded-lg shadow-lg divide-y-2 dark:bg-black ring-1 ring-black ring-opacity-5 divide-gray-50">
           <div className="px-5 pt-5 pb-6">
             <div className="flex items-center justify-between">
               <div />

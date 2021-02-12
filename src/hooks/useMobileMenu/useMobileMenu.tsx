@@ -21,7 +21,7 @@ export default function useMobileMenu(): [boolean, SetterOrUpdater<boolean>] {
     return () => {
       router.events.off("routeChangeStart", handleRouteChange);
     };
-  }, []);
+  }, [router.events, setMenuOpen]);
 
   return [isMenuOpen, setMenuOpen];
 }

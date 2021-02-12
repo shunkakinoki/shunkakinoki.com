@@ -1,13 +1,14 @@
 import clsx from "clsx";
 
-import Link from "next/link";
+import hydrate from "next-mdx-remote/hydrate";
+import { MdxRemote } from "next-mdx-remote/types";
 
+import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
-import { ProductLinks, SocialLinks } from "@/const";
-import { Chevron } from "@/icons";
 
-interface Props {
+export interface Props {
   isPartial?: boolean;
+  source: MdxRemote.Source;
 }
 
 interface AboutLinkProps {
@@ -28,7 +29,13 @@ function AboutLink({ children, href }: AboutLinkProps) {
   );
 }
 
-export default function About({ isPartial }: Props): JSX.Element {
+const components = {
+  a: AboutLink,
+};
+
+export default function About({ isPartial, source }: Props): JSX.Element {
+  const content = hydrate(source, { components });
+
   return (
     <section className={clsx("w-full mb-6", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
@@ -42,35 +49,17 @@ export default function About({ isPartial }: Props): JSX.Element {
         )}
       </div>
       <div className="px-4 sm:px-3 md:px-0">
-        <h2 className="text-lg leading-loose text-gray-600 md:text-xl dark:text-gray-300">
-          I am an{" "}
-          <AboutLink href={ProductLinks.sentrei}>entrepreneur</AboutLink>,{" "}
-          <AboutLink href={SocialLinks.github}>hacker</AboutLink>, &amp;{" "}
-          <AboutLink href={SocialLinks.pioneer}>pioneer</AboutLink> striving to
-          obliterate the galaxy.{" "}
-          {isPartial && (
-            <Link href="/about">
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a
-                className="inline-block font-medium text-indigo-600 align-bottom animate-pulse dark:text-indigo-400"
-                aria-label="about"
-              >
-                <Chevron />
-              </a>
-            </Link>
-          )}
-          <br />
-          {!isPartial && (
-            <span>
-              I have spent my childhood years in Silicon Valley (Cupertino City)
-              from 4 to 10 years old and have 3+ years of experience in
-              AI/CV/DL, Fullstack Web Development &amp; and Cloud (especially
-              DevOps). <br />
-              Love open source and extremely passionate about the potential of
-              startups towards the future of the world.
-            </span>
-          )}
-        </h2>
+        <h3 className="text-lg leading-loose text-gray-600 md:text-xl dark:text-gray-300">
+          {content}
+        </h3>
+      </div>
+      <div className="w-full pt-3 my-3 text-center leading-5">
+        <div className="flex justify-center w-full">
+          <SwitchButton
+            href={isPartial ? "/about" : "/#about"}
+            type={isPartial ? "right" : "left"}
+          />
+        </div>
       </div>
     </section>
   );

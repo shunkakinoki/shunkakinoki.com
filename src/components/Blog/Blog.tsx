@@ -10,7 +10,7 @@ export interface Props {
   source: MdxRemote.Source;
 }
 
-export default function Blog({ frontMatter, source }: Props): JSX.Element {
+export default function Blog({ source }: Props): JSX.Element {
   const content = hydrate(source);
 
   return <section className={s.markdown}>{content}</section>;

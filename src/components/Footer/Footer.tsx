@@ -53,7 +53,7 @@ export default function Footer(): JSX.Element {
         <FooterLink href="/blog">Blog</FooterLink>
         <FooterLink href="/dashboard">Dashboard</FooterLink>
         <FooterLink href="/history">History</FooterLink>
-        <FooterLink href="/product">Product</FooterLink>
+        <FooterLink href="/products">Products</FooterLink>
         <FooterLink href="/social">Social</FooterLink>
       </nav>
       <div className="flex justify-center mt-8 space-x-6">
