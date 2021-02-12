@@ -37,11 +37,11 @@ export default function CoreCard({
             className={clsx(
               "inline-flex p-3 rounded-lg ring-4 ring-white dark:ring-black",
               color === "blue" &&
-                "text-blue-50 bg-blue-500 dark:text-blue-500 dark:bg-blue-50",
+                "text-blue-50 bg-blue-500 dark:text-blue-900 dark:bg-blue-300",
               color === "indigo" &&
-                "text-indigo-50 bg-indigo-500 dark:text-indigo-500 dark:bg-indigo-50",
+                "text-indigo-50 bg-indigo-500 dark:text-indigo-900 dark:bg-indigo-300",
               color === "purple" &&
-                "text-purple-50 bg-purple-500 dark:text-purple-500 dark:bg-purple-50"
+                "text-purple-50 bg-purple-500 dark:text-purple-900 dark:bg-purple-3000"
             )}
           >
             {children}
