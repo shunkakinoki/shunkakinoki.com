@@ -2,6 +2,7 @@ import Link, { LinkProps } from "next/link";
 
 import { ReactNode } from "react";
 
+import CreditsButton from "@/components/Footer/CreditsButton";
 import LocaleSelect from "@/components/Footer/LocaleSelect";
 
 import { SocialLinks } from "@/const";
@@ -82,6 +83,7 @@ export default function Footer(): JSX.Element {
         <p className="flex-shrink-0 text-base text-center text-gray-400">
           &copy; Shun Kakinoki. All rights reserved.
         </p>
+        <CreditsButton />
         <div className="sm:flex-grow-0">
           <LocaleSelect />
         </div>
