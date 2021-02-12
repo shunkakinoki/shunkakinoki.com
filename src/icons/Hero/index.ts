@@ -1,4 +1,5 @@
 export { default as Action } from "./Action";
+export { default as Airplane } from "./Airplane";
 export { default as Badge } from "./Badge";
 export { default as Bible } from "./Bible";
 export { default as Cake } from "./Cake";
@@ -21,8 +22,10 @@ export { default as Notebook } from "./Notebook";
 export { default as Resource } from "./Resource";
 export { default as Perseverance } from "./Perseverance";
 export { default as Right } from "./Right";
+export { default as Scale } from "./Scale";
 export { default as School } from "./School";
 export { default as Switch } from "./Switch";
 export { default as Tag } from "./Tag";
 export { default as User } from "./User";
+export { default as Variable } from "./Variable";
 export { default as Work } from "./Work";

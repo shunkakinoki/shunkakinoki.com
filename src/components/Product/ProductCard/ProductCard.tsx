@@ -14,7 +14,7 @@ export default function ProductCard({
   href,
 }: Props): JSX.Element {
   return (
-    <li className="border rounded-lg shadow-lg col-span-1 transparent border- group hover:bg-gray-50 dark:bg-black dark:border-gray-300 dark:hover:bg-gray-900">
+    <li className="col-span-1 border rounded-lg shadow-lg transparent group hover:bg-gray-50 dark:bg-black dark:border-gray-300 dark:hover:bg-gray-900">
       <a
         href={href}
         target="_blank"
@@ -29,7 +29,7 @@ export default function ProductCard({
             <h4 className="text-lg font-medium tracking-tight text-gray-900 dark:text-gray-100">
               {name}
             </h4>
-            <p className="text-sm text-gray-600 leading-5 line-clamp-3 dark:text-gray-300">
+            <p className="text-sm leading-5 text-gray-600 line-clamp-3 dark:text-gray-300">
               {description}
             </p>
           </div>
