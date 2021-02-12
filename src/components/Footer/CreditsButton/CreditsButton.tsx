@@ -9,11 +9,14 @@ export default function CreditsButton(): JSX.Element {
     <button
       aria-label="Credits Button"
       type="button"
-      className="flex items-center justify-center p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-600"
+      className="flex items-center justify-center p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-600 dark:focus:ring-pink-400"
       onClick={() => setIsOpen(!isOpen)}
     >
       <svg
-        className={clsx("w-6 h-6 text-pink-700", !isOpen && "fill-current")}
+        className={clsx(
+          "w-6 h-6 text-pink-700 dark:text-pink-300",
+          !isOpen && "fill-current"
+        )}
         stroke="currentColor"
         fill="none"
         viewBox="0 0 24 24"
