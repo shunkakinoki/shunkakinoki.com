@@ -1,3 +1,18 @@
+# [1.5.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.4.0...v1.5.0) (2021-02-12)
+
+### Features
+
+- 🎸 ini about source ([b43f43b](https://github.com/shunkakinoki/shunkakinoki.com/commit/b43f43b4c02c6453009a1fa6bcee194c1b5b7875))
+- refactor about section ([c24ab8e](https://github.com/shunkakinoki/shunkakinoki.com/commit/c24ab8efdf24294afa42a703dc04fe5a5dd2da5a))
+
+### Performance Improvements
+
+- ⚡️ refactor core pages ([5433999](https://github.com/shunkakinoki/shunkakinoki.com/commit/54339992515f899cfa0c5db58c37f1093f87508d))
+- ⚡️ refactor eslint warnings ([e395194](https://github.com/shunkakinoki/shunkakinoki.com/commit/e395194f296dbfe582457be9cb8722ce105cde80))
+- ⚡️ rename product to products plural ([40fd132](https://github.com/shunkakinoki/shunkakinoki.com/commit/40fd1326e8a7ea116a91780499aad675920019e2))
+- ⚡️ upgrade ([f0509d7](https://github.com/shunkakinoki/shunkakinoki.com/commit/f0509d7f79815da6dfdbed54c440b4a568e43d24))
+- ⚡️ yarn run fix ([7b0f775](https://github.com/shunkakinoki/shunkakinoki.com/commit/7b0f775e65203b9b82aec5ffdc8db3852e297e5b))
+
 # [1.4.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.3.0...v1.4.0) (2021-02-10)
 
 ### Features
