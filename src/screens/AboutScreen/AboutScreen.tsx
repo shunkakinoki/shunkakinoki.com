@@ -2,6 +2,7 @@ import About, { Props as AboutProps } from "@/components/About";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Life from "@/components/Life";
+
 export type Props = AboutProps;
 
 export default function AboutScreen({ source }: Props): JSX.Element {
