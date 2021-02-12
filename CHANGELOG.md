@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.5.0...v1.6.0) (2021-02-12)
+
+### Features
+
+- ini core section ([d498ddc](https://github.com/shunkakinoki/shunkakinoki.com/commit/d498ddc5797a0a6d1643bd8470a5af90881daaae))
+
+### Performance Improvements
+
+- refactor card dark ([d4b81f7](https://github.com/shunkakinoki/shunkakinoki.com/commit/d4b81f7f1c7c7aa6943c712d2a4cc0ea30a775b3))
+- update github fetcher ([f89a1d4](https://github.com/shunkakinoki/shunkakinoki.com/commit/f89a1d4a7e971ee2492eb1b31053f59f17e4601a))
+- yarn run fix ([82af82d](https://github.com/shunkakinoki/shunkakinoki.com/commit/82af82dba0f4d4477986f9d41e4d1268d772be8c))
+
 # [1.5.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.4.0...v1.5.0) (2021-02-12)
 
 ### Features
