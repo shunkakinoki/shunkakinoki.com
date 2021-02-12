@@ -16,7 +16,7 @@ export default function LandingScreen({ source }: Props): JSX.Element {
     <>
       <Header />
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto">
-        <About isPartial source={source as MdxRemote.Source} />
+        <About isPartial source={source} />
         <Product isPartial />
         <Life isPartial />
         <History isPartial />

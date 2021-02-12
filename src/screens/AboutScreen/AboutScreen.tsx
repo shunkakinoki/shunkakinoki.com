@@ -11,7 +11,7 @@ export default function AboutScreen({ source }: Props): JSX.Element {
     <>
       <Header />
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto">
-        <About source={source as MdxRemote.Source} />
+        <About source={source} />
         <Life />
       </div>
       <Footer />
