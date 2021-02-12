@@ -53,7 +53,7 @@ export default function About({ isPartial, source }: Props): JSX.Element {
           {content}
         </h3>
       </div>
-      <div className="w-full pt-3 my-3 leading-5 text-center">
+      <div className="w-full pt-3 my-3 text-center leading-5">
         <div className="flex justify-center w-full">
           <SwitchButton
             href={isPartial ? "/about" : "/#about"}
