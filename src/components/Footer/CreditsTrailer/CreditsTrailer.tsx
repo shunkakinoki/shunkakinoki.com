@@ -22,7 +22,7 @@ export default function CreditsTrailer(): JSX.Element {
         <Link href="/credits">
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a className="flex items-center">
-            <span className="flex-shrink-0 text-base text-center text-pink-300 underline hover:text-pink-200">
+            <span className="flex-shrink-0 max-w-xs text-base text-center text-pink-400 underline hover:text-pink-700 dark:text-pink-500 dark:hover:text-pink-200">
               Thank you to everyone who has been with me as part of the journey
             </span>
           </a>
