@@ -6,6 +6,7 @@ ignores:
     "autoprefixer",
     "eslint-*",
     "commitizen",
+    "husky",
     "pinst",
     "postcss",
     "git-cz",
