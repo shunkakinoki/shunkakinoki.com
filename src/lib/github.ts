@@ -36,7 +36,7 @@ export const getGithubContent = async (
     let source = await response.text();
 
     if (range) {
-      source = source.split("\n").slice(range[0], range[1]).join();
+      source = source.split("\n").slice(range[0], range[1]).join("\n\n");
     }
 
     const { content, data } = matter(source);
