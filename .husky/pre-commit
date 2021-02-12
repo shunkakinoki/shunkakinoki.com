@@ -1,4 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-exec </dev/tty && git cz --hook || true
+[ -n "$CI" ] && exit 0
+
+exec </dev/tty && yarn run git-cz --hook && exit 0
