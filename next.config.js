@@ -24,17 +24,12 @@ module.exports = nextTranslate({
       },
       {
         source: "/what",
-        destination: "/credits",
+        destination: "/values",
         permanent: true,
       },
       {
         source: "/when",
         destination: "/history",
-        permanent: true,
-      },
-      {
-        source: "/where",
-        destination: "https://zen.ly/shunkakinoki",
         permanent: true,
       },
       {
@@ -44,7 +39,7 @@ module.exports = nextTranslate({
       },
       {
         source: "/why",
-        destination: "/value",
+        destination: "/cause",
         permanent: true,
       },
       {

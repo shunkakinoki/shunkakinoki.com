@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 
+import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
 import ProductCard from "@/components/Product/ProductCard";
 import { ProductLinks } from "@/const";
@@ -38,6 +39,14 @@ export default function Product({ isPartial = false }: Props): JSX.Element {
             />
           </ProductCard>
         </ul>
+      </div>
+      <div className="w-full pt-3 my-3 text-center leading-5">
+        <div className="flex justify-center w-full">
+          <SwitchButton
+            href={isPartial ? "/products" : "/#products"}
+            type={isPartial ? "right" : "left"}
+          />
+        </div>
       </div>
     </section>
   );
