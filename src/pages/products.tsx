@@ -2,8 +2,8 @@ import { NextPage } from "next";
 
 import ProductScreen from "@/screens/ProductScreen";
 
-const Product: NextPage = () => {
+const Products: NextPage = () => {
   return <ProductScreen />;
 };
 
-export default Product;
+export default Products;
