@@ -22,6 +22,8 @@ export interface Props {
   type: "blog" | "collection" | "page";
 }
 
+const coreCollections = ["cause", "mission", "values"];
+
 const notionCollections = [
   "action",
   "bible",
@@ -100,7 +102,11 @@ GetStaticPropsContext) => {
 
   if (!validator.isUUID(pageId) && !notionCollection) {
     try {
-      const result = await getGithubContent("blog", pageId, locale);
+      const result = await getGithubContent(
+        coreCollections.includes(pageId) ? pageId : "blog",
+        coreCollections.includes(pageId) ? pageId.toUpperCase() : pageId,
+        locale
+      );
       if (result) {
         const { frontMatter, source } = result;
         return {
