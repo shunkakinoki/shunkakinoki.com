@@ -1,5 +1,3 @@
-import { MdxRemote } from "next-mdx-remote/types";
-
 import About, { Props as AboutProps } from "@/components/About";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
