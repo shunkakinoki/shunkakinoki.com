@@ -15,7 +15,7 @@ export default function CreditsButton(): JSX.Element {
       <svg
         className={clsx(
           "w-6 h-6 text-pink-700 dark:text-pink-300",
-          !isOpen && "fill-current"
+          isOpen && "fill-current"
         )}
         stroke="currentColor"
         fill="none"
