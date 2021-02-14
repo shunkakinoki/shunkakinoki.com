@@ -1,3 +1,19 @@
+# [1.7.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.6.0...v1.7.0) (2021-02-14)
+
+### Features
+
+- ini credits button ([e6d3f21](https://github.com/shunkakinoki/shunkakinoki.com/commit/e6d3f213140df1ef6b9c49c81f0a533d67ed5f74))
+- ini credits trailer ([6f3b93f](https://github.com/shunkakinoki/shunkakinoki.com/commit/6f3b93ff5f55c8df46dd574a6f989ef2237c314d))
+- refactor credits button ([95b5dfe](https://github.com/shunkakinoki/shunkakinoki.com/commit/95b5dfe5d5ad28c07ba0a5eab8a8b9d710ddafb1))
+
+### Performance Improvements
+
+- ini credits screen ([9967d52](https://github.com/shunkakinoki/shunkakinoki.com/commit/9967d5295804711fcb9d920af67efde0d941650e))
+- ini github credits ([a41445b](https://github.com/shunkakinoki/shunkakinoki.com/commit/a41445b999593bea27c082ae62055fe00ce0397f))
+- refactor dark button ([75325d3](https://github.com/shunkakinoki/shunkakinoki.com/commit/75325d3c5891de77f8969b73675d1d9a083e6a43))
+- refactor traiiler styles ([85c0ac7](https://github.com/shunkakinoki/shunkakinoki.com/commit/85c0ac75a20034193d9997a8c54d08a991296b2f))
+- remove unused screens ([fa30b83](https://github.com/shunkakinoki/shunkakinoki.com/commit/fa30b83ef35a152eec29b22b56db20050c60b052))
+
 # [1.6.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.5.0...v1.6.0) (2021-02-12)
 
 ### Features
