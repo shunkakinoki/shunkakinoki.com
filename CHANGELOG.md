@@ -1,3 +1,9 @@
+## [1.7.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.7.0...v1.7.1) (2021-02-14)
+
+### Performance Improvements
+
+- refactor module text color for dark ([f6a2de2](https://github.com/shunkakinoki/shunkakinoki.com/commit/f6a2de277c194a20ce9c64c9836eddfdb3b3b496))
+
 # [1.7.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.6.0...v1.7.0) (2021-02-14)
 
 ### Features
