@@ -1,7 +1,6 @@
 import {
   GetStaticProps,
   InferGetStaticPropsType,
-  GetStaticPaths,
   GetStaticPropsContext,
 } from "next";
 
