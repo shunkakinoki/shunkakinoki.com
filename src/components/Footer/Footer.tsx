@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import Link, { LinkProps } from "next/link";
 
 import { ReactNode } from "react";
@@ -16,10 +15,6 @@ interface FooterIconLinkProps {
   children: ReactNode;
   href: string;
 }
-
-const CreditsTrailer = dynamic(
-  () => import("@/components/Footer/CreditsTrailer")
-);
 
 function FooterLink({ children, href }: FooterLinkProps): JSX.Element {
   return (
@@ -92,7 +87,6 @@ export default function Footer(): JSX.Element {
           <LocaleSelect />
         </div>
       </div>
-      <CreditsTrailer />
     </footer>
   );
 }
