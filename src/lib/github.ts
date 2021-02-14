@@ -2,6 +2,9 @@ import matter from "gray-matter";
 import renderToString from "next-mdx-remote/render-to-string";
 import { MdxRemote } from "next-mdx-remote/types";
 
+const githubLink =
+  "https://raw.githubusercontent.com/shunkakinoki/shunkakinoki/main";
+
 export const getGithubContent = async (
   dir: string,
   pageId: string,
@@ -18,9 +21,9 @@ export const getGithubContent = async (
 > => {
   try {
     const response = await fetch(
-      `https://raw.githubusercontent.com/shunkakinoki/shunkakinoki/main/${dir}/${
-        locale ?? "en"
-      }/${pageId}.md`,
+      dir !== "credits" && pageId !== "CREDITS"
+        ? `${githubLink}/${dir}/${locale ?? "en"}/${pageId}.md`
+        : `${githubLink}/CREDITS.md`,
       {
         headers: {
           Accept: "application/json",
