@@ -20,7 +20,7 @@ export default function LocaleSelect(): JSX.Element {
               // eslint-disable-next-line @typescript-eslint/no-empty-function
               onBlur={() => {}}
               onChange={(e) =>
-                router.push(router.pathname, router.pathname, {
+                router.push(router.pathname, router.asPath, {
                   locale: e.target.value,
                 })
               }

@@ -10,5 +10,9 @@ export interface Props {
 export default function Credits({ source }: Props): JSX.Element {
   const content = hydrate(source);
 
-  return <section className={s.markdown}>{content}</section>;
+  return (
+    <section className="text-black dark:text-white">
+      <div className={s.markdown}>{content}</div>
+    </section>
+  );
 }
