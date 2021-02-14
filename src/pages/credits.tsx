@@ -14,14 +14,6 @@ export interface Props {
   content: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/require-await
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    fallback: "blocking",
-    paths: [],
-  };
-};
-
 export const getStaticProps: GetStaticProps<Props> = async ({
   locale,
 }: // eslint-disable-next-line @typescript-eslint/require-await
