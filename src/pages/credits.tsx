@@ -36,6 +36,10 @@ GetStaticPropsContext) => {
         },
         revalidate: 30,
       };
+    } else {
+      return {
+        notFound: true,
+      };
     }
   } catch (error) {
     return {
