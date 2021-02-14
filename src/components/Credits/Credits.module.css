@@ -1,15 +1,15 @@
 .markdown {
-  @apply leading-relaxed text-black dark:text-white;
+  @apply leading-relaxed;
 }
 
 .markdown h1 {
-  @apply my-8 text-6xl font-semibold leading-none tracking-tight dark:text-gray-100;
+  @apply my-8 text-6xl font-semibold leading-none tracking-tight;
 }
 
 .markdown h2 {
-  @apply my-6 text-3xl font-semibold leading-tight text-gray-800 underline;
+  @apply my-6 text-3xl font-semibold leading-tight underline;
 }
 
 .markdown ul {
-  @apply mx-4 my-3 text-lg text-gray-700 list-disc;
+  @apply mx-4 my-3 text-lg list-disc;
 }
