@@ -2,11 +2,11 @@ import Link, { LinkProps } from "next/link";
 
 import { ReactNode } from "react";
 
+import CreditsButton from "@/components/Footer/CreditsButton";
 import LocaleSelect from "@/components/Footer/LocaleSelect";
 
 import { SocialLinks } from "@/const";
 import { Facebook, Github, Instagram, Linkedin, Twitter } from "@/icons";
-
 interface FooterLinkProps extends LinkProps {
   children: string;
 }
@@ -78,10 +78,11 @@ export default function Footer(): JSX.Element {
           <Twitter />
         </FooterIconLink>
       </div>
-      <div className="flex flex-col items-center justify-center max-w-3xl py-8 mx-auto space-x-6 space-y-6 sm:flex-row sm:space-y-0">
+      <div className="flex flex-col items-center justify-center max-w-3xl pt-8 mx-auto space-x-6 space-y-6 sm:flex-row sm:space-y-0">
         <p className="flex-shrink-0 text-base text-center text-gray-400">
           &copy; Shun Kakinoki. All rights reserved.
         </p>
+        <CreditsButton />
         <div className="sm:flex-grow-0">
           <LocaleSelect />
         </div>
