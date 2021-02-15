@@ -1,3 +1,17 @@
+# [1.8.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.7.2...v1.8.0) (2021-02-15)
+
+### Features
+
+- ini blog content ([00ebf71](https://github.com/shunkakinoki/shunkakinoki.com/commit/00ebf71030103190a527133f9eb38939fdfb002a))
+
+### Performance Improvements
+
+- ini content module ([a0a8b94](https://github.com/shunkakinoki/shunkakinoki.com/commit/a0a8b94dcb687303b6b7a4b6d08f66f37c5920d0))
+- ini i18n about ([1ff0704](https://github.com/shunkakinoki/shunkakinoki.com/commit/1ff07041763b09ecec50116186a67574186e13fc))
+- ini kokorozashi mission ([ec12dd8](https://github.com/shunkakinoki/shunkakinoki.com/commit/ec12dd86f660ccb44fc5e1f0ccaabb5963397092))
+- ini yarn upgrade ([05f0386](https://github.com/shunkakinoki/shunkakinoki.com/commit/05f0386f86d9421f797c4900d5749c3c5e0c1fa5))
+- refactor md styles ([c5296eb](https://github.com/shunkakinoki/shunkakinoki.com/commit/c5296ebe40eca74096f68560b829410a80441ac1))
+
 ## [1.7.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.7.1...v1.7.2) (2021-02-15)
 
 ### Performance Improvements
