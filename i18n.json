@@ -3,6 +3,7 @@
   "locales": ["en", "ja", "zh"],
   "pages": {
     "*": ["_error", "common", "form"],
-    "/": ["landing"]
+    "/": ["landing"],
+    "/about": ["about"]
   }
 }
