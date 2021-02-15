@@ -49,7 +49,7 @@ export default function CoreCard({
         </div>
       </div>
       <div className="mt-5">
-        <div className="text-lg font-medium text-center text-black dark:text-gray-300">
+        <div className="text-lg font-semibold text-center text-black dark:text-gray-300">
           <Link href={href}>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a className="focus:outline-none">

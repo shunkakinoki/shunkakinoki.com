@@ -15,5 +15,9 @@
 }
 
 .markdown ul {
-  @apply mx-4 my-3 text-2xl list-disc list-outside;
+  @apply mx-4 my-3 text-2xl;
+}
+
+.markdown li {
+  @apply my-3 border-b border-black border-dotted;
 }
