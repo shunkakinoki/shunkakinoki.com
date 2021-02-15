@@ -13,7 +13,7 @@ import validator from "validator";
 import { NotionLinks } from "@/const";
 import { getGithubContent } from "@/lib/github";
 import { resolveNotionPage } from "@/lib/notion";
-import BlogScreen from "@/screens/BlogScreen";
+import ContentScreen from "@/screens/ContentScreen";
 import NotionScreen from "@/screens/NotionScreen";
 
 export interface Props {
@@ -152,7 +152,7 @@ const PageId = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   if (content && frontMatter && type === "blog") {
     return (
-      <BlogScreen
+      <ContentScreen
         frontMatter={JSON.parse(frontMatter) as { [key: string]: any }}
         source={JSON.parse(content) as MdxRemote.Source}
       />

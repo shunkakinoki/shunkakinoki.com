@@ -19,21 +19,21 @@ export const getGithubContent = async (
     }
   | undefined
 > => {
+  const target =
+    dir !== "credits" && pageId !== "CREDITS"
+      ? `${githubLink}/${dir}/${locale ?? "en"}/${pageId}.md`
+      : `${githubLink}/CREDITS.md`;
+
   try {
-    const response = await fetch(
-      dir !== "credits" && pageId !== "CREDITS"
-        ? `${githubLink}/${dir}/${locale ?? "en"}/${pageId}.md`
-        : `${githubLink}/CREDITS.md`,
-      {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(target, {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
 
     if (!response.ok) {
-      throw Error(`${dir} not found`);
+      throw Error(`${target} not found`);
     }
 
     let source = await response.text();
@@ -50,4 +50,18 @@ export const getGithubContent = async (
   } catch (err) {
     throw Error(err);
   }
+};
+
+export const getGithubSummary = async (
+  dir: string,
+  locale?: string,
+  range?: number[]
+) => {
+  const result = await getGithubContent(dir, "SUMMARY", locale, range);
+
+  if (result) {
+    console.log(result.source.renderedOutput);
+  }
+
+  return result;
 };
