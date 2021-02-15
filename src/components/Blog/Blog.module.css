@@ -2,10 +2,6 @@
   @apply leading-relaxed;
 }
 
-.markdown p {
-  @apply my-3;
-}
-
 .markdown h1 {
   @apply my-8 text-6xl font-semibold leading-none tracking-tight;
 }
@@ -18,42 +14,10 @@
   @apply my-5 text-4xl font-medium leading-snug;
 }
 
-.markdown h4 {
-  @apply my-4 font-serif text-3xl leading-snug;
-}
-
-.markdown h5 {
-  @apply my-3 text-3xl font-light leading-snug;
-}
-
-.markdown h6 {
-  @apply my-3 text-3xl font-thin leading-snug;
-}
-
 .markdown ul {
-  @apply mx-4 my-3 font-serif text-2xl list-disc;
+  @apply mx-4 my-3 text-2xl;
 }
 
-.markdown ol {
-  @apply mx-4 my-3 font-sans text-2xl list-decimal list-inside;
-}
-
-.markdown table {
-  @apply table-caption w-full max-w-screen-lg overflow-hidden table-auto;
-}
-
-.markdown th {
-  @apply relative font-serif text-2xl font-semibold leading-relaxed text-left border-collapse;
-}
-
-.markdown td {
-  @apply px-4 py-2 font-serif leading-relaxed;
-}
-
-.markdown blockquote {
-  @apply p-3 mx-16 my-auto font-serif italic;
-}
-
-.markdown blockquote > p {
-  @apply max-w-screen-md mx-0 my-auto text-4xl font-bold leading-snug;
+.markdown li {
+  @apply my-3 underline;
 }
