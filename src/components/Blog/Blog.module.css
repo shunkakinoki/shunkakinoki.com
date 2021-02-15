@@ -19,5 +19,5 @@
 }
 
 .markdown li {
-  @apply my-3 border-b border-black border-dotted;
+  @apply my-3 underline;
 }
