@@ -17,24 +17,19 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   locale,
 }: // eslint-disable-next-line @typescript-eslint/require-await
 GetStaticPropsContext) => {
-  try {
-    const result = await getGithubContent("about", "ABOUT", locale, [2, 3]);
-    if (result) {
-      const { source } = result;
-      return {
-        props: {
-          source: JSON.stringify(source),
-        },
-        revalidate: 30,
-      };
-    } else {
-      return {
-        notFound: true,
-      };
-    }
-  } catch {
+  const result = await getGithubContent("about", "ABOUT", locale, [2, 3]);
+  if (result) {
+    const { source } = result;
+    return {
+      props: {
+        source: JSON.stringify(source),
+      },
+      revalidate: 30,
+    };
+  } else {
     return {
       notFound: true,
+      revalidate: 30,
     };
   }
 };

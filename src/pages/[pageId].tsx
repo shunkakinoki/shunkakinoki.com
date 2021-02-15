@@ -121,26 +121,21 @@ GetStaticPropsContext) => {
     } catch {}
   }
 
-  try {
-    const page = await resolveNotionPage(notionCollection || pageId);
+  const page = await resolveNotionPage(notionCollection || pageId);
 
-    if (page) {
-      const { recordMap } = page;
-      return {
-        props: {
-          content: JSON.stringify(recordMap),
-          type: notionCollection ? "collection" : "page",
-        },
-        revalidate: 30,
-      };
-    } else {
-      return {
-        notFound: true,
-      };
-    }
-  } catch (error) {
+  if (page) {
+    const { recordMap } = page;
+    return {
+      props: {
+        content: JSON.stringify(recordMap),
+        type: notionCollection ? "collection" : "page",
+      },
+      revalidate: 30,
+    };
+  } else {
     return {
       notFound: true,
+      revalidate: 30,
     };
   }
 };
