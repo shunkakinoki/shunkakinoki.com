@@ -31,7 +31,7 @@
 }
 
 .markdown ul {
-  @apply mx-4 my-3 font-serif text-2xl list-disc;
+  @apply mx-4 my-3 text-2xl leading-3 list-disc;
 }
 
 .markdown ol {
