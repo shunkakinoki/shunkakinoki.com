@@ -3,11 +3,11 @@
 }
 
 .markdown h1 {
-  @apply my-8 text-xl font-semibold leading-none tracking-tight sm:text-4xl;
+  @apply my-8 text-xl font-semibold leading-none tracking-tight sm:text-5xl;
 }
 
 .markdown h2 {
-  @apply my-6 text-lg font-semibold leading-tight underline sm:text-xl;
+  @apply my-6 text-lg font-semibold leading-tight underline sm:text-2xl;
 }
 
 .markdown ul {
