@@ -31,11 +31,15 @@
 }
 
 .markdown ul {
-  @apply mx-4 my-3 text-xl font-semibold list-disc;
+  @apply mx-4 my-6 text-lg font-semibold text-gray-800 list-disc sm:my-9;
+}
+
+.markdown li {
+  @apply my-1;
 }
 
 .markdown ol {
-  @apply mx-4 my-3 text-xl font-semibold list-decimal list-inside;
+  @apply mx-4 my-6 text-lg font-semibold text-gray-800 list-decimal list-inside sm:my-9;
 }
 
 .markdown table {
