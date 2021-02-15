@@ -1,3 +1,11 @@
+## [1.8.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.8.0...v1.8.1) (2021-02-15)
+
+### Performance Improvements
+
+- refactor credits content ([980e01d](https://github.com/shunkakinoki/shunkakinoki.com/commit/980e01d90ceef820f0d612a43aea9a7027e6aea3))
+- refactor li styles ([df03aa9](https://github.com/shunkakinoki/shunkakinoki.com/commit/df03aa924d2114502b13c37cc34bb9fd3188c649))
+- refactor revalidate props ([33c0662](https://github.com/shunkakinoki/shunkakinoki.com/commit/33c06624079eaa66b70d64a626fb6619924ed299))
+
 # [1.8.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.7.2...v1.8.0) (2021-02-15)
 
 ### Features
