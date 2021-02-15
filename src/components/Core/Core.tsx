@@ -15,7 +15,7 @@ export default function Core({ isPartial = false }: Props): JSX.Element {
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Core</SectionText>
       </div>
-      <dl className="overflow-hidden bg-gray-200 lg:grid sm:gap-0.5 lg:grid-cols-3">
+      <dl className="overflow-hidden bg-gray-200 grid gap-0.5 grid-cols-1 sm:grid-cols-3">
         <CoreCard color="blue" name="Cause" href="/cause">
           <Variable />
         </CoreCard>
@@ -26,7 +26,7 @@ export default function Core({ isPartial = false }: Props): JSX.Element {
           <Scale />
         </CoreCard>
       </dl>
-      <div className="w-full pt-3 my-3 text-center leading-5">
+      <div className="w-full pt-3 my-3 leading-5 text-center">
         <div className="flex justify-center w-full">
           <SwitchButton
             href={isPartial ? "/about" : "/#core"}

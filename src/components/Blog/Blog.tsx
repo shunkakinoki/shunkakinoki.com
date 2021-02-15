@@ -14,7 +14,7 @@ export default function Blog({ source }: Props): JSX.Element {
   const content = hydrate(source);
 
   return (
-    <section className="text-black dark:text-white">
+    <section className="px-3 text-black dark:text-white">
       <div className={s.markdown}>{content}</div>
     </section>
   );
