@@ -1,3 +1,9 @@
+# [1.10.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.9.0...v1.10.0) (2021-02-16)
+
+### Features
+
+- ini slug pages ([0ed3c4a](https://github.com/shunkakinoki/shunkakinoki.com/commit/0ed3c4a82d5aa472f84b5ec9d406fbb36aab90fa))
+
 # [1.9.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.8.1...v1.9.0) (2021-02-16)
 
 ### Features
