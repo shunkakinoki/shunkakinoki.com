@@ -7,6 +7,7 @@ import {
 
 import {MdxRemote} from "next-mdx-remote/types";
 import {ExtendedRecordMap} from "notion-types";
+import {parsePageId} from "notion-utils";
 
 import validator from "validator";
 
@@ -133,7 +134,9 @@ GetStaticPropsContext) => {
     }
   }
 
-  if (!!validator.isUUID(pageId) && !notionCollection) {
+  if (!validator.isUUID(parsePageId(pageId)) && !notionCollection) {
+    console.log(!validator.isUUID(pageId));
+
     if (blogCollections.includes(pageId)) {
       const result = await getGithubSummary(pageId, locale);
       if (result) {
