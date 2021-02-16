@@ -9,6 +9,7 @@ export interface Props {
     [key: string]: any;
   };
   source: MdxRemote.Source;
+  slug: string;
 }
 
 interface BlogLinkProps {
@@ -16,15 +17,25 @@ interface BlogLinkProps {
   href: string;
 }
 
-function BlogLink({children, href}: BlogLinkProps) {
-  return <Link href={href.replace(".md", "")}>{children}</Link>;
-}
+export default function Blog({source, slug}: Props): JSX.Element {
+  function BlogLink({children, href}: BlogLinkProps) {
+    return (
+      <Link
+        href={
+          slug === "blog"
+            ? href.replace(".md", "")
+            : `${slug}/${href.replace(".md", "")}`
+        }
+      >
+        {children}
+      </Link>
+    );
+  }
 
-const components = {
-  a: BlogLink,
-};
+  const components = {
+    a: BlogLink,
+  };
 
-export default function Blog({source}: Props): JSX.Element {
   const content = hydrate(source, {components});
 
   return (

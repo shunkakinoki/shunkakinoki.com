@@ -11,16 +11,20 @@ import {ExtendedRecordMap} from "notion-types";
 import validator from "validator";
 
 import {NotionLinks} from "@/const";
-import {getGithubContent} from "@/lib/github";
+import {getGithubContent, getGithubSummary} from "@/lib/github";
 import {resolveNotionPage} from "@/lib/notion";
+import BlogScreen from "@/screens/BlogScreen";
 import ContentScreen from "@/screens/ContentScreen";
 import NotionScreen from "@/screens/NotionScreen";
 
 export interface Props {
   content: string;
   frontMatter?: string;
-  type: "blog" | "collection" | "page";
+  slug?: string;
+  type: "blog" | "content" | "collection" | "page";
 }
+
+const blogCollections = ["blog", "pioneer"];
 
 const coreCollections = ["cause", "mission", "values"];
 
@@ -50,7 +54,36 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   locale,
 }: // eslint-disable-next-line @typescript-eslint/require-await
 GetStaticPropsContext) => {
-  const pageId = params?.pageId as string;
+  const slugs = params?.slug as string[];
+
+  if (slugs?.length !== 1) {
+    try {
+      const result = await getGithubContent(
+        slugs[0],
+        slugs?.splice(0, 1).join("/"),
+        locale,
+      );
+      if (result) {
+        const {frontMatter, source} = result;
+        return {
+          props: {
+            content: JSON.stringify(source),
+            frontMatter: JSON.stringify(frontMatter),
+            type: "content",
+          },
+          revalidate: 30,
+        };
+      }
+    } catch (err) {
+      return {
+        notFound: true,
+        revalidate: 30,
+      };
+    }
+  }
+
+  const pageId = slugs[0];
+
   let notionCollection;
 
   if (notionCollections.includes(pageId)) {
@@ -101,10 +134,31 @@ GetStaticPropsContext) => {
   }
 
   if (!validator.isUUID(pageId) && !notionCollection) {
-    try {
+    if (blogCollections.includes(pageId)) {
+      const result = await getGithubSummary(pageId, locale);
+      if (result) {
+        const {frontMatter, source} = result;
+        return {
+          props: {
+            content: JSON.stringify(source),
+            frontMatter: JSON.stringify(frontMatter),
+            slug: JSON.stringify(pageId),
+            type: "blog",
+          },
+          revalidate: 30,
+        };
+      } else {
+        return {
+          notFound: true,
+          revalidate: 30,
+        };
+      }
+    }
+
+    if (coreCollections.includes(pageId)) {
       const result = await getGithubContent(
-        coreCollections.includes(pageId) ? pageId : "blog",
-        coreCollections.includes(pageId) ? pageId.toUpperCase() : pageId,
+        pageId,
+        pageId.toUpperCase(),
         locale,
       );
       if (result) {
@@ -113,7 +167,27 @@ GetStaticPropsContext) => {
           props: {
             content: JSON.stringify(source),
             frontMatter: JSON.stringify(frontMatter),
-            type: "blog",
+            type: "content",
+          },
+          revalidate: 30,
+        };
+      } else {
+        return {
+          notFound: true,
+          revalidate: 30,
+        };
+      }
+    }
+
+    try {
+      const result = await getGithubContent("blog", pageId, locale);
+      if (result) {
+        const {frontMatter, source} = result;
+        return {
+          props: {
+            content: JSON.stringify(source),
+            frontMatter: JSON.stringify(frontMatter),
+            type: "content",
           },
           revalidate: 30,
         };
@@ -148,9 +222,20 @@ GetStaticPropsContext) => {
 const PageId = ({
   content,
   frontMatter,
+  slug,
   type,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  if (content && frontMatter && type === "blog") {
+  if (content && frontMatter && slug && type === "blog") {
+    return (
+      <BlogScreen
+        frontMatter={JSON.parse(frontMatter) as {[key: string]: any}}
+        source={JSON.parse(content) as MdxRemote.Source}
+        slug={JSON.parse(slug) as string}
+      />
+    );
+  }
+
+  if (content && frontMatter && type === "content") {
     return (
       <ContentScreen
         frontMatter={JSON.parse(frontMatter) as {[key: string]: any}}
