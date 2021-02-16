@@ -1,3 +1,9 @@
+## [1.10.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.10.0...v1.10.1) (2021-02-16)
+
+### Performance Improvements
+
+- refactor fetch page ([a2f91b9](https://github.com/shunkakinoki/shunkakinoki.com/commit/a2f91b9be2f482f596120875a5fc1e10a947d6d1))
+
 # [1.10.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.9.0...v1.10.0) (2021-02-16)
 
 ### Features
