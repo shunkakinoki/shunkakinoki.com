@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.10.1...v1.10.2) (2021-02-16)
+
+### Performance Improvements
+
+- ini parse pageId ([2dd646d](https://github.com/shunkakinoki/shunkakinoki.com/commit/2dd646dd36b378515815672b0e53a93423b9eae4))
+- ini parse uuid ([1b6897f](https://github.com/shunkakinoki/shunkakinoki.com/commit/1b6897fdb240b3ba1654f5e8aedc058edc76bee0))
+
 ## [1.10.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.10.0...v1.10.1) (2021-02-16)
 
 ### Performance Improvements
