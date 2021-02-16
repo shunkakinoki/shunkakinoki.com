@@ -1,3 +1,15 @@
+# [1.9.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.8.1...v1.9.0) (2021-02-16)
+
+### Features
+
+- complete refactor w/ eslint config ([1b6f698](https://github.com/shunkakinoki/shunkakinoki.com/commit/1b6f6983a708aca84ec57af3d571fcdad4e88905))
+
+### Performance Improvements
+
+- ini eslinrc json ([8937911](https://github.com/shunkakinoki/shunkakinoki.com/commit/893791157e29e3254fd7248126a713620cd9d6aa))
+- ncu run upgrade ([5a9d905](https://github.com/shunkakinoki/shunkakinoki.com/commit/5a9d905702501980eb706e5f139030f0927780c9))
+- refactor eslint prettier ([5c18328](https://github.com/shunkakinoki/shunkakinoki.com/commit/5c18328a0bacb1d5312e9521b7dc7cf9a92f91cb))
+
 ## [1.8.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.8.0...v1.8.1) (2021-02-15)
 
 ### Performance Improvements
