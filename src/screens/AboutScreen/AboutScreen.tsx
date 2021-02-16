@@ -1,4 +1,4 @@
-import About, { Props as AboutProps } from "@/components/About";
+import About, {Props as AboutProps} from "@/components/About";
 import Core from "@/components/Core";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -6,7 +6,7 @@ import Life from "@/components/Life";
 
 export type Props = AboutProps;
 
-export default function AboutScreen({ source }: Props): JSX.Element {
+export default function AboutScreen({source}: Props): JSX.Element {
   return (
     <>
       <Header />

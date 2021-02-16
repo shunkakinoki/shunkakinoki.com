@@ -1,8 +1,8 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import {NextApiRequest, NextApiResponse} from "next";
 
 export default async function buttondown(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ): Promise<void> {
   const API_KEY = process.env.BUTTONDOWN_API_KEY;
   const newsletterResponse = await fetch(
@@ -14,7 +14,7 @@ export default async function buttondown(
         "Content-Type": "application/json",
       },
       method: "GET",
-    }
+    },
   );
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -22,7 +22,7 @@ export default async function buttondown(
 
   res.setHeader(
     "Cache-Control",
-    "public, s-maxage=1800, stale-while-revalidate=600"
+    "public, s-maxage=1800, stale-while-revalidate=600",
   );
 
   return res.status(200).json({

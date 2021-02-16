@@ -1,4 +1,4 @@
-import { External } from "@/icons";
+import {External} from "@/icons";
 
 interface Props {
   children: JSX.Element;

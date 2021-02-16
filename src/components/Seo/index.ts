@@ -1,1 +1,1 @@
-export { default } from "./Seo";
+export {default} from "./Seo";

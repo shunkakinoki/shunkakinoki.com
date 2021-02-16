@@ -1,10 +1,10 @@
-import Link, { LinkProps } from "next/link";
+import Link, {LinkProps} from "next/link";
 
 interface Props extends LinkProps {
   children: string;
 }
 
-export default function LinkButton({ children }: Props): JSX.Element {
+export default function LinkButton({children}: Props): JSX.Element {
   return (
     <Link href="/">
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

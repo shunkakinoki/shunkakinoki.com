@@ -1,13 +1,13 @@
-import Link, { LinkProps } from "next/link";
+import Link, {LinkProps} from "next/link";
 
-import { Left, Right, Switch } from "@/icons";
+import {Left, Right, Switch} from "@/icons";
 
 interface Props extends LinkProps {
   href: string;
   type: "right" | "left" | "switch";
 }
 
-export default function SwitchButton({ href, type }: Props): JSX.Element {
+export default function SwitchButton({href, type}: Props): JSX.Element {
   return (
     <Link href={href}>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

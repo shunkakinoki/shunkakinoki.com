@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
-import { SwitchButton } from "@/common/Button";
-import { SectionText } from "@/common/Text";
+import {SwitchButton} from "@/common/Button";
+import {SectionText} from "@/common/Text";
 import HistoryStep from "@/components/History/HistoryStep";
 
 interface Props {
@@ -12,7 +12,7 @@ interface HistoryYearProps {
   children: string;
 }
 
-function HistoryYear({ children }: HistoryYearProps): JSX.Element {
+function HistoryYear({children}: HistoryYearProps): JSX.Element {
   return (
     <h3 className="mt-2 mb-4 font-light tracking-tight text-gray-500 md:text-base dark:text-gray-100">
       {children}
@@ -20,7 +20,7 @@ function HistoryYear({ children }: HistoryYearProps): JSX.Element {
   );
 }
 
-export default function History({ isPartial = false }: Props): JSX.Element {
+export default function History({isPartial = false}: Props): JSX.Element {
   return (
     <section key="history" className={clsx("w-full mb-2", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">

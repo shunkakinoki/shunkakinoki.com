@@ -1,11 +1,11 @@
-import { NotionAPI } from "notion-client";
+import {NotionAPI} from "notion-client";
 import {
   ExtendedRecordMap,
   PageMap,
   SearchParams,
   SearchResults,
 } from "notion-types";
-import { getPageTitle, getAllPagesInSpace, parsePageId } from "notion-utils";
+import {getPageTitle, getAllPagesInSpace, parsePageId} from "notion-utils";
 
 const notion = new NotionAPI();
 
@@ -20,18 +20,18 @@ export async function getPage(pageId: string): Promise<ExtendedRecordMap> {
 
 export async function getAllPages(
   rootNotionPageId: string,
-  rootNotionSpaceId: string
+  rootNotionSpaceId: string,
 ): Promise<PageMap> {
   const pageMap = await getAllPagesInSpace(
     rootNotionPageId,
     rootNotionSpaceId,
-    getPage
+    getPage,
   );
   return pageMap;
 }
 
 export async function resolveNotionPage(
-  pageId: string
+  pageId: string,
 ): Promise<{
   parsedPageId: string;
   recordMap: ExtendedRecordMap;
@@ -43,7 +43,7 @@ export async function resolveNotionPage(
     const recordMap = await getPage(pageId);
     const title = getPageTitle(recordMap);
 
-    return { parsedPageId, recordMap, title };
+    return {parsedPageId, recordMap, title};
   } else {
     return null;
   }

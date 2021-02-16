@@ -5,14 +5,14 @@ import {
   GetStaticPropsContext,
 } from "next";
 
-import { MdxRemote } from "next-mdx-remote/types";
-import { ExtendedRecordMap } from "notion-types";
+import {MdxRemote} from "next-mdx-remote/types";
+import {ExtendedRecordMap} from "notion-types";
 
 import validator from "validator";
 
-import { NotionLinks } from "@/const";
-import { getGithubContent } from "@/lib/github";
-import { resolveNotionPage } from "@/lib/notion";
+import {NotionLinks} from "@/const";
+import {getGithubContent} from "@/lib/github";
+import {resolveNotionPage} from "@/lib/notion";
 import ContentScreen from "@/screens/ContentScreen";
 import NotionScreen from "@/screens/NotionScreen";
 
@@ -105,10 +105,10 @@ GetStaticPropsContext) => {
       const result = await getGithubContent(
         coreCollections.includes(pageId) ? pageId : "blog",
         coreCollections.includes(pageId) ? pageId.toUpperCase() : pageId,
-        locale
+        locale,
       );
       if (result) {
-        const { frontMatter, source } = result;
+        const {frontMatter, source} = result;
         return {
           props: {
             content: JSON.stringify(source),
@@ -118,13 +118,18 @@ GetStaticPropsContext) => {
           revalidate: 30,
         };
       }
-    } catch {}
+    } catch (err) {
+      return {
+        notFound: true,
+        revalidate: 30,
+      };
+    }
   }
 
   const page = await resolveNotionPage(notionCollection || pageId);
 
   if (page) {
-    const { recordMap } = page;
+    const {recordMap} = page;
     return {
       props: {
         content: JSON.stringify(recordMap),
@@ -148,7 +153,7 @@ const PageId = ({
   if (content && frontMatter && type === "blog") {
     return (
       <ContentScreen
-        frontMatter={JSON.parse(frontMatter) as { [key: string]: any }}
+        frontMatter={JSON.parse(frontMatter) as {[key: string]: any}}
         source={JSON.parse(content) as MdxRemote.Source}
       />
     );

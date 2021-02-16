@@ -1,2 +1,2 @@
-export { default as ErrorText } from "./ErrorText";
-export { default as SectionText } from "./SectionText";
+export {default as ErrorText} from "./ErrorText";
+export {default as SectionText} from "./SectionText";

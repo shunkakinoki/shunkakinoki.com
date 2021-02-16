@@ -1,13 +1,13 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import {NextApiRequest, NextApiResponse} from "next";
 
-import { SocialLinks } from "@/const";
+import {SocialLinks} from "@/const";
 
 export default async function github(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ): Promise<void> {
   const userResponse = await fetch(
-    `https://api.github.com/users/${SocialLinks.shunkakinoki}`
+    `https://api.github.com/users/${SocialLinks.shunkakinoki}`,
   );
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -15,7 +15,7 @@ export default async function github(
 
   res.setHeader(
     "Cache-Control",
-    "public, s-maxage=1800, stale-while-revalidate=600"
+    "public, s-maxage=1800, stale-while-revalidate=600",
   );
 
   return res.status(200).json({

@@ -1,1 +1,1 @@
-export { default } from "./LocaleSelect";
+export {default} from "./LocaleSelect";

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { Cake, Chip, Fire, Globe, School, Tag, Work } from "@/icons";
+import {Cake, Chip, Fire, Globe, School, Tag, Work} from "@/icons";
 
 interface Props {
   isBottom?: boolean;
@@ -41,7 +41,7 @@ export default function HistoryStep({
                 type === "globe" && "bg-green-500",
                 type === "school" && "bg-yellow-500",
                 type === "tag" && "bg-blue-500",
-                type === "work" && "bg-indigo-500"
+                type === "work" && "bg-indigo-500",
               )}
             >
               {type === "cake" && <Cake />}

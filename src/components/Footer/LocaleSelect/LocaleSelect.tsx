@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 
-import { Down } from "@/icons";
+import {Down} from "@/icons";
 
 export default function LocaleSelect(): JSX.Element {
   const router = useRouter();
@@ -19,7 +19,7 @@ export default function LocaleSelect(): JSX.Element {
               value={router.locale}
               // eslint-disable-next-line @typescript-eslint/no-empty-function
               onBlur={() => {}}
-              onChange={(e) =>
+              onChange={e =>
                 router.push(router.pathname, router.asPath, {
                   locale: e.target.value,
                 })

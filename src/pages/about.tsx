@@ -4,9 +4,9 @@ import {
   GetStaticPropsContext,
 } from "next";
 
-import { MdxRemote } from "next-mdx-remote/types";
+import {MdxRemote} from "next-mdx-remote/types";
 
-import { getGithubContent } from "@/lib/github";
+import {getGithubContent} from "@/lib/github";
 import AboutScreen from "@/screens/AboutScreen";
 export interface Props {
   source: string;
@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
 GetStaticPropsContext) => {
   const result = await getGithubContent("about", "ABOUT", locale, [2, -1]);
   if (result) {
-    const { source } = result;
+    const {source} = result;
     return {
       props: {
         source: JSON.stringify(source),
