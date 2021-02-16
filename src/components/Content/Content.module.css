@@ -2,6 +2,10 @@
   @apply leading-relaxed;
 }
 
+.markdown a {
+  @apply underline;
+}
+
 .markdown p {
   @apply my-3;
 }
