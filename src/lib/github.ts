@@ -67,9 +67,5 @@ export const getGithubSummary = async (
 > => {
   const result = await getGithubContent(dir, "SUMMARY", locale, range);
 
-  if (result) {
-    console.log(result.source.renderedOutput);
-  }
-
   return result;
 };

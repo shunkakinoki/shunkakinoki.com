@@ -133,7 +133,7 @@ GetStaticPropsContext) => {
     }
   }
 
-  if (!validator.isUUID(pageId) && !notionCollection) {
+  if (!!validator.isUUID(pageId) && !notionCollection) {
     if (blogCollections.includes(pageId)) {
       const result = await getGithubSummary(pageId, locale);
       if (result) {
