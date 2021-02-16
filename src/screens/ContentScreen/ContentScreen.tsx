@@ -1,4 +1,4 @@
-import Content, { Props as ContentProps } from "@/components/Content";
+import Content, {Props as ContentProps} from "@/components/Content";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 

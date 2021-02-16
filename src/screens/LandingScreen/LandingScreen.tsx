@@ -1,4 +1,4 @@
-import About, { Props as AboutProps } from "@/components/About";
+import About, {Props as AboutProps} from "@/components/About";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import History from "@/components/History";
@@ -8,7 +8,7 @@ import Social from "@/components/Social";
 
 export type Props = AboutProps;
 
-export default function LandingScreen({ source }: Props): JSX.Element {
+export default function LandingScreen({source}: Props): JSX.Element {
   return (
     <>
       <Header />

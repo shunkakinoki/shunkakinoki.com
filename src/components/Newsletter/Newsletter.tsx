@@ -1,23 +1,23 @@
 import clsx from "clsx";
-import { useState } from "react";
+import {useState} from "react";
 import useSWR from "swr";
 
-import { Badge, Exclamation, Light } from "@/icons";
+import {Badge, Exclamation, Light} from "@/icons";
 import fetcher from "@/lib/fetcher";
 
 export default function Newsletter(): JSX.Element {
-  const { data } = useSWR<{
+  const {data} = useSWR<{
     subscribers: number;
   }>("/api/buttondown", fetcher);
 
   const [form, setForm] = useState<{
     message: string;
     state: "error" | "success" | "loading" | "initial";
-  }>({ message: "", state: "initial" });
+  }>({message: "", state: "initial"});
 
   const subscribe = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
-    setForm({ message: "", state: "loading" });
+    setForm({message: "", state: "loading"});
 
     const formData = new FormData(e.target as HTMLFormElement);
 
@@ -33,7 +33,7 @@ export default function Newsletter(): JSX.Element {
     });
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const { error } = await res.json();
+    const {error} = await res.json();
     if (error) {
       setForm({
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -116,7 +116,7 @@ export default function Newsletter(): JSX.Element {
                   type="submit"
                   className={clsx(
                     "inline-flex items-center w-full px-5 py-3 text-base font-medium text-white bg-indigo-500 border border-transparent rounded-md shadow dark:bg-indigo-600 hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 sm:px-10 dark:hover:bg-indigo-500",
-                    "cursor-not-allowed" && form?.state === "loading"
+                    "cursor-not-allowed" && form?.state === "loading",
                   )}
                 >
                   {form?.state === "loading" && (

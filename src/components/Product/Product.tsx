@@ -1,16 +1,16 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-import { SwitchButton } from "@/common/Button";
-import { SectionText } from "@/common/Text";
+import {SwitchButton} from "@/common/Button";
+import {SectionText} from "@/common/Text";
 import ProductCard from "@/components/Product/ProductCard";
-import { ProductLinks } from "@/const";
+import {ProductLinks} from "@/const";
 
 interface Props {
   isPartial?: boolean;
 }
 
-export default function Product({ isPartial = false }: Props): JSX.Element {
+export default function Product({isPartial = false}: Props): JSX.Element {
   return (
     <section key="product" className={clsx("w-full mb-6", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
@@ -21,7 +21,7 @@ export default function Product({ isPartial = false }: Props): JSX.Element {
           className={clsx(
             "grid grid-cols-1 gap-3",
             isPartial && "md:gap-3",
-            !isPartial && "md:gap-6"
+            !isPartial && "md:gap-6",
           )}
         >
           <ProductCard

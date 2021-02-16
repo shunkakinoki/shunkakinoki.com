@@ -14,7 +14,7 @@ export default function SectionText({
       className={clsx(
         "my-3 text-lg font-medium leading-loose text-gray-800 align-baseline dark:text-gray-300",
         isPartial && "md:text-xl",
-        !isPartial && "md:text-3xl md:my-6"
+        !isPartial && "md:text-3xl md:my-6",
       )}
     >
       {children}

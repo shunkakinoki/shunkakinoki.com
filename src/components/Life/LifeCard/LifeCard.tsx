@@ -28,7 +28,7 @@ export default function LifeCard({
     <div
       className={clsx(
         "relative p-6 bg-white hover:bg-gray-50 dark:bg-black group dark:hover:bg-gray-900 sm:rounded-tr-none focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500",
-        hidden && "block sm:hidden md:block"
+        hidden && "block sm:hidden md:block",
       )}
     >
       <div>
@@ -50,7 +50,7 @@ export default function LifeCard({
             color === "red" &&
               "text-red-700 bg-red-50 dark:text-red-50 dark:bg-red-700",
             color === "yellow" &&
-              "text-yellow-700 bg-yellow-50 dark:text-yellow-50 dark:bg-yellow-700"
+              "text-yellow-700 bg-yellow-50 dark:text-yellow-50 dark:bg-yellow-700",
           )}
         >
           {children}

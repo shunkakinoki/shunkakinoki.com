@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Notion, { Props as NotionProps } from "@/components/Notion";
+import Notion, {Props as NotionProps} from "@/components/Notion";
 
 export type Props = NotionProps;
 

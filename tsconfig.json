@@ -10,12 +10,18 @@
     "inlineSources": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
     "resolveJsonModule": true,
     "rootDir": ".",
@@ -24,6 +30,11 @@
     "strict": true,
     "target": "ESNext"
   },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "src/**/*"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "src/**/*"
+  ]
 }

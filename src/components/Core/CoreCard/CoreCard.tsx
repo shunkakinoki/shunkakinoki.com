@@ -28,7 +28,7 @@ export default function CoreCard({
     <div
       className={clsx(
         "flex flex-col group relative p-6 bg-white hover:bg-gray-50 dark:bg-black dark:hover:bg-gray-900 sm:rounded-tr-none focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500",
-        hidden && "block sm:hidden md:block"
+        hidden && "block sm:hidden md:block",
       )}
     >
       <div className="flex justify-center w-full">
@@ -41,7 +41,7 @@ export default function CoreCard({
               color === "indigo" &&
                 "text-indigo-50 bg-indigo-500 dark:text-indigo-900 dark:bg-indigo-300",
               color === "purple" &&
-                "text-purple-50 bg-purple-500 dark:text-purple-900 dark:bg-purple-3000"
+                "text-purple-50 bg-purple-500 dark:text-purple-900 dark:bg-purple-3000",
             )}
           >
             {children}
