@@ -134,7 +134,7 @@ GetStaticPropsContext) => {
     }
   }
 
-  if (!validator.isUUID(parsePageId(pageId)) && !notionCollection) {
+  if (!validator.isUUID(parsePageId(pageId) || "") && !notionCollection) {
     console.log(!validator.isUUID(pageId));
 
     if (blogCollections.includes(pageId)) {
