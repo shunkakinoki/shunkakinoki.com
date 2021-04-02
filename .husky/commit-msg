@@ -3,4 +3,4 @@
 
 [ -n "$CI" ] && exit 0
 
-yarn run lint-staged
+yarn run commitlint -e $1

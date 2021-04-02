@@ -1,5 +1,5 @@
 {
-  "compileOnSave": true,
+  "extends": "@shunkakinoki/tsconfig",
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": "./",
@@ -25,5 +25,5 @@
     "target": "ESNext"
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "src/**/*"]
+  "include": ["tsconfig.json"]
 }

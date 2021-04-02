@@ -10,13 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: "12"
+          always-auth: false
+          registry-url: https://registry.npmjs.org/
+          scope: "@shunkakinoki"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - uses: actions/cache@v2
         with:
           path: |
-            **/node_modules
+            ~/.npm
+            node_modules
+            */*/node_modules
           key: |
             yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
@@ -27,3 +33,5 @@ jobs:
           yarn run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
