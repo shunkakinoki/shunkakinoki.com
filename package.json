@@ -15,8 +15,7 @@
   "scripts": {
     "build": "next build",
     "check": "yarn run lint && yarn run depcheck:check && yarn run release:check",
-    "depcheck:check": "yarn run depcheck:exec && yarn run depcheck:root",
-    "depcheck:exec": "yarn workspaces run depcheck .",
+    "depcheck:check": "yarn run depcheck:root",
     "depcheck:root": "depcheck . --skip-missing=true",
     "dev": "next dev",
     "eslint:lint": "eslint . --config .eslintrc.js --ext .js,.ts,.tsx --cache --cache-location node_modules/.cache/eslint",
@@ -62,7 +61,6 @@
     "react-dom": "^17.0.2",
     "react-notion-x": "^4.3.7",
     "recoil": "^0.2.0",
-    "sharp": "^0.28.0",
     "swr": "^0.5.5",
     "tailwindcss": "^2.0.4",
     "validator": "^13.5.2"
@@ -80,7 +78,6 @@
     "@shunkakinoki/stylelint": "^1.0.0",
     "@shunkakinoki/tsconfig": "^1.0.0",
     "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.3",
     "npm-package-json-lint-config-shunkakinoki": "^1.0.0"
   }
 }
