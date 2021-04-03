@@ -1,11 +1,11 @@
-import {NotionAPI} from "notion-client";
-import {
+import { NotionAPI } from "notion-client";
+import type {
   ExtendedRecordMap,
   PageMap,
   SearchParams,
   SearchResults,
 } from "notion-types";
-import {getPageTitle, getAllPagesInSpace, parsePageId} from "notion-utils";
+import { getPageTitle, getAllPagesInSpace, parsePageId } from "notion-utils";
 
 const notion = new NotionAPI();
 
@@ -43,7 +43,7 @@ export async function resolveNotionPage(
     const recordMap = await getPage(pageId);
     const title = getPageTitle(recordMap);
 
-    return {parsedPageId, recordMap, title};
+    return { parsedPageId, recordMap, title };
   } else {
     return null;
   }

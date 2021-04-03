@@ -1,4 +1,5 @@
-import Content, {Props as ContentProps} from "@/components/Content";
+import type { Props as ContentProps } from "@/components/Content";
+import Content from "@/components/Content";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 

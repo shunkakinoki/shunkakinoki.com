@@ -1,6 +1,7 @@
-import {useRouter} from "next/router";
-import {useEffect} from "react";
-import {useRecoilState, atom, SetterOrUpdater} from "recoil";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import type { SetterOrUpdater } from "recoil";
+import { useRecoilState, atom } from "recoil";
 
 export const mobileMenuAtom = atom<boolean>({
   default: false,

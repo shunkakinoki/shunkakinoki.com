@@ -1,16 +1,17 @@
 import hydrate from "next-mdx-remote/hydrate";
-import {MdxRemote} from "next-mdx-remote/types";
+import type { MdxRemote } from "next-mdx-remote/types";
 
 import s from "./Content.module.css";
 
 export interface Props {
   frontMatter: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
   };
   source: MdxRemote.Source;
 }
 
-export default function Content({source}: Props): JSX.Element {
+export default function Content({ source }: Props): JSX.Element {
   const content = hydrate(source);
 
   return (

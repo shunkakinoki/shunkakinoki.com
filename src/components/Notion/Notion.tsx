@@ -1,18 +1,19 @@
 /* eslint-disable react/display-name */
 
-import {useTheme} from "next-themes";
-import Link, {LinkProps} from "next/link";
-import {ExtendedRecordMap} from "notion-types";
-import {Collection, CollectionRow, NotionRenderer} from "react-notion-x";
-import {NotionRendererProps} from "react-notion-x/build/esm/renderer";
+import { useTheme } from "next-themes";
+import type { LinkProps } from "next/link";
+import Link from "next/link";
+import type { ExtendedRecordMap } from "notion-types";
+import { Collection, CollectionRow, NotionRenderer } from "react-notion-x";
+import type { NotionRendererProps } from "react-notion-x/build/esm/renderer";
 import "react-notion-x/src/styles.css";
 
 export interface Props extends NotionRendererProps {
   recordMap: ExtendedRecordMap;
 }
 
-export default function Notion({recordMap, fullPage}: Props): JSX.Element {
-  const {theme} = useTheme();
+export default function Notion({ recordMap, fullPage }: Props): JSX.Element {
+  const { theme } = useTheme();
 
   return (
     <NotionRenderer

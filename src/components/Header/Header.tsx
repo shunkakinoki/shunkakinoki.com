@@ -1,6 +1,7 @@
 import useTranslation from "next-translate/useTranslation";
 import dynamic from "next/dynamic";
-import Link, {LinkProps} from "next/link";
+import type { LinkProps } from "next/link";
+import Link from "next/link";
 
 import s from "./Header.module.css";
 
@@ -13,7 +14,7 @@ interface HeaderLinkProps extends LinkProps {
   children: string;
 }
 
-export function HeaderLink({children, href}: HeaderLinkProps): JSX.Element {
+export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
   return (
     <li className="px-3 text-left text-gray-500 align-baseline leading-5 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">
       <Link href={href}>
@@ -27,7 +28,7 @@ export function HeaderLink({children, href}: HeaderLinkProps): JSX.Element {
 }
 
 export default function Header(): JSX.Element {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <nav className={s.glass}>

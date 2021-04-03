@@ -1,12 +1,12 @@
-import {
+import type {
   GetStaticProps,
   InferGetStaticPropsType,
   GetStaticPropsContext,
 } from "next";
 
-import {MdxRemote} from "next-mdx-remote/types";
+import type { MdxRemote } from "next-mdx-remote/types";
 
-import {getGithubContent} from "@/lib/github";
+import { getGithubContent } from "@/lib/github";
 import CreditsScreen from "@/screens/CreditsScreen";
 
 export interface Props {
@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
 GetStaticPropsContext) => {
   const result = await getGithubContent("credits", "CREDITS", locale);
   if (result) {
-    const {source} = result;
+    const { source } = result;
     return {
       props: {
         content: JSON.stringify(source),

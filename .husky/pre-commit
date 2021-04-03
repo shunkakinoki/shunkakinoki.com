@@ -3,4 +3,4 @@
 
 [ -n "$CI" ] && exit 0
 
-exit 0
+yarn run lint-staged

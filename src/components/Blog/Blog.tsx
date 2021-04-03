@@ -1,11 +1,12 @@
 import hydrate from "next-mdx-remote/hydrate";
-import {MdxRemote} from "next-mdx-remote/types";
+import type { MdxRemote } from "next-mdx-remote/types";
 import Link from "next/link";
 
 import s from "./Blog.module.css";
 
 export interface Props {
   frontMatter: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
   };
   source: MdxRemote.Source;
@@ -17,8 +18,8 @@ interface BlogLinkProps {
   href: string;
 }
 
-export default function Blog({source, slug}: Props): JSX.Element {
-  function BlogLink({children, href}: BlogLinkProps) {
+export default function Blog({ source, slug }: Props): JSX.Element {
+  function BlogLink({ children, href }: BlogLinkProps) {
     return (
       <Link
         href={
@@ -36,7 +37,7 @@ export default function Blog({source, slug}: Props): JSX.Element {
     a: BlogLink,
   };
 
-  const content = hydrate(source, {components});
+  const content = hydrate(source, { components });
 
   return (
     <section className="px-3 text-black dark:text-white">

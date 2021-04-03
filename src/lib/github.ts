@@ -1,6 +1,6 @@
 import matter from "gray-matter";
 import renderToString from "next-mdx-remote/render-to-string";
-import {MdxRemote} from "next-mdx-remote/types";
+import type { MdxRemote } from "next-mdx-remote/types";
 
 const githubLink =
   "https://raw.githubusercontent.com/shunkakinoki/shunkakinoki/main";
@@ -13,6 +13,7 @@ export const getGithubContent = async (
 ): Promise<
   | {
       frontMatter: {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         [key: string]: any;
       };
       source: MdxRemote.Source;
@@ -42,11 +43,11 @@ export const getGithubContent = async (
       source = source.split("\n").slice(range[0], range[1]).join("\n\n");
     }
 
-    const {content, data} = matter(source);
+    const { content, data } = matter(source);
     const mdxSource = await renderToString(content, {
       scope: data,
     });
-    return {frontMatter: data, source: mdxSource};
+    return { frontMatter: data, source: mdxSource };
   } catch (err) {
     throw Error(err);
   }
@@ -59,6 +60,7 @@ export const getGithubSummary = async (
 ): Promise<
   | {
       frontMatter: {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         [key: string]: any;
       };
       source: MdxRemote.Source;

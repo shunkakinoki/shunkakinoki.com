@@ -1,6 +1,7 @@
-import {Transition} from "@headlessui/react";
+import { Transition } from "@headlessui/react";
 import useTranslation from "next-translate/useTranslation";
-import Link, {LinkProps} from "next/link";
+import type { LinkProps } from "next/link";
+import Link from "next/link";
 
 import useMobileMenu from "@/hooks/useMobileMenu";
 
@@ -8,7 +9,7 @@ interface MobileMenuLinkProps extends LinkProps {
   children: string;
 }
 
-function MobileMenuLink({children, href}: MobileMenuLinkProps): JSX.Element {
+function MobileMenuLink({ children, href }: MobileMenuLinkProps): JSX.Element {
   return (
     <div className="px-5 py-1">
       <Link href={href}>
@@ -25,7 +26,7 @@ function MobileMenuLink({children, href}: MobileMenuLinkProps): JSX.Element {
 
 export default function MobileMenu(): JSX.Element {
   const [isMenuOpen, setMenuOpen] = useMobileMenu();
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <Transition

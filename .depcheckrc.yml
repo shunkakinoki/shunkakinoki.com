@@ -1,18 +1,9 @@
 ignores:
   [
-    "@next/*",
-    "@semantic-release/*",
-    "@typescript-eslint/*",
+    "@shunkakinoki/*",
     "autoprefixer",
-    "eslint-*",
-    "commitizen",
-    "husky",
-    "pinst",
     "postcss",
-    "git-cz",
-    "stylelint-*",
-    "typescript",
-    "vercel",
+    "npm-package-json-lint-config-shunkakinoki",
   ]
 ignore-path: .gitignore
 skip-missing: true

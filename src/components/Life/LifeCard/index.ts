@@ -1,1 +1,1 @@
-export {default} from "./LifeCard";
+export { default } from "./LifeCard";

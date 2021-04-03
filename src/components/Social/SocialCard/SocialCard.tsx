@@ -1,7 +1,7 @@
-import {ReactNode} from "react";
+import type { ReactNode } from "react";
 
-import {SocialLinks} from "@/const";
-import {Check} from "@/icons";
+import { SocialLinks } from "@/const";
+import { Check } from "@/icons";
 
 export interface Props {
   children: ReactNode;

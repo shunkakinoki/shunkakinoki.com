@@ -1,10 +1,10 @@
 import clsx from "clsx";
 
 import hydrate from "next-mdx-remote/hydrate";
-import {MdxRemote} from "next-mdx-remote/types";
+import type { MdxRemote } from "next-mdx-remote/types";
 
-import {SwitchButton} from "@/common/Button";
-import {SectionText} from "@/common/Text";
+import { SwitchButton } from "@/common/Button";
+import { SectionText } from "@/common/Text";
 
 export interface Props {
   isPartial?: boolean;
@@ -16,7 +16,7 @@ interface AboutLinkProps {
   href: string;
 }
 
-function AboutLink({children, href}: AboutLinkProps) {
+function AboutLink({ children, href }: AboutLinkProps) {
   return (
     <a
       href={href}
@@ -33,8 +33,8 @@ const components = {
   a: AboutLink,
 };
 
-export default function About({isPartial, source}: Props): JSX.Element {
-  const content = hydrate(source, {components});
+export default function About({ isPartial, source }: Props): JSX.Element {
+  const content = hydrate(source, { components });
 
   return (
     <section className={clsx("w-full mb-6", isPartial && "mt-6")}>
