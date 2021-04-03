@@ -1,3 +1,15 @@
+# [1.11.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.10.2...v1.11.0) (2021-04-03)
+
+### Features
+
+- complete upgrade dev ([6743aca](https://github.com/shunkakinoki/shunkakinoki.com/commit/6743aca35fc104dc3dedf7fb7ed0f6fbb25b1e0a))
+
+### Performance Improvements
+
+- complete refactor life ([b580bb5](https://github.com/shunkakinoki/shunkakinoki.com/commit/b580bb594cf9e92a65cf930fcb1d5494c7d30b3f))
+- complete refactor tsconfig ([34ee335](https://github.com/shunkakinoki/shunkakinoki.com/commit/34ee3356a38d3bc571fd50c41b0a8eb5c70bbb46))
+- refactor react components ([07d5018](https://github.com/shunkakinoki/shunkakinoki.com/commit/07d50181519d109ee1e877bc4b5c4a9d70d97cf3))
+
 ## [1.10.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.10.1...v1.10.2) (2021-02-16)
 
 ### Performance Improvements
