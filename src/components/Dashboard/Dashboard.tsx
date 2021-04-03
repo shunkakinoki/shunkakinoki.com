@@ -1,5 +1,5 @@
-import {SectionText} from "@/common/Text";
-import {Buttondown, Github, Twitter} from "@/components/Dashboard/Analytics";
+import { SectionText } from "@/common/Text";
+import { Buttondown, Github, Twitter } from "@/components/Dashboard/Analytics";
 
 export default function Dashboard(): JSX.Element {
   return (

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
-import {SwitchButton} from "@/common/Button";
-import {SectionText} from "@/common/Text";
+import { SwitchButton } from "@/common/Button";
+import { SectionText } from "@/common/Text";
 import LifeCard from "@/components/Life/LifeCard";
 import {
   Action,
@@ -19,7 +19,7 @@ interface Props {
   isPartial?: boolean;
 }
 
-export default function Life({isPartial = false}: Props): JSX.Element {
+export default function Life({ isPartial = false }: Props): JSX.Element {
   return (
     <section key="Life" className={clsx("w-full mb-2", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">

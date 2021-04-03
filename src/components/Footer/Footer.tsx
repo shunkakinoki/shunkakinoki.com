@@ -1,12 +1,14 @@
-import Link, {LinkProps} from "next/link";
+import type { LinkProps } from "next/link";
+import Link from "next/link";
 
-import {ReactNode} from "react";
+import type { ReactNode } from "react";
 
 import CreditsButton from "@/components/Footer/CreditsButton";
 import LocaleSelect from "@/components/Footer/LocaleSelect";
 
-import {SocialLinks} from "@/const";
-import {Facebook, Github, Instagram, Linkedin, Twitter} from "@/icons";
+import { SocialLinks } from "@/const";
+import { Facebook, Github, Instagram, Linkedin, Twitter } from "@/icons";
+
 interface FooterLinkProps extends LinkProps {
   children: string;
 }
@@ -16,7 +18,7 @@ interface FooterIconLinkProps {
   href: string;
 }
 
-function FooterLink({children, href}: FooterLinkProps): JSX.Element {
+function FooterLink({ children, href }: FooterLinkProps): JSX.Element {
   return (
     <div className="px-5 py-2">
       <Link href={href}>
@@ -29,7 +31,7 @@ function FooterLink({children, href}: FooterLinkProps): JSX.Element {
   );
 }
 
-function FooterIconLink({children, href}: FooterIconLinkProps): JSX.Element {
+function FooterIconLink({ children, href }: FooterIconLinkProps): JSX.Element {
   return (
     <a
       href={href}

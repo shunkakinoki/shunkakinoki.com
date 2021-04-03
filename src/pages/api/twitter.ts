@@ -1,6 +1,6 @@
-import {NextApiRequest, NextApiResponse} from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 
-import {SocialLinks} from "@/const";
+import { SocialLinks } from "@/const";
 
 export default async function twitter(
   req: NextApiRequest,

@@ -1,10 +1,18 @@
 {
+  "css.validate": false,
   "eslint.lintTask.options": ". -c .eslintrc.json --ext .js,.ts,.tsx --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
   "eslint.workingDirectories": [
     {
       "mode": "auto"
     }
   ],
+  "i18n-ally.enabledFrameworks": ["i18next", "react"],
+  "i18n-ally.enabledParsers": ["js", "json", "ts"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": ["locales"],
+  "i18n-ally.namespace": true,
+  "i18n-ally.sourceLanguage": "en",
+  "peacock.color": "#1857a4",
   "terminal.integrated.env.linux": {
     "ZSH_INIT_COMMAND": "mux start shunkakinokicom"
   },
@@ -27,13 +35,5 @@
     "panel.border": "#1f6fd0",
     "sideBar.border": "#1f6fd0",
     "tab.activeBorder": "#1f6fd0"
-  },
-  "peacock.color": "#1857a4",
-  "css.validate": false,
-  "i18n-ally.enabledFrameworks": ["i18next", "react"],
-  "i18n-ally.enabledParsers": ["js", "json", "ts"],
-  "i18n-ally.keystyle": "nested",
-  "i18n-ally.localesPaths": ["locales"],
-  "i18n-ally.namespace": true,
-  "i18n-ally.sourceLanguage": "en"
+  }
 }

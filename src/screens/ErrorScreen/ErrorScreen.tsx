@@ -1,5 +1,5 @@
-import {LinkButton} from "@/common/Button";
-import {ErrorText} from "@/common/Text";
+import { LinkButton } from "@/common/Button";
+import { ErrorText } from "@/common/Text";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 

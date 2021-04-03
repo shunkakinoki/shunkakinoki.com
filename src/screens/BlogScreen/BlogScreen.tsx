@@ -1,4 +1,5 @@
-import Blog, {Props as BlogProps} from "@/components/Blog";
+import type { Props as BlogProps } from "@/components/Blog";
+import Blog from "@/components/Blog";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 

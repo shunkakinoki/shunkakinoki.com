@@ -1,1 +1,1 @@
-export {default} from "./SocialScreen";
+export { default } from "./SocialScreen";

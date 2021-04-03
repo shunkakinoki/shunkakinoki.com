@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import {Cake, Chip, Fire, Globe, School, Tag, Work} from "@/icons";
+import { Cake, Chip, Fire, Globe, School, Tag, Work } from "@/icons";
 
 interface Props {
   isBottom?: boolean;

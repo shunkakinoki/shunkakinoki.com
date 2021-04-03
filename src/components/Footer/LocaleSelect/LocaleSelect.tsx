@@ -1,6 +1,6 @@
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 
-import {Down} from "@/icons";
+import { Down } from "@/icons";
 
 export default function LocaleSelect(): JSX.Element {
   const router = useRouter();

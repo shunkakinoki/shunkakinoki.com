@@ -1,1 +1,1 @@
-export {default} from "./NotFoundScreen";
+export { default } from "./NotFoundScreen";

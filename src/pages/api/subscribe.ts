@@ -1,14 +1,14 @@
-import {NextApiRequest, NextApiResponse} from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function subscribe(
   req: NextApiRequest,
   res: NextApiResponse,
 ): Promise<void> {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const {email} = req.body;
+  const { email } = req.body;
 
   if (!email) {
-    return res.status(400).json({error: "Email is required"});
+    return res.status(400).json({ error: "Email is required" });
   }
 
   try {
@@ -44,9 +44,9 @@ export default async function subscribe(
       });
     }
 
-    return res.status(201).json({error: ""});
+    return res.status(201).json({ error: "" });
   } catch (error) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-    return res.status(500).json({error: error.message || error.toString()});
+    return res.status(500).json({ error: error.message || error.toString() });
   }
 }

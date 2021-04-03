@@ -1,9 +1,6 @@
 const nextTranslate = require("next-translate");
 
 module.exports = nextTranslate({
-  experimental: {
-    reactMode: "concurrent",
-  },
   i18n: {
     locales: ["en", "ja", "zh"],
     defaultLocale: "en",

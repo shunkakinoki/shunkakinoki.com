@@ -1,23 +1,23 @@
 import clsx from "clsx";
-import {useState} from "react";
+import { useState } from "react";
 import useSWR from "swr";
 
-import {Badge, Exclamation, Light} from "@/icons";
+import { Badge, Exclamation, Light } from "@/icons";
 import fetcher from "@/lib/fetcher";
 
 export default function Newsletter(): JSX.Element {
-  const {data} = useSWR<{
+  const { data } = useSWR<{
     subscribers: number;
   }>("/api/buttondown", fetcher);
 
   const [form, setForm] = useState<{
     message: string;
     state: "error" | "success" | "loading" | "initial";
-  }>({message: "", state: "initial"});
+  }>({ message: "", state: "initial" });
 
   const subscribe = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
-    setForm({message: "", state: "loading"});
+    setForm({ message: "", state: "loading" });
 
     const formData = new FormData(e.target as HTMLFormElement);
 
@@ -33,7 +33,7 @@ export default function Newsletter(): JSX.Element {
     });
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const {error} = await res.json();
+    const { error } = await res.json();
     if (error) {
       setForm({
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

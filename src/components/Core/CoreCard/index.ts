@@ -1,1 +1,1 @@
-export {default} from "./CoreCard";
+export { default } from "./CoreCard";

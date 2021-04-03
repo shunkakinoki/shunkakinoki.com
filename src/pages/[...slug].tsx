@@ -1,19 +1,19 @@
-import {
+import type {
   GetStaticProps,
   InferGetStaticPropsType,
   GetStaticPaths,
   GetStaticPropsContext,
 } from "next";
 
-import {MdxRemote} from "next-mdx-remote/types";
-import {ExtendedRecordMap} from "notion-types";
-import {parsePageId} from "notion-utils";
+import type { MdxRemote } from "next-mdx-remote/types";
+import type { ExtendedRecordMap } from "notion-types";
+import { parsePageId } from "notion-utils";
 
 import validator from "validator";
 
-import {NotionLinks} from "@/const";
-import {getGithubContent, getGithubSummary} from "@/lib/github";
-import {resolveNotionPage} from "@/lib/notion";
+import { NotionLinks } from "@/const";
+import { getGithubContent, getGithubSummary } from "@/lib/github";
+import { resolveNotionPage } from "@/lib/notion";
 import BlogScreen from "@/screens/BlogScreen";
 import ContentScreen from "@/screens/ContentScreen";
 import NotionScreen from "@/screens/NotionScreen";
@@ -65,7 +65,7 @@ GetStaticPropsContext) => {
         locale,
       );
       if (result) {
-        const {frontMatter, source} = result;
+        const { frontMatter, source } = result;
         return {
           props: {
             content: JSON.stringify(source),
@@ -140,7 +140,7 @@ GetStaticPropsContext) => {
     if (blogCollections.includes(pageId)) {
       const result = await getGithubSummary(pageId, locale);
       if (result) {
-        const {frontMatter, source} = result;
+        const { frontMatter, source } = result;
         return {
           props: {
             content: JSON.stringify(source),
@@ -165,7 +165,7 @@ GetStaticPropsContext) => {
         locale,
       );
       if (result) {
-        const {frontMatter, source} = result;
+        const { frontMatter, source } = result;
         return {
           props: {
             content: JSON.stringify(source),
@@ -185,7 +185,7 @@ GetStaticPropsContext) => {
     try {
       const result = await getGithubContent("blog", pageId, locale);
       if (result) {
-        const {frontMatter, source} = result;
+        const { frontMatter, source } = result;
         return {
           props: {
             content: JSON.stringify(source),
@@ -206,7 +206,7 @@ GetStaticPropsContext) => {
   const page = await resolveNotionPage(notionCollection || pageId);
 
   if (page) {
-    const {recordMap} = page;
+    const { recordMap } = page;
     return {
       props: {
         content: JSON.stringify(recordMap),
@@ -231,7 +231,8 @@ const PageId = ({
   if (content && frontMatter && slug && type === "blog") {
     return (
       <BlogScreen
-        frontMatter={JSON.parse(frontMatter) as {[key: string]: any}}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        frontMatter={JSON.parse(frontMatter) as { [key: string]: any }}
         source={JSON.parse(content) as MdxRemote.Source}
         slug={JSON.parse(slug) as string}
       />
@@ -241,7 +242,8 @@ const PageId = ({
   if (content && frontMatter && type === "content") {
     return (
       <ContentScreen
-        frontMatter={JSON.parse(frontMatter) as {[key: string]: any}}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        frontMatter={JSON.parse(frontMatter) as { [key: string]: any }}
         source={JSON.parse(content) as MdxRemote.Source}
       />
     );

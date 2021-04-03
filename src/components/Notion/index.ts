@@ -1,2 +1,2 @@
-export {default} from "./Notion";
-export type {Props} from "./Notion";
+export { default } from "./Notion";
+export type { Props } from "./Notion";

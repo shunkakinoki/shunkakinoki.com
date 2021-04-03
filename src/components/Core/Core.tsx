@@ -1,17 +1,17 @@
 import clsx from "clsx";
 import useTranslation from "next-translate/useTranslation";
 
-import {SwitchButton} from "@/common/Button";
-import {SectionText} from "@/common/Text";
+import { SwitchButton } from "@/common/Button";
+import { SectionText } from "@/common/Text";
 import CoreCard from "@/components/Core/CoreCard";
-import {Airplane, Scale, Variable} from "@/icons";
+import { Airplane, Scale, Variable } from "@/icons";
 
 interface Props {
   isPartial?: boolean;
 }
 
-export default function Core({isPartial = false}: Props): JSX.Element {
-  const {t} = useTranslation();
+export default function Core({ isPartial = false }: Props): JSX.Element {
+  const { t } = useTranslation();
 
   return (
     <section key="Core" className={clsx("w-full mb-2", isPartial && "mt-6")}>

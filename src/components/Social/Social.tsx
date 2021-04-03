@@ -1,9 +1,9 @@
 import clsx from "clsx";
 
-import {SwitchButton} from "@/common/Button";
-import {SectionText} from "@/common/Text";
+import { SwitchButton } from "@/common/Button";
+import { SectionText } from "@/common/Text";
 import SocialCard from "@/components/Social/SocialCard";
-import {SocialLinks} from "@/const";
+import { SocialLinks } from "@/const";
 import {
   Bitcoin,
   Discord,
@@ -32,7 +32,7 @@ interface Props {
   isPartial?: boolean;
 }
 
-export default function Social({isPartial = false}: Props): JSX.Element {
+export default function Social({ isPartial = false }: Props): JSX.Element {
   return (
     <section key="social" className={clsx("w-full mb-6", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
