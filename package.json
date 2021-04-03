@@ -35,6 +35,8 @@
     "release:check": "yarn run semantic-release:check",
     "semantic-release": "semantic-release",
     "semantic-release:check": "semantic-release --dry-run",
+    "stylelint:check": "stylelint 'src/**/*.css'",
+    "stylelint:fix": "stylelint 'src/**/*.css' --fix",
     "sort-package-json:lint": "sort-package-json 'package.json' 'apps/*/package.json' 'configurations/*/package.json' 'packages/*/package.json' --check",
     "sort-package-json:fix": "sort-package-json 'package.json' 'apps/*/package.json' 'configurations/*/package.json' 'packages/*/package.json'"
   },
