@@ -6,6 +6,7 @@ import s from "./Blog.module.css";
 
 export interface Props {
   frontMatter: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
   };
   source: MdxRemote.Source;

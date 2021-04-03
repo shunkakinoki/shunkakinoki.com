@@ -1601,10 +1601,10 @@
     multi-semantic-release "^2.8.0"
     sort-package-json "^1.49.0"
 
-"@shunkakinoki/eslint-config@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.0.0.tgz#f2cd9411048d639c8cefb5d0d476152306de9f80"
-  integrity sha512-zTjf78018fM/zXLHMhsVIZ7YvtguDaNbmQDwLFc10mlLH9Tyn64blL5ybjp+EXS2B/7sEVuG5xYHxZb1HsDIGA==
+"@shunkakinoki/eslint-config@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.0.1.tgz#02f83ba50b27372525c64398cf03ac9c98d832f1"
+  integrity sha512-k2iOhr2/8YnSyQFd1UG3EJadT9o05uPUdfsuHsu30WSj4+A+2jxcc77Q1M26mscZugi4nvjYbRaXJBYssm5OHA==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.20.0"
     "@typescript-eslint/parser" "^4.20.0"
