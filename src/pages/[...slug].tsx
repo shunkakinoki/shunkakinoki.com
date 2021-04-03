@@ -30,15 +30,11 @@ const blogCollections = ["blog", "pioneer"];
 const coreCollections = ["cause", "mission", "values"];
 
 const notionCollections = [
-  "action",
-  "bible",
   "diary",
-  "endeavor",
   "excerpt",
-  "habit",
-  "insight",
+  "routine",
+  "ideas",
   "notebook",
-  "perseverance",
   "resource",
 ];
 
@@ -89,40 +85,24 @@ GetStaticPropsContext) => {
 
   if (notionCollections.includes(pageId)) {
     switch (pageId) {
-      case "action": {
-        notionCollection = NotionLinks.action;
-        break;
-      }
-      case "bible": {
-        notionCollection = NotionLinks.bible;
-        break;
-      }
       case "diary": {
         notionCollection = NotionLinks.diary;
-        break;
-      }
-      case "endeavor": {
-        notionCollection = NotionLinks.endeavor;
         break;
       }
       case "excerpt": {
         notionCollection = NotionLinks.excerpt;
         break;
       }
-      case "habit": {
-        notionCollection = NotionLinks.habit;
+      case "routine": {
+        notionCollection = NotionLinks.routine;
         break;
       }
-      case "insight": {
-        notionCollection = NotionLinks.insight;
+      case "ideas": {
+        notionCollection = NotionLinks.ideas;
         break;
       }
       case "notebook": {
         notionCollection = NotionLinks.notebook;
-        break;
-      }
-      case "perseverance": {
-        notionCollection = NotionLinks.perseverance;
         break;
       }
       case "resource": {
