@@ -1836,6 +1836,14 @@
     "@semantic-release/git" "^9.0.0"
     semantic-release "^17.4.2"
 
+"@shunkakinoki/stylelint@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/stylelint/-/stylelint-1.0.0.tgz#c35199020328fc06eeceb93aae2bd8ea5295b382"
+  integrity sha512-xq1aIp+F3X7c8AzQBZonZXXbLH7Vsfo9W63Qitb4gSvFVP5KM5zE27weDWazsP4qcIz6bMt2NepPsFnKJtssxQ==
+  dependencies:
+    stylelint "^13.12.0"
+    stylelint-config-standard "^21.0.0"
+
 "@shunkakinoki/tsconfig@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@shunkakinoki/tsconfig/-/tsconfig-1.0.0.tgz#a3886c00f2f86ca95885d22081af6099075ccc0a"
