@@ -3,6 +3,7 @@ import About from "@/components/About";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import History from "@/components/History";
+import Life from "@/components/Life";
 import Newsletter from "@/components/Newsletter";
 import Product from "@/components/Product";
 import Social from "@/components/Social";
@@ -17,6 +18,7 @@ export default function LandingScreen({ source }: Props): JSX.Element {
         <About isPartial source={source} />
         <Product isPartial />
         <History isPartial />
+        <Life isPartial />
         <Social isPartial />
         <Newsletter />
       </div>
