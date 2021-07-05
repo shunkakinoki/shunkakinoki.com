@@ -1,8 +1,8 @@
-const viteConfig = require("../vite.config");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
   core: {
-    builder: "storybook-builder-vite",
+    builder: "webpack5",
   },
   stories: ["../src/**/*.stories.tsx"],
   addons: [
@@ -17,18 +17,12 @@ module.exports = {
       },
     },
   ],
-  async viteFinal(config) {
-    config.plugins = [...config.plugins, ...viteConfig.plugins];
-    return {
-      ...config,
-      esbuild: {
-        ...config.esbuild,
-        jsxInject: `import React from 'react'`,
-      },
-      define: {
-        ...config.define,
-        "process.env": {},
-      },
-    };
+  reactOptions: {
+    fastRefresh: true,
+    strictMode: true,
+  },
+  webpackFinal: async config => {
+    config.resolve.plugins = [new TsconfigPathsPlugin()];
+    return config;
   },
 };
