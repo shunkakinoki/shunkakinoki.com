@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/blog/:any*",
+      "destination": "https://shunkakinoki.com/:any*"
+    },
+    {
+      "source": "/:any*",
+      "destination": "https://shunkakinoki.com/:any*"
+    }
+  ]
+}
