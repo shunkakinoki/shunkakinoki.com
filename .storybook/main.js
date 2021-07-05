@@ -1,13 +1,7 @@
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
-
 module.exports = {
-  core: {
-    builder: "webpack5",
-  },
   stories: ["../src/**/*.stories.tsx"],
   addons: [
     "@storybook/addon-essentials",
-    "@storybook/addon-a11y",
     {
       name: "@storybook/addon-postcss",
       options: {
@@ -17,12 +11,7 @@ module.exports = {
       },
     },
   ],
-  reactOptions: {
-    fastRefresh: true,
-    strictMode: true,
-  },
-  webpackFinal: async config => {
-    config.resolve.plugins = [new TsconfigPathsPlugin()];
-    return config;
+  core: {
+    builder: "webpack5",
   },
 };
