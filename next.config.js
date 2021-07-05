@@ -1,6 +1,9 @@
 const nextTranslate = require("next-translate");
 
 module.exports = nextTranslate({
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   i18n: {
     locales: ["en", "ja", "zh"],
     defaultLocale: "en",
