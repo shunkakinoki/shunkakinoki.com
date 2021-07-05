@@ -27,7 +27,6 @@ module.exports = {
       },
       define: {
         ...config.define,
-        global: "window",
         "process.env": {},
       },
     };
