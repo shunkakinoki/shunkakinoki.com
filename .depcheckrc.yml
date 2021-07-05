@@ -6,6 +6,7 @@ ignores:
     "npm-package-json-lint-config-shunkakinoki",
     "postcss",
     "storybook-builder-vite",
+    "webpack",
   ]
 ignore-path: .gitignore
 skip-missing: true
