@@ -2316,12 +2316,12 @@
     "@commitlint/config-conventional" "^12.1.1"
     commitlint "^12.1.1"
 
-"@shunkakinoki/depcheck@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/depcheck/-/depcheck-1.0.0.tgz#4945e4f1aa5389caa7ccb4a1b463142c5093aaf3"
-  integrity sha512-7alGqPF+/qHYSeW41cmYL/OzIFGmkNPSyAwrbpRfxUb4LSQrZr2wxAHJEPKxapF24N/P3xSGUWkUA6UXcmaPCw==
+"@shunkakinoki/depcheck@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/depcheck/-/depcheck-1.0.1.tgz#8356eef7dad84dc0f817789f8743d0dc4fe0523c"
+  integrity sha512-UGO2LwNtxNc0Ys6LP6zvDPJh7mQUldSk+IVmKaowrXKZdXrNkYk6KNoJFIKv13BZg/RD+1ag8GWawceuqDsUsQ==
   dependencies:
-    depcheck "^1.4.0"
+    depcheck "^1.4.2"
 
 "@shunkakinoki/dev@^1.0.0":
   version "1.0.0"
@@ -5177,11 +5177,6 @@ buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
-builtin-modules@^3.1.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-3.2.0.tgz#45d5db99e7ee5e6bc4f362e008bf917ab5049887"
-  integrity sha512-lGzLKcioL90C7wMczpkY0n/oART3MbBa8R9OFGE1rJxoVI86u4WAGfEk8Wjv10eKSyTHVGkSo3bvBylCEtk7LA==
-
 builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
@@ -6703,20 +6698,20 @@ delegates@^1.0.0:
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
   integrity sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=
 
-depcheck@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/depcheck/-/depcheck-1.4.0.tgz#1b49e0da4ce32f2e372da9be7ba25b139b7b9a00"
-  integrity sha512-zn63rsHvFfWVgHV/SW4wXT5vqjQpCIGukpnoU2IspU3Lp0Va8/9wFWAsd2V1VzU+AFiFZGdjHZU9nLZQra+1Tg==
+depcheck@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/depcheck/-/depcheck-1.4.2.tgz#dedeb8729b8fdf990e2bc45a869d99cfb4460097"
+  integrity sha512-oYaBLRbF5NMkYxc5rltnqtuPAn25Lx5xPBIJXy5oUVBgrEDDtotCoYUfFH8lvcmSWzgk1Ts9H+f4Rk0oWL51LQ==
   dependencies:
     "@babel/parser" "^7.12.5"
     "@babel/traverse" "^7.12.5"
     "@vue/compiler-sfc" "^3.0.5"
-    builtin-modules "^3.1.0"
     camelcase "^6.2.0"
     cosmiconfig "^7.0.0"
     debug "^4.2.0"
     deps-regex "^0.1.4"
     ignore "^5.1.8"
+    is-core-module "^2.4.0"
     js-yaml "^3.14.0"
     json5 "^2.1.3"
     lodash "^4.17.20"
@@ -9866,6 +9861,13 @@ is-core-module@^2.1.0, is-core-module@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.2.0.tgz#97037ef3d52224d85163f5597b2b63d9afed981a"
   integrity sha512-XRAfAdyyY5F5cOXn7hYQDqh2Xmii+DEfIcQGxK/uNwMHhIkPWO0g8msXcbzLe+MpGoR951MlqM/2iIlU4vKDdQ==
+  dependencies:
+    has "^1.0.3"
+
+is-core-module@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.4.0.tgz#8e9fc8e15027b011418026e98f0e6f4d86305cc1"
+  integrity sha512-6A2fkfq1rfeQZjxrZJGerpLCTHRNEBiSgnu0+obeJpEPZRUooHgsizvzv0ZjJwOz3iWIHdJtVWJ/tmPr3D21/A==
   dependencies:
     has "^1.0.3"
 
