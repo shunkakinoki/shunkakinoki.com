@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.11.0...v1.12.0) (2021-07-05)
+
+### Features
+
+- ini storybook vite ([68760d7](https://github.com/shunkakinoki/shunkakinoki.com/commit/68760d74b65085a63095336088fe2b1fbd0b653d))
+- ini storybook webpack5 ([2e275c0](https://github.com/shunkakinoki/shunkakinoki.com/commit/2e275c0aa78505b51387073648d8140e78663448))
+
 # [1.11.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.10.2...v1.11.0) (2021-04-03)
 
 ### Features
