@@ -14,6 +14,7 @@
   "author": "Shun Kakinoki",
   "scripts": {
     "build": "next build",
+    "build:storybook": "build-storybook -o public",
     "check": "yarn run lint && yarn run depcheck:check && yarn run release:check",
     "depcheck:check": "yarn run depcheck:root",
     "depcheck:root": "depcheck . --skip-missing=true",
