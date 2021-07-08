@@ -12769,14 +12769,14 @@ normalize-url@^5.0.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-5.3.0.tgz#8959b3cdaa295b61592c1f245dded34b117618dd"
   integrity sha512-9/nOVLYYe/dO/eJeQUNaGUF4m4Z5E7cb9oNTKabH+bNf19mqj60txTcveQxL0GlcWLXCxkOu2/LwL8oW0idIDA==
 
-notion-client@^4.7.3:
-  version "4.7.3"
-  resolved "https://registry.yarnpkg.com/notion-client/-/notion-client-4.7.3.tgz#e088130eed15fcbc1a764fdf7597210002c23eaa"
-  integrity sha512-SurLppN1Pt7F0p8LalDpvcvpRBcLODzhgzy6UDis00szORE9+9d+x+acOOkFsCMWsr710w/3iyJGgzMYj0OlqA==
+notion-client@^4.7.6:
+  version "4.7.6"
+  resolved "https://registry.yarnpkg.com/notion-client/-/notion-client-4.7.6.tgz#d7a1c416e8b8195dd7bb58491e8ed98e80082776"
+  integrity sha512-ILFo33xovAYWJPhkeXfa0oG+3/wAaMUuzBq0K4pKvLTWu0H3zw/d200euePf2+sQh78cm4yALCa1RRZAI9ivvA==
   dependencies:
     got "^11.8.1"
-    notion-types "^4.7.3"
-    notion-utils "^4.7.3"
+    notion-types "^4.7.6"
+    notion-utils "^4.7.6"
     p-map "^4.0.0"
 
 notion-types@^4.7.3:
@@ -12784,12 +12784,25 @@ notion-types@^4.7.3:
   resolved "https://registry.yarnpkg.com/notion-types/-/notion-types-4.7.3.tgz#d35f1d1c8d6d3c0ff73569259931d91fbc4a75b3"
   integrity sha512-KsQKPdK6Ijxn36p8MmM69st3TJa8DRNbzYkUQEhP/PJ/EnTfPQuyzxGSeT80ZoiyBdi5nUuoY8IysBQGb7O9pw==
 
+notion-types@^4.7.6:
+  version "4.7.6"
+  resolved "https://registry.yarnpkg.com/notion-types/-/notion-types-4.7.6.tgz#4ed4a9d25c329aa32f8714d0eb67cf1b14af0278"
+  integrity sha512-YFPDcKRpokoxK/RjP5P/+UeUbYSmt5+KlLAPPZl+MDxuzeKOqtt6NJIZfng4ji3BI/e0t/m7eA0EfAw6d2U37w==
+
 notion-utils@^4.7.3:
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/notion-utils/-/notion-utils-4.7.3.tgz#77dcfa813bf43bede82af5ce5eec7a87101d4913"
   integrity sha512-ztX5aMrRMj24zlotgf8sDdLcZTAZkgVROJ9oSIFSgwqvGlfQdnZ8d1xkfHMSigBdPTbdeLIki1ZRLciSvpsbLA==
   dependencies:
     notion-types "^4.7.3"
+    p-queue "^6.6.1"
+
+notion-utils@^4.7.6:
+  version "4.7.6"
+  resolved "https://registry.yarnpkg.com/notion-utils/-/notion-utils-4.7.6.tgz#79aa2be19ae08fb6e44971d855af71e22608a47a"
+  integrity sha512-sMO8jvMGoDxKHSSu2dbq9m/bWFOloQSMWPuDvzFd1+35xqxWLGFJUmCuumInryxBmUb3XQfgDItpPub0FlyQZw==
+  dependencies:
+    notion-types "^4.7.6"
     p-queue "^6.6.1"
 
 npm-audit-report@^1.3.3:
