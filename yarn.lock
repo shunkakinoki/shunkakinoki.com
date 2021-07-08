@@ -2349,14 +2349,14 @@
     eslint-plugin-react-hooks "^4.2.0"
     eslint-plugin-simple-import-sort "^7.0.0"
 
-"@shunkakinoki/husky@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/husky/-/husky-1.0.1.tgz#d2f20ad489f4985ee3f8ef73889ecb55dfe93269"
-  integrity sha512-v2XgURMaUxtEz6NqS2kHbxswn4IwrA7Tdkfg5M/lZB0aRNdF/gtv/P4U4R/F8DwVLxr3WuYavrHRNDJEWhrt6w==
+"@shunkakinoki/husky@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/husky/-/husky-1.0.2.tgz#d9b13e00497adca6f362e5da527e4a8e986efd6d"
+  integrity sha512-kAdswWtW/pudXYnYJs5EQX3JQQNXRbGkZX36vxYRbRt85Ulskq/4HZx2RHNI72GWdXeFi2hyNFSIGO+IDCPdNA==
   dependencies:
     commitizen "^4.2.4"
     git-cz "^4.7.6"
-    husky "^7.0.0"
+    husky "^7.0.1"
     is-ci "^3.0.0"
     pinst "^2.1.6"
 
@@ -9824,10 +9824,10 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-husky@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-7.0.0.tgz#3dbd5d28e76234689ee29bb41e048f28e3e46616"
-  integrity sha512-xK7lO0EtSzfFPiw+oQncQVy/XqV7UVVjxBByc+Iv5iK3yhW9boDoWgvZy3OGo48QKg/hUtZkzz0hi2HXa0kn7w==
+husky@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-7.0.1.tgz#579f4180b5da4520263e8713cc832942b48e1f1c"
+  integrity sha512-gceRaITVZ+cJH9sNHqx5tFwbzlLCVxtVZcusME8JYQ8Edy5mpGDOqD8QBCdMhpyo9a+JXddnujQ4rpY2Ff9SJA==
 
 hyphenate-style-name@^1.0.2:
   version "1.0.4"
