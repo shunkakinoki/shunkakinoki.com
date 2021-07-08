@@ -12784,12 +12784,25 @@ notion-types@^4.7.3:
   resolved "https://registry.yarnpkg.com/notion-types/-/notion-types-4.7.3.tgz#d35f1d1c8d6d3c0ff73569259931d91fbc4a75b3"
   integrity sha512-KsQKPdK6Ijxn36p8MmM69st3TJa8DRNbzYkUQEhP/PJ/EnTfPQuyzxGSeT80ZoiyBdi5nUuoY8IysBQGb7O9pw==
 
+notion-types@^4.7.6:
+  version "4.7.6"
+  resolved "https://registry.yarnpkg.com/notion-types/-/notion-types-4.7.6.tgz#4ed4a9d25c329aa32f8714d0eb67cf1b14af0278"
+  integrity sha512-YFPDcKRpokoxK/RjP5P/+UeUbYSmt5+KlLAPPZl+MDxuzeKOqtt6NJIZfng4ji3BI/e0t/m7eA0EfAw6d2U37w==
+
 notion-utils@^4.7.3:
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/notion-utils/-/notion-utils-4.7.3.tgz#77dcfa813bf43bede82af5ce5eec7a87101d4913"
   integrity sha512-ztX5aMrRMj24zlotgf8sDdLcZTAZkgVROJ9oSIFSgwqvGlfQdnZ8d1xkfHMSigBdPTbdeLIki1ZRLciSvpsbLA==
   dependencies:
     notion-types "^4.7.3"
+    p-queue "^6.6.1"
+
+notion-utils@^4.7.6:
+  version "4.7.6"
+  resolved "https://registry.yarnpkg.com/notion-utils/-/notion-utils-4.7.6.tgz#79aa2be19ae08fb6e44971d855af71e22608a47a"
+  integrity sha512-sMO8jvMGoDxKHSSu2dbq9m/bWFOloQSMWPuDvzFd1+35xqxWLGFJUmCuumInryxBmUb3XQfgDItpPub0FlyQZw==
+  dependencies:
+    notion-types "^4.7.6"
     p-queue "^6.6.1"
 
 npm-audit-report@^1.3.3:
@@ -14872,10 +14885,10 @@ react-modal@^3.11.2:
     react-lifecycles-compat "^3.0.0"
     warning "^4.0.3"
 
-react-notion-x@^4.7.5:
-  version "4.7.5"
-  resolved "https://registry.yarnpkg.com/react-notion-x/-/react-notion-x-4.7.5.tgz#e7aaa6b6c6f3ce9c42219f2344375c54c966c580"
-  integrity sha512-fBEjuH+aSy23ks/7n52/7lTA0B5JAmSSsKXBp+6R0faLcyIPJM3EofxfCcexERTynDI14n+JIIwMye13pfdI9w==
+react-notion-x@^4.7.6:
+  version "4.7.6"
+  resolved "https://registry.yarnpkg.com/react-notion-x/-/react-notion-x-4.7.6.tgz#9ebfba92c09c35a630f861f679b949d9cc992679"
+  integrity sha512-kd+vJ+tjOKBRgWyjGSuO9urrPnjbszVmXkXOJ48VOBumn+43Eh31HOw8QJRoR3X97cROrks2VHU+WyOp+TANnQ==
   dependencies:
     "@matejmazur/react-katex" "^3.1.3"
     date-fns "^2.15.0"
@@ -14884,8 +14897,8 @@ react-notion-x@^4.7.5:
     katex "^0.12.0"
     lodash.throttle "^4.1.1"
     medium-zoom "^1.0.6"
-    notion-types "^4.7.3"
-    notion-utils "^4.7.3"
+    notion-types "^4.7.6"
+    notion-utils "^4.7.6"
     prismjs "^1.20.0"
     rc-dropdown "^3.1.2"
     rc-menu "^8.5.2"
