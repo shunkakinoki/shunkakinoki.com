@@ -2368,6 +2368,13 @@
   dependencies:
     npm-check-updates "^11.8.2"
 
+"@shunkakinoki/npm-package-json-lint-config@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/npm-package-json-lint-config/-/npm-package-json-lint-config-1.0.0.tgz#3a7779ca0aac7c6bd58ee2a90d542a3c527c277e"
+  integrity sha512-5TmC5i9+Q6DLwwHViGwWVplPkX6aMUENjquUlj4bGrqct00HXiQzrDsI04Ij4j/zeaXr6A5aTWeXuruLDzz+GQ==
+  dependencies:
+    npm-package-json-lint "^5.1.0"
+
 "@shunkakinoki/prettier@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@shunkakinoki/prettier/-/prettier-1.0.0.tgz#d3956291a8339b73e8866c319d692647da070829"
@@ -12932,13 +12939,6 @@ npm-package-arg@^8.1.2:
     hosted-git-info "^4.0.1"
     semver "^7.3.4"
     validate-npm-package-name "^3.0.0"
-
-npm-package-json-lint-config-shunkakinoki@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/npm-package-json-lint-config-shunkakinoki/-/npm-package-json-lint-config-shunkakinoki-1.0.0.tgz#dc8cea1fa86ecde8c9bbe5b4e9e1992a68db78f4"
-  integrity sha512-xOD9xJyYdGrNuQiSnmtu/6Y1omBQNR+oHHTgHxniWUg1MDF/9J9lJ3YdphoqoqktwdF2wjOYiVWpKYgAfMxCmQ==
-  dependencies:
-    npm-package-json-lint "^5.1.0"
 
 npm-package-json-lint@^5.1.0:
   version "5.1.0"

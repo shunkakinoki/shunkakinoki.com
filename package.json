@@ -15,31 +15,34 @@
   "scripts": {
     "build": "next build",
     "build:storybook": "build-storybook -o public",
-    "check": "yarn run lint && yarn run depcheck:check && yarn run release:check",
-    "depcheck:check": "yarn run depcheck:root",
-    "depcheck:root": "depcheck . --skip-missing=true",
     "dev": "next dev",
-    "eslint:lint": "eslint . --config .eslintrc.js --ext .js,.ts,.tsx --cache --cache-location node_modules/.cache/eslint",
-    "eslint:fix": "eslint --fix . --config .eslintrc.js --ext .js,.ts,.tsx --cache --cache-location node_modules/.cache/eslint",
-    "fix": "concurrently 'yarn:*:fix'",
-    "lint": "concurrently 'yarn:*:lint'",
-    "ncu:check": "ncu --deep -p yarn",
-    "ncu:upgrade": "ncu --deep -u -p yarn",
-    "npm-package-json:lint": "npmPkgJsonLint .",
-    "postpublish": "pinst --enable",
-    "prepublishOnly": "pinst --disable",
-    "prettier:lint": "prettier --check . --ignore-unknown",
-    "prettier:fix": "prettier --write . --ignore-unknown",
-    "prepare": "husky install",
-    "release": "yarn run semantic-release",
-    "release:check": "yarn run semantic-release:check",
-    "semantic-release": "semantic-release",
-    "semantic-release:check": "semantic-release --dry-run",
+    "cmd:eslint": "scripty",
+    "cmd:prettier": "scripty",
+    "depcheck": "scripty",
+    "depcheck:exec": "scripty",
+    "depcheck:root": "scripty",
+    "fix": "scripty",
+    "fix:eslint": "scripty",
+    "fix:prettier": "scripty",
+    "fix:sort-package-json": "scripty",
+    "lint": "scripty",
+    "lint:eslint": "scripty",
+    "lint:npm-package-json": "scripty",
+    "lint:prettier": "scripty",
+    "ncu": "scripty",
+    "ncu:check": "scripty",
+    "ncu:upgrade": "scripty",
+    "postpublish": "scripty",
+    "prepublishOnly": "scripty",
+    "prettier:lint": "scripty",
+    "prettier:fix": "scripty",
+    "prepare": "scripty",
+    "release": "scripty",
+    "release:multi-semantic-release": "scripty",
+    "release:semantic-release": "scripty",
     "storybook": "start-storybook -p 6006",
     "stylelint:check": "stylelint 'src/**/*.css'",
-    "stylelint:fix": "stylelint 'src/**/*.css' --fix",
-    "sort-package-json:lint": "sort-package-json 'package.json' 'apps/*/package.json' 'configurations/*/package.json' 'packages/*/package.json' --check",
-    "sort-package-json:fix": "sort-package-json 'package.json' 'apps/*/package.json' 'configurations/*/package.json' 'packages/*/package.json'"
+    "stylelint:fix": "stylelint 'src/**/*.css' --fix"
   },
   "dependencies": {
     "@headlessui/react": "^1.3.0",
@@ -75,6 +78,7 @@
     "@shunkakinoki/husky": "^1.0.2",
     "@shunkakinoki/lint-staged": "^1.1.0",
     "@shunkakinoki/npm-check-updates": "^1.0.1",
+    "@shunkakinoki/npm-package-json-lint-config": "^1.0.0",
     "@shunkakinoki/prettier": "^1.0.0",
     "@shunkakinoki/semantic-release": "^1.2.0",
     "@shunkakinoki/stylelint": "^1.0.1",
@@ -88,8 +92,17 @@
     "@storybook/manager-webpack5": "^6.3.4",
     "@storybook/react": "^6.3.4",
     "@types/react": "^17.0.14",
-    "npm-package-json-lint-config-shunkakinoki": "^1.0.0",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "webpack": "^5.44.0"
+  },
+  "npmpackagejsonlint": {
+    "extends": "@shunkakinoki/npm-package-json-lint-config"
+  },
+  "scripty": {
+    "logLevel": "warn",
+    "modules": [
+      "@shunkakinoki/dev"
+    ],
+    "parallel": true
   }
 }
