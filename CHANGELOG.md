@@ -1,3 +1,20 @@
+## [1.12.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.12.1...v1.12.2) (2021-07-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/validator to ^13.6.3 ([b6eb4d1](https://github.com/shunkakinoki/shunkakinoki.com/commit/b6eb4d13553417c3944740f189c5d94f91bb836a))
+* **deps:** update dependency next-mdx-remote to v3 ([b5b43df](https://github.com/shunkakinoki/shunkakinoki.com/commit/b5b43df2a8f4818e9dde83dfb486df6f30e814f0))
+* **deps:** update dependency notion-client to ^4.7.6 ([f69efd7](https://github.com/shunkakinoki/shunkakinoki.com/commit/f69efd76506123f18feb1c6bd1ceeeefd83a0f83))
+* **deps:** update dependency notion-utils to ^4.7.6 ([de20b0e](https://github.com/shunkakinoki/shunkakinoki.com/commit/de20b0ee6f20c8c8d470f3d3fe316bbc81fbf3f0))
+* **deps:** update dependency react-notion-x to ^4.7.6 ([132e093](https://github.com/shunkakinoki/shunkakinoki.com/commit/132e0939864a45ec0ab969cbe17a20c552cb4504))
+* **deps:** update dependency react-notion-x to ^4.7.7 ([ef5290b](https://github.com/shunkakinoki/shunkakinoki.com/commit/ef5290b3ca841e490f0c95d1b327408a759c087f))
+
+
+### Performance Improvements
+
+* per ([fba4f2f](https://github.com/shunkakinoki/shunkakinoki.com/commit/fba4f2f5c223aa64143aac756d10e739f3c1e923))
+
 ## [1.12.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.12.0...v1.12.1) (2021-07-05)
 
 ### Bug Fixes
