@@ -51,7 +51,7 @@
     "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
     "@types/validator": "^13.6.3",
-    "autoprefixer": "^10.2.6",
+    "autoprefixer": "^10.3.0",
     "clsx": "^1.1.1",
     "gray-matter": "^4.0.3",
     "next": "11.0.1",
