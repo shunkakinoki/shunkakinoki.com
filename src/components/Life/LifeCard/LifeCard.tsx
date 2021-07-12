@@ -27,7 +27,7 @@ export default function LifeCard({
   return (
     <div
       className={clsx(
-        "relative p-6 bg-white hover:bg-gray-50 dark:bg-black group dark:hover:bg-gray-900 sm:rounded-tr-none focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500",
+        "group relative p-6 bg-white hover:bg-gray-50 dark:bg-black dark:hover:bg-gray-900 sm:rounded-tr-none focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500",
         hidden && "block sm:hidden md:block",
       )}
     >
@@ -36,28 +36,28 @@ export default function LifeCard({
           className={clsx(
             "inline-flex p-3 rounded-lg ring-4 ring-white dark:ring-black",
             color === "blue" &&
-              "text-blue-700 bg-blue-50 dark:text-blue-50 dark:bg-blue-700",
+              "text-blue-700 dark:text-blue-50 bg-blue-50 dark:bg-blue-700",
             color === "gray" &&
-              "text-gray-700 bg-gray-50 dark:text-gray-50 dark:bg-gray-700",
+              "text-gray-700 dark:text-gray-50 bg-gray-50 dark:bg-gray-700",
             color === "green" &&
-              "text-green-700 bg-green-50 dark:text-green-50 dark:bg-green-700",
+              "text-green-700 dark:text-green-50 bg-green-50 dark:bg-green-700",
             color === "indigo" &&
-              "text-indigo-700 bg-indigo-50 dark:text-indigo-50 dark:bg-indigo-700",
+              "text-indigo-700 dark:text-indigo-50 bg-indigo-50 dark:bg-indigo-700",
             color === "pink" &&
-              "text-pink-700 bg-pink-50 dark:text-pink-50 dark:bg-pink-700",
+              "text-pink-700 dark:text-pink-50 bg-pink-50 dark:bg-pink-700",
             color === "purple" &&
-              "text-purple-700 bg-purple-50 dark:text-purple-50 dark:bg-purple-700",
+              "text-purple-700 dark:text-purple-50 bg-purple-50 dark:bg-purple-700",
             color === "red" &&
-              "text-red-700 bg-red-50 dark:text-red-50 dark:bg-red-700",
+              "text-red-700 dark:text-red-50 bg-red-50 dark:bg-red-700",
             color === "yellow" &&
-              "text-yellow-700 bg-yellow-50 dark:text-yellow-50 dark:bg-yellow-700",
+              "text-yellow-700 dark:text-yellow-50 bg-yellow-50 dark:bg-yellow-700",
           )}
         >
           {children}
         </span>
       </div>
       <div className="mt-8">
-        <h3 className="text-lg font-medium text-black dark:text-gray-300 group-hover:text-gray-600 dark:group-hover:text-gray-100">
+        <h3 className="text-lg font-medium text-black group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-gray-100">
           <Link href={href}>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a className="focus:outline-none">
@@ -68,7 +68,7 @@ export default function LifeCard({
         </h3>
       </div>
       <span
-        className="absolute text-gray-300 pointer-events-none top-6 right-6 group-hover:text-gray-400 dark:text-gray-700"
+        className="absolute top-6 right-6 text-gray-300 group-hover:text-gray-400 dark:text-gray-700 pointer-events-none"
         aria-hidden="true"
       >
         <svg

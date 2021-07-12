@@ -50,9 +50,9 @@ export default function Newsletter(): JSX.Element {
   };
 
   return (
-    <div className="w-full px-3 my-6">
+    <div className="px-3 my-6 w-full">
       <div className="relative">
-        <div className="relative px-6 py-10 overflow-hidden bg-indigo-600 border border-gray-700 shadow-xl dark:border-gray-400 dark:bg-indigo-800 rounded-2xl sm:px-12">
+        <div className="overflow-hidden relative py-10 px-6 sm:px-12 bg-indigo-600 dark:bg-indigo-800 rounded-2xl border border-gray-700 dark:border-gray-400 shadow-xl">
           <div
             aria-hidden="true"
             className="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0"
@@ -65,28 +65,28 @@ export default function Newsletter(): JSX.Element {
               viewBox="0 0 1463 360"
             >
               <path
-                className="text-indigo-500 text-opacity-40 dark:text-indigo-700"
+                className="text-indigo-500 dark:text-indigo-700 text-opacity-40"
                 fill="currentColor"
                 d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
               />
               <path
-                className="text-indigo-700 text-opacity-40 dark:text-indigo-900"
+                className="text-indigo-700 dark:text-indigo-900 text-opacity-40"
                 fill="currentColor"
                 d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z"
               />
             </svg>
           </div>
           <div className="relative">
-            <h2 className="text-xl font-extrabold tracking-tight text-white sm:text-2xl md:text-3xl">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-white">
               Subscribe to my newsletter.
             </h2>
-            <p className="max-w-2xl mx-auto mt-4 text-sm text-indigo-50">
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-indigo-50">
               Every Sunday I write an email newsletter with some thoughts, life
               lessons and insights regading my journey. I would love for you to
               join.
             </p>
             <form
-              className="mt-6 sm:mx-auto sm:max-w-lg sm:flex"
+              className="sm:flex sm:mx-auto mt-6 sm:max-w-lg"
               onSubmit={subscribe}
             >
               <div className="relative flex-1 min-w-0">
@@ -97,16 +97,16 @@ export default function Newsletter(): JSX.Element {
                   id="email"
                   name="email"
                   type="email"
-                  className="block w-full px-5 py-3 text-base text-gray-900 placeholder-gray-500 border border-transparent rounded-md shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
+                  className="block py-3 px-5 w-full text-base placeholder-gray-500 text-gray-900 rounded-md border border-transparent focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 shadow-sm focus:outline-none"
                   placeholder="Enter your email"
                 />
                 {form?.state === "error" && (
-                  <div className="absolute inset-y-0 right-0 flex items-center pr-3 text-red-500 pointer-events-none">
+                  <div className="flex absolute inset-y-0 right-0 items-center pr-3 text-red-500 pointer-events-none">
                     <Exclamation />
                   </div>
                 )}
                 {form?.state === "success" && (
-                  <div className="absolute inset-y-0 right-0 flex items-center pr-3 text-green-500 pointer-events-none">
+                  <div className="flex absolute inset-y-0 right-0 items-center pr-3 text-green-500 pointer-events-none">
                     <Badge />
                   </div>
                 )}
@@ -115,13 +115,13 @@ export default function Newsletter(): JSX.Element {
                 <button
                   type="submit"
                   className={clsx(
-                    "inline-flex items-center w-full px-5 py-3 text-base font-medium text-white bg-indigo-500 border border-transparent rounded-md shadow dark:bg-indigo-600 hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 sm:px-10 dark:hover:bg-indigo-500",
+                    "inline-flex items-center py-3 px-5 sm:px-10 w-full text-base font-medium text-white bg-indigo-500 hover:bg-indigo-400 dark:bg-indigo-600 dark:hover:bg-indigo-500 rounded-md border border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 shadow focus:outline-none",
                     "cursor-not-allowed" && form?.state === "loading",
                   )}
                 >
                   {form?.state === "loading" && (
                     <svg
-                      className="w-5 h-5 mr-3 text-white animate-spin"
+                      className="mr-3 w-5 h-5 text-white animate-spin"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -162,7 +162,7 @@ export default function Newsletter(): JSX.Element {
                 {form?.message}
               </p>
             )}
-            <p className="flex max-w-2xl mx-auto mt-4 text-xs font-medium align-text-bottom text-indigo-50">
+            <p className="flex mx-auto mt-4 max-w-2xl text-xs font-medium text-indigo-50 align-text-bottom">
               <Light />
               {data?.subscribers} Subscribers
             </p>

@@ -19,10 +19,10 @@ export default function SocialCard({
   username = `@${SocialLinks.shunkakinoki}`,
 }: Props): JSX.Element {
   return (
-    <li className="col-span-1 group">
+    <li className="group col-span-1">
       <a href={href} target="_blank" rel="noopener noreferrer">
-        <div className="flex items-center text-left no-underline cursor-pointer leading-5">
-          <div className="flex justify-center flex-shrink-0 w-8 mr-4 text-3xl text-left text-gray-500 box-border group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-200">
+        <div className="flex items-center leading-5 text-left no-underline cursor-pointer">
+          <div className="box-border flex flex-shrink-0 justify-center mr-4 w-8 text-3xl text-left text-gray-500 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-200">
             {children}
           </div>
           <div className="overflow-hidden text-left cursor-pointer">
@@ -34,7 +34,7 @@ export default function SocialCard({
                 </span>
               )}
             </h4>
-            <p className="block w-full text-xs text-gray-600 truncate flex-nowrap whitespace-nowrap group-hover:underline group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-200">
+            <p className="block flex-nowrap w-full text-xs text-gray-600 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-200 group-hover:underline truncate whitespace-nowrap">
               {username}
             </p>
           </div>

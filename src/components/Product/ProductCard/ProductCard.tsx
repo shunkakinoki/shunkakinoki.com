@@ -14,22 +14,22 @@ export default function ProductCard({
   href,
 }: Props): JSX.Element {
   return (
-    <li className="border rounded-lg shadow-lg col-span-1 transparent group hover:bg-gray-50 dark:bg-black dark:border-gray-300 dark:hover:bg-gray-900">
+    <li className="group col-span-1 hover:bg-gray-50 dark:bg-black dark:hover:bg-gray-900 rounded-lg border dark:border-gray-300 shadow-lg">
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
         className="block"
       >
-        <div className="flex items-center px-4 py-4 sm:px-6">
-          <div className="flex-shrink-0 hidden md:inline-block md:pr-2">
+        <div className="flex items-center py-4 px-4 sm:px-6">
+          <div className="hidden md:inline-block flex-shrink-0 md:pr-2">
             <div className="w-16 h-16">{children}</div>
           </div>
-          <div className="flex-grow ml-3 mr-1">
+          <div className="flex-grow mr-1 ml-3">
             <h4 className="text-lg font-medium tracking-tight text-gray-900 dark:text-gray-100">
               {name}
             </h4>
-            <p className="text-sm text-gray-600 leading-5 line-clamp-3 dark:text-gray-300">
+            <p className="text-sm leading-5 text-gray-600 dark:text-gray-300 line-clamp-3">
               {description}
             </p>
           </div>

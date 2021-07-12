@@ -14,7 +14,7 @@ export default function LandingScreen({ source }: Props): JSX.Element {
   return (
     <>
       <Header />
-      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto">
+      <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
         <About isPartial source={source} />
         <Product isPartial />
         <History isPartial />

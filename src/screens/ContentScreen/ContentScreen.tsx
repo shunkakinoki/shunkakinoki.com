@@ -12,7 +12,7 @@ export default function ContentScreen({
   return (
     <>
       <Header />
-      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto">
+      <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
         <Content frontMatter={frontMatter} source={source} />
       </div>
       <Footer />

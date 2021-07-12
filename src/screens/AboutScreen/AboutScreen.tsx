@@ -10,7 +10,7 @@ export default function AboutScreen({ source }: Props): JSX.Element {
   return (
     <>
       <Header />
-      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto">
+      <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
         <About source={source} />
         <Life />
       </div>

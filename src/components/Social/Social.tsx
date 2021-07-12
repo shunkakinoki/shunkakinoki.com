@@ -34,14 +34,14 @@ interface Props {
 
 export default function Social({ isPartial = false }: Props): JSX.Element {
   return (
-    <section key="social" className={clsx("w-full mb-6", isPartial && "mt-6")}>
+    <section key="social" className={clsx("mb-6 w-full", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Social Accounts</SectionText>
       </div>
-      <div className="flex-col items-center w-full px-6 mt-3 sm:px-4 md:px-0">
+      <div className="flex-col items-center px-6 sm:px-4 md:px-0 mt-3 w-full">
         <ul
           className={clsx(
-            "grid w-full grid-cols-2 my-2 mt-4 gap-2 sm:grid-cols-3",
+            "grid grid-cols-2 sm:grid-cols-3 gap-2 my-2 mt-4 w-full",
             isPartial && "md:gap-3",
             !isPartial && "md:gap-6",
           )}
@@ -124,7 +124,7 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
           )}
         </ul>
       </div>
-      <div className="w-full pt-3 my-3 text-center leading-5">
+      <div className="pt-3 my-3 w-full leading-5 text-center">
         <div className="flex justify-center w-full">
           <SwitchButton
             href={isPartial ? "/social" : "/#social"}

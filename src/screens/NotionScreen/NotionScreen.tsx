@@ -12,7 +12,7 @@ export default function NotionScreen({
   return (
     <>
       <Header />
-      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto">
+      <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
         <Notion fullPage={fullPage} recordMap={recordMap} />
       </div>
       <Footer />

@@ -22,7 +22,7 @@ function AboutLink({ children, href }: AboutLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="underline hover:text-gray-400"
+      className="hover:text-gray-400 underline"
     >
       {children}
     </a>
@@ -37,10 +37,10 @@ export default function About({ isPartial, source }: Props): JSX.Element {
   const content = hydrate(source, { components });
 
   return (
-    <section className={clsx("w-full mb-6", isPartial && "mt-6")}>
+    <section className={clsx("mb-6 w-full", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
         {isPartial && (
-          <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl lg:text-6xl dark:text-white">
+          <h1 className="mb-4 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black dark:text-white">
             Hi, I’m Shun Kakinoki.
           </h1>
         )}
@@ -49,11 +49,11 @@ export default function About({ isPartial, source }: Props): JSX.Element {
         )}
       </div>
       <div className="px-4 sm:px-3 md:px-0">
-        <h3 className="text-lg leading-loose text-gray-600 md:text-xl dark:text-gray-300">
+        <h3 className="text-lg md:text-xl leading-loose text-gray-600 dark:text-gray-300">
           {content}
         </h3>
       </div>
-      <div className="w-full pt-3 my-3 text-center leading-5">
+      <div className="pt-3 my-3 w-full leading-5 text-center">
         <div className="flex justify-center w-full">
           <SwitchButton
             href={isPartial ? "/about" : "/#about"}

@@ -12,9 +12,9 @@ export default function SectionText({
   return (
     <h3
       className={clsx(
-        "my-3 text-lg font-medium leading-loose text-gray-800 align-baseline dark:text-gray-300",
+        "my-3 text-lg font-medium leading-loose text-gray-800 dark:text-gray-300 align-baseline",
         isPartial && "md:text-xl",
-        !isPartial && "md:text-3xl md:my-6",
+        !isPartial && "md:my-6 md:text-3xl",
       )}
     >
       {children}

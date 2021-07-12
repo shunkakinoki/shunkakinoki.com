@@ -9,7 +9,7 @@ export default function LinkButton({ children }: Props): JSX.Element {
   return (
     <Link href="/">
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a className="inline-flex items-center px-6 py-3 text-base font-medium text-indigo-700 bg-indigo-100 border border-transparent rounded-md hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:bg-indigo-600 dark:text-indigo-100 dark:hover:bg-indigo-400 dark:hover:text-indigo-50">
+      <a className="inline-flex items-center py-3 px-6 text-base font-medium text-indigo-700 dark:text-indigo-100 dark:hover:text-indigo-50 bg-indigo-100 hover:bg-indigo-200 dark:bg-indigo-600 dark:hover:bg-indigo-400 rounded-md border border-transparent focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none">
         {children}
       </a>
     </Link>

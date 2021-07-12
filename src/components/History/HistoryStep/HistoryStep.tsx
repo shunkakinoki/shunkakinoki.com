@@ -12,7 +12,7 @@ interface Props {
 function HistoryConnector(): JSX.Element {
   return (
     <span
-      className="absolute h-full -ml-px bg-gray-200 dark:bg-gray-500 top-4 left-4 w-0.5"
+      className="absolute top-4 left-4 -ml-px w-0.5 h-full bg-gray-200 dark:bg-gray-500"
       aria-hidden="true"
     />
   );
@@ -30,11 +30,11 @@ export default function HistoryStep({
         className={clsx("relative", isBottom && "pb-2", !isBottom && "pb-8")}
       >
         {!isBottom && <HistoryConnector />}
-        <div className="relative flex space-x-3">
+        <div className="flex relative space-x-3">
           <div>
             <span
               className={clsx(
-                "flex items-center justify-center w-8 h-8 rounded-full ring-8 ring-white dark:ring-black dark:text-gray-100",
+                "flex justify-center items-center w-8 h-8 dark:text-gray-100 rounded-full ring-8 ring-white dark:ring-black",
                 type === "cake" && "bg-pink-500",
                 type === "chip" && "bg-gray-500",
                 type === "fire" && "bg-red-500",
@@ -53,7 +53,7 @@ export default function HistoryStep({
               {type === "work" && <Work />}
             </span>
           </div>
-          <div className="flex items-center justify-between flex-1 min-w-0 space-x-4">
+          <div className="flex flex-1 justify-between items-center space-x-4 min-w-0">
             <div>
               <p className="text-sm text-gray-500 dark:text-gray-300 line-clamp-3">
                 {children}

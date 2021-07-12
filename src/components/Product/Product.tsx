@@ -12,11 +12,11 @@ interface Props {
 
 export default function Product({ isPartial = false }: Props): JSX.Element {
   return (
-    <section key="product" className={clsx("w-full mb-6", isPartial && "mt-6")}>
+    <section key="product" className={clsx("mb-6 w-full", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Products</SectionText>
       </div>
-      <div className="flex-col items-center w-full px-6 mt-3 sm:px-4 md:px-0">
+      <div className="flex-col items-center px-6 sm:px-4 md:px-0 mt-3 w-full">
         <ul
           className={clsx(
             "grid grid-cols-1 gap-3",
@@ -40,7 +40,7 @@ export default function Product({ isPartial = false }: Props): JSX.Element {
           </ProductCard>
         </ul>
       </div>
-      <div className="w-full pt-3 my-3 text-center leading-5">
+      <div className="pt-3 my-3 w-full leading-5 text-center">
         <div className="flex justify-center w-full">
           <SwitchButton
             href={isPartial ? "/products" : "/#products"}

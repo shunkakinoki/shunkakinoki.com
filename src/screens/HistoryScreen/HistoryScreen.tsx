@@ -6,7 +6,7 @@ export default function HistoryScreen(): JSX.Element {
   return (
     <>
       <Header />
-      <div className="flex items-start justify-center max-w-2xl mx-auto">
+      <div className="flex justify-center items-start mx-auto max-w-2xl">
         <History />
       </div>
       <Footer />
