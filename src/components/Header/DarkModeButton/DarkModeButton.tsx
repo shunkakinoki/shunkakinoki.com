@@ -9,8 +9,10 @@ export default function DarkModeButton(): JSX.Element {
     <button
       aria-label="Dark Mode Button"
       type="button"
-      className="flex items-center justify-center w-10 h-10 bg-gray-200 border border-gray-300 rounded-full dark:border-gray-400 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className="flex justify-center items-center w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full border border-gray-300 dark:border-gray-400 focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 focus:outline-none"
+      onClick={() => {
+        return setTheme(theme === "dark" ? "light" : "dark");
+      }}
     >
       {resolvedTheme && (
         <svg

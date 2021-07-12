@@ -13,7 +13,7 @@ export default function BlogScreen({
   return (
     <>
       <Header />
-      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto">
+      <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
         <Blog frontMatter={frontMatter} source={source} slug={slug} />
       </div>
       <Footer />

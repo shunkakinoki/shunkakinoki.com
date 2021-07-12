@@ -32,21 +32,23 @@ export default function Notion({ recordMap, fullPage }: Props): JSX.Element {
           shallow,
           locale,
           ...props
-        }: LinkProps): JSX.Element => (
-          <Link
-            href={href}
-            as={as}
-            passHref={passHref}
-            prefetch={prefetch}
-            replace={replace}
-            scroll={scroll}
-            shallow={shallow}
-            locale={locale}
-          >
-            {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-            <a {...props} />
-          </Link>
-        ),
+        }: LinkProps): JSX.Element => {
+          return (
+            <Link
+              href={href}
+              as={as}
+              passHref={passHref}
+              prefetch={prefetch}
+              replace={replace}
+              scroll={scroll}
+              shallow={shallow}
+              locale={locale}
+            >
+              {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
+              <a {...props} />
+            </Link>
+          );
+        },
       }}
       fullPage={fullPage}
       recordMap={recordMap}

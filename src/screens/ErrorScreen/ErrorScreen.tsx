@@ -7,7 +7,7 @@ export default function ErrorScreen(): JSX.Element {
   return (
     <>
       <Header />
-      <div className="flex flex-col items-center justify-center max-w-3xl mx-auto my-16 md:my-24 lg:my-32">
+      <div className="flex flex-col justify-center items-center my-16 md:my-24 lg:my-32 mx-auto max-w-3xl">
         <ErrorText>Error</ErrorText>
         <LinkButton href="/">Go home</LinkButton>
       </div>

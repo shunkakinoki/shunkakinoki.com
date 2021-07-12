@@ -14,7 +14,7 @@ interface HistoryYearProps {
 
 function HistoryYear({ children }: HistoryYearProps): JSX.Element {
   return (
-    <h3 className="mt-2 mb-4 font-light tracking-tight text-gray-500 md:text-base dark:text-gray-100">
+    <h3 className="mt-2 mb-4 md:text-base font-light tracking-tight text-gray-500 dark:text-gray-100">
       {children}
     </h3>
   );
@@ -22,11 +22,11 @@ function HistoryYear({ children }: HistoryYearProps): JSX.Element {
 
 export default function History({ isPartial = false }: Props): JSX.Element {
   return (
-    <section key="history" className={clsx("w-full mb-2", isPartial && "mt-6")}>
+    <section key="history" className={clsx("mb-2 w-full", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>History</SectionText>
       </div>
-      <div className="flex-col items-center w-full px-6 mt-3 sm:px-4 md:px-0">
+      <div className="flex-col items-center px-6 sm:px-4 md:px-0 mt-3 w-full">
         <HistoryYear>Present</HistoryYear>
         <ul className="my-3">
           <HistoryStep time="March 2020 ~ Present" type="work">

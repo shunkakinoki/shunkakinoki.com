@@ -20,7 +20,7 @@ interface FooterIconLinkProps {
 
 function FooterLink({ children, href }: FooterLinkProps): JSX.Element {
   return (
-    <div className="px-5 py-2">
+    <div className="py-2 px-5">
       <Link href={href}>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a className="text-base text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">
@@ -46,9 +46,9 @@ function FooterIconLink({ children, href }: FooterIconLinkProps): JSX.Element {
 
 export default function Footer(): JSX.Element {
   return (
-    <footer className="px-4 py-12 mx-auto overflow-hidden max-w-7xl sm:px-6 lg:px-8">
+    <footer className="overflow-hidden py-12 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
       <nav
-        className="flex flex-wrap justify-center -mx-5 -my-2"
+        className="flex flex-wrap justify-center -my-2 -mx-5"
         aria-label="Footer"
       >
         <FooterLink href="/about">About</FooterLink>
@@ -80,7 +80,7 @@ export default function Footer(): JSX.Element {
           <Twitter />
         </FooterIconLink>
       </div>
-      <div className="flex flex-col items-center justify-center max-w-3xl pt-8 mx-auto space-x-6 space-y-6 sm:flex-row sm:space-y-0">
+      <div className="flex flex-col sm:flex-row justify-center items-center pt-8 mx-auto space-y-6 sm:space-y-0 space-x-6 max-w-3xl">
         <p className="flex-shrink-0 text-base text-center text-gray-400">
           &copy; Shun Kakinoki. All rights reserved.
         </p>

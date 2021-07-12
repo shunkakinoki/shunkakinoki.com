@@ -7,8 +7,12 @@ export default function MenuButton(): JSX.Element {
   return (
     <button
       type="button"
-      className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 dark:hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-      onClick={() => setMenuOpen(isMenuOpen => !isMenuOpen)}
+      className="inline-flex justify-center items-center p-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-400 rounded-md focus:ring-2 focus:ring-inset focus:ring-indigo-500 focus:outline-none"
+      onClick={() => {
+        return setMenuOpen(isMenuOpen => {
+          return !isMenuOpen;
+        });
+      }}
     >
       <span className="sr-only">Open menu</span>
       <Menu />
