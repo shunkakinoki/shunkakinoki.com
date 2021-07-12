@@ -2010,10 +2010,10 @@
   dependencies:
     depcheck "^1.4.2"
 
-"@shunkakinoki/dev@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/dev/-/dev-1.2.1.tgz#38836ea9b76177f50500f6e4ccec6dbc16e0a089"
-  integrity sha512-iXImM8WuFWVCr6AtQrTOjPhYnN70Cjp00sG9jx50PSPXHL07mLYxI/dML6SozJZS0tga7QgJs4+zY54XvRQ7bw==
+"@shunkakinoki/dev@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/dev/-/dev-1.2.2.tgz#f6fe9aaebd6cb5a94c6f6cc6b2f419ad89100c8c"
+  integrity sha512-frwD/k+IB4GcjbDJ3cjCJE4TetIAoUD3DHrKGrKS6T84MMBk7xBe8D2NnITBw8AP+qsKK1jFUxNoxoVYVNKeGw==
   dependencies:
     concurrently "^6.2.0"
     scripty "^2.0.0"
@@ -6937,9 +6937,9 @@ eslint-plugin-react@^7.24.0:
     resolve "^2.0.0-next.3"
     string.prototype.matchall "^4.0.5"
 
-"eslint-plugin-tailwindcss@git+https://github.com/will-stone/eslint-plugin-tailwindcss.git#patch-1":
+"eslint-plugin-tailwindcss@https://github.com/will-stone/eslint-plugin-tailwindcss#patch-1":
   version "1.14.0"
-  resolved "git+https://github.com/will-stone/eslint-plugin-tailwindcss.git#a2fd44f612e711da93c5e4268a343adb28b9a2fe"
+  resolved "https://github.com/will-stone/eslint-plugin-tailwindcss#a2fd44f612e711da93c5e4268a343adb28b9a2fe"
   dependencies:
     fast-glob "^3.2.5"
     postcss "^8.3.0"
