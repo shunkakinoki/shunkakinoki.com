@@ -2316,10 +2316,10 @@
   dependencies:
     depcheck "^1.4.2"
 
-"@shunkakinoki/dev@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/dev/-/dev-1.1.1.tgz#fbfe51801227cb973e376f27951ae2b38755d576"
-  integrity sha512-WbfXm57HYfgKPBQiUv7+C4hTWmzEE5RAw2lwjf4k8RVhdqCubzfXL/CYAE8Vj4eZGeyjXsVXww6CR0V457JPoA==
+"@shunkakinoki/dev@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/dev/-/dev-1.2.0.tgz#344f489168604582cdf11577b3e90b6743bc6e3e"
+  integrity sha512-XeC2u/TvPpGlTfeUdZjAu+/2XopggxkJvv8v6uBiRGp6ArZ/E/rrYRGpec6jQT5mf/bE6ITfIfCYKedya0fuRQ==
   dependencies:
     concurrently "^6.2.0"
     scripty "^2.0.0"
