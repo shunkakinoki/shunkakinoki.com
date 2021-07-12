@@ -1,9 +1,8 @@
 ## [1.12.3](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.12.2...v1.12.3) (2021-07-12)
 
-
 ### Bug Fixes
 
-* **deps:** update dependency autoprefixer to ^10.3.0 ([ce3bc74](https://github.com/shunkakinoki/shunkakinoki.com/commit/ce3bc742cf476315034bc897328044a7f75e662a))
+- **deps:** update dependency autoprefixer to ^10.3.0 ([ce3bc74](https://github.com/shunkakinoki/shunkakinoki.com/commit/ce3bc742cf476315034bc897328044a7f75e662a))
 
 ## [1.12.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.12.1...v1.12.2) (2021-07-09)
 
