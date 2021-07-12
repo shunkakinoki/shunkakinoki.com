@@ -1,3 +1,10 @@
+## [1.12.4](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.12.3...v1.12.4) (2021-07-12)
+
+
+### Performance Improvements
+
+* ini cloudflare analytics ([094d044](https://github.com/shunkakinoki/shunkakinoki.com/commit/094d044e14f400d67db7bcd9de56c941b6f93da0))
+
 ## [1.12.3](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.12.2...v1.12.3) (2021-07-12)
 
 
