@@ -2019,14 +2019,14 @@
     scripty "^2.0.0"
     sort-package-json "^1.50.0"
 
-"@shunkakinoki/eslint-config@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.1.tgz#c5499ac346c8ba179c9a0cec734409db9b9970cc"
-  integrity sha512-29iNSiM/gOo/eUw6SFShkModyVjpbAt6mQQ3IQ6fExyt3cLZ+N8/PmE2+gygCMiqF7OZkIQ2bkDXeKiJphW/Ng==
+"@shunkakinoki/eslint-config@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.4.tgz#01525ab0cb9cc77ccbbdec68b59e6449ae64665f"
+  integrity sha512-nd+KBdJG1c4fug8leKvjHkTtq98EucUkLtSBDDz7Np+Cv9RL8DhMeG2IRgj4qhGh7TdfTXA3jj5tGphlghCoLQ==
   dependencies:
     "@next/eslint-plugin-next" "^11.0.1"
-    "@typescript-eslint/eslint-plugin" "^4.28.2"
-    "@typescript-eslint/parser" "^4.28.2"
+    "@typescript-eslint/eslint-plugin" "^4.28.3"
+    "@typescript-eslint/parser" "^4.28.3"
     eslint "^7.30.0"
     eslint-config-prettier "^8.3.0"
     eslint-import-resolver-typescript "^2.4.0"
@@ -2036,7 +2036,7 @@
     eslint-plugin-prettier "^3.4.0"
     eslint-plugin-react "^7.24.0"
     eslint-plugin-react-hooks "^4.2.0"
-    eslint-plugin-tailwindcss "https://github.com/will-stone/eslint-plugin-tailwindcss#patch-1"
+    eslint-plugin-tailwindcss "^1.14.1"
 
 "@shunkakinoki/husky@^1.0.2":
   version "1.0.2"
@@ -3380,7 +3380,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@^4.28.2", "@typescript-eslint/eslint-plugin@^4.9.1":
+"@typescript-eslint/eslint-plugin@^4.28.3", "@typescript-eslint/eslint-plugin@^4.9.1":
   version "4.28.3"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.28.3.tgz#36cdcd9ca6f9e5cb49b9f61b970b1976708d084b"
   integrity sha512-jW8sEFu1ZeaV8xzwsfi6Vgtty2jf7/lJmQmDkDruBjYAbx5DA8JtbcMnP0rNPUG+oH5GoQBTSp+9613BzuIpYg==
@@ -3405,7 +3405,7 @@
     eslint-scope "^5.1.1"
     eslint-utils "^3.0.0"
 
-"@typescript-eslint/parser@^4.28.2":
+"@typescript-eslint/parser@^4.28.3":
   version "4.28.3"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-4.28.3.tgz#95f1d475c08268edffdcb2779993c488b6434b44"
   integrity sha512-ZyWEn34bJexn/JNYvLQab0Mo5e+qqQNhknxmc8azgNd4XqspVYR5oHq9O11fLwdZMRcj4by15ghSlIEq+H5ltQ==
@@ -6937,9 +6937,10 @@ eslint-plugin-react@^7.24.0:
     resolve "^2.0.0-next.3"
     string.prototype.matchall "^4.0.5"
 
-"eslint-plugin-tailwindcss@https://github.com/will-stone/eslint-plugin-tailwindcss#patch-1":
-  version "1.14.0"
-  resolved "https://github.com/will-stone/eslint-plugin-tailwindcss#a2fd44f612e711da93c5e4268a343adb28b9a2fe"
+eslint-plugin-tailwindcss@^1.14.1:
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-tailwindcss/-/eslint-plugin-tailwindcss-1.14.1.tgz#5e79822881f9c322045e6ab382f0863ede312bce"
+  integrity sha512-WRfWFuaZZKfOSW6WhHj5K8husPGqs5niwRYTWFH8rKOi9tiRd/AkxquEg6+PJbiV3kLZEzZEfJSUkYXWuZerXw==
   dependencies:
     fast-glob "^3.2.5"
     postcss "^8.3.0"
