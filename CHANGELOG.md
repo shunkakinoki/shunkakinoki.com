@@ -1,3 +1,12 @@
+## [1.13.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.13.0...v1.13.1) (2021-07-13)
+
+
+### Performance Improvements
+
+* refactor eslint code with vercel config ([8bb83a4](https://github.com/shunkakinoki/shunkakinoki.com/commit/8bb83a4e80f806bc9722d6617a6b2b3a3d5ed484))
+* refactor i18n config ([509e474](https://github.com/shunkakinoki/shunkakinoki.com/commit/509e47460a6d3779fe2f50d2e09362343a6305aa))
+* upgrade tailwindcss plugin ([813e339](https://github.com/shunkakinoki/shunkakinoki.com/commit/813e339689316c155675cf1c7a755021be68f226))
+
 # [1.13.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.12.5...v1.13.0) (2021-07-12)
 
 ### Features
