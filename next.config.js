@@ -5,44 +5,44 @@ module.exports = nextTranslate({
     ignoreDuringBuilds: true,
   },
   reactStrictMode: true,
-  // redirects() {
-  //   return [
-  //     {
-  //       source: "/how",
-  //       destination: "/mission",
-  //       permanent: true,
-  //     },
-  //     {
-  //       source: "/resume",
-  //       destination:
-  //         "https://drive.google.com/file/d/1WORDhsxecjjhElXfXQw8lapxxaaFrKM8/view",
-  //       permanent: true,
-  //     },
-  //     {
-  //       source: "/what",
-  //       destination: "/values",
-  //       permanent: true,
-  //     },
-  //     {
-  //       source: "/when",
-  //       destination: "/history",
-  //       permanent: true,
-  //     },
-  //     {
-  //       source: "/who",
-  //       destination: "/about",
-  //       permanent: true,
-  //     },
-  //     {
-  //       source: "/why",
-  //       destination: "/cause",
-  //       permanent: true,
-  //     },
-  //     {
-  //       source: "/where",
-  //       destination: "https://zen.ly/shunkakinoki",
-  //       permanent: true,
-  //     },
-  //   ];
-  // },
+  redirects() {
+    return [
+      {
+        source: "/how",
+        destination: "/mission",
+        permanent: true,
+      },
+      {
+        source: "/resume",
+        destination:
+          "https://drive.google.com/file/d/1WORDhsxecjjhElXfXQw8lapxxaaFrKM8/view",
+        permanent: true,
+      },
+      {
+        source: "/what",
+        destination: "/values",
+        permanent: true,
+      },
+      {
+        source: "/when",
+        destination: "/history",
+        permanent: true,
+      },
+      {
+        source: "/who",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/why",
+        destination: "/cause",
+        permanent: true,
+      },
+      {
+        source: "/where",
+        destination: "https://zen.ly/shunkakinoki",
+        permanent: true,
+      },
+    ];
+  },
 });
