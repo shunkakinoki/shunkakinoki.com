@@ -6,7 +6,14 @@ const withTranslate = require("next-translate");
  * @type {import('next/dist/next-server/server/config').NextConfig}
  **/
 const config = {
+  cleanDistDir: true,
   experimental: {
+    conformance: true,
+    craCompat: false,
+    cpus: 0,
+    disableOptimizedLoading: false,
+    externalDir: true,
+    gzipSize: true,
     optimizeCss: true,
     optimizeFonts: true,
     optimizeImages: true,
@@ -14,6 +21,7 @@ const config = {
     plugins: true,
     profiling: true,
     reactMode: "concurrent",
+    reactRoot: true,
     scriptLoader: true,
     scrollRestoration: true,
     sprFlushToDisk: true,
@@ -74,6 +82,8 @@ const config = {
       },
     ];
   },
+  trailingSlash: false,
+  webpack5: true,
 };
 
 const plugins = [
