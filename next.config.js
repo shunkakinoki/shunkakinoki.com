@@ -4,10 +4,6 @@ module.exports = nextTranslate({
   eslint: {
     ignoreDuringBuilds: true,
   },
-  i18n: {
-    locales: ["en", "ja", "zh"],
-    defaultLocale: "en",
-  },
   reactStrictMode: true,
   // redirects() {
   //   return [
