@@ -2098,6 +2098,17 @@
     stylelint "^13.12.0"
     stylelint-config-standard "^22.0.0"
 
+"@shunkakinoki/tailwindcss@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/tailwindcss/-/tailwindcss-1.0.1.tgz#bb760a508ecd871d05ae83a6df7981f7936420ac"
+  integrity sha512-1prIZh0XPGuLVAS0yzoRKskpt+uBEjtWN+uGnebdeGoXLWbiPn8+zixYxDMGnVgZYbc4GE8O6oMYFc3bvm1YtA==
+  dependencies:
+    "@tailwindcss/aspect-ratio" "^0.2.1"
+    "@tailwindcss/forms" "^0.3.3"
+    "@tailwindcss/line-clamp" "^0.2.1"
+    "@tailwindcss/typography" "^0.4.1"
+    tailwindcss "^2.2.4"
+
 "@shunkakinoki/tsconfig@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@shunkakinoki/tsconfig/-/tsconfig-1.1.0.tgz#6c48c51010e81d2c3f0f6772e0e15ebf5a9773b0"

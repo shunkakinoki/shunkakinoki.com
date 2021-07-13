@@ -22,7 +22,6 @@ function FooterLink({ children, href }: FooterLinkProps): JSX.Element {
   return (
     <div className="py-2 px-5">
       <Link href={href}>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a className="text-base text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">
           {children}
         </a>
