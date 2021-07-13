@@ -20,7 +20,7 @@ const config = {
     pageEnv: true,
     plugins: true,
     profiling: true,
-    reactRoot: "concurrent",
+    reactRoot: false,
     scriptLoader: true,
     scrollRestoration: true,
     sprFlushToDisk: true,
