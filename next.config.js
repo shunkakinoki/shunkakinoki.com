@@ -10,7 +10,7 @@ const config = {
   experimental: {
     conformance: true,
     craCompat: false,
-    cpus: 0,
+    cpus: 3,
     disableOptimizedLoading: false,
     externalDir: true,
     gzipSize: true,
@@ -20,8 +20,7 @@ const config = {
     pageEnv: true,
     plugins: true,
     profiling: true,
-    reactMode: "concurrent",
-    reactRoot: true,
+    reactRoot: "concurrent",
     scriptLoader: true,
     scrollRestoration: true,
     sprFlushToDisk: true,
