@@ -30,9 +30,8 @@ export async function getAllPages(
   return pageMap;
 }
 
-export async function resolveNotionPage(
-  pageId: string,
-): Promise<{
+// eslint-disable-next-line prettier/prettier
+export async function resolveNotionPage(pageId: string): Promise<{
   parsedPageId: string;
   recordMap: ExtendedRecordMap;
   title: string;
