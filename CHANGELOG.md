@@ -1,9 +1,8 @@
 # [1.13.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.12.5...v1.13.0) (2021-07-12)
 
-
 ### Features
 
-* fix eslint tailwindcss ([2ae8060](https://github.com/shunkakinoki/shunkakinoki.com/commit/2ae8060e5a039f35d6186ad757b392a5352d5fee))
+- fix eslint tailwindcss ([2ae8060](https://github.com/shunkakinoki/shunkakinoki.com/commit/2ae8060e5a039f35d6186ad757b392a5352d5fee))
 
 ## [1.12.5](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.12.4...v1.12.5) (2021-07-12)
 
