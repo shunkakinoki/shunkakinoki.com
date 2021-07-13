@@ -3,7 +3,6 @@ ignores:
     "@shunkakinoki/*",
     "@storybook/*",
     "autoprefixer",
-    "npm-package-json-lint-config-shunkakinoki",
     "postcss",
     "storybook-builder-vite",
     "webpack",
