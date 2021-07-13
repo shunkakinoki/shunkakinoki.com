@@ -1,10 +1,39 @@
-const nextTranslate = require("next-translate");
+const withBundleAnalyzer = require("@next/bundle-analyzer");
+const withPlugins = require("next-compose-plugins");
+const withTranslate = require("next-translate");
 
-module.exports = nextTranslate({
+/**
+ * @type {import('next/dist/next-server/server/config').NextConfig}
+ **/
+const config = {
+  experimental: {
+    optimizeCss: true,
+    optimizeFonts: true,
+    optimizeImages: true,
+    pageEnv: true,
+    plugins: true,
+    profiling: true,
+    reactMode: "concurrent",
+    scriptLoader: true,
+    scrollRestoration: true,
+    sprFlushToDisk: true,
+    stats: true,
+    workerThreads: true,
+  },
+  future: {
+    strictPostcssConfiguration: true,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
+  i18n: {
+    locales: ["en", "ja", "zh"],
+    defaultLocale: "en",
+    localeDetection: true,
+  },
   reactStrictMode: true,
+  poweredByHeader: true,
+  productionBrowserSourceMaps: true,
   redirects() {
     return [
       {
@@ -45,4 +74,13 @@ module.exports = nextTranslate({
       },
     ];
   },
-});
+};
+
+const plugins = [
+  withBundleAnalyzer({
+    enabled: process.env.ANALYZE === "true",
+  }),
+  withTranslate,
+];
+
+module.exports = withPlugins(plugins, config);
