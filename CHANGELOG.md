@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.13.1...v1.13.2) (2021-07-13)
+
+
+### Performance Improvements
+
+* complete refactor next config js ([f469a54](https://github.com/shunkakinoki/shunkakinoki.com/commit/f469a54c020772cf98e73a273ace46ce46771d20))
+
 ## [1.13.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.13.0...v1.13.1) (2021-07-13)
 
 ### Performance Improvements
