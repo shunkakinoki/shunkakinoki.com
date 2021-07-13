@@ -10,7 +10,7 @@ const config = {
   experimental: {
     conformance: true,
     craCompat: false,
-    cpus: 3,
+    cpus: 1,
     disableOptimizedLoading: false,
     externalDir: true,
     gzipSize: true,
