@@ -11306,7 +11306,7 @@ normalize-url@^6.0.0, normalize-url@^6.0.1:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-6.1.0.tgz#40d0885b535deffe3f3147bec877d05fe4c5668a"
   integrity sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==
 
-notion-client@^4.7.6:
+notion-client@^4.7.9:
   version "4.7.9"
   resolved "https://registry.yarnpkg.com/notion-client/-/notion-client-4.7.9.tgz#5dd031fb32b107dc50ff8a90ed64cee302052840"
   integrity sha512-64wUu6Q2nVgFWuPFXI0JKt/ehVshFGF28hLLDoHnAZKpalgBHAhRL6+SsRr3kkR+X0Fh0BkJ3jrAsqSFIabGFQ==
@@ -11321,7 +11321,7 @@ notion-types@^4.7.9:
   resolved "https://registry.yarnpkg.com/notion-types/-/notion-types-4.7.9.tgz#9898a15dd705477e3568bf6f77037788382dda3e"
   integrity sha512-G3+EeJbrXRCtlFuhfIE+ZTh3QG+3pIgpnCi4Zyxq78E9cebYfzXElbIzIwxdI7eC5NVtHSRQsQBqkyWcOAqfCg==
 
-notion-utils@^4.7.6, notion-utils@^4.7.9:
+notion-utils@^4.7.9:
   version "4.7.9"
   resolved "https://registry.yarnpkg.com/notion-utils/-/notion-utils-4.7.9.tgz#1cf9d1dba4c226b947459ea90f97087ea0ed6674"
   integrity sha512-IQhelV70eaNhPhQGR2esEevgDCvbweeWCgRZ98Vnlg4IA+lk09S5Q0Cn7Ns2MFLzXssRj++kLDxzQoysvIMKBw==
@@ -13133,7 +13133,7 @@ react-modal@^3.11.2:
     react-lifecycles-compat "^3.0.0"
     warning "^4.0.3"
 
-react-notion-x@^4.7.7:
+react-notion-x@^4.7.9:
   version "4.7.9"
   resolved "https://registry.yarnpkg.com/react-notion-x/-/react-notion-x-4.7.9.tgz#c61bd5ea0d9ff9a0306d8fe2cb99ce06da933a78"
   integrity sha512-+Cb79l7qKcSSsvL65AaRoSqyNrPnSpfa3MXvUGJnFi8f6lpkuco8z3Y0LqBT/IMaz1oZjaT9eZeMuSx9nwGcpQ==
