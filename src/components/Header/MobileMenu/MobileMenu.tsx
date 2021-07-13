@@ -13,7 +13,6 @@ function MobileMenuLink({ children, href }: MobileMenuLinkProps): JSX.Element {
   return (
     <div className="py-1 px-5">
       <Link href={href}>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a className="flex items-center p-3 -m-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">
           <span className="ml-3 text-base font-medium text-gray-900 dark:text-gray-300">
             {children}

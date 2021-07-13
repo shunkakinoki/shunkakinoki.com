@@ -59,7 +59,6 @@ export default function LifeCard({
       <div className="mt-8">
         <h3 className="text-lg font-medium text-black group-hover:text-gray-600 dark:text-gray-300 dark:group-hover:text-gray-100">
           <Link href={href}>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a className="focus:outline-none">
               <span className="absolute inset-0" aria-hidden="true" />
               {name}

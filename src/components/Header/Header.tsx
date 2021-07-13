@@ -20,8 +20,7 @@ export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
   return (
     <li className="px-3 leading-5 text-left text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 align-baseline">
       <Link href={href}>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className="text-sm md:text-base lg:text-[2.23rem] font-medium no-underline cursor-pointer">
+        <a className="text-sm md:text-base lg:text-lg font-medium no-underline cursor-pointer">
           {children}
         </a>
       </Link>
@@ -43,7 +42,6 @@ export default function Header(): JSX.Element {
             <DarkModeButton />
           </span>
           <Link href="/">
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
               aria-current="page"
               className="text-xl lg:text-2xl text-transparent hover:underline bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
