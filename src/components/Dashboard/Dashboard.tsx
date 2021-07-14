@@ -1,5 +1,10 @@
 import { SectionText } from "@/common/Text";
-import { Buttondown, Github, Twitter } from "@/components/Dashboard/Analytics";
+import {
+  Buttondown,
+  Github,
+  Instagram,
+  Twitter,
+} from "@/components/Dashboard/Analytics";
 
 export default function Dashboard(): JSX.Element {
   return (
@@ -10,6 +15,7 @@ export default function Dashboard(): JSX.Element {
       <dl className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
         <Buttondown />
         <Github />
+        <Instagram />
         <Twitter />
       </dl>
     </section>
