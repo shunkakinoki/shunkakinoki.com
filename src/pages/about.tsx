@@ -4,7 +4,7 @@ import type {
   GetStaticPropsContext,
 } from "next";
 
-import type { MdxRemote } from "next-mdx-remote/types";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import { getGithubContent } from "@/lib/github";
 import AboutScreen from "@/screens/AboutScreen";
@@ -37,7 +37,9 @@ GetStaticPropsContext) => {
 const About = ({
   source,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  return <AboutScreen source={JSON.parse(source) as MdxRemote.Source} />;
+  return (
+    <AboutScreen source={JSON.parse(source) as MDXRemoteSerializeResult} />
+  );
 };
 
 export default About;

@@ -5,7 +5,7 @@ import type {
   GetStaticPropsContext,
 } from "next";
 
-import type { MdxRemote } from "next-mdx-remote/types";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import type { ExtendedRecordMap } from "notion-types";
 import { parsePageId } from "notion-utils";
 
@@ -213,7 +213,7 @@ const PageId = ({
       <BlogScreen
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         frontMatter={JSON.parse(frontMatter) as { [key: string]: any }}
-        source={JSON.parse(content) as MdxRemote.Source}
+        source={JSON.parse(content) as MDXRemoteSerializeResult}
         slug={JSON.parse(slug) as string}
       />
     );
@@ -224,7 +224,7 @@ const PageId = ({
       <ContentScreen
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         frontMatter={JSON.parse(frontMatter) as { [key: string]: any }}
-        source={JSON.parse(content) as MdxRemote.Source}
+        source={JSON.parse(content) as MDXRemoteSerializeResult}
       />
     );
   }

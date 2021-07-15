@@ -4,7 +4,7 @@ import type {
   GetStaticPropsContext,
 } from "next";
 
-import type { MdxRemote } from "next-mdx-remote/types";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import { getGithubContent } from "@/lib/github";
 import CreditsScreen from "@/screens/CreditsScreen";
@@ -37,7 +37,9 @@ GetStaticPropsContext) => {
 const Credits = ({
   content,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  return <CreditsScreen source={JSON.parse(content) as MdxRemote.Source} />;
+  return (
+    <CreditsScreen source={JSON.parse(content) as MDXRemoteSerializeResult} />
+  );
 };
 
 export default Credits;

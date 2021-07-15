@@ -1,6 +1,6 @@
 import matter from "gray-matter";
-import renderToString from "next-mdx-remote/render-to-string";
-import type { MdxRemote } from "next-mdx-remote/types";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 
 const githubLink =
   "https://raw.githubusercontent.com/shunkakinoki/shunkakinoki/main";
@@ -16,7 +16,7 @@ export const getGithubContent = async (
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         [key: string]: any;
       };
-      source: MdxRemote.Source;
+      source: MDXRemoteSerializeResult;
     }
   | undefined
 > => {
@@ -44,12 +44,12 @@ export const getGithubContent = async (
     }
 
     const { content, data } = matter(source);
-    const mdxSource = await renderToString(content, {
+    const mdxSource = await serialize(content, {
       scope: data,
     });
     return { frontMatter: data, source: mdxSource };
   } catch (err) {
-    throw Error(err);
+    throw Error(err as string);
   }
 };
 
@@ -63,7 +63,7 @@ export const getGithubSummary = async (
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         [key: string]: any;
       };
-      source: MdxRemote.Source;
+      source: MDXRemoteSerializeResult;
     }
   | undefined
 > => {

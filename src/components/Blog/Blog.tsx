@@ -1,5 +1,5 @@
-import hydrate from "next-mdx-remote/hydrate";
-import type { MdxRemote } from "next-mdx-remote/types";
+import { MDXRemote } from "next-mdx-remote";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import Link from "next/link";
 
 import s from "./Blog.module.css";
@@ -9,7 +9,7 @@ export interface Props {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
   };
-  source: MdxRemote.Source;
+  source: MDXRemoteSerializeResult;
   slug: string;
 }
 
@@ -37,11 +37,11 @@ export default function Blog({ source, slug }: Props): JSX.Element {
     a: BlogLink,
   };
 
-  const content = hydrate(source, { components });
-
   return (
     <section className="px-3 text-black dark:text-white">
-      <div className={s.markdown}>{content}</div>
+      <div className={s.markdown}>
+        <MDXRemote {...source} components={components} />
+      </div>
     </section>
   );
 }
