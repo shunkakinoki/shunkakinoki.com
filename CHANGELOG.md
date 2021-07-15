@@ -1,10 +1,9 @@
 # [1.14.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.13.2...v1.14.0) (2021-07-15)
 
-
 ### Features
 
-* ini cloudflare analytics ([ea3491e](https://github.com/shunkakinoki/shunkakinoki.com/commit/ea3491e8ccfa6c9e14d62619e4b3e2c8e79a2c0e))
-* revamp mdx component ([be8d9dd](https://github.com/shunkakinoki/shunkakinoki.com/commit/be8d9dd1ef63d5df019a34917ccbe974dabadce2))
+- ini cloudflare analytics ([ea3491e](https://github.com/shunkakinoki/shunkakinoki.com/commit/ea3491e8ccfa6c9e14d62619e4b3e2c8e79a2c0e))
+- revamp mdx component ([be8d9dd](https://github.com/shunkakinoki/shunkakinoki.com/commit/be8d9dd1ef63d5df019a34917ccbe974dabadce2))
 
 ## [1.13.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.13.1...v1.13.2) (2021-07-13)
 
