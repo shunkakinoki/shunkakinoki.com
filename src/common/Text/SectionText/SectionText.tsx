@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-interface Props {
+export interface Props {
   children: string;
   isPartial?: boolean;
 }

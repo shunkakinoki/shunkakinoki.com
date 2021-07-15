@@ -1,6 +1,6 @@
 import { External } from "@/icons";
 
-interface Props {
+export interface Props {
   children: JSX.Element;
   description: string;
   name: string;

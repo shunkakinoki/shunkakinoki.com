@@ -4,7 +4,7 @@ import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
 import HistoryStep from "@/components/History/HistoryStep";
 
-interface Props {
+export interface Props {
   isPartial?: boolean;
 }
 

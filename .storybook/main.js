@@ -3,7 +3,13 @@ const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 module.exports = {
   stories: ["../src/**/*.stories.tsx"],
   addons: [
-    "@storybook/addon-essentials",
+    "@storybook/addon-controls",
+    {
+      name: "@storybook/addon-essentials",
+      options: {
+        docs: false,
+      },
+    },
     {
       name: "@storybook/addon-postcss",
       options: {

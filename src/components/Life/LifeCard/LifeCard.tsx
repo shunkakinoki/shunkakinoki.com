@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 
-interface Props {
+export interface Props {
   children: JSX.Element;
   color:
     | "blue"

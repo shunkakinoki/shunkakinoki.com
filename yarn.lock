@@ -2031,10 +2031,10 @@
     scripty "^2.0.0"
     sort-package-json "^1.50.0"
 
-"@shunkakinoki/eslint-config@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.4.tgz#01525ab0cb9cc77ccbbdec68b59e6449ae64665f"
-  integrity sha512-nd+KBdJG1c4fug8leKvjHkTtq98EucUkLtSBDDz7Np+Cv9RL8DhMeG2IRgj4qhGh7TdfTXA3jj5tGphlghCoLQ==
+"@shunkakinoki/eslint-config@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.5.tgz#0e4af70779c9ec302d47c4b539dc9117a0178d63"
+  integrity sha512-0RLCwLEulhh27oWq+LoK6N4iprXAkQUU3+NMtqOeoFlofcj38OjNQ/dUOUec0I5wfOxCZHA9QTmurJPAGN2gVQ==
   dependencies:
     "@next/eslint-plugin-next" "^11.0.1"
     "@typescript-eslint/eslint-plugin" "^4.28.3"
@@ -2201,7 +2201,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-controls@6.3.4":
+"@storybook/addon-controls@6.3.4", "@storybook/addon-controls@^6.3.4":
   version "6.3.4"
   resolved "https://registry.yarnpkg.com/@storybook/addon-controls/-/addon-controls-6.3.4.tgz#7849905a0ec56fbea7608c15c08f872211b3a878"
   integrity sha512-+MIKcWqsIF6vLoKxukK2m6ADYwyNHOmaMgnJSHKlcNKc7Qxv2w0FZJxIjjkWHXRBIC5MQXxv7/L4sY+EnPdjyg==

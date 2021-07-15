@@ -6,7 +6,7 @@ import { SectionText } from "@/common/Text";
 import ProductCard from "@/components/Product/ProductCard";
 import { ProductLinks } from "@/const";
 
-interface Props {
+export interface Props {
   isPartial?: boolean;
 }
 

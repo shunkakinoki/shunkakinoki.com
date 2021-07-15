@@ -4,6 +4,7 @@ import * as nextImage from "next/image";
 import I18nProvider from "next-translate/I18nProvider";
 import { ThemeProvider } from "next-themes";
 import { RouterContext } from "next/dist/next-server/lib/router-context";
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 import config from "../i18n";
 import _error from "../locales/en/_error.json";
@@ -26,6 +27,9 @@ export const parameters = {
     darkClass: "dark",
     lightClass: "light",
     stylePreview: true,
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
   },
 };
 
