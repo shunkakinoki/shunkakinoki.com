@@ -1,5 +1,6 @@
 import { RecoilRoot } from "recoil";
 import "tailwindcss/tailwind.css";
+import * as nextImage from "next/image";
 import I18nProvider from "next-translate/I18nProvider";
 import { ThemeProvider } from "next-themes";
 import { RouterContext } from "next/dist/next-server/lib/router-context";
@@ -27,6 +28,11 @@ export const parameters = {
     stylePreview: true,
   },
 };
+
+Object.defineProperty(nextImage, "default", {
+  configurable: true,
+  value: props => <img {...props} />,
+});
 
 export const decorators = [
   Story => (
