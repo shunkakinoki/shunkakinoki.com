@@ -4,7 +4,7 @@ import type {
   InferGetStaticPropsType,
 } from "next";
 
-import type { MdxRemote } from "next-mdx-remote/types";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import { getGithubContent } from "@/lib/github";
 import LandingScreen from "@/screens/LandingScreen";
@@ -37,7 +37,9 @@ GetStaticPropsContext) => {
 const Index = ({
   source,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  return <LandingScreen source={JSON.parse(source) as MdxRemote.Source} />;
+  return (
+    <LandingScreen source={JSON.parse(source) as MDXRemoteSerializeResult} />
+  );
 };
 
 export default Index;
