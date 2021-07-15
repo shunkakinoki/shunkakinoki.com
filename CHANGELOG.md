@@ -1,3 +1,16 @@
+# [1.15.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.14.0...v1.15.0) (2021-07-15)
+
+
+### Features
+
+* ini sttorybook i18n ([869ffa5](https://github.com/shunkakinoki/shunkakinoki.com/commit/869ffa5e9a895587ffc2be68a24d468ea2f9687d))
+
+
+### Performance Improvements
+
+* ini dark mode for storybook ([fef6fdf](https://github.com/shunkakinoki/shunkakinoki.com/commit/fef6fdfabca4438bb471103316c847224634744d))
+* ini story components ([a076e27](https://github.com/shunkakinoki/shunkakinoki.com/commit/a076e27675b693fec2f4b293b03406a83a911413))
+
 # [1.14.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.13.2...v1.14.0) (2021-07-15)
 
 ### Features
