@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 import { Cake, Chip, Fire, Globe, School, Tag, Work } from "@/icons";
 
-interface Props {
+export interface Props {
   isBottom?: boolean;
   children: string;
   time: string;

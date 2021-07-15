@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 
 export default function DarkModeButton(): JSX.Element {
-  const { resolvedTheme, theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
     <button

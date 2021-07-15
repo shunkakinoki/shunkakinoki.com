@@ -15,7 +15,7 @@ import {
   Variable,
 } from "@/icons";
 
-interface Props {
+export interface Props {
   isPartial?: boolean;
 }
 

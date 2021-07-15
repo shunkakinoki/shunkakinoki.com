@@ -28,7 +28,7 @@ import {
   Youtube,
 } from "@/icons";
 
-interface Props {
+export interface Props {
   isPartial?: boolean;
 }
 

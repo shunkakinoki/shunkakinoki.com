@@ -1,10 +1,17 @@
+import type { Story, Meta } from "@storybook/react";
+
+import type { Props } from "./Life";
 import Life from "./Life";
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default {
+  component: Life,
   title: "Life",
+} as Meta;
+
+export const _Life: Story<Props> = args => {
+  return <Life {...args} />;
 };
 
-export const _Life = () => {
-  return <Life />;
+_Life.args = {
+  isPartial: false,
 };

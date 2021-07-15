@@ -10,7 +10,6 @@ const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <>
       <Seo />
-
       <RecoilRoot>
         <ThemeProvider attribute="class" defaultTheme="system">
           <Component {...pageProps} />
