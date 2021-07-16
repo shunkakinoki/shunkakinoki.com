@@ -2068,12 +2068,12 @@
   dependencies:
     lint-staged "^11.0.1"
 
-"@shunkakinoki/npm-check-updates@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/npm-check-updates/-/npm-check-updates-1.0.1.tgz#758b3d289a46f000f1d15842425d8691e637dd27"
-  integrity sha512-7Koh7ReBPdX1LrDstSjzkWq4K6Oh2X7KE0lwVo0qV4RhEQd4UupbZRlPsgx3seXkpCdGeiizFlZnyFbOaqCHLg==
+"@shunkakinoki/npm-check-updates@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/npm-check-updates/-/npm-check-updates-1.0.2.tgz#587cf0433e52457857e8794514cff25742fa4ebc"
+  integrity sha512-ffhKXol/whUijlutLvTb1KhI4GnrIGfLXuMaWrGCN1RLTNzzLy4KzBMJAYdHO6FB8QsDASAVV4c9Zcl7+BwSBA==
   dependencies:
-    npm-check-updates "^11.8.2"
+    npm-check-updates "^11.8.3"
 
 "@shunkakinoki/npm-package-json-lint-config@^1.0.0":
   version "1.0.0"
@@ -7382,6 +7382,11 @@ fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.6:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
+fast-memoize@^2.5.2:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/fast-memoize/-/fast-memoize-2.5.2.tgz#79e3bb6a4ec867ea40ba0e7146816f6cdce9b57e"
+  integrity sha512-Ue0LwpDYErFbmNnZSF0UH6eImUwDmogUO1jyE+JbN2gsQz/jICm1Ve7t9QT0rNSsfJt+Hs4/S3GnsDVjL4HVrw==
+
 fast-shallow-equal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fast-shallow-equal/-/fast-shallow-equal-1.0.0.tgz#d4dcaf6472440dcefa6f88b98e3251e27f25628b"
@@ -11406,15 +11411,16 @@ npm-bundled@^1.1.1:
   dependencies:
     npm-normalize-package-bin "^1.0.1"
 
-npm-check-updates@^11.8.2:
-  version "11.8.2"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.8.2.tgz#940812ae837cc96d7a975a9e5073a9dca824cd4c"
-  integrity sha512-+TWwhsFUJrar3z1KdCdwNLW6VQkqbU6pBZQtUVMfoAaeHq/L5SAnF6CwIzE/8hmKMNvxFAEe5Ow41ibhLa2iIg==
+npm-check-updates@^11.8.3:
+  version "11.8.3"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.8.3.tgz#3c3541ad855bbc42b0d60e8eb293d3f6125c80e5"
+  integrity sha512-NslIB6Af7GagVrN+bvBkObLyawIZfOnDnl8n9MHE+dFt0aChRYtvR6T2BLJKzOPIepCLmmh0NRR/qha0ExAELQ==
   dependencies:
     chalk "^4.1.1"
     cint "^8.2.1"
     cli-table "^0.3.6"
     commander "^6.2.1"
+    fast-memoize "^2.5.2"
     find-up "5.0.0"
     fp-and-or "^0.1.3"
     get-stdin "^8.0.0"
@@ -11424,7 +11430,6 @@ npm-check-updates@^11.8.2:
     jsonlines "^0.1.1"
     libnpmconfig "^1.2.1"
     lodash "^4.17.21"
-    mem "^8.1.1"
     minimatch "^3.0.4"
     p-map "^4.0.0"
     pacote "^11.3.4"
