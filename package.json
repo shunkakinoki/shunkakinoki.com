@@ -79,10 +79,10 @@
     "@shunkakinoki/eslint-config": "^1.1.5",
     "@shunkakinoki/husky": "^1.0.2",
     "@shunkakinoki/lint-staged": "^1.1.1",
-    "@shunkakinoki/npm-check-updates": "^1.0.1",
+    "@shunkakinoki/npm-check-updates": "^1.0.2",
     "@shunkakinoki/npm-package-json-lint-config": "^1.0.0",
     "@shunkakinoki/prettier": "^1.0.0",
-    "@shunkakinoki/semantic-release": "^1.2.0",
+    "@shunkakinoki/semantic-release": "^1.2.1",
     "@shunkakinoki/stylelint": "^1.0.1",
     "@shunkakinoki/tailwindcss": "^1.0.1",
     "@shunkakinoki/tsconfig": "^1.1.0",
@@ -100,7 +100,7 @@
     "storybook-dark-mode": "^1.0.8",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "vercel": "^23.0.1",
-    "webpack": "^5.44.0"
+    "webpack": "^5.45.1"
   },
   "npmpackagejsonlint": {
     "extends": "@shunkakinoki/npm-package-json-lint-config"
