@@ -1,3 +1,9 @@
+## [1.15.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.0...v1.15.1) (2021-07-19)
+
+### Performance Improvements
+
+- refactor global tailwindcss ([86aedda](https://github.com/shunkakinoki/shunkakinoki.com/commit/86aeddaae6faea9bcd3d7fe8f56b459732d18a4e))
+
 # [1.15.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.14.0...v1.15.0) (2021-07-15)
 
 ### Features
