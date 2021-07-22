@@ -2136,10 +2136,10 @@
     "@tailwindcss/typography" "^0.4.1"
     tailwindcss "^2.2.4"
 
-"@shunkakinoki/tsconfig@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/tsconfig/-/tsconfig-1.1.0.tgz#6c48c51010e81d2c3f0f6772e0e15ebf5a9773b0"
-  integrity sha512-YJJgeAVEwDok9ayMHuFhED4agnRD01fzSBi4vpEih7rMY94+C0fB0E6jzlqy7fE8wSSp3FIjfbvNRfkTjmn+dg==
+"@shunkakinoki/tsconfig@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/tsconfig/-/tsconfig-1.1.1.tgz#824c76421c7464d1cf6355e9846817e575be373c"
+  integrity sha512-vbNBDqezoOh6Z38tdTlmWAUeVFSlpCl4cPJdDLLpV9HcjGF+Axo4B4RWnRqrVNAPsUhWmKQ6ko3YBRAcmYkkLA==
   dependencies:
     typescript "^4.3.5"
 

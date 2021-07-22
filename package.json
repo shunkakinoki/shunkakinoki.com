@@ -85,7 +85,7 @@
     "@shunkakinoki/semantic-release": "^1.2.1",
     "@shunkakinoki/stylelint": "^1.0.1",
     "@shunkakinoki/tailwindcss": "^1.0.1",
-    "@shunkakinoki/tsconfig": "^1.1.0",
+    "@shunkakinoki/tsconfig": "^1.1.1",
     "@storybook/addon-a11y": "^6.3.4",
     "@storybook/addon-actions": "^6.3.4",
     "@storybook/addon-controls": "^6.3.4",
