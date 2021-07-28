@@ -1,3 +1,9 @@
+## [1.15.4](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.3...v1.15.4) (2021-07-28)
+
+### Bug Fixes
+
+- **deps:** update dependency notion-utils to ^4.8.1 ([5fc6de2](https://github.com/shunkakinoki/shunkakinoki.com/commit/5fc6de2ced91a36c64432aa4082eda2fc150f092))
+
 ## [1.15.3](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.2...v1.15.3) (2021-07-28)
 
 ### Bug Fixes
