@@ -1,3 +1,10 @@
+## [1.15.3](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.2...v1.15.3) (2021-07-28)
+
+### Bug Fixes
+
+- **deps:** update dependency notion-client to ^4.8.1 ([6ff30c5](https://github.com/shunkakinoki/shunkakinoki.com/commit/6ff30c5000f99bfe8ee1cafd9bc48475d51061c5))
+- **deps:** update dependency react-notion-x to ^4.8.1 ([4aa61a5](https://github.com/shunkakinoki/shunkakinoki.com/commit/4aa61a5577ce3a987ccba0d9d614d42d68c8631d))
+
 ## [1.15.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.1...v1.15.2) (2021-07-22)
 
 ### Bug Fixes
