@@ -100,7 +100,7 @@
     "storybook-dark-mode": "^1.0.8",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "vercel": "^23.0.1",
-    "webpack": "^5.46.0"
+    "webpack": "^5.47.0"
   },
   "npmpackagejsonlint": {
     "extends": "@shunkakinoki/npm-package-json-lint-config"
