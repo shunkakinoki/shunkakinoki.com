@@ -11710,23 +11710,10 @@ notion-client@^4.8.2:
     notion-utils "^4.8.2"
     p-map "^4.0.0"
 
-notion-types@^4.7.10:
-  version "4.7.10"
-  resolved "https://registry.yarnpkg.com/notion-types/-/notion-types-4.7.10.tgz#48cc0c6ae5910ce98c0733baccdb1d3866dab7b1"
-  integrity sha512-xqPMMvildsmEibArcdKkXvhGmgxXgVkNZxcpFhuISQkXPIfgLgVxfZkg6XMlL0oL4YJbVOVoR6G69LV2Zl860Q==
-
 notion-types@^4.8.2:
   version "4.8.2"
   resolved "https://registry.yarnpkg.com/notion-types/-/notion-types-4.8.2.tgz#b7b1182a595f1a526c3617578874667cdf7e52fe"
   integrity sha512-WfmEv/3hgHkXtmmAL2rlS9i7MAdc2pIJZGoeqi8GnBK58XMW6zgkNFjrUBXJtaDiOjQ6nfVE/yepTj79LGhERw==
-
-notion-utils@^4.8.1:
-  version "4.8.1"
-  resolved "https://registry.yarnpkg.com/notion-utils/-/notion-utils-4.8.1.tgz#df944b2013974c9c562025bdd5f917594b774461"
-  integrity sha512-bExctieD33w9wuv5vdgcRFB6AqXtwk679kK0vHP4axwRE/EzQoi3sJ80WiM2AFD56DD/anLXH4Awa3pI6coJ8g==
-  dependencies:
-    notion-types "^4.7.10"
-    p-queue "^6.6.1"
 
 notion-utils@^4.8.2:
   version "4.8.2"
@@ -13813,10 +13800,10 @@ readdirp@~3.5.0:
   dependencies:
     picomatch "^2.2.1"
 
-recoil@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/recoil/-/recoil-0.3.1.tgz#40ef544160d19d76e25de8929d7e512eace13b90"
-  integrity sha512-KNA3DRqgxX4rRC8E7fc6uIw7BACmMPuraIYy+ejhE8tsw7w32CetMm8w7AMZa34wzanKKkev3vl3H7Z4s0QSiA==
+recoil@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/recoil/-/recoil-0.4.0.tgz#2a933ba7c043cbf6f50f52da0828a879c7cd7d69"
+  integrity sha512-FZ2ljI4ldZU820V0APbKOtS4bPwPJHvpDBQEl+Cf47DMaM35wuLXl2u37E0TSgdvKAZBOUsIwcBnzE+ncODRxQ==
   dependencies:
     hamt_plus "1.0.2"
 
