@@ -1,3 +1,9 @@
+## [1.15.7](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.6...v1.15.7) (2021-07-31)
+
+### Bug Fixes
+
+- **deps:** update dependency recoil to ^0.4.0 ([b8e8212](https://github.com/shunkakinoki/shunkakinoki.com/commit/b8e82122e478f600bfff451363118c021436114a))
+
 ## [1.15.6](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.5...v1.15.6) (2021-07-31)
 
 ### Bug Fixes
