@@ -2082,15 +2082,15 @@
     scripty "^2.0.0"
     sort-package-json "^1.50.0"
 
-"@shunkakinoki/eslint-config@^1.1.8":
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.8.tgz#1e6f2986ddf06d0ee771bd0d90eb1410df3100db"
-  integrity sha512-p+5Cfhollu8XA095U5vgV3lVGSOXGoeIpH3XSnpWHyoljk0IrFFrEN9KvDvy9ObkXxa2XpBQIPj36CQXTZwTzg==
+"@shunkakinoki/eslint-config@^1.1.9":
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.9.tgz#39efabad7f91fcc39f43462811d4ab6477d28fb3"
+  integrity sha512-axsOMQO6lb61B917jkxzAyLtM6vuzUjCGhkMGoIjyRrGynNwHREE84GG4b+gAcaOH8j4DDIB8OJW1xLX4n7vPQ==
   dependencies:
     "@next/eslint-plugin-next" "^11.0.1"
     "@typescript-eslint/eslint-plugin" "^4.28.5"
     "@typescript-eslint/parser" "^4.28.5"
-    eslint "^7.31.0"
+    eslint "^7.32.0"
     eslint-config-prettier "^8.3.0"
     eslint-import-resolver-typescript "^2.4.0"
     eslint-plugin-editorconfig "^3.0.2"
@@ -7360,10 +7360,10 @@ eslint@^7.0.0:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
-eslint@^7.31.0:
-  version "7.31.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.31.0.tgz#f972b539424bf2604907a970860732c5d99d3aca"
-  integrity sha512-vafgJpSh2ia8tnTkNUkwxGmnumgckLh5aAbLa1xRmIn9+owi8qBNGKL+B881kNKNTy7FFqTEkpNkUvmw0n6PkA==
+eslint@^7.32.0:
+  version "7.32.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.32.0.tgz#c6d328a14be3fb08c8d1d21e12c02fdb7a2a812d"
+  integrity sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==
   dependencies:
     "@babel/code-frame" "7.12.11"
     "@eslint/eslintrc" "^0.4.3"
