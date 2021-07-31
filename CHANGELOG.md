@@ -1,3 +1,11 @@
+## [1.15.6](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.5...v1.15.6) (2021-07-31)
+
+### Bug Fixes
+
+- **deps:** update dependency @headlessui/react to ^1.4.0 ([758c9d4](https://github.com/shunkakinoki/shunkakinoki.com/commit/758c9d4a1bb219246df6dc097369a90f706200b3))
+- **deps:** update dependency notion-utils to ^4.8.2 ([3a8eefa](https://github.com/shunkakinoki/shunkakinoki.com/commit/3a8eefa5e2ad3afad7839e66de62d79376722a7c))
+- **deps:** update dependency react-notion-x to ^4.8.2 ([5abc9b2](https://github.com/shunkakinoki/shunkakinoki.com/commit/5abc9b2cd002b8f7830369e73270cf1b474ddbf4))
+
 ## [1.15.5](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.4...v1.15.5) (2021-07-31)
 
 ### Bug Fixes
