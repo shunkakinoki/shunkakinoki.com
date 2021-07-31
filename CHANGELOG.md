@@ -1,3 +1,9 @@
+## [1.15.5](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.4...v1.15.5) (2021-07-31)
+
+### Bug Fixes
+
+- **deps:** update dependency notion-client to ^4.8.2 ([5f162db](https://github.com/shunkakinoki/shunkakinoki.com/commit/5f162dbc424558baa2c05836e380842ef67043e0))
+
 ## [1.15.4](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.3...v1.15.4) (2021-07-28)
 
 ### Bug Fixes
