@@ -1,3 +1,9 @@
+## [1.15.8](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.7...v1.15.8) (2021-08-05)
+
+### Performance Improvements
+
+- ini svg favicon ([3bcb6d4](https://github.com/shunkakinoki/shunkakinoki.com/commit/3bcb6d4acf2be73a4b37bfc3e02a0a8fa63f6c4b))
+
 ## [1.15.7](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.6...v1.15.7) (2021-07-31)
 
 ### Bug Fixes
