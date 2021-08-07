@@ -1,3 +1,9 @@
+## [1.15.9](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.8...v1.15.9) (2021-08-07)
+
+### Bug Fixes
+
+- **deps:** update dependency react-notion-x to ^4.8.3 ([92049cf](https://github.com/shunkakinoki/shunkakinoki.com/commit/92049cf2dc37e15d6b3b59722f03af49782bae76))
+
 ## [1.15.8](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.7...v1.15.8) (2021-08-05)
 
 ### Performance Improvements
