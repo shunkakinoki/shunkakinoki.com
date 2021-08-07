@@ -96,7 +96,7 @@
     "@storybook/manager-webpack5": "^6.3.6",
     "@storybook/react": "^6.3.6",
     "@types/react": "^17.0.16",
-    "storybook-addon-next-router": "^3.0.5",
+    "storybook-addon-next-router": "^3.0.7",
     "storybook-dark-mode": "^1.0.8",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "vercel": "^23.1.1",
