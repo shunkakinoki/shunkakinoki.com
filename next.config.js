@@ -14,6 +14,7 @@ const config = {
     disableOptimizedLoading: false,
     externalDir: true,
     gzipSize: true,
+    esmExternals: true,
     optimizeCss: true,
     optimizeFonts: true,
     optimizeImages: true,

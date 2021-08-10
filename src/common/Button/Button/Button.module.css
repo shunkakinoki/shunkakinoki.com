@@ -1,0 +1,3 @@
+.loading {
+  @apply cursor-not-allowed;
+}
