@@ -1,4 +1,3 @@
-import type { FileType } from "next-og-utils";
 import type { FC } from "react";
 import { useMemo } from "react";
 
@@ -7,6 +6,7 @@ import { Layout } from "@/components/Config/Layout";
 import { Title } from "@/components/Config/Title";
 import { useConfig } from "@/hooks/useConfig";
 import { layouts } from "@/layouts";
+import type { FileType } from "@/og";
 
 export const Config: FC = () => {
   const [{ fileType, layoutName }, setConfig] = useConfig();

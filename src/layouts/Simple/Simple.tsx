@@ -1,7 +1,6 @@
-import type { ILayout, LayoutComponent, GetCSSFn } from "next-og-utils";
-import { css } from "next-og-utils";
-
 import { Markdown } from "@/components/Markdown";
+import type { ILayout, LayoutComponent, GetCSSFn } from "@/og";
+import { css } from "@/og";
 
 const getCSS: GetCSSFn = () => {
   return css`

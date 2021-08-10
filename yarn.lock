@@ -11283,17 +11283,6 @@ next-mdx-remote@^3.0.4:
     esbuild "^0.12.9"
     pkg-dir "^5.0.0"
 
-next-og-utils@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/next-og-utils/-/next-og-utils-1.1.3.tgz#f2d9f865d4eda2303ddf848660d4836593e30b0c"
-  integrity sha512-kSkDAxO08tNF1h5Yg5+ZarhryYB/thXwLmVgDXtDA3Q0hrunoeruM73EKR/31JNZLtWJs8ODOaNrp7ErC0cntA==
-  dependencies:
-    chrome-aws-lambda "^10.1.0"
-    next "^11.0.1"
-    puppeteer-core "^10.2.0"
-    react "^17.0.2"
-    react-dom "^17.0.2"
-
 next-seo@^4.26.0:
   version "4.26.0"
   resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.26.0.tgz#4218cfae5651fdc2e330dcdf1cc1b34ce199d41c"

@@ -1,6 +1,8 @@
 import marked from "marked";
-import { sanitizeHtml } from "next-og-utils";
+
 import type { CSSProperties, FC } from "react";
+
+import { sanitizeHtml } from "@/og";
 
 export const mdToHTML = (text: string): string => {
   // TODO: FIX THIS

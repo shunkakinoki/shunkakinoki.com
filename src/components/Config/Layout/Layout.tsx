@@ -1,4 +1,3 @@
-import type { ILayout, ILayoutProperty } from "next-og-utils";
 import type { FC } from "react";
 
 import { Input } from "@/common/Input";
@@ -6,6 +5,7 @@ import { Select } from "@/common/Select";
 
 import { Title } from "@/components/Config/Title";
 import { useLayoutConfig } from "@/hooks/useLayoutConfig";
+import type { ILayout, ILayoutProperty } from "@/og";
 
 export interface Props {
   layout: ILayout;

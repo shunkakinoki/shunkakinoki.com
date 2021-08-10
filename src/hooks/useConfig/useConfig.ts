@@ -1,9 +1,9 @@
-import type { IConfig } from "next-og-utils";
 import type { SetterOrUpdater } from "recoil";
 import { atom, useRecoilState } from "recoil";
 
 import { layouts } from "@/layouts";
 import { localStorageEffect } from "@/lib/effect";
+import type { IConfig } from "@/og";
 
 const defaultConfig: IConfig = {
   fileType: "png",

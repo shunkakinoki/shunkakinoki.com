@@ -1,9 +1,8 @@
 import type { NextApiHandler } from "next";
 
-import { getHtml } from "next-og-utils";
-
 import { layouts } from "@/layouts";
 import { parseRequest } from "@/lib/parseRequest";
+import { getHtml } from "@/og";
 
 // eslint-disable-next-line @typescript-eslint/require-await
 const html: NextApiHandler = async (req, res) => {

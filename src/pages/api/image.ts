@@ -1,9 +1,8 @@
 import type { NextApiHandler } from "next";
 
-import { getHtml, getScreenshot } from "next-og-utils";
-
 import { layouts } from "@/layouts";
 import { parseRequest } from "@/lib/parseRequest";
+import { getHtml, getScreenshot } from "@/og";
 
 const isDev = !process.env.AWS_REGION;
 

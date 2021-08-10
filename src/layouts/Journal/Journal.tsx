@@ -1,10 +1,9 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 
-import type { ILayout, LayoutComponent, GetCSSFn } from "next-og-utils";
-import { getTheme, css } from "next-og-utils";
-
 import { Markdown } from "@/components/Markdown";
 import { colourThemes, defaultTheme } from "@/const";
+import type { ILayout, LayoutComponent, GetCSSFn } from "@/og";
+import { getTheme, css } from "@/og";
 
 const getCSS: GetCSSFn = config => {
   const theme = getTheme(config);
