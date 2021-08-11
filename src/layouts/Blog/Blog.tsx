@@ -21,6 +21,10 @@ const getCSS: GetCSSFn = config => {
     h1 {
       font-size: 120px;
       margin: 75px 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     h2 {
@@ -30,14 +34,14 @@ const getCSS: GetCSSFn = config => {
 
     h3 {
       margin-top: 45px;
-      font-size: 30px;
+      font-size: 36px;
       color: ${colours.gray};
     }
 
     .gradient-box {
       border: 24px solid;
       border-image-slice: 1;
-      border-width: 12px;
+      border-width: 18px;
       border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
       height: 100%;
       width: 100%;
@@ -57,9 +61,7 @@ const getCSS: GetCSSFn = config => {
 
 const Component: LayoutComponent = ({ config }) => {
   const title = config.Title;
-  const url = config.Url;
   const date = config.Date;
-  const username = config.Username;
 
   return (
     <div className="gradient-box">
@@ -71,10 +73,7 @@ const Component: LayoutComponent = ({ config }) => {
           Written by&nbsp;Shun&nbsp;
           <h3>
             {date}
-            {url && "・"}
-            {url}
-            {username && "・@"}
-            {username}
+            &nbsp;・&nbsp;https://shunkakinoki.com&nbsp;・&nbsp;@shunkakinoki
           </h3>
         </h2>
       </div>
@@ -98,21 +97,10 @@ export const Blog: ILayout = {
       placeholder: "Big text",
     },
     {
-      name: "Username",
-      type: "text",
-      default: "Your username",
-      placeholder: "shunkakinoki",
-    },
-    {
       name: "Date",
       type: "text",
-      default: "1",
-      placeholder: "2021/0",
-    },
-    {
-      name: "Url",
-      type: "text",
-      placeholder: "https://og.sentrei.com",
+      default: "2021/01/01",
+      placeholder: "2021/01/01",
     },
   ],
   Component,
