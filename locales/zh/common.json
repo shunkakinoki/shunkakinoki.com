@@ -2,6 +2,7 @@
   "header": {
     "about": "About",
     "blog": "Blog",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "og": "Open graph generator"
   }
 }
