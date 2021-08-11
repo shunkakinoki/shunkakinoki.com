@@ -11283,11 +11283,6 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-net@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/net/-/net-1.0.2.tgz#d1757ec9a7fb2371d83cf4755ce3e27e10829388"
-  integrity sha1-0XV+yaf7I3HYPPR1XOPifhCCk4g=
-
 next-compose-plugins@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.2.1.tgz#020fc53f275a7e719d62521bef4300fbb6fde5ab"
@@ -11303,14 +11298,12 @@ next-mdx-remote@^3.0.4:
     esbuild "^0.12.9"
     pkg-dir "^5.0.0"
 
-next-og-utils@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/next-og-utils/-/next-og-utils-1.1.5.tgz#69e34bf029e7cc0e35a455dc2acc51ac2c66485b"
-  integrity sha512-Rcg4BlurrVDGuN6zHk8HZX2WNarTGCgFtrcUxNOBLj2cL2nIk05GCSLS8AGZvM/3cewaDzVay2I/7OOgDskVRg==
+next-og-utils@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/next-og-utils/-/next-og-utils-1.1.7.tgz#21ab047565a0e0801654805ddecef0daf724776b"
+  integrity sha512-LjIYPm2dcpG5g3sy5Z7Xgw3ROC7hscaM/+RN/QKCjMpmQ3/ay9kbxGbJacAoR7UTJ1PyLedbCSpcATkcRBODjQ==
   dependencies:
-    chrome-aws-lambda "^10.1.0"
     next "^11.0.1"
-    puppeteer-core "^10.2.0"
     react "^17.0.2"
     react-dom "^17.0.2"
 
