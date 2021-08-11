@@ -1,3 +1,15 @@
+# [1.16.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.9...v1.16.0) (2021-08-11)
+
+### Features
+
+- ini api og ([b638fa9](https://github.com/shunkakinoki/shunkakinoki.com/commit/b638fa97b67591c08ef1b1e95d9cf38de3f36506))
+- ini og image ([571b9f2](https://github.com/shunkakinoki/shunkakinoki.com/commit/571b9f237da7f044696b6387c5e78df9f99f47b5))
+
+### Performance Improvements
+
+- ini og screen ([26a0c22](https://github.com/shunkakinoki/shunkakinoki.com/commit/26a0c22a5b221e6e121c2cf13523b449234a772c))
+- refactor lib const ([de69976](https://github.com/shunkakinoki/shunkakinoki.com/commit/de6997689bf7dfb1083a869e372343f86a4d52a6))
+
 ## [1.15.9](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.8...v1.15.9) (2021-08-07)
 
 ### Bug Fixes
