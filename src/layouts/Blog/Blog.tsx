@@ -35,37 +35,49 @@ const getCSS: GetCSSFn = config => {
     }
 
     .gradient-box {
-      display: "flex";
-      flex-direction: "column";
-      align-items: "center";
-      justify-content: "space-between";
+      border: 24px solid;
+      border-image-slice: 1;
+      border-width: 12px;
+      border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+      height: 100%;
+      width: 100%;
+    }
+
+    .content {
+      padding: 30px;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
   `;
 };
 
 const Component: LayoutComponent = ({ config }) => {
   const title = config.Title;
-  const author = config.Author;
   const url = config.Url;
   const date = config.Date;
   const username = config.Username;
 
   return (
     <div className="gradient-box">
-      <h1>
-        <Markdown>{title}</Markdown>
-      </h1>
-      <h2>
-        <Markdown style={{ fontWeight: 400 }}>Written by&nbsp;</Markdown>
-        <Markdown>{author}</Markdown>
-        <h3>
-          {date}
-          {url && "・"}
-          {url}
-          {username && "・@"}
-          {username}
-        </h3>
-      </h2>
+      <div className="content">
+        <h1>
+          <Markdown>{title}</Markdown>
+        </h1>
+        <h2>
+          Written by&nbsp;Shun&nbsp;
+          <h3>
+            {date}
+            {url && "・"}
+            {url}
+            {username && "・@"}
+            {username}
+          </h3>
+        </h2>
+      </div>
     </div>
   );
 };
@@ -84,12 +96,6 @@ export const Blog: ILayout = {
       type: "text",
       default: "The Jamstack Backend",
       placeholder: "Big text",
-    },
-    {
-      name: "Author",
-      type: "text",
-      default: "Shun",
-      placeholder: "Big Author",
     },
     {
       name: "Username",
