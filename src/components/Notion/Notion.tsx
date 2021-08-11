@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import type { LinkProps } from "next/link";
 import Link from "next/link";
 import type { ExtendedRecordMap } from "notion-types";
+import type { FC } from "react";
 import { Collection, CollectionRow, NotionRenderer } from "react-notion-x";
 import type { NotionRendererProps } from "react-notion-x/build/esm/renderer";
 import "react-notion-x/src/styles.css";
@@ -12,7 +13,7 @@ export interface Props extends NotionRendererProps {
   recordMap: ExtendedRecordMap;
 }
 
-export default function Notion({ recordMap, fullPage }: Props): JSX.Element {
+export const Notion: FC<Props> = ({ recordMap, fullPage }) => {
   const { theme } = useTheme();
 
   return (
@@ -57,4 +58,4 @@ export default function Notion({ recordMap, fullPage }: Props): JSX.Element {
       showTableOfContents={false}
     />
   );
-}
+};

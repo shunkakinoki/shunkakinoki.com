@@ -1,4 +1,6 @@
-export default function Excerpt(): JSX.Element {
+import type { FC } from "react";
+
+export const Excerpt: FC = () => {
   return (
     <svg
       className="w-6 h-6"
@@ -13,4 +15,4 @@ export default function Excerpt(): JSX.Element {
       />
     </svg>
   );
-}
+};

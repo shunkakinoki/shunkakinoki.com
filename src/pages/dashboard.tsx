@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 
-import DashboardScreen from "@/screens/DashboardScreen";
+import { DashboardScreen } from "@/screens/DashboardScreen";
 
-const Dashboard: NextPage = () => {
+export const Dashboard: NextPage = () => {
   return <DashboardScreen />;
 };
 

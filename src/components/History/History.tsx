@@ -1,8 +1,10 @@
 import clsx from "clsx";
 
+import type { FC } from "react";
+
 import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
-import HistoryStep from "@/components/History/HistoryStep";
+import { HistoryStep } from "@/components/History/HistoryStep";
 
 export interface Props {
   isPartial?: boolean;
@@ -20,7 +22,7 @@ function HistoryYear({ children }: HistoryYearProps): JSX.Element {
   );
 }
 
-export default function History({ isPartial = false }: Props): JSX.Element {
+export const History: FC<Props> = ({ isPartial = false }) => {
   return (
     <section key="history" className={clsx("mb-2 w-full", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
@@ -94,4 +96,4 @@ export default function History({ isPartial = false }: Props): JSX.Element {
       </div>
     </section>
   );
-}
+};

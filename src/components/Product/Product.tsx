@@ -1,16 +1,18 @@
 import clsx from "clsx";
 import Image from "next/image";
 
+import type { FC } from "react";
+
 import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
-import ProductCard from "@/components/Product/ProductCard";
+import { ProductCard } from "@/components/Product/ProductCard";
 import { ProductLinks } from "@/const";
 
 export interface Props {
   isPartial?: boolean;
 }
 
-export default function Product({ isPartial = false }: Props): JSX.Element {
+export const Product: FC<Props> = ({ isPartial = false }) => {
   return (
     <section key="product" className={clsx("mb-6 w-full", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
@@ -50,4 +52,4 @@ export default function Product({ isPartial = false }: Props): JSX.Element {
       </div>
     </section>
   );
-}
+};

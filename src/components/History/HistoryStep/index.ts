@@ -1,1 +1,1 @@
-export { default } from "./HistoryStep";
+export { HistoryStep } from "./HistoryStep";

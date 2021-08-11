@@ -1,6 +1,6 @@
 import type { Story, Meta } from "@storybook/react";
 
-import MenuButton from "./MenuButton";
+import { MenuButton } from "./MenuButton";
 
 export default {
   component: MenuButton,

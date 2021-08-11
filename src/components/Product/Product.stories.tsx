@@ -1,7 +1,7 @@
 import type { Story, Meta } from "@storybook/react";
 
 import type { Props } from "./Product";
-import Product from "./Product";
+import { Product } from "./Product";
 
 export default {
   component: Product,

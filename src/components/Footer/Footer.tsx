@@ -1,10 +1,10 @@
 import type { LinkProps } from "next/link";
 import Link from "next/link";
 
-import type { ReactNode } from "react";
+import type { ReactNode, FC } from "react";
 
-import CreditsButton from "@/components/Footer/CreditsButton";
-import LocaleSelect from "@/components/Footer/LocaleSelect";
+import { CreditsButton } from "@/components/Footer/CreditsButton";
+import { LocaleSelect } from "@/components/Footer/LocaleSelect";
 
 import { SocialLinks } from "@/const";
 import { Facebook, Github, Instagram, Linkedin, Twitter } from "@/icons";
@@ -43,7 +43,7 @@ function FooterIconLink({ children, href }: FooterIconLinkProps): JSX.Element {
   );
 }
 
-export default function Footer(): JSX.Element {
+export const Footer: FC = () => {
   return (
     <footer className="overflow-hidden py-12 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
       <nav
@@ -90,4 +90,4 @@ export default function Footer(): JSX.Element {
       </div>
     </footer>
   );
-}
+};

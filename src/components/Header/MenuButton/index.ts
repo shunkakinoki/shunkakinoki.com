@@ -1,1 +1,1 @@
-export { default } from "./MenuButton";
+export { MenuButton } from "./MenuButton";

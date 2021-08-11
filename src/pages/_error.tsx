@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 
-import ErrorScreen from "@/screens/ErrorScreen";
+import { ErrorScreen } from "@/screens/ErrorScreen";
 
-const Error: NextPage = () => {
+export const Error: NextPage = () => {
   return <ErrorScreen />;
 };
 

@@ -1,7 +1,7 @@
 import type { Story, Meta } from "@storybook/react";
 
 import type { Props } from "./SocialCard";
-import SocialCard from "./SocialCard";
+import { SocialCard } from "./SocialCard";
 
 export default {
   component: SocialCard,

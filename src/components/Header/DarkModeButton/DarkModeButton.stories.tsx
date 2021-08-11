@@ -1,6 +1,6 @@
 import type { Story, Meta } from "@storybook/react";
 
-import DarkModeButton from "./DarkModeButton";
+import { DarkModeButton } from "./DarkModeButton";
 
 export default {
   component: DarkModeButton,

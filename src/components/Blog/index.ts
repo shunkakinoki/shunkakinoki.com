@@ -1,2 +1,2 @@
-export { default } from "./Blog";
+export { Blog } from "./Blog";
 export type { Props } from "./Blog";

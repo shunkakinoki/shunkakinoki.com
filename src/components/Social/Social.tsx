@@ -1,8 +1,10 @@
 import clsx from "clsx";
 
+import type { FC } from "react";
+
 import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
-import SocialCard from "@/components/Social/SocialCard";
+import { SocialCard } from "@/components/Social/SocialCard";
 import { SocialLinks } from "@/const";
 import {
   Bitcoin,
@@ -32,7 +34,7 @@ export interface Props {
   isPartial?: boolean;
 }
 
-export default function Social({ isPartial = false }: Props): JSX.Element {
+export const Social: FC<Props> = ({ isPartial = false }) => {
   return (
     <section key="social" className={clsx("mb-6 w-full", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
@@ -134,4 +136,4 @@ export default function Social({ isPartial = false }: Props): JSX.Element {
       </div>
     </section>
   );
-}
+};

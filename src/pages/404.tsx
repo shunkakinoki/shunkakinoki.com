@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 
-import NotFoundScreen from "@/screens/NotFoundScreen";
+import { NotFoundScreen } from "@/screens/NotFoundScreen";
 
-const NotFound: NextPage = () => {
+export const NotFound: NextPage = () => {
   return <NotFoundScreen />;
 };
 

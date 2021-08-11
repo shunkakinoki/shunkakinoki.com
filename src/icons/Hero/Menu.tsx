@@ -1,4 +1,6 @@
-export default function Menu(): JSX.Element {
+import type { FC } from "react";
+
+export const Menu: FC = () => {
   return (
     <svg
       className="w-6 h-6"
@@ -13,4 +15,4 @@ export default function Menu(): JSX.Element {
       />
     </svg>
   );
-}
+};

@@ -1,1 +1,1 @@
-export { default } from "./DarkModeButton";
+export { DarkModeButton } from "./DarkModeButton";

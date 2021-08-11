@@ -1,12 +1,14 @@
+import type { FC } from "react";
+
 import type { Props as AboutProps } from "@/components/About";
-import About from "@/components/About";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Life from "@/components/Life";
+import { About } from "@/components/About";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { Life } from "@/components/Life";
 
 export type Props = AboutProps;
 
-export default function AboutScreen({ source }: Props): JSX.Element {
+export const AboutScreen: FC<Props> = ({ source }) => {
   return (
     <>
       <Header />
@@ -17,4 +19,4 @@ export default function AboutScreen({ source }: Props): JSX.Element {
       <Footer />
     </>
   );
-}
+};

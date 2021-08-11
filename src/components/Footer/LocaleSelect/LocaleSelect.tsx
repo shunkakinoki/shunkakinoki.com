@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
+import type { FC } from "react";
 
 import { Down } from "@/icons";
 
-export default function LocaleSelect(): JSX.Element {
+export const LocaleSelect: FC = () => {
   const router = useRouter();
 
   return (
@@ -37,4 +38,4 @@ export default function LocaleSelect(): JSX.Element {
       </fieldset>
     </form>
   );
-}
+};

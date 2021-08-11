@@ -1,5 +1,5 @@
 export * from "./colour";
 export * from "./config";
-export { default as NotionLinks } from "./NotionLinks";
-export { default as ProductLinks } from "./ProductLinks";
-export { default as SocialLinks } from "./SocialLinks";
+export { NotionLinks } from "./NotionLinks";
+export { ProductLinks } from "./ProductLinks";
+export { SocialLinks } from "./SocialLinks";

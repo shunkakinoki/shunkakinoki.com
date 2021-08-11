@@ -1,14 +1,13 @@
+import type { FC } from "react";
+
 import type { Props as ContentProps } from "@/components/Content";
-import Content from "@/components/Content";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import { Content } from "@/components/Content";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 export type Props = ContentProps;
 
-export default function ContentScreen({
-  frontMatter,
-  source,
-}: Props): JSX.Element {
+export const ContentScreen: FC<Props> = ({ frontMatter, source }) => {
   return (
     <>
       <Header />
@@ -18,4 +17,4 @@ export default function ContentScreen({
       <Footer />
     </>
   );
-}
+};

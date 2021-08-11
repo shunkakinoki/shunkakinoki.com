@@ -1,6 +1,6 @@
 import type { Story, Meta } from "@storybook/react";
 
-import LocaleSelect from "./LocaleSelect";
+import { LocaleSelect } from "./LocaleSelect";
 
 export default {
   component: LocaleSelect,

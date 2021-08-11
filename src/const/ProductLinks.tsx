@@ -1,3 +1,3 @@
-export default class ProductLinks {
+export class ProductLinks {
   static readonly sentrei = "https://sentrei.com";
 }

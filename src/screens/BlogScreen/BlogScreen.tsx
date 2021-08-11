@@ -1,15 +1,13 @@
+import type { FC } from "react";
+
 import type { Props as BlogProps } from "@/components/Blog";
-import Blog from "@/components/Blog";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import { Blog } from "@/components/Blog";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 export type Props = BlogProps;
 
-export default function BlogScreen({
-  frontMatter,
-  source,
-  slug,
-}: Props): JSX.Element {
+export const BlogScreen: FC<Props> = ({ frontMatter, source, slug }) => {
   return (
     <>
       <Header />
@@ -19,4 +17,4 @@ export default function BlogScreen({
       <Footer />
     </>
   );
-}
+};

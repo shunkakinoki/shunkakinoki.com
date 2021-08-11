@@ -1,4 +1,6 @@
-export default function Work(): JSX.Element {
+import type { FC } from "react";
+
+export const Work: FC = () => {
   return (
     <svg
       className="w-4 h-4"
@@ -14,4 +16,4 @@ export default function Work(): JSX.Element {
       <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
     </svg>
   );
-}
+};

@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Link from "next/link";
+import type { FC } from "react";
 
 export interface Props {
   children: JSX.Element;
@@ -17,13 +18,13 @@ export interface Props {
   href: string;
 }
 
-export default function LifeCard({
+export const LifeCard: FC<Props> = ({
   children,
   color,
   name,
   hidden = false,
   href,
-}: Props): JSX.Element {
+}) => {
   return (
     <div
       className={clsx(
@@ -81,4 +82,4 @@ export default function LifeCard({
       </span>
     </div>
   );
-}
+};

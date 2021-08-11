@@ -1,7 +1,8 @@
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
+import type { FC } from "react";
 
-export default function Seo(): JSX.Element {
+export const Seo: FC = () => {
   return (
     <>
       <DefaultSeo
@@ -27,4 +28,4 @@ export default function Seo(): JSX.Element {
       </Head>
     </>
   );
-}
+};

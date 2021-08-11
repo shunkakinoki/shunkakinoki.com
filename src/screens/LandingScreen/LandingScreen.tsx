@@ -1,18 +1,19 @@
 import Script from "next/script";
+import type { FC } from "react";
 
 import type { Props as AboutProps } from "@/components/About";
-import About from "@/components/About";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import History from "@/components/History";
-import Life from "@/components/Life";
-import Newsletter from "@/components/Newsletter";
-import Product from "@/components/Product";
-import Social from "@/components/Social";
+import { About } from "@/components/About";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { History } from "@/components/History";
+import { Life } from "@/components/Life";
+import { Newsletter } from "@/components/Newsletter";
+import { Product } from "@/components/Product";
+import { Social } from "@/components/Social";
 
 export type Props = AboutProps;
 
-export default function LandingScreen({ source }: Props): JSX.Element {
+export const LandingScreen: FC<Props> = ({ source }) => {
   return (
     <>
       <Script
@@ -32,4 +33,4 @@ export default function LandingScreen({ source }: Props): JSX.Element {
       <Footer />
     </>
   );
-}
+};

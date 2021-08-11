@@ -1,8 +1,9 @@
 /* Icons from heroicons.dev */
 
 import { useTheme } from "next-themes";
+import type { FC } from "react";
 
-export default function DarkModeButton(): JSX.Element {
+export const DarkModeButton: FC = () => {
   const { theme, setTheme } = useTheme();
 
   return (
@@ -39,4 +40,4 @@ export default function DarkModeButton(): JSX.Element {
       </svg>
     </button>
   );
-}
+};

@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 
-import OgScreen from "@/screens/OgScreen";
+import { OgScreen } from "@/screens/OgScreen";
 
-const History: NextPage = () => {
+export const History: NextPage = () => {
   return <OgScreen />;
 };
 

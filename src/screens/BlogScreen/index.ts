@@ -1,2 +1,2 @@
-export { default } from "./BlogScreen";
+export { BlogScreen } from "./BlogScreen";
 export type { Props } from "./BlogScreen";

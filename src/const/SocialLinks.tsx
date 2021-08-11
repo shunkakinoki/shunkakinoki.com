@@ -1,4 +1,4 @@
-export default class SocialLinks {
+export class SocialLinks {
   static readonly shunkakinoki = "shunkakinoki";
   static readonly crypto = "3CfSsG4MGs9VP588j6KaPsphtMb1JceAcB";
   static readonly gmail = `${SocialLinks.shunkakinoki}@gmail.com`;

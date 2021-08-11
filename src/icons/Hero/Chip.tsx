@@ -1,4 +1,6 @@
-export default function Chip(): JSX.Element {
+import type { FC } from "react";
+
+export const Chip: FC = () => {
   return (
     <svg
       className="w-4 h-4"
@@ -14,4 +16,4 @@ export default function Chip(): JSX.Element {
       />
     </svg>
   );
-}
+};

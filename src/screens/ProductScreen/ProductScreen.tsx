@@ -1,8 +1,10 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Product from "@/components/Product";
+import type { FC } from "react";
 
-export default function ProductScreen(): JSX.Element {
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { Product } from "@/components/Product";
+
+export const ProductScreen: FC = () => {
   return (
     <>
       <Header />
@@ -12,4 +14,4 @@ export default function ProductScreen(): JSX.Element {
       <Footer />
     </>
   );
-}
+};

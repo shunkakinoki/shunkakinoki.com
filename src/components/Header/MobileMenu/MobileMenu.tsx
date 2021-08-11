@@ -3,7 +3,9 @@ import useTranslation from "next-translate/useTranslation";
 import type { LinkProps } from "next/link";
 import Link from "next/link";
 
-import useMobileMenu from "@/hooks/useMobileMenu";
+import type { FC } from "react";
+
+import { useMobileMenu } from "@/hooks/useMobileMenu";
 
 interface MobileMenuLinkProps extends LinkProps {
   children: string;
@@ -23,7 +25,7 @@ function MobileMenuLink({ children, href }: MobileMenuLinkProps): JSX.Element {
   );
 }
 
-export default function MobileMenu(): JSX.Element {
+export const MobileMenu: FC = () => {
   const [isMenuOpen, setMenuOpen] = useMobileMenu();
   const { t } = useTranslation();
 
@@ -89,4 +91,4 @@ export default function MobileMenu(): JSX.Element {
       </div>
     </Transition>
   );
-}
+};

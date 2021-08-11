@@ -1,1 +1,1 @@
-export { default } from "./NotionScreen";
+export { NotionScreen } from "./NotionScreen";

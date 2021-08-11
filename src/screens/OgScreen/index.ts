@@ -1,1 +1,1 @@
-export { default } from "./OgScreen";
+export { OgScreen } from "./OgScreen";

@@ -1,3 +1,5 @@
+import type { FC } from "react";
+
 import { External } from "@/icons";
 
 export interface Props {
@@ -7,12 +9,12 @@ export interface Props {
   href: string;
 }
 
-export default function ProductCard({
+export const ProductCard: FC<Props> = ({
   children,
   description,
   name,
   href,
-}: Props): JSX.Element {
+}) => {
   return (
     <li className="group col-span-1 hover:bg-gray-50 dark:bg-black dark:hover:bg-gray-900 rounded-lg border dark:border-gray-300 shadow-lg">
       <a
@@ -40,4 +42,4 @@ export default function ProductCard({
       </a>
     </li>
   );
-}
+};

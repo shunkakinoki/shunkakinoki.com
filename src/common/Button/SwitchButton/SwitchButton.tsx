@@ -1,6 +1,8 @@
 import type { LinkProps } from "next/link";
 import Link from "next/link";
 
+import type { FC } from "react";
+
 import { Left, Right, Switch } from "@/icons";
 
 interface Props extends LinkProps {
@@ -8,7 +10,7 @@ interface Props extends LinkProps {
   type: "right" | "left" | "switch";
 }
 
-export default function SwitchButton({ href, type }: Props): JSX.Element {
+export const SwitchButton: FC<Props> = ({ href, type }) => {
   return (
     <Link href={href}>
       <a
@@ -23,4 +25,4 @@ export default function SwitchButton({ href, type }: Props): JSX.Element {
       </a>
     </Link>
   );
-}
+};

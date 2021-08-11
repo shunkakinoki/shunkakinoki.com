@@ -1,8 +1,10 @@
-import Dashboard from "@/components/Dashboard";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import type { FC } from "react";
 
-export default function DashboardScreen(): JSX.Element {
+import { Dashboard } from "@/components/Dashboard";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+
+export const DashboardScreen: FC = () => {
   return (
     <>
       <Header />
@@ -12,4 +14,4 @@ export default function DashboardScreen(): JSX.Element {
       <Footer />
     </>
   );
-}
+};

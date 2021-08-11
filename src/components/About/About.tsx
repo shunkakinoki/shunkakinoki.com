@@ -2,6 +2,7 @@ import clsx from "clsx";
 
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { MDXRemote } from "next-mdx-remote";
+import type { FC } from "react";
 
 import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
@@ -33,7 +34,7 @@ const components = {
   a: AboutLink,
 };
 
-export default function About({ isPartial, source }: Props): JSX.Element {
+export const About: FC<Props> = ({ isPartial, source }) => {
   return (
     <section className={clsx("mb-6 w-full", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
@@ -61,4 +62,4 @@ export default function About({ isPartial, source }: Props): JSX.Element {
       </div>
     </section>
   );
-}
+};

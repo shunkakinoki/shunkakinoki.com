@@ -1,4 +1,6 @@
-export default function Check(): JSX.Element {
+import type { FC } from "react";
+
+export const Check: FC = () => {
   return (
     <svg
       className="w-4 h-4"
@@ -13,4 +15,4 @@ export default function Check(): JSX.Element {
       />
     </svg>
   );
-}
+};

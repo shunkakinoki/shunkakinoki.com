@@ -1,4 +1,6 @@
-export default function Globe(): JSX.Element {
+import type { FC } from "react";
+
+export const Globe: FC = () => {
   return (
     <svg
       className="w-4 h-4"
@@ -13,4 +15,4 @@ export default function Globe(): JSX.Element {
       />
     </svg>
   );
-}
+};

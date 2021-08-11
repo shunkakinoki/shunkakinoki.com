@@ -1,11 +1,12 @@
 import clsx from "clsx";
 import { useState } from "react";
+import type { FC } from "react";
 import useSWR from "swr";
 
 import { Badge, Exclamation, Light } from "@/icons";
 import fetcher from "@/lib/fetcher";
 
-export default function Newsletter(): JSX.Element {
+export const Newsletter: FC = () => {
   const { data } = useSWR<{
     subscribers: number;
   }>("/api/buttondown", fetcher);
@@ -171,4 +172,4 @@ export default function Newsletter(): JSX.Element {
       </div>
     </div>
   );
-}
+};
