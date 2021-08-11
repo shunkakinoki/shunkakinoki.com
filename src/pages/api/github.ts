@@ -2,10 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import { SocialLinks } from "@/const";
 
-export default async function github(
-  req: NextApiRequest,
-  res: NextApiResponse,
-): Promise<void> {
+export const github = async (req: NextApiRequest, res: NextApiResponse) => {
   const userResponse = await fetch(
     `https://api.github.com/users/${SocialLinks.shunkakinoki}`,
   );
@@ -22,4 +19,4 @@ export default async function github(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     followers: user?.followers,
   });
-}
+};

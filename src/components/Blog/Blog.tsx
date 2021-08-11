@@ -21,7 +21,7 @@ interface BlogLinkProps {
 }
 
 export const Blog: FC<Props> = ({ source, slug }) => {
-  function BlogLink({ children, href }: BlogLinkProps) {
+  const BlogLink = ({ children, href }: BlogLinkProps) => {
     return (
       <Link
         href={
@@ -33,7 +33,7 @@ export const Blog: FC<Props> = ({ source, slug }) => {
         {children}
       </Link>
     );
-  }
+  };
 
   const components = {
     a: BlogLink,

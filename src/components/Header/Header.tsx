@@ -19,7 +19,7 @@ interface HeaderLinkProps extends LinkProps {
   children: string;
 }
 
-export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
+export const HeaderLink: FC<HeaderLinkProps> = ({ children, href }) => {
   return (
     <li className="px-3 leading-5 text-left text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 align-baseline">
       <Link href={href}>
@@ -29,7 +29,7 @@ export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
       </Link>
     </li>
   );
-}
+};
 
 export const Header: FC = () => {
   const { t } = useTranslation();

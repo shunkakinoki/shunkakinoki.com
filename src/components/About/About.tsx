@@ -17,7 +17,7 @@ interface AboutLinkProps {
   href: string;
 }
 
-function AboutLink({ children, href }: AboutLinkProps) {
+export const AboutLink: FC<AboutLinkProps> = ({ children, href }) => {
   return (
     <a
       href={href}
@@ -28,7 +28,7 @@ function AboutLink({ children, href }: AboutLinkProps) {
       {children}
     </a>
   );
-}
+};
 
 const components = {
   a: AboutLink,

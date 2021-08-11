@@ -14,13 +14,13 @@ interface HistoryYearProps {
   children: string;
 }
 
-function HistoryYear({ children }: HistoryYearProps): JSX.Element {
+export const HistoryYear: FC<HistoryYearProps> = ({ children }) => {
   return (
     <h3 className="mt-2 mb-4 md:text-base font-light tracking-tight text-gray-500 dark:text-gray-100">
       {children}
     </h3>
   );
-}
+};
 
 export const History: FC<Props> = ({ isPartial = false }) => {
   return (

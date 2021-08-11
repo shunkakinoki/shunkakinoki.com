@@ -11,7 +11,7 @@ interface MobileMenuLinkProps extends LinkProps {
   children: string;
 }
 
-function MobileMenuLink({ children, href }: MobileMenuLinkProps): JSX.Element {
+export const MobileMenuLink: FC<MobileMenuLinkProps> = ({ children, href }) => {
   return (
     <div className="py-1 px-5">
       <Link href={href}>
@@ -23,7 +23,7 @@ function MobileMenuLink({ children, href }: MobileMenuLinkProps): JSX.Element {
       </Link>
     </div>
   );
-}
+};
 
 export const MobileMenu: FC = () => {
   const [isMenuOpen, setMenuOpen] = useMobileMenu();
