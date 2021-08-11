@@ -18,57 +18,67 @@ const getCSS: GetCSSFn = config => {
       background: ${colours.bg};
     }
 
-    .top {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-      padding: 75px;
-    }
-
     h1 {
-      margin: 0;
-      text-align: right;
-      font-size: 1.5em;
-      font-weight: 800;
-      max-width: 1600px;
-    }
-
-    .date {
-      margin-top: 45px;
-      text-align: right;
-      font-size: 80px;
       color: ${colours.pink};
+      font-size: 120px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
-    .username {
-      margin-top: 40px;
-      text-align: right;
-      font-size: 45px;
+    h2 {
+      font-size: 80px;
+      margin-top: 25px;
+    }
+
+    h3 {
+      margin-top: 45px;
+      font-size: 48px;
       color: ${colours.gray};
+    }
+
+    .gradient-box {
+      border: 24px solid;
+      border-image-slice: 1;
+      border-width: 18px;
+      border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+      height: 100%;
+      width: 100%;
+    }
+
+    .content {
+      padding: 48px;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-direction: column;
     }
   `;
 };
 
 const Component: LayoutComponent = ({ config }) => {
   const title = config.Title;
-  const date = config.Date;
-  const username = config.Username;
 
   return (
-    <div className="top">
+    <div className="gradient-box">
       <div className="content">
-        <Markdown>{title}</Markdown>
-        {date && <div className="date">{date}</div>}
-        {username && <div className="username">@{username}</div>}
+        <h1>
+          <Markdown>{title}</Markdown>
+        </h1>
+        <h2>
+          by&nbsp;Shun&nbsp;Kakinoki
+          <h3>https://shunkakinoki.com</h3>
+        </h2>
       </div>
     </div>
   );
 };
 
-export const Journal: ILayout = {
-  name: "Journal",
+export const Website: ILayout = {
+  name: "Website",
   properties: [
     {
       name: "Theme",
@@ -79,27 +89,16 @@ export const Journal: ILayout = {
     {
       name: "Title",
       type: "text",
-      default: "My personal journal",
-      placeholder: "Journal title",
+      default: "The Jamstack Backend",
+      placeholder: "Big text",
     },
     {
       name: "Date",
       type: "text",
       default: "2021/01/01",
-      placeholder: "1998/10/02",
-    },
-    {
-      name: "Username",
-      type: "text",
-      placeholder: "shunkakinoki",
-    },
-    {
-      name: "Icon",
-      type: "select",
-      options: ["Show", "Hide"],
-      default: "Show",
+      placeholder: "2021/01/01",
     },
   ],
-  getCSS,
   Component,
+  getCSS,
 };

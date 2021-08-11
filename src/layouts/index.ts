@@ -2,10 +2,10 @@
 import type { ILayout, ILayoutConfig } from "next-og-utils";
 
 import { Blog } from "./Blog";
-import { Journal } from "./Journal";
 import { Simple } from "./Simple";
+import { Website } from "./Website";
 
-export const layouts: ILayout[] = [Simple, Blog, Journal];
+export const layouts: ILayout[] = [Simple, Blog, Website];
 
 export const getDefaultLayout = (layout: ILayout): ILayoutConfig => {
   const config: ILayoutConfig = {};

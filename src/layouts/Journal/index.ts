@@ -1,1 +1,0 @@
-export { Journal } from "./Journal";
