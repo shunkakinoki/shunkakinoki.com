@@ -6,7 +6,8 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "rootDir": "."
+    "rootDir": ".",
+    "strict": false
   },
   "exclude": ["node_modules"],
   "extends": "@shunkakinoki/tsconfig",

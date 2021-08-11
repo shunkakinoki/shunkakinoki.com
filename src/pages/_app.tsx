@@ -3,7 +3,6 @@ import type { AppProps } from "next/app";
 import { RecoilRoot } from "recoil";
 
 import "tailwindcss/tailwind.css";
-import "@/styles/notion.css";
 import Seo from "@/components/Seo";
 
 const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
