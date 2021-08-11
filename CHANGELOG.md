@@ -1,3 +1,9 @@
+# [1.17.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.16.0...v1.17.0) (2021-08-11)
+
+### Features
+
+- refactor named exports ([de5a1dd](https://github.com/shunkakinoki/shunkakinoki.com/commit/de5a1dd98f597d8f90f2c2361ee6ae67ae0be8d8))
+
 # [1.16.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.15.9...v1.16.0) (2021-08-11)
 
 ### Features
