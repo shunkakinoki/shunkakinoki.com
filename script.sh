@@ -17,11 +17,11 @@ if [[ "$VERCEL_ENV" == "production" || "$VERCEL_GIT_COMMIT_REF" == "alpha" || "$
   echo "✅ - Build can proceed in production"
   exit 1
 else
-  if git diff HEAD^ HEAD --quiet ./src/; then
-    echo "🌼 - Build not proceeding"
-    exit 0
-  else
+  if ! git diff HEAD^ HEAD --quiet ./src/; then
     echo "❎ - Build can proceed in preview"
     exit 1
+  else
+    echo "🌼 - Build not proceeding"
+    exit 0
   fi
 fi
