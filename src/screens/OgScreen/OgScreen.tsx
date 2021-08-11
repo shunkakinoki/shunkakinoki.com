@@ -2,6 +2,8 @@ import useTranslation from "next-translate/useTranslation";
 import type { FC } from "react";
 
 import { Config } from "@/components/Config";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { Viewer } from "@/components/Viewer";
 import { useIsMounted } from "@/hooks/useIsMounted";
 
@@ -11,6 +13,7 @@ export const OgScreen: FC = () => {
 
   return (
     <>
+      <Header />
       <main className="px-6 pb-20 mx-auto w-full max-w-6xl">
         <header className="mt-20 mb-12 space-y-6 text-center">
           <h1 className="text-5xl font-bold dark:text-white">
@@ -24,6 +27,7 @@ export const OgScreen: FC = () => {
           </section>
         )}
       </main>
+      <Footer />
     </>
   );
 };
