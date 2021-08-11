@@ -4,7 +4,7 @@ import type { FC } from "react";
 import useSWR from "swr";
 
 import { Badge, Exclamation, Light } from "@/icons";
-import fetcher from "@/lib/fetcher";
+import { fetcher } from "@/lib/fetcher";
 
 export const Newsletter: FC = () => {
   const { data } = useSWR<{
