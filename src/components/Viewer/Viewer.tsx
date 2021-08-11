@@ -61,7 +61,14 @@ export const Viewer: FC = () => {
         >
           {isCopied ? "Copied!" : "Copy Image URL"}
         </Button>
-        <Button href={htmlURL}>Open HTML Page</Button>
+        <Button
+          href={htmlURL}
+          Component="a"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open HTML Page
+        </Button>
       </div>
     </div>
   );
