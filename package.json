@@ -104,7 +104,6 @@
     "@types/puppeteer": "^5.4.4",
     "@types/puppeteer-core": "^5.4.0",
     "@types/react": "^17.0.17",
-    "storybook-addon-next-router": "^3.0.7",
     "storybook-dark-mode": "^1.0.8",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "vercel": "^23.1.2",
