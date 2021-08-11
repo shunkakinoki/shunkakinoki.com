@@ -20,7 +20,7 @@ const getCSS: GetCSSFn = config => {
 
     h1 {
       color: ${colours.pink};
-      font-size: 120px;
+      font-size: 180px;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
