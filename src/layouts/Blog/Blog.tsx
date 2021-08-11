@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable tailwindcss/no-custom-classname */
+
 import type { ILayout, LayoutComponent, GetCSSFn } from "next-og-utils";
 
 import { getTheme, css } from "next-og-utils";
@@ -28,9 +30,15 @@ const getCSS: GetCSSFn = config => {
 
     h3 {
       margin-top: 45px;
-      text-align: right;
       font-size: 30px;
       color: ${colours.gray};
+    }
+
+    .gradient-box {
+      display: "flex";
+      flex-direction: "column";
+      align-items: "center";
+      justify-content: "space-between";
     }
   `;
 };
@@ -43,18 +51,11 @@ const Component: LayoutComponent = ({ config }) => {
   const username = config.Username;
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "space-between",
-      }}
-    >
+    <div className="gradient-box">
       <h1>
         <Markdown>{title}</Markdown>
       </h1>
-      <h2 style={{ display: "flex" }}>
+      <h2>
         <Markdown style={{ fontWeight: 400 }}>Written by&nbsp;</Markdown>
         <Markdown>{author}</Markdown>
         <h3>
