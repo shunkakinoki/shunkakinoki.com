@@ -4,7 +4,7 @@ import useSWR from "swr";
 import { DashboardCard } from "@/components/Dashboard/DashboardCard";
 import { SocialLinks } from "@/const";
 import { Twitter } from "@/icons";
-import fetcher from "@/lib/fetcher";
+import { fetcher } from "@/lib/fetcher";
 
 export const TwitterCard: FC = () => {
   const { data } = useSWR<{ followers: number }>("/api/twitter", fetcher);

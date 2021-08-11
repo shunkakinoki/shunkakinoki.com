@@ -4,7 +4,7 @@ import useSWR from "swr";
 import { DashboardCard } from "@/components/Dashboard/DashboardCard";
 import { SocialLinks } from "@/const";
 import { Github } from "@/icons";
-import fetcher from "@/lib/fetcher";
+import { fetcher } from "@/lib/fetcher";
 
 export const GithubCard: FC = () => {
   const { data } = useSWR<{
