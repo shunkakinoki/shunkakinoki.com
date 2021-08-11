@@ -1,3 +1,9 @@
+## [1.17.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.0...v1.17.1) (2021-08-11)
+
+### Performance Improvements
+
+- refactor input select ([205dc79](https://github.com/shunkakinoki/shunkakinoki.com/commit/205dc7959950a1bb8d9d3fd0694d18f920f207ce))
+
 # [1.17.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.16.0...v1.17.0) (2021-08-11)
 
 ### Features
