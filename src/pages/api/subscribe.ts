@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-export const subscribe = (req: NextApiRequest, res: NextApiResponse) => {
+export const subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { email } = req.body;
 
@@ -47,3 +47,5 @@ export const subscribe = (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(500).json({ error: error.message || error.toString() });
   }
 };
+
+export default subscribe;

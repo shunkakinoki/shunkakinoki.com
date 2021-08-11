@@ -20,3 +20,5 @@ export const twitter = async (req: NextApiRequest, res: NextApiResponse) => {
     followers: user[0]?.followers_count,
   });
 };
+
+export default twitter;

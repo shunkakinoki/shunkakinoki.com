@@ -27,3 +27,5 @@ export const buttondown = async (req: NextApiRequest, res: NextApiResponse) => {
     subscribers: newsletter?.count,
   });
 };
+
+export default buttondown;

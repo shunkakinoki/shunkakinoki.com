@@ -6,7 +6,7 @@ import { parseRequest } from "@/lib/parseRequest";
 
 const isDev = !process.env.AWS_REGION;
 
-const handler: NextApiHandler = async (req, res) => {
+export const handler: NextApiHandler = async (req, res) => {
   try {
     const config = parseRequest(req);
     console.log(`\n--- /api/image---\nCONFIG: ${JSON.stringify(config)}\n`);

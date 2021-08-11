@@ -20,3 +20,5 @@ export const github = async (req: NextApiRequest, res: NextApiResponse) => {
     followers: user?.followers,
   });
 };
+
+export default github;
