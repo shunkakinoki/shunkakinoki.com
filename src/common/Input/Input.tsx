@@ -12,7 +12,7 @@ export const Input: FC<InputProps> = props => {
     <label>
       <input
         className={clsx(
-          "py-1 px-3 w-full h-9 dark:text-white bg-black rounded border focus:border focus:ring-4 focus:ring-sky-800 focus:ring-offset-2 focus:ring-offset-sky-300 appearance-none focus:outline-none",
+          "py-1 px-3 w-full h-9 dark:text-white bg-black rounded border hover:border-2 dark:border-white dark:hover:border-blue-300 focus:ring-4 focus:ring-sky-800 focus:ring-offset-2 focus:ring-offset-sky-300 appearance-none focus:outline-none",
           className,
         )}
         autoComplete="off"
