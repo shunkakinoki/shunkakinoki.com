@@ -21,11 +21,11 @@ module.exports = {
     "storybook-addon-next-router",
     "storybook-dark-mode",
   ],
+  core: {
+    builder: "webpack5",
+  },
   webpackFinal: async config => {
     config.resolve.plugins = [new TsconfigPathsPlugin()];
     return config;
   },
-  // core: {
-  //   builder: "webpack5",
-  // },
 };

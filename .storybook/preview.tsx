@@ -3,7 +3,7 @@ import "tailwindcss/tailwind.css";
 import * as nextImage from "next/image";
 import I18nProvider from "next-translate/I18nProvider";
 import { ThemeProvider } from "next-themes";
-import { RouterContext } from "next/dist/next-server/lib/router-context";
+import { RouterContext } from "next/dist/shared/lib/router-context";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 import config from "../i18n";

@@ -14,6 +14,7 @@
   "author": "Shun Kakinoki",
   "scripts": {
     "build": "next build",
+    "postbuild": "next-sitemap",
     "build:storybook": "build-storybook -o public",
     "dev": "next dev",
     "cmd:eslint": "scripty",
@@ -63,6 +64,7 @@
     "next-mdx-remote": "^3.0.4",
     "next-og-utils": "^1.1.7",
     "next-seo": "^4.26.0",
+    "next-sitemap": "^1.6.148",
     "next-themes": "^0.0.15",
     "next-translate": "^1.0.7",
     "notion-client": "^4.8.2",
