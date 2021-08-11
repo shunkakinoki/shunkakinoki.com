@@ -20,7 +20,7 @@ const getCSS: GetCSSFn = config => {
 
     h1 {
       font-size: 120px;
-      margin: 75px 0;
+      margin: 75px;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
@@ -70,10 +70,11 @@ const Component: LayoutComponent = ({ config }) => {
           <Markdown>{title}</Markdown>
         </h1>
         <h2>
-          Written by&nbsp;Shun&nbsp;
+          Written by&nbsp;Shun&nbsp;Kakinoki
           <h3>
             {date}
-            &nbsp;・&nbsp;https://shunkakinoki.com&nbsp;・&nbsp;@shunkakinoki
+            &nbsp;&middot;&nbsp;https://shunkakinoki.com&nbsp;&middot;
+            &nbsp;@shunkakinoki
           </h3>
         </h2>
       </div>
