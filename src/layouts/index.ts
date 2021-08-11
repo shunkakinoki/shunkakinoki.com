@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+import type { ILayout, ILayoutConfig } from "next-og-utils";
+
 import { Blog } from "./Blog";
 import { Journal } from "./Journal";
 import { Simple } from "./Simple";
-
-import type { ILayout, ILayoutConfig } from "@/og";
 
 export const layouts: ILayout[] = [Simple, Blog, Journal];
 

@@ -1,8 +1,9 @@
 import type { NextApiRequest } from "next";
 
+import type { IConfig, ILayoutConfig } from "next-og-utils";
+
 import { DEFAULT_CONFIG } from "@/const/config";
 import { getLayoutConfigFromQuery } from "@/layouts";
-import type { IConfig, ILayoutConfig } from "@/og";
 
 export const parseRequest = (req: NextApiRequest): IConfig & ILayoutConfig => {
   const config: IConfig = {

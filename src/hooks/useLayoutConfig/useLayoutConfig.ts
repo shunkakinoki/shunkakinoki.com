@@ -1,10 +1,10 @@
+import type { ILayoutConfig } from "next-og-utils";
 import { useMemo } from "react";
 import { atom, useRecoilState } from "recoil";
 
 import { useConfig } from "@/hooks/useConfig";
 import { layouts, getDefaultLayout } from "@/layouts";
 import { localStorageEffect } from "@/lib/effect";
-import type { ILayoutConfig } from "@/og";
 
 const allLayoutConfigState = atom({
   key: "allLayoutConfig",
