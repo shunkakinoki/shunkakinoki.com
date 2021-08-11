@@ -9,7 +9,7 @@ const getCSS: GetCSSFn = () => {
     body {
       font-size: 200px;
       color: #fff;
-      background: linear-gradient(to bottom right, skyblue, deeppink);
+      background: linear-gradient(to left, #743ad5, #d53a9d);
     }
   `;
 };
@@ -18,8 +18,8 @@ const Component: LayoutComponent = ({ config }) => {
   return <Markdown>{config.Text}</Markdown>;
 };
 
-export const Simple: ILayout = {
-  name: "Simple",
+export const Shun: ILayout = {
+  name: "Shun",
   properties: [{ name: "Text", type: "text", default: "**Hello** _World_" }],
   Component,
   getCSS,

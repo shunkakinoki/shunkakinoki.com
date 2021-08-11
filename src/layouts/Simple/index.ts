@@ -1,1 +1,0 @@
-export { Simple } from "./Simple";
