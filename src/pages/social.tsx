@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 
-import SocialScreen from "@/screens/SocialScreen";
+import { SocialScreen } from "@/screens/SocialScreen";
 
-const Social: NextPage = () => {
+export const Social: NextPage = () => {
   return <SocialScreen />;
 };
 

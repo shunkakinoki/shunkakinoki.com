@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 
-import HistoryScreen from "@/screens/HistoryScreen";
+import { HistoryScreen } from "@/screens/HistoryScreen";
 
-const History: NextPage = () => {
+export const History: NextPage = () => {
   return <HistoryScreen />;
 };
 

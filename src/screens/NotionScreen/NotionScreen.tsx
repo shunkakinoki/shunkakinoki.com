@@ -1,14 +1,13 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import type { FC } from "react";
+
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import type { Props as NotionProps } from "@/components/Notion";
-import Notion from "@/components/Notion";
+import { Notion } from "@/components/Notion";
 
 export type Props = NotionProps;
 
-export default function NotionScreen({
-  fullPage,
-  recordMap,
-}: Props): JSX.Element {
+export const NotionScreen: FC<Props> = ({ fullPage, recordMap }) => {
   return (
     <>
       <Header />
@@ -18,4 +17,4 @@ export default function NotionScreen({
       <Footer />
     </>
   );
-}
+};

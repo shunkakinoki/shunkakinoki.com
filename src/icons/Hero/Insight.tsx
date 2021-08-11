@@ -1,4 +1,6 @@
-export default function Insight(): JSX.Element {
+import type { FC } from "react";
+
+export const Insight: FC = () => {
   return (
     <svg
       className="w-6 h-6"
@@ -14,4 +16,4 @@ export default function Insight(): JSX.Element {
       />
     </svg>
   );
-}
+};

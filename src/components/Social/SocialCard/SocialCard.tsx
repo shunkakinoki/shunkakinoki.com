@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode, FC } from "react";
 
 import { SocialLinks } from "@/const";
 import { Check } from "@/icons";
@@ -11,13 +11,13 @@ export interface Props {
   username?: string;
 }
 
-export default function SocialCard({
+export const SocialCard: FC<Props> = ({
   children,
   isPriority = false,
   href,
   title,
   username = `@${SocialLinks.shunkakinoki}`,
-}: Props): JSX.Element {
+}) => {
   return (
     <li className="group col-span-1">
       <a href={href} target="_blank" rel="noopener noreferrer">
@@ -42,4 +42,4 @@ export default function SocialCard({
       </a>
     </li>
   );
-}
+};

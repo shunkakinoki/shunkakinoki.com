@@ -14,9 +14,9 @@ import validator from "validator";
 import { NotionLinks } from "@/const";
 import { getGithubContent, getGithubSummary } from "@/lib/github";
 import { resolveNotionPage } from "@/lib/notion";
-import BlogScreen from "@/screens/BlogScreen";
-import ContentScreen from "@/screens/ContentScreen";
-import NotionScreen from "@/screens/NotionScreen";
+import { BlogScreen } from "@/screens/BlogScreen";
+import { ContentScreen } from "@/screens/ContentScreen";
+import { NotionScreen } from "@/screens/NotionScreen";
 
 export interface Props {
   content: string;
@@ -202,7 +202,7 @@ GetStaticPropsContext) => {
   }
 };
 
-const PageId = ({
+export const PageId = ({
   content,
   frontMatter,
   slug,

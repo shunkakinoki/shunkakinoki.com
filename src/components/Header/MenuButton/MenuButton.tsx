@@ -1,7 +1,9 @@
-import useMobileMenu from "@/hooks/useMobileMenu";
+import type { FC } from "react";
+
+import { useMobileMenu } from "@/hooks/useMobileMenu";
 import { Menu } from "@/icons";
 
-export default function MenuButton(): JSX.Element {
+export const MenuButton: FC = () => {
   const [, setMenuOpen] = useMobileMenu();
 
   return (
@@ -18,4 +20,4 @@ export default function MenuButton(): JSX.Element {
       <Menu />
     </button>
   );
-}
+};

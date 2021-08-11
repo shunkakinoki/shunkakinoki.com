@@ -1,1 +1,1 @@
-export { default } from "./SectionText";
+export { SectionText } from "./SectionText";

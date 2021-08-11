@@ -8,7 +8,7 @@ export const mobileMenuAtom = atom<boolean>({
   key: "mobileMenu",
 });
 
-export default function useMobileMenu(): [boolean, SetterOrUpdater<boolean>] {
+export const useMobileMenu = (): [boolean, SetterOrUpdater<boolean>] => {
   const router = useRouter();
   const [isMenuOpen, setMenuOpen] = useRecoilState(mobileMenuAtom);
 
@@ -25,4 +25,4 @@ export default function useMobileMenu(): [boolean, SetterOrUpdater<boolean>] {
   }, [router.events, setMenuOpen]);
 
   return [isMenuOpen, setMenuOpen];
-}
+};

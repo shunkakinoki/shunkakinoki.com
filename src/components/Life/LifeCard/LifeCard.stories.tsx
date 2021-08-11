@@ -1,7 +1,7 @@
 import type { Story, Meta } from "@storybook/react";
 
 import type { Props } from "./LifeCard";
-import LifeCard from "./LifeCard";
+import { LifeCard } from "./LifeCard";
 
 export default {
   component: LifeCard,

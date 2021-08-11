@@ -1,4 +1,6 @@
-export default function Cake(): JSX.Element {
+import type { FC } from "react";
+
+export const Cake: FC = () => {
   return (
     <svg
       className="w-4 h-4"
@@ -13,4 +15,4 @@ export default function Cake(): JSX.Element {
       />
     </svg>
   );
-}
+};

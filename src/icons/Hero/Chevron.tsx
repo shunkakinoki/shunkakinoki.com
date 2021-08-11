@@ -1,4 +1,6 @@
-export default function Chevron(): JSX.Element {
+import type { FC } from "react";
+
+export const Chevron: FC = () => {
   return (
     <svg
       className="w-6 h-6"
@@ -18,4 +20,4 @@ export default function Chevron(): JSX.Element {
       />
     </svg>
   );
-}
+};

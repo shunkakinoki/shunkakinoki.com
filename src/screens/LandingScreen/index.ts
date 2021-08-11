@@ -1,2 +1,2 @@
-export { default } from "./LandingScreen";
+export { LandingScreen } from "./LandingScreen";
 export type { Props } from "./LandingScreen";

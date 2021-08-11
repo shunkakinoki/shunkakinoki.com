@@ -1,6 +1,6 @@
 import type { Story, Meta } from "@storybook/react";
 
-import CreditsButton from "./CreditsButton";
+import { CreditsButton } from "./CreditsButton";
 
 export default {
   component: CreditsButton,

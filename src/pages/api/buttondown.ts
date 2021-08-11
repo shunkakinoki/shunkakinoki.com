@@ -1,9 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-export default async function buttondown(
-  req: NextApiRequest,
-  res: NextApiResponse,
-): Promise<void> {
+export const buttondown = async (req: NextApiRequest, res: NextApiResponse) => {
   const API_KEY = process.env.BUTTONDOWN_API_KEY;
   const newsletterResponse = await fetch(
     "https://api.buttondown.email/v1/subscribers",
@@ -29,4 +26,6 @@ export default async function buttondown(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     subscribers: newsletter?.count,
   });
-}
+};
+
+export default buttondown;

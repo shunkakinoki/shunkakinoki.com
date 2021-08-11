@@ -1,3 +1,3 @@
 export { Button } from "./Button";
-export { default as LinkButton } from "./LinkButton";
-export { default as SwitchButton } from "./SwitchButton";
+export { LinkButton } from "./LinkButton";
+export { SwitchButton } from "./SwitchButton";

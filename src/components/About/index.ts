@@ -1,2 +1,2 @@
-export { default } from "./About";
+export { About } from "./About";
 export type { Props } from "./About";

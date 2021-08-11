@@ -1,8 +1,9 @@
 import clsx from "clsx";
+import type { FC } from "react";
 
 import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
-import LifeCard from "@/components/Life/LifeCard";
+import { LifeCard } from "@/components/Life/LifeCard";
 import {
   Diary,
   Excerpt,
@@ -19,7 +20,7 @@ export interface Props {
   isPartial?: boolean;
 }
 
-export default function Life({ isPartial = false }: Props): JSX.Element {
+export const Life: FC<Props> = ({ isPartial = false }) => {
   return (
     <section key="Life" className={clsx("mb-2 w-full", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
@@ -76,4 +77,4 @@ export default function Life({ isPartial = false }: Props): JSX.Element {
       </div>
     </section>
   );
-}
+};

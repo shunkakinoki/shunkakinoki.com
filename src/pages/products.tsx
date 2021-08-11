@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 
-import ProductScreen from "@/screens/ProductScreen";
+import { ProductScreen } from "@/screens/ProductScreen";
 
-const Products: NextPage = () => {
+export const Products: NextPage = () => {
   return <ProductScreen />;
 };
 

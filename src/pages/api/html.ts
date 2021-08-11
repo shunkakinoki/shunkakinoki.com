@@ -4,7 +4,7 @@ import { getHtml } from "@/lib/getHtml";
 import { parseRequest } from "@/lib/parseRequest";
 
 // eslint-disable-next-line @typescript-eslint/require-await
-const html: NextApiHandler = async (req, res) => {
+export const html: NextApiHandler = async (req, res) => {
   try {
     const config = parseRequest(req);
     console.log(`\n--- /api/html ---\nCONFIG: ${JSON.stringify(config)}\n`);

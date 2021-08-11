@@ -1,11 +1,12 @@
+import type { FC } from "react";
 import useSWR from "swr";
 
-import DashboardCard from "@/components/Dashboard/DashboardCard";
+import { DashboardCard } from "@/components/Dashboard/DashboardCard";
 import { SocialLinks } from "@/const";
 import { Twitter } from "@/icons";
-import fetcher from "@/lib/fetcher";
+import { fetcher } from "@/lib/fetcher";
 
-export default function TwitterCard(): JSX.Element {
+export const TwitterCard: FC = () => {
   const { data } = useSWR<{ followers: number }>("/api/twitter", fetcher);
 
   return (
@@ -17,4 +18,4 @@ export default function TwitterCard(): JSX.Element {
       <Twitter />
     </DashboardCard>
   );
-}
+};

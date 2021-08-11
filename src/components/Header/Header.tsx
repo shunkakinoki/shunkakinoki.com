@@ -2,21 +2,24 @@ import useTranslation from "next-translate/useTranslation";
 import dynamic from "next/dynamic";
 import type { LinkProps } from "next/link";
 import Link from "next/link";
+import type { FC } from "react";
 
 import s from "./Header.module.css";
 
-import DarkModeButton from "@/components/Header/DarkModeButton";
-import MenuButton from "@/components/Header/MenuButton";
+import { DarkModeButton } from "@/components/Header/DarkModeButton";
+import { MenuButton } from "@/components/Header/MenuButton";
 
 const MobileMenu = dynamic(() => {
-  return import("@/components/Header/MobileMenu");
+  return import("@/components/Header/MobileMenu").then(m => {
+    return m.MobileMenu;
+  });
 });
 
 interface HeaderLinkProps extends LinkProps {
   children: string;
 }
 
-export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
+export const HeaderLink: FC<HeaderLinkProps> = ({ children, href }) => {
   return (
     <li className="px-3 leading-5 text-left text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200 align-baseline">
       <Link href={href}>
@@ -26,9 +29,9 @@ export function HeaderLink({ children, href }: HeaderLinkProps): JSX.Element {
       </Link>
     </li>
   );
-}
+};
 
-export default function Header(): JSX.Element {
+export const Header: FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -66,4 +69,4 @@ export default function Header(): JSX.Element {
       </header>
     </nav>
   );
-}
+};

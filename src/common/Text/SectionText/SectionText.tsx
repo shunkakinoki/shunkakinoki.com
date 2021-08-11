@@ -1,14 +1,12 @@
 import clsx from "clsx";
+import type { FC } from "react";
 
 export interface Props {
   children: string;
   isPartial?: boolean;
 }
 
-export default function SectionText({
-  children,
-  isPartial = false,
-}: Props): JSX.Element {
+export const SectionText: FC<Props> = ({ children, isPartial = false }) => {
   return (
     <h3
       className={clsx(
@@ -20,4 +18,4 @@ export default function SectionText({
       {children}
     </h3>
   );
-}
+};

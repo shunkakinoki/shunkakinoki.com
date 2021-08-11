@@ -27,5 +27,3 @@ export const OgScreen: FC = () => {
     </>
   );
 };
-
-export default OgScreen;

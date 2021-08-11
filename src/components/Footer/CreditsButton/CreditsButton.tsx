@@ -1,6 +1,7 @@
 import Link from "next/link";
+import type { FC } from "react";
 
-export default function CreditsButton(): JSX.Element {
+export const CreditsButton: FC = () => {
   return (
     <Link href="/credits">
       <a className="flex justify-center items-center p-2 rounded-full focus:ring-2 focus:ring-pink-600 dark:focus:ring-pink-400 focus:ring-offset-2 focus:outline-none">
@@ -20,4 +21,4 @@ export default function CreditsButton(): JSX.Element {
       </a>
     </Link>
   );
-}
+};

@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import type { FC } from "react";
 
 import { Cake, Chip, Fire, Globe, School, Tag, Work } from "@/icons";
 
@@ -9,21 +10,21 @@ export interface Props {
   type: "cake" | "chip" | "fire" | "globe" | "school" | "tag" | "work";
 }
 
-function HistoryConnector(): JSX.Element {
+const HistoryConnector: FC = () => {
   return (
     <span
       className="absolute top-4 left-4 -ml-px w-0.5 h-full bg-gray-200 dark:bg-gray-500"
       aria-hidden="true"
     />
   );
-}
+};
 
-export default function HistoryStep({
+export const HistoryStep: FC<Props> = ({
   isBottom = false,
   children,
   time,
   type,
-}: Props): JSX.Element {
+}) => {
   return (
     <li>
       <div
@@ -67,4 +68,4 @@ export default function HistoryStep({
       </div>
     </li>
   );
-}
+};

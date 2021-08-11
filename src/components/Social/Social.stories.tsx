@@ -1,7 +1,7 @@
 import type { Story, Meta } from "@storybook/react";
 
 import type { Props } from "./Social";
-import Social from "./Social";
+import { Social } from "./Social";
 
 export default {
   component: Social,

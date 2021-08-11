@@ -1,6 +1,6 @@
 import type { Story, Meta } from "@storybook/react";
 
-import Newsletter from "./Newsletter";
+import { Newsletter } from "./Newsletter";
 
 export default {
   component: Newsletter,

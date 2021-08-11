@@ -1,1 +1,1 @@
-export { default } from "./Life";
+export { Life } from "./Life";

@@ -1,1 +1,1 @@
-export { default } from "./SwitchButton";
+export { SwitchButton } from "./SwitchButton";

@@ -7,7 +7,7 @@ import type {
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import { getGithubContent } from "@/lib/github";
-import CreditsScreen from "@/screens/CreditsScreen";
+import { CreditsScreen } from "@/screens/CreditsScreen";
 
 export interface Props {
   content: string;
@@ -34,7 +34,7 @@ GetStaticPropsContext) => {
   }
 };
 
-const Credits = ({
+export const Credits = ({
   content,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (

@@ -1,3 +1,5 @@
+import type { FC } from "react";
+
 import { External } from "@/icons";
 
 export interface Props {
@@ -6,12 +8,7 @@ export interface Props {
   number: number | undefined;
   title: string;
 }
-export default function DashboardCard({
-  children,
-  href,
-  number,
-  title,
-}: Props): JSX.Element {
+export const DashboardCard: FC<Props> = ({ children, href, number, title }) => {
   return (
     <div className="overflow-hidden bg-white hover:bg-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 rounded-lg shadow">
       <a
@@ -47,4 +44,4 @@ export default function DashboardCard({
       </a>
     </div>
   );
-}
+};

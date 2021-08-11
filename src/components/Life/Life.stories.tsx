@@ -1,7 +1,7 @@
 import type { Story, Meta } from "@storybook/react";
 
 import type { Props } from "./Life";
-import Life from "./Life";
+import { Life } from "./Life";
 
 export default {
   component: Life,

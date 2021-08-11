@@ -1,4 +1,6 @@
-export default function Perseverance(): JSX.Element {
+import type { FC } from "react";
+
+export const Perseverance: FC = () => {
   return (
     <svg
       className="w-6 h-6"
@@ -13,4 +15,4 @@ export default function Perseverance(): JSX.Element {
       />
     </svg>
   );
-}
+};

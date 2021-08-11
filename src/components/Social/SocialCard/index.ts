@@ -1,1 +1,1 @@
-export { default } from "./SocialCard";
+export { SocialCard } from "./SocialCard";

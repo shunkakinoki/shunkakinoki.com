@@ -1,6 +1,6 @@
 import type { Story, Meta } from "@storybook/react";
 
-import MobileMenu from "./MobileMenu";
+import { MobileMenu } from "./MobileMenu";
 
 export default {
   component: MobileMenu,

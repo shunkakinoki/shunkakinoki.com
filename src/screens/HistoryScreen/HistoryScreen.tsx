@@ -1,8 +1,10 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import History from "@/components/History";
+import type { FC } from "react";
 
-export default function HistoryScreen(): JSX.Element {
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { History } from "@/components/History";
+
+export const HistoryScreen: FC = () => {
   return (
     <>
       <Header />
@@ -12,4 +14,4 @@ export default function HistoryScreen(): JSX.Element {
       <Footer />
     </>
   );
-}
+};

@@ -1,1 +1,1 @@
-export { default } from "./DashboardScreen";
+export { DashboardScreen } from "./DashboardScreen";

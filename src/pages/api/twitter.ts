@@ -2,10 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import { SocialLinks } from "@/const";
 
-export default async function twitter(
-  req: NextApiRequest,
-  res: NextApiResponse,
-): Promise<void> {
+export const twitter = async (req: NextApiRequest, res: NextApiResponse) => {
   const userResponse = await fetch(
     `https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=${SocialLinks.shunkakinoki}`,
   );
@@ -22,4 +19,6 @@ export default async function twitter(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     followers: user[0]?.followers_count,
   });
-}
+};
+
+export default twitter;

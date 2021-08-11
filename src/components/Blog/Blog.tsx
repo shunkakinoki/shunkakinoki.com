@@ -2,6 +2,8 @@ import { MDXRemote } from "next-mdx-remote";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import Link from "next/link";
 
+import type { FC } from "react";
+
 import s from "./Blog.module.css";
 
 export interface Props {
@@ -18,8 +20,8 @@ interface BlogLinkProps {
   href: string;
 }
 
-export default function Blog({ source, slug }: Props): JSX.Element {
-  function BlogLink({ children, href }: BlogLinkProps) {
+export const Blog: FC<Props> = ({ source, slug }) => {
+  const BlogLink = ({ children, href }: BlogLinkProps) => {
     return (
       <Link
         href={
@@ -31,7 +33,7 @@ export default function Blog({ source, slug }: Props): JSX.Element {
         {children}
       </Link>
     );
-  }
+  };
 
   const components = {
     a: BlogLink,
@@ -44,4 +46,4 @@ export default function Blog({ source, slug }: Props): JSX.Element {
       </div>
     </section>
   );
-}
+};

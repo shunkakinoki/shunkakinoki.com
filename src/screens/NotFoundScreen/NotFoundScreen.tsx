@@ -1,9 +1,11 @@
+import type { FC } from "react";
+
 import { LinkButton } from "@/common/Button";
 import { ErrorText } from "@/common/Text";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
-export default function NotFoundScreen(): JSX.Element {
+export const NotFoundScreen: FC = () => {
   return (
     <>
       <Header />
@@ -14,4 +16,4 @@ export default function NotFoundScreen(): JSX.Element {
       <Footer />
     </>
   );
-}
+};

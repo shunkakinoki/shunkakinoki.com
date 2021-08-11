@@ -1,8 +1,10 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Social from "@/components/Social";
+import type { FC } from "react";
 
-export default function SocialScreen(): JSX.Element {
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { Social } from "@/components/Social";
+
+export const SocialScreen: FC = () => {
   return (
     <>
       <Header />
@@ -12,4 +14,4 @@ export default function SocialScreen(): JSX.Element {
       <Footer />
     </>
   );
-}
+};
