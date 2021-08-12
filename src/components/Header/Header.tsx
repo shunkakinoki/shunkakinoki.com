@@ -42,7 +42,7 @@ export const Header: FC = () => {
       >
         <div className="flex flex-grow flex-shrink-0 items-center max-w-screen-sm align-baseline">
           <Link href="/">
-            <a aria-current="page" className="group items-center">
+            <a aria-current="page" className="group">
               <span
                 className="pr-2 sm:pr-3 md:pr-5 text-3xl group-hover:opacity-90"
                 role="img"
@@ -69,7 +69,7 @@ export const Header: FC = () => {
             </HeaderLink>
           </ul>
         </nav>
-        <span className="pr-2 sm:pr-3 md:pr-5">
+        <span className="pl-3">
           <DarkModeButton />
         </span>
       </header>
