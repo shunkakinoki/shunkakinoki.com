@@ -4,17 +4,7 @@ import type { FC } from "react";
 import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
 import { LifeCard } from "@/components/Life/LifeCard";
-import {
-  Diary,
-  Excerpt,
-  Habit,
-  Insight,
-  Resource,
-  Notebook,
-  Airplane,
-  Scale,
-  Variable,
-} from "@/icons";
+import { Airplane, Scale, Variable } from "@/icons";
 
 export interface Props {
   isPartial?: boolean;
@@ -36,36 +26,6 @@ export const Life: FC<Props> = ({ isPartial = false }) => {
         <LifeCard color="red" name="Values" href="/values">
           <Scale />
         </LifeCard>
-        {!isPartial && (
-          <LifeCard color="purple" name="Diary" href="/diary">
-            <Diary />
-          </LifeCard>
-        )}
-        {!isPartial && (
-          <LifeCard color="blue" name="Excerpt" href="/excerpt">
-            <Excerpt />
-          </LifeCard>
-        )}
-        {!isPartial && (
-          <LifeCard color="gray" name="Routine" href="/routine">
-            <Habit />
-          </LifeCard>
-        )}
-        {!isPartial && (
-          <LifeCard color="green" name="Ideas" href="/ideas">
-            <Insight />
-          </LifeCard>
-        )}
-        {!isPartial && (
-          <LifeCard color="yellow" name="Notebook" href="/notebook">
-            <Notebook />
-          </LifeCard>
-        )}
-        {!isPartial && (
-          <LifeCard hidden color="purple" name="Resource" href="/resource">
-            <Resource />
-          </LifeCard>
-        )}
       </div>
       <div className="pt-3 my-3 w-full leading-5 text-center">
         <div className="flex justify-center w-full">
