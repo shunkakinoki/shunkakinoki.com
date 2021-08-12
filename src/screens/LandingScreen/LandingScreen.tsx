@@ -9,6 +9,7 @@ import { History } from "@/components/History";
 import { Life } from "@/components/Life";
 import { Newsletter } from "@/components/Newsletter";
 import { Product } from "@/components/Product";
+import { Seo } from "@/components/Seo";
 import { Social } from "@/components/Social";
 
 export type Props = AboutProps;
@@ -16,6 +17,7 @@ export type Props = AboutProps;
 export const LandingScreen: FC<Props> = ({ source }) => {
   return (
     <>
+      <Seo />
       <Script
         defer
         src="https://static.cloudflareinsights.com/beacon.min.js"

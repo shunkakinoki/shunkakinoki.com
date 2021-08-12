@@ -1,31 +1,31 @@
-import { DefaultSeo } from "next-seo";
-import Head from "next/head";
+import type { NextSeoProps } from "next-seo";
+import { NextSeo } from "next-seo";
 import type { FC } from "react";
 
-export const Seo: FC = () => {
+export interface Props extends NextSeoProps {
+  title?: string;
+  description?: string;
+  date?: string;
+}
+
+export const Seo: FC<Props> = ({ date, title, description, ...rest }) => {
+  const imageUrl =
+    date && title
+      ? `https://shunkakinoki.com/api/image?fileType=png&layoutName=Blog&Theme=Dark&Title=${title}&Date=${date}`
+      : title
+      ? `https://shunkakinoki.com/api/image?fileType=png&layoutName=Website&Theme=Dark&Title=${title}`
+      : "https://shunkakinoki.com/api/image?fileType=png&layoutName=Shun&Title=shunkakinoki";
+
   return (
     <>
-      <DefaultSeo
-        noindex={false}
-        nofollow={false}
-        title="Shun Kakinoki"
-        canonical="https://shunkakinoki.com"
-        description="Shun Kakinoki - Obliterate the Galaxy."
+      <NextSeo
+        title={title}
+        description={description}
         openGraph={{
-          locale: "en_US",
-          site_name: "shunkakinoki.com",
-          type: "website",
-          url: "https://shunkakinoki.com",
+          images: [{ url: imageUrl }],
         }}
-        twitter={{
-          cardType: "summary_large_image",
-          handle: "@shunkakinoki",
-          site: "@shunkakinoki",
-        }}
+        {...rest}
       />
-      <Head>
-        <link rel="icon" href="/favicon.svg" />
-      </Head>
     </>
   );
 };

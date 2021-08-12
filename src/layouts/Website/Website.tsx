@@ -89,12 +89,6 @@ export const Website: ILayout = {
       default: "The Jamstack Backend",
       placeholder: "Big text",
     },
-    {
-      name: "Date",
-      type: "text",
-      default: "2021/01/01",
-      placeholder: "2021/01/01",
-    },
   ],
   Component,
   getCSS,
