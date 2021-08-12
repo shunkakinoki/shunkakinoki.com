@@ -1,3 +1,9 @@
+## [1.17.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.1...v1.17.2) (2021-08-12)
+
+### Performance Improvements
+
+- ini seo screen ([24fab4b](https://github.com/shunkakinoki/shunkakinoki.com/commit/24fab4b8de8ec28d8103807b08a2021a9c44d3df))
+
 ## [1.17.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.0...v1.17.1) (2021-08-11)
 
 ### Performance Improvements
