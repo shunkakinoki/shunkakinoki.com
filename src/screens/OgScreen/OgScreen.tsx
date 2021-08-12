@@ -18,7 +18,7 @@ export const OgScreen: FC = () => {
       <Header />
       <main className="px-6 pb-20 mx-auto w-full max-w-6xl">
         <header className="mt-20 mb-12 space-y-6 text-center">
-          <h1 className="text-5xl font-bold dark:text-white">
+          <h1 className="text-5xl font-bold text-black dark:text-white">
             {t("common:header.og")}
           </h1>
         </header>

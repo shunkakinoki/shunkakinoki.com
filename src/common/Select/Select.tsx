@@ -29,7 +29,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         <select
           ref={forwardedRef}
           className={clsx(
-            "py-1 pr-8 pl-3 w-full h-9 dark:text-white bg-black rounded border hover:border-2 focus:border hover:border-blue-300 dark:border-white dark:hover:border-blue-300 focus:ring-4 focus:ring-sky-800 focus:ring-offset-2 focus:ring-offset-sky-300 appearance-none",
+            "py-1 pr-8 pl-3 w-full h-9 text-black dark:text-white dark:bg-black rounded border hover:border-2 focus:border border-gray-800 hover:border-blue-300 dark:border-white dark:hover:border-blue-400 focus:ring-4 focus:ring-sky-200 dark:focus:ring-sky-800 focus:ring-offset-2 focus:ring-offset-sky-300 appearance-none",
             error ? "border-red-500 hover:border-red-500" : "",
             className,
           )}
