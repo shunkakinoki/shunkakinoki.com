@@ -41,15 +41,18 @@ export const Header: FC = () => {
         className="box-border flex sticky z-30 justify-between items-center p-8 py-6 sm:py-4 md:py-6 px-6 my-6 md:my-8 mx-auto w-full max-w-3xl leading-5 text-gray-400 align-baseline bg-opacity-60 transition ease-in"
       >
         <div className="flex flex-grow flex-shrink-0 items-center max-w-screen-sm align-baseline">
-          <span className="pr-2 sm:pr-3 md:pr-5">
-            <DarkModeButton />
-          </span>
           <Link href="/">
-            <a
-              aria-current="page"
-              className="text-xl lg:text-2xl text-transparent hover:underline bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
-            >
-              shunkakinoki
+            <a aria-current="page" className="group items-center">
+              <span
+                className="pr-2 sm:pr-3 md:pr-5 text-3xl group-hover:opacity-90"
+                role="img"
+                aria-label="Logo"
+              >
+                🦄
+              </span>
+              <span className="text-xl lg:text-2xl text-transparent group-hover:underline bg-clip-text bg-gradient-to-r from-green-300 group-hover:from-green-200 via-blue-500 group-hover:via-blue-400 to-purple-600 group-hover:to-purple-400">
+                shunkakinoki
+              </span>
             </a>
           </Link>
         </div>
@@ -66,6 +69,9 @@ export const Header: FC = () => {
             </HeaderLink>
           </ul>
         </nav>
+        <span className="pr-2 sm:pr-3 md:pr-5">
+          <DarkModeButton />
+        </span>
       </header>
     </nav>
   );
