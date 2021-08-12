@@ -31,9 +31,6 @@ export const History: FC<Props> = ({ isPartial = false }) => {
       <div className="flex-col items-center px-6 sm:px-4 md:px-0 mt-3 w-full">
         <HistoryYear>Present</HistoryYear>
         <ul className="my-3">
-          <HistoryStep time="March 2020 ~ Present" type="work">
-            Founder, Sentrei, Inc.
-          </HistoryStep>
           <HistoryStep time="January 2020 ~ Present" type="globe">
             Living in Tokyo, Japan.
           </HistoryStep>
@@ -45,11 +42,8 @@ export const History: FC<Props> = ({ isPartial = false }) => {
           <>
             <HistoryYear>2020</HistoryYear>
             <ul className="my-3">
-              <HistoryStep time="August 2020" type="tag">
+              <HistoryStep isBottom time="August 2020" type="tag">
                 Selected as a Pioneer at pioneer.app
-              </HistoryStep>
-              <HistoryStep isBottom time="March 2020" type="work">
-                Founded Sentrei, Inc.
               </HistoryStep>
             </ul>
             <HistoryYear>2018</HistoryYear>
