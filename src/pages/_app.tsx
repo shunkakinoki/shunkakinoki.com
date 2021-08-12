@@ -12,7 +12,7 @@ const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       <Script
         defer
         src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon='{"token": "aadfc302c28748169bacfd73215ca576"}'
+        data-cf-beacon='{"token": "3fff5b53524d4928bae2c465c1ac14f2"}'
       />
       <Default />
       <RecoilRoot>
