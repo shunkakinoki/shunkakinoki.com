@@ -1,3 +1,9 @@
+## [1.17.4](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.3...v1.17.4) (2021-08-12)
+
+### Performance Improvements
+
+- refactor og components ([639fe16](https://github.com/shunkakinoki/shunkakinoki.com/commit/639fe16af78ec08c5a0d3bbc61a75100091cc18f))
+
 ## [1.17.3](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.2...v1.17.3) (2021-08-12)
 
 ### Bug Fixes
