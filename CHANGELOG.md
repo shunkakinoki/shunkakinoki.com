@@ -1,3 +1,9 @@
+## [1.17.3](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.2...v1.17.3) (2021-08-12)
+
+### Bug Fixes
+
+- remove react notion ([d468066](https://github.com/shunkakinoki/shunkakinoki.com/commit/d46806645885da68661fa55f38171da3430e80da))
+
 ## [1.17.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.1...v1.17.2) (2021-08-12)
 
 ### Performance Improvements
