@@ -15,12 +15,12 @@ const getCSS: GetCSSFn = () => {
 };
 
 const Component: LayoutComponent = ({ config }) => {
-  return <Markdown>{config.Text}</Markdown>;
+  return <Markdown>{config.Title}</Markdown>;
 };
 
 export const Shun: ILayout = {
   name: "Shun",
-  properties: [{ name: "Text", type: "text", default: "**Hello** _World_" }],
+  properties: [{ name: "Title", type: "text", default: "**Hello** _World_" }],
   Component,
   getCSS,
 };
