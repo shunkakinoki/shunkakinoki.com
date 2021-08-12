@@ -6,17 +6,10 @@ import type {
 } from "next";
 
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
-import type { ExtendedRecordMap } from "notion-types";
-import { parsePageId } from "notion-utils";
 
-import validator from "validator";
-
-import { NotionLinks } from "@/const";
 import { getGithubContent, getGithubSummary } from "@/lib/github";
-import { resolveNotionPage } from "@/lib/notion";
 import { BlogScreen } from "@/screens/BlogScreen";
 import { ContentScreen } from "@/screens/ContentScreen";
-import { NotionScreen } from "@/screens/NotionScreen";
 
 export interface Props {
   content: string;
@@ -28,15 +21,6 @@ export interface Props {
 const blogCollections = ["blog", "pioneer"];
 
 const coreCollections = ["cause", "mission", "values"];
-
-const notionCollections = [
-  "diary",
-  "excerpt",
-  "routine",
-  "ideas",
-  "notebook",
-  "resource",
-];
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -81,101 +65,20 @@ GetStaticPropsContext) => {
 
   const pageId = slugs[0];
 
-  let notionCollection;
-
-  if (notionCollections.includes(pageId)) {
-    switch (pageId) {
-      case "diary": {
-        notionCollection = NotionLinks.diary;
-        break;
-      }
-      case "excerpt": {
-        notionCollection = NotionLinks.excerpt;
-        break;
-      }
-      case "routine": {
-        notionCollection = NotionLinks.routine;
-        break;
-      }
-      case "ideas": {
-        notionCollection = NotionLinks.ideas;
-        break;
-      }
-      case "notebook": {
-        notionCollection = NotionLinks.notebook;
-        break;
-      }
-      case "resource": {
-        notionCollection = NotionLinks.resource;
-        break;
-      }
-      default:
-        break;
-    }
-  }
-
-  if (!validator.isUUID(parsePageId(pageId) || "") && !notionCollection) {
-    console.log(!validator.isUUID(pageId));
-
-    if (blogCollections.includes(pageId)) {
-      const result = await getGithubSummary(pageId, locale);
-      if (result) {
-        const { frontMatter, source } = result;
-        return {
-          props: {
-            content: JSON.stringify(source),
-            frontMatter: JSON.stringify(frontMatter),
-            slug: JSON.stringify(pageId),
-            type: "blog",
-          },
-          revalidate: 30,
-        };
-      } else {
-        return {
-          notFound: true,
-          revalidate: 30,
-        };
-      }
-    }
-
-    if (coreCollections.includes(pageId)) {
-      const result = await getGithubContent(
-        pageId,
-        pageId.toUpperCase(),
-        locale,
-      );
-      if (result) {
-        const { frontMatter, source } = result;
-        return {
-          props: {
-            content: JSON.stringify(source),
-            frontMatter: JSON.stringify(frontMatter),
-            type: "content",
-          },
-          revalidate: 30,
-        };
-      } else {
-        return {
-          notFound: true,
-          revalidate: 30,
-        };
-      }
-    }
-
-    try {
-      const result = await getGithubContent("blog", pageId, locale);
-      if (result) {
-        const { frontMatter, source } = result;
-        return {
-          props: {
-            content: JSON.stringify(source),
-            frontMatter: JSON.stringify(frontMatter),
-            type: "content",
-          },
-          revalidate: 30,
-        };
-      }
-    } catch (err) {
+  if (blogCollections.includes(pageId)) {
+    const result = await getGithubSummary(pageId, locale);
+    if (result) {
+      const { frontMatter, source } = result;
+      return {
+        props: {
+          content: JSON.stringify(source),
+          frontMatter: JSON.stringify(frontMatter),
+          slug: JSON.stringify(pageId),
+          type: "blog",
+        },
+        revalidate: 30,
+      };
+    } else {
       return {
         notFound: true,
         revalidate: 30,
@@ -183,18 +86,40 @@ GetStaticPropsContext) => {
     }
   }
 
-  const page = await resolveNotionPage(notionCollection || pageId);
+  if (coreCollections.includes(pageId)) {
+    const result = await getGithubContent(pageId, pageId.toUpperCase(), locale);
+    if (result) {
+      const { frontMatter, source } = result;
+      return {
+        props: {
+          content: JSON.stringify(source),
+          frontMatter: JSON.stringify(frontMatter),
+          type: "content",
+        },
+        revalidate: 30,
+      };
+    } else {
+      return {
+        notFound: true,
+        revalidate: 30,
+      };
+    }
+  }
 
-  if (page) {
-    const { recordMap } = page;
-    return {
-      props: {
-        content: JSON.stringify(recordMap),
-        type: notionCollection ? "collection" : "page",
-      },
-      revalidate: 30,
-    };
-  } else {
+  try {
+    const result = await getGithubContent("blog", pageId, locale);
+    if (result) {
+      const { frontMatter, source } = result;
+      return {
+        props: {
+          content: JSON.stringify(source),
+          frontMatter: JSON.stringify(frontMatter),
+          type: "content",
+        },
+        revalidate: 30,
+      };
+    }
+  } catch (err) {
     return {
       notFound: true,
       revalidate: 30,
@@ -229,12 +154,7 @@ export const PageId = ({
     );
   }
 
-  return (
-    <NotionScreen
-      fullPage={type === "collection" ? false : true}
-      recordMap={JSON.parse(content) as ExtendedRecordMap}
-    />
-  );
+  return <></>;
 };
 
 export default PageId;
