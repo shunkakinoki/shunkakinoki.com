@@ -1566,10 +1566,12 @@
   resolved "https://registry.yarnpkg.com/@next/env/-/env-11.1.0.tgz#cae83d8e0a65aa9f2af3368f8269ffd9d911746a"
   integrity sha512-zPJkMFRenSf7BLlVee8987G0qQXAhxy7k+Lb/5hLAGkPVHAHm+oFFeL+2ipbI2KTEFlazdmGY0M+AlLQn7pWaw==
 
-"@next/eslint-plugin-next@^11.0.1":
-  version "11.0.1"
-  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-11.0.1.tgz#5dd3264a40fadcf28eba00d914d69103422bb7e6"
-  integrity sha512-UzdX3y6XSrj9YuASUb/p4sRvfjP2klj2YgIOfMwrWoLTTPJQMh00hREB9Ftr7m7RIxjVSAaaLXIRLdxvq948GA==
+"@next/eslint-plugin-next@^11.1.0":
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-11.1.0.tgz#bee19a333e3d2d81d381b9c2fdf2df713f5774e8"
+  integrity sha512-HjLhyshV+ANzTDCFLN1UZMQIyYwZkCdhydfIcOQQVCrqLSd0hCi+AYIGqWfDPhXmP7aeOuKQsmhRmdennQV2qw==
+  dependencies:
+    glob "7.1.7"
 
 "@next/polyfill-module@11.0.1":
   version "11.0.1"
@@ -2072,12 +2074,12 @@
     scripty "^2.0.0"
     sort-package-json "^1.50.0"
 
-"@shunkakinoki/eslint-config@^1.1.11":
-  version "1.1.11"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.11.tgz#fcb1c8545aba4741ae6e35559574db400a08353d"
-  integrity sha512-vYTOQ8QUsoaEm7kmcDWhXvKb63Mh+nYslAsL4S4MKzSjKrdrXukZSC6nWBk9dnfPNIN7Jzez8X6nklh0vqh/fA==
+"@shunkakinoki/eslint-config@^1.1.12":
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.12.tgz#bc5d9be153cb605ab734c099847430aba0102976"
+  integrity sha512-NXfupmYK+gJr58++fwhoRXItB+1L9XQv2qVIHf8RrbJPyXJRsGcg3w2rrkXZDup/TYkojPlrGS3uHRBfSJkrRQ==
   dependencies:
-    "@next/eslint-plugin-next" "^11.0.1"
+    "@next/eslint-plugin-next" "^11.1.0"
     "@typescript-eslint/eslint-plugin" "^4.29.1"
     "@typescript-eslint/parser" "^4.29.1"
     eslint "^7.32.0"
@@ -8159,7 +8161,7 @@ glob@7.1.4:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^7.0.0, glob@^7.0.3, glob@^7.1.1, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6, glob@^7.1.7:
+glob@7.1.7, glob@^7.0.0, glob@^7.0.3, glob@^7.1.1, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6, glob@^7.1.7:
   version "7.1.7"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.7.tgz#3b193e9233f01d42d0b3f78294bbeeb418f94a90"
   integrity sha512-OvD9ENzPLbegENnYP5UUfJIirTg4+XwMWGaQfQTY0JenxNvvIKP3U3/tAQSPIu/lHxXYSZmpXlUHeqAIdKzBLQ==
