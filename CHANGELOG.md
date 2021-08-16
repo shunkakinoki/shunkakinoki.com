@@ -1,3 +1,9 @@
+## [1.17.5](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.4...v1.17.5) (2021-08-16)
+
+### Bug Fixes
+
+- **deps:** update dependency next-sitemap to ^1.6.157 ([166eab3](https://github.com/shunkakinoki/shunkakinoki.com/commit/166eab3b641ddfd874514cfb2d7777472e9f78d8))
+
 ## [1.17.4](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.3...v1.17.4) (2021-08-12)
 
 ### Performance Improvements
