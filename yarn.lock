@@ -2118,12 +2118,12 @@
   dependencies:
     npm-check-updates "^11.8.3"
 
-"@shunkakinoki/npm-package-json-lint-config@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/npm-package-json-lint-config/-/npm-package-json-lint-config-1.0.1.tgz#d982badda0a1ac9cd166750dc600a8c977f54ba6"
-  integrity sha512-eaOnQ0g8Lidesvhys2zVtoK3UHT83BNUTk8X2xk68Sn6U2bUoMw9NMD6U3uAhGyhfStThBnwjwkKxCXBHxc4Uw==
+"@shunkakinoki/npm-package-json-lint-config@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/npm-package-json-lint-config/-/npm-package-json-lint-config-1.0.2.tgz#cd3b9460fcf190bc886b0731991c750249ac04b6"
+  integrity sha512-FHwxoZujJehoiJqhlvhNTNY2UEvh+ht31txGnCxomzVmbuMKiFW39nYWh7VfMBvjj7yvGvblIylTl/QjLd0rlw==
   dependencies:
-    npm-package-json-lint "^5.2.2"
+    npm-package-json-lint "^5.2.3"
 
 "@shunkakinoki/prettier@^1.0.0":
   version "1.0.0"
@@ -11562,14 +11562,14 @@ npm-package-arg@^8.0.0, npm-package-arg@^8.0.1, npm-package-arg@^8.1.0, npm-pack
     semver "^7.3.4"
     validate-npm-package-name "^3.0.0"
 
-npm-package-json-lint@^5.2.2:
-  version "5.2.2"
-  resolved "https://registry.yarnpkg.com/npm-package-json-lint/-/npm-package-json-lint-5.2.2.tgz#5d24d77112423a90ef7423f11e538a0ed363bb52"
-  integrity sha512-rs+mTLK31dRHzOrPcA33VoVgPxib0WecKGKOm6XkE186/FqiZGmGgkNLpxx1baUORkSmU1ETyi7aQXlZUzqZIA==
+npm-package-json-lint@^5.2.3:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/npm-package-json-lint/-/npm-package-json-lint-5.2.3.tgz#87049bf2089337c275cb0650f2341bf286706dd5"
+  integrity sha512-rSgc4eVhtfwrU7AWwovqFWy8OEkgQL99vD3vWJmqtU9gxxJxKzi6Wqgo3gF7lhrBpyVcnlKxy/L2JCsvjWruDA==
   dependencies:
     ajv "^6.12.6"
     ajv-errors "^1.0.1"
-    chalk "^4.1.1"
+    chalk "^4.1.2"
     cosmiconfig "^6.0.0"
     debug "^4.3.2"
     globby "^11.0.4"
