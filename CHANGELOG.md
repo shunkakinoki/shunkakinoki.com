@@ -1,3 +1,9 @@
+## [1.17.6](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.5...v1.17.6) (2021-08-16)
+
+### Bug Fixes
+
+- **deps:** update dependency marked to v3 ([940538b](https://github.com/shunkakinoki/shunkakinoki.com/commit/940538b2fa0c9a70967ef79d074cc7e34f6a4787))
+
 ## [1.17.5](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.4...v1.17.5) (2021-08-16)
 
 ### Bug Fixes
