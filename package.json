@@ -87,7 +87,7 @@
     "@shunkakinoki/npm-check-updates": "^1.0.2",
     "@shunkakinoki/npm-package-json-lint-config": "^1.0.1",
     "@shunkakinoki/prettier": "^1.0.0",
-    "@shunkakinoki/semantic-release": "^1.2.2",
+    "@shunkakinoki/semantic-release": "^1.2.3",
     "@shunkakinoki/stylelint": "^1.0.1",
     "@shunkakinoki/tailwindcss": "^1.0.3",
     "@shunkakinoki/tsconfig": "^1.1.1",
