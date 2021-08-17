@@ -1,4 +1,4 @@
-import { ThumbUpIcon } from "@heroicons/react/solid";
+import { ThumbUpIcon } from "@heroicons/react/outline";
 import type { FC } from "react";
 
 import { DashboardCard } from "@/components/Dashboard/DashboardCard";

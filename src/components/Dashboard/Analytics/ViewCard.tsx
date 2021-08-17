@@ -1,4 +1,4 @@
-import { EyeIcon } from "@heroicons/react/solid";
+import { EyeIcon } from "@heroicons/react/outline";
 import type { FC } from "react";
 
 import { DashboardCard } from "@/components/Dashboard/DashboardCard";

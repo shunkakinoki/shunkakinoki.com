@@ -1,4 +1,4 @@
-import { BadgeCheckIcon } from "@heroicons/react/solid";
+import { BadgeCheckIcon } from "@heroicons/react/outline";
 import type { ReactNode, FC } from "react";
 
 import { SocialLinks } from "@/const";

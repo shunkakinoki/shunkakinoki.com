@@ -1,4 +1,4 @@
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/solid";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/outline";
 import type { LinkProps } from "next/link";
 import Link from "next/link";
 

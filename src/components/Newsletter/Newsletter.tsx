@@ -104,12 +104,12 @@ export const Newsletter: FC = () => {
                 />
                 {form?.state === "error" && (
                   <div className="flex absolute inset-y-0 right-0 items-center pr-3 text-red-500 pointer-events-none">
-                    <ExclamationCircleIcon className="w-6 h-6" />
+                    <ExclamationCircleIcon className="w-3 h-3" />
                   </div>
                 )}
                 {form?.state === "success" && (
                   <div className="flex absolute inset-y-0 right-0 items-center pr-3 text-green-500 pointer-events-none">
-                    <BadgeCheckIcon className="w-6 h-6" />
+                    <BadgeCheckIcon className="w-3 h-3" />
                   </div>
                 )}
               </div>
@@ -165,7 +165,7 @@ export const Newsletter: FC = () => {
               </p>
             )}
             <p className="flex mx-auto mt-4 max-w-2xl text-xs font-medium text-indigo-50 align-text-bottom">
-              <LightBulbIcon className="w-6 h-6" />
+              <LightBulbIcon className="pr-1 w-4 h-4" />
               {number} Subscribers
             </p>
           </div>

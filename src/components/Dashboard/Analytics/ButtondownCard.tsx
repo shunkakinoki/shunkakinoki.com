@@ -1,4 +1,4 @@
-import { UserGroupIcon } from "@heroicons/react/solid";
+import { UserGroupIcon } from "@heroicons/react/outline";
 import type { FC } from "react";
 
 import { DashboardCard } from "@/components/Dashboard/DashboardCard";
