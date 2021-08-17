@@ -1,3 +1,9 @@
+## [1.21.3](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.2...v1.21.3) (2021-08-17)
+
+### Performance Improvements
+
+- ini profile auth ([c008243](https://github.com/shunkakinoki/shunkakinoki.com/commit/c0082435c0083d19cb6d7a048206f38ee946c803))
+
 ## [1.21.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.1...v1.21.2) (2021-08-17)
 
 ### Bug Fixes
