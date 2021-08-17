@@ -8,6 +8,7 @@ import { LocaleSelect } from "@/components/Footer/LocaleSelect";
 
 import { SocialLinks } from "@/const";
 import { Facebook, Github, Instagram, Linkedin, Twitter } from "@/icons";
+import packageJson from "@/packageJson";
 
 interface FooterLinkProps extends LinkProps {
   children: string;
@@ -82,7 +83,7 @@ export const Footer: FC = () => {
       </div>
       <div className="flex flex-col sm:flex-row justify-center items-center pt-8 mx-auto space-y-6 sm:space-y-0 space-x-6 max-w-3xl">
         <p className="flex-shrink-0 text-base text-center text-gray-400">
-          &copy; Shun Kakinoki. All rights reserved.
+          v{packageJson.version}. &copy; Shun Kakinoki. All rights reserved.
         </p>
         <CreditsButton />
         <div className="sm:flex-grow-0">

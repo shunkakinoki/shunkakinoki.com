@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@/packageJson": ["package.json"]
     }
   },
   "exclude": ["node_modules"],
