@@ -2,7 +2,13 @@ import useSWR from "swr";
 
 import { fetcher } from "@/lib/fetcher";
 
-export const analytics = ["buttondown", "github", "twitter"] as const;
+export const analytics = [
+  "buttondown",
+  "github",
+  "twitter",
+  "views",
+  "likes",
+] as const;
 
 export type Analytics = typeof analytics[number];
 

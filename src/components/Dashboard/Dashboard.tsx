@@ -5,6 +5,8 @@ import {
   ButtondownCard,
   GithubCard,
   TwitterCard,
+  ViewCard,
+  LikeCard,
 } from "@/components/Dashboard/Analytics";
 
 export const Dashboard: FC = () => {
@@ -17,6 +19,8 @@ export const Dashboard: FC = () => {
         <ButtondownCard />
         <GithubCard />
         <TwitterCard />
+        <ViewCard />
+        <LikeCard />
       </dl>
     </section>
   );

@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.4.0",
+    "@heroicons/react": "^1.0.4",
     "@next-auth/prisma-adapter": "^0.5.4",
     "@next/bundle-analyzer": "^11.1.0",
     "@prisma/client": "^2.29.1",
