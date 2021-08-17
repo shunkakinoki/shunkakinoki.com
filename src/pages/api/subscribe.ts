@@ -1,4 +1,11 @@
+import Cors from "cors";
 import type { NextApiRequest, NextApiResponse } from "next";
+
+import { runMiddleware } from "@/lib/runMiddleware";
+
+const cors = Cors({
+  methods: ["GET"],
+});
 
 export const subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -9,6 +16,8 @@ export const subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   try {
+    await runMiddleware(req, res, cors);
+
     const API_KEY = process.env.BUTTONDOWN_API_KEY;
     const response = await fetch(
       `https://api.buttondown.email/v1/subscribers`,
@@ -42,9 +51,10 @@ export const subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     return res.status(201).json({ error: "" });
-  } catch (error) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-    return res.status(500).json({ error: error.message || error.toString() });
+  } catch (err) {
+    if (err instanceof Error) {
+      return res.status(500).json({ error: err.message || err.toString() });
+    }
   }
 };
 

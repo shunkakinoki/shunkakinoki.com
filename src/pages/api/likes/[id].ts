@@ -1,9 +1,17 @@
+import Cors from "cors";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import prisma from "@/lib/prisma";
+import { runMiddleware } from "@/lib/runMiddleware";
+
+const cors = Cors({
+  methods: ["GET", "POST"],
+});
 
 export const likes = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
+    await runMiddleware(req, res, cors);
+
     const id = req.query.id as string;
 
     switch (req.method) {
