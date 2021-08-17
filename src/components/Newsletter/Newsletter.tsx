@@ -1,15 +1,12 @@
 import clsx from "clsx";
 import { useState } from "react";
 import type { FC } from "react";
-import useSWR from "swr";
 
+import { useAnalytics } from "@/hooks/useAnalytics";
 import { Badge, Exclamation, Light } from "@/icons";
-import { fetcher } from "@/lib/fetcher";
 
 export const Newsletter: FC = () => {
-  const { data } = useSWR<{
-    subscribers: number;
-  }>("/api/buttondown", fetcher);
+  const { number } = useAnalytics("buttondown");
 
   const [form, setForm] = useState<{
     message: string;
@@ -165,7 +162,7 @@ export const Newsletter: FC = () => {
             )}
             <p className="flex mx-auto mt-4 max-w-2xl text-xs font-medium text-indigo-50 align-text-bottom">
               <Light />
-              {data?.subscribers} Subscribers
+              {number} Subscribers
             </p>
           </div>
         </div>

@@ -17,7 +17,7 @@ export const github = async (req: NextApiRequest, res: NextApiResponse) => {
 
   return res.status(200).json({
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-    followers: user?.followers,
+    number: user?.followers,
   });
 };
 

@@ -2,25 +2,20 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import prisma from "@/lib/prisma";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse,
-) {
+export const views = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const id = req.query.id as string;
 
     switch (req.method) {
       case "GET": {
-        const [post, user] = await Promise.all([
-          // get the number of times the current user has liked this post
-          prisma.likes.findUnique({
+        const [views] = await Promise.all([
+          prisma.views.findUnique({
             where: { id },
           }),
         ]);
 
         res.json({
-          totalPostLikes: post?.likes || 0,
-          currentUserLikes: user?.likes || 0,
+          views: views?.views || 0,
         });
         return;
       }
@@ -35,4 +30,6 @@ export default async function handler(
       });
     }
   }
-}
+};
+
+export default views;
