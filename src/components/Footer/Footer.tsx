@@ -3,11 +3,18 @@ import Link from "next/link";
 
 import type { ReactNode, FC } from "react";
 
+import {
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
+
 import { CreditsButton } from "@/components/Footer/CreditsButton";
 import { LocaleSelect } from "@/components/Footer/LocaleSelect";
 
 import { SocialLinks } from "@/const";
-import { Facebook, Github, Instagram, Linkedin, Twitter } from "@/icons";
 import packageJson from "@/packageJson";
 
 interface FooterLinkProps extends LinkProps {
@@ -62,23 +69,23 @@ export const Footer: FC = () => {
       <div className="flex justify-center mt-8 space-x-6">
         <FooterIconLink href={SocialLinks.facebook}>
           <span className="sr-only">Facebook</span>
-          <Facebook />
+          <FaFacebook className="w-6 h-6" />
         </FooterIconLink>
         <FooterIconLink href={SocialLinks.instagram}>
           <span className="sr-only">Instagram</span>
-          <Instagram />
+          <FaInstagram className="w-6 h-6" />
         </FooterIconLink>
         <FooterIconLink href={SocialLinks.linkedin}>
           <span className="sr-only">Linkedin</span>
-          <Linkedin />
+          <FaLinkedin className="w-6 h-6" />
         </FooterIconLink>
         <FooterIconLink href={SocialLinks.github}>
           <span className="sr-only">GitHub</span>
-          <Github />
+          <FaGithub className="w-6 h-6" />
         </FooterIconLink>
         <FooterIconLink href={SocialLinks.twitter}>
           <span className="sr-only">Twitter</span>
-          <Twitter />
+          <FaTwitter className="w-6 h-6" />
         </FooterIconLink>
       </div>
       <div className="flex flex-col sm:flex-row justify-center items-center pt-8 mx-auto space-y-6 sm:space-y-0 space-x-6 max-w-3xl">

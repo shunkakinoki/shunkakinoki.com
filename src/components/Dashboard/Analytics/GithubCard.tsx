@@ -1,9 +1,10 @@
 import type { FC } from "react";
 
+import { FaGithub } from "react-icons/fa";
+
 import { DashboardCard } from "@/components/Dashboard/DashboardCard";
 import { SocialLinks } from "@/const";
 import { useAnalytics } from "@/hooks/useAnalytics";
-import { Github } from "@/icons";
 
 export const GithubCard: FC = () => {
   const { number } = useAnalytics("github");
@@ -14,7 +15,7 @@ export const GithubCard: FC = () => {
       href={SocialLinks.github}
       title="GitHub Followers"
     >
-      <Github />
+      <FaGithub className="w-6 h-6" />
     </DashboardCard>
   );
 };

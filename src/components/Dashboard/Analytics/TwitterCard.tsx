@@ -1,9 +1,10 @@
 import type { FC } from "react";
 
+import { FaTwitter } from "react-icons/fa";
+
 import { DashboardCard } from "@/components/Dashboard/DashboardCard";
 import { SocialLinks } from "@/const";
 import { useAnalytics } from "@/hooks/useAnalytics";
-import { Twitter } from "@/icons";
 
 export const TwitterCard: FC = () => {
   const { number } = useAnalytics("twitter");
@@ -14,7 +15,7 @@ export const TwitterCard: FC = () => {
       href={SocialLinks.twitter}
       title="Twitter Followers"
     >
-      <Twitter />
+      <FaTwitter className="w-6 h-6" />
     </DashboardCard>
   );
 };
