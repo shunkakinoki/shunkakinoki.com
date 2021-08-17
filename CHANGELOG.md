@@ -1,3 +1,13 @@
+# [1.20.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.19.1...v1.20.0) (2021-08-17)
+
+### Features
+
+- ini next auth ([f3b4d95](https://github.com/shunkakinoki/shunkakinoki.com/commit/f3b4d95c137ca540b69ff1457d7985da2110556d))
+
+### Performance Improvements
+
+- ini auth api ([e012f25](https://github.com/shunkakinoki/shunkakinoki.com/commit/e012f25ce367c6c3805abec50dcd25a4b71c4d04))
+
 ## [1.19.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.19.0...v1.19.1) (2021-08-17)
 
 ### Performance Improvements
