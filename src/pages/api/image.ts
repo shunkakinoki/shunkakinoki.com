@@ -1,13 +1,20 @@
+import Cors from "cors";
 import type { NextApiHandler } from "next";
 
 import { getHtml } from "@/lib/getHtml";
 import { getScreenshot } from "@/lib/getScreenshot";
 import { parseRequest } from "@/lib/parseRequest";
+import { runMiddleware } from "@/lib/runMiddleware";
+
+const cors = Cors({
+  methods: ["GET"],
+});
 
 const isDev = !process.env.AWS_REGION;
 
 export const image: NextApiHandler = async (req, res) => {
   try {
+    await runMiddleware(req, res, cors);
     const config = parseRequest(req);
     console.log(`\n--- /api/image---\nCONFIG: ${JSON.stringify(config)}\n`);
     const html = getHtml(config);
