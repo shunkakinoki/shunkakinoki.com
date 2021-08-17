@@ -52,13 +52,13 @@ export const HistoryStep: FC<Props> = ({
                 type === "work" && "bg-indigo-500",
               )}
             >
-              {type === "cake" && <CakeIcon className="w-6 h-6" />}
-              {type === "chip" && <ChipIcon className="w-6 h-6" />}
-              {type === "fire" && <FireIcon className="w-6 h-6" />}
-              {type === "globe" && <GlobeIcon className="w-6 h-6" />}
-              {type === "school" && <AcademicCapIcon className="w-6 h-6" />}
-              {type === "tag" && <TagIcon className="w-6 h-6" />}
-              {type === "work" && <BriefcaseIcon className="w-6 h-6" />}
+              {type === "cake" && <CakeIcon className="w-5 h-5" />}
+              {type === "chip" && <ChipIcon className="w-5 h-5" />}
+              {type === "fire" && <FireIcon className="w-5 h-5" />}
+              {type === "globe" && <GlobeIcon className="w-5 h-5" />}
+              {type === "school" && <AcademicCapIcon className="w-5 h-5" />}
+              {type === "tag" && <TagIcon className="w-5 h-5" />}
+              {type === "work" && <BriefcaseIcon className="w-5 h-5" />}
             </span>
           </div>
           <div className="flex flex-1 justify-between items-center space-x-4 min-w-0">
