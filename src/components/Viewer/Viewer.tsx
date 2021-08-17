@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 
 import type { FC } from "react";
@@ -43,8 +44,8 @@ export const Viewer: FC = () => {
   return (
     <div className="col-span-2 space-y-4 w-full">
       <div className="relative w-full">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
+          placeholder="blur"
           className={clsx(!isLoaded && "blur-sm")}
           src={debouncedImageURL}
           alt={`OG for the ${config.layoutName} layout`}

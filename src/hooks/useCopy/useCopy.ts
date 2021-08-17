@@ -11,9 +11,13 @@ export const useCopy = (): [boolean, (text: string) => void] => {
     setShowCopied(true);
 
     if (timeoutRef.current != null) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
       clearTimeout(timeoutRef.current);
     }
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
     timeoutRef.current = setTimeout(() => {
       setShowCopied(false);
       timeoutRef.current = null;

@@ -9,10 +9,9 @@ import s from "./Header.module.css";
 import { DarkModeButton } from "@/components/Header/DarkModeButton";
 import { MenuButton } from "@/components/Header/MenuButton";
 
-const MobileMenu = dynamic(() => {
-  return import("@/components/Header/MobileMenu").then(m => {
-    return m.MobileMenu;
-  });
+const MobileMenu = dynamic(async () => {
+  const m = await import("@/components/Header/MobileMenu");
+  return m.MobileMenu;
 });
 
 interface HeaderLinkProps extends LinkProps {
@@ -44,7 +43,7 @@ export const Header: FC = () => {
           <Link href="/">
             <a aria-current="page" className="group">
               <span
-                className="pr-2 sm:pr-3 md:pr-5 text-3xl group-hover:opacity-90"
+                className="pr-2 sm:pr-3 md:pr-5 text-3xl group-hover:opacity-60"
                 role="img"
                 aria-label="Logo"
               >
