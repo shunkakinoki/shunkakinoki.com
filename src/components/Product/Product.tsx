@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import Image from "next/image";
 
 import type { FC } from "react";
 
@@ -30,16 +29,7 @@ export const Product: FC<Props> = ({ isPartial = false }) => {
             description="Sentrei is an all-in-one serverless backend infrastructure of your dreams"
             name="Sentrei"
             href={ProductLinks.sentrei}
-          >
-            <Image
-              layout="intrinsic"
-              width={64}
-              height={64}
-              src="/sentrei.png"
-              alt="Sentrei"
-              className="inline py-1 pr-2"
-            />
-          </ProductCard>
+          />
         </ul>
       </div>
       <div className="pt-3 my-3 w-full leading-5 text-center">

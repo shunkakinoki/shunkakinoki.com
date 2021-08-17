@@ -3,7 +3,7 @@ import type { FC } from "react";
 import { External } from "@/icons";
 
 export interface Props {
-  children: JSX.Element;
+  children?: JSX.Element;
   description: string;
   name: string;
   href: string;
