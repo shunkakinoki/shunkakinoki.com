@@ -24,7 +24,7 @@ export const buttondown = async (req: NextApiRequest, res: NextApiResponse) => {
 
   return res.status(200).json({
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-    subscribers: newsletter?.count,
+    number: newsletter?.count,
   });
 };
 

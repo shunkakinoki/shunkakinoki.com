@@ -1,19 +1,16 @@
 import type { FC } from "react";
-import useSWR from "swr";
 
 import { DashboardCard } from "@/components/Dashboard/DashboardCard";
 import { SocialLinks } from "@/const";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import { Github } from "@/icons";
-import { fetcher } from "@/lib/fetcher";
 
 export const GithubCard: FC = () => {
-  const { data } = useSWR<{
-    followers: number;
-  }>("/api/github", fetcher);
+  const { number } = useAnalytics("github");
 
   return (
     <DashboardCard
-      number={data?.followers}
+      number={number}
       href={SocialLinks.github}
       title="GitHub Followers"
     >

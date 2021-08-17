@@ -15,3 +15,8 @@ model Likes {
   createdAt DateTime @default(now())
   likes     Int      @default(1)
 }
+
+model Views {
+  id    String @id
+  views Int    @default(1)
+}
