@@ -13784,11 +13784,6 @@ readdirp@~3.5.0:
   dependencies:
     picomatch "^2.2.1"
 
-readline@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/readline/-/readline-1.3.0.tgz#c580d77ef2cfc8752b132498060dc9793a7ac01c"
-  integrity sha1-xYDXfvLPyHUrEySYBg3JeTp6wBw=
-
 recoil@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/recoil/-/recoil-0.4.0.tgz#2a933ba7c043cbf6f50f52da0828a879c7cd7d69"
