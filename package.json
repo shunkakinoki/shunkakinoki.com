@@ -48,6 +48,9 @@
     "tsc": "tsc",
     "tsc:watch": "tsc -w"
   },
+  "resolutions": {
+    "typescript": "^4.3.5"
+  },
   "dependencies": {
     "@headlessui/react": "^1.4.0",
     "@next/bundle-analyzer": "^11.1.0",
