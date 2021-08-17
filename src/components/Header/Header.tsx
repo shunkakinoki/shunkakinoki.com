@@ -43,7 +43,7 @@ export const Header: FC = () => {
           <Link href="/">
             <a aria-current="page" className="group">
               <span
-                className="pr-2 sm:pr-3 md:pr-5 text-3xl group-hover:opacity-90"
+                className="pr-2 sm:pr-3 md:pr-5 text-3xl group-hover:opacity-60"
                 role="img"
                 aria-label="Logo"
               >
