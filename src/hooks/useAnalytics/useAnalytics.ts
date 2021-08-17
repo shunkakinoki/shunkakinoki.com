@@ -11,8 +11,6 @@ export const useAnalytics = (analytics: Analytics) => {
 
   const { data, error } = useSWR(key, fetcher);
 
-  console.log(data);
-
   return {
     error,
     isLoading: !error && !data,

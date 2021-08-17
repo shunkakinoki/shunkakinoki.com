@@ -4,7 +4,8 @@ import Script from "next/script";
 import { RecoilRoot } from "recoil";
 
 import "tailwindcss/tailwind.css";
-import { Default } from "@/components/Seo";
+import { Analytics } from "@/components/Analytics";
+import { DefaultSeo } from "@/components/Seo";
 
 const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
@@ -14,7 +15,8 @@ const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
         src="https://static.cloudflareinsights.com/beacon.min.js"
         data-cf-beacon='{"token": "3fff5b53524d4928bae2c465c1ac14f2"}'
       />
-      <Default />
+      <Analytics />
+      <DefaultSeo />
       <RecoilRoot>
         <ThemeProvider attribute="class" defaultTheme="system">
           <Component {...pageProps} />

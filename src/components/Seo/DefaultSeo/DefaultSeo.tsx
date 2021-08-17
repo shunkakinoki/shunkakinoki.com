@@ -1,14 +1,14 @@
-import { DefaultSeo } from "next-seo";
+import { DefaultSeo as Default } from "next-seo";
 import Head from "next/head";
 import type { FC } from "react";
 
 export const image =
   "https://shunkakinoki.com/api/image?fileType=png&layoutName=Shun&Text=shunkakinoki";
 
-export const Default: FC = () => {
+export const DefaultSeo: FC = () => {
   return (
     <>
-      <DefaultSeo
+      <Default
         noindex={false}
         nofollow={false}
         title="Shun Kakinoki"

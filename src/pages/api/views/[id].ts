@@ -19,6 +19,26 @@ export const views = async (req: NextApiRequest, res: NextApiResponse) => {
         });
         return;
       }
+      case "POST": {
+        const [views] = await Promise.all([
+          prisma.views.upsert({
+            where: { id: id },
+            create: {
+              id: id,
+              views: 1,
+            },
+            update: {
+              views: {
+                increment: 1,
+              },
+            },
+          }),
+        ]);
+
+        res.json({
+          views: views?.views || 0,
+        });
+      }
     }
   } catch (err) {
     if (err instanceof Error) {

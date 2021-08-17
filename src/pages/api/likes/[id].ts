@@ -19,6 +19,28 @@ export const likes = async (req: NextApiRequest, res: NextApiResponse) => {
         });
         return;
       }
+      case "POST": {
+        const [likes] = await Promise.all([
+          prisma.likes.upsert({
+            where: { id: id },
+            create: {
+              id: id,
+              likes: 1,
+            },
+            update: {
+              likes: {
+                increment: 1,
+              },
+            },
+          }),
+        ]);
+
+        res.json({
+          likes: likes?.likes || 0,
+        });
+
+        return;
+      }
     }
   } catch (err) {
     if (err instanceof Error) {
