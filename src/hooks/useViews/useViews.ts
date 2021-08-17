@@ -11,6 +11,6 @@ export const useViews = (id: string) => {
     error,
     isLoading: !error && !data,
     isError: !!error,
-    views: data.views,
+    views: data?.views,
   };
 };
