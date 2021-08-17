@@ -15,6 +15,6 @@ export const useAnalytics = (analytics: Analytics) => {
     error,
     isLoading: !error && !data,
     isError: !!error,
-    number: data?.number,
+    number: Number(data?.number),
   };
 };

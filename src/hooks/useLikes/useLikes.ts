@@ -11,6 +11,6 @@ export const useLikes = (id: string) => {
     error,
     isLoading: !error && !data,
     isError: !!error,
-    likes: data?.likes,
+    likes: Number(data?.likes),
   };
 };
