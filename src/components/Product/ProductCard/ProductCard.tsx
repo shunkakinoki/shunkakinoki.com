@@ -1,6 +1,5 @@
+import { ExternalLinkIcon } from "@heroicons/react/outline";
 import type { FC } from "react";
-
-import { External } from "@/icons";
 
 export interface Props {
   children?: JSX.Element;
@@ -36,7 +35,7 @@ export const ProductCard: FC<Props> = ({
             </p>
           </div>
           <div className="flex-shrink-0 text-gray-500">
-            <External />
+            <ExternalLinkIcon className="w-6 h-6" />
           </div>
         </div>
       </a>

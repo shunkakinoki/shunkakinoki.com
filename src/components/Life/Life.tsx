@@ -1,10 +1,14 @@
+import {
+  PaperAirplaneIcon,
+  ScaleIcon,
+  VariableIcon,
+} from "@heroicons/react/outline";
 import clsx from "clsx";
 import type { FC } from "react";
 
 import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
 import { LifeCard } from "@/components/Life/LifeCard";
-import { Airplane, Scale, Variable } from "@/icons";
 
 export interface Props {
   isPartial?: boolean;
@@ -18,13 +22,13 @@ export const Life: FC<Props> = ({ isPartial = false }) => {
       </div>
       <div className="sm:grid overflow-hidden sm:grid-cols-2 md:grid-cols-3 sm:gap-0.5 bg-gray-200 dark:bg-gray-600 divide-y sm:divide-y-0 divide-gray-200">
         <LifeCard color="pink" name="Cause" href="/cause">
-          <Variable />
+          <VariableIcon className="w-6 h-6" />
         </LifeCard>
         <LifeCard color="indigo" name="Mission" href="/mission">
-          <Airplane />
+          <PaperAirplaneIcon className="w-6 h-6" />
         </LifeCard>
         <LifeCard color="red" name="Values" href="/values">
-          <Scale />
+          <ScaleIcon className="w-6 h-6" />
         </LifeCard>
       </div>
       <div className="pt-3 my-3 w-full leading-5 text-center">

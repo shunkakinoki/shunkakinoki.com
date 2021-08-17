@@ -1,9 +1,13 @@
+import {
+  BadgeCheckIcon,
+  ExclamationCircleIcon,
+  LightBulbIcon,
+} from "@heroicons/react/outline";
 import clsx from "clsx";
 import { useState } from "react";
 import type { FC } from "react";
 
 import { useAnalytics } from "@/hooks/useAnalytics";
-import { Badge, Exclamation, Light } from "@/icons";
 
 export const Newsletter: FC = () => {
   const { number } = useAnalytics("buttondown");
@@ -100,12 +104,12 @@ export const Newsletter: FC = () => {
                 />
                 {form?.state === "error" && (
                   <div className="flex absolute inset-y-0 right-0 items-center pr-3 text-red-500 pointer-events-none">
-                    <Exclamation />
+                    <ExclamationCircleIcon className="w-6 h-6" />
                   </div>
                 )}
                 {form?.state === "success" && (
                   <div className="flex absolute inset-y-0 right-0 items-center pr-3 text-green-500 pointer-events-none">
-                    <Badge />
+                    <BadgeCheckIcon className="w-6 h-6" />
                   </div>
                 )}
               </div>
@@ -161,7 +165,7 @@ export const Newsletter: FC = () => {
               </p>
             )}
             <p className="flex mx-auto mt-4 max-w-2xl text-xs font-medium text-indigo-50 align-text-bottom">
-              <Light />
+              <LightBulbIcon className="w-6 h-6" />
               {number} Subscribers
             </p>
           </div>

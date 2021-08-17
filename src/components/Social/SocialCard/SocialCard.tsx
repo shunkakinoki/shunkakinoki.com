@@ -1,7 +1,7 @@
+import { BadgeCheckIcon } from "@heroicons/react/solid";
 import type { ReactNode, FC } from "react";
 
 import { SocialLinks } from "@/const";
-import { Check } from "@/icons";
 
 export interface Props {
   children: ReactNode;
@@ -30,7 +30,7 @@ export const SocialCard: FC<Props> = ({
               {title}
               {isPriority && (
                 <span className="pl-2 text-green-400 dark:text-green-300">
-                  <Check />
+                  <BadgeCheckIcon className="w-6 h-6" />
                 </span>
               )}
             </h4>

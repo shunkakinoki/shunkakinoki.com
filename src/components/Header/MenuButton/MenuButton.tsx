@@ -1,7 +1,7 @@
+import { MenuAlt3Icon } from "@heroicons/react/outline";
 import type { FC } from "react";
 
 import { useMobileMenu } from "@/hooks/useMobileMenu";
-import { Menu } from "@/icons";
 
 export const MenuButton: FC = () => {
   const [, setMenuOpen] = useMobileMenu();
@@ -17,7 +17,7 @@ export const MenuButton: FC = () => {
       }}
     >
       <span className="sr-only">Open menu</span>
-      <Menu />
+      <MenuAlt3Icon className="w-6 h-6" />
     </button>
   );
 };

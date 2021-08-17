@@ -1,7 +1,6 @@
+import { ChevronDownIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
 import type { FC } from "react";
-
-import { Down } from "@/icons";
 
 export const LocaleSelect: FC = () => {
   const router = useRouter();
@@ -32,7 +31,7 @@ export const LocaleSelect: FC = () => {
             </select>
           )}
           <div className="flex absolute inset-y-0 right-0 items-center px-2 text-gray-600 dark:text-gray-300 pointer-events-none">
-            <Down />
+            <ChevronDownIcon className="w-6 h-6" />
           </div>
         </div>
       </fieldset>

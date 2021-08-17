@@ -1,9 +1,9 @@
+import { UserGroupIcon } from "@heroicons/react/solid";
 import type { FC } from "react";
 
 import { DashboardCard } from "@/components/Dashboard/DashboardCard";
 import { SocialLinks } from "@/const";
 import { useAnalytics } from "@/hooks/useAnalytics";
-import { User } from "@/icons";
 
 export const ButtondownCard: FC = () => {
   const { number } = useAnalytics("buttondown");
@@ -14,7 +14,7 @@ export const ButtondownCard: FC = () => {
       href={SocialLinks.website}
       title="Newsletter Subscribers"
     >
-      <User />
+      <UserGroupIcon className="w-6 h-6" />
     </DashboardCard>
   );
 };
