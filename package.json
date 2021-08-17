@@ -22,6 +22,7 @@
     "depcheck": "scripty",
     "depcheck:exec": "scripty",
     "depcheck:root": "scripty",
+    "env:pull": "vercel env pull .env.local",
     "export": "next export",
     "fix": "scripty",
     "fix:eslint": "scripty",
