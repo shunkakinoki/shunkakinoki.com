@@ -1,3 +1,9 @@
+## [1.21.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.1...v1.21.2) (2021-08-17)
+
+### Bug Fixes
+
+- correct next auth function export ([d62baba](https://github.com/shunkakinoki/shunkakinoki.com/commit/d62babab166d0716316e061545ee0094f4884d0f))
+
 ## [1.21.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.0...v1.21.1) (2021-08-17)
 
 ### Performance Improvements
