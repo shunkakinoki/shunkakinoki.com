@@ -1,3 +1,9 @@
+## [1.21.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.0...v1.21.1) (2021-08-17)
+
+### Performance Improvements
+
+- ini package json ([4af8884](https://github.com/shunkakinoki/shunkakinoki.com/commit/4af88847d3e5187c47f2d8b90ab3fdeb1b93e4d3))
+
 # [1.21.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.20.0...v1.21.0) (2021-08-17)
 
 ### Features
