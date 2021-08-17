@@ -1,3 +1,14 @@
+# [1.19.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.18.0...v1.19.0) (2021-08-17)
+
+### Features
+
+- complete migrate swr hooks ([e943845](https://github.com/shunkakinoki/shunkakinoki.com/commit/e94384514a396c2219ec9f23cf111f0b6102b6ce))
+- ini analytics hooiks ([44bb1f8](https://github.com/shunkakinoki/shunkakinoki.com/commit/44bb1f82501225136bb33155b6070744e03efc47))
+
+### Performance Improvements
+
+- refactor resolutions typescript ([d739294](https://github.com/shunkakinoki/shunkakinoki.com/commit/d739294c50ce54fbed91ee3bdd380ef530358afc))
+
 # [1.18.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.6...v1.18.0) (2021-08-17)
 
 ### Features
