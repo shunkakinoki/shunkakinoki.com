@@ -9,10 +9,9 @@ import s from "./Header.module.css";
 import { DarkModeButton } from "@/components/Header/DarkModeButton";
 import { MenuButton } from "@/components/Header/MenuButton";
 
-const MobileMenu = dynamic(() => {
-  return import("@/components/Header/MobileMenu").then(m => {
-    return m.MobileMenu;
-  });
+const MobileMenu = dynamic(async () => {
+  const m = await import("@/components/Header/MobileMenu");
+  return m.MobileMenu;
 });
 
 interface HeaderLinkProps extends LinkProps {

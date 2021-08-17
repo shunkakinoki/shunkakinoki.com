@@ -55,6 +55,7 @@ GetStaticPropsContext) => {
           revalidate: 30,
         };
       }
+      throw new Error("No result");
     } catch (err) {
       return {
         notFound: true,
@@ -119,6 +120,7 @@ GetStaticPropsContext) => {
         revalidate: 30,
       };
     }
+    throw new Error("No result");
   } catch (err) {
     return {
       notFound: true,

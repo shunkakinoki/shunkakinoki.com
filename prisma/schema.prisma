@@ -1,0 +1,17 @@
+datasource db {
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  planetScaleMode   = true
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["planetScaleMode"]
+}
+
+model Likes {
+  id        String   @id
+  createdAt DateTime @default(now())
+  likes     Int      @default(1)
+}

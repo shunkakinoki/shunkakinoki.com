@@ -34,6 +34,8 @@ export const useLayoutConfig = (): [
     return layout != null ? getDefaultLayout(layout) : {};
   }, [layout]);
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
   const layoutConfig = allLayoutConfig[layoutName] ?? {};
 
   const setLayoutConfig = (config: ILayoutConfig): void => {
