@@ -1,4 +1,4 @@
-import { BadgeCheckIcon } from "@heroicons/react/outline";
+import { BadgeCheckIcon } from "@heroicons/react/solid";
 import type { ReactNode, FC } from "react";
 
 import { SocialLinks } from "@/const";
@@ -30,7 +30,7 @@ export const SocialCard: FC<Props> = ({
               {title}
               {isPriority && (
                 <span className="pl-2 text-green-400 dark:text-green-300">
-                  <BadgeCheckIcon className="w-6 h-6" />
+                  <BadgeCheckIcon className="w-4 h-4" />
                 </span>
               )}
             </h4>
