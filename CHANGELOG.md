@@ -1,3 +1,13 @@
+# [1.18.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.6...v1.18.0) (2021-08-17)
+
+### Features
+
+- ini prisma env ([c61e3ae](https://github.com/shunkakinoki/shunkakinoki.com/commit/c61e3ae6299fbb2665be9c2060fdaa69a5442e8f))
+
+### Performance Improvements
+
+- ini blur viewer ([53d36aa](https://github.com/shunkakinoki/shunkakinoki.com/commit/53d36aa96570aa20b3aa4d0ce42a0b3a1f3b36de))
+
 ## [1.17.6](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.17.5...v1.17.6) (2021-08-16)
 
 ### Bug Fixes
