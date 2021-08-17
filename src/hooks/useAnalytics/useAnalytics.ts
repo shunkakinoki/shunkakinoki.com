@@ -5,6 +5,7 @@ import { fetcher } from "@/lib/fetcher";
 export const analytics = [
   "buttondown",
   "github",
+  "instagram",
   "twitter",
   "views",
   "likes",
