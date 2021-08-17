@@ -4,7 +4,6 @@ import { SectionText } from "@/common/Text";
 import {
   ButtondownCard,
   GithubCard,
-  InstagramCard,
   TwitterCard,
   ViewCard,
   LikeCard,
@@ -19,7 +18,6 @@ export const Dashboard: FC = () => {
       <dl className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
         <ButtondownCard />
         <GithubCard />
-        <InstagramCard />
         <TwitterCard />
         <ViewCard />
         <LikeCard />
