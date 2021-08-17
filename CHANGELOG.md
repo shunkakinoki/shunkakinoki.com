@@ -1,3 +1,9 @@
+## [1.19.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.19.0...v1.19.1) (2021-08-17)
+
+### Performance Improvements
+
+- ini swr mutate ([7711669](https://github.com/shunkakinoki/shunkakinoki.com/commit/7711669b4701fd535b8b882360e1416ab48c89e1))
+
 # [1.19.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.18.0...v1.19.0) (2021-08-17)
 
 ### Features
