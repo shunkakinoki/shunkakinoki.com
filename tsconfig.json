@@ -23,6 +23,5 @@
     }
   },
   "exclude": ["node_modules", "og"],
-  "extends": "@shunkakinoki/tsconfig",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
