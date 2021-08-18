@@ -22,7 +22,7 @@
       "@/packageJson": ["package.json"]
     }
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "og"],
   "extends": "@shunkakinoki/tsconfig",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
