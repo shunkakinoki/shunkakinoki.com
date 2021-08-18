@@ -13,18 +13,12 @@ else
 fi
 
 
-if [[ "$VERCEL_ENV" == "production" || "$VERCEL_GIT_COMMIT_REF" == "alpha" || "$VERCEL_GIT_COMMIT_REF" == "beta" || "$VERCEL_GIT_COMMIT_REF" == "main" ]]; then
+if [[ "$VERCEL_ENV" == "production" ]]; then
   echo "✅ - Build can proceed in production"
   exit 1
 else
-  if [[ "$APP" == "og" && $(! git diff HEAD^ HEAD --quiet src) -ne 1 ]]; then
-    echo "✨ - OG can proceed in preview"
-    exit 1
-  elif [[ "$APP" == "shunkakinoki" && $(! git diff HEAD^ HEAD --quiet locales public src) -ne 1 ]]; then
-    echo "🍎 - Shunkakinoki can proceed in preview"
-    exit 1
-  elif [[ "$APP" == "storybook" && $(! git diff HEAD^ HEAD --quiet src/components) -ne 1 ]]; then
-    echo "🎨 - Storybook can proceed in preview"
+  elif [[ "$VERCEL_ENV" == "preview" ]]; then
+    echo "❎ - Build can proceed in preview at $APP"
     exit 1
   else
     echo "🌼 - Build not proceeding"
