@@ -17,7 +17,7 @@ if [[ "$VERCEL_ENV" == "production" ]]; then
   echo "✅ - Build can proceed in production"
   exit 1
 else
-  elif [[ "$VERCEL_ENV" == "preview" ]]; then
+  if [[ "$VERCEL_ENV" == "preview" ]]; then
     echo "❎ - Build can proceed in preview at $APP"
     exit 1
   else
