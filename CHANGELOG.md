@@ -1,3 +1,18 @@
+## [1.21.4](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.3...v1.21.4) (2021-08-18)
+
+### Bug Fixes
+
+- refactor social to react icons ([c5b0aa7](https://github.com/shunkakinoki/shunkakinoki.com/commit/c5b0aa781c12020ee610a6ea422a9555838f4d78))
+- remove instagram analytics ([44ee19a](https://github.com/shunkakinoki/shunkakinoki.com/commit/44ee19a46accbc178b95124255570000f55765f6))
+
+### Performance Improvements
+
+- ini instagram card ([3670858](https://github.com/shunkakinoki/shunkakinoki.com/commit/3670858c9c1bd61c403887215130542a892394d3))
+- ini like view ([35ab3e0](https://github.com/shunkakinoki/shunkakinoki.com/commit/35ab3e08ec8c78ccb5753c7beaa346ac2bf26320))
+- ini og package ([d02031c](https://github.com/shunkakinoki/shunkakinoki.com/commit/d02031c0173e5094263ae52195ffa59342873cab))
+- ini outline refactoring ([6275b6d](https://github.com/shunkakinoki/shunkakinoki.com/commit/6275b6dce9589c32ad823de09bcb193ef89d7c21))
+- ini react hero ([8f6288b](https://github.com/shunkakinoki/shunkakinoki.com/commit/8f6288b6cdf55b241e8a9f06a5035a2b4b5d43c9))
+
 ## [1.21.3](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.2...v1.21.3) (2021-08-17)
 
 ### Performance Improvements
