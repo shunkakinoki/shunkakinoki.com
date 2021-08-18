@@ -1,21 +1,20 @@
+import { ThumbUpIcon } from "@heroicons/react/outline";
 import type { FC } from "react";
-
-import { FaGithub } from "react-icons/fa";
 
 import { DashboardCard } from "@/components/Dashboard/DashboardCard";
 import { SocialLinks } from "@/const";
 import { useAnalytics } from "@/hooks/useAnalytics";
 
-export const GithubCard: FC = () => {
-  const { number } = useAnalytics("github");
+export const LikeCard: FC = () => {
+  const { number } = useAnalytics("likes");
 
   return (
     <DashboardCard
       number={number}
-      href={SocialLinks.github}
-      title="GitHub Followers"
+      href={SocialLinks.website}
+      title="Total Likes"
     >
-      <FaGithub className="w-6 h-6" />
+      <ThumbUpIcon className="w-6 h-6" />
     </DashboardCard>
   );
 };

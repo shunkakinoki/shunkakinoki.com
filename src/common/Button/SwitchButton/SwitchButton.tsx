@@ -1,13 +1,12 @@
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/outline";
 import type { LinkProps } from "next/link";
 import Link from "next/link";
 
 import type { FC } from "react";
 
-import { Left, Right, Switch } from "@/icons";
-
 interface Props extends LinkProps {
   href: string;
-  type: "right" | "left" | "switch";
+  type: "right" | "left";
 }
 
 export const SwitchButton: FC<Props> = ({ href, type }) => {
@@ -18,9 +17,8 @@ export const SwitchButton: FC<Props> = ({ href, type }) => {
         aria-label={href}
       >
         <span className="inline-block text-lg align-bottom animate-pulse">
-          {type === "right" && <Right />}
-          {type === "left" && <Left />}
-          {type === "switch" && <Switch />}
+          {type === "right" && <ArrowRightIcon className="w-6 h-6" />}
+          {type === "left" && <ArrowLeftIcon className="w-6 h-6" />}
         </span>
       </a>
     </Link>

@@ -1,7 +1,14 @@
+import {
+  CakeIcon,
+  ChipIcon,
+  FireIcon,
+  GlobeIcon,
+  AcademicCapIcon,
+  TagIcon,
+  BriefcaseIcon,
+} from "@heroicons/react/outline";
 import clsx from "clsx";
 import type { FC } from "react";
-
-import { Cake, Chip, Fire, Globe, School, Tag, Work } from "@/icons";
 
 export interface Props {
   isBottom?: boolean;
@@ -45,13 +52,13 @@ export const HistoryStep: FC<Props> = ({
                 type === "work" && "bg-indigo-500",
               )}
             >
-              {type === "cake" && <Cake />}
-              {type === "chip" && <Chip />}
-              {type === "fire" && <Fire />}
-              {type === "globe" && <Globe />}
-              {type === "school" && <School />}
-              {type === "tag" && <Tag />}
-              {type === "work" && <Work />}
+              {type === "cake" && <CakeIcon className="w-5 h-5" />}
+              {type === "chip" && <ChipIcon className="w-5 h-5" />}
+              {type === "fire" && <FireIcon className="w-5 h-5" />}
+              {type === "globe" && <GlobeIcon className="w-5 h-5" />}
+              {type === "school" && <AcademicCapIcon className="w-5 h-5" />}
+              {type === "tag" && <TagIcon className="w-5 h-5" />}
+              {type === "work" && <BriefcaseIcon className="w-5 h-5" />}
             </span>
           </div>
           <div className="flex flex-1 justify-between items-center space-x-4 min-w-0">

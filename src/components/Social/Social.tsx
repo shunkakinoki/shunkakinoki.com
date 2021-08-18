@@ -2,33 +2,33 @@ import clsx from "clsx";
 
 import type { FC } from "react";
 
+import {
+  FaBitcoin,
+  FaDiscord,
+  FaDocker,
+  FaEnvelope,
+  FaFacebook,
+  FaGithub,
+  FaGitlab,
+  FaInstagram,
+  FaKeybase,
+  FaLine,
+  FaLinkedin,
+  FaMedium,
+  FaNpm,
+  FaPatreon,
+  FaPaypal,
+  FaTelegram,
+  FaTwitch,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
+import { SiTiktok, SiWechat } from "react-icons/si";
+
 import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
 import { SocialCard } from "@/components/Social/SocialCard";
 import { SocialLinks } from "@/const";
-import {
-  Bitcoin,
-  Discord,
-  Docker,
-  Email,
-  Facebook,
-  Github,
-  Gitlab,
-  Instagram,
-  Keybase,
-  Line,
-  Linkedin,
-  Medium,
-  Npm,
-  Patreon,
-  Paypal,
-  Telegram,
-  Tiktok,
-  Twitch,
-  Twitter,
-  Wechat,
-  Youtube,
-} from "@/icons";
 
 export interface Props {
   isPartial?: boolean;
@@ -54,22 +54,22 @@ export const Social: FC<Props> = ({ isPartial = false }) => {
             title="Email"
             username={SocialLinks.gmail}
           >
-            <Email />
+            <FaEnvelope className="w-6 h-6" />
           </SocialCard>
           <SocialCard isPriority href={SocialLinks.facebook} title="Facebook">
-            <Facebook />
+            <FaFacebook className="w-6 h-6" />
           </SocialCard>
           <SocialCard isPriority href={SocialLinks.github} title="Github">
-            <Github />
+            <FaGithub className="w-6 h-6" />
           </SocialCard>
           <SocialCard isPriority href={SocialLinks.linkedin} title="Linkedin">
-            <Linkedin />
+            <FaLinkedin className="w-6 h-6" />
           </SocialCard>
           <SocialCard isPriority href={SocialLinks.instagram} title="Instagram">
-            <Instagram />
+            <FaInstagram className="w-6 h-6" />
           </SocialCard>
           <SocialCard isPriority href={SocialLinks.twitter} title="Twitter">
-            <Twitter />
+            <FaTwitter className="w-6 h-6" />
           </SocialCard>
           {!isPartial && (
             <>
@@ -78,49 +78,49 @@ export const Social: FC<Props> = ({ isPartial = false }) => {
                 title="Bitcoin"
                 username={SocialLinks.crypto}
               >
-                <Bitcoin />
+                <FaBitcoin className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.paypal} title="Paypal">
-                <Paypal />
+                <FaPaypal className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.keybase} title="Keybase">
-                <Keybase />
+                <FaKeybase className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.gitlab} title="Gitlab">
-                <Gitlab />
+                <FaGitlab className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.npm} title="Npm">
-                <Npm />
+                <FaNpm className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.docker} title="Docker">
-                <Docker />
+                <FaDocker className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.discord} title="Discord">
-                <Discord />
+                <FaDiscord className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.medium} title="Medium">
-                <Medium />
+                <FaMedium className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.patreon} title="Patreon">
-                <Patreon />
+                <FaPatreon className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.tiktok} title="Tiktok">
-                <Tiktok />
+                <SiTiktok className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.twitch} title="Twitch">
-                <Twitch />
+                <FaTwitch className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.youtube} title="Youtube">
-                <Youtube />
+                <FaYoutube className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.line} title="Line">
-                <Line />
+                <FaLine className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.telegram} title="Telegram">
-                <Telegram />
+                <FaTelegram className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.wechat} title="Wechat">
-                <Wechat />
+                <SiWechat className="w-6 h-6" />
               </SocialCard>
             </>
           )}
