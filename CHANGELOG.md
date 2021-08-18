@@ -1,3 +1,9 @@
+## [1.21.5](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.4...v1.21.5) (2021-08-18)
+
+### Performance Improvements
+
+- refactor og component ([a05c003](https://github.com/shunkakinoki/shunkakinoki.com/commit/a05c0034d5825ad997046f8eb2fa3f2dd04f8aae))
+
 ## [1.21.4](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.3...v1.21.4) (2021-08-18)
 
 ### Bug Fixes
