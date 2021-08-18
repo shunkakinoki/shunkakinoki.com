@@ -18,6 +18,7 @@
     "rootDir": ".",
     "paths": {
       "@/*": ["src/*"],
+      "@/og/*": ["og/src/*"],
       "@/packageJson": ["package.json"]
     }
   },

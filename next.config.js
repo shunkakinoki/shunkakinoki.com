@@ -17,13 +17,6 @@ const config = {
     defaultLocale: "en",
     localeDetection: true,
   },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback.fs = false;
-      config.resolve.fallback.child_process = false;
-    }
-    return config;
-  },
   trailingSlash: false,
 };
 

@@ -1,18 +1,13 @@
-import Cors from "cors";
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+
 import type { NextApiHandler } from "next";
 
-import { getHtml } from "@/lib/getHtml";
-import { parseRequest } from "@/lib/parseRequest";
-import { runMiddleware } from "@/lib/runMiddleware";
-
-const cors = Cors({
-  methods: ["GET"],
-});
+import { getHtml } from "@/og/lib/getHtml";
+import { parseRequest } from "@/og/lib/parseRequest";
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const html: NextApiHandler = async (req, res) => {
   try {
-    await runMiddleware(req, res, cors);
     const config = parseRequest(req);
     console.log(`\n--- /api/html ---\nCONFIG: ${JSON.stringify(config)}\n`);
     const html = getHtml(config);
