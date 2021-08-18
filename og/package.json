@@ -30,6 +30,7 @@
     "recoil": "^0.4.0"
   },
   "devDependencies": {
+    "@shunkakinoki/tsconfig": "^1.1.1",
     "@types/marked": "^2.0.4",
     "@types/puppeteer": "^5.4.4",
     "@types/puppeteer-core": "^5.4.0",

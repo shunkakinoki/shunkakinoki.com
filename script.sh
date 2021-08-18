@@ -17,8 +17,14 @@ if [[ "$VERCEL_ENV" == "production" || "$VERCEL_GIT_COMMIT_REF" == "alpha" || "$
   echo "✅ - Build can proceed in production"
   exit 1
 else
-  if ! git diff HEAD^ HEAD --quiet ./src/; then
-    echo "❎ - Build can proceed in preview"
+  if [[ "$APP" == "og" && ! git diff HEAD^ HEAD --quiet og ]]; then
+    echo "✨ - OG can proceed in preview"
+    exit 1
+  elif [[ "$APP" == "shunkakinoki" && ! git diff HEAD^ HEAD --quiet locales public src ]]; then
+    echo "🍎 - Shunkakinoki can proceed in preview"
+    exit 1
+  elif [[ "$APP" == "storybook" && ! git diff HEAD^ HEAD --quiet src/components ]]; then
+    echo "🎨 - Storybook can proceed in preview"
     exit 1
   else
     echo "🌼 - Build not proceeding"

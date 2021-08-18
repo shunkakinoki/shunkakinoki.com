@@ -126,6 +126,13 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.17.tgz#25fdbdfd282c2f86ddf3fcefbd98be99cd2627e2"
   integrity sha512-0p1rCgM3LLbAdwBnc7gqgnvjHg9KpbhcSphergHShlkWz8EdPawoMJ3/VbezI0mGC5eKCDzMaPgF9Yca6cKvrg==
 
+"@shunkakinoki/tsconfig@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/tsconfig/-/tsconfig-1.1.1.tgz#824c76421c7464d1cf6355e9846817e575be373c"
+  integrity sha512-vbNBDqezoOh6Z38tdTlmWAUeVFSlpCl4cPJdDLLpV9HcjGF+Axo4B4RWnRqrVNAPsUhWmKQ6ko3YBRAcmYkkLA==
+  dependencies:
+    typescript "^4.3.5"
+
 "@types/marked@^2.0.4":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@types/marked/-/marked-2.0.4.tgz#34a0ea548afe6e0c01095229d47b48b2af650613"
