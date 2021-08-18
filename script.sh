@@ -12,6 +12,10 @@ else
   APP=$1
 fi
 
+if [[ "$APP" == "shunkakinoki" || "$APP" == "storybook" ]]; then
+  echo "🚸 - Build cancelled in preview at $APP - $CHANGED"
+  exit 0
+fi
 
 if [[ "$VERCEL_ENV" == "production" ]]; then
   echo "✅ - Build can proceed in production"
