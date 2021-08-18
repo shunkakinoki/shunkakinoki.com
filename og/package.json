@@ -13,7 +13,7 @@
   "license": "MIT",
   "author": "Shun Kakinoki",
   "scripts": {
-    "build": "next build",
+    "build": "cd .. && yarn install --frozen-lockfile && cd og && next build",
     "dev": "next dev",
     "tsc": "tsc"
   },

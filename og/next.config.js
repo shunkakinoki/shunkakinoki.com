@@ -2,8 +2,14 @@
  * @type {import('next/dist/next-server/server/config').NextConfig}
  **/
 module.exports = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   experimental: {
     externalDir: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
