@@ -34,7 +34,7 @@
     "@shunkakinoki/tsconfig": "^1.1.1",
     "@types/puppeteer": "^5.4.4",
     "@types/puppeteer-core": "^5.4.0",
-    "@types/react": "^17.0.18",
+    "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
     "autoprefixer": "^10.3.1",
     "tailwindcss": "^2.2.7",
