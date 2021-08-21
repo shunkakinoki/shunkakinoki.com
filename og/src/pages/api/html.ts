@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable import/no-unresolved */
 
 import type { NextApiHandler } from "next";
 
-import { getHtml } from "@/og/lib/getHtml";
-import { parseRequest } from "@/og/lib/parseRequest";
+import { getHtml } from "@/lib/getHtml";
+import { parseRequest } from "@/lib/parseRequest";
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export const html: NextApiHandler = async (req, res) => {

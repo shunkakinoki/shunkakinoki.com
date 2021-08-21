@@ -1,6 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-
 import chrome from "chrome-aws-lambda";
 import { OG_HEIGHT, OG_WIDTH } from "next-og-utils";
 import type { FileType } from "next-og-utils";

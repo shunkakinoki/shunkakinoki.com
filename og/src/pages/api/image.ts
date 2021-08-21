@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable import/no-unresolved */
 
 import type { NextApiHandler } from "next";
 
-import { getHtml } from "@/og/lib/getHtml";
-import { getScreenshot } from "@/og/lib/getScreenshot";
-import { parseRequest } from "@/og/lib/parseRequest";
+import { getHtml } from "@/lib/getHtml";
+import { getScreenshot } from "@/lib/getScreenshot";
+import { parseRequest } from "@/lib/parseRequest";
 
 const isDev = !process.env.AWS_REGION;
 

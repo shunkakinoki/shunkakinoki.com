@@ -1,0 +1,1 @@
+export { DefaultSeo } from "./DefaultSeo";
