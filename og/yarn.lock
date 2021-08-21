@@ -199,6 +199,11 @@
     lodash.merge "^4.6.2"
     lodash.uniq "^4.5.0"
 
+"@types/marked@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-2.0.4.tgz#34a0ea548afe6e0c01095229d47b48b2af650613"
+  integrity sha512-L9VRSe0Id8xbPL99mUo/4aKgD7ZoRwFZqUQScNKHi2pFjF9ZYSMNShUHD6VlMT6J/prQq0T1mxuU25m3R7dFzg==
+
 "@types/node@*":
   version "16.6.1"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.6.1.tgz#aee62c7b966f55fc66c7b6dfa1d58db2a616da61"
