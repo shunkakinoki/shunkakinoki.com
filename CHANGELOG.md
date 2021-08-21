@@ -1,3 +1,9 @@
+## [1.21.8](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.7...v1.21.8) (2021-08-21)
+
+### Performance Improvements
+
+- ini playwright lambda ([f9e4808](https://github.com/shunkakinoki/shunkakinoki.com/commit/f9e48087cd80990e7f2c08f80601b4f07c55b4c5))
+
 ## [1.21.7](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.6...v1.21.7) (2021-08-19)
 
 ### Bug Fixes
