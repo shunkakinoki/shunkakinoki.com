@@ -1,12 +1,46 @@
 import { OG_HEIGHT, OG_WIDTH } from "next-og-utils";
 import type { FileType } from "next-og-utils";
 import * as playwright from "playwright-aws-lambda";
+import type { Page, LaunchOptions } from "playwright-core";
+
+let _page: Page | null;
+
+const exePath =
+  process.platform === "win32"
+    ? "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+    : process.platform === "linux"
+    ? "/usr/bin/google-chrome"
+    : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+
+export const getOptions = (isDev: boolean): LaunchOptions => {
+  let options: LaunchOptions;
+  if (isDev) {
+    options = {
+      args: [],
+      executablePath: exePath,
+      headless: true,
+    };
+  } else {
+    options = {
+      args: playwright.getChromiumArgs(true),
+      headless: true,
+    };
+  }
+
+  return options;
+};
 
 const getPage = async (isDev: boolean) => {
-  const browser = await playwright.launchChromium({ headless: !isDev });
+  if (_page) {
+    return _page;
+  }
+
+  const options = getOptions(isDev);
+  const browser = await playwright.launchChromium(options);
   const context = await browser.newContext();
-  const page = await context.newPage();
-  return page;
+
+  _page = await context.newPage();
+  return _page;
 };
 
 export const getScreenshot = async (
