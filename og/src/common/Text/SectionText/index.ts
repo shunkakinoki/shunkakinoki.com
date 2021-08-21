@@ -1,1 +1,0 @@
-export { SectionText } from "./SectionText";

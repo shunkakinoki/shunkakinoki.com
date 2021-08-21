@@ -1,1 +1,0 @@
-export { useLayoutConfig } from "./useLayoutConfig";
