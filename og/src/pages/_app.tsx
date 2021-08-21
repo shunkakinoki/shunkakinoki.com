@@ -1,4 +1,3 @@
-import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import { RecoilRoot } from "recoil";
 
@@ -10,9 +9,7 @@ const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
     <>
       <DefaultSeo />
       <RecoilRoot>
-        <ThemeProvider attribute="class" defaultTheme="system">
-          <Component {...pageProps} />
-        </ThemeProvider>
+        <Component {...pageProps} />
       </RecoilRoot>
     </>
   );

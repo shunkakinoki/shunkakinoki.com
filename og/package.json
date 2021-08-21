@@ -28,12 +28,12 @@
     "next": "^11.1.0",
     "next-og-utils": "^1.1.7",
     "next-seo": "^4.26.0",
-    "next-themes": "^0.0.15",
     "next-translate": "^1.0.7",
     "puppeteer-core": "^10.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "recoil": "^0.4.0"
+    "recoil": "^0.4.0",
+    "terser-webpack-plugin": "^5.1.4"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^11.1.0",
