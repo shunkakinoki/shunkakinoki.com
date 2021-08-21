@@ -1,4 +1,3 @@
-import useTranslation from "next-translate/useTranslation";
 import type { FC } from "react";
 
 import { Config } from "@/components/Config";
@@ -8,7 +7,6 @@ import { useIsMounted } from "@/hooks/useIsMounted";
 
 export const OgScreen: FC = () => {
   const isMounted = useIsMounted();
-  const { t } = useTranslation();
 
   return (
     <>
@@ -16,7 +14,7 @@ export const OgScreen: FC = () => {
       <main className="px-6 pb-20 mx-auto w-full max-w-6xl">
         <header className="mt-20 mb-12 space-y-6 text-center">
           <h1 className="text-5xl font-bold text-black dark:text-white">
-            {t("common:header.og")}
+            Open Graph Generation
           </h1>
         </header>
         {isMounted && (

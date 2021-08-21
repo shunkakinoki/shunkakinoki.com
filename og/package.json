@@ -22,12 +22,18 @@
   },
   "dependencies": {
     "chrome-aws-lambda": "^10.1.0",
+    "clsx": "^1.1.1",
+    "copy-to-clipboard": "^3.3.1",
     "marked": "^3.0.0",
     "next": "^11.1.0",
     "next-og-utils": "^1.1.7",
+    "next-seo": "^4.26.0",
+    "next-themes": "^0.0.15",
+    "next-translate": "^1.0.7",
     "puppeteer-core": "^10.2.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "recoil": "^0.4.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^11.1.0",
