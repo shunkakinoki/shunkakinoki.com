@@ -13,7 +13,7 @@
   "license": "MIT",
   "author": "Shun Kakinoki",
   "scripts": {
-    "build": "cd .. && yarn install --frozen-lockfile && cd og && next build",
+    "build": "next build",
     "dev": "next dev",
     "tsc": "tsc"
   },
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^11.1.0",
+    "@shunkakinoki/tailwindcss": "^1.0.3",
     "@shunkakinoki/tsconfig": "^1.1.1",
     "@types/puppeteer": "^5.4.4",
     "@types/puppeteer-core": "^5.4.0",
