@@ -15,7 +15,8 @@ export interface Props {
 
 export const getStaticProps: GetStaticProps<Props> = async ({
   locale,
-}: GetStaticPropsContext) => {
+}: // eslint-disable-next-line @typescript-eslint/require-await
+GetStaticPropsContext) => {
   const result = await getGithubContent("about", "ABOUT", locale, [2, 3]);
   if (result) {
     const { source } = result;

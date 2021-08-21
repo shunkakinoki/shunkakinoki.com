@@ -27,12 +27,11 @@ export const Viewer: FC = () => {
     return searchParams.toString();
   }, [config, layoutConfig]);
 
-  const baseURL = "https://og.shunkakinoki.com";
   const imageURL = useMemo(() => {
-    return `${baseURL}/api/image?${query}`;
+    return `/api/image?${query}`;
   }, [query]);
   const htmlURL = useMemo(() => {
-    return `${baseURL}/api/html?${query}`;
+    return `/api/html?${query}`;
   }, [query]);
 
   const debouncedImageURL = useDebouncedValue(imageURL, 200);
