@@ -1,6 +1,6 @@
 {
   "name": "shunkakinoki.com",
-  "version": "1.21.8",
+  "version": "1.21.9",
   "description": "",
   "homepage": "https://shunkakinoki.com",
   "bugs": {
@@ -59,7 +59,7 @@
     "@next/bundle-analyzer": "^11.1.0",
     "@notionhq/client": "^0.3.0",
     "@prisma/client": "^2.29.1",
-    "autoprefixer": "^10.3.1",
+    "autoprefixer": "^10.3.2",
     "chrome-aws-lambda": "^10.1.0",
     "clsx": "^1.1.1",
     "cors": "^2.8.5",
@@ -91,7 +91,7 @@
     "@shunkakinoki/commitlint": "^1.0.2",
     "@shunkakinoki/depcheck": "^1.0.1",
     "@shunkakinoki/dev": "^1.2.4",
-    "@shunkakinoki/eslint-config": "^1.1.16",
+    "@shunkakinoki/eslint-config": "^1.1.17",
     "@shunkakinoki/husky": "^1.0.2",
     "@shunkakinoki/lint-staged": "^1.1.4",
     "@shunkakinoki/npm-check-updates": "^1.0.2",
