@@ -7,7 +7,7 @@ import type {
 
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
-import { getGithubContent, getGithubSummary } from "@/lib/github";
+import { getGithubContent } from "@/lib/github";
 import { BlogScreen } from "@/screens/BlogScreen";
 import { ContentScreen } from "@/screens/ContentScreen";
 
@@ -17,8 +17,6 @@ export interface Props {
   slug?: string;
   type: "blog" | "content" | "collection" | "page";
 }
-
-const blogCollections = ["blog", "pioneer"];
 
 const coreCollections = ["cause", "mission", "values"];
 
@@ -65,27 +63,6 @@ GetStaticPropsContext) => {
   }
 
   const pageId = slugs[0];
-
-  if (blogCollections.includes(pageId)) {
-    const result = await getGithubSummary(pageId, locale);
-    if (result) {
-      const { frontMatter, source } = result;
-      return {
-        props: {
-          content: JSON.stringify(source),
-          frontMatter: JSON.stringify(frontMatter),
-          slug: JSON.stringify(pageId),
-          type: "blog",
-        },
-        revalidate: 30,
-      };
-    } else {
-      return {
-        notFound: true,
-        revalidate: 30,
-      };
-    }
-  }
 
   if (coreCollections.includes(pageId)) {
     const result = await getGithubContent(pageId, pageId.toUpperCase(), locale);

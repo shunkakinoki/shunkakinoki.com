@@ -1,48 +1,44 @@
-import { MDXRemote } from "next-mdx-remote";
-import type { MDXRemoteSerializeResult } from "next-mdx-remote";
+import type { Page } from "@notionhq/client/build/src/api-types";
 import Link from "next/link";
-
 import type { FC } from "react";
 
-import s from "./Blog.module.css";
+export type Props = {
+  database: Page[];
+  locale?: string;
+};
 
-export interface Props {
-  frontMatter: {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    [key: string]: any;
-  };
-  source: MDXRemoteSerializeResult;
-  slug: string;
-}
-
-interface BlogLinkProps {
-  children: string;
-  href: string;
-}
-
-export const Blog: FC<Props> = ({ source, slug }) => {
-  const BlogLink = ({ children, href }: BlogLinkProps) => {
-    return (
-      <Link
-        href={
-          slug === "blog"
-            ? href.replace(".md", "")
-            : `${slug}/${href.replace(".md", "")}`
-        }
-      >
-        {children}
-      </Link>
-    );
-  };
-
-  const components = {
-    a: BlogLink,
-  };
-
+export const Blog: FC<Props> = ({ database, locale }) => {
   return (
-    <section className="px-3 text-black dark:text-white">
-      <div className={s.markdown}>
-        <MDXRemote {...source} components={components} />
+    <section className="px-3 w-full text-black dark:text-white">
+      <div className="flex-col space-y-3 w-full">
+        {database.map(page => {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          const date = new Date(page.properties.Date.date.start).toLocaleString(
+            locale,
+            {
+              month: "short",
+              day: "2-digit",
+              year: "numeric",
+            },
+          );
+          return (
+            <div key={page.id} className="flex space-x-4">
+              <Link href={`/${page.id}`}>
+                <a className="flex flex-grow items-center text-2xl font-extrabold text-gray-600 hover:text-gray-100 dark:text-gray-300 dark:hover:text-gray-100 hover:underline line-clamp-1">
+                  <div className="text-2xl md:text-3xl">
+                    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                    {/* @ts-ignore */}
+                    {page.properties.Name?.title[0]?.plain_text || ""}
+                  </div>
+                </a>
+              </Link>
+              <div className="flex flex-none justify-center items-center text-sm text-gray-700 dark:text-gray-300">
+                {date}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
