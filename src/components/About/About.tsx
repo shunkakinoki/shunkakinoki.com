@@ -48,7 +48,7 @@ export const About: FC<Props> = ({ isPartial, source }) => {
         )}
       </div>
       <div className="px-4 sm:px-3 md:px-0">
-        <h3 className="text-lg md:text-xl leading-loose text-gray-600 dark:text-gray-300">
+        <h3 className="text-lg md:text-xl leading-loose text-warmGray-800 dark:text-coolGray-200">
           <MDXRemote {...source} components={components} />
         </h3>
       </div>
