@@ -8,7 +8,12 @@ import { Seo } from "@/components/Seo";
 
 export type Props = NotionProps & { locale?: string };
 
-export const NotionScreen: FC<Props> = ({ content, blocks, locale }) => {
+export const NotionScreen: FC<Props> = ({
+  content,
+  blocks,
+  locale,
+  pageId,
+}) => {
   return (
     <>
       <Seo
@@ -28,7 +33,12 @@ export const NotionScreen: FC<Props> = ({ content, blocks, locale }) => {
       />
       <Header />
       <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
-        <Notion content={content} blocks={blocks} />
+        <Notion
+          content={content}
+          blocks={blocks}
+          pageId={pageId}
+          locale={locale}
+        />
       </div>
       <Footer />
     </>

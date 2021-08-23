@@ -19,7 +19,7 @@ export interface Props {
   frontMatter?: string;
   blocks?: string;
   locale?: string;
-  slug?: string;
+  pageId?: string;
 }
 
 const coreCollections = ["cause", "mission", "values"];
@@ -94,6 +94,7 @@ GetStaticPropsContext) => {
           blocks: JSON.stringify(blocksWithChildren),
           content: JSON.stringify(page),
           locale: locale,
+          pageId: pageId,
         },
       };
     }
@@ -111,7 +112,7 @@ export const PageId = ({
   locale,
   frontMatter,
   blocks,
-  slug,
+  pageId,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   if (content && frontMatter) {
     return (
@@ -123,17 +124,18 @@ export const PageId = ({
     );
   }
 
-  if (content && blocks) {
+  if (content && blocks && pageId) {
     return (
       <NotionScreen
         blocks={JSON.parse(blocks) as Block[]}
         content={JSON.parse(content) as PagesRetrieveResponse}
         locale={locale}
+        pageId={pageId}
       />
     );
   }
 
-  return <>{slug}</>;
+  return <>{pageId}</>;
 };
 
 export default PageId;

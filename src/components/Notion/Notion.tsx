@@ -8,9 +8,13 @@ import type { FC } from "react";
 
 import s from "./Notion.module.css";
 
+import { useViews } from "@/hooks/useViews";
+
 export type Props = {
   blocks: Block[];
   content: PagesRetrieveResponse;
+  pageId: string;
+  locale?: string;
 };
 
 export type TextProps = {
@@ -112,7 +116,9 @@ const renderBlock = (block: Block) => {
   }
 };
 
-export const Notion: FC<Props> = ({ blocks, content }) => {
+export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
+  const { isLoading, views } = useViews(`/${pageId}`);
+
   return (
     <section className="px-3 text-black dark:text-white">
       <div className="pb-3">
@@ -121,6 +127,34 @@ export const Notion: FC<Props> = ({ blocks, content }) => {
           {/* @ts-ignore */}
           {content.properties.Name?.title[0]?.plain_text}
         </h1>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-2 w-full">
+          <div className="flex items-center">
+            <p className="text-lg text-gray-500 dark:text-gray-300">
+              Shun Kakinoki &middot;{" "}
+              {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+              {/* @ts-ignore */}
+              {new Date(content.properties.Date?.date?.start).toLocaleString(
+                locale,
+                {
+                  month: "short",
+                  day: "2-digit",
+                  year: "numeric",
+                },
+              )}
+            </p>
+          </div>
+          <div className="flex items-center">
+            {isLoading && (
+              <div className="flex space-x-4 animate-pulse">
+                <div className="w-8 h-3 bg-gray-300 dark:bg-gray-400 rounded-full" />
+              </div>
+            )}
+            <h3 className="mt-2 md:mt-0 min-w-min text-sm text-warmGray-500 dark:text-warmGray-300">
+              {!isLoading && views}
+              &nbsp;Views
+            </h3>
+          </div>
+        </div>
       </div>
       <div className={s.notion}>
         {blocks.map(block => {
