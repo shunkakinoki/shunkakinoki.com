@@ -11,13 +11,13 @@ export interface Props extends NextSeoProps {
 export const Seo: FC<Props> = ({ date, title, description, ...rest }) => {
   const imageUrl =
     date && title
-      ? `https://shunkakinoki.com/api/image?fileType=png&layoutName=Blog&Theme=Dark&Title=${title?.replaceAll(
-          " ",
+      ? `https://shunkakinoki.com/api/image?fileType=png&layoutName=Blog&Theme=Dark&Title=${title?.replace(
+          /\s/g,
           "%20",
-        )}&Date=${date?.replaceAll(" ", "%20")}`
+        )}&Date=${date?.replaceAll(/\s/g, "%20")}`
       : title
-      ? `https://shunkakinoki.com/api/image?fileType=png&layoutName=Website&Theme=Dark&Title=${title?.replaceAll(
-          " ",
+      ? `https://shunkakinoki.com/api/image?fileType=png&layoutName=Website&Theme=Dark&Title=${title?.replace(
+          /\s/g,
           "%20",
         )}`
       : "https://shunkakinoki.com/api/image?fileType=png&layoutName=Shun&Title=shunkakinoki";
