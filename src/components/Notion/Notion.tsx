@@ -38,7 +38,12 @@ export const Text: FC<TextProps> = ({ text }) => {
             )}
           >
             {href ? (
-              <a href={href} target="_blank" rel="noopener noreferrer">
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-coolGray-500 dark:hover:text-coolGray-400"
+              >
                 {plain_text}
               </a>
             ) : (
@@ -73,7 +78,7 @@ export const Notion: FC<Props> = ({ blocks, content }) => {
   return (
     <section className="px-3 text-black dark:text-white">
       <div className="px-3 md:px-0 pb-3">
-        <h1 className="mb-4 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black dark:text-white">
+        <h1 className="mb-4 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-warmGray-800 dark:text-white">
           {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
           {/* @ts-ignore */}
           {content.properties.Name?.title[0]?.plain_text}
