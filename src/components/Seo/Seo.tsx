@@ -13,12 +13,12 @@ export const Seo: FC<Props> = ({ date, title, description, ...rest }) => {
     date && title
       ? `https://shunkakinoki.com/api/image?fileType=png&layoutName=Blog&Theme=Dark&Title=${title?.replace(
           /\s/g,
-          "%20",
-        )}&Date=${date?.replace(/\s/g, "%20")}`
+          "+",
+        )}&Date=${date?.replace(/\s/g, "+").replace(/\\/g, "%2F")}`
       : title
       ? `https://shunkakinoki.com/api/image?fileType=png&layoutName=Website&Theme=Dark&Title=${title?.replace(
           /\s/g,
-          "%20",
+          "+",
         )}`
       : "https://shunkakinoki.com/api/image?fileType=png&layoutName=Shun&Title=shunkakinoki";
 
