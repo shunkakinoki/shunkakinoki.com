@@ -2,6 +2,7 @@ import type { FC } from "react";
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { Newsletter } from "@/components/Newsletter";
 import { Notion } from "@/components/Notion";
 import type { Props as NotionProps } from "@/components/Notion";
 import { Seo } from "@/components/Seo";
@@ -39,6 +40,7 @@ export const NotionScreen: FC<Props> = ({
           pageId={pageId}
           locale={locale}
         />
+        <Newsletter />
       </div>
       <Footer />
     </>
