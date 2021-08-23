@@ -37,7 +37,7 @@ const getPage = async (isDev: boolean) => {
 
   const options = getOptions(isDev);
   await playwright.loadFont(
-    "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap",
+    "https://raw.githack.com/minoryorg/Noto-Sans-CJK-JP/master/fonts/NotoSansCJKjp-Regular.ttf",
   );
   await playwright.loadFont(
     "https://raw.githack.com/googlei18n/noto-emoji/master/fonts/NotoColorEmoji.ttf",
