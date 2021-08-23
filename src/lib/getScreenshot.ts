@@ -22,7 +22,7 @@ export const getOptions = (isDev: boolean): LaunchOptions => {
     };
   } else {
     options = {
-      args: ["--lang=ja"],
+      args: playwright.getChromiumArgs(true),
       headless: true,
     };
   }
@@ -36,10 +36,13 @@ const getPage = async (isDev: boolean) => {
   }
 
   const options = getOptions(isDev);
-  const browser = await playwright.launchChromium(options);
   await playwright.loadFont(
     "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap",
   );
+  await playwright.loadFont(
+    "https://raw.githack.com/googlei18n/noto-emoji/master/fonts/NotoColorEmoji.ttf",
+  );
+  const browser = await playwright.launchChromium(options);
   const context = await browser.newContext();
 
   _page = await context.newPage();
