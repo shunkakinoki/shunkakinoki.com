@@ -20,10 +20,15 @@ export const getStaticProps: GetStaticProps<Props> = async ({
     throw new Error("process.NOTION_BLOG_ID is not defined");
   }
   const database = await getDatabase(process.env.NOTION_BLOG_ID);
+  const filteredDatabase = database.filter(db => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    return !!db.properties.Column.select || !!db.properties.Date?.date;
+  });
   if (database) {
     return {
       props: {
-        database: database,
+        database: filteredDatabase,
         locale: locale,
       },
       revalidate: 30,
