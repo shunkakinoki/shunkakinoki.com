@@ -27,6 +27,7 @@ export const getHtml = (config: IConfig & ILayoutConfig): string => {
     <meta charset="utf-8">
     <title>Generated Image</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
     <style>
       ${getCommonCSS()}
       ${layout?.getCSS != null ? layout.getCSS(config) : ""}
