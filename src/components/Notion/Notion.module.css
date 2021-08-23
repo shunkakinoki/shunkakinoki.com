@@ -1,0 +1,67 @@
+.notion {
+  @apply leading-relaxed;
+}
+
+.notion a {
+  @apply underline;
+}
+
+.notion p {
+  @apply my-3;
+}
+
+.notion h1 {
+  @apply my-8 text-6xl font-semibold tracking-tight;
+}
+
+.notion h2 {
+  @apply my-6 text-4xl font-semibold leading-tight;
+}
+
+.notion h3 {
+  @apply my-5 text-2xl font-semibold leading-snug;
+}
+
+.notion h4 {
+  @apply my-4 text-2xl;
+}
+
+.notion h5 {
+  @apply my-3 text-3xl font-light;
+}
+
+.notion h6 {
+  @apply my-3 text-xl font-thin;
+}
+
+.notion ul {
+  @apply mx-4 my-6 text-lg font-semibold list-disc sm:my-9;
+}
+
+.notion li {
+  @apply my-1;
+}
+
+.notion ol {
+  @apply mx-4 my-6 text-lg font-semibold list-decimal list-inside sm:my-9;
+}
+
+.notion table {
+  @apply table-caption w-full max-w-screen-lg overflow-hidden table-auto;
+}
+
+.notion th {
+  @apply relative font-serif text-2xl font-semibold leading-relaxed text-left border-collapse;
+}
+
+.notion td {
+  @apply px-4 py-2 font-serif leading-relaxed;
+}
+
+.notion blockquote {
+  @apply p-3 mx-16 my-auto font-serif text-xl italic;
+}
+
+.notion blockquote > p {
+  @apply max-w-screen-md mx-0 my-auto text-2xl font-bold;
+}

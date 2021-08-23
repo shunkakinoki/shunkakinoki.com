@@ -12,3 +12,13 @@ export const getDatabase = async (databaseId: string) => {
   });
   return response.results;
 };
+
+export const getPage = async (pageId: string) => {
+  const response = await notion.pages.retrieve({ page_id: pageId });
+  return response;
+};
+
+export const getBlocks = async (blockId: string) => {
+  const response = await notion.blocks.children.list({ block_id: blockId });
+  return response.results;
+};
