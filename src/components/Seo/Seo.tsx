@@ -20,7 +20,7 @@ export const Seo: FC<Props> = ({ date, title, description, ...rest }) => {
           /\s/g,
           "+",
         )}`
-      : "https://shunkakinoki.com/api/image?fileType=png&layoutName=Shun&Title=shunkakinoki";
+      : "https://shunkakinoki.com/api/image?fileType=png&layoutName=Shun&Title=shunkakinoki.com";
 
   return (
     <>
