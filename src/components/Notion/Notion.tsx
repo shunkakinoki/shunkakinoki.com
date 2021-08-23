@@ -130,7 +130,7 @@ export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-2 w-full">
           <div className="flex items-center">
             <p className="text-lg text-gray-500 dark:text-gray-300">
-              Shun Kakinoki &middot;{" "}
+              by Shun Kakinoki &middot;{" "}
               {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
               {/* @ts-ignore */}
               {new Date(content.properties.Date?.date?.start).toLocaleString(
