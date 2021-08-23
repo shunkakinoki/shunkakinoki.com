@@ -10,7 +10,7 @@ import type { FC } from "react";
 import { useAnalytics } from "@/hooks/useAnalytics";
 
 export const Newsletter: FC = () => {
-  const { number } = useAnalytics("buttondown");
+  const { number, isLoading } = useAnalytics("buttondown");
 
   const [form, setForm] = useState<{
     message: string;
@@ -164,9 +164,16 @@ export const Newsletter: FC = () => {
                 {form?.message}
               </p>
             )}
-            <p className="flex mx-auto mt-4 max-w-2xl text-xs font-medium text-indigo-50 align-text-bottom">
+            <p className="flex items-center mx-auto mt-4 max-w-2xl text-xs font-medium text-indigo-50 align-text-bottom">
               <LightBulbIcon className="pr-1 w-4 h-4" />
-              {number} Subscribers
+              {isLoading && (
+                <div className="flex space-x-4 animate-pulse">
+                  <div className="w-6 h-3 bg-gray-300 dark:bg-gray-400 rounded-full" />
+                </div>
+              )}
+              &nbsp;
+              {!isLoading && number}
+              &nbsp;Subscribers
             </p>
           </div>
         </div>
