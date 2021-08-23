@@ -38,7 +38,7 @@ const getPage = async (isDev: boolean) => {
   const options = getOptions(isDev);
   const browser = await playwright.launchChromium(options);
   await playwright.loadFont(
-    "https://raw.githack.com/minoryorg/Noto-Sans-CJK-JP/master/fonts/NotoSansCJKjp-Medium.ttf",
+    "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap",
   );
   const context = await browser.newContext();
 
