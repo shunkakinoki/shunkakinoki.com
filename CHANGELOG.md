@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.9...v1.22.0) (2021-08-23)
+
+### Features
+
+- ini blog page ([ab71712](https://github.com/shunkakinoki/shunkakinoki.com/commit/ab717125c0a9c308bd558eae8135e8de1179d467))
+- ini notion screen ([747ad23](https://github.com/shunkakinoki/shunkakinoki.com/commit/747ad23155e1bda938f749b1efa79e1c1f1413f5))
+
 ## [1.21.9](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.8...v1.21.9) (2021-08-22)
 
 ### Bug Fixes
