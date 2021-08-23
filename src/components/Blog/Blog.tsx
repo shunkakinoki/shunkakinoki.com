@@ -25,7 +25,7 @@ export const Blog: FC<Props> = ({ database, locale }) => {
           return (
             <div key={page.id} className="flex space-x-4">
               <Link href={`/${page.id}`}>
-                <a className="flex flex-grow items-center font-extrabold text-warmGray-800 hover:text-coolGray-700 dark:text-gray-200 dark:hover:text-gray-100 hover:underline line-clamp-1">
+                <a className="flex flex-grow items-center font-extrabold text-warmGray-800 hover:text-coolGray-700 dark:text-coolGray-100 dark:hover:text-white hover:underline line-clamp-1">
                   <div className="text-xl md:text-2xl">
                     {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                     {/* @ts-ignore */}
