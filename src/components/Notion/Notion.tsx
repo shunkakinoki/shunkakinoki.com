@@ -70,6 +70,44 @@ const renderBlock = (block: Block) => {
           <Text text={block["heading_1"].text} />
         </h1>
       );
+    case "heading_2":
+      return (
+        <h2>
+          <Text text={block["heading_2"].text} />
+        </h2>
+      );
+    case "heading_3":
+      return (
+        <h3>
+          <Text text={block["heading_3"].text} />
+        </h3>
+      );
+    case "bulleted_list_item":
+      return (
+        <li>
+          <Text text={block["bulleted_list_item"].text} />
+        </li>
+      );
+    case "numbered_list_item":
+      return (
+        <li>
+          <Text text={block["numbered_list_item"].text} />
+        </li>
+      );
+    case "to_do":
+      return (
+        <div>
+          <label htmlFor={block.id}>
+            <input
+              className="text-indigo-600 ring-indigo-300"
+              type="checkbox"
+              id={block.id}
+              defaultChecked={block["to_do"].checked}
+            />{" "}
+            <Text text={block["to_do"].text} />
+          </label>
+        </div>
+      );
     default:
   }
 };
