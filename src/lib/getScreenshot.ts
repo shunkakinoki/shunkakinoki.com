@@ -22,7 +22,7 @@ export const getOptions = (isDev: boolean): LaunchOptions => {
     };
   } else {
     options = {
-      args: playwright.getChromiumArgs(true),
+      args: ["--lang=ja"],
       headless: true,
     };
   }
@@ -52,6 +52,10 @@ export const getScreenshot = async (
   isDev: boolean,
 ): Promise<string | void | Buffer> => {
   const page = await getPage(isDev);
+  await page.setExtraHTTPHeaders({
+    "Accept-Language": "ja-JP",
+  });
+
   await page.setViewportSize({ width: OG_WIDTH, height: OG_HEIGHT });
   await page.setContent(html);
   const file = await page.screenshot({ type });
