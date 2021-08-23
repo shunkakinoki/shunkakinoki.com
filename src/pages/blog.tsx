@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   const filteredDatabase = database.filter(db => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-ignore
-    return !!db.properties.Column.select || !!db.properties.Date?.date;
+    return !!db.properties.Column.select && !!db.properties.Date?.date;
   });
   if (database) {
     return {
