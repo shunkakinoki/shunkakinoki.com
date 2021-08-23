@@ -57,6 +57,7 @@
     "@heroicons/react": "^1.0.4",
     "@next-auth/prisma-adapter": "^0.5.4",
     "@next/bundle-analyzer": "^11.1.0",
+    "@notionhq/client": "^0.3.0",
     "@prisma/client": "^2.29.1",
     "autoprefixer": "^10.3.2",
     "chrome-aws-lambda": "^10.1.0",

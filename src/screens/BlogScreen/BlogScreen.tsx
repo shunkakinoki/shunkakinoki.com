@@ -8,13 +8,13 @@ import { Seo } from "@/components/Seo";
 
 export type Props = BlogProps;
 
-export const BlogScreen: FC<Props> = ({ frontMatter, source, slug }) => {
+export const BlogScreen: FC<Props> = ({ database }) => {
   return (
     <>
-      <Seo title="Blog" date="2021/08/11" />
+      <Seo title="Blog" />
       <Header />
       <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
-        <Blog frontMatter={frontMatter} source={source} slug={slug} />
+        <Blog database={database} />
       </div>
       <Footer />
     </>
