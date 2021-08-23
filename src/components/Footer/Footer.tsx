@@ -90,7 +90,15 @@ export const Footer: FC = () => {
       </div>
       <div className="flex flex-col sm:flex-row justify-center items-center pt-8 mx-auto space-y-6 sm:space-y-0 space-x-6 max-w-3xl">
         <p className="flex-shrink-0 text-base text-center text-gray-400">
-          v{packageJson.version}. &copy; Shun Kakinoki. All rights reserved.
+          <a
+            className="hover:text-warmGray-600 dark:hover:text-warmGray-300 hover:underline"
+            href={`${SocialLinks.github}/shunkakinoki.com/tree/v${packageJson.version}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            v{packageJson.version}.
+          </a>{" "}
+          &copy; Shun Kakinoki. All rights reserved.
         </p>
         <CreditsButton />
         <div className="sm:flex-grow-0">

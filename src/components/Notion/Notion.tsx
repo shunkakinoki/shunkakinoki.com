@@ -77,8 +77,8 @@ const renderBlock = (block: Block) => {
 export const Notion: FC<Props> = ({ blocks, content }) => {
   return (
     <section className="px-3 text-black dark:text-white">
-      <div className="px-3 md:px-0 pb-3">
-        <h1 className="mb-4 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-warmGray-800 dark:text-white">
+      <div className="pb-3">
+        <h1 className="mb-4 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-warmGray-800 dark:text-white line-clamp-3">
           {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
           {/* @ts-ignore */}
           {content.properties.Name?.title[0]?.plain_text}
