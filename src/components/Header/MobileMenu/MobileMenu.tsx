@@ -13,10 +13,10 @@ interface MobileMenuLinkProps extends LinkProps {
 
 export const MobileMenuLink: FC<MobileMenuLinkProps> = ({ children, href }) => {
   return (
-    <div className="py-1 px-5">
+    <div className="group py-1 px-5">
       <Link href={href}>
-        <a className="flex items-center p-3 -m-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">
-          <span className="ml-3 text-base font-medium text-gray-900 dark:text-gray-300">
+        <a className="flex items-center p-3 -m-3 group-hover:bg-warmGray-200 dark:group-hover:bg-gray-800 rounded-md">
+          <span className="ml-3 text-base font-medium text-gray-900 group-hover:text-warmGray-800 dark:text-coolGray-300 dark:group-hover:text-coolGray-100">
             {children}
           </span>
         </a>
@@ -47,7 +47,7 @@ export const MobileMenu: FC = () => {
               <div className="-mr-2">
                 <button
                   type="button"
-                  className="inline-flex justify-center items-center p-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-700 bg-white hover:bg-gray-100 dark:bg-black dark:hover:bg-gray-600 rounded-md focus:ring-2 focus:ring-inset focus:ring-indigo-500 focus:outline-none"
+                  className="inline-flex justify-center items-center p-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-200 bg-white hover:bg-gray-100 dark:bg-black dark:hover:bg-gray-600 rounded-md focus:ring-2 focus:ring-inset focus:ring-indigo-500 focus:outline-none"
                   onClick={() => {
                     return setMenuOpen(isMenuOpen => {
                       return !isMenuOpen;
@@ -73,7 +73,7 @@ export const MobileMenu: FC = () => {
                 </button>
               </div>
             </div>
-            <div className="mt-6">
+            <div className="pb-3 mt-6">
               <nav className="grid gap-y-8">
                 <MobileMenuLink href="/about">
                   {t("common:header.about")}
