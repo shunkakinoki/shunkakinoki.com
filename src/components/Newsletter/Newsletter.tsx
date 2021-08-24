@@ -172,7 +172,7 @@ export const Newsletter: FC = () => {
                 </div>
               )}
               &nbsp;
-              {!isLoading && number}
+              {!isLoading && number.toLocaleString()}
               &nbsp;Subscribers
             </p>
           </div>

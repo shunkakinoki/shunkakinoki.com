@@ -29,7 +29,7 @@ export const DashboardCard: FC<Props> = ({ children, href, number, title }) => {
               <dd className="flex items-baseline">
                 {number ? (
                   <div className="text-2xl font-semibold text-gray-900 dark:text-gray-300">
-                    {number}
+                    {number.toLocaleString()}
                   </div>
                 ) : (
                   <div className="w-9/12 h-8 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />

@@ -25,7 +25,7 @@ export const LikeButton: FC<Props> = ({ pageId }) => {
         <div className="flex items-center">
           <OutlineHeartIcon className="w-5 h-5" />
           &nbsp;
-          {!isLoading && likes}
+          {!isLoading && likes.toLocaleString()}
         </div>
       </button>
     </div>
