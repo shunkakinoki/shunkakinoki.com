@@ -2121,12 +2121,13 @@
   dependencies:
     depcheck "^1.4.2"
 
-"@shunkakinoki/dev@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/dev/-/dev-1.2.4.tgz#0695aecab6b5cd2d17b801e39158df012ff80c0c"
-  integrity sha512-2WejTSbbHHFdU/sFoE+JgXcGBmh9S9k5otS/EL76zeAwh025jK9argwDHhfmqyd8SXZ8/tn0Hd3yfNkUgeFD7Q==
+"@shunkakinoki/dev@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/dev/-/dev-1.2.5.tgz#80fe5ac7c01765101aac178e1e6b7e9ca6564fca"
+  integrity sha512-02Xyld4UHojqtVa9twUIOYy1hhMXgi1vcje0cm/ArG5HBCXhC4ko7mOjs24VzkSJQ3kguo+XLLgsi9eNLPNDiQ==
   dependencies:
     concurrently "^6.2.1"
+    cross-env "^7.0.3"
     scripty "^2.0.0"
     sort-package-json "^1.50.0"
 
@@ -6183,7 +6184,14 @@ critters@^0.0.10:
     parse5-htmlparser2-tree-adapter "^6.0.1"
     pretty-bytes "^5.3.0"
 
-cross-spawn@7.0.3, cross-spawn@^7.0.0, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
+cross-env@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
+  integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
+  dependencies:
+    cross-spawn "^7.0.1"
+
+cross-spawn@7.0.3, cross-spawn@^7.0.0, cross-spawn@^7.0.1, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
   integrity sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==

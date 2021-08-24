@@ -82,7 +82,7 @@ const config = {
 
 const plugins = [
   withBundleAnalyzer({
-    enabled: process.env.ANALYZE === "true",
+    enabled: process.env.NEXT_ANALYZE === "true",
   }),
   withTranslate,
 ];

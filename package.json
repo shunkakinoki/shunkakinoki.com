@@ -13,6 +13,7 @@
   "license": "MIT",
   "author": "Shun Kakinoki",
   "scripts": {
+    "analyze": "cross-env NEXT_ANALYZE=true next build",
     "build": "next build",
     "postbuild": "next-sitemap",
     "build:storybook": "build-storybook -o public",
@@ -90,7 +91,7 @@
   "devDependencies": {
     "@shunkakinoki/commitlint": "^1.0.2",
     "@shunkakinoki/depcheck": "^1.0.1",
-    "@shunkakinoki/dev": "^1.2.4",
+    "@shunkakinoki/dev": "^1.2.5",
     "@shunkakinoki/eslint-config": "^1.1.17",
     "@shunkakinoki/husky": "^1.0.2",
     "@shunkakinoki/lint-staged": "^1.1.4",
