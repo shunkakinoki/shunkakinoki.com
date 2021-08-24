@@ -30,8 +30,8 @@ export const LocaleSelect: FC = () => {
               <option value="zh">中文</option>
             </select>
           )}
-          <div className="flex absolute inset-y-0 right-0 items-center px-2 text-gray-600 dark:text-gray-300 pointer-events-none">
-            <ChevronDownIcon className="w-6 h-6" />
+          <div className="flex absolute inset-y-0 right-0 items-center pr-2 text-gray-600 dark:text-gray-300 pointer-events-none">
+            <ChevronDownIcon className="pr-1 w-5 h-5" />
           </div>
         </div>
       </fieldset>
