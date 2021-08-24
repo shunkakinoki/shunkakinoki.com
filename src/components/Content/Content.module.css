@@ -11,7 +11,7 @@
 }
 
 .markdown h1 {
-  @apply my-8 text-6xl font-semibold tracking-tight;
+  @apply mb-8 text-6xl font-semibold tracking-tight;
 }
 
 .markdown h2 {

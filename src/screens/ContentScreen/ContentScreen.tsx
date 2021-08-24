@@ -11,7 +11,7 @@ export type Props = ContentProps;
 export const ContentScreen: FC<Props> = ({ frontMatter, source }) => {
   return (
     <>
-      <Seo title="content" />
+      <Seo title={JSON.stringify(frontMatter)} />
       <Header />
       <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
         <Content frontMatter={frontMatter} source={source} />
