@@ -1,5 +1,6 @@
 import type { FC } from "react";
 
+import { Container } from "@/common/Container";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Newsletter } from "@/components/Newsletter";
@@ -8,7 +9,6 @@ import type { Props as NotionProps } from "@/components/Notion";
 import { Seo } from "@/components/Seo";
 
 export type Props = NotionProps & { locale?: string };
-
 export const NotionScreen: FC<Props> = ({
   content,
   blocks,
@@ -33,7 +33,7 @@ export const NotionScreen: FC<Props> = ({
         )}
       />
       <Header />
-      <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
+      <Container>
         <Notion
           content={content}
           blocks={blocks}
@@ -41,7 +41,7 @@ export const NotionScreen: FC<Props> = ({
           locale={locale}
         />
         <Newsletter />
-      </div>
+      </Container>
       <Footer />
     </>
   );

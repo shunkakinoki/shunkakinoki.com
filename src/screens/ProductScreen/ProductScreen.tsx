@@ -1,5 +1,6 @@
 import type { FC } from "react";
 
+import { Container } from "@/common/Container";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Product } from "@/components/Product";
@@ -10,9 +11,9 @@ export const ProductScreen: FC = () => {
     <>
       <Seo title="Product" />
       <Header />
-      <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
+      <Container>
         <Product />
-      </div>
+      </Container>
       <Footer />
     </>
   );

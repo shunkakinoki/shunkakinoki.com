@@ -1,5 +1,6 @@
 import type { FC } from "react";
 
+import { Container } from "@/common/Container";
 import { Dashboard } from "@/components/Dashboard";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -10,9 +11,9 @@ export const DashboardScreen: FC = () => {
     <>
       <Seo title="Dashboard" />
       <Header />
-      <div className="flex justify-center items-start mx-auto max-w-2xl">
+      <Container>
         <Dashboard />
-      </div>
+      </Container>
       <Footer />
     </>
   );

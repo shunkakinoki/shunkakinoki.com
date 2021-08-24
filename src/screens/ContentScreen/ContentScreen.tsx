@@ -1,5 +1,6 @@
 import type { FC } from "react";
 
+import { Container } from "@/common/Container";
 import type { Props as ContentProps } from "@/components/Content";
 import { Content } from "@/components/Content";
 import { Footer } from "@/components/Footer";
@@ -13,9 +14,9 @@ export const ContentScreen: FC<Props> = ({ source, title }) => {
     <>
       <Seo title={title.charAt(0).toUpperCase() + title.slice(1)} />
       <Header />
-      <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
+      <Container>
         <Content source={source} />
-      </div>
+      </Container>
       <Footer />
     </>
   );

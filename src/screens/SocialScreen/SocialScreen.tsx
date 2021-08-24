@@ -1,5 +1,6 @@
 import type { FC } from "react";
 
+import { Container } from "@/common/Container";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Seo } from "@/components/Seo";
@@ -10,9 +11,9 @@ export const SocialScreen: FC = () => {
     <>
       <Seo title="Social" />
       <Header />
-      <div className="flex justify-center items-start mx-auto max-w-2xl">
+      <Container>
         <Social />
-      </div>
+      </Container>
       <Footer />
     </>
   );

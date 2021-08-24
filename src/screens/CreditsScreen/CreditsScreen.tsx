@@ -1,5 +1,6 @@
 import type { FC } from "react";
 
+import { Container } from "@/common/Container";
 import type { Props as CreditsProps } from "@/components/Credits";
 import { Credits } from "@/components/Credits";
 import { Footer } from "@/components/Footer";
@@ -13,9 +14,9 @@ export const CreditsScreen: FC<Props> = ({ source }) => {
     <>
       <Seo title="Credits" />
       <Header />
-      <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
+      <Container>
         <Credits source={source} />
-      </div>
+      </Container>
       <Footer />
     </>
   );

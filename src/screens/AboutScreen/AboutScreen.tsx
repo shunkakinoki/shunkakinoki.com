@@ -1,5 +1,6 @@
 import type { FC } from "react";
 
+import { Container } from "@/common/Container";
 import type { Props as AboutProps } from "@/components/About";
 import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
@@ -14,10 +15,10 @@ export const AboutScreen: FC<Props> = ({ source }) => {
     <>
       <Seo title="About" />
       <Header />
-      <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
+      <Container>
         <About source={source} />
         <Life />
-      </div>
+      </Container>
       <Footer />
     </>
   );

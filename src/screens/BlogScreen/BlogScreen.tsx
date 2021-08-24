@@ -1,5 +1,6 @@
 import type { FC } from "react";
 
+import { Container } from "@/common/Container";
 import type { Props as BlogProps } from "@/components/Blog";
 import { Blog } from "@/components/Blog";
 import { Footer } from "@/components/Footer";
@@ -13,9 +14,9 @@ export const BlogScreen: FC<Props> = ({ database }) => {
     <>
       <Seo title="Blog" />
       <Header />
-      <div className="flex flex-col justify-center items-start mx-auto max-w-2xl">
+      <Container>
         <Blog database={database} />
-      </div>
+      </Container>
       <Footer />
     </>
   );
