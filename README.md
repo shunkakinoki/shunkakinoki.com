@@ -9,3 +9,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)
 
 </div>
+
+- shunkakinoki.eth
+- shunkakinoki.eth.link
+- ipfs://QmZGJhm5y9L8GwoSsdKK11m6J1YgchdqYa6ovqR671B1AQ
