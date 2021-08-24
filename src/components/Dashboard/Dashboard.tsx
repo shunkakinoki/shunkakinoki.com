@@ -16,11 +16,11 @@ export const Dashboard: FC = () => {
         <SectionText>Dashboard</SectionText>
       </div>
       <dl className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
+        <ViewCard />
+        <LikeCard />
         <ButtondownCard />
         <GithubCard />
         <TwitterCard />
-        <ViewCard />
-        <LikeCard />
       </dl>
     </section>
   );

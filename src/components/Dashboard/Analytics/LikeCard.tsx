@@ -11,7 +11,7 @@ export const LikeCard: FC = () => {
   return (
     <DashboardCard
       number={number}
-      href={SocialLinks.website}
+      href={`${SocialLinks.website}/blog`}
       title="Total Likes"
     >
       <ThumbUpIcon className="w-6 h-6" />

@@ -7,6 +7,7 @@ export interface Props {
   number: number | undefined;
   title: string;
 }
+
 export const DashboardCard: FC<Props> = ({ children, href, number, title }) => {
   return (
     <div className="overflow-hidden bg-white hover:bg-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 rounded-lg shadow">

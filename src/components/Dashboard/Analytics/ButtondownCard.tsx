@@ -11,7 +11,7 @@ export const ButtondownCard: FC = () => {
   return (
     <DashboardCard
       number={number}
-      href={SocialLinks.website}
+      href={`${SocialLinks.website}/subscribe`}
       title="Newsletter Subscribers"
     >
       <UserGroupIcon className="w-6 h-6" />
