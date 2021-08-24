@@ -10,7 +10,7 @@ import type {
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import { getGithubContent } from "@/lib/github";
-import { getPage, getBlocks } from "@/lib/notion";
+import { getPage, getBlocks, queryDatabase } from "@/lib/notion";
 import { ContentScreen } from "@/screens/ContentScreen";
 import { NotionScreen } from "@/screens/NotionScreen";
 
@@ -39,6 +39,36 @@ export const getStaticProps: GetStaticProps<Props> = async ({
 GetStaticPropsContext) => {
   const slugs = params?.slug as string[];
 
+  if (slugs.length === 3) {
+    const date = new Date(`${slugs[0]}/${slugs[1]}/${slugs[2]}`).toISOString();
+    if (!process.env.NOTION_BLOG_ID) {
+      throw new Error("process.NOTION_BLOG_ID is not defined");
+    }
+    const database = await queryDatabase(process.env.NOTION_BLOG_ID, {
+      and: [
+        {
+          property: "Category",
+          select: { equals: "Journal" },
+        },
+        {
+          property: "Date",
+          date: {
+            equals: date,
+          },
+        },
+      ],
+    });
+    if (database.results) {
+      return {
+        redirect: {
+          destination: `/${database.results[0].id}`,
+          permanent: false,
+          revalidate: 30,
+        },
+      };
+    }
+  }
+
   const pageId = slugs[0];
 
   if (coreCollections.includes(pageId)) {
@@ -59,6 +89,13 @@ GetStaticPropsContext) => {
         revalidate: 30,
       };
     }
+  }
+
+  if (slugs.length !== 1) {
+    return {
+      notFound: true,
+      revalidate: 30,
+    };
   }
 
   try {
