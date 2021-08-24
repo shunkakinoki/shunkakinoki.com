@@ -5,10 +5,6 @@ import type { FC } from "react";
 import s from "./Content.module.css";
 
 export interface Props {
-  frontMatter: {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    [key: string]: any;
-  };
   source: MDXRemoteSerializeResult;
 }
 

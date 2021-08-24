@@ -16,7 +16,7 @@ import { NotionScreen } from "@/screens/NotionScreen";
 
 export interface Props {
   content: string;
-  frontMatter?: string;
+  title?: string;
   blocks?: string;
   locale?: string;
   pageId?: string;
@@ -44,11 +44,11 @@ GetStaticPropsContext) => {
   if (coreCollections.includes(pageId)) {
     const result = await getGithubContent(pageId, pageId.toUpperCase(), locale);
     if (result) {
-      const { frontMatter, source } = result;
+      const { source } = result;
       return {
         props: {
           content: JSON.stringify(source),
-          frontMatter: JSON.stringify(frontMatter),
+          title: pageId,
           type: "content",
         },
         revalidate: 30,
@@ -109,17 +109,16 @@ GetStaticPropsContext) => {
 
 export const PageId = ({
   content,
+  title,
   locale,
-  frontMatter,
   blocks,
   pageId,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  if (content && frontMatter) {
+  if (content && title) {
     return (
       <ContentScreen
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        frontMatter={JSON.parse(frontMatter) as { [key: string]: any }}
         source={JSON.parse(content) as MDXRemoteSerializeResult}
+        title={title}
       />
     );
   }
