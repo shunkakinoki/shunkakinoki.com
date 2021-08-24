@@ -18,6 +18,7 @@ export const Analytics: FC = () => {
   }, [isLoading, views]);
 
   useEffect(() => {
+    const path = asPath.split(/[?#]/)[0];
     const registerView = (path: string) => {
       void mutate({ views: views + 1 }, false);
       void fetch(`/api/views/${path}`, {
@@ -26,7 +27,7 @@ export const Analytics: FC = () => {
       void mutate();
     };
 
-    void registerView(asPath === "/" ? "root" : asPath);
+    void registerView(path === "/" ? "root" : path);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [asPath]);
 
