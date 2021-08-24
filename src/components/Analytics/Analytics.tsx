@@ -19,7 +19,7 @@ export const Analytics: FC = () => {
 
   useEffect(() => {
     const registerView = (path: string) => {
-      void mutate(views + 1, false);
+      void mutate({ views: views + 1 }, false);
       void fetch(`/api/views/${path}`, {
         method: "POST",
       });

@@ -12,6 +12,6 @@ export const useViews = (id: string) => {
     mutate,
     isLoading: !error && !data,
     isError: !!error,
-    views: Number(data?.views),
+    views: isNaN(data?.views) ? 0 : Number(data?.views),
   };
 };

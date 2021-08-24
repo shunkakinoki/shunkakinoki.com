@@ -8,6 +8,7 @@ import type { FC } from "react";
 
 import s from "./Notion.module.css";
 
+import { LikeButton } from "@/components/Notion/LikeButton";
 import { useViews } from "@/hooks/useViews";
 
 export type Props = {
@@ -160,6 +161,9 @@ export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
         {blocks.map(block => {
           return <Fragment key={block.id}>{renderBlock(block)}</Fragment>;
         })}
+      </div>
+      <div className="flex justify-center pt-6 pb-4 space-x-8">
+        <LikeButton pageId={pageId} />
       </div>
     </section>
   );
