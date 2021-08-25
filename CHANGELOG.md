@@ -1,3 +1,9 @@
+## [1.22.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.0...v1.22.1) (2021-08-25)
+
+### Bug Fixes
+
+- **deps:** update dependency playwright-core to ^1.14.1 ([3036f9e](https://github.com/shunkakinoki/shunkakinoki.com/commit/3036f9e38d34daf51c16c4a2bc432d7c8d7c5195))
+
 # [1.22.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.21.9...v1.22.0) (2021-08-23)
 
 ### Features
