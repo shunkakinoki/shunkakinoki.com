@@ -1,3 +1,9 @@
+## [1.22.3](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.2...v1.22.3) (2021-08-25)
+
+### Bug Fixes
+
+- **deps:** update dependency @notionhq/client to ^0.3.1 ([3fb09cf](https://github.com/shunkakinoki/shunkakinoki.com/commit/3fb09cf4f3a733bdf4b640fadd320404e28837c3))
+
 ## [1.22.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.1...v1.22.2) (2021-08-25)
 
 ### Bug Fixes
