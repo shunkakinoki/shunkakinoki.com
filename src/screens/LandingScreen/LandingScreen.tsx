@@ -1,7 +1,9 @@
+import type { Page } from "@notionhq/client/build/src/api-types";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import type { FC } from "react";
 
 import { Container } from "@/common/Container";
-import type { Props as AboutProps } from "@/components/About";
+
 import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -12,16 +14,19 @@ import { Product } from "@/components/Product";
 import { Seo } from "@/components/Seo";
 import { Social } from "@/components/Social";
 
-export type Props = AboutProps;
+export interface Props {
+  source: MDXRemoteSerializeResult;
+  database: Page[];
+}
 
-export const LandingScreen: FC<Props> = ({ source }) => {
+export const LandingScreen: FC<Props> = ({ source, database }) => {
   return (
     <>
       <Seo />
       <Header />
       <Container>
         <About isPartial source={source} />
-        <Product isPartial />
+        <Product isPartial database={database} />
         <History isPartial />
         <Life isPartial />
         <Social isPartial />
