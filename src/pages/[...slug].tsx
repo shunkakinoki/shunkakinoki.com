@@ -58,7 +58,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
         },
       ],
     });
-    if (database.results) {
+    if (database.results[0].id) {
       return {
         redirect: {
           destination: `/${database.results[0].id}`,
