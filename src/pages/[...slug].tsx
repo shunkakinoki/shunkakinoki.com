@@ -9,6 +9,7 @@ import type {
 
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
+import { SocialLinks } from "@/const/SocialLinks";
 import { getGithubContent } from "@/lib/github";
 import { getPage, getBlocks, queryDatabase } from "@/lib/notion";
 import { ContentScreen } from "@/screens/ContentScreen";
@@ -35,8 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<Props> = async ({
   params,
   locale,
-}: // eslint-disable-next-line @typescript-eslint/require-await
-GetStaticPropsContext) => {
+}: GetStaticPropsContext) => {
   const slugs = params?.slug as string[];
 
   if (slugs.length === 3) {
@@ -95,6 +95,19 @@ GetStaticPropsContext) => {
     return {
       notFound: true,
       revalidate: 30,
+    };
+  }
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
+  if (SocialLinks[pageId]) {
+    return {
+      redirect: {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        destination: SocialLinks[pageId],
+        permanent: true,
+      },
     };
   }
 
