@@ -28,7 +28,7 @@ import { SiTiktok, SiWechat } from "react-icons/si";
 import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
 import { SocialCard } from "@/components/Social/SocialCard";
-import { SocialLinks } from "@/const";
+import { CryptoLinks, SocialLinks } from "@/const";
 
 export interface Props {
   isPartial?: boolean;
@@ -76,7 +76,7 @@ export const Social: FC<Props> = ({ isPartial = false }) => {
               <SocialCard
                 href={SocialLinks.ethereum}
                 title="Ethereum"
-                username={SocialLinks.ens}
+                username={CryptoLinks.ens}
               >
                 <FaEthereum className="w-6 h-6" />
               </SocialCard>

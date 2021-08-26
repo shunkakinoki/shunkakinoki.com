@@ -29,6 +29,4 @@ export class SocialLinks {
   static readonly wechat = "https://u.wechat.com/IOTi43ThkZ9OEqC8IcYcmiQ";
   static readonly youtube =
     "https://www.youtube.com/channel/UC34lMwRf8-TBAAnBczvYY2w";
-
-  static readonly eth = this.ethereum;
 }

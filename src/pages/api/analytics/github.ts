@@ -1,7 +1,7 @@
 import Cors from "cors";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { SocialLinks } from "@/const";
+import { shunkakinoki } from "@/const";
 import { runMiddleware } from "@/lib/runMiddleware";
 
 const cors = Cors({
@@ -12,7 +12,7 @@ export const github = async (req: NextApiRequest, res: NextApiResponse) => {
   await runMiddleware(req, res, cors);
 
   const userResponse = await fetch(
-    `https://api.github.com/users/${SocialLinks.shunkakinoki}`,
+    `https://api.github.com/users/${shunkakinoki}`,
   );
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
