@@ -100,6 +100,14 @@ GetStaticPropsContext) => {
 
   try {
     const page = await getPage(pageId);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    if (page.properties?.Published && !page.properties?.Published?.checkbox) {
+      return {
+        notFound: true,
+        revalidate: 30,
+      };
+    }
     const blocks = await getBlocks(pageId);
     const childBlocks = await Promise.all(
       blocks

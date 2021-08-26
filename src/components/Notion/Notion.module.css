@@ -65,3 +65,7 @@
 .notion blockquote > p {
   @apply max-w-screen-md mx-0 my-auto text-2xl font-bold;
 }
+
+.notion img {
+  @apply w-full relative mx-auto py-3 rounded-sm;
+}

@@ -113,6 +113,18 @@ const renderBlock = (block: Block) => {
           </label>
         </div>
       );
+    case "image":
+      return (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          //@ts-ignore
+          alt={block["image"]?.caption[0]?.plain_text ?? "Notion Image"}
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          //@ts-ignore
+          src={block["image"].file.url}
+        />
+      );
     default:
   }
 };
@@ -121,7 +133,7 @@ export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
   const { isLoading, views } = useViews(`/${pageId}`);
 
   return (
-    <section className="px-3 text-black dark:text-white">
+    <section className="px-3 w-full text-black dark:text-white">
       <div className="pb-3">
         <h1 className="mb-4 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-warmGray-800 dark:text-white line-clamp-3">
           {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
@@ -132,16 +144,18 @@ export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
           <div className="flex items-center">
             <p className="text-lg text-gray-500 dark:text-gray-300">
               by Shun Kakinoki &middot;{" "}
-              {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-              {/* @ts-ignore */}
-              {new Date(content.properties.Date?.date?.start).toLocaleString(
-                locale,
-                {
-                  month: "short",
-                  day: "2-digit",
-                  year: "numeric",
-                },
-              )}
+              {new Date(
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                //@ts-ignore
+                content.properties.Date?.date?.start ??
+                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                  //@ts-ignore
+                  content.properties.Created?.created_time,
+              ).toLocaleString(locale, {
+                month: "short",
+                day: "2-digit",
+                year: "numeric",
+              })}
             </p>
           </div>
           <div className="flex items-center">
