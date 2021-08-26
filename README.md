@@ -10,6 +10,4 @@
 
 </div>
 
-- shunkakinoki.eth
-- shunkakinoki.eth.link
-- ipfs://QmZGJhm5y9L8GwoSsdKK11m6J1YgchdqYa6ovqR671B1AQ
+- [shunkakinoki.eth.link](https://shunkakinoki.eth.link)
