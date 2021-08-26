@@ -39,7 +39,15 @@ export const getStaticProps: GetStaticProps<Props> = async ({
 }: GetStaticPropsContext) => {
   const slugs = params?.slug as string[];
 
-  if (slugs.length === 3) {
+  if (
+    slugs.length === 3 &&
+    slugs[0].length === 4 &&
+    slugs[1].length === 2 &&
+    slugs[2].length === 2 &&
+    !isNaN(Number(slugs[0])) &&
+    !isNaN(Number(slugs[1])) &&
+    !isNaN(Number(slugs[2]))
+  ) {
     const date = new Date(`${slugs[0]}/${slugs[1]}/${slugs[2]}`).toISOString();
     if (!process.env.NOTION_BLOG_ID) {
       throw new Error("process.NOTION_BLOG_ID is not defined");
@@ -62,8 +70,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
       return {
         redirect: {
           destination: `/${database.results[0].id}`,
-          permanent: false,
-          revalidate: 30,
+          permanent: true,
         },
       };
     }
@@ -81,12 +88,12 @@ export const getStaticProps: GetStaticProps<Props> = async ({
           title: pageId,
           type: "content",
         },
-        revalidate: 30,
+        revalidate: 300,
       };
     } else {
       return {
         notFound: true,
-        revalidate: 30,
+        revalidate: 300,
       };
     }
   }
@@ -94,7 +101,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   if (slugs.length !== 1) {
     return {
       notFound: true,
-      revalidate: 30,
+      revalidate: 300,
     };
   }
 
