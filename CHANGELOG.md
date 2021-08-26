@@ -1,3 +1,9 @@
+## [1.22.6](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.5...v1.22.6) (2021-08-26)
+
+### Performance Improvements
+
+- ini product screen ([03b5f56](https://github.com/shunkakinoki/shunkakinoki.com/commit/03b5f56356f1b700a678b75c649c6cd5f957a43b))
+
 ## [1.22.5](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.4...v1.22.5) (2021-08-26)
 
 ### Performance Improvements
