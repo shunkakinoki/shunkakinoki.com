@@ -3,10 +3,10 @@ import clsx from "clsx";
 import type { FC } from "react";
 
 import {
-  FaBitcoin,
   FaDiscord,
   FaDocker,
   FaEnvelope,
+  FaEthereum,
   FaFacebook,
   FaGithub,
   FaGitlab,
@@ -74,11 +74,11 @@ export const Social: FC<Props> = ({ isPartial = false }) => {
           {!isPartial && (
             <>
               <SocialCard
-                href={SocialLinks.bitcoin}
-                title="Bitcoin"
-                username={SocialLinks.crypto}
+                href={SocialLinks.ethereum}
+                title="Ethereum"
+                username={SocialLinks.ens}
               >
-                <FaBitcoin className="w-6 h-6" />
+                <FaEthereum className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.paypal} title="Paypal">
                 <FaPaypal className="w-6 h-6" />

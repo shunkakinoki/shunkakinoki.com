@@ -1,15 +1,18 @@
+import { CryptoLinks } from "./CryptoLinks";
+
 export class SocialLinks {
   static readonly shunkakinoki = "shunkakinoki";
-  static readonly crypto = "3CfSsG4MGs9VP588j6KaPsphtMb1JceAcB";
   static readonly gmail = `${SocialLinks.shunkakinoki}@gmail.com`;
 
   static readonly email = `mailto:${SocialLinks.gmail}`;
   static readonly pioneer = "https://pioneer.app/winners/shun-kakinoki/";
   static readonly website = `https://${SocialLinks.shunkakinoki}.com`;
 
-  static readonly bitcoin = `https://www.blockchain.com/btc/address/${SocialLinks.crypto}`;
+  static readonly ens = `${SocialLinks.shunkakinoki}.eth`;
+
   static readonly discord = `https://discord.com/users/${SocialLinks.shunkakinoki}`;
   static readonly docker = `https://hub.docker.com/u/${SocialLinks.shunkakinoki}`;
+  static readonly ethereum = `https://etherscan.io/address/${CryptoLinks.ethereum}`;
   static readonly facebook = `https://facebook.com/${SocialLinks.shunkakinoki}`;
   static readonly github = `https://github.com/${SocialLinks.shunkakinoki}`;
   static readonly gitlab = `https://gitlab.com/${SocialLinks.shunkakinoki}`;
