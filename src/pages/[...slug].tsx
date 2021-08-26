@@ -66,10 +66,10 @@ export const getStaticProps: GetStaticProps<Props> = async ({
         },
       ],
     });
-    if (database.results[0].id) {
+    if (database.results && database.results[0] && database.results[0]?.id) {
       return {
         redirect: {
-          destination: `/${database.results[0].id}`,
+          destination: `/${database.results[0]?.id}`,
           permanent: true,
         },
       };
