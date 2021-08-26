@@ -1,3 +1,9 @@
+## [1.22.4](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.3...v1.22.4) (2021-08-26)
+
+### Performance Improvements
+
+- ini notion image ([cc33ffe](https://github.com/shunkakinoki/shunkakinoki.com/commit/cc33ffe4c28c847b5d223b2480e7047e2183896d))
+
 ## [1.22.3](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.2...v1.22.3) (2021-08-25)
 
 ### Bug Fixes
