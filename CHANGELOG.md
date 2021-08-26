@@ -1,3 +1,9 @@
+## [1.22.5](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.4...v1.22.5) (2021-08-26)
+
+### Performance Improvements
+
+- ini eth crypto ([46af0bf](https://github.com/shunkakinoki/shunkakinoki.com/commit/46af0bf20822e548e665c8860d43f95cb6d10ee6))
+
 ## [1.22.4](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.3...v1.22.4) (2021-08-26)
 
 ### Performance Improvements
