@@ -1,7 +1,7 @@
 import { BadgeCheckIcon } from "@heroicons/react/solid";
 import type { ReactNode, FC } from "react";
 
-import { SocialLinks } from "@/const";
+import { shunkakinoki } from "@/const";
 
 export interface Props {
   children: ReactNode;
@@ -16,7 +16,7 @@ export const SocialCard: FC<Props> = ({
   isPriority = false,
   href,
   title,
-  username = `@${SocialLinks.shunkakinoki}`,
+  username = `@${shunkakinoki}`,
 }) => {
   return (
     <li className="group col-span-1">
