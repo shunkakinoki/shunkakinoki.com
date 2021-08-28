@@ -17,16 +17,6 @@ jobs:
           scope: "@shunkakinoki"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - uses: actions/cache@v2
-        with:
-          path: |
-            ~/.npm
-            node_modules
-            */*/node_modules
-          key: |
-            yarn-v1-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            yarn-v1-${{ runner.os }}-
       - run: |
           yarn install --frozen-lockfile
       - run: |
