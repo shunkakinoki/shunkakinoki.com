@@ -1,3 +1,9 @@
+## [1.22.9](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.8...v1.22.9) (2021-08-28)
+
+### Bug Fixes
+
+- **deps:** update dependency swr to v1 ([66eb5d9](https://github.com/shunkakinoki/shunkakinoki.com/commit/66eb5d9b5707d8303d4021deeb6a0be6834f75b5))
+
 ## [1.22.8](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.7...v1.22.8) (2021-08-28)
 
 ### Bug Fixes
