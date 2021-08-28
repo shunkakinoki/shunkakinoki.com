@@ -1,3 +1,10 @@
+## [1.22.8](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.7...v1.22.8) (2021-08-28)
+
+### Bug Fixes
+
+- **deps:** update dependency recoil to ^0.4.1 ([43f0cad](https://github.com/shunkakinoki/shunkakinoki.com/commit/43f0cadfdce3f9b4e6d310e3a447330f1a2b37e3))
+- **deps:** update dependency tailwindcss to ^2.2.8 ([11606ce](https://github.com/shunkakinoki/shunkakinoki.com/commit/11606ce08c00485cad2909382bcc65a77a693520))
+
 ## [1.22.7](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.6...v1.22.7) (2021-08-28)
 
 ### Bug Fixes
