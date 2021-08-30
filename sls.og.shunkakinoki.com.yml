@@ -4,4 +4,4 @@ acl: ${env.AWS_ACL_ARN}
   inputs:
     certificateArn: ${acl}
     domain: ["og", "shunkakinoki.com"]
- 
+    runtime: "nodejs14.x"
