@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$VERCEL" = false ]; then
+if [ "$VERCEL" = "1" ]; then
   echo "PWD: $PWD"
   echo "VERCEL_ENV: $VERCEL_ENV"
   echo "VERCEL_GIT_COMMIT_MESSAGE: $VERCEL_GIT_COMMIT_MESSAGE"
@@ -43,7 +43,7 @@ if [ "$GITHUB_ACTIONS" = true ]; then
   fi
 fi
 
-if [ "$VERCEL" = false ]; then
+if [ "$VERCEL" = "1" ]; then
   if [[ "$VERCEL_ENV" == "production" ]]; then
     echo "✅ - Build can proceed in production"
     exit 1
