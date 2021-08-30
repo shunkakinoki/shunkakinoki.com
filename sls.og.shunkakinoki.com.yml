@@ -4,8 +4,6 @@ acl: ${env.AWS_ACL_ARN}
   inputs:
     bucketRegion: "us-east-1"
     bucketName: "og-shunkakinoki"
-    cloudfront:
-      distributionId: OGSHUNKAKINOKI
     name:
       defaultLambda: "og-shunkakinoki-lambda"
       apiLambda: "og-shunkakinoki-api-lambda"

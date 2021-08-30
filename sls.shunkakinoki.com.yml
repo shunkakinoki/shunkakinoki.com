@@ -5,8 +5,6 @@ acl: ${env.AWS_ACL_ARN}
     bucketName: "shunkakinoki"
     bucketRegion: "us-east-1"
     certificateArn: ${acl}
-    cloudfront:
-      distributionId: SHUNKAKINOKI
     build:
       postBuildCommands:
         - PDIR=node_modules/.prisma/client/;
