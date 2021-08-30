@@ -13,7 +13,8 @@ else
 fi
 
 if [ "$GITHUB_ACTIONS" = true ]; then
-  if [[ "$VERCEL_ENV" == "shunkakinoki.com" ]]; then
+  if [[ "$APP" == "shunkakinoki.com" ]]; then
+    echo "😳 - Removing OG pages"
     rm src/pages/api/hello.ts
     rm src/pages/api/html.ts
     rm src/pages/api/image.ts
