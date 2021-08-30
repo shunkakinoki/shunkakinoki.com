@@ -21,6 +21,26 @@ if [ "$GITHUB_ACTIONS" = true ]; then
     rm src/pages/api/html.ts
     rm src/pages/api/image.ts
   fi
+  if [[ "$APP" == "og.shunkakinoki.com" ]]; then
+    echo "👶 - Preserving OG pages"
+    rm src/pages/api/analytics
+    rm src/pages/api/auth
+    rm src/pages/api/likes
+    rm src/pages/api/views
+    rm src/pages/api/subscribe.ts
+    rm src/pages/[...slug].tsx
+    rm src/pages/about.tsx
+    rm src/pages/auth.tsx
+    rm src/pages/blog.tsx
+    rm src/pages/credits.tsx
+    rm src/pages/dashboard.tsx
+    rm src/pages/history.tsx
+    rm src/pages/index.tsx
+    rm src/pages/products.tsx
+    rm src/pages/social.tsx
+    rm src/pages/subscribe.tsx
+    mv src/pages/og.tsx src/pages/index.tsx
+  fi
 fi
 
 if [ "$VERCEL" = false ]; then

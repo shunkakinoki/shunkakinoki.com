@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        branch: [app]
+        app: [shunkakinoki.com, og.shunkakinoki.com]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -33,6 +33,6 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
       - run: |
-          bash ./script.sh shunkakinoki.com
+          bash ./script.sh ${{ matrix.app }}
       - run: |
           yarn run serverless
