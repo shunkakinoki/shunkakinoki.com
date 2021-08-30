@@ -35,4 +35,6 @@ jobs:
       - run: |
           bash ./script.sh ${{ matrix.app }}
       - run: |
+          mv sls.${{ matrix.app }}.yml serverless.yml
+      - run: |
           yarn run serverless

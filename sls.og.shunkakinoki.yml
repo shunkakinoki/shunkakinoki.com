@@ -1,6 +1,10 @@
-"@shunkakinoki/shunkakinoki.com":
+acl: ${env.AWS_ACL_ARN}
+"@shunkakinoki/og.shunkakinoki.com":
   component: "./node_modules/@sls-next/serverless-component"
   inputs:
+    certificateArn: ${acl}
+    domain:
+      - "og.shunkakinoki.com"
     memory: "2048"
     runtime: "nodejs14.x"
     timeout:
