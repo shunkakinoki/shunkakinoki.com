@@ -5,4 +5,29 @@ acl: ${env.AWS_ACL_ARN}
     certificateArn: ${acl}
     domain: ["shunkakinoki.com"]
     runtime: "nodejs14.x"
+    timeout: 30
+    build:
+      postBuildCommands:
+        - PDIR=node_modules/.prisma/client/;
+          LDIR=.serverless_nextjs/api-lambda/;
+          if [ "$(ls -A $LDIR)" ]; then
+          mkdir -p $LDIR$PDIR;
+          cp "$PDIR"query-engine-rhel-* $LDIR$PDIR;
+          cp "$PDIR"schema.prisma $LDIR$PDIR;
+          fi;
+        - PDIR=node_modules/.prisma/client/;
+          LDIR=.serverless_nextjs/default-lambda/;
+          if [ "$(ls -A $LDIR)" ]; then
+          mkdir -p $LDIR$PDIR;
+          cp "$PDIR"query-engine-rhel-* $LDIR$PDIR;
+          cp "$PDIR"schema.prisma $LDIR$PDIR;
+          fi;
     useServerlessTraceTarget: true
+    bucketName: "shunkakinoki.com"
+    bucketRegion: "us-east-1"
+    cloudfront:
+      distributionId: SHUNKAKINOKI
+    name:
+      defaultLambda: "shunkakinoki-lambda"
+      apiLambda: "shunkakinoki-api-lambda"
+      imageLambda: "shunkakinoki-image-lambda"

@@ -36,6 +36,9 @@ jobs:
           bash ./script.sh ${{ matrix.app }}
       - run: |
           mv sls.${{ matrix.app }}.yml serverless.yml
+      - if: ${{ matrix.app }} == shunkakinoki.com
+        run: |
+          yarn run prisma generate
       - run: |
           yarn run serverless
         env:
