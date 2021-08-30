@@ -1,3 +1,4 @@
+acl: ${env.AWS_ACL_ARN}
 "@shunkakinoki/shunkakinoki.com":
   component: "./node_modules/@sls-next/serverless-component"
   inputs:
@@ -19,6 +20,10 @@
           cp "$PDIR"query-engine-rhel-* $LDIR$PDIR;
           cp "$PDIR"schema.prisma $LDIR$PDIR;
           fi;
+    certificateArn: ${acl}
+    cloudfront:
+      distributionId: E4NDGG1KJQAOJ
+    domain: ["shunkakinoki.com"]
     name:
       defaultLambda: "shunkakinoki-lambda"
       apiLambda: "shunkakinoki-api-lambda"
