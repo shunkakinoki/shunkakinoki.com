@@ -12,6 +12,14 @@ else
   APP=$1
 fi
 
+if [ "$GITHUB_ACTIONS" = true ]; then
+  if [[ "$VERCEL_ENV" == "shunkakinoki.com" ]]; then
+    rm src/pages/api/hello.ts
+    rm src/pages/api/html.ts
+    rm src/pages/api/image.ts
+  fi
+fi
+
 if [[ "$VERCEL_ENV" == "production" ]]; then
   echo "✅ - Build can proceed in production"
   exit 1
