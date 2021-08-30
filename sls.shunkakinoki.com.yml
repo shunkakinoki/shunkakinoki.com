@@ -8,8 +8,7 @@ acl: ${env.AWS_ACL_ARN}
         forward:
           headers:
             - Host
-    domain:
-      - "shunkakinoki.com"
+    domain: ["shunkakinoki.com"]
     domainType: "both"
     domainRedirects:
       www.shunkakinoki.com: https://shunkakinoki.com
