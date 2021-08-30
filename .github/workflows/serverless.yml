@@ -38,3 +38,5 @@ jobs:
           mv sls.${{ matrix.app }}.yml serverless.yml
       - run: |
           yarn run serverless
+        env:
+          AWS_ACL_ARN: ${{ secrets.AWS_ACL_ARN }}
