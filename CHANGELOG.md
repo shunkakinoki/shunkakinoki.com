@@ -1,3 +1,9 @@
+# [1.23.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.9...v1.23.0) (2021-08-30)
+
+### Features
+
+- migrate nextjs serverles ([5c58957](https://github.com/shunkakinoki/shunkakinoki.com/commit/5c589579b2c549861e5ce6d89c99e56684cde882))
+
 ## [1.22.9](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.22.8...v1.22.9) (2021-08-28)
 
 ### Bug Fixes
