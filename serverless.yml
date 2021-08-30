@@ -1,7 +1,6 @@
 "@shunkakinoki/shunkakinoki.com":
   component: "./node_modules/@sls-next/serverless-component"
   inputs:
-    domainType: "both"
     memory: "2048"
     runtime: "nodejs14.x"
     timeout:
