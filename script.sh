@@ -23,10 +23,10 @@ if [ "$GITHUB_ACTIONS" = true ]; then
   fi
   if [[ "$APP" == "og.shunkakinoki.com" ]]; then
     echo "👶 - Preserving OG pages"
-    rm src/pages/api/analytics
-    rm src/pages/api/auth
-    rm src/pages/api/likes
-    rm src/pages/api/views
+    rm -r src/pages/api/analytics
+    rm -r src/pages/api/auth
+    rm -r src/pages/api/likes
+    rm -r src/pages/api/views
     rm src/pages/api/subscribe.ts
     rm src/pages/[...slug].tsx
     rm src/pages/about.tsx
