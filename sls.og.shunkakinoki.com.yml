@@ -1,4 +1,3 @@
-acl: ${env.AWS_ACL_ARN}
 "@shunkakinoki/og.shunkakinoki.com":
   component: "./node_modules/@sls-next/serverless-component"
   inputs:
