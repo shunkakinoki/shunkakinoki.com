@@ -2,10 +2,11 @@ acl: ${env.AWS_ACL_ARN}
 "@shunkakinoki/shunkakinoki.com":
   component: "./node_modules/@sls-next/serverless-component"
   inputs:
+    bucketName: "shunkakinoki"
+    bucketRegion: "us-east-1"
     certificateArn: ${acl}
-    domain: ["shunkakinoki.com"]
-    runtime: "nodejs14.x"
-    timeout: 30
+    cloudfront:
+      distributionId: SHUNKAKINOKI
     build:
       postBuildCommands:
         - PDIR=node_modules/.prisma/client/;
@@ -22,12 +23,10 @@ acl: ${env.AWS_ACL_ARN}
           cp "$PDIR"query-engine-rhel-* $LDIR$PDIR;
           cp "$PDIR"schema.prisma $LDIR$PDIR;
           fi;
-    useServerlessTraceTarget: true
-    bucketName: "shunkakinoki.com"
-    bucketRegion: "us-east-1"
-    cloudfront:
-      distributionId: SHUNKAKINOKI
     name:
       defaultLambda: "shunkakinoki-lambda"
       apiLambda: "shunkakinoki-api-lambda"
       imageLambda: "shunkakinoki-image-lambda"
+    runtime: "nodejs14.x"
+    timeout: 30
+    useServerlessTraceTarget: true

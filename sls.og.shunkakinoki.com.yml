@@ -2,7 +2,13 @@ acl: ${env.AWS_ACL_ARN}
 "@shunkakinoki/og.shunkakinoki.com":
   component: "./node_modules/@sls-next/serverless-component"
   inputs:
-    certificateArn: ${acl}
-    domain: ["og", "shunkakinoki.com"]
+    bucketRegion: "us-east-1"
+    bucketName: "og-shunkakinoki"
+    cloudfront:
+      distributionId: OGSHUNKAKINOKI
+    name:
+      defaultLambda: "og-shunkakinoki-lambda"
+      apiLambda: "og-shunkakinoki-api-lambda"
+      imageLambda: "og-shunkakinoki-image-lambda"
     runtime: "nodejs14.x"
     useServerlessTraceTarget: true
