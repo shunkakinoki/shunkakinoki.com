@@ -13,6 +13,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           always-auth: false
+          node-version: "16.x"
           registry-url: https://registry.npmjs.org/
           scope: "@shunkakinoki"
         env:
