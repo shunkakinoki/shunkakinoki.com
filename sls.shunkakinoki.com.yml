@@ -25,9 +25,6 @@ acl: ${env.AWS_ACL_ARN}
           headers:
             - Host
     domain: ["shunkakinoki.com"]
-    domainType: "both"
-    domainRedirects:
-      www.shunkakinoki.com: https://shunkakinoki.com
     memory: "2048"
     minifyHandlers: true
     runtime: "nodejs14.x"
