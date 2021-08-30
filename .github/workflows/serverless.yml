@@ -27,4 +27,8 @@ jobs:
       - run: |
           yarn install --frozen-lockfile
       - run: |
-          npx serverless
+          yarn run env:pull --token ${VERCEL_TOKEN}
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      - run: |
+          yarn run serverless
