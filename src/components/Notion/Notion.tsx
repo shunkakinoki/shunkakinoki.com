@@ -130,7 +130,7 @@ const renderBlock = (block: Block) => {
 };
 
 export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
-  const { isLoading, views } = useViews(`/${pageId}`);
+  const { isLoading, views } = useViews(`/${pageId}`.replace("//", "/"));
 
   return (
     <section className="px-3 w-full text-black dark:text-white">

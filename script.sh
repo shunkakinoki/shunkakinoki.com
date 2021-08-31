@@ -1,6 +1,10 @@
 #!/bin/bash
 
 if [ "$VERCEL" = "1" ]; then
+  echo 0
+fi
+
+if [ "$VERCEL" = "1" ]; then
   echo "PWD: $PWD"
   echo "VERCEL_ENV: $VERCEL_ENV"
   echo "VERCEL_GIT_COMMIT_MESSAGE: $VERCEL_GIT_COMMIT_MESSAGE"
