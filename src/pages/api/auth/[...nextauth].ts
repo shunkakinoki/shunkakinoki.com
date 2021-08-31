@@ -18,7 +18,6 @@ export const Auth = NextAuth({
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
       profile(profile) {
         return {
-          //@ts-expect-error Until next-auth v4
           id: profile.id.toString(),
           name: profile.name || profile.login,
           email: profile.email,
