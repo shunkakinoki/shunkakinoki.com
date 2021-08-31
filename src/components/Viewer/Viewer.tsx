@@ -34,7 +34,12 @@ export const Viewer: FC = () => {
     return `/api/html?${query}`;
   }, [query]);
 
-  const debouncedImageURL = useDebouncedValue(imageURL, 200);
+  const debouncedImageURL = useDebouncedValue(
+    process.env.VERCEL_REGION
+      ? imageURL
+      : `https://og.shunkakinoki.com/${imageURL}`,
+    200,
+  );
 
   useEffect(() => {
     return setIsLoaded(false);
