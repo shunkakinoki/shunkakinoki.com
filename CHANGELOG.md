@@ -1,3 +1,9 @@
+## [1.23.3](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.2...v1.23.3) (2021-08-31)
+
+### Bug Fixes
+
+- **deps:** update nextjs monorepo to ^11.1.2 ([52bfb94](https://github.com/shunkakinoki/shunkakinoki.com/commit/52bfb94c2ce86e9f3977a247a634b2c5a5c913fa))
+
 ## [1.23.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.1...v1.23.2) (2021-08-31)
 
 ### Bug Fixes
