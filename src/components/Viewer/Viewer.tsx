@@ -37,7 +37,7 @@ export const Viewer: FC = () => {
   const debouncedImageURL = useDebouncedValue(
     process.env.VERCEL_REGION
       ? imageURL
-      : `https://og.shunkakinoki.com/${imageURL}`,
+      : `https://og.shunkakinoki.com/${imageURL}`.replace("//", "/"),
     200,
   );
 

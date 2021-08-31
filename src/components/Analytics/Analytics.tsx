@@ -18,7 +18,7 @@ export const Analytics: FC = () => {
   }, [isLoading, views]);
 
   useEffect(() => {
-    const path = asPath.split(/[?#]/)[0];
+    const path = asPath.split(/[?#]/)[0].replace("//", "/");
     const registerView = (path: string) => {
       void mutate({ views: views + 1 }, false);
       void fetch(`/api/views/${path}`, {
