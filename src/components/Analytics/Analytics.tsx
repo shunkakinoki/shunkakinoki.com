@@ -19,6 +19,7 @@ export const Analytics: FC = () => {
 
   useEffect(() => {
     const path = asPath.split(/[?#]/)[0].replace("//", "/");
+    console.log(path);
     const registerView = (path: string) => {
       void mutate({ views: views + 1 }, false);
       void fetch(`/api/views/${path}`, {

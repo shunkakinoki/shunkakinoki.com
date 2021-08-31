@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$VERCEL" = "1" ]; then
-  echo 0
+  exit 0
 fi
 
 if [ "$VERCEL" = "1" ]; then

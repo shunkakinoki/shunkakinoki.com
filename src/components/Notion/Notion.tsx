@@ -3,7 +3,7 @@
 import type { PagesRetrieveResponse } from "@notionhq/client/build/src/api-endpoints";
 import type { Block, RichText } from "@notionhq/client/build/src/api-types";
 import clsx from "clsx";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import type { FC } from "react";
 
 import s from "./Notion.module.css";
@@ -131,6 +131,10 @@ const renderBlock = (block: Block) => {
 
 export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
   const { isLoading, views } = useViews(`/${pageId}`.replace("//", "/"));
+
+  useEffect(() => {
+    console.log(pageId);
+  });
 
   return (
     <section className="px-3 w-full text-black dark:text-white">
