@@ -14,12 +14,18 @@ else
   APP=$1
 fi
 
-if [[ "$APP" == "shunkakinoki.com"　|| "$VERCEL" = "1" ]]; then
-  echo "😳 - Removing OG pages"
+if [[ "$APP" == "shunkakinoki.com" ]]; then
+  echo "🥩 - Removing OG pages"
   rm src/pages/api/hello.ts
   rm src/pages/api/html.ts
   rm src/pages/api/image.ts
   rm src/lib/getScreenshot.ts
+fi
+if [[ "$VERCEL" = "1" ]]; then
+  echo "😳 - Removing OG pages for vercel"
+  rm src/pages/api/hello.ts
+  rm src/pages/api/html.ts
+  rm src/pages/api/image.ts
 fi
 if [[ "$APP" == "og.shunkakinoki.com" ]]; then
   echo "👶 - Preserving OG pages"
