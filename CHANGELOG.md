@@ -1,3 +1,11 @@
+## [1.23.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.1...v1.23.2) (2021-08-31)
+
+### Bug Fixes
+
+- **deps:** update dependency @headlessui/react to ^1.4.1 ([113437e](https://github.com/shunkakinoki/shunkakinoki.com/commit/113437e8823a1efbc06a76f2ccdd3446dabc3442))
+- **deps:** update dependency tailwindcss to ^2.2.9 ([6cafae7](https://github.com/shunkakinoki/shunkakinoki.com/commit/6cafae786a9e18dd0d1ff2bf59216037f1bd99b0))
+- **deps:** update prisma monorepo to ^2.30.2 ([d61708b](https://github.com/shunkakinoki/shunkakinoki.com/commit/d61708b524d14b29811f184373014e4486706c52))
+
 ## [1.23.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.0...v1.23.1) (2021-08-31)
 
 ### Bug Fixes
