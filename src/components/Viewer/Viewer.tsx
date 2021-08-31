@@ -59,7 +59,7 @@ export const Viewer: FC = () => {
       <div className="flex justify-end space-x-2">
         <Button
           onClick={(): void => {
-            return copy(`${window.location.origin}${imageURL}`);
+            return copy(`${ogURL}${imageURL}`);
           }}
         >
           {isCopied ? "Copied!" : "Copy Image URL"}

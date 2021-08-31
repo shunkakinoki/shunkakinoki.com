@@ -19,6 +19,7 @@ if [[ "$APP" == "shunkakinoki.com"　|| "$VERCEL" = "1" ]]; then
   rm src/pages/api/hello.ts
   rm src/pages/api/html.ts
   rm src/pages/api/image.ts
+  rm src/lib/getScreenshot.ts
 fi
 if [[ "$APP" == "og.shunkakinoki.com" ]]; then
   echo "👶 - Preserving OG pages"
