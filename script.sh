@@ -39,6 +39,7 @@ if [ "$GITHUB_ACTIONS" = true ]; then
     rm src/pages/products.tsx
     rm src/pages/social.tsx
     rm src/pages/subscribe.tsx
+    rm next.config.js
     mv src/pages/og.tsx src/pages/index.tsx
   fi
 fi
