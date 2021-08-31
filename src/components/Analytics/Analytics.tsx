@@ -6,23 +6,13 @@ import { useViews } from "@/hooks/useViews";
 
 export const Analytics: FC = () => {
   const { asPath } = useRouter();
-  const { isLoading, views, mutate } = useViews(
-    asPath === "/" ? "root" : asPath,
-  );
+  const { views, mutate } = useViews(asPath === "/" ? "root" : asPath);
 
   useEffect(() => {
-    if (!isLoading && views) {
-      console.log(`Views on ${asPath}: ${views}`);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoading, views]);
-
-  useEffect(() => {
-    const path = asPath.split(/[?#]/)[0].replace("//", "/");
-    console.log(path);
+    const path = asPath.split(/[?#]/)[0].substring(1);
     const registerView = (path: string) => {
       void mutate({ views: views + 1 }, false);
-      void fetch(`/api/views/${path}`, {
+      void fetch(`/api/views${path}`, {
         method: "POST",
       });
       void mutate();
