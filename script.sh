@@ -14,32 +14,31 @@ else
   APP=$1
 fi
 
-  if [[ "$APP" == "shunkakinoki.com"　|| "$VERCEL" = "1" ]]; then
-    echo "😳 - Removing OG pages"
-    rm src/pages/api/hello.ts
-    rm src/pages/api/html.ts
-    rm src/pages/api/image.ts
-  fi
-  if [[ "$APP" == "og.shunkakinoki.com" ]]; then
-    echo "👶 - Preserving OG pages"
-    rm -r src/pages/api/analytics
-    rm -r src/pages/api/auth
-    rm -r src/pages/api/likes
-    rm -r src/pages/api/views
-    rm src/pages/api/subscribe.ts
-    rm src/pages/[...slug].tsx
-    rm src/pages/about.tsx
-    rm src/pages/auth.tsx
-    rm src/pages/blog.tsx
-    rm src/pages/credits.tsx
-    rm src/pages/dashboard.tsx
-    rm src/pages/history.tsx
-    rm src/pages/index.tsx
-    rm src/pages/products.tsx
-    rm src/pages/social.tsx
-    rm src/pages/subscribe.tsx
-    rm next.config.js
-  fi
+if [[ "$APP" == "shunkakinoki.com"　|| "$VERCEL" = "1" ]]; then
+  echo "😳 - Removing OG pages"
+  rm src/pages/api/hello.ts
+  rm src/pages/api/html.ts
+  rm src/pages/api/image.ts
+fi
+if [[ "$APP" == "og.shunkakinoki.com" ]]; then
+  echo "👶 - Preserving OG pages"
+  rm -r src/pages/api/analytics
+  rm -r src/pages/api/auth
+  rm -r src/pages/api/likes
+  rm -r src/pages/api/views
+  rm src/pages/api/subscribe.ts
+  rm src/pages/[...slug].tsx
+  rm src/pages/about.tsx
+  rm src/pages/auth.tsx
+  rm src/pages/blog.tsx
+  rm src/pages/credits.tsx
+  rm src/pages/dashboard.tsx
+  rm src/pages/history.tsx
+  rm src/pages/index.tsx
+  rm src/pages/products.tsx
+  rm src/pages/social.tsx
+  rm src/pages/subscribe.tsx
+  rm next.config.js
 fi
 
 if [ "$VERCEL" = "1" ]; then
