@@ -13,4 +13,5 @@ acl: ${env.AWS_ACL_ARN}
       apiLambda: "og-shunkakinoki-api-lambda"
       imageLambda: "og-shunkakinoki-image-lambda"
     runtime: "nodejs14.x"
+    timeout: 30
     useServerlessTraceTarget: true
