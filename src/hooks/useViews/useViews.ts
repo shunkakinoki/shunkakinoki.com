@@ -3,7 +3,7 @@ import useSWR from "swr";
 import { fetcher } from "@/lib/fetcher";
 
 export const useViews = (id: string) => {
-  const key = `/api/views/${id}`;
+  const key = `/api/views/${id}.`;
 
   const { data, error, mutate } = useSWR(key, fetcher);
 

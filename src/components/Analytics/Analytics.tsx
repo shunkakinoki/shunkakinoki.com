@@ -12,7 +12,7 @@ export const Analytics: FC = () => {
     const path = asPath.split(/[?#]/)[0].substring(1);
     const registerView = (path: string) => {
       void mutate({ views: views + 1 }, false);
-      void fetch(`/api/views${path}`, {
+      void fetch(`/api/views/${path}`, {
         method: "POST",
       });
       void mutate();
