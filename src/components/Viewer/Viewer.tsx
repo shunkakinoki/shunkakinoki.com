@@ -27,6 +27,7 @@ export const Viewer: FC = () => {
     return searchParams.toString();
   }, [config, layoutConfig]);
 
+  const ogURL = "https://og.shunkakinoki.com";
   const imageURL = useMemo(() => {
     return `/api/image?${query}`;
   }, [query]);
@@ -34,12 +35,7 @@ export const Viewer: FC = () => {
     return `/api/html?${query}`;
   }, [query]);
 
-  const debouncedImageURL = useDebouncedValue(
-    process.env.VERCEL_REGION
-      ? imageURL
-      : `https://og.shunkakinoki.com/${imageURL}`.replace("//", "/"),
-    200,
-  );
+  const debouncedImageURL = useDebouncedValue(ogURL + imageURL, 200);
 
   useEffect(() => {
     return setIsLoaded(false);

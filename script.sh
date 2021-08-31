@@ -14,8 +14,7 @@ else
   APP=$1
 fi
 
-if [ "$GITHUB_ACTIONS" = true ]; then
-  if [[ "$APP" == "shunkakinoki.com" ]]; then
+  if [[ "$APP" == "shunkakinoki.com"　|| "$VERCEL" = "1" ]]; then
     echo "😳 - Removing OG pages"
     rm src/pages/api/hello.ts
     rm src/pages/api/html.ts
