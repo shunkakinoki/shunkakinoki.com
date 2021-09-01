@@ -100,7 +100,7 @@
     "@shunkakinoki/stylelint": "^1.0.1",
     "@shunkakinoki/tailwindcss": "^1.0.3",
     "@shunkakinoki/tsconfig": "^1.1.1",
-    "@sls-next/serverless-component": "^3.2.0",
+    "@sls-next/serverless-component": "^3.3.0",
     "@storybook/addon-a11y": "^6.3.7",
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-controls": "^6.3.7",
