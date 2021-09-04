@@ -119,7 +119,7 @@
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.4.2",
     "vercel": "^23.1.2",
-    "webpack": "^5.51.1"
+    "webpack": "^5.52.0"
   },
   "npmpackagejsonlint": {
     "extends": "@shunkakinoki/npm-package-json-lint-config"
