@@ -7,7 +7,7 @@ import { useViews } from "@/hooks/useViews";
 export const Analytics: FC = () => {
   const { asPath } = useRouter();
   const parsedPath = asPath.split(/[?#]/)[0];
-  const path = parsedPath.substring(1);
+  const path = parsedPath === "/" ? "root" : parsedPath.substring(1);
   const { views, mutate } = useViews(path);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const Analytics: FC = () => {
 
     void registerView(path);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [asPath]);
+  }, [path]);
 
   return <></>;
 };

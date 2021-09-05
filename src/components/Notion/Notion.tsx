@@ -130,7 +130,7 @@ const renderBlock = (block: Block) => {
 };
 
 export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
-  const { isLoading, views } = useViews(pageId.substring(1));
+  const { isLoading, views } = useViews(pageId);
 
   return (
     <section className="px-3 w-full text-black dark:text-white">
