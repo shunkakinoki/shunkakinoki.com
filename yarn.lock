@@ -76,7 +76,7 @@
   dependencies:
     tslib "^2.3.0"
 
-"@aws-sdk/client-s3@^3.19.0":
+"@aws-sdk/client-s3@^3.28.0":
   version "3.28.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/client-s3/-/client-s3-3.28.0.tgz#8a25f6f26aca5cf44cc66efe531c01ad790201c3"
   integrity sha512-kbz17iQSrdHbUIpC3BiAgyws4uu2buOyBPFb/ttbYS8cVGqo2a8fina0TcguV2D1O4GZ4WtR0ymZ3kOarGga+A==
@@ -129,7 +129,7 @@
     fast-xml-parser "3.19.0"
     tslib "^2.3.0"
 
-"@aws-sdk/client-sqs@^3.19.0":
+"@aws-sdk/client-sqs@^3.28.0":
   version "3.28.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/client-sqs/-/client-sqs-3.28.0.tgz#70c301d507aeb36b229b958c9792f095c8529dea"
   integrity sha512-goqpPj09GfbeDcf300dGHTVPMT1fKQzsclnNgwQ9QCxWM2Inix3R3xkf9KEEdbhfYlivTcThXaJv94mNANpwMg==
@@ -3450,39 +3450,39 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-4.0.1.tgz#d26729db850fa327b7cacc5522252194404226f5"
   integrity sha512-Qm9hBEBu18wt1PO2flE7LPb30BHMQt1eQgbV76YntdNk73XZGpn3izvGTYxbGgzXKgbCjiia0uxTd3aTNQrY/g==
 
-"@sls-next/aws-cloudfront@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@sls-next/aws-cloudfront/-/aws-cloudfront-3.2.0.tgz#8aec65ad09afb6eef75146efe5c23232cf2147c4"
-  integrity sha512-lEMVzolt1BuqD7RNUnLmskv8mSm/DBB3ZXTPAyU8+1M76/PP4XnY+q1LXf5/sVJVwye6JApbAuEn/rZRl+t/yA==
+"@sls-next/aws-cloudfront@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@sls-next/aws-cloudfront/-/aws-cloudfront-3.3.0.tgz#bc1057da97c1e4485c5e276ad4aa57e6f018c852"
+  integrity sha512-tYTh/0UWnrcID2tYBt8TFuVjuyKXDidrsOQsHhvJR3GtfRvOFH2rHIF/nXkT1KU2euliQMmH05z7z5rOhS1hZw==
   dependencies:
     "@serverless/core" "^1.1.2"
-    aws-sdk "^2.959.0"
+    aws-sdk "^2.979.0"
     ramda "^0.27.1"
 
-"@sls-next/aws-lambda@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@sls-next/aws-lambda/-/aws-lambda-3.2.0.tgz#0775185043ed80d6197fbf8ed12fc0fb39818c82"
-  integrity sha512-ISq7CkVi91axTnadlYKpMvS2jwg9LQhIk15uB6uGo2GqhLFxyQyNlcPeSV92NJ0c5ID6tFslv36k3SF0p0L0/w==
+"@sls-next/aws-lambda@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@sls-next/aws-lambda/-/aws-lambda-3.3.0.tgz#4bc50533bbbe1746bdaf0c2c1adc3205d6d50bf6"
+  integrity sha512-yWsIvnoxjNRUt19cATwM2Tezm7xdb32QO9JQzbwoti7wwdZKxlTd4/GYHBFCCYdxk/kKZF9T1sFBacDoyZVlng==
   dependencies:
     "@serverless/aws-iam-role" "^1.0.0"
     "@serverless/aws-lambda-layer" "^1.0.0"
     "@serverless/aws-s3" "^4.2.0"
     "@serverless/core" "^1.1.2"
     archiver "^5.3.0"
-    aws-sdk "^2.959.0"
+    aws-sdk "^2.979.0"
     fs-extra "^9.1.0"
     globby "^11.0.4"
     lodash "^4.17.21"
     ramda "^0.27.0"
 
-"@sls-next/aws-s3@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@sls-next/aws-s3/-/aws-s3-3.2.0.tgz#b31c4299944c0a81b524d8c2858b459066543566"
-  integrity sha512-e9akABotNkp02vOGNZNiWtY0xNiPmn2U2vFlOkW+ldxehriOZBgco/wbMK4JMEBNEE8CamPlPCvFSXrOiRNwIA==
+"@sls-next/aws-s3@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@sls-next/aws-s3/-/aws-s3-3.3.0.tgz#908f476024350ac5df3c0c904307cadb40e4dee6"
+  integrity sha512-IkywR0AOQfrzO3UcdCJjLm6bUYHE8ad06Aw33BBvTQMvdQ/sX/LBIJnwuVHmwp/H1QkdcuV4hIK8s/rogtxfsQ==
   dependencies:
     "@serverless/core" "^1.1.2"
     archiver "^5.3.0"
-    aws-sdk "^2.959.0"
+    aws-sdk "^2.979.0"
     fs-extra "^9.1.0"
     klaw-sync "^6.0.0"
     lodash "^4.17.21"
@@ -3490,26 +3490,30 @@
     ramda "^0.26.1"
     s3-stream-upload "^2.0.2"
 
-"@sls-next/aws-sqs@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@sls-next/aws-sqs/-/aws-sqs-3.2.0.tgz#99999a2b3404cf34f13d90c277be9e1bdb668a28"
-  integrity sha512-VZ8ZARwpzxmYdMkN4pFDhjw58+Od2gVSXTOe9CYKRkgedNnXHqwCHf789BmAnxd3GiHFGbp7YCGyTj8f8DyuuQ==
-
-"@sls-next/cloudfront@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@sls-next/cloudfront/-/cloudfront-3.2.0.tgz#690263915740f20b34caee8941692eeaa5763f5d"
-  integrity sha512-tmkvtrHbwGfjqpaigUQFzcKwIWDu0tcw4+wdHcF3t/b7Pc1fWPAWc5dRHec+7928+byUUSOCc2Do8jfe+Xg1xg==
+"@sls-next/aws-sqs@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@sls-next/aws-sqs/-/aws-sqs-3.3.0.tgz#6eaeae42e4bf481256b083084a4cf7f44f85ba3a"
+  integrity sha512-p1PRkpfA3Q64rUIxI3MGLHCxfsdJA/QgOUQ8NNLFigZwj2m/khYAQ+02Qna3mrP3sHozL0Pv2pkFBYGq6IdqNA==
   dependencies:
-    aws-sdk "^2.959.0"
+    "@serverless/core" "^1.1.2"
+    lodash "^4.17.21"
 
-"@sls-next/core@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@sls-next/core/-/core-3.2.0.tgz#4810a1864d30a9c91a495536c52948cfd879e266"
-  integrity sha512-q/TwIqBK0nbLP8DfENBmFOxgiGO1T5cUhzywktVfYdfb37L4Zoh4rPQF9ChgkNcHzoQbghxxNA5ZpN3EVUNZIw==
+"@sls-next/cloudfront@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@sls-next/cloudfront/-/cloudfront-3.3.0.tgz#5f4692fe913293254a5d7908c948f31e9f415cc2"
+  integrity sha512-E9ptvKfPeXSC3iaYDkbL4wuoIUofOaDEsvOguNKXLoOTU80hNS7hD4ghybksTlSZQs3f7RnULLvK8KlQcIeKWw==
+  dependencies:
+    aws-sdk "^2.979.0"
+
+"@sls-next/core@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@sls-next/core/-/core-3.3.0.tgz#fe4c6f70aeae41a295b812bcf293374292f94537"
+  integrity sha512-qRMho8GFSziIHUXBG9Pwq9HlczvXOriAA7dTBWYywlBDQ4cK8ArtEb6JdJJc/4gLKl5sfExGcyyZ0o/CwFZ6sw==
   dependencies:
     "@hapi/accept" "^5.0.1"
     cookie "^0.4.1"
     jsonwebtoken "^8.5.1"
+    next "^11.1.2"
     path-to-regexp "^6.1.0"
     regex-parser "^2.2.10"
 
@@ -3518,15 +3522,15 @@
   resolved "https://registry.yarnpkg.com/@sls-next/domain/-/domain-3.2.0.tgz#a822c919d707cd5da00cd61b22878e51ea3f6905"
   integrity sha512-hH90DddQ8gxcFwAO2WQMshmAviMA7bue84lfQeiIiAibrid6vyWBlrk2vkl9pB2//z/CIeqDm+KCv6+B4G8/Sg==
 
-"@sls-next/lambda-at-edge@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@sls-next/lambda-at-edge/-/lambda-at-edge-3.2.0.tgz#7e75bf2e3e4482994eac9b511065a6dd1d8893ce"
-  integrity sha512-UKDN1WlzBI8uDObfgFnPYfOhvUR3O4eWQ07jRsvmGYhdAyFXZA4gSPAdJ+1+6q0afDRpFbYMqGSuHeFrygFGyg==
+"@sls-next/lambda-at-edge@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@sls-next/lambda-at-edge/-/lambda-at-edge-3.3.0.tgz#5519b9fb0f91a7733c47901a6f8ae120a449baca"
+  integrity sha512-yN5MdNVeCWnRfS9a3vzg85Jg18PV5AABXS94d5V4jnV72EBGBOmxM4nOTy0XQpNEVLiaG7A1b7/3aWGiRWZmaQ==
   dependencies:
-    "@aws-sdk/client-s3" "^3.19.0"
-    "@aws-sdk/client-sqs" "^3.19.0"
+    "@aws-sdk/client-s3" "^3.28.0"
+    "@aws-sdk/client-sqs" "^3.28.0"
     "@hapi/accept" "^5.0.2"
-    "@sls-next/core" "^3.2.0"
+    "@sls-next/core" "^3.3.0"
     "@vercel/nft" "^0.13.1"
     execa "^5.0.1"
     fast-glob "^3.2.7"
@@ -3539,40 +3543,41 @@
     path-to-regexp "^6.1.0"
     send "^0.17.1"
 
-"@sls-next/next-aws-cloudfront@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@sls-next/next-aws-cloudfront/-/next-aws-cloudfront-3.2.0.tgz#68763753f55e4ac1b0fdfd89725d60777d4c5847"
-  integrity sha512-prHRCW8ew1YjXNTm4sQ+D/OxOy7FLUh/ZoAwtEMGL/60WMQBU7tmRJ6hoaYkckY8RKPJXb0pSSV7kGio7IuwCQ==
+"@sls-next/next-aws-cloudfront@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@sls-next/next-aws-cloudfront/-/next-aws-cloudfront-3.3.0.tgz#005aff4d4e72f919d6b0c43c04f3961b82e2650a"
+  integrity sha512-CpuTvN7NNh15voIv/NpbJBM7eCfjrOko10r2D9/W3s9mew3myKL3iTwpugi/3pH5scJ+joJxwQq6zegbNsa8hQ==
 
-"@sls-next/s3-static-assets@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@sls-next/s3-static-assets/-/s3-static-assets-3.2.0.tgz#8ee0a50da0b0982e927a58e4889a267c5fc0bb67"
-  integrity sha512-SO9Z3uMD8zOxia4/7Qb5rZs7Bjv9PCexqjc1ULlL9DBMV/n5FlzuQHcMR57PNUO6sySK/BpIKtx7O2dsmtl52w==
+"@sls-next/s3-static-assets@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@sls-next/s3-static-assets/-/s3-static-assets-3.3.0.tgz#2c3a3a3d5970eab90a6aa94fed8ec32c1a48f0d5"
+  integrity sha512-CDfltXGW3oJr/WquNVIbkpdIyyJG8CdgS1AeNDoOTKywHZTgRd2Hk+yasH1YbEf9QsA3unBgDjlplCVe37Glkw==
   dependencies:
-    aws-sdk "^2.959.0"
+    aws-sdk "^2.979.0"
     fast-glob "^3.2.5"
     fs-extra "^9.1.0"
     mime-types "^2.1.27"
     normalize-path "^3.0.0"
     regex-parser "^2.2.10"
 
-"@sls-next/serverless-component@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@sls-next/serverless-component/-/serverless-component-3.2.0.tgz#bfbda1a2db21c4321f301b23ec508c9c6e4af199"
-  integrity sha512-fBUSTWgxQXsZZD94oKWgeWFR9bMdevbOe1DnT2d3lh6+JflC3gZ4u9SeRb8HxfNXbRymK5TFrdTkNrCYohr5hQ==
+"@sls-next/serverless-component@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@sls-next/serverless-component/-/serverless-component-3.3.0.tgz#1a1931d1331775cd59ca8c1d820632ff06db1649"
+  integrity sha512-Hs+hzVSRi2f/TUx+6T7JA9P/EK5qFFSVWqPfaspNoaUDgLcixdMUkLNgId8a3Fb28tClccfwIl1hMl2ha4EKWg==
   dependencies:
     "@serverless/core" "^1.1.2"
-    "@sls-next/aws-cloudfront" "^3.2.0"
-    "@sls-next/aws-lambda" "^3.2.0"
-    "@sls-next/aws-s3" "^3.2.0"
-    "@sls-next/aws-sqs" "^3.2.0"
-    "@sls-next/cloudfront" "^3.2.0"
+    "@sls-next/aws-cloudfront" "^3.3.0"
+    "@sls-next/aws-lambda" "^3.3.0"
+    "@sls-next/aws-s3" "^3.3.0"
+    "@sls-next/aws-sqs" "^3.3.0"
+    "@sls-next/cloudfront" "^3.3.0"
     "@sls-next/domain" "^3.2.0"
-    "@sls-next/lambda-at-edge" "^3.2.0"
-    "@sls-next/next-aws-cloudfront" "^3.2.0"
-    "@sls-next/s3-static-assets" "^3.2.0"
-    aws-sdk "^2.959.0"
+    "@sls-next/lambda-at-edge" "^3.3.0"
+    "@sls-next/next-aws-cloudfront" "^3.3.0"
+    "@sls-next/s3-static-assets" "^3.3.0"
+    aws-sdk "^2.979.0"
     fs-extra "^9.1.0"
+    webpack "^5.51.1"
 
 "@sqltools/formatter@^1.2.2":
   version "1.2.3"
@@ -6160,7 +6165,7 @@ available-typed-arrays@^1.0.4:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.4.tgz#9e0ae84ecff20caae6a94a1c3bc39b955649b7a9"
   integrity sha512-SA5mXJWrId1TaQjfxUYghbqQ/hYioKmLJvPJyDuYRtXXenFNMjj4hSSt1Cf1xsuXSXrtxrVC5Ot4eU6cOtBDdA==
 
-aws-sdk@^2.387.0, aws-sdk@^2.488.0, aws-sdk@^2.975.0:
+aws-sdk@^2.387.0, aws-sdk@^2.488.0:
   version "2.978.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.978.0.tgz#aba16756aab7e46d476d8f160a10a05ef3712afd"
   integrity sha512-UO1HP2b9FFtPhc5KbzEJ9oMBdzCmVv9nQTb+yIEh6SajcaErmK/ryleLOuPq9EsirE6wgb6mtf2qodRFucUA3g==
@@ -6175,10 +6180,10 @@ aws-sdk@^2.387.0, aws-sdk@^2.488.0, aws-sdk@^2.975.0:
     uuid "3.3.2"
     xml2js "0.4.19"
 
-aws-sdk@^2.959.0:
-  version "2.979.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.979.0.tgz#d0104fec763cc3eafb123e709f94866790109da4"
-  integrity sha512-pKKhpYZwmihCvuH3757WHY8JQI9g2wvtF3s0aiyH2xCUmX/6uekhExz/utD4uqZP3m3PwKZPGQkQkH30DtHrPw==
+aws-sdk@^2.979.0:
+  version "2.980.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.980.0.tgz#9ec9095e343a9668a04683dd61dbe9616c2732ca"
+  integrity sha512-jPtCZngNOW4+rE9mPQd4fp2bU1c2mkRRrZcpa6jaSDo/WtjnfR7wtIrjKZYfyR2s0LNFqZRJadblYlroT3o8ww==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -10057,10 +10062,10 @@ filesize@6.1.0:
   resolved "https://registry.yarnpkg.com/filesize/-/filesize-6.1.0.tgz#e81bdaa780e2451d714d71c0d7a4f3238d37ad00"
   integrity sha512-LpCHtPQ3sFx67z+uh2HnSyWSLLu5Jxo21795uRDuar/EOuYWXib5EmPaGIBuSnRqH2IODiKA2k5re/K9OnN/Yg==
 
-filesize@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/filesize/-/filesize-7.0.0.tgz#9d4b3ce384ec7731a9e68c64ee29fb4934ad657d"
-  integrity sha512-Wsstw+O1lZ9gVmOI1thyeQvODsaoId2qw14lCqIzUhoHKXX7T2hVpB7BR6SvgodMBgWccrx/y2eyV8L7tDmY6A==
+filesize@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/filesize/-/filesize-8.0.0.tgz#532db71cb8a04df7d403da054a28de1b648534e0"
+  integrity sha512-sb690gQx3y/5KZIztgWAKM/r4Hf1V3R8mkAE0OhasMw2FDYduFTYCji8YN9BVpsGoMxrHPFvia1BMxwfLHX+fQ==
 
 fill-range@^4.0.0:
   version "4.0.0"
@@ -17608,10 +17613,10 @@ serve-static@1.14.1:
     parseurl "~1.3.3"
     send "0.17.1"
 
-serverless@^2.56.0:
-  version "2.56.0"
-  resolved "https://registry.yarnpkg.com/serverless/-/serverless-2.56.0.tgz#713cd03bc3e97a6293967152884e2a12b9c5b23b"
-  integrity sha512-/nmD1aLe+rXZpTmnxzHogCt5qGGBrE+wce7LcLV1yNne+aymyCcL8vcLj2Ib2ukTXweWpr8MxAgdXVtbwY4EGA==
+serverless@^2.57.0:
+  version "2.57.0"
+  resolved "https://registry.yarnpkg.com/serverless/-/serverless-2.57.0.tgz#74b5347f50969d81869762f53c92221d92e9999a"
+  integrity sha512-/gLzaqdisNlymMiQJMkFoACy7NXkOd7E67sbcOrENXuVb48QAS4PTT8VPkMNu6eQonlphGagbKhpqVmKzHJDmQ==
   dependencies:
     "@serverless/cli" "^1.5.2"
     "@serverless/components" "^3.16.0"
@@ -17621,7 +17626,7 @@ serverless@^2.56.0:
     ajv "^6.12.6"
     ajv-keywords "^3.5.2"
     archiver "^5.3.0"
-    aws-sdk "^2.975.0"
+    aws-sdk "^2.979.0"
     bluebird "^3.7.2"
     boxen "^5.0.1"
     cachedir "^2.3.0"
@@ -17637,7 +17642,7 @@ serverless@^2.56.0:
     essentials "^1.1.1"
     ext "^1.5.0"
     fastest-levenshtein "^1.0.12"
-    filesize "^7.0.0"
+    filesize "^8.0.0"
     fs-extra "^9.1.0"
     get-stdin "^8.0.0"
     globby "^11.0.4"
@@ -17662,7 +17667,7 @@ serverless@^2.56.0:
     semver "^7.3.5"
     signal-exit "^3.0.3"
     tabtab "^3.0.2"
-    tar "^6.1.10"
+    tar "^6.1.11"
     timers-ext "^0.1.7"
     type "^2.5.0"
     untildify "^4.0.0"
@@ -18933,7 +18938,7 @@ tar@^6.0.2, tar@^6.1.0, tar@^6.1.6:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
-tar@^6.1.10:
+tar@^6.1.11:
   version "6.1.11"
   resolved "https://registry.yarnpkg.com/tar/-/tar-6.1.11.tgz#6760a38f003afa1b2ffd0ffe9e9abbd0eab3d621"
   integrity sha512-an/KZQzQUkZCkuoAA64hM92X0Urb6VpRhAFllDzz44U2mcD5scmT3zBc4VgVpkugF580+DQn8eAFSyoQt0tznA==

@@ -2,8 +2,8 @@ import useSWR from "swr";
 
 import { fetcher } from "@/lib/fetcher";
 
-export const useViews = (id: string) => {
-  const key = `/api/views/${id}.`;
+export const useViews = (pageId: string) => {
+  const key = `/api/views/${pageId}`;
 
   const { data, error, mutate } = useSWR(key, fetcher);
 
