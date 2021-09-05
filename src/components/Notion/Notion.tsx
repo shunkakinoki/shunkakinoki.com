@@ -5,6 +5,9 @@ import type { Block, RichText } from "@notionhq/client/build/src/api-types";
 import clsx from "clsx";
 import { Fragment } from "react";
 import type { FC } from "react";
+import "react-static-tweets/styles.css";
+
+import { Tweet } from "react-static-tweets";
 
 import s from "./Notion.module.css";
 
@@ -125,6 +128,21 @@ const renderBlock = (block: Block) => {
           src={block["image"].file.url}
         />
       );
+    case "embed":
+      if (block["embed"].url.includes("twitter.com")) {
+        return (
+          <div className="flex self-center py-2 font-sans">
+            <Tweet
+              id={
+                /twitter.com\/.*\/status(?:es)?\/([^/?]+)/.exec(
+                  block["embed"].url,
+                )[1]
+              }
+            />
+          </div>
+        );
+      }
+      break;
     default:
   }
 };

@@ -39,6 +39,9 @@ const config = {
     defaultLocale: "en",
     localeDetection: true,
   },
+  images: {
+    domains: ["pbs.twimg.com"],
+  },
   reactStrictMode: true,
   poweredByHeader: true,
   productionBrowserSourceMaps: true,
