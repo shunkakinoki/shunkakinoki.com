@@ -12,6 +12,6 @@ export const useLikes = (pageId: string) => {
     mutate,
     isLoading: !error && !data,
     isError: !!error,
-    likes: Number(data?.likes),
+    likes: isNaN(data?.likes) ? 0 : Number(data?.likes),
   };
 };
