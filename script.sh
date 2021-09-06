@@ -39,6 +39,9 @@ if [[ "$APP" == "og.shunkakinoki.com" ]]; then
   rm -r src/pages/api/views
   rm src/pages/api/subscribe.ts
   rm src/pages/[...slug].tsx
+  rm src/pages/_app.tsx
+  rm src/pages/_document.tsx
+  rm src/pages/_error.tsx
   rm src/pages/404.tsx
   rm src/pages/about.tsx
   rm src/pages/auth.tsx
