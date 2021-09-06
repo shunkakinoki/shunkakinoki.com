@@ -180,13 +180,14 @@ export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
             </p>
           </div>
           <div className="flex items-center">
-            {isLoading && (
-              <div className="flex space-x-4 animate-pulse">
-                <div className="w-8 h-3 bg-gray-300 dark:bg-gray-400 rounded-full" />
-              </div>
-            )}
+            {isLoading ||
+              (views === 1 && (
+                <div className="flex space-x-4 animate-pulse">
+                  <div className="w-8 h-3 bg-gray-300 dark:bg-gray-400 rounded-full" />
+                </div>
+              ))}
             <h3 className="mt-2 md:mt-0 min-w-min text-sm text-warmGray-500 dark:text-warmGray-300">
-              {!isLoading && views}
+              {!isLoading && views !== 1 && views.toLocaleString()}
               &nbsp;Views
             </h3>
           </div>
