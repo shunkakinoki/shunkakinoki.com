@@ -50,6 +50,7 @@ if [[ "$APP" == "og.shunkakinoki.com" ]]; then
   rm src/pages/dashboard.tsx
   rm src/pages/history.tsx
   rm src/pages/index.tsx
+  rm src/pages/og.tsx
   rm src/pages/products.tsx
   rm src/pages/social.tsx
   rm src/pages/subscribe.tsx
