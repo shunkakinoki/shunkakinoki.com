@@ -3,11 +3,10 @@
 import type { PagesRetrieveResponse } from "@notionhq/client/build/src/api-endpoints";
 import type { Block, RichText } from "@notionhq/client/build/src/api-types";
 import clsx from "clsx";
+import { useTheme } from "next-themes";
 import { Fragment } from "react";
 import type { FC } from "react";
-import "react-static-tweets/styles.css";
-
-import { Tweet } from "react-static-tweets";
+import { Tweet } from "react-twitter-widgets";
 
 import s from "./Notion.module.css";
 
@@ -64,7 +63,7 @@ export const Text: FC<TextProps> = ({ text }) => {
   );
 };
 
-const renderBlock = (block: Block) => {
+const renderBlock = (block: Block, theme: string) => {
   switch (block.type) {
     case "paragraph":
       return (
@@ -131,15 +130,18 @@ const renderBlock = (block: Block) => {
     case "embed":
       if (block["embed"].url.includes("twitter.com")) {
         return (
-          <div className="flex self-center py-2 font-sans">
-            <Tweet
-              id={
-                /twitter.com\/.*\/status(?:es)?\/([^/?]+)/.exec(
-                  block["embed"].url,
-                )[1]
-              }
-            />
-          </div>
+          <Tweet
+            tweetId={
+              /twitter.com\/.*\/status(?:es)?\/([^/?]+)/.exec(
+                block["embed"].url,
+              )[1]
+            }
+            options={{
+              theme: theme,
+              align: "center",
+              cards: "hidden",
+            }}
+          />
         );
       }
       break;
@@ -149,6 +151,7 @@ const renderBlock = (block: Block) => {
 
 export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
   const { isLoading, views } = useViews(pageId);
+  const { theme } = useTheme();
 
   return (
     <section className="px-3 w-full text-black dark:text-white">
@@ -191,7 +194,9 @@ export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
       </div>
       <div className={s.notion}>
         {blocks.map(block => {
-          return <Fragment key={block.id}>{renderBlock(block)}</Fragment>;
+          return (
+            <Fragment key={block.id}>{renderBlock(block, theme)}</Fragment>
+          );
         })}
       </div>
       <div className="flex justify-center pt-6 pb-4 space-x-8">
