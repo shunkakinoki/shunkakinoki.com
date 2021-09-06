@@ -2,8 +2,8 @@ import useSWR from "swr";
 
 import { fetcher } from "@/lib/fetcher";
 
-export const useLikes = (id: string) => {
-  const key = `/api/likes/${id}`;
+export const useLikes = (pageId: string) => {
+  const key = `/api/likes/${pageId}`;
 
   const { data, error, mutate } = useSWR(key, fetcher);
 

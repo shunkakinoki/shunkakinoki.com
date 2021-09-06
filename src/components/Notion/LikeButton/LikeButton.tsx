@@ -8,7 +8,7 @@ export interface Props {
 }
 
 export const LikeButton: FC<Props> = ({ pageId }) => {
-  const { isLoading, likes, mutate } = useLikes(`/${pageId}`);
+  const { isLoading, likes, mutate } = useLikes(pageId);
 
   return (
     <div className="flex items-center space-x-2">
