@@ -4,6 +4,7 @@ import type { PagesRetrieveResponse } from "@notionhq/client/build/src/api-endpo
 import type { Block, RichText } from "@notionhq/client/build/src/api-types";
 import clsx from "clsx";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import { Fragment } from "react";
 import type { FC } from "react";
 import { Tweet } from "react-twitter-widgets";
@@ -117,8 +118,10 @@ const renderBlock = (block: Block, theme: string) => {
       );
     case "image":
       return (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <Image
+          width="100"
+          height="100"
+          layout="responsive"
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           //@ts-ignore
           alt={block["image"]?.caption[0]?.plain_text ?? "Notion Image"}

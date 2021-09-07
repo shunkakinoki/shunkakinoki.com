@@ -1,5 +1,6 @@
 import type { Page } from "@notionhq/client/build/src/api-types";
 import clsx from "clsx";
+import Image from "next/image";
 import type { FC } from "react";
 
 import { SwitchButton } from "@/common/Button";
@@ -43,10 +44,12 @@ export const Product: FC<Props> = ({ isPartial = false, database }) => {
                 }
                 href={ProductLinks.sentrei}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   className="p-2"
                   alt="Product"
+                  width="30"
+                  height="30"
+                  layout="responsive"
                   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                   //@ts-ignore
                   src={page.properties.Image?.files[0].file.url}

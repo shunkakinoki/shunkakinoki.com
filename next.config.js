@@ -40,7 +40,7 @@ const config = {
     localeDetection: true,
   },
   images: {
-    domains: ["pbs.twimg.com"],
+    domains: ["pbs.twimg.com", "s3.us-west-2.amazonaws.com"],
   },
   reactStrictMode: true,
   poweredByHeader: true,
