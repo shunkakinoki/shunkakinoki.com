@@ -1,3 +1,9 @@
+## [1.23.8](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.7...v1.23.8) (2021-09-07)
+
+### Bug Fixes
+
+- **deps:** update prisma monorepo to v3 ([baac64d](https://github.com/shunkakinoki/shunkakinoki.com/commit/baac64dbe0cdf99a316094506b8c40b6e42115bb))
+
 ## [1.23.7](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.6...v1.23.7) (2021-09-07)
 
 ### Bug Fixes
