@@ -1,3 +1,11 @@
+## [1.23.10](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.9...v1.23.10) (2021-09-10)
+
+### Bug Fixes
+
+- **deps:** update dependency marked to ^3.0.3 ([456f67a](https://github.com/shunkakinoki/shunkakinoki.com/commit/456f67a32c804016d64830b7c02c9153bc877dec))
+- **deps:** update dependency tailwindcss to ^2.2.14 ([6a861c6](https://github.com/shunkakinoki/shunkakinoki.com/commit/6a861c6c6001db98020d940da4f3a9cda1144105))
+- **deps:** update prisma monorepo to ^3.0.2 ([f9d2ba6](https://github.com/shunkakinoki/shunkakinoki.com/commit/f9d2ba6efa5624e0bc5efb5037b1658ecbb75c0e))
+
 ## [1.23.9](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.8...v1.23.9) (2021-09-07)
 
 ### Bug Fixes
