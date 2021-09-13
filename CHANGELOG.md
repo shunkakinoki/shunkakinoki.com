@@ -1,3 +1,9 @@
+## [1.23.13](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.12...v1.23.13) (2021-09-13)
+
+### Bug Fixes
+
+- **deps:** update dependency swr to ^1.0.1 ([4e70165](https://github.com/shunkakinoki/shunkakinoki.com/commit/4e701659fa58e34f6e290a9e981cb23413cc737f))
+
 ## [1.23.12](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.11...v1.23.12) (2021-09-10)
 
 ### Bug Fixes
