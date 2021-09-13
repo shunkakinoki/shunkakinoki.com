@@ -84,7 +84,7 @@
     "react-icons": "^4.2.0",
     "react-twitter-widgets": "^1.10.0",
     "recoil": "^0.4.1",
-    "swr": "^1.0.0",
+    "swr": "^1.0.1",
     "tailwindcss": "^2.2.15"
   },
   "devDependencies": {
