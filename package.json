@@ -115,7 +115,7 @@
     "@types/marked": "^3.0.0",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
-    "serverless": "^2.57.0",
+    "serverless": "^2.58.0",
     "storybook-dark-mode": "^1.0.8",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.4.3",
