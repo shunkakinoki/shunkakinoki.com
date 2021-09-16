@@ -1,3 +1,9 @@
+## [1.23.15](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.14...v1.23.15) (2021-09-16)
+
+### Bug Fixes
+
+- **deps:** update dependency next-seo to ^4.27.0 ([a1b2a19](https://github.com/shunkakinoki/shunkakinoki.com/commit/a1b2a193e5d39032df2c92df2fa7b6c070e2b780))
+
 ## [1.23.14](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.13...v1.23.14) (2021-09-16)
 
 ### Bug Fixes
