@@ -1,3 +1,9 @@
+## [1.23.16](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.15...v1.23.16) (2021-09-19)
+
+### Bug Fixes
+
+- **deps:** update dependency next-translate to ^1.1.0 ([33e1c5c](https://github.com/shunkakinoki/shunkakinoki.com/commit/33e1c5c6b56ac314f24a224a4fa28e2d5c96682c))
+
 ## [1.23.15](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.14...v1.23.15) (2021-09-16)
 
 ### Bug Fixes
