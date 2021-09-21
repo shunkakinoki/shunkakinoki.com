@@ -82,6 +82,12 @@ const config = {
         destination: "https://cal.com/shunkakinoki",
         permanent: true,
       },
+      {
+        source: "/zoom",
+        destination:
+          "https://zoom.us/j/8705240382?pwd=NVhWdHRocWZFbWxBcVByalNEL3YyUT09",
+        permanent: true,
+      },
     ];
   },
   trailingSlash: false,
