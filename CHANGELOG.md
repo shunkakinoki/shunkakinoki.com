@@ -1,3 +1,9 @@
+# [1.24.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.16...v1.24.0) (2021-09-21)
+
+### Features
+
+- refactor shunkakinok.com experience ([4c4a30e](https://github.com/shunkakinoki/shunkakinoki.com/commit/4c4a30e0f12b001bc7c77e04c4d4cfc5644c9fcd))
+
 ## [1.23.16](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.15...v1.23.16) (2021-09-19)
 
 ### Bug Fixes
