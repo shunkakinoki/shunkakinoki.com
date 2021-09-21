@@ -46,7 +46,7 @@ export const Product: FC<Props> = ({ isPartial = false, database }) => {
               >
                 {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                 {/* @ts-ignore */}
-                {page.properties.Image?.files ? (
+                {page.properties.Image?.files[0] ? (
                   <Image
                     className="p-2"
                     alt="Product"
