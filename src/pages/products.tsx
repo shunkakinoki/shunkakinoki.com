@@ -1,7 +1,7 @@
 import type { Page } from "@notionhq/client/build/src/api-types";
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
 
-import { getDatabase } from "@/lib/notion";
+import { queryDatabase } from "@/lib/notion";
 import { ProductScreen } from "@/screens/ProductScreen";
 
 export type Props = {
@@ -12,7 +12,17 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   if (!process.env.NOTION_PRODUCT_ID) {
     throw new Error("process.NOTION_PRODUCT_ID is not defined");
   }
-  const database = await getDatabase(process.env.NOTION_PRODUCT_ID);
+  const dbResult = await queryDatabase(
+    process.env.NOTION_PRODUCT_ID,
+    undefined,
+    [
+      {
+        property: "Name",
+        direction: "ascending",
+      },
+    ],
+  );
+  const database = dbResult.results;
   if (database) {
     return {
       props: {

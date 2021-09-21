@@ -6,7 +6,6 @@ import type { FC } from "react";
 import { SwitchButton } from "@/common/Button";
 import { SectionText } from "@/common/Text";
 import { ProductCard } from "@/components/Product/ProductCard";
-import { ProductLinks } from "@/const";
 
 export type Props = {
   isPartial?: boolean;
@@ -15,6 +14,9 @@ export type Props = {
 
 export const Product: FC<Props> = ({ isPartial = false, database }) => {
   const filteredDatabase = isPartial ? database.slice(0, 3) : database;
+
+  console.log(JSON.stringify(filteredDatabase));
+
   return (
     <section key="product" className={clsx("mb-6 w-full", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
@@ -42,7 +44,9 @@ export const Product: FC<Props> = ({ isPartial = false, database }) => {
                   //@ts-ignore
                   page.properties.Name?.title[0]?.plain_text || ""
                 }
-                href={ProductLinks.sentrei}
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                //@ts-ignore
+                href={page.properties.Link?.url ?? undefined}
               >
                 {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                 {/* @ts-ignore */}
