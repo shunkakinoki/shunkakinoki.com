@@ -77,6 +77,11 @@ const config = {
         destination: "https://zen.ly/shunkakinoki",
         permanent: true,
       },
+      {
+        source: "/cal",
+        destination: "https://cal.com/shunkakinoki",
+        permanent: true,
+      },
     ];
   },
   trailingSlash: false,

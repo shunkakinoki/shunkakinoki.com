@@ -44,16 +44,22 @@ export const Product: FC<Props> = ({ isPartial = false, database }) => {
                 }
                 href={ProductLinks.sentrei}
               >
-                <Image
-                  className="p-2"
-                  alt="Product"
-                  width="30"
-                  height="30"
-                  layout="responsive"
-                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                  //@ts-ignore
-                  src={page.properties.Image?.files[0].file.url}
-                />
+                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                {/* @ts-ignore */}
+                {page.properties.Image?.files ? (
+                  <Image
+                    className="p-2"
+                    alt="Product"
+                    width="30"
+                    height="30"
+                    layout="responsive"
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    //@ts-ignore
+                    src={page.properties.Image?.files[0].file.url}
+                  />
+                ) : (
+                  <></>
+                )}
               </ProductCard>
             );
           })}
