@@ -1,3 +1,10 @@
+## [1.24.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.0...v1.24.1) (2021-09-22)
+
+### Bug Fixes
+
+- **deps:** update dependency next-seo to ^4.28.1 ([585d58d](https://github.com/shunkakinoki/shunkakinoki.com/commit/585d58d47f78e22ef12aed7968020aedc5f30d37))
+- **deps:** update dependency puppeteer-core to ^10.4.0 ([b1e4e72](https://github.com/shunkakinoki/shunkakinoki.com/commit/b1e4e7247df2cb1c4a92840ab51023ca705412ec))
+
 # [1.24.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.23.16...v1.24.0) (2021-09-21)
 
 ### Features
