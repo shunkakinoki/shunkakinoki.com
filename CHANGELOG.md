@@ -1,3 +1,10 @@
+## [1.24.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.1...v1.24.2) (2021-09-22)
+
+### Bug Fixes
+
+- **deps:** update dependency autoprefixer to ^10.3.5 ([1edf948](https://github.com/shunkakinoki/shunkakinoki.com/commit/1edf9486e24dc3037513ca4e407688ee6b240117))
+- **deps:** update dependency postcss to ^8.3.7 ([4b17bd5](https://github.com/shunkakinoki/shunkakinoki.com/commit/4b17bd50284027a14bcaed19da92beae92353a13))
+
 ## [1.24.1](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.0...v1.24.1) (2021-09-22)
 
 ### Bug Fixes
