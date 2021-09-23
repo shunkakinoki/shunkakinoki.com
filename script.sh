@@ -57,17 +57,13 @@ if [[ "$APP" == "og.shunkakinoki.com" ]]; then
   rm next.config.js
 fi
 
-if [ "$VERCEL" = "1" ]; then
-  if [[ "$VERCEL_ENV" == "production" ]]; then
-    echo "✅ - Build can proceed in production"
+if [[ "$VERCEL_ENV" == "production" ]]; then
+  echo "✅ - Build can proceed in production"
+  exit 1
+elif [[ "$VERCEL_ENV" == "preview" && ( "$APP" == "shunkakinoki" ) ]]; then
+    echo "❎ - Build can proceed in vercel preview at $APP - $CHANGED"
     exit 1
-  else
-    if [[ "$VERCEL_ENV" == "preview" ]]; then
-      echo "❎ - Build can proceed in preview at $APP"
-      exit 1
-    else
-      echo "🌼 - Build not proceeding"
-      exit 0
-    fi
-  fi
+else
+  echo "🌼 - Build not proceeding at $APP - $CHANGED"
+  exit 0
 fi
