@@ -29,7 +29,7 @@ export const subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
     const data = await result.json();
 
     if (!result.ok) {
-      throw new Error(data.error.error.email[0]);
+      throw new Error(data.error.email[0]);
     }
 
     return res.status(201).json({ error: "" });

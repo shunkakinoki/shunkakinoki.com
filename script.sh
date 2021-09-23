@@ -14,7 +14,7 @@ else
   APP=$1
 fi
 
-if [[  $VERCEL ]]; then
+if [[ $VERCEL ]]; then
   echo "😳 - Removing OG pages for vercel"
   rm src/pages/api/hello.ts
   rm src/pages/api/html.ts
