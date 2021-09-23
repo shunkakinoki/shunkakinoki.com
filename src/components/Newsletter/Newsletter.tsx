@@ -49,7 +49,7 @@ export const Newsletter: FC = () => {
     }
 
     setForm({
-      message: "Thank you for subscribing to the newsletter!",
+      message: t("common:newsletter.confirm"),
       state: "success",
     });
   };
@@ -94,7 +94,7 @@ export const Newsletter: FC = () => {
             >
               <div className="relative flex-1 min-w-0">
                 <label htmlFor="email" className="sr-only">
-                  Email address
+                  {t("common:common.email")}
                 </label>
                 <input
                   id="email"

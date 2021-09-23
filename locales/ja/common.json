@@ -1,4 +1,7 @@
 {
+  "common": {
+    "email": "メールアドレス"
+  },
   "header": {
     "about": "About",
     "blog": "Blog",
@@ -6,6 +9,7 @@
     "og": "Open graph generator"
   },
   "newsletter": {
+    "confirm": "登録を確認するためにメールをチェックしてください！",
     "description": "毎週日曜日に、その週にWeb3.0の世界で発見した最もクールな3つのことを記載したメルマガをお送りいたします。",
     "subscribe": "私のニュースレターを購読してください。"
   }

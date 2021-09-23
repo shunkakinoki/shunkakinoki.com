@@ -1,4 +1,7 @@
 {
+  "common": {
+    "email": "电子邮件地址"
+  },
   "header": {
     "about": "About",
     "blog": "Blog",
@@ -6,6 +9,7 @@
     "og": "Open graph generator"
   },
   "newsletter": {
+    "confirm": "请检查您的电子邮件以确认您的订阅！",
     "description": "每个星期天，我都会发送一封独家电子邮件，其中包含我那周在 Web 3.0 世界中发现的三件最酷的事情。",
     "subscribe": "订阅我的时事通讯。"
   }
