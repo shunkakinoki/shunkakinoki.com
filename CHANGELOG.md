@@ -1,3 +1,9 @@
+## [1.24.3](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.2...v1.24.3) (2021-09-23)
+
+### Performance Improvements
+
+- ini revue newsletter ([649e500](https://github.com/shunkakinoki/shunkakinoki.com/commit/649e50008abc745114fc25a171d3b2cf05fba26b))
+
 ## [1.24.2](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.1...v1.24.2) (2021-09-22)
 
 ### Bug Fixes
