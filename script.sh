@@ -60,7 +60,7 @@ fi
 if [[ "$VERCEL_ENV" == "production" ]]; then
   echo "✅ - Build can proceed in production"
   exit 1
-elif [[ "$VERCEL_ENV" == "preview" && ( "$APP" == "shunkakinoki" ) ]]; then
+elif [[ "$VERCEL_ENV" == "preview" && ( "$APP" == "design" || "$APP" == "shunkakinoki" ) ]]; then
     echo "❎ - Build can proceed in vercel preview at $APP - $CHANGED"
     exit 1
 else
