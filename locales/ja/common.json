@@ -4,5 +4,9 @@
     "blog": "Blog",
     "dashboard": "Dashboard",
     "og": "Open graph generator"
+  },
+  "newsletter": {
+    "description": "毎週日曜日に、その週にWeb3.0の世界で発見した最もクールな3つのことを記載したメルマガをお送りいたします。",
+    "subscribe": "私のニュースレターを購読してください。"
   }
 }

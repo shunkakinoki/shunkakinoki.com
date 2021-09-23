@@ -4,5 +4,9 @@
     "blog": "Blog",
     "dashboard": "Dashboard",
     "og": "Open graph generator"
+  },
+  "newsletter": {
+    "description": "每个星期天，我都会发送一封独家电子邮件，其中包含我那周在 Web 3.0 世界中发现的三件最酷的事情。",
+    "subscribe": "订阅我的时事通讯。"
   }
 }

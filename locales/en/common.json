@@ -4,5 +4,9 @@
     "blog": "Blog",
     "dashboard": "Dashboard",
     "og": "Open graph generator"
+  },
+  "newsletter": {
+    "description": "Every Sunday, I send out an exclusive email with the three coolest things I’ve discovered that week in the world of web 3.0.",
+    "subscribe": "Subscribe to my newsletter."
   }
 }

@@ -4,6 +4,7 @@ import {
   LightBulbIcon,
 } from "@heroicons/react/outline";
 import clsx from "clsx";
+import useTranslation from "next-translate/useTranslation";
 import { useState } from "react";
 import type { FC } from "react";
 
@@ -11,6 +12,8 @@ import { useAnalytics } from "@/hooks/useAnalytics";
 
 export const Newsletter: FC = () => {
   const { number, isLoading } = useAnalytics("newsletter");
+
+  const { t } = useTranslation();
 
   const [form, setForm] = useState<{
     message: string;
@@ -80,12 +83,10 @@ export const Newsletter: FC = () => {
           </div>
           <div className="relative">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-white">
-              Subscribe to my newsletter.
+              {t("common:newsletter.subscribe")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-indigo-50">
-              Every Sunday I write an email newsletter with some thoughts, life
-              lessons and insights regading my journey. I would love for you to
-              join.
+              {t("common:newsletter.description")}
             </p>
             <form
               className="sm:flex sm:mx-auto mt-6 sm:max-w-lg"
