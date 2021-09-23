@@ -10,7 +10,7 @@ import type { FC } from "react";
 import { useAnalytics } from "@/hooks/useAnalytics";
 
 export const Newsletter: FC = () => {
-  const { number, isLoading } = useAnalytics("buttondown");
+  const { number, isLoading } = useAnalytics("newsletter");
 
   const [form, setForm] = useState<{
     message: string;
