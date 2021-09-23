@@ -18,36 +18,18 @@ export const subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await runMiddleware(req, res, cors);
 
-    const API_KEY = process.env.BUTTONDOWN_API_KEY;
-    const response = await fetch(
-      `https://api.buttondown.email/v1/subscribers`,
-      {
-        body: JSON.stringify({
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          email,
-          tags: ["newsletter"],
-        }),
-        headers: {
-          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-          Authorization: `Token ${API_KEY}`,
-          "Content-Type": "application/json",
-        },
-        method: "POST",
+    const result = await fetch("https://www.getrevue.co/api/v2/subscribers", {
+      method: "POST",
+      headers: {
+        Authorization: `Token ${process.env.REVUE_API_KEY}`,
+        "Content-Type": "application/json",
       },
-    );
+      body: JSON.stringify({ email }),
+    });
+    const data = await result.json();
 
-    if (response.status >= 400) {
-      const text = await response.text();
-
-      if (text.includes("already subscribed")) {
-        return res.status(400).json({
-          error: "You're already subscribed to my mailing list.",
-        });
-      }
-
-      return res.status(400).json({
-        error: text,
-      });
+    if (!result.ok) {
+      throw new Error(data.error.error.email[0]);
     }
 
     return res.status(201).json({ error: "" });

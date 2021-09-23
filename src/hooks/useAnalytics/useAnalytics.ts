@@ -3,7 +3,7 @@ import useSWR from "swr";
 import { fetcher } from "@/lib/fetcher";
 
 export const analytics = [
-  "buttondown",
+  "newsletter",
   "github",
   "twitter",
   "views",

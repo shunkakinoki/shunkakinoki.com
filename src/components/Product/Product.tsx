@@ -15,8 +15,6 @@ export type Props = {
 export const Product: FC<Props> = ({ isPartial = false, database }) => {
   const filteredDatabase = isPartial ? database.slice(0, 3) : database;
 
-  console.log(JSON.stringify(filteredDatabase));
-
   return (
     <section key="product" className={clsx("mb-6 w-full", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">

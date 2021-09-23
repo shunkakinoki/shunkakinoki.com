@@ -2,7 +2,7 @@ import type { FC } from "react";
 
 import { SectionText } from "@/common/Text";
 import {
-  ButtondownCard,
+  NewsletterCard,
   GithubCard,
   TwitterCard,
   ViewCard,
@@ -18,7 +18,7 @@ export const Dashboard: FC = () => {
       <dl className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
         <ViewCard />
         <LikeCard />
-        <ButtondownCard />
+        <NewsletterCard />
         <GithubCard />
         <TwitterCard />
       </dl>
