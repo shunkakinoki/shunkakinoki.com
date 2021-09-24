@@ -78,6 +78,11 @@ const config = {
         permanent: true,
       },
       {
+        source: "/schedule",
+        destination: "/cal.html",
+        permanent: true,
+      },
+      {
         source: "/cal",
         destination: "https://cal.com/shunkakinoki",
         permanent: true,
