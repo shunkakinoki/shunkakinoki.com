@@ -2,10 +2,7 @@ name: Serverless
 on:
   push:
     branches:
-      - alpha
-      - beta
       - main
-  pull_request:
 jobs:
   serverless:
     runs-on: ubuntu-latest

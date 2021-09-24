@@ -1,10 +1,6 @@
 #!/bin/bash
 
-if [ "$VERCEL" = "1" ]; then
-  exit 0
-fi
-
-if [ "$VERCEL" = "1" ]; then
+if [ $VERCEL ]; then
   echo "PWD: $PWD"
   echo "VERCEL_ENV: $VERCEL_ENV"
   echo "VERCEL_GIT_COMMIT_MESSAGE: $VERCEL_GIT_COMMIT_MESSAGE"
@@ -18,7 +14,7 @@ else
   APP=$1
 fi
 
-if [[ "$VERCEL" = "1" ]]; then
+if [[ $VERCEL ]]; then
   echo "😳 - Removing OG pages for vercel"
   rm src/pages/api/hello.ts
   rm src/pages/api/html.ts
@@ -57,17 +53,13 @@ if [[ "$APP" == "og.shunkakinoki.com" ]]; then
   rm next.config.js
 fi
 
-if [ "$VERCEL" = "1" ]; then
-  if [[ "$VERCEL_ENV" == "production" ]]; then
-    echo "✅ - Build can proceed in production"
+if [[ "$VERCEL_ENV" == "production" ]]; then
+  echo "✅ - Build can proceed in production"
+  exit 1
+elif [[ "$VERCEL_ENV" == "preview" && ( "$APP" == "design" || "$APP" == "shunkakinoki" ) ]]; then
+    echo "❎ - Build can proceed in vercel preview at $APP - $CHANGED"
     exit 1
-  else
-    if [[ "$VERCEL_ENV" == "preview" ]]; then
-      echo "❎ - Build can proceed in preview at $APP"
-      exit 1
-    else
-      echo "🌼 - Build not proceeding"
-      exit 0
-    fi
-  fi
+else
+  echo "🌼 - Build not proceeding at $APP - $CHANGED"
+  exit 0
 fi
