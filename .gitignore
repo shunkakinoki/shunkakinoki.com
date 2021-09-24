@@ -91,7 +91,9 @@ dist
 # Comment in the public line in if your project uses Gatsby and not Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
 public
-!public.favicon.svg
+!public/cal.html
+!public/logo.png
+!public/favicon.svg
 
 # vuepress build output
 .vuepress/dist
