@@ -1,3 +1,9 @@
+## [1.24.5](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.4...v1.24.5) (2021-09-25)
+
+### Performance Improvements
+
+- ini shun token ([e219023](https://github.com/shunkakinoki/shunkakinoki.com/commit/e219023ea713b717c044c42dde282cec51f6e5c6))
+
 ## [1.24.4](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.3...v1.24.4) (2021-09-25)
 
 ### Bug Fixes
