@@ -123,7 +123,8 @@ export const Footer: FC = () => {
             v{packageJson.version}.
           </a>{" "}
           &copy; <FooterTokenLink href={SocialLinks.shun}>Shun</FooterTokenLink>{" "}
-          Kakinoki. All rights reserved.
+          <FooterTokenLink href={SocialLinks.kaki}>Kaki</FooterTokenLink>
+          noki. All rights reserved.
         </p>
         <CreditsButton />
         <div className="sm:flex-grow-0">

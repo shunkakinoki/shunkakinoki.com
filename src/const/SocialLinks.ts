@@ -10,6 +10,7 @@ export class SocialLinks {
   static readonly website = `https://${shunkakinoki}.com`;
 
   static readonly shun = `https://app.sushi.com/swap?inputCurrency=&outputCurrency=${CryptoLinks.shun}`;
+  static readonly kaki = `https://explorer.solana.com/address/${CryptoLinks.kaki}`;
 
   static readonly discord = `https://discord.com/users/488389192775106561`;
   static readonly docker = `https://hub.docker.com/u/${shunkakinoki}`;
