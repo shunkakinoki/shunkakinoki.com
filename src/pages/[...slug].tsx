@@ -105,13 +105,10 @@ export const getStaticProps: GetStaticProps<Props> = async ({
     };
   }
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  //@ts-ignore
-  if (SocialLinks[pageId]) {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  if (SocialLinks[pageId].startsWith("https://")) {
     return {
       redirect: {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        //@ts-ignore
         destination: SocialLinks[pageId],
         permanent: true,
       },
