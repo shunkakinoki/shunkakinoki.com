@@ -1,3 +1,9 @@
+## [1.24.4](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.3...v1.24.4) (2021-09-25)
+
+### Bug Fixes
+
+- **deps:** update dependency @notionhq/client to ^0.3.3 ([21d93d4](https://github.com/shunkakinoki/shunkakinoki.com/commit/21d93d4e9a676fbdeaa026185cff73b77a899d44))
+
 ## [1.24.3](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.2...v1.24.3) (2021-09-23)
 
 ### Performance Improvements
