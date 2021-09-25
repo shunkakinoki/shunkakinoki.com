@@ -8,6 +8,8 @@ export class SocialLinks {
   static readonly pioneer = "https://pioneer.app/winners/shun-kakinoki/";
   static readonly website = `https://${shunkakinoki}.com`;
 
+  static readonly shun = `https://app.sushi.com/swap?inputCurrency=&outputCurrency=${CryptoLinks.shun}`;
+
   static readonly discord = `https://discord.com/users/${shunkakinoki}`;
   static readonly docker = `https://hub.docker.com/u/${shunkakinoki}`;
   static readonly ethereum = `https://etherscan.io/address/${CryptoLinks.ethereum}`;

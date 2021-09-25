@@ -26,6 +26,11 @@ interface FooterIconLinkProps {
   href: string;
 }
 
+interface FooterTokenLinkProps {
+  children: ReactNode;
+  href: string;
+}
+
 export const FooterLink: FC<FooterLinkProps> = ({ children, href }) => {
   return (
     <div className="py-2 px-5">
@@ -48,6 +53,25 @@ export const FooterIconLink: FC<FooterIconLinkProps> = ({ children, href }) => {
     >
       {children}
     </a>
+  );
+};
+
+export const FooterTokenLink: FC<FooterTokenLinkProps> = ({
+  children,
+  href,
+}) => {
+  return (
+    <span className="group">
+      <a
+        className="group-hover:underline group-hover:uppercase"
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span className="hidden group-hover:inline">$</span>
+        {children}
+      </a>
+    </span>
   );
 };
 
@@ -98,7 +122,8 @@ export const Footer: FC = () => {
           >
             v{packageJson.version}.
           </a>{" "}
-          &copy; Shun Kakinoki. All rights reserved.
+          &copy; <FooterTokenLink href={SocialLinks.shun}>Shun</FooterTokenLink>{" "}
+          Kakinoki. All rights reserved.
         </p>
         <CreditsButton />
         <div className="sm:flex-grow-0">
