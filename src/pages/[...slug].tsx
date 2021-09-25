@@ -106,7 +106,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  if (SocialLinks[pageId].startsWith("https://")) {
+  if (SocialLinks[pageId] && SocialLinks[pageId]?.startsWith("https://")) {
     return {
       redirect: {
         destination: SocialLinks[pageId],
