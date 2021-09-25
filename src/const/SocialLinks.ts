@@ -3,6 +3,7 @@ import { shunkakinoki } from "./shunkakinoki";
 
 export class SocialLinks {
   static readonly gmail = `${shunkakinoki}@gmail.com`;
+  static readonly discordName = `${shunkakinoki}#3333`;
 
   static readonly email = `mailto:${SocialLinks.gmail}`;
   static readonly pioneer = "https://pioneer.app/winners/shun-kakinoki/";
@@ -10,7 +11,7 @@ export class SocialLinks {
 
   static readonly shun = `https://app.sushi.com/swap?inputCurrency=&outputCurrency=${CryptoLinks.shun}`;
 
-  static readonly discord = `https://discord.com/users/${shunkakinoki}`;
+  static readonly discord = `https://discord.com/users/488389192775106561`;
   static readonly docker = `https://hub.docker.com/u/${shunkakinoki}`;
   static readonly ethereum = `https://etherscan.io/address/${CryptoLinks.ethereum}`;
   static readonly facebook = `https://facebook.com/${shunkakinoki}`;

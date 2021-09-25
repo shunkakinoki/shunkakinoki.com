@@ -95,7 +95,11 @@ export const Social: FC<Props> = ({ isPartial = false }) => {
               <SocialCard href={SocialLinks.docker} title="Docker">
                 <FaDocker className="w-6 h-6" />
               </SocialCard>
-              <SocialCard href={SocialLinks.discord} title="Discord">
+              <SocialCard
+                href={SocialLinks.discord}
+                username={SocialLinks.discordName}
+                title="Discord"
+              >
                 <FaDiscord className="w-6 h-6" />
               </SocialCard>
               <SocialCard href={SocialLinks.medium} title="Medium">
