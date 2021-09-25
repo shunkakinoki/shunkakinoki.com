@@ -1,3 +1,9 @@
+## [1.24.6](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.5...v1.24.6) (2021-09-25)
+
+### Bug Fixes
+
+- **deps:** update dependency postcss to ^8.3.8 ([75a3799](https://github.com/shunkakinoki/shunkakinoki.com/commit/75a3799550bc77a4af5f1b5a44519996d97ff368))
+
 ## [1.24.5](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.4...v1.24.5) (2021-09-25)
 
 ### Performance Improvements
