@@ -1,3 +1,9 @@
+## [1.24.8](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.7...v1.24.8) (2021-09-30)
+
+### Bug Fixes
+
+- **deps:** update dependency autoprefixer to ^10.3.6 ([fb9d16a](https://github.com/shunkakinoki/shunkakinoki.com/commit/fb9d16a25d995c74100a7c73f2583721ae02233f))
+
 ## [1.24.7](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.6...v1.24.7) (2021-09-30)
 
 ### Bug Fixes
