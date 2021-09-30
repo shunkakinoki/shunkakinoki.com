@@ -1,3 +1,9 @@
+## [1.24.7](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.6...v1.24.7) (2021-09-30)
+
+### Bug Fixes
+
+- **deps:** update dependency tailwindcss to ^2.2.16 ([4fbf268](https://github.com/shunkakinoki/shunkakinoki.com/commit/4fbf2682a60526070e945855b61d24b07bb9177d))
+
 ## [1.24.6](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.5...v1.24.6) (2021-09-25)
 
 ### Bug Fixes
