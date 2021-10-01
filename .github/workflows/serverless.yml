@@ -23,9 +23,11 @@ jobs:
           aws-region: us-east-1
       - uses: dopplerhq/cli-action@v1
       - run: |
+          doppler setup --no-interactive
+      - run: |
           yarn install --frozen-lockfile
       - run: |
-          doppler setup --no-prompt && yarn run env:pull || true
+          yarn run env:pull
         env:
           DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
       - run: |
