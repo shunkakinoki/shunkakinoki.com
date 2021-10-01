@@ -105,7 +105,7 @@
     "@storybook/addon-a11y": "^6.3.8",
     "@storybook/addon-actions": "^6.3.9",
     "@storybook/addon-controls": "^6.3.8",
-    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.9",
     "@storybook/addon-links": "^6.3.9",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/builder-webpack5": "^6.3.8",
