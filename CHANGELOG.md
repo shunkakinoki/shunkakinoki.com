@@ -1,3 +1,9 @@
+## [1.24.9](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.8...v1.24.9) (2021-10-01)
+
+### Bug Fixes
+
+- **deps:** update dependency next-mdx-remote to ^3.0.5 ([5b4ec0b](https://github.com/shunkakinoki/shunkakinoki.com/commit/5b4ec0bf55a64d11c1e3fd5baf9d11baacd88813))
+
 ## [1.24.8](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.7...v1.24.8) (2021-09-30)
 
 ### Bug Fixes
