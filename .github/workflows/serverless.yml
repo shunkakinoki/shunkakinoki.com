@@ -24,12 +24,12 @@ jobs:
       - uses: dopplerhq/cli-action@v1
       - run: |
           doppler setup --no-interactive
+        env:
+          DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
       - run: |
           yarn install --frozen-lockfile
       - run: |
           yarn run env:pull
-        env:
-          DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
       - run: |
           bash ./script.sh ${{ matrix.app }}
       - run: |
