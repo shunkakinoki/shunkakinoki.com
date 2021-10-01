@@ -21,14 +21,13 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
+      - uses: dopplerhq/cli-action@v1
       - run: |
           yarn install --frozen-lockfile
       - run: |
-          yarn run env:pull --token ${VERCEL_TOKEN}
+          doppler setup --no-prompt && yarn run env:pull || true
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
       - run: |
           bash ./script.sh ${{ matrix.app }}
       - run: |
