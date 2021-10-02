@@ -88,6 +88,11 @@ const config = {
         permanent: true,
       },
       {
+        source: "/vote",
+        destination: "https://vote.shunkakinoki.com",
+        permanent: true,
+      },
+      {
         source: "/zoom",
         destination:
           "https://zoom.us/j/8705240382?pwd=NVhWdHRocWZFbWxBcVByalNEL3YyUT09",
