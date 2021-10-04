@@ -3580,12 +3580,12 @@
     "@tailwindcss/typography" "^0.4.1"
     tailwindcss "^2.2.7"
 
-"@shunkakinoki/tsconfig@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/tsconfig/-/tsconfig-1.1.1.tgz#824c76421c7464d1cf6355e9846817e575be373c"
-  integrity sha512-vbNBDqezoOh6Z38tdTlmWAUeVFSlpCl4cPJdDLLpV9HcjGF+Axo4B4RWnRqrVNAPsUhWmKQ6ko3YBRAcmYkkLA==
+"@shunkakinoki/tsconfig@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/tsconfig/-/tsconfig-1.1.2.tgz#f879a7b5c3d4c2d1d8aafb02d50ef981fcd2f75d"
+  integrity sha512-V4BJ4Ur9vYZUehAEZErJMwPYImTXQXQrnCtyxghpFNK/0ZBC0BzcFbJSVA24QiBBCHPiNT/XGaMj7UwZ9W2CnA==
   dependencies:
-    typescript "^4.3.5"
+    typescript "^4.4.3"
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -20522,7 +20522,7 @@ typeorm@^0.2.30:
     yargs "^17.0.1"
     zen-observable-ts "^1.0.0"
 
-typescript@4.3.4, typescript@^4.3.5, typescript@^4.4.3:
+typescript@4.3.4, typescript@^4.4.3:
   version "4.4.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.3.tgz#bdc5407caa2b109efd4f82fe130656f977a29324"
   integrity sha512-4xfscpisVgqqDfPaJo5vkd+Qd/ItkoagnHpufr+i2QCHBsNYp+G7UAoyFl8aPtx879u38wPV65rZ8qbGZijalA==
