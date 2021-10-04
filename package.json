@@ -90,7 +90,7 @@
   "devDependencies": {
     "@shunkakinoki/commitlint": "^1.0.3",
     "@shunkakinoki/depcheck": "^1.0.1",
-    "@shunkakinoki/dev": "^1.2.5",
+    "@shunkakinoki/dev": "^1.2.7",
     "@shunkakinoki/eslint-config": "^1.1.17",
     "@shunkakinoki/husky": "^1.0.2",
     "@shunkakinoki/lint-staged": "^1.1.4",
