@@ -1,3 +1,9 @@
+## [1.24.11](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.10...v1.24.11) (2021-10-04)
+
+### Bug Fixes
+
+- **deps:** update dependency react-icons to ^4.3.1 ([7761147](https://github.com/shunkakinoki/shunkakinoki.com/commit/7761147356e174aa2e0cade1bb41a06f74b29c9f))
+
 ## [1.24.10](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.9...v1.24.10) (2021-10-01)
 
 ### Bug Fixes
