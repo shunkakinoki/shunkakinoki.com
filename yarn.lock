@@ -3509,14 +3509,14 @@
     eslint-plugin-react-hooks "^4.2.0"
     eslint-plugin-tailwindcss "^1.14.3"
 
-"@shunkakinoki/husky@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/husky/-/husky-1.0.2.tgz#d9b13e00497adca6f362e5da527e4a8e986efd6d"
-  integrity sha512-kAdswWtW/pudXYnYJs5EQX3JQQNXRbGkZX36vxYRbRt85Ulskq/4HZx2RHNI72GWdXeFi2hyNFSIGO+IDCPdNA==
+"@shunkakinoki/husky@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/husky/-/husky-1.0.3.tgz#53724af5615b566c9ef18d22a3c2574c87a8c708"
+  integrity sha512-CA4rOIZG5+IQOs4gxip7W0am0wxCIUHMKYVSG6ZcW1GWw4tNLGdzaHVolSZek0WyGJi+z3DJnwSetQj0cFP2ag==
   dependencies:
     commitizen "^4.2.4"
     git-cz "^4.7.6"
-    husky "^7.0.1"
+    husky "^7.0.2"
     is-ci "^3.0.0"
     pinst "^2.1.6"
 
@@ -12300,10 +12300,10 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-husky@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-7.0.1.tgz#579f4180b5da4520263e8713cc832942b48e1f1c"
-  integrity sha512-gceRaITVZ+cJH9sNHqx5tFwbzlLCVxtVZcusME8JYQ8Edy5mpGDOqD8QBCdMhpyo9a+JXddnujQ4rpY2Ff9SJA==
+husky@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-7.0.2.tgz#21900da0f30199acca43a46c043c4ad84ae88dff"
+  integrity sha512-8yKEWNX4z2YsofXAMT7KvA1g8p+GxtB1ffV8XtpAEGuXNAbCV5wdNKH+qTpw8SM9fh4aMPDR+yQuKfgnreyZlg==
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.11:
   version "0.4.24"
