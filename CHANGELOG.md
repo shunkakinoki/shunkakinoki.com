@@ -1,3 +1,9 @@
+## [1.24.13](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.12...v1.24.13) (2021-10-05)
+
+### Bug Fixes
+
+- **deps:** update dependency postcss to ^8.3.9 ([c306edf](https://github.com/shunkakinoki/shunkakinoki.com/commit/c306edfbfd1b79ca84a6921f83840d486ec93a16))
+
 ## [1.24.12](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.11...v1.24.12) (2021-10-04)
 
 ### Bug Fixes
