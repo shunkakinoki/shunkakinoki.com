@@ -3527,12 +3527,12 @@
   dependencies:
     lint-staged "^11.2.0"
 
-"@shunkakinoki/npm-check-updates@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/npm-check-updates/-/npm-check-updates-1.0.2.tgz#587cf0433e52457857e8794514cff25742fa4ebc"
-  integrity sha512-ffhKXol/whUijlutLvTb1KhI4GnrIGfLXuMaWrGCN1RLTNzzLy4KzBMJAYdHO6FB8QsDASAVV4c9Zcl7+BwSBA==
+"@shunkakinoki/npm-check-updates@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/npm-check-updates/-/npm-check-updates-1.0.3.tgz#3fe29770085f82fa2a0fc3a2aa15b61a1574cbde"
+  integrity sha512-4phuhINtVRnCPW8MmcBFBBYKW0H+f/vEYPqVznNOln0EODmnF9hX37y8lFhOtQEB9bKf1G3djkyLs46i+MjvRw==
   dependencies:
-    npm-check-updates "^11.8.3"
+    npm-check-updates "^11.8.5"
 
 "@shunkakinoki/npm-package-json-lint-config@^1.0.3":
   version "1.0.3"
@@ -15610,12 +15610,12 @@ npm-bundled@^1.0.1, npm-bundled@^1.1.1:
   dependencies:
     npm-normalize-package-bin "^1.0.1"
 
-npm-check-updates@^11.8.3:
-  version "11.8.3"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.8.3.tgz#3c3541ad855bbc42b0d60e8eb293d3f6125c80e5"
-  integrity sha512-NslIB6Af7GagVrN+bvBkObLyawIZfOnDnl8n9MHE+dFt0aChRYtvR6T2BLJKzOPIepCLmmh0NRR/qha0ExAELQ==
+npm-check-updates@^11.8.5:
+  version "11.8.5"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.8.5.tgz#8dec7fd255a437264742c15f9c0bb29f4eceaf55"
+  integrity sha512-IYSHjlWe8UEugDy7X0qjBeJwcni4DlcWdBK4QQEbwgkNlEDlXyd4yQJYWFumKaJzrp/n5/EcvaboXsBD1Er/pw==
   dependencies:
-    chalk "^4.1.1"
+    chalk "^4.1.2"
     cint "^8.2.1"
     cli-table "^0.3.6"
     commander "^6.2.1"
@@ -15631,7 +15631,7 @@ npm-check-updates@^11.8.3:
     lodash "^4.17.21"
     minimatch "^3.0.4"
     p-map "^4.0.0"
-    pacote "^11.3.4"
+    pacote "^11.3.5"
     parse-github-url "^1.0.2"
     progress "^2.0.3"
     prompts "^2.4.1"
@@ -16251,7 +16251,7 @@ package-json@^6.3.0:
     registry-url "^5.0.0"
     semver "^6.2.0"
 
-pacote@^11.1.11, pacote@^11.2.6, pacote@^11.3.0, pacote@^11.3.1, pacote@^11.3.4, pacote@^11.3.5:
+pacote@^11.1.11, pacote@^11.2.6, pacote@^11.3.0, pacote@^11.3.1, pacote@^11.3.5:
   version "11.3.5"
   resolved "https://registry.yarnpkg.com/pacote/-/pacote-11.3.5.tgz#73cf1fc3772b533f575e39efa96c50be8c3dc9d2"
   integrity sha512-fT375Yczn4zi+6Hkk2TBe1x1sP8FgFsEIZ2/iWaXY2r/NkhDJfxbcn5paz1+RTFCyNf+dPnaoBDJoAxXSU8Bkg==
