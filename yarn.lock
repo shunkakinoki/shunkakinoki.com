@@ -3569,16 +3569,16 @@
     stylelint "^13.12.0"
     stylelint-config-standard "^22.0.0"
 
-"@shunkakinoki/tailwindcss@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/tailwindcss/-/tailwindcss-1.0.3.tgz#7d62f9a7f75e93fe166bf860f638e40b7b089765"
-  integrity sha512-HpPBKa9GbbQABAP2qQcdJmbHdFpi+msHaYMoOROszIgKJexDEIuwdzvMZb2lIB/4YubFE3l7wus8n2Q2Vdwa+w==
+"@shunkakinoki/tailwindcss@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/tailwindcss/-/tailwindcss-1.0.5.tgz#719cbcc5f6493f99614c168beb4110a51240609c"
+  integrity sha512-fLlXooRXL4bdJ1ctfRhWYWu+0NKENjq6mn/fHng5RrXR7B0/UT1yHTGagJs/fktjQ7L6SOhh28GjtVJ3BxTcAg==
   dependencies:
-    "@tailwindcss/aspect-ratio" "^0.2.1"
-    "@tailwindcss/forms" "^0.3.3"
-    "@tailwindcss/line-clamp" "^0.2.1"
+    "@tailwindcss/aspect-ratio" "^0.2.2"
+    "@tailwindcss/forms" "^0.3.4"
+    "@tailwindcss/line-clamp" "^0.2.2"
     "@tailwindcss/typography" "^0.4.1"
-    tailwindcss "^2.2.7"
+    tailwindcss "^2.2.16"
 
 "@shunkakinoki/tsconfig@^1.1.2":
   version "1.1.2"
@@ -5297,22 +5297,22 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
-"@tailwindcss/aspect-ratio@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/aspect-ratio/-/aspect-ratio-0.2.1.tgz#a7ce776688b8218d9559a6918f0bccc58f0f16dd"
-  integrity sha512-aDFi80aHQ3JM3symJ5iKU70lm151ugIGFCI0yRZGpyjgQSDS+Fbe93QwypC1tCEllQE8p0S7TUu20ih1b9IKLA==
+"@tailwindcss/aspect-ratio@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/aspect-ratio/-/aspect-ratio-0.2.2.tgz#68819ac65bc91c1833fec1f4af5cc3bfb3f25922"
+  integrity sha512-yjvYH1qKQapYUVz0rCRAQ29KlKuiDsWJF/0d24lpTPWtTKBimcKWHiAMjZOILbnRd25PogILsbOyFFVOjFd6Ow==
 
-"@tailwindcss/forms@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.3.3.tgz#a29d22668804f3dae293dcadbef1aa6315c45b64"
-  integrity sha512-U8Fi/gq4mSuaLyLtFISwuDYzPB73YzgozjxOIHsK6NXgg/IWD1FLaHbFlWmurAMyy98O+ao74ksdQefsquBV1Q==
+"@tailwindcss/forms@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.3.4.tgz#e4939dc16450eccf4fd2029770096f38cbb556d4"
+  integrity sha512-vlAoBifNJUkagB+PAdW4aHMe4pKmSLroH398UPgIogBFc91D2VlHUxe4pjxQhiJl0Nfw53sHSJSQBSTQBZP3vA==
   dependencies:
     mini-svg-data-uri "^1.2.3"
 
-"@tailwindcss/line-clamp@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.2.1.tgz#efafe556719c26a3926f0679a98307c4bc9270d2"
-  integrity sha512-Hq2KJY1+T2v7jw/mnT3mnC7CKbp5kj1XTqzSb2xbEt1j+JkxIR6N3ijsN/WevZtsKJfVE1KOejA/3IRKuhZEsQ==
+"@tailwindcss/line-clamp@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.2.2.tgz#05843c004bf069353a0c43f9df8cc3a6016252b8"
+  integrity sha512-NgA4Ds+/eCiO+6O3SooRsfJ8m7M2+QvNvHwOjBQq7FIYoWwAV4I4Wu4fjHeuO9Yi6p47ceHUKEGGEBh0ozQodg==
 
 "@tailwindcss/typography@^0.4.1":
   version "0.4.1"
@@ -19836,7 +19836,7 @@ tabtab@^3.0.2:
     mkdirp "^0.5.1"
     untildify "^3.0.3"
 
-tailwindcss@^2.1.2, tailwindcss@^2.2.7:
+tailwindcss@^2.1.2:
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-2.2.7.tgz#795d07a14ef46c2dc4a1610f7f906f697daaf731"
   integrity sha512-jv35rugP5j8PpzbXnsria7ZAry7Evh0KtQ4MZqNd+PhF+oIKPwJTVwe/rmfRx9cZw3W7iPZyzBmeoAoNwfJ1yg==
