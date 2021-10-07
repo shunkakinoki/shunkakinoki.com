@@ -3490,10 +3490,10 @@
     scripty "^2.0.0"
     sort-package-json "^1.52.0"
 
-"@shunkakinoki/eslint-config@^1.1.22":
-  version "1.1.22"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.22.tgz#b04e738d1c7e35b8919f28497ef979291fd5d898"
-  integrity sha512-EVh6HXyL/rjaOl1M29Mty7v0OVy3ixwCd32AEQjFiPN/DdGZDe9PmZU3stOuacOuUgj4xezuKkoGqw1qQtlm4A==
+"@shunkakinoki/eslint-config@^1.1.23":
+  version "1.1.23"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.23.tgz#5144e32a042f29cf6b19a6c806a1a2cddb5fd4d7"
+  integrity sha512-kwGtrClu9DPTvOMPdOFMNk2Zj/Nvmo6719KwvE8dW/BZYSF2rFuZlfui7gcLnu008ZaObhXzQ0jvkfmGRTodTg==
   dependencies:
     "@next/eslint-plugin-next" "^11.1.2"
     "@typescript-eslint/eslint-plugin" "^4.33.0"
@@ -3507,7 +3507,7 @@
     eslint-plugin-prettier "^4.0.0"
     eslint-plugin-react "^7.26.1"
     eslint-plugin-react-hooks "^4.2.0"
-    eslint-plugin-tailwindcss "^1.16.1"
+    eslint-plugin-tailwindcss "^1.17.0"
 
 "@shunkakinoki/husky@^1.0.3":
   version "1.0.3"
@@ -9834,10 +9834,10 @@ eslint-plugin-react@^7.26.1:
     semver "^6.3.0"
     string.prototype.matchall "^4.0.5"
 
-eslint-plugin-tailwindcss@^1.16.1:
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-tailwindcss/-/eslint-plugin-tailwindcss-1.16.1.tgz#12d8a0816651850283a99780a845eaff67b51362"
-  integrity sha512-nOmZ2lQKhLJjGTrrEnVnE9l/xXHq7IodiqtV3fQ8QjMB1m25/Jvz4T8jy/ntY//qs+nbH9e5EDbs0gHX3J8I/Q==
+eslint-plugin-tailwindcss@^1.17.0:
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-tailwindcss/-/eslint-plugin-tailwindcss-1.17.0.tgz#ef618a7da3537cc105f49ea28302582ae8689211"
+  integrity sha512-IoaC0s2j0Cb+fXBZVxtFZe+0PQ3SaFJ2PK/mYvG2uGvIGKaU9AaLOVotCwMZIYv9oWVssyFTIehPqwJQWY2fAQ==
   dependencies:
     fast-glob "^3.2.5"
     postcss "^8.3.0"
