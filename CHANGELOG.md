@@ -1,3 +1,9 @@
+## [1.24.16](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.15...v1.24.16) (2021-10-07)
+
+### Bug Fixes
+
+- **deps:** update dependency marked to ^3.0.7 ([743ab59](https://github.com/shunkakinoki/shunkakinoki.com/commit/743ab593da1bdb20ab8bf6d301b9a2879427a5cd))
+
 ## [1.24.15](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.14...v1.24.15) (2021-10-07)
 
 ### Bug Fixes
