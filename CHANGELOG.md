@@ -1,3 +1,10 @@
+## [1.24.14](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.13...v1.24.14) (2021-10-07)
+
+### Bug Fixes
+
+- **deps:** update dependency next-sitemap to ^1.6.179 ([ec70176](https://github.com/shunkakinoki/shunkakinoki.com/commit/ec701764fa76dec9e08f67fa45ec160485633b55))
+- **deps:** update prisma monorepo to ^3.2.0 ([daa0967](https://github.com/shunkakinoki/shunkakinoki.com/commit/daa096744274f030b96911e7f20cf550015529d1))
+
 ## [1.24.13](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.12...v1.24.13) (2021-10-05)
 
 ### Bug Fixes
