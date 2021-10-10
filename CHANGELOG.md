@@ -1,3 +1,9 @@
+## [1.24.18](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.17...v1.24.18) (2021-10-10)
+
+### Bug Fixes
+
+- **deps:** update dependency next-translate to ^1.1.1 ([e3cede6](https://github.com/shunkakinoki/shunkakinoki.com/commit/e3cede68553e5f7cbed82f69c81ef7cbd11ae020))
+
 ## [1.24.17](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.16...v1.24.17) (2021-10-07)
 
 ### Bug Fixes
