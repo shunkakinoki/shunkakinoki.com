@@ -3536,12 +3536,12 @@
   dependencies:
     npm-check-updates "^11.8.5"
 
-"@shunkakinoki/npm-package-json-lint-config@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/npm-package-json-lint-config/-/npm-package-json-lint-config-1.0.3.tgz#58573b173d14959b9f96a1d8e263408ce1da1c69"
-  integrity sha512-pr6/EcGQAYqJtA+M8kCqwq01NKbog2M9n9iLK/VSP1DJl1wLU02Au9t+nbSh20ADEpx885oSikYcRTLp+FrKUg==
+"@shunkakinoki/npm-package-json-lint-config@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/npm-package-json-lint-config/-/npm-package-json-lint-config-1.0.4.tgz#cb5a5b682fccab17a358fab712221dd29118e06d"
+  integrity sha512-UjLK4H2RqxoQGYsnTgbHUDf2Y7ahgw/XHo5g914TkMp8hMmApdgcHN/+f1mtMGJIV9tDvmt32PvW3+bAH2RU+w==
   dependencies:
-    npm-package-json-lint "^5.2.4"
+    npm-package-json-lint "^5.3.0"
 
 "@shunkakinoki/prettier@^1.0.0":
   version "1.0.0"
@@ -13026,10 +13026,10 @@ json5@^2.1.2, json5@^2.1.3, json5@^2.2.0:
   dependencies:
     minimist "^1.2.5"
 
-jsonc-parser@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/jsonc-parser/-/jsonc-parser-2.3.1.tgz#59549150b133f2efacca48fe9ce1ec0659af2342"
-  integrity sha512-H8jvkz1O50L3dMZCsLqiuB2tA7muqbSg1AtGEkN0leAqGjsUzDJir3Zwr02BhqdcITPg3ei3mZ+HjMocAknhhg==
+jsonc-parser@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/jsonc-parser/-/jsonc-parser-3.0.0.tgz#abdd785701c7e7eaca8a9ec8cf070ca51a745a22"
+  integrity sha512-fQzRfAbIBnR0IQvftw9FJveWiHp72Fg20giDrHz6TdfB12UH/uue0D3hm57UB5KgAVuniLMCaS8P1IMj9NR7cA==
 
 jsonfile@^2.1.0:
   version "2.4.0"
@@ -15172,20 +15172,20 @@ npm-package-arg@^8.0.0, npm-package-arg@^8.0.1, npm-package-arg@^8.1.0, npm-pack
     semver "^7.3.4"
     validate-npm-package-name "^3.0.0"
 
-npm-package-json-lint@^5.2.4:
-  version "5.2.4"
-  resolved "https://registry.yarnpkg.com/npm-package-json-lint/-/npm-package-json-lint-5.2.4.tgz#6c567df65dc7ebb17ddf4c77c872140ac26e5264"
-  integrity sha512-ziN7r4qJg8+hwpUd8gMA0Xj5IHhawBQmNXizB5bYISc/YaidYqmghGI9ZApzr4Csrbi1o4aHNrSwTL5YJT8c8g==
+npm-package-json-lint@^5.3.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/npm-package-json-lint/-/npm-package-json-lint-5.4.0.tgz#325ccde8429fb5d1b3819411f85189d42aab0956"
+  integrity sha512-0wNPI2+hiB8CA7gxOS2hXhupmmwEwjRITC9WCMV5Tn3sAsTDEXL+UwnVEFZNLmuxt6km0cbj9h2e8h6dRSZukw==
   dependencies:
     ajv "^6.12.6"
     ajv-errors "^1.0.1"
     chalk "^4.1.2"
-    cosmiconfig "^6.0.0"
+    cosmiconfig "^7.0.1"
     debug "^4.3.2"
     globby "^11.0.4"
     ignore "^5.1.8"
     is-plain-obj "^3.0.0"
-    jsonc-parser "^2.3.1"
+    jsonc-parser "^3.0.0"
     log-symbols "^4.1.0"
     meow "^6.1.1"
     plur "^4.0.0"
