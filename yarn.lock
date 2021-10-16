@@ -3511,13 +3511,13 @@
     eslint-plugin-react-hooks "^4.2.0"
     eslint-plugin-tailwindcss "^1.17.0"
 
-"@shunkakinoki/husky@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/husky/-/husky-1.0.3.tgz#53724af5615b566c9ef18d22a3c2574c87a8c708"
-  integrity sha512-CA4rOIZG5+IQOs4gxip7W0am0wxCIUHMKYVSG6ZcW1GWw4tNLGdzaHVolSZek0WyGJi+z3DJnwSetQj0cFP2ag==
+"@shunkakinoki/husky@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/husky/-/husky-1.0.4.tgz#ed91464b440453eb813218ddc72bc93f8bfcdb65"
+  integrity sha512-E+3mvKFmLZ5VO6FDSWzxt20j05u3mDPHKJuv0garthSZ2qPpcebAk41MhPZfZX6kkERwx/LJHZYGT7+Ea7PyBA==
   dependencies:
     commitizen "^4.2.4"
-    git-cz "^4.7.6"
+    git-cz "^4.8.0"
     husky "^7.0.2"
     is-ci "^3.0.0"
     pinst "^2.1.6"
@@ -11121,10 +11121,10 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-git-cz@^4.7.6:
-  version "4.7.6"
-  resolved "https://registry.yarnpkg.com/git-cz/-/git-cz-4.7.6.tgz#1250c486f01724e801a630b848fd8786f7e67e90"
-  integrity sha512-WtQEXqetJSi9LKPI77bMdSQWvLGjE93egVbR0zjXd1KFKrFvo/YE/UuGNcMeBDiwzxfQBhjyV7Hn0YUZ8Q0BcQ==
+git-cz@^4.8.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/git-cz/-/git-cz-4.8.0.tgz#9dde589ce4e12d5aa4ee4fe54c6eef5f4635e6c3"
+  integrity sha512-2muVkIcT6cT/9eXuxztlKQSRiOy/oHhFldCySOi1xuRJ9T5yHlg3SRQhVLoY9BVu9kxSE3YcHYp0KgQW0vUf4A==
 
 git-hooks-list@1.0.3:
   version "1.0.3"
