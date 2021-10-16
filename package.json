@@ -85,7 +85,7 @@
     "react-twitter-widgets": "^1.10.0",
     "recoil": "^0.4.1",
     "swr": "^1.0.1",
-    "tailwindcss": "^2.2.16"
+    "tailwindcss": "^2.2.17"
   },
   "devDependencies": {
     "@shunkakinoki/commitlint": "^1.0.4",
