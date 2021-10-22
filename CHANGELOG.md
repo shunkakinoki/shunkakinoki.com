@@ -1,3 +1,10 @@
+## [1.24.24](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.23...v1.24.24) (2021-10-22)
+
+### Bug Fixes
+
+- **deps:** update dependency critters to ^0.0.12 ([c587a0c](https://github.com/shunkakinoki/shunkakinoki.com/commit/c587a0c022ad3a21ebee9c30533d5c4b21227a1f))
+- **deps:** update dependency next-sitemap to ^1.6.192 ([f2c9823](https://github.com/shunkakinoki/shunkakinoki.com/commit/f2c98237ebf127d70277f3869ad04f7b4e390598))
+
 ## [1.24.23](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.22...v1.24.23) (2021-10-22)
 
 ### Bug Fixes
