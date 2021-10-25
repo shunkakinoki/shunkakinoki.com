@@ -98,7 +98,7 @@
     "@shunkakinoki/npm-package-json-lint-config": "^1.0.5",
     "@shunkakinoki/prettier": "^1.0.0",
     "@shunkakinoki/semantic-release": "^1.2.6",
-    "@shunkakinoki/stylelint": "^1.0.1",
+    "@shunkakinoki/stylelint": "^1.0.3",
     "@shunkakinoki/tailwindcss": "^1.0.7",
     "@shunkakinoki/tsconfig": "^1.1.3",
     "@sls-next/serverless-component": "^3.4.0",
