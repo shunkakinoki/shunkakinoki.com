@@ -1,3 +1,9 @@
+## [1.24.26](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.25...v1.24.26) (2021-10-25)
+
+### Bug Fixes
+
+- **deps:** update dependency critters to ^0.0.14 ([960f86c](https://github.com/shunkakinoki/shunkakinoki.com/commit/960f86cfdf13a62d5a206254780684b1536ff793))
+
 ## [1.24.25](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.24...v1.24.25) (2021-10-22)
 
 ### Bug Fixes
