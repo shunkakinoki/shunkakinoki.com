@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.4.1",
-    "@heroicons/react": "^1.0.4",
+    "@heroicons/react": "^1.0.5",
     "@next-auth/prisma-adapter": "^0.5.4",
     "@next/bundle-analyzer": "^11.1.2",
     "@notionhq/client": "^0.3.3",
