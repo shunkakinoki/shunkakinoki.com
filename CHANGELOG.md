@@ -1,3 +1,9 @@
+## [1.24.28](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.27...v1.24.28) (2021-10-25)
+
+### Bug Fixes
+
+- **deps:** update dependency @heroicons/react to ^1.0.5 ([3ce223b](https://github.com/shunkakinoki/shunkakinoki.com/commit/3ce223bd842a456189e107640a695273759c72e7))
+
 ## [1.24.27](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.26...v1.24.27) (2021-10-25)
 
 ### Bug Fixes
