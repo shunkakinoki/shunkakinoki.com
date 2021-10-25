@@ -3587,15 +3587,15 @@
     prettier-plugin-packagejson "^2.2.10"
     prettier-plugin-sort-json "^0.0.2"
 
-"@shunkakinoki/semantic-release@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/semantic-release/-/semantic-release-1.2.6.tgz#4eda312554dfcab9c70093004c8550e4fb4cdc95"
-  integrity sha512-H0nzOpk0dbsThkNrwBdW2Zt+FJNJcY+c9vtQ4wiCa8NDcTYSt/9YRM40GXNiOMi/spWmrC5yo02RKBQ4ZUw5Iw==
+"@shunkakinoki/semantic-release@^1.2.7":
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/semantic-release/-/semantic-release-1.2.7.tgz#3304d78af7949552e75c6556dedecbe8afc520d4"
+  integrity sha512-A1AkriZitKoadq/63Ib0vx7bjnt9YGIIuZb1ScXCOubpikFLp7O8E05ws+KLPeIO7fN/q8CEz5QGYkGJlX7kVg==
   dependencies:
     "@semantic-release/changelog" "^6.0.0"
     "@semantic-release/exec" "^6.0.1"
     "@semantic-release/git" "^10.0.0"
-    multi-semantic-release "^2.9.0"
+    multi-semantic-release "^2.9.1"
     semantic-release "^18.0.0"
 
 "@shunkakinoki/stylelint@^1.0.3":
@@ -6806,7 +6806,7 @@ blob@0.0.5:
   resolved "https://registry.yarnpkg.com/blob/-/blob-0.0.5.tgz#d680eeef25f8cd91ad533f5b01eed48e64caf683"
   integrity sha512-gaqbzQPqOoamawKg0LGVd7SzLgXS+JH61oWprSLH+P+abTczqJbhTR8CmJ2u9/bUYNmHTGJx/UEmn6doAvvuig==
 
-blork@^9.2.2:
+blork@^9.3.0:
   version "9.3.0"
   resolved "https://registry.yarnpkg.com/blork/-/blork-9.3.0.tgz#6c0b4fbb6b754998ae5460c26463d95c635e4a35"
   integrity sha512-9naBrHS2bwCQeGqGR9ptcoll6utsox9jtk1E0SwOAFa4RCV/IQHoBJARdi8AhHQTPPoWkjixMrzHvQKAV5Fx2A==
@@ -8977,7 +8977,7 @@ detect-indent@6.0.0:
   resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-6.0.0.tgz#0abd0f549f69fc6659a254fe96786186b6f528fd"
   integrity sha512-oSyFlqaTHCItVRGK5RmrmjB+CmaMOW7IaNA/kdxqhoa6d17j/5ce9O9eWXmV/KEdRwqpQA+Vqe8a8Bsybu4YnA==
 
-detect-indent@^6.0.0:
+detect-indent@^6.0.0, detect-indent@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-6.1.0.tgz#592485ebbbf6b3b1ab2be175c8393d04ca0d57e6"
   integrity sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==
@@ -11344,19 +11344,7 @@ globby@11.0.1:
     merge2 "^1.3.0"
     slash "^3.0.0"
 
-globby@11.0.2:
-  version "11.0.2"
-  resolved "https://registry.yarnpkg.com/globby/-/globby-11.0.2.tgz#1af538b766a3b540ebfb58a32b2e2d5897321d83"
-  integrity sha512-2ZThXDvvV8fYFRVIxnrMQBipZQDr7MxKAmQK1vujaj9/7eF0efG7BPUKJ7jP7G5SLF37xKDXvO4S/KKLj/Z0og==
-  dependencies:
-    array-union "^2.1.0"
-    dir-glob "^3.0.1"
-    fast-glob "^3.1.1"
-    ignore "^5.1.4"
-    merge2 "^1.3.0"
-    slash "^3.0.0"
-
-globby@^11.0.0, globby@^11.0.1, globby@^11.0.2, globby@^11.0.3, globby@^11.0.4:
+globby@11.0.4, globby@^11.0.0, globby@^11.0.1, globby@^11.0.2, globby@^11.0.3, globby@^11.0.4:
   version "11.0.4"
   resolved "https://registry.yarnpkg.com/globby/-/globby-11.0.4.tgz#2cbaff77c2f2a62e71e9b2813a67b97a3a3001a5"
   integrity sha512-9O4MVG9ioZJ08ffbcyVYyLOJLk5JQ688pJ4eMGLpdWLHq/Wr1D9BlriLQyL0E+jbkuePVZXYFj47QM/v093wHg==
@@ -14183,7 +14171,7 @@ meow@^6.1.1:
     type-fest "^0.13.1"
     yargs-parser "^18.1.3"
 
-meow@^8.0.0:
+meow@^8.0.0, meow@^8.1.2:
   version "8.1.2"
   resolved "https://registry.yarnpkg.com/meow/-/meow-8.1.2.tgz#bcbe45bda0ee1729d350c03cffc8395a36c4e897"
   integrity sha512-r85E3NdZ+mpYk1C6RjPFEMSE+s1iZMuHtsHAqY0DT3jZczl0diWUZ8g6oU7h0M9cD2EL+PzaYghhCLzR0ZNn5Q==
@@ -14554,28 +14542,29 @@ ms@^2.0.0, ms@^2.1.1, ms@^2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-multi-semantic-release@^2.9.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/multi-semantic-release/-/multi-semantic-release-2.9.0.tgz#0681629bbc271029e4c62ab991a6c3ff19230149"
-  integrity sha512-W4cRrtYIF0XcNP7MndbNbGWO2HmZs8hskYf8Z/iQUtB275I39/zRe319ymQyzl9MHRySwIqcQVilGCrySwd45g==
+multi-semantic-release@^2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/multi-semantic-release/-/multi-semantic-release-2.9.1.tgz#cca6dffdcccd0249b012b905a8a93be3fe629a31"
+  integrity sha512-9auvnTcenWwKYbZOoWrbVyIjPD9aHRsZvKbK8RaL83FxY/SOKStgkgheH80brfwsOBEBinJoLFRZ57yHQ8t7JQ==
   dependencies:
     "@manypkg/get-packages" "^1.1.1"
-    blork "^9.2.2"
-    cosmiconfig "^7.0.0"
-    debug "^4.3.1"
-    detect-indent "^6.0.0"
+    blork "^9.3.0"
+    cosmiconfig "^7.0.1"
+    debug "^4.3.2"
+    detect-indent "^6.1.0"
     detect-newline "^3.1.0"
     execa "^4.1.0"
-    get-stream "^6.0.0"
+    get-stream "^6.0.1"
     git-log-parser "^1.2.0"
-    globby "11.0.2"
+    globby "11.0.4"
     lodash "^4.17.21"
-    meow "^8.0.0"
-    promise-events "^0.2.1"
-    semantic-release "^17.3.0"
-    semver "^7.3.2"
+    meow "^8.1.2"
+    promise-events "^0.2.4"
+    semantic-release "^17.4.7"
+    semver "^7.3.5"
     signale "^1.4.0"
     stream-buffers "^3.0.2"
+    unixify "^1.0.0"
 
 multimatch@^5.0.0:
   version "5.0.0"
@@ -16603,7 +16592,7 @@ promise-call-limit@^1.0.1:
   resolved "https://registry.yarnpkg.com/promise-call-limit/-/promise-call-limit-1.0.1.tgz#4bdee03aeb85674385ca934da7114e9bcd3c6e24"
   integrity sha512-3+hgaa19jzCGLuSCbieeRsu5C2joKfYn8pY6JAuXFRVfF4IO+L7UPpFWNTeWT9pM7uhskvbPPd/oEOktCn317Q==
 
-promise-events@^0.2.1:
+promise-events@^0.2.4:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/promise-events/-/promise-events-0.2.4.tgz#3b46508b2dfbd0b0fd349a404f65bf279fc483eb"
   integrity sha512-GCM6DmJcSCC8XboZIzYJAlADwkIS1P54XFUJQYhB7dpE7rtXPzPrT13dsV4Qm0FMCKptwMTyF8ZCir803RfKzA==
@@ -17976,10 +17965,10 @@ seek-bzip@^1.0.5:
   dependencies:
     commander "^2.8.1"
 
-semantic-release@^17.3.0:
-  version "17.4.4"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.4.4.tgz#650dd50ecb520a5a2bc6811305bc9d4d5c3128b1"
-  integrity sha512-fQIA0lw2Sy/9+TcoM/BxyzKCSwdUd8EPRwGoOuBLgxKigPCY6kaKs8TOsgUVy6QrlTYwni2yzbMb5Q2107P9eA==
+semantic-release@^17.4.7:
+  version "17.4.7"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.4.7.tgz#88e1dce7294cc43acc54c4e0a83f582264567206"
+  integrity sha512-3Ghu8mKCJgCG3QzE5xphkYWM19lGE3XjFdOXQIKBM2PBpBvgFQ/lXv31oX0+fuN/UjNFO/dqhNs8ATLBhg6zBg==
   dependencies:
     "@semantic-release/commit-analyzer" "^8.0.0"
     "@semantic-release/error" "^2.2.0"
@@ -20285,6 +20274,13 @@ universalify@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
+
+unixify@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/unixify/-/unixify-1.0.0.tgz#3a641c8c2ffbce4da683a5c70f03a462940c2090"
+  integrity sha1-OmQcjC/7zk2mg6XHDwOkYpQMIJA=
+  dependencies:
+    normalize-path "^2.1.1"
 
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
