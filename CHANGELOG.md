@@ -1,3 +1,9 @@
+## [1.24.30](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.29...v1.24.30) (2021-10-28)
+
+### Bug Fixes
+
+- **deps:** update nextjs monorepo to v12 ([1f00f5b](https://github.com/shunkakinoki/shunkakinoki.com/commit/1f00f5b2154557d2f7539f2e4cc5a8e681cf1fa3))
+
 ## [1.24.29](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.28...v1.24.29) (2021-10-28)
 
 ### Bug Fixes
