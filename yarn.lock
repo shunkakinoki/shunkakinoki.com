@@ -3624,13 +3624,13 @@
   dependencies:
     npm-package-json-lint "^5.4.1"
 
-"@shunkakinoki/prettier@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/prettier/-/prettier-1.0.0.tgz#d3956291a8339b73e8866c319d692647da070829"
-  integrity sha512-H8ht/W9LU1aKXERRwVIhkNyoRPNPm6NEECsHRhaysoFrVAkbUO+Y08b9iahp/dg02OCPcEuAJQdQkL2kODa2DA==
+"@shunkakinoki/prettier@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/prettier/-/prettier-1.0.1.tgz#76107b30819bd2af98989b86737d452e695d14bf"
+  integrity sha512-lPZljv9spfBiY4CkLkkCTwTF4Y4lTqmJmLhJMhJ/hSQjl5XHazjFWjKRw9DZtEEWeF75aKuA6cayM+ATBwnbyg==
   dependencies:
-    prettier "^2.2.1"
-    prettier-plugin-packagejson "^2.2.10"
+    prettier "^2.4.1"
+    prettier-plugin-packagejson "^2.2.11"
     prettier-plugin-sort-json "^0.0.2"
 
 "@shunkakinoki/semantic-release@^1.2.7":
@@ -16469,12 +16469,12 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier-plugin-packagejson@^2.2.10:
-  version "2.2.11"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-packagejson/-/prettier-plugin-packagejson-2.2.11.tgz#640b6301da3a58c489889b3d315255e18153daf0"
-  integrity sha512-oJCBCEkHIKScEv6qNQC47S39NXlevbzwvoJE3gflmBB8/3BEsC6ZRi+hwFVajw32b4tDI9hFXPIzmVd/T8Rm9w==
+prettier-plugin-packagejson@^2.2.11:
+  version "2.2.13"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-packagejson/-/prettier-plugin-packagejson-2.2.13.tgz#af7c25ff378236112ebbd69d7add6cbbee9320e8"
+  integrity sha512-AUsRlYHn7jjMck1X54wYTsKj6/E3wf0d0joPFSnSqY3Sxz/e2qqe2x7w0AiMdVeeQcRAkakjp7Qes/riT7J0zA==
   dependencies:
-    sort-package-json "1.50.0"
+    sort-package-json "1.52.0"
 
 prettier-plugin-sort-json@^0.0.2:
   version "0.0.2"
@@ -16483,10 +16483,10 @@ prettier-plugin-sort-json@^0.0.2:
   dependencies:
     "@types/prettier" "^2.2.0"
 
-prettier@^2.2.1:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
-  integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
+prettier@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.4.1.tgz#671e11c89c14a4cfc876ce564106c4a6726c9f5c"
+  integrity sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==
 
 prettier@~2.2.1:
   version "2.2.1"
@@ -18538,19 +18538,7 @@ sort-object-keys@^1.1.3:
   resolved "https://registry.yarnpkg.com/sort-object-keys/-/sort-object-keys-1.1.3.tgz#bff833fe85cab147b34742e45863453c1e190b45"
   integrity sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==
 
-sort-package-json@1.50.0:
-  version "1.50.0"
-  resolved "https://registry.yarnpkg.com/sort-package-json/-/sort-package-json-1.50.0.tgz#19fc109fe23bd157bd03c8e572fa3251a52467d8"
-  integrity sha512-qZpqhMU9XTntebgAgc4hv/D6Fzhh7kFnwvV6a7+q8y8J5JoaDqPYQnvXPf7BBqG95tdE8X6JVNo7/jDzcbdfUg==
-  dependencies:
-    detect-indent "^6.0.0"
-    detect-newline "3.1.0"
-    git-hooks-list "1.0.3"
-    globby "10.0.0"
-    is-plain-obj "2.1.0"
-    sort-object-keys "^1.1.3"
-
-sort-package-json@^1.52.0:
+sort-package-json@1.52.0, sort-package-json@^1.52.0:
   version "1.52.0"
   resolved "https://registry.yarnpkg.com/sort-package-json/-/sort-package-json-1.52.0.tgz#f960fe7cfae3120a4ce1b9eed7e010ac4bec998e"
   integrity sha512-TsKDXgH3kPsaSrjAszQgg+n2/FDYdPrBrXD4YxMxExpogsi8LCek0YzK/jZ70i5Gi53WcpV+mVzvb5CHB5LpZw==
