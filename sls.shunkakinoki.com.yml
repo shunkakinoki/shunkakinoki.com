@@ -21,8 +21,8 @@ acl: ${env.AWS_ACL_ARN}
           cp "$PDIR"schema.prisma $LDIR$PDIR;
           fi;
     certificateArn: ${acl}
-    cloudfront:
-      distributionId: E4NDGG1KJQAOJ
+    # cloudfront:
+    # distributionId: E4NDGG1KJQAOJ
     domain: ["shunkakinoki.com"]
     name:
       defaultLambda: "shunkakinoki-lambda"
