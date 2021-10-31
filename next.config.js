@@ -9,6 +9,7 @@ const config = {
   cleanDistDir: true,
   experimental: {
     conformance: true,
+    concurrentFeatures: true,
     craCompat: false,
     cpus: 1,
     disableOptimizedLoading: false,
@@ -85,6 +86,12 @@ const config = {
       {
         source: "/cal",
         destination: "https://cal.com/shunkakinoki",
+        permanent: true,
+      },
+      {
+        source: "/checklist",
+        destination:
+          "https://shunkakinoki.notion.site/shunkakinoki/ccf0648ddaab42a38644f209e6cd641f",
         permanent: true,
       },
       {

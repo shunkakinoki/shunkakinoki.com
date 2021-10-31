@@ -9,6 +9,8 @@ export class SocialLinks {
   static readonly pioneer = "https://pioneer.app/winners/shun-kakinoki/";
   static readonly website = `https://${shunkakinoki}.com`;
 
+  static readonly checklist = `https://${shunkakinoki}.notion.site/${shunkakinoki}/ccf0648ddaab42a38644f209e6cd641f`;
+
   static readonly shun = `https://app.sushi.com/swap?inputCurrency=&outputCurrency=${CryptoLinks.shun}`;
   static readonly kaki = `https://explorer.solana.com/address/${CryptoLinks.kaki}`;
 
