@@ -99,7 +99,7 @@
     "@shunkakinoki/prettier": "^1.0.0",
     "@shunkakinoki/semantic-release": "^1.2.7",
     "@shunkakinoki/stylelint": "^1.0.3",
-    "@shunkakinoki/tailwindcss": "^1.0.7",
+    "@shunkakinoki/tailwindcss": "^1.0.8",
     "@shunkakinoki/tsconfig": "^1.1.3",
     "@sls-next/serverless-component": "^3.5.0",
     "@storybook/addon-a11y": "^6.3.12",
