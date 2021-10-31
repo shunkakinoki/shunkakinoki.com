@@ -1,3 +1,9 @@
+## [1.24.32](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.31...v1.24.32) (2021-10-31)
+
+### Bug Fixes
+
+- **deps:** update dependency next-og-utils to ^1.1.8 ([92464f9](https://github.com/shunkakinoki/shunkakinoki.com/commit/92464f96f134b6921ac8f32a5edff7e9dabcec6e))
+
 ## [1.24.31](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.30...v1.24.31) (2021-10-31)
 
 ### Bug Fixes
