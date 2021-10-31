@@ -2757,10 +2757,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@notionhq/client@^0.4.4":
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-0.4.4.tgz#f18c52e5c4939913d54f32e076d05976c3cd699f"
-  integrity sha512-Gi07yVgEReImvM9y9rYpcOoPr7d6EFYXjy3KwM29ftu7WIaUNMPErPTlaSTFb0H0GX93EQjDC3kpol7WMupY7Q==
+"@notionhq/client@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-0.3.3.tgz#5e296ffae3917751f8f536f565d5e0916d2374b7"
+  integrity sha512-5YttL0GmW0kwTST88wIfZWwHzD+vbRoiu8e9Q6oJfFJ7vdA+F3+vU3ncMpDOuSWygMGjVzFWUqd0NUaG2nw5zg==
   dependencies:
     "@types/node-fetch" "^2.5.10"
     node-fetch "^2.6.1"
