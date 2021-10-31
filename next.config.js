@@ -9,7 +9,7 @@ const config = {
   cleanDistDir: true,
   experimental: {
     conformance: true,
-    concurrentFeatures: true,
+    concurrentFeatures: false,
     craCompat: false,
     cpus: 1,
     disableOptimizedLoading: false,
