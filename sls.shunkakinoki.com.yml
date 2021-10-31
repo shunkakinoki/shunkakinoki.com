@@ -21,14 +21,15 @@ acl: ${env.AWS_ACL_ARN}
           cp "$PDIR"schema.prisma $LDIR$PDIR;
           fi;
     certificateArn: ${acl}
-    # cloudfront:
-    # distributionId: E4NDGG1KJQAOJ
+    cloudfront:
+      distributionId: E2W3HP27RI42QF
     domain: ["shunkakinoki.com"]
     name:
       defaultLambda: "shunkakinoki-lambda"
       apiLambda: "shunkakinoki-api-lambda"
       imageLambda: "shunkakinoki-image-lambda"
-    # policy: "arn:aws:iam::589845989135:policy/serverless/serverless"
+    policy: "arn:aws:iam::589845989135:policy/serverless/serverless"
+    roleArn: "arn:aws:iam::589845989135:role/serverless/serverless"
     runtime: "nodejs14.x"
     timeout: 30
     useServerlessTraceTarget: true

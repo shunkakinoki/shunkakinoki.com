@@ -13,6 +13,7 @@ acl: ${env.AWS_ACL_ARN}
       apiLambda: "og-shunkakinoki-api-lambda"
       imageLambda: "og-shunkakinoki-image-lambda"
     policy: "arn:aws:iam::589845989135:policy/serverless/serverless"
+    roleArn: "arn:aws:iam::589845989135:role/serverless/serverless"
     runtime: "nodejs14.x"
     timeout: 30
     useServerlessTraceTarget: true
