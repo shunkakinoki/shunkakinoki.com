@@ -3592,15 +3592,15 @@
     eslint-plugin-react-hooks "^4.2.0"
     eslint-plugin-tailwindcss "^1.17.0"
 
-"@shunkakinoki/husky@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/husky/-/husky-1.0.5.tgz#b1b5b37be90f0f993fd3f1dad9d1626a1aaf390e"
-  integrity sha512-Bv5+WaZWvFS0x01ESDTPw/3zPC59Jc2cHLO1u14b0oBj8bt16JEZsyXn7RHQvCDV5+pch0piMJPwrTHP45i54Q==
+"@shunkakinoki/husky@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/husky/-/husky-1.0.6.tgz#94d6cd38d8f51604373b87b01101b5ad5eea5069"
+  integrity sha512-ERTdDvvoPF2rrFG8StbAHHJmqjMaPw488/BRGV8IsHelIrKXk2T92+Xr/YVUEV1JMkJTNRLsF8NKqOqhRMMN+w==
   dependencies:
     commitizen "^4.2.4"
     git-cz "^4.8.0"
     husky "^7.0.4"
-    is-ci "^3.0.0"
+    is-ci "^3.0.1"
     pinst "^2.1.6"
 
 "@shunkakinoki/lint-staged@^1.1.9":
@@ -12262,12 +12262,12 @@ is-ci@^2.0.0:
   dependencies:
     ci-info "^2.0.0"
 
-is-ci@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/is-ci/-/is-ci-3.0.0.tgz#c7e7be3c9d8eef7d0fa144390bd1e4b88dc4c994"
-  integrity sha512-kDXyttuLeslKAHYL/K28F2YkM3x5jvFPEw3yXbRptXydjD9rpLEz+C5K5iutY9ZiUu6AP41JdvRQwF4Iqs4ZCQ==
+is-ci@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/is-ci/-/is-ci-3.0.1.tgz#db6ecbed1bd659c43dac0f45661e7674103d1867"
+  integrity sha512-ZYvCgrefwqoQ6yTyYUbQu64HsITZ3NfKX1lzaEYdkTDcfKzzCI/wthRRYKkdjHKFVgNiXKAKm65Zo1pk2as/QQ==
   dependencies:
-    ci-info "^3.1.1"
+    ci-info "^3.2.0"
 
 is-cidr@^4.0.2:
   version "4.0.2"
