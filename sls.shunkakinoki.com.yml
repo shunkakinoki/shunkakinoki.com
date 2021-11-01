@@ -21,7 +21,7 @@ acl: ${env.AWS_ACL_ARN}
           cp "$PDIR"schema.prisma $LDIR$PDIR;
           fi;
       separateApiLambda: true
-      useV2Handler: true
+      # useV2Handler: true
     certificateArn: ${acl}
     cloudfront:
       distributionId: E2W3HP27RI42QF
