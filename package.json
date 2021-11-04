@@ -94,7 +94,7 @@
     "@shunkakinoki/eslint-config": "^1.1.32",
     "@shunkakinoki/husky": "^1.0.6",
     "@shunkakinoki/lint-staged": "^1.1.9",
-    "@shunkakinoki/npm-check-updates": "^1.0.3",
+    "@shunkakinoki/npm-check-updates": "^1.0.4",
     "@shunkakinoki/npm-package-json-lint-config": "^1.0.6",
     "@shunkakinoki/prettier": "^1.0.1",
     "@shunkakinoki/semantic-release": "^1.2.9",

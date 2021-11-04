@@ -3610,12 +3610,12 @@
   dependencies:
     lint-staged "^11.2.6"
 
-"@shunkakinoki/npm-check-updates@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/npm-check-updates/-/npm-check-updates-1.0.3.tgz#3fe29770085f82fa2a0fc3a2aa15b61a1574cbde"
-  integrity sha512-4phuhINtVRnCPW8MmcBFBBYKW0H+f/vEYPqVznNOln0EODmnF9hX37y8lFhOtQEB9bKf1G3djkyLs46i+MjvRw==
+"@shunkakinoki/npm-check-updates@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/npm-check-updates/-/npm-check-updates-1.0.4.tgz#90c10362f7193e16497f80e9266ab82ba4785074"
+  integrity sha512-t1XVzZSLDnswrMJyqxFRmYRcn8gSX2eYe6A91qQPt2H7KLho2ekBgdBmnzVjtWD+TT8iqM1gX6+jS7GaIj/dyw==
   dependencies:
-    npm-check-updates "^11.8.5"
+    npm-check-updates "^12.0.0"
 
 "@shunkakinoki/npm-package-json-lint-config@^1.0.6":
   version "1.0.6"
@@ -15098,10 +15098,10 @@ npm-bundled@^1.0.1, npm-bundled@^1.1.1:
   dependencies:
     npm-normalize-package-bin "^1.0.1"
 
-npm-check-updates@^11.8.5:
-  version "11.8.5"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-11.8.5.tgz#8dec7fd255a437264742c15f9c0bb29f4eceaf55"
-  integrity sha512-IYSHjlWe8UEugDy7X0qjBeJwcni4DlcWdBK4QQEbwgkNlEDlXyd4yQJYWFumKaJzrp/n5/EcvaboXsBD1Er/pw==
+npm-check-updates@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-12.0.0.tgz#b4aac8de411dcc8a4584fcfda1a52e11a2433710"
+  integrity sha512-KkUu9W5BWE4JmNeuPEwDz5a5yBOoWSrWl4DbT1/jBm+ytpVzjO9NN2jAD0GydhHZV/Brgh4xgWtBiMZJi5dUxQ==
   dependencies:
     chalk "^4.1.2"
     cint "^8.2.1"
@@ -15122,12 +15122,13 @@ npm-check-updates@^11.8.5:
     pacote "^11.3.5"
     parse-github-url "^1.0.2"
     progress "^2.0.3"
-    prompts "^2.4.1"
+    prompts "^2.4.2"
     rc-config-loader "^4.0.0"
     remote-git-tags "^3.0.0"
     rimraf "^3.0.2"
     semver "^7.3.5"
     semver-utils "^1.1.4"
+    source-map-support "^0.5.19"
     spawn-please "^1.0.0"
     update-notifier "^5.1.0"
 
@@ -16615,10 +16616,18 @@ prompts@2.4.0:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prompts@^2.4.0, prompts@^2.4.1:
+prompts@^2.4.0:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/prompts/-/prompts-2.4.1.tgz#befd3b1195ba052f9fd2fde8a486c4e82ee77f61"
   integrity sha512-EQyfIuO2hPDsX1L/blblV+H7I0knhgAd82cVneCwcdND9B8AuCDuRcBH6yIcG4dFzlOUqbazQqwGjx5xmsNLuQ==
+  dependencies:
+    kleur "^3.0.3"
+    sisteransi "^1.0.5"
+
+prompts@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/prompts/-/prompts-2.4.2.tgz#7b57e73b3a48029ad10ebd44f74b01722a4cb069"
+  integrity sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q==
   dependencies:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
@@ -18526,6 +18535,14 @@ source-map-support@^0.5.16, source-map-support@^0.5.17, source-map-support@~0.5.
   version "0.5.19"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.19.tgz#a98b62f86dcaf4f67399648c085291ab9e8fed61"
   integrity sha512-Wonm7zOCIJzBGQdB+thsPar0kYuCIzYvxZwlBa87yi/Mdjv7Tip2cyVbLj5o0cFPN4EVkuTwb3GDDyUx2DGnGw==
+  dependencies:
+    buffer-from "^1.0.0"
+    source-map "^0.6.0"
+
+source-map-support@^0.5.19:
+  version "0.5.20"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.20.tgz#12166089f8f5e5e8c56926b377633392dd2cb6c9"
+  integrity sha512-n1lZZ8Ve4ksRqizaBQgxXDgKwttHDhyfQjA6YZZn8+AroHbsIz+JjwxQDxbp+7y5OYCI8t1Yk7etjD9CRd2hIw==
   dependencies:
     buffer-from "^1.0.0"
     source-map "^0.6.0"
