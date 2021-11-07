@@ -1,5 +1,5 @@
-import type { PagesRetrieveResponse } from "@notionhq/client/build/src/api-endpoints";
-import type { Block } from "@notionhq/client/build/src/api-types";
+import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
+
 import type {
   GetStaticProps,
   InferGetStaticPropsType,
@@ -11,6 +11,7 @@ import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import { SocialLinks } from "@/const/SocialLinks";
 import { getGithubContent } from "@/lib/github";
+import type { blockWithChildren } from "@/lib/notion";
 import { getPage, getBlocks, queryDatabase } from "@/lib/notion";
 import { ContentScreen } from "@/screens/ContentScreen";
 import { NotionScreen } from "@/screens/NotionScreen";
@@ -52,19 +53,22 @@ export const getStaticProps: GetStaticProps<Props> = async ({
     if (!process.env.NOTION_BLOG_ID) {
       throw new Error("process.NOTION_BLOG_ID is not defined");
     }
-    const database = await queryDatabase(process.env.NOTION_BLOG_ID, {
-      and: [
-        {
-          property: "Category",
-          select: { equals: "Journal" },
-        },
-        {
-          property: "Date",
-          date: {
-            equals: date,
+    const database = await queryDatabase({
+      database_id: process.env.NOTION_BLOG_ID,
+      filter: {
+        and: [
+          {
+            property: "Category",
+            select: { equals: "Journal" },
           },
-        },
-      ],
+          {
+            property: "Date",
+            date: {
+              equals: date,
+            },
+          },
+        ],
+      },
     });
     if (database.results && database.results[0] && database.results[0]?.id) {
       return {
@@ -134,18 +138,17 @@ export const getStaticProps: GetStaticProps<Props> = async ({
         .map(async block => {
           return {
             id: block.id,
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
             children: await getBlocks(block.id),
           };
         }),
     );
     const blocksWithChildren = blocks.map(block => {
-      if (block.type === "paragraph") {
-        const typedBlock = block[block.type];
-        if (block.has_children) {
-          typedBlock["children"] = childBlocks.find(x => {
-            return x.id === block.id;
-          })?.children;
-        }
+      // Add child blocks if the block should contain children but none exists
+      if (block.has_children) {
+        block.children = childBlocks.find(x => {
+          return x.id === block.id;
+        })?.children;
       }
       return block;
     });
@@ -188,8 +191,8 @@ export const PageId = ({
   if (content && blocks && pageId) {
     return (
       <NotionScreen
-        blocks={JSON.parse(blocks) as Block[]}
-        content={JSON.parse(content) as PagesRetrieveResponse}
+        blocks={JSON.parse(blocks) as blockWithChildren[]}
+        content={JSON.parse(content) as GetPageResponse}
         locale={locale}
         pageId={pageId}
       />

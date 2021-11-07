@@ -1,4 +1,4 @@
-import type { Page } from "@notionhq/client/build/src/api-types";
+import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import type { FC } from "react";
 
@@ -16,7 +16,7 @@ import { Social } from "@/components/Social";
 
 export interface Props {
   source: MDXRemoteSerializeResult;
-  database: Page[];
+  database: GetPageResponse[];
 }
 
 export const LandingScreen: FC<Props> = ({ source, database }) => {

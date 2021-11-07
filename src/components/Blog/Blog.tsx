@@ -1,9 +1,9 @@
-import type { Page } from "@notionhq/client/build/src/api-types";
+import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import Link from "next/link";
 import type { FC } from "react";
 
 export type Props = {
-  database: Page[];
+  database: GetPageResponse[];
   locale?: string;
 };
 

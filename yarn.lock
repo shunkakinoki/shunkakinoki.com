@@ -2690,10 +2690,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@notionhq/client@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-0.3.3.tgz#5e296ffae3917751f8f536f565d5e0916d2374b7"
-  integrity sha512-5YttL0GmW0kwTST88wIfZWwHzD+vbRoiu8e9Q6oJfFJ7vdA+F3+vU3ncMpDOuSWygMGjVzFWUqd0NUaG2nw5zg==
+"@notionhq/client@^0.4.6":
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-0.4.6.tgz#ca4d3de216e711d03719605066b8b32011a559e3"
+  integrity sha512-P6JLxESipVTilZl/SCnd4TKvfa6O3r4NtUcqNtcZa6tLcQjI2kM8bBLPeORQ9BHVsG922icSD45oHa/NDZ9vnA==
   dependencies:
     "@types/node-fetch" "^2.5.10"
     node-fetch "^2.6.1"
@@ -3553,10 +3553,10 @@
     scripty "^2.0.0"
     sort-package-json "^1.52.0"
 
-"@shunkakinoki/eslint-config@^1.1.35":
-  version "1.1.35"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.35.tgz#ccfb83b82fc586097acad025f91953acae1dad79"
-  integrity sha512-8/sHKBKl/+pFQ9EB4U/G6qrVGcwWvrhQ55N6a9zQhipET/yB98uXzxBWWZXe8Hn1/XslWif6lYN/isbXu2x8tA==
+"@shunkakinoki/eslint-config@^1.1.36":
+  version "1.1.36"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.36.tgz#fb99f7114f5d336c4e725f1e4cacdfb128b546fe"
+  integrity sha512-t0kZGWDNC9LHJfdosiM+Cyi88yciWb9g8hf3ofS4g8PGXYa1iEM7dFk+n6S3krDA1RlzWzj2pSGh4th05on7SQ==
   dependencies:
     "@next/eslint-plugin-next" "^12.0.3"
     "@typescript-eslint/eslint-plugin" "^5.3.0"
@@ -3569,7 +3569,7 @@
     eslint-plugin-jsx-a11y "^6.4.1"
     eslint-plugin-prettier "^4.0.0"
     eslint-plugin-react "^7.26.1"
-    eslint-plugin-react-hooks "^4.2.1-alpha-ee069065d-20211105"
+    eslint-plugin-react-hooks "^4.2.1-alpha-fd5e01c2e-20210913"
     eslint-plugin-tailwindcss "^1.17.0"
 
 "@shunkakinoki/husky@^1.0.6":
@@ -9857,7 +9857,7 @@ eslint-plugin-prettier@^4.0.0:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
-eslint-plugin-react-hooks@^4.2.1-alpha-ee069065d-20211105:
+eslint-plugin-react-hooks@^4.2.1-alpha-fd5e01c2e-20210913:
   version "4.2.1-alpha-fd5e01c2e-20210913"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.2.1-alpha-fd5e01c2e-20210913.tgz#79a153d00b1d86f267e68c53c6360e19981c3534"
   integrity sha512-m1fAodKUB/xYFhEuzcZwN063p8fPLeQTTTrmihl5AYEtH+b/2DtAgemAxYuxtZz60R6txmWeH21Xz+W0QRJx/g==

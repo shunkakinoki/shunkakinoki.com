@@ -1,4 +1,4 @@
-import type { Page } from "@notionhq/client/build/src/api-types";
+import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import clsx from "clsx";
 import Image from "next/image";
 import type { FC } from "react";
@@ -9,7 +9,7 @@ import { ProductCard } from "@/components/Product/ProductCard";
 
 export type Props = {
   isPartial?: boolean;
-  database: Page[];
+  database: GetPageResponse[];
 };
 
 export const Product: FC<Props> = ({ isPartial = false, database }) => {
