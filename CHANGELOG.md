@@ -1,3 +1,9 @@
+# [1.25.0](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.32...v1.25.0) (2021-11-07)
+
+### Features
+
+- ini notion hq ([8468c8e](https://github.com/shunkakinoki/shunkakinoki.com/commit/8468c8e4617f73b2159e7f1dfbebd032bf398140))
+
 ## [1.24.32](https://github.com/shunkakinoki/shunkakinoki.com/compare/v1.24.31...v1.24.32) (2021-10-31)
 
 ### Bug Fixes
