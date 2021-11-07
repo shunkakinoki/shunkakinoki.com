@@ -171,6 +171,7 @@ export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
               {new Date(
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 //@ts-ignore
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
                 content.properties.Date?.date?.start ??
                   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                   //@ts-ignore

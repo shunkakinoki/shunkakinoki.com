@@ -24,7 +24,7 @@ export interface ButtonProps
   disabled?: boolean;
 }
 
-export const mergeRefs = <T extends unknown>(
+export const mergeRefs = <T,>(
   refs: Array<React.MutableRefObject<T> | React.LegacyRef<T>>,
 ): React.RefCallback<T> => {
   return (value): void => {

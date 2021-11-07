@@ -3553,10 +3553,10 @@
     scripty "^2.0.0"
     sort-package-json "^1.52.0"
 
-"@shunkakinoki/eslint-config@^1.1.34":
-  version "1.1.34"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.34.tgz#7ea5c0d723b93100c9c9e4cea95da7aa0d9a7fdf"
-  integrity sha512-LRHUhHyegzOF+/CQrHneU3t/YqctGZnJSm4q0k4h7zO+Kl0gmlo95j3+C6pactr7/q6ecBhMOvbOp8JIgzJjDQ==
+"@shunkakinoki/eslint-config@^1.1.35":
+  version "1.1.35"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/eslint-config/-/eslint-config-1.1.35.tgz#ccfb83b82fc586097acad025f91953acae1dad79"
+  integrity sha512-8/sHKBKl/+pFQ9EB4U/G6qrVGcwWvrhQ55N6a9zQhipET/yB98uXzxBWWZXe8Hn1/XslWif6lYN/isbXu2x8tA==
   dependencies:
     "@next/eslint-plugin-next" "^12.0.3"
     "@typescript-eslint/eslint-plugin" "^5.3.0"
@@ -3569,7 +3569,7 @@
     eslint-plugin-jsx-a11y "^6.4.1"
     eslint-plugin-prettier "^4.0.0"
     eslint-plugin-react "^7.26.1"
-    eslint-plugin-react-hooks "^4.2.0"
+    eslint-plugin-react-hooks "^4.2.1-alpha-ee069065d-20211105"
     eslint-plugin-tailwindcss "^1.17.0"
 
 "@shunkakinoki/husky@^1.0.6":
@@ -3604,13 +3604,13 @@
   dependencies:
     npm-package-json-lint "^5.4.1"
 
-"@shunkakinoki/prettier@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@shunkakinoki/prettier/-/prettier-1.0.1.tgz#76107b30819bd2af98989b86737d452e695d14bf"
-  integrity sha512-lPZljv9spfBiY4CkLkkCTwTF4Y4lTqmJmLhJMhJ/hSQjl5XHazjFWjKRw9DZtEEWeF75aKuA6cayM+ATBwnbyg==
+"@shunkakinoki/prettier@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@shunkakinoki/prettier/-/prettier-1.0.2.tgz#3b6a32b23887193cace8a18240ad6f266e440bf2"
+  integrity sha512-09sXA9KPEXwOEbR0gv9omiAYFI4sXVNzQTf3Ftnca6W19z9jKk+U2c1+IWgZq62vJHWypEukMzecpAowCf1q8g==
   dependencies:
     prettier "^2.4.1"
-    prettier-plugin-packagejson "^2.2.11"
+    prettier-plugin-packagejson "^2.2.13"
     prettier-plugin-sort-json "^0.0.2"
 
 "@shunkakinoki/semantic-release@^1.2.10":
@@ -9857,10 +9857,10 @@ eslint-plugin-prettier@^4.0.0:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
-eslint-plugin-react-hooks@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.2.0.tgz#8c229c268d468956334c943bb45fc860280f5556"
-  integrity sha512-623WEiZJqxR7VdxFCKLI6d6LLpwJkGPYKODnkH3D7WpOG5KM8yWueBd8TLsNAetEJNF5iJmolaAKO3F8yzyVBQ==
+eslint-plugin-react-hooks@^4.2.1-alpha-ee069065d-20211105:
+  version "4.2.1-alpha-fd5e01c2e-20210913"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.2.1-alpha-fd5e01c2e-20210913.tgz#79a153d00b1d86f267e68c53c6360e19981c3534"
+  integrity sha512-m1fAodKUB/xYFhEuzcZwN063p8fPLeQTTTrmihl5AYEtH+b/2DtAgemAxYuxtZz60R6txmWeH21Xz+W0QRJx/g==
 
 eslint-plugin-react@^7.26.1:
   version "7.26.1"
@@ -16513,7 +16513,7 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier-plugin-packagejson@^2.2.11:
+prettier-plugin-packagejson@^2.2.13:
   version "2.2.13"
   resolved "https://registry.yarnpkg.com/prettier-plugin-packagejson/-/prettier-plugin-packagejson-2.2.13.tgz#af7c25ff378236112ebbd69d7add6cbbee9320e8"
   integrity sha512-AUsRlYHn7jjMck1X54wYTsKj6/E3wf0d0joPFSnSqY3Sxz/e2qqe2x7w0AiMdVeeQcRAkakjp7Qes/riT7J0zA==

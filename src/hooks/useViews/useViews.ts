@@ -12,6 +12,7 @@ export const useViews = (pageId: string) => {
     mutate,
     isLoading: !error && !data,
     isError: !!error,
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     views: isNaN(data?.views) ? 0 : Number(data?.views),
   };
 };

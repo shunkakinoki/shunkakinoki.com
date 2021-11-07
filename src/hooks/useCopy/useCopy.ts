@@ -13,6 +13,7 @@ export const useCopy = (): [boolean, (text: string) => void] => {
     if (timeoutRef.current != null) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       //@ts-ignore
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       clearTimeout(timeoutRef.current);
     }
 

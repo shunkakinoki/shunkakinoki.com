@@ -9,6 +9,7 @@ export const localStorageEffect = <T>(key: string): AtomEffect<T> => {
 
     const savedValue = localStorage.getItem(key);
     if (savedValue != null) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       setSelf(JSON.parse(savedValue));
     }
 

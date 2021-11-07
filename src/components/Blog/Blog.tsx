@@ -14,6 +14,7 @@ export const Blog: FC<Props> = ({ database, locale }) => {
         {database.map(page => {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           const date = new Date(page.properties.Date.date.start).toLocaleString(
             locale,
             {

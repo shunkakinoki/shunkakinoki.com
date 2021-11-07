@@ -29,6 +29,7 @@ export const subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
     const data = await result.json();
 
     if (!result.ok) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       throw new Error(data.error.email[0]);
     }
 

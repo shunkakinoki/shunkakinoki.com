@@ -23,6 +23,7 @@ export const NotionScreen: FC<Props> = ({
         title={content.properties.Name?.title[0]?.plain_text || "Blog"}
         /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
         /* @ts-ignore */
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         date={new Date(content.properties.Date?.date?.start).toLocaleString(
           locale,
           {
