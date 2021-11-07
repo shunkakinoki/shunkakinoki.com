@@ -107,6 +107,42 @@ const config = {
       },
     ];
   },
+  rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/:path*",
+          has: [
+            {
+              type: "host",
+              value: "app.shunkakinoki.com",
+            },
+          ],
+          destination: "/products",
+        },
+        {
+          source: "/:path*",
+          has: [
+            {
+              type: "host",
+              value: "blog.shunkakinoki.com",
+            },
+          ],
+          destination: "/blog",
+        },
+        {
+          source: "/:path*",
+          has: [
+            {
+              type: "host",
+              value: "docs.shunkakinoki.com",
+            },
+          ],
+          destination: "/about",
+        },
+      ],
+    };
+  },
   trailingSlash: false,
   webpack5: true,
 };
