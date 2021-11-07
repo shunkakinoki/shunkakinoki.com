@@ -102,6 +102,7 @@ export const getBlocks = async (blockId: string) => {
       start_cursor: cursor,
       block_id: blockId,
     });
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     blocks.push(...blocksList.results);
 
     const next_cursor = blocksList.next_cursor;
