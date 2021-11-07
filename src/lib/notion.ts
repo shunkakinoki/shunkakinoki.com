@@ -8,8 +8,8 @@ import type {
 } from "@notionhq/client/build/src/api-endpoints.d";
 
 declare type NotionPage = QueryDatabaseResponse["results"][number];
-declare type NotionProperty =
-  QueryDatabaseResponse["results"][number]["properties"];
+// prettier-ignore
+declare type NotionProperty = QueryDatabaseResponse["results"][number]["properties"];
 
 export type blockWithChildren = ListBlockChildrenResponse["results"][number] & {
   children?: blockWithChildren[];
