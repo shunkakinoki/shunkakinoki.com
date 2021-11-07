@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 
-import type { PagesRetrieveResponse } from "@notionhq/client/build/src/api-endpoints";
-import type { Block, RichText } from "@notionhq/client/build/src/api-types";
+import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import clsx from "clsx";
 import { useTheme } from "next-themes";
 import Image from "next/image";
@@ -13,16 +12,17 @@ import s from "./Notion.module.css";
 
 import { LikeButton } from "@/components/Notion/LikeButton";
 import { useViews } from "@/hooks/useViews";
+import type { blockWithChildren, richText } from "@/lib/notion";
 
 export type Props = {
-  blocks: Block[];
-  content: PagesRetrieveResponse;
+  blocks: blockWithChildren[];
+  content: GetPageResponse;
   pageId: string;
   locale?: string;
 };
 
 export type TextProps = {
-  text: RichText[];
+  text: richText[];
 };
 
 export const Text: FC<TextProps> = ({ text }) => {
@@ -64,42 +64,42 @@ export const Text: FC<TextProps> = ({ text }) => {
   );
 };
 
-const renderBlock = (block: Block, theme: string) => {
+const renderBlock = (block: blockWithChildren, theme: string) => {
   switch (block.type) {
     case "paragraph":
       return (
         <p>
-          <Text text={block["paragraph"].text} />
+          <Text text={block["paragraph"].text as richText[]} />
         </p>
       );
     case "heading_1":
       return (
         <h1>
-          <Text text={block["heading_1"].text} />
+          <Text text={block["heading_1"].text as richText[]} />
         </h1>
       );
     case "heading_2":
       return (
         <h2>
-          <Text text={block["heading_2"].text} />
+          <Text text={block["heading_2"].text as richText[]} />
         </h2>
       );
     case "heading_3":
       return (
         <h3>
-          <Text text={block["heading_3"].text} />
+          <Text text={block["heading_3"].text as richText[]} />
         </h3>
       );
     case "bulleted_list_item":
       return (
         <li>
-          <Text text={block["bulleted_list_item"].text} />
+          <Text text={block["bulleted_list_item"].text as richText[]} />
         </li>
       );
     case "numbered_list_item":
       return (
         <li>
-          <Text text={block["numbered_list_item"].text} />
+          <Text text={block["numbered_list_item"].text as richText[]} />
         </li>
       );
     case "to_do":
@@ -112,7 +112,7 @@ const renderBlock = (block: Block, theme: string) => {
               id={block.id}
               defaultChecked={block["to_do"].checked}
             />{" "}
-            <Text text={block["to_do"].text} />
+            <Text text={block["to_do"].text as richText[]} />
           </label>
         </div>
       );
@@ -136,6 +136,7 @@ const renderBlock = (block: Block, theme: string) => {
           <Tweet
             tweetId={
               /twitter.com\/.*\/status(?:es)?\/([^/?]+)/.exec(
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
                 block["embed"].url,
               )[1]
             }

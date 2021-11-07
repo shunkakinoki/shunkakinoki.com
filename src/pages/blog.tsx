@@ -1,4 +1,4 @@
-import type { Page } from "@notionhq/client/build/src/api-types";
+import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import type {
   InferGetStaticPropsType,
   GetStaticProps,
@@ -9,7 +9,7 @@ import { getDatabase } from "@/lib/notion";
 import { BlogScreen } from "@/screens/BlogScreen";
 
 export type Props = {
-  database: Page[];
+  database: GetPageResponse[];
   locale?: string;
 };
 
