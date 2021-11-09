@@ -139,7 +139,7 @@ const config = {
         ],
         destination: "https://www.shunkakinoki.com/about",
       },
-    ],
+    ]
   },
   trailingSlash: false,
   webpack5: true,
