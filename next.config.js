@@ -118,7 +118,7 @@ const config = {
               value: "app.shunkakinoki.com",
             },
           ],
-          destination: "/products",
+          destination: "https://www.shunkakinoki.com/products",
         },
         {
           source: "/:path*",
@@ -128,7 +128,7 @@ const config = {
               value: "blog.shunkakinoki.com",
             },
           ],
-          destination: "/blog",
+          destination: "https://www.shunkakinoki.com/blog",
         },
         {
           source: "/:path*",
@@ -138,7 +138,7 @@ const config = {
               value: "docs.shunkakinoki.com",
             },
           ],
-          destination: "/about",
+          destination: "https://www.shunkakinoki.com/about",
         },
       ],
     };
