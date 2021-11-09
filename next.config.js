@@ -108,40 +108,38 @@ const config = {
     ];
   },
   rewrites() {
-    return {
-      beforeFiles: [
-        {
-          source: "/:path*",
-          has: [
-            {
-              type: "host",
-              value: "app.shunkakinoki.com",
-            },
-          ],
-          destination: "https://www.shunkakinoki.com/products",
-        },
-        {
-          source: "/:path*",
-          has: [
-            {
-              type: "host",
-              value: "blog.shunkakinoki.com",
-            },
-          ],
-          destination: "https://www.shunkakinoki.com/blog",
-        },
-        {
-          source: "/:path*",
-          has: [
-            {
-              type: "host",
-              value: "docs.shunkakinoki.com",
-            },
-          ],
-          destination: "https://www.shunkakinoki.com/about",
-        },
-      ],
-    };
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "app.shunkakinoki.com",
+          },
+        ],
+        destination: "https://www.shunkakinoki.com/products",
+      },
+      {
+        source: "/:slug",
+        has: [
+          {
+            type: "host",
+            value: "blog.shunkakinoki.com",
+          },
+        ],
+        destination: "https://www.shunkakinoki.com/blog/:slug",
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "docs.shunkakinoki.com",
+          },
+        ],
+        destination: "https://www.shunkakinoki.com/about",
+      },
+    ],
   },
   trailingSlash: false,
   webpack5: true,
