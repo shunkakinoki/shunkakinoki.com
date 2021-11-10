@@ -1,4 +1,0 @@
-{
-  "extends": ["@shunkakinoki"],
-  "schedule": "every 3 days"
-}
