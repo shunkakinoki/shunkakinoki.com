@@ -90,6 +90,7 @@ export const Footer: FC = () => {
         <FooterLink href="/og">OG</FooterLink>
         <FooterLink href="/history">History</FooterLink>
         <FooterLink href="/products">Products</FooterLink>
+        <FooterLink href="/schedule">Schedule</FooterLink>
         <FooterLink href="/social">Social</FooterLink>
       </nav>
       <div className="flex justify-center mt-8 space-x-6">
