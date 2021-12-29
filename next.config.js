@@ -95,6 +95,11 @@ const config = {
         permanent: true,
       },
       {
+        source: "/meeting",
+        destination: "https://cal.com/shunkakinoki/meeting",
+        permanent: true,
+      },
+      {
         source: "/news",
         destination:
           "https://shunkakinoki.notion.site/0d7baa7e42434b5ea9cc8f2f73fe6e8f",
