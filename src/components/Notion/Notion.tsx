@@ -3,7 +3,6 @@
 import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import clsx from "clsx";
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import { Fragment } from "react";
 import type { FC } from "react";
 import { Tweet } from "react-twitter-widgets";
@@ -118,16 +117,14 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
       );
     case "image":
       return (
-        <Image
-          width="100"
-          height="100"
-          layout="responsive"
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           //@ts-ignore
           alt={block["image"]?.caption[0]?.plain_text ?? "Notion Image"}
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           //@ts-ignore
-          src={block["image"].file.url}
+          src={block["image"]?.file?.url ?? block["image"]?.external?.url}
         />
       );
     case "embed":
