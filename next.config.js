@@ -95,6 +95,12 @@ const config = {
         permanent: true,
       },
       {
+        source: "/life",
+        destination:
+          "https://shunkakinoki.notion.site/Life-726ff2af73f1467fbec398e3522d45fc",
+        permanent: true,
+      },
+      {
         source: "/meeting",
         destination: "https://cal.com/shunkakinoki/meeting",
         permanent: true,
