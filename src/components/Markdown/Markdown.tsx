@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 
-import marked from "marked";
+import { marked } from "marked";
 
 import { sanitizeHtml } from "next-og-utils";
 import type { CSSProperties, FC } from "react";
 
 export const mdToHTML = (text: string): string => {
-  // TODO: FIX THIS
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   return marked(text);
 };
 
