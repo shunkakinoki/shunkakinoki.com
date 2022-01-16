@@ -17,9 +17,9 @@ export const DashboardCard: FC<Props> = ({ children, href, number, title }) => {
         rel="noopener noreferrer"
         className="block"
       >
-        <div className="sm:p-6 py-5 px-4">
+        <div className="py-5 px-4 sm:p-6">
           <div className="flex items-center">
-            <div className="flex-shrink-0 p-3 bg-indigo-500 rounded-md">
+            <div className="shrink-0 p-3 bg-indigo-500 rounded-md">
               {children}
             </div>
             <div className="flex-1 ml-5 w-0">
@@ -36,7 +36,7 @@ export const DashboardCard: FC<Props> = ({ children, href, number, title }) => {
                 )}
               </dd>
             </div>
-            <div className="flex-shrink-0 text-gray-500">
+            <div className="shrink-0 text-gray-500">
               <ExternalLinkIcon className="w-6 h-6" />
             </div>
           </div>

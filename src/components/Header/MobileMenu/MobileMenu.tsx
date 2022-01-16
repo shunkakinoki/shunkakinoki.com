@@ -39,15 +39,15 @@ export const MobileMenu: FC = () => {
       leaveFrom="opacity-100"
       leaveTo="opacity-0"
     >
-      <div className="md:hidden absolute inset-x-0 top-0 p-2 transition transform origin-top-right">
-        <div className="bg-white dark:bg-black rounded-lg divide-y-2 divide-gray-50 ring-1 ring-black ring-opacity-5 shadow-lg">
+      <div className="absolute inset-x-0 top-0 p-2 transition origin-top-right md:hidden">
+        <div className="bg-white dark:bg-black rounded-lg divide-y-2 divide-gray-50 ring-1 ring-black shadow-lg">
           <div className="px-5 pt-5 pb-6">
             <div className="flex justify-between items-center">
               <div />
               <div className="-mr-2">
                 <button
                   type="button"
-                  className="inline-flex justify-center items-center p-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-200 bg-white hover:bg-gray-100 dark:bg-black dark:hover:bg-gray-600 rounded-md focus:ring-2 focus:ring-inset focus:ring-indigo-500 focus:outline-none"
+                  className="inline-flex justify-center items-center p-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-200 bg-white hover:bg-gray-100 dark:bg-black dark:hover:bg-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                   onClick={() => {
                     return setMenuOpen(isMenuOpen => {
                       return !isMenuOpen;

@@ -19,7 +19,7 @@ export const Product: FC<Props> = ({ isPartial = false, database }) => {
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Products</SectionText>
       </div>
-      <div className="flex-col items-center px-6 sm:px-4 md:px-0 mt-3 w-full">
+      <div className="flex-col items-center px-6 mt-3 w-full sm:px-4 md:px-0">
         <ul
           className={clsx(
             "grid grid-cols-1 gap-3",

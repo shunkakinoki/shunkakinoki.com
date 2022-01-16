@@ -22,7 +22,7 @@ export const SocialCard: FC<Props> = ({
     <li className="group col-span-1">
       <a href={href} target="_blank" rel="noopener noreferrer">
         <div className="flex items-center leading-5 text-left no-underline cursor-pointer">
-          <div className="box-border flex flex-shrink-0 justify-center mr-4 w-8 text-3xl text-left text-gray-500 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-200">
+          <div className="box-border flex shrink-0 justify-center mr-4 w-8 text-3xl text-left text-gray-500 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-200">
             {children}
           </div>
           <div className="overflow-hidden text-left cursor-pointer">

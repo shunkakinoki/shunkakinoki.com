@@ -10,7 +10,7 @@ export const DarkModeButton: FC = () => {
     <button
       aria-label="Dark Mode Button"
       type="button"
-      className="flex justify-center items-center w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full border border-gray-300 dark:border-gray-400 focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 focus:outline-none"
+      className="flex justify-center items-center w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full border border-gray-300 dark:border-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
       onClick={() => {
         return setTheme(theme === "dark" ? "light" : "dark");
       }}

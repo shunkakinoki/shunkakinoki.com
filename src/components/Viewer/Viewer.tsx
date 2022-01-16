@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { useRouter } from "next/router";
 import { useEffect, useMemo, useState } from "react";
 
 import type { FC } from "react";
@@ -15,6 +16,14 @@ export const Viewer: FC = () => {
   const [isCopied, copy] = useCopy();
   const [layoutConfig] = useLayoutConfig();
   const [isLoaded, setIsLoaded] = useState(true);
+  const [host, setHost] = useState("");
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const host = window.location.host;
+    setHost(host);
+  }, [router.pathname]);
 
   const query = useMemo(() => {
     const searchParams = new URLSearchParams();
@@ -27,15 +36,15 @@ export const Viewer: FC = () => {
     return searchParams.toString();
   }, [config, layoutConfig]);
 
-  const ogURL = "https://og.shunkakinoki.com";
   const imageURL = useMemo(() => {
     return `/api/image?${query}`;
   }, [query]);
+
   const htmlURL = useMemo(() => {
     return `/api/html?${query}`;
   }, [query]);
 
-  const debouncedImageURL = useDebouncedValue(ogURL + imageURL, 200);
+  const debouncedImageURL = useDebouncedValue(imageURL, 200);
 
   useEffect(() => {
     return setIsLoaded(false);
@@ -59,13 +68,13 @@ export const Viewer: FC = () => {
       <div className="flex justify-end space-x-2">
         <Button
           onClick={(): void => {
-            return copy(`${ogURL}${imageURL}`);
+            return copy(`https://${host}${imageURL}`);
           }}
         >
           {isCopied ? "Copied!" : "Copy Image URL"}
         </Button>
         <Button
-          href={`${ogURL}${htmlURL}`}
+          href={`${htmlURL}`}
           Component="a"
           target="_blank"
           rel="noopener noreferrer"

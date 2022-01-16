@@ -64,6 +64,8 @@ export const Text: FC<TextProps> = ({ text }) => {
 };
 
 const renderBlock = (block: blockWithChildren, theme: string) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
   switch (block.type) {
     case "paragraph":
       return (
@@ -157,12 +159,12 @@ export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
   return (
     <section className="px-3 w-full text-black dark:text-white">
       <div className="pb-3">
-        <h1 className="mb-4 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-warmGray-800 dark:text-white line-clamp-3">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-warmGray-800 dark:text-white line-clamp-3 md:text-5xl lg:text-6xl">
           {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
           {/* @ts-ignore */}
           {content.properties.Name?.title[0]?.plain_text}
         </h1>
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-2 w-full">
+        <div className="flex flex-col justify-between items-start mt-2 w-full md:flex-row md:items-center">
           <div className="flex items-center">
             <p className="text-lg text-gray-500 dark:text-gray-300">
               by Shun Kakinoki &middot;{" "}

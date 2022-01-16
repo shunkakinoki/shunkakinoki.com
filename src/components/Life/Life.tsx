@@ -20,7 +20,7 @@ export const Life: FC<Props> = ({ isPartial = false }) => {
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Life</SectionText>
       </div>
-      <div className="sm:grid overflow-hidden sm:grid-cols-2 md:grid-cols-3 sm:gap-0.5 bg-gray-200 dark:bg-gray-600 divide-y sm:divide-y-0 divide-gray-200">
+      <div className="overflow-hidden bg-gray-200 dark:bg-gray-600 divide-y divide-gray-200 sm:grid sm:grid-cols-2 sm:gap-0.5 sm:divide-y-0 md:grid-cols-3">
         <LifeCard color="pink" name="Cause" href="/cause">
           <VariableIcon className="w-6 h-6" />
         </LifeCard>

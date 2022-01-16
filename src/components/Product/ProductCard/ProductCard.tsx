@@ -22,11 +22,11 @@ export const ProductCard: FC<Props> = ({
         rel="noopener noreferrer"
         className="block"
       >
-        <div className="flex items-center py-4 px-4 sm:px-6">
-          <div className="hidden md:inline-block flex-shrink-0 md:pr-2">
+        <div className="flex items-center p-4 sm:px-6">
+          <div className="hidden shrink-0 md:inline-block md:pr-2">
             <div className="w-16 h-16">{children}</div>
           </div>
-          <div className="flex-grow mr-1 ml-3">
+          <div className="grow mr-1 ml-3">
             <h4 className="text-lg font-medium tracking-tight text-gray-900 dark:text-gray-100">
               {name}
             </h4>
@@ -34,7 +34,7 @@ export const ProductCard: FC<Props> = ({
               {description}
             </p>
           </div>
-          <div className="flex-shrink-0 text-gray-500">
+          <div className="shrink-0 text-gray-500">
             <ExternalLinkIcon className="w-6 h-6" />
           </div>
         </div>

@@ -57,7 +57,7 @@ export const Newsletter: FC = () => {
   return (
     <div className="px-3 my-6 w-full">
       <div className="relative">
-        <div className="overflow-hidden relative py-10 px-6 sm:px-12 bg-indigo-600 dark:bg-indigo-800 rounded-2xl border border-gray-700 dark:border-gray-400 shadow-xl">
+        <div className="overflow-hidden relative py-10 px-6 bg-indigo-600 dark:bg-indigo-800 rounded-2xl border border-gray-700 dark:border-gray-400 shadow-xl sm:px-12">
           <div
             aria-hidden="true"
             className="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0"
@@ -70,26 +70,26 @@ export const Newsletter: FC = () => {
               viewBox="0 0 1463 360"
             >
               <path
-                className="text-indigo-500 dark:text-indigo-700 text-opacity-40"
+                className="text-indigo-500/40 dark:text-indigo-700/40"
                 fill="currentColor"
                 d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
               />
               <path
-                className="text-indigo-700 dark:text-indigo-900 text-opacity-40"
+                className="text-indigo-500/40 dark:text-indigo-700/40"
                 fill="currentColor"
                 d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z"
               />
             </svg>
           </div>
           <div className="relative">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-white">
+            <h2 className="text-xl font-extrabold tracking-tight text-white sm:text-2xl md:text-3xl">
               {t("common:newsletter.subscribe")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-indigo-50">
               {t("common:newsletter.description")}
             </p>
             <form
-              className="sm:flex sm:mx-auto mt-6 sm:max-w-lg"
+              className="mt-6 sm:flex sm:mx-auto sm:max-w-lg"
               onSubmit={subscribe}
             >
               <div className="relative flex-1 min-w-0">
@@ -100,7 +100,7 @@ export const Newsletter: FC = () => {
                   id="email"
                   name="email"
                   type="email"
-                  className="block py-3 px-5 w-full text-base placeholder-gray-500 text-gray-900 rounded-md border border-transparent focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 shadow-sm focus:outline-none"
+                  className="block py-3 px-5 w-full text-base text-gray-900 placeholder:text-gray-500 rounded-md border border-transparent focus:border-transparent focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 shadow-sm"
                   placeholder="Enter your email"
                 />
                 {form?.state === "error" && (
@@ -118,7 +118,7 @@ export const Newsletter: FC = () => {
                 <button
                   type="submit"
                   className={clsx(
-                    "inline-flex items-center py-3 px-5 sm:px-10 w-full text-base font-medium text-white bg-indigo-500 hover:bg-indigo-400 dark:bg-indigo-600 dark:hover:bg-indigo-500 rounded-md border border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 shadow focus:outline-none",
+                    "inline-flex items-center py-3 px-5 w-full text-base font-medium text-white bg-indigo-500 hover:bg-indigo-400 dark:bg-indigo-600 dark:hover:bg-indigo-500 rounded-md border border-transparent focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 shadow sm:px-10",
                     "cursor-not-allowed" && form?.state === "loading",
                   )}
                 >

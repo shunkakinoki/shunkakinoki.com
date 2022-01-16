@@ -4,7 +4,7 @@ import type { FC } from "react";
 export const CreditsButton: FC = () => {
   return (
     <Link href="/credits">
-      <a className="flex justify-center items-center p-2 rounded-full focus:ring-2 focus:ring-pink-600 dark:focus:ring-pink-400 focus:ring-offset-2 focus:outline-none">
+      <a className="flex justify-center items-center p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-600 dark:focus:ring-pink-400 focus:ring-offset-2">
         <svg
           className="w-6 h-6 text-pink-700 hover:text-pink-900 dark:text-pink-300 dark:hover:text-pink-100 fill-current"
           stroke="currentColor"

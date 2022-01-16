@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 
 import type {
@@ -133,6 +135,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
     const childBlocks = await Promise.all(
       blocks
         .filter(block => {
+          //@ts-ignore
           return block.has_children;
         })
         .map(async block => {
@@ -144,7 +147,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
         }),
     );
     const blocksWithChildren = blocks.map(block => {
-      // Add child blocks if the block should contain children but none exists
+      //@ts-ignore
       if (block.has_children) {
         block.children = childBlocks.find(x => {
           return x.id === block.id;

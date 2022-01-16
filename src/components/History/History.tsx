@@ -16,7 +16,7 @@ interface HistoryYearProps {
 
 export const HistoryYear: FC<HistoryYearProps> = ({ children }) => {
   return (
-    <h3 className="mt-2 mb-4 md:text-base font-light tracking-tight text-gray-500 dark:text-gray-100">
+    <h3 className="mt-2 mb-4 font-light tracking-tight text-gray-500 dark:text-gray-100 md:text-base">
       {children}
     </h3>
   );
@@ -28,7 +28,7 @@ export const History: FC<Props> = ({ isPartial = false }) => {
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>History</SectionText>
       </div>
-      <div className="flex-col items-center px-6 sm:px-4 md:px-0 mt-3 w-full">
+      <div className="flex-col items-center px-6 mt-3 w-full sm:px-4 md:px-0">
         <HistoryYear>Present</HistoryYear>
         <ul className="my-3">
           <HistoryStep time="January 2020 ~ Present" type="globe">

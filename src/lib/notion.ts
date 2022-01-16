@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 
 import { Client, isNotionClientError } from "@notionhq/client";
 import type {
@@ -8,8 +8,10 @@ import type {
 } from "@notionhq/client/build/src/api-endpoints.d";
 
 declare type NotionPage = QueryDatabaseResponse["results"][number];
-// prettier-ignore
-declare type NotionProperty = QueryDatabaseResponse["results"][number]["properties"];
+declare type NotionProperty =
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
+  QueryDatabaseResponse["results"][number]["properties"];
 
 export type blockWithChildren = ListBlockChildrenResponse["results"][number] & {
   children?: blockWithChildren[];
@@ -81,11 +83,15 @@ export const getPageTitle = (property: NotionProperty) => {
 };
 
 export const getPageDate = (page: NotionPage) => {
+  //@ts-ignore
   let dateString = page.last_edited_time;
   if (
+    //@ts-ignore
     page.properties["publish date"].type == "date" &&
+    //@ts-ignore
     page.properties["publish date"].date !== null
   ) {
+    //@ts-ignore
     dateString = page.properties["publish date"].date.start;
   }
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
