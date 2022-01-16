@@ -1,12 +1,12 @@
-import { signIn, signOut, useSession } from "next-auth/client";
+import { signIn, signOut, useSession } from "next-auth/react";
 import type { FC } from "react";
 
 const Auth: FC = () => {
-  const [session] = useSession();
+  const { data } = useSession();
 
   return (
     <>
-      {!session && (
+      {!data && (
         <div className="dark:text-white">
           Not signed in <br />
           <button
@@ -18,9 +18,9 @@ const Auth: FC = () => {
           </button>
         </div>
       )}
-      {session && (
+      {data && (
         <div className="dark:text-white">
-          Signed in as {session.user?.email} <br />
+          Signed in as {data.user?.email} <br />
           <button
             onClick={() => {
               return signOut();
