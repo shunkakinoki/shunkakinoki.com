@@ -89,6 +89,11 @@ const config = {
         permanent: true,
       },
       {
+        source: "/chat",
+        destination: "https://cal.com/shunkakinoki/chat",
+        permanent: true,
+      },
+      {
         source: "/checklist",
         destination:
           "https://shunkakinoki.notion.site/shunkakinoki/ccf0648ddaab42a38644f209e6cd641f",
