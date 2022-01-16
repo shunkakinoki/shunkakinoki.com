@@ -77,7 +77,7 @@ export const FooterTokenLink: FC<FooterTokenLinkProps> = ({
 
 export const Footer: FC = () => {
   return (
-    <footer className="overflow-hidden py-12 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+    <footer className="overflow-hidden py-12 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <nav
         className="flex flex-wrap justify-center -my-2 -mx-5"
         aria-label="Footer"
@@ -115,8 +115,8 @@ export const Footer: FC = () => {
           <FaTwitter className="w-6 h-6" />
         </FooterIconLink>
       </div>
-      <div className="flex flex-col sm:flex-row justify-center items-center pt-8 mx-auto space-y-6 sm:space-y-0 space-x-6 max-w-3xl">
-        <p className="flex-shrink-0 text-base text-center text-gray-400">
+      <div className="flex flex-col justify-center items-center pt-8 mx-auto space-y-6 space-x-6 max-w-3xl sm:flex-row sm:space-y-0">
+        <p className="shrink-0 text-base text-center text-gray-400">
           <a
             className="hover:text-warmGray-600 dark:hover:text-warmGray-300 hover:underline"
             href={`${SocialLinks.github}/shunkakinoki.com/tree/v${packageJson.version}`}
@@ -130,7 +130,7 @@ export const Footer: FC = () => {
           noki. All rights reserved.
         </p>
         <CreditsButton />
-        <div className="sm:flex-grow-0">
+        <div className="sm:grow-0">
           <LocaleSelect />
         </div>
       </div>

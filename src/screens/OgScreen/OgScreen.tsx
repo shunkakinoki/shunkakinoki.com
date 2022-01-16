@@ -23,7 +23,7 @@ export const OgScreen: FC = () => {
           </h1>
         </header>
         {isMounted && (
-          <section className="grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-y-8">
+          <section className="grid grid-cols-1 gap-y-8 md:grid-cols-3 md:gap-8">
             <Config />
             <Viewer />
           </section>

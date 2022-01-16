@@ -59,7 +59,7 @@ export const Button: FC<ButtonProps> = forwardRef((props, buttonRef) => {
       aria-pressed={active}
       data-variant={variant}
       className={clsx(
-        "inline-flex justify-center items-center py-2 px-4 text-sm font-medium leading-6 text-center text-indigo-700 bg-indigo-100 hover:bg-indigo-300 rounded-md border border-transparent focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 shadow-sm transition duration-150 ease-in-out cursor-pointer focus:outline-none",
+        "inline-flex justify-center items-center py-2 px-4 text-sm font-medium leading-6 text-center text-indigo-700 bg-indigo-100 hover:bg-indigo-300 rounded-md border border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 shadow-sm transition duration-150 ease-in-out cursor-pointer",
         loading && styles.loading,
         className,
       )}

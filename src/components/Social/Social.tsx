@@ -40,10 +40,10 @@ export const Social: FC<Props> = ({ isPartial = false }) => {
       <div className="px-3 md:px-0">
         <SectionText isPartial={isPartial}>Social Accounts</SectionText>
       </div>
-      <div className="flex-col items-center px-6 sm:px-4 md:px-0 mt-3 w-full">
+      <div className="flex-col items-center px-6 mt-3 w-full sm:px-4 md:px-0">
         <ul
           className={clsx(
-            "grid grid-cols-2 sm:grid-cols-3 gap-2 my-2 mt-4 w-full",
+            "grid grid-cols-2 gap-2 my-2 mt-4 w-full sm:grid-cols-3",
             isPartial && "md:gap-3",
             !isPartial && "md:gap-6",
           )}

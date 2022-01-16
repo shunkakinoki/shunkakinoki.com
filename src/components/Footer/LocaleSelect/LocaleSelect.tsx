@@ -15,7 +15,7 @@ export const LocaleSelect: FC = () => {
           {router.locale !== undefined && (
             <select
               id="mode"
-              className="block py-2 pr-10 pl-3 w-full text-base sm:text-sm text-gray-900 dark:text-gray-300 bg-white dark:bg-black bg-none rounded-md border border-gray-300 focus:border-indigo-500 dark:border-gray-600 focus:ring-indigo-500 appearance-none focus:outline-none"
+              className="block py-2 pr-10 pl-3 w-full text-base text-gray-900 dark:text-gray-300 bg-white dark:bg-black bg-none rounded-md border border-gray-300 focus:border-indigo-500 dark:border-gray-600 focus:outline-none focus:ring-indigo-500 appearance-none sm:text-sm"
               value={router.locale}
               // eslint-disable-next-line @typescript-eslint/no-empty-function
               onBlur={() => {}}

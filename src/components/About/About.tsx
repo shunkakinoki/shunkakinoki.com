@@ -39,7 +39,7 @@ export const About: FC<Props> = ({ isPartial, source }) => {
     <section className={clsx("mb-6 w-full", isPartial && "mt-6")}>
       <div className="px-3 md:px-0">
         {isPartial && (
-          <h1 className="mb-4 text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black dark:text-white">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl lg:text-6xl">
             Hi, I’m Shun Kakinoki.
           </h1>
         )}
@@ -48,7 +48,7 @@ export const About: FC<Props> = ({ isPartial, source }) => {
         )}
       </div>
       <div className="px-4 sm:px-3 md:px-0">
-        <h3 className="text-lg md:text-xl leading-loose text-warmGray-800 dark:text-coolGray-200">
+        <h3 className="text-lg leading-loose text-warmGray-800 dark:text-coolGray-200 md:text-xl">
           <MDXRemote {...source} components={components} />
         </h3>
       </div>

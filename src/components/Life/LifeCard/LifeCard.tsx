@@ -28,7 +28,7 @@ export const LifeCard: FC<Props> = ({
   return (
     <div
       className={clsx(
-        "group relative p-6 bg-white hover:bg-gray-50 dark:bg-black dark:hover:bg-gray-900 sm:rounded-tr-none focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500",
+        "group relative p-6 bg-white hover:bg-gray-50 dark:bg-black dark:hover:bg-gray-900 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 sm:rounded-tr-none",
         hidden && "block sm:hidden md:block",
       )}
     >

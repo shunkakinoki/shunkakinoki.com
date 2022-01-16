@@ -11,7 +11,7 @@ export const ErrorScreen: FC = () => {
     <>
       <Seo />
       <Header />
-      <div className="flex flex-col justify-center items-center my-16 md:my-24 lg:my-32 mx-auto max-w-3xl">
+      <div className="flex flex-col justify-center items-center my-16 mx-auto max-w-3xl md:my-24 lg:my-32">
         <ErrorText>Error</ErrorText>
         <LinkButton href="/">Go home</LinkButton>
       </div>

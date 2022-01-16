@@ -9,7 +9,7 @@ export const MenuButton: FC = () => {
   return (
     <button
       type="button"
-      className="inline-flex justify-center items-center p-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-400 rounded-md focus:ring-2 focus:ring-inset focus:ring-indigo-500 focus:outline-none"
+      className="inline-flex justify-center items-center p-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
       onClick={() => {
         return setMenuOpen(isMenuOpen => {
           return !isMenuOpen;
