@@ -111,6 +111,11 @@ const config = {
         permanent: true,
       },
       {
+        source: "/quick",
+        destination: "https://cal.com/shunkakinoki/quick",
+        permanent: true,
+      },
+      {
         source: "/news",
         destination:
           "https://shunkakinoki.notion.site/0d7baa7e42434b5ea9cc8f2f73fe6e8f",
