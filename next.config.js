@@ -80,7 +80,8 @@ const config = {
       },
       {
         source: "/aspiration",
-        destination: "https://shunkakinoki.notion.site/a0646131d4da4448bcbcf135725157cf",
+        destination:
+          "https://shunkakinoki.notion.site/a0646131d4da4448bcbcf135725157cf",
         permanent: true,
       },
       {

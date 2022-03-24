@@ -1,5 +1,5 @@
 import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
-import type { InferGetStaticPropsType, GetStaticProps } from "next";
+import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
 
 import { queryDatabase } from "@/lib/notion";
 import { ProductScreen } from "@/screens/ProductScreen";
@@ -8,7 +8,7 @@ export type Props = {
   database: GetPageResponse[];
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   if (!process.env.NOTION_PRODUCT_ID) {
     throw new Error("process.NOTION_PRODUCT_ID is not defined");
   }
@@ -27,19 +27,17 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       props: {
         database: database,
       },
-      revalidate: 30,
     };
   } else {
     return {
       notFound: true,
-      revalidate: 30,
     };
   }
 };
 
 export const Products = ({
   database,
-}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+}: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
   return <ProductScreen database={database} />;
 };
 
