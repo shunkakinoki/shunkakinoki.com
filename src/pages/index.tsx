@@ -1,8 +1,8 @@
 import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import type {
-  GetStaticProps,
-  GetStaticPropsContext,
-  InferGetStaticPropsType,
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  InferGetServerSidePropsType,
 } from "next";
 
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -16,10 +16,10 @@ export interface Props {
   source: string;
 }
 
-export const getStaticProps: GetStaticProps<Props> = async ({
+export const getServerSideProps: GetServerSideProps<Props> = async ({
   locale,
 }: // eslint-disable-next-line @typescript-eslint/require-await
-GetStaticPropsContext) => {
+GetServerSidePropsContext) => {
   const result = await getGithubContent("about", "ABOUT", locale, [2, 3]);
   if (!process.env.NOTION_PRODUCT_ID) {
     throw new Error("process.NOTION_PRODUCT_ID is not defined");
@@ -45,7 +45,7 @@ GetStaticPropsContext) => {
 export const Index = ({
   source,
   database,
-}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
+}: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
   return (
     <LandingScreen
       source={JSON.parse(source) as MDXRemoteSerializeResult}
