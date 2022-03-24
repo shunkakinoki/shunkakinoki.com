@@ -27,12 +27,10 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
       props: {
         database: database,
       },
-      revalidate: 30,
     };
   } else {
     return {
       notFound: true,
-      revalidate: 30,
     };
   }
 };

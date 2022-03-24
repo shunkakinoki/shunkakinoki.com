@@ -8,7 +8,7 @@ import type {
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import { getGithubContent } from "@/lib/github";
-import { getDatabase } from "@/lib/notion";
+import { queryDatabase } from "@/lib/notion";
 import { LandingScreen } from "@/screens/LandingScreen";
 
 export interface Props {
@@ -24,7 +24,16 @@ GetServerSidePropsContext) => {
   if (!process.env.NOTION_PRODUCT_ID) {
     throw new Error("process.NOTION_PRODUCT_ID is not defined");
   }
-  const database = await getDatabase(process.env.NOTION_PRODUCT_ID);
+  const dbResult = await queryDatabase({
+    database_id: process.env.NOTION_PRODUCT_ID,
+    sorts: [
+      {
+        property: "Created At",
+        direction: "descending",
+      },
+    ],
+  });
+  const database = dbResult.results;
   if (result) {
     const { source } = result;
     return {
@@ -32,12 +41,10 @@ GetServerSidePropsContext) => {
         source: JSON.stringify(source),
         database: database,
       },
-      revalidate: 30,
     };
   } else {
     return {
       notFound: true,
-      revalidate: 30,
     };
   }
 };
