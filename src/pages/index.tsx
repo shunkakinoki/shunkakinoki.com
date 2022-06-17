@@ -61,4 +61,8 @@ export const Index = ({
   );
 };
 
+export const config = {
+  runtime: 'edge',
+}
+
 export default Index;
