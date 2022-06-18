@@ -53,9 +53,6 @@
   "npmpackagejsonlint": {
     "extends": "@shunkakinoki/npm-package-json-lint-config"
   },
-  "resolutions": {
-    "typescript": "^4.7.4"
-  },
   "dependencies": {
     "@headlessui/react": "^1.6.4",
     "@heroicons/react": "^1.0.6",
