@@ -90,6 +90,11 @@ const config = {
         permanent: true,
       },
       {
+        source: "/bible",
+        destination: "https://shunkakinoki.notion.site/14b4de27627d4de2b2f7e2a56b3ac7a0",
+        permanent: true,
+      },
+      {
         source: "/cal",
         destination: "https://cal.com/shunkakinoki",
         permanent: true,
