@@ -14,12 +14,6 @@ else
   APP=$1
 fi
 
-# if [[ $VERCEL ]]; then
-#   echo "😳 - Removing OG pages for vercel"
-#   rm src/pages/api/hello.ts
-#   rm src/pages/api/html.ts
-#   rm src/pages/api/image.ts
-# fi
 if [[ "$APP" == "shunkakinoki.com" ]]; then
   echo "🥩 - Removing OG pages"
   rm src/pages/api/hello.ts
