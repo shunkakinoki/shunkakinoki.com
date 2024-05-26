@@ -1,14 +1,14 @@
 "use client"
 
-import * as React from "react"
-import Link, { LinkProps } from "next/link"
+import Link, { type LinkProps } from "next/link"
 import { useRouter } from "next/navigation"
+import * as React from "react"
 
-import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
