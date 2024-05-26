@@ -1,1 +1,0 @@
-export { Social } from "./Social";

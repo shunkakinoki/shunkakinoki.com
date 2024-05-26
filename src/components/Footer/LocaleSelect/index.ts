@@ -1,1 +1,0 @@
-export { LocaleSelect } from "./LocaleSelect";
