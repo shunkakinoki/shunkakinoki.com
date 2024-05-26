@@ -1,6 +1,0 @@
-{
-   "extends": ["../../biome.json"],
-  "organizeImports": {
-    "enabled": false
-  } 
-}

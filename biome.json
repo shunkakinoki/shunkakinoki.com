@@ -3,6 +3,9 @@
   "organizeImports": {
     "enabled": true
   },
+  "files": {
+    "ignore": ["src/components/ui/**"]
+  },
   "formatter": {
     "indentStyle": "space"
   },
