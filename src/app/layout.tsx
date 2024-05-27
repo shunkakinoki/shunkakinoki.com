@@ -104,3 +104,5 @@ export default function RootLayout({ children }: RootLayoutProps) {
     </>
   );
 }
+
+export const experimental_ppr = true;
