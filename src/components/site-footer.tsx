@@ -1,60 +1,75 @@
-import { siteConfig } from "@/config/site"
-import { GitHubLogoIcon, InstagramLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons"
+import { siteConfig } from "@/config/site";
+import {
+  GitHubLogoIcon,
+  InstagramLogoIcon,
+  TwitterLogoIcon,
+} from "@radix-ui/react-icons";
 
 const navigation = {
   main: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Accessibility', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: "About", href: "#" },
+    { name: "Blog", href: "#" },
+    { name: "Jobs", href: "#" },
+    { name: "Press", href: "#" },
+    { name: "Accessibility", href: "#" },
+    { name: "Partners", href: "#" },
   ],
   social: [
     {
-      name: 'Instagram',
-      href: '#',
-      icon: InstagramLogoIcon
+      name: "Instagram",
+      href: "#",
+      icon: InstagramLogoIcon,
     },
     {
-      name: 'X',
+      name: "X",
       href: siteConfig.links.twitter,
-      icon: TwitterLogoIcon
-      
+      icon: TwitterLogoIcon,
     },
     {
-      name: 'GitHub',
+      name: "GitHub",
       href: siteConfig.links.github,
-      icon: GitHubLogoIcon
+      icon: GitHubLogoIcon,
     },
   ],
-}
+};
 
 export function SiteFooter() {
   return (
     <footer className="py-6 md:px-8 md:py-0">
       <div className="mx-auto max-w-screen-md overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-        <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+        <nav
+          className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
+          aria-label="Footer"
+        >
           {navigation.main.map((item) => (
             <div key={item.name} className="pb-6">
-              <a href={item.href} className="text-sm leading-6 text-foreground/60 hover:text-foreground/80">
+              <a
+                href={item.href}
+                className="text-sm leading-6 text-foreground/60 hover:text-foreground/80"
+              >
                 {item.name}
               </a>
             </div>
           ))}
         </nav>
-        <div className="mt-10 flex justify-center space-x-5">
+        <div className="mt-6 flex justify-center space-x-5">
           {navigation.social.map((item) => (
-            <a target="_blank" rel="noreferrer" key={item.name} href={item.href} className="text-foreground/60 hover:text-foreground/70" >
+            <a
+              target="_blank"
+              rel="noreferrer"
+              key={item.name}
+              href={item.href}
+              className="text-foreground/60 hover:text-foreground/70"
+            >
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>
           ))}
         </div>
-        <p className="mt-10 text-center text-xs leading-5 text-foreground/70">
+        <p className="mt-6 text-center text-xs leading-5 text-foreground/70">
           &copy; {new Date().getFullYear()} Shun Kakinoki. All rights reserved.
         </p>
       </div>
     </footer>
-  )
+  );
 }
