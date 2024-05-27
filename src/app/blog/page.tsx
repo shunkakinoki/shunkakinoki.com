@@ -1,3 +1,5 @@
+import { Blog } from "@/components/blog";
+
 export default function BlogPage() {
-  return null;
+  return <Blog />;
 }
