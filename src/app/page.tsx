@@ -2,6 +2,7 @@ import { RocketIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Newsletter } from "@/components/newsletter";
 import {
   PageActions,
   PageHeader,
@@ -32,6 +33,7 @@ export default function IndexPage() {
             href={siteConfig.links.github}
           >
             hacker
+            <ArrowUpRightFromSquareIcon className="inline-block h-3 w-3 mb-2" />
           </a>
           , &{" "}
           <a
@@ -41,6 +43,7 @@ export default function IndexPage() {
             href={siteConfig.links.pioneer}
           >
             pioneer
+            <ArrowUpRightFromSquareIcon className="inline-block h-3 w-3 mb-2" />
           </a>{" "}
           striving to obliterate the galaxy.
         </PageHeaderDescription>
@@ -82,6 +85,7 @@ export default function IndexPage() {
           {/* <MailPage /> */}
         </div>
       </section>
+      <Newsletter />
     </div>
   );
 }
