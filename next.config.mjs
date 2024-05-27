@@ -3,6 +3,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    ppr: true,
+  },
   logging: {
     fetches: {
       fullUrl: true,

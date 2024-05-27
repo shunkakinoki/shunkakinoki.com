@@ -1,9 +1,12 @@
+"use client";
+
 import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import clsx from "clsx";
-// import { useTheme } from "next-themes";
-import type { FC } from "react";
+import { useTheme } from "next-themes";
+import { type FC, Fragment } from "react";
 
 import type { blockWithChildren, richText } from "@/services/notion";
+import "@/styles/notion.css";
 
 export type Props = {
   blocks: blockWithChildren[];
@@ -19,7 +22,7 @@ export type TextProps = {
 export const Text: FC<TextProps> = ({ text }) => {
   return (
     <>
-      {text.map((value, id) => {
+      {text?.map((value) => {
         const {
           annotations: { bold, code, italic, strikethrough, underline },
           plain_text,
@@ -27,7 +30,7 @@ export const Text: FC<TextProps> = ({ text }) => {
         } = value;
         return (
           <span
-            key={value.text.content}
+            key={value.plain_text}
             className={clsx(
               bold && "font-extrabold",
               code && "py-3 px-2 font-mono",
@@ -63,42 +66,42 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
       return (
         <p>
           {/* @ts-ignore */}
-          <Text text={block.paragraph.text as richText[]} />
+          <Text text={block.paragraph.rich_text as richText[]} />
         </p>
       );
     case "heading_1":
       return (
         <h1>
           {/* @ts-ignore */}
-          <Text text={block.heading_1.text as richText[]} />
+          <Text text={block.heading_1.rich_text as richText[]} />
         </h1>
       );
     case "heading_2":
       return (
         <h2>
           {/* @ts-ignore */}
-          <Text text={block.heading_2.text as richText[]} />
+          <Text text={block.heading_2.rich_text as richText[]} />
         </h2>
       );
     case "heading_3":
       return (
         <h3>
           {/* @ts-ignore */}
-          <Text text={block.heading_3.text as richText[]} />
+          <Text text={block.heading_3.rich_text as richText[]} />
         </h3>
       );
     case "bulleted_list_item":
       return (
         <li>
           {/* @ts-ignore */}
-          <Text text={block.bulleted_list_item.text as richText[]} />
+          <Text text={block.bulleted_list_item.rich_text as richText[]} />
         </li>
       );
     case "numbered_list_item":
       return (
         <li>
           {/* @ts-ignore */}
-          <Text text={block.numbered_list_item.text as richText[]} />
+          <Text text={block.numbered_list_item.rich_text as richText[]} />
         </li>
       );
     case "to_do":
@@ -113,7 +116,7 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
               defaultChecked={block.to_do.checked}
             />{" "}
             {/* @ts-ignore */}
-            <Text text={block.to_do.text as richText[]} />
+            <Text text={block.to_do.rich_text as richText[]} />
           </label>
         </div>
       );
@@ -153,7 +156,7 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
 };
 
 export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
-  //   const { theme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <section className="px-3 w-full text-black dark:text-white">
@@ -196,13 +199,15 @@ export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
           </div> */}
         </div>
       </div>
-      {/* <div className={s.notion}>
+      <div className="notion">
         {blocks.map((block) => {
           return (
-            <Fragment key={block.id}>{renderBlock(block, theme)}</Fragment>
+            <Fragment key={block.id}>
+              {renderBlock(block, theme ?? "system")}
+            </Fragment>
           );
         })}
-      </div> */}
+      </div>
       <div className="flex justify-center pt-6 pb-4 space-x-8">
         {/* <LikeButton pageId={pageId} /> */}
       </div>
