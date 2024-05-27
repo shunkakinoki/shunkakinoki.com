@@ -1,5 +1,5 @@
 import { navConfig } from "@/config/nav";
-import { socialConfig } from "@/config/social";
+import { socialPriorityConfig } from "@/config/social";
 
 export function SiteFooter() {
   return (
@@ -21,7 +21,7 @@ export function SiteFooter() {
           ))}
         </nav>
         <div className="mt-6 flex justify-center space-x-5">
-          {socialConfig.map((item) => (
+          {socialPriorityConfig.map((item) => (
             <a
               target="_blank"
               rel="noreferrer"

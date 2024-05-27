@@ -1,5 +1,4 @@
 import { RocketIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
-import Image from "next/image";
 import Link from "next/link";
 
 import { Life } from "@/components/life";
@@ -10,6 +9,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@/components/page-header";
+import { Social } from "@/components/social";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -83,6 +83,7 @@ export default function IndexPage() {
       </section> */}
       <div className="flex flex-col space-y-10 md:space-y-16">
         <Life />
+        <Social />
         <Newsletter />
       </div>
     </div>
