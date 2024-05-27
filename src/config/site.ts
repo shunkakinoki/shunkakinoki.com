@@ -6,6 +6,7 @@ export const siteConfig = {
   links: {
     twitter: "https://twitter.com/shunkakinoki",
     github: "https://github.com/shunkakinoki",
+    pioneer: "https://pioneer.app/founders/shun-kakinoki",
   },
 };
 

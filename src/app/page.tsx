@@ -1,17 +1,17 @@
-import { RocketIcon, TwitterLogoIcon } from "@radix-ui/react-icons"
-import Image from "next/image"
-import Link from "next/link"
+import { RocketIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
+import Image from "next/image";
+import Link from "next/link";
 
 import {
   PageActions,
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "@/components/page-header"
-import { buttonVariants } from "@/components/ui/button"
-import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
-import { ArrowUpRightFromSquareIcon } from "lucide-react"
+} from "@/components/page-header";
+import { buttonVariants } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
+import { ArrowUpRightFromSquareIcon } from "lucide-react";
 
 export default function IndexPage() {
   return (
@@ -20,7 +20,29 @@ export default function IndexPage() {
         {/* <Announcement /> */}
         <PageHeaderHeading>Hi, I'm Shun Kakinoki.</PageHeaderHeading>
         <PageHeaderDescription>
-          I am a builder, hacker, & pioneer striving to obliterate the galaxy.
+          I am a{" "}
+          <Link className="underline hover:opacity-80" href="/products">
+            builder
+          </Link>
+          ,{" "}
+          <a
+            className="underline hover:opacity-80"
+            target="_blank"
+            rel="noreferrer"
+            href={siteConfig.links.github}
+          >
+            hacker
+          </a>
+          , &{" "}
+          <a
+            className="underline hover:opacity-80"
+            target="_blank"
+            rel="noreferrer"
+            href={siteConfig.links.pioneer}
+          >
+            pioneer
+          </a>{" "}
+          striving to obliterate the galaxy.
         </PageHeaderDescription>
         <PageActions>
           <Link href="/about" className={cn(buttonVariants())}>
@@ -61,5 +83,5 @@ export default function IndexPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
