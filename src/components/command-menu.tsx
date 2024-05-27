@@ -3,8 +3,7 @@
 import type { DialogProps } from "@radix-ui/react-alert-dialog";
 import { LaptopIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
-import { useRouter } from "next/navigation";
-import * as React from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -17,11 +16,10 @@ import {
 import { cn } from "@/lib/utils";
 
 export function CommandMenu({ ...props }: DialogProps) {
-  const router = useRouter();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const { setTheme } = useTheme();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
         if (
@@ -42,7 +40,7 @@ export function CommandMenu({ ...props }: DialogProps) {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
-  const runCommand = React.useCallback((command: () => unknown) => {
+  const runCommand = useCallback((command: () => unknown) => {
     setOpen(false);
     command();
   }, []);

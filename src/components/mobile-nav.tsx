@@ -1,17 +1,17 @@
 "use client";
 
+import { RocketIcon } from "@radix-ui/react-icons";
 import Link, { type LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
-import * as React from "react";
+import { useState } from "react";
 
-import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 export function MobileNav() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -20,6 +20,7 @@ export function MobileNav() {
           variant="ghost"
           className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
+          {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
           <svg
             strokeWidth="1.5"
             viewBox="0 0 24 24"
@@ -33,21 +34,21 @@ export function MobileNav() {
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-            ></path>
+            />
             <path
               d="M3 12H16"
               stroke="currentColor"
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-            ></path>
+            />
             <path
               d="M3 19H21"
               stroke="currentColor"
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-            ></path>
+            />
           </svg>
           <span className="sr-only">Toggle Menu</span>
         </Button>
@@ -58,7 +59,7 @@ export function MobileNav() {
           className="flex items-center"
           onOpenChange={setOpen}
         >
-          <Icons.logo className="mr-2 h-4 w-4" />
+          <RocketIcon className="mr-2 h-4 w-4" />
           <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
       </SheetContent>
