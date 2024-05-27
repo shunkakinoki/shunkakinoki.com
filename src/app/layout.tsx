@@ -4,6 +4,7 @@ import { Analytics } from "@/components/analytics";
 import { ThemeProvider } from "@/components/providers";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SpeedInsights } from "@/components/speed-insights";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config/site";
@@ -97,6 +98,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </div>
             <TailwindIndicator />
             <Analytics />
+            <SpeedInsights />
             <Toaster />
           </ThemeProvider>
         </body>
