@@ -2,6 +2,7 @@ import { RocketIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Life } from "@/components/life";
 import { Newsletter } from "@/components/newsletter";
 import {
   PageActions,
@@ -64,7 +65,7 @@ export default function IndexPage() {
           </Link>
         </PageActions>
       </PageHeader>
-      <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
+      {/* <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
         <Image
           src="/examples/mail-dark.png"
           width={1280}
@@ -79,13 +80,11 @@ export default function IndexPage() {
           alt="Mail"
           className="block dark:hidden"
         />
-      </section>
-      <section className="hidden md:block">
-        <div className="overflow-hidden rounded-lg border bg-background shadow">
-          {/* <MailPage /> */}
-        </div>
-      </section>
-      <Newsletter />
+      </section> */}
+      <div className="flex flex-col space-y-10 md:space-y-16">
+        <Life />
+        <Newsletter />
+      </div>
     </div>
   );
 }
