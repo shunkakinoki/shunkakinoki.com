@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 
 import { Analytics } from "@/components/analytics";
 import { ThemeProvider } from "@/components/providers";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Toaster } from "@/components/ui/sonner";
@@ -84,9 +85,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
             disableTransitionOnChange
           >
             <div vaul-drawer-wrapper="">
-              <SiteHeader />
               <div className="relative flex min-h-screen flex-col bg-background">
-                {children}
+                <SiteHeader />
+                <main className="flex-1">
+                 {children}
+                </main>
+                <SiteFooter />
               </div>
             </div>
             <TailwindIndicator />

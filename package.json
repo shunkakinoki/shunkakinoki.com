@@ -55,6 +55,7 @@
     "react-dom": "19.0.0-rc-f994737d14-20240522",
     "react-hook-form": "^7.51.5",
     "react-resizable-panels": "^2.0.19",
+    "react-wrap-balancer": "^1.1.1",
     "sonner": "^1.4.41",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
