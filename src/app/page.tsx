@@ -1,4 +1,4 @@
-import { TwitterLogoIcon } from "@radix-ui/react-icons"
+import { RocketIcon, TwitterLogoIcon } from "@radix-ui/react-icons"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -11,6 +11,7 @@ import {
 import { buttonVariants } from "@/components/ui/button"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
+import { ArrowUpRightFromSquareIcon } from "lucide-react"
 
 export default function IndexPage() {
   return (
@@ -23,6 +24,7 @@ export default function IndexPage() {
         </PageHeaderDescription>
         <PageActions>
           <Link href="/about" className={cn(buttonVariants())}>
+            <RocketIcon className="mr-2 h-4 w-4" />
             About Me
           </Link>
           <Link
@@ -33,6 +35,7 @@ export default function IndexPage() {
           >
             <TwitterLogoIcon className="mr-2 h-4 w-4" />
             Twitter
+            <ArrowUpRightFromSquareIcon className="ml-2 h-4 w-4" />
           </Link>
         </PageActions>
       </PageHeader>
