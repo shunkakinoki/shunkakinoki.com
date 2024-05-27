@@ -9,6 +9,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@/components/page-header";
+import { Products } from "@/components/products";
 import { Social } from "@/components/social";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
@@ -17,7 +18,7 @@ import { ArrowUpRightFromSquareIcon } from "lucide-react";
 
 export default function IndexPage() {
   return (
-    <div className="container relative max-w-screen-md">
+    <>
       <PageHeader>
         {/* <Announcement /> */}
         <PageHeaderHeading>Hi, I'm Shun Kakinoki.</PageHeaderHeading>
@@ -82,10 +83,11 @@ export default function IndexPage() {
         />
       </section> */}
       <div className="flex flex-col space-y-10 md:space-y-16">
+        <Products isPartial />
         <Life />
         <Social />
         <Newsletter />
       </div>
-    </div>
+    </>
   );
 }

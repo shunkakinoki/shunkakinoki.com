@@ -33,7 +33,7 @@ export function Life() {
   return (
     <section>
       <SectionHeaderHeading>Life</SectionHeaderHeading>
-      <div className="divide-y divide-gray-200 overflow-hidden rounded-lg shadow sm:grid sm:grid-cols-3 sm:gap-px sm:divide-y-0 sm:divide-x">
+      <div className="divide-y divide-gray-400 overflow-hidden rounded-lg shadow sm:grid sm:grid-cols-3 sm:gap-px sm:divide-y-0 sm:divide-x">
         {actions.map((action, actionIdx) => (
           <div
             key={action.title}

@@ -1,6 +1,7 @@
 import {
   GitHubLogoIcon,
   InstagramLogoIcon,
+  LinkedInLogoIcon,
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
 import { FaEthereum, FaFacebook } from "react-icons/fa";
@@ -29,6 +30,12 @@ export const socialConfig = [
     href: "https://github.com/shunkakinoki",
     icon: GitHubLogoIcon,
     isPriority: true,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/shunkakinoki",
+    icon: LinkedInLogoIcon,
+    isPriority: false,
   },
   {
     name: "Ethereum",
