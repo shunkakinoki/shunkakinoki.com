@@ -1,7 +1,7 @@
 export function Newsletter() {
   return (
     <div className="py-16 sm:py-24">
-      <div className="mx-auto max-w-md sm:max-w-3xl lg:max-w-7xl">
+      <div className="sm:max-w-3xl lg:max-w-7xl">
         <div className="relative overflow-hidden rounded-2xl bg-indigo-600 px-6 py-8 shadow-xl sm:px-12 sm:py-10">
           <div
             aria-hidden="true"

@@ -6,7 +6,9 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { navConfig } from "@/config/nav";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
@@ -62,6 +64,22 @@ export function MobileNav() {
           <RocketIcon className="mr-2 h-4 w-4" />
           <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
+        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
+          <div className="flex flex-col space-y-3">
+            {navConfig?.map(
+              (item) =>
+                item.href && (
+                  <MobileLink
+                    key={item.href}
+                    href={item.href}
+                    onOpenChange={setOpen}
+                  >
+                    {item.title}
+                  </MobileLink>
+                ),
+            )}
+          </div>
+        </ScrollArea>
       </SheetContent>
     </Sheet>
   );

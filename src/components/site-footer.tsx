@@ -1,37 +1,5 @@
-import { siteConfig } from "@/config/site";
-import {
-  GitHubLogoIcon,
-  InstagramLogoIcon,
-  TwitterLogoIcon,
-} from "@radix-ui/react-icons";
-
-const navigation = {
-  main: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Accessibility", href: "#" },
-    { name: "Partners", href: "#" },
-  ],
-  social: [
-    {
-      name: "Instagram",
-      href: "#",
-      icon: InstagramLogoIcon,
-    },
-    {
-      name: "X",
-      href: siteConfig.links.twitter,
-      icon: TwitterLogoIcon,
-    },
-    {
-      name: "GitHub",
-      href: siteConfig.links.github,
-      icon: GitHubLogoIcon,
-    },
-  ],
-};
+import { navConfig } from "@/config/nav";
+import { socialConfig } from "@/config/social";
 
 export function SiteFooter() {
   return (
@@ -41,19 +9,19 @@ export function SiteFooter() {
           className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
           aria-label="Footer"
         >
-          {navigation.main.map((item) => (
-            <div key={item.name} className="pb-6">
+          {navConfig.map((item) => (
+            <div key={item.title} className="pb-6">
               <a
                 href={item.href}
                 className="text-sm leading-6 text-foreground/60 hover:text-foreground/80"
               >
-                {item.name}
+                {item.title}
               </a>
             </div>
           ))}
         </nav>
         <div className="mt-6 flex justify-center space-x-5">
-          {navigation.social.map((item) => (
+          {socialConfig.map((item) => (
             <a
               target="_blank"
               rel="noreferrer"
