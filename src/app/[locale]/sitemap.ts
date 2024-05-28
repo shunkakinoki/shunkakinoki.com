@@ -3,6 +3,10 @@ import type { MetadataRoute } from "next";
 import { defaultLocale, host, locales, pathnames } from "@/config";
 import { getPathname } from "@/navigation";
 
+// -----------------------------------------------------------------------------
+// Sitemap
+// -----------------------------------------------------------------------------
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const keys = Object.keys(pathnames) as Array<keyof typeof pathnames>;
 

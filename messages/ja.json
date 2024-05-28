@@ -7,5 +7,13 @@
   },
   "pathnames": {
     "description": "JA"
+  },
+  "locale": {
+    "label": "言語",
+    "options": {
+      "en": "English",
+      "ja": "日本語",
+      "zh": "中文"
+    }
   }
 }

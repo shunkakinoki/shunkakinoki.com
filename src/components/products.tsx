@@ -1,11 +1,20 @@
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
 import { queryDatabase } from "@/services/notion";
+
 import { SectionHeaderHeading } from "./section-header";
+
+// -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
 
 type ProductsProps = {
   isPartial?: boolean;
 };
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
 
 export async function Products({ isPartial }: ProductsProps) {
   const res = await queryDatabase({
@@ -60,12 +69,20 @@ export async function Products({ isPartial }: ProductsProps) {
   );
 }
 
+// -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
 interface ProductCardProps {
   children?: JSX.Element;
   description: string;
   name: string;
   href?: string;
 }
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
 
 export function ProductCard({
   children,

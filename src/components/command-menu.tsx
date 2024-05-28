@@ -15,6 +15,10 @@ import {
 } from "@/components/ui/command";
 import { cn } from "@/lib/utils";
 
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
 export function CommandMenu({ ...props }: DialogProps) {
   const [open, setOpen] = useState(false);
   const { setTheme } = useTheme();

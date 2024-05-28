@@ -4,7 +4,12 @@ import type { ForwardRefExoticComponent, RefAttributes } from "react";
 import type { IconType } from "react-icons/lib";
 
 import { socialConfig } from "@/config/social";
+
 import { SectionHeaderHeading } from "./section-header";
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
 
 export function Social() {
   return (
@@ -27,6 +32,10 @@ export function Social() {
   );
 }
 
+// -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
 export interface SocialCardProps {
   icon:
     | ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>
@@ -36,6 +45,10 @@ export interface SocialCardProps {
   title: string;
   username?: string;
 }
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
 
 export function SocialCard({
   isPriority = false,

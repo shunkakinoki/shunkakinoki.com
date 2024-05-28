@@ -13,6 +13,10 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Link } from "@/navigation";
 
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
 export function MobileNav() {
   const [open, setOpen] = useState(false);
 

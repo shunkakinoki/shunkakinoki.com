@@ -1,3 +1,7 @@
+// -----------------------------------------------------------------------------
+// Const
+// -----------------------------------------------------------------------------
+
 export const siteConfig = {
   name: "Shun Kakinoki",
   url: "https://shunkakinoki.com",
@@ -9,5 +13,9 @@ export const siteConfig = {
     pioneer: "https://pioneer.app/founders/shun-kakinoki",
   },
 };
+
+// -----------------------------------------------------------------------------
+// Types
+// -----------------------------------------------------------------------------
 
 export type SiteConfig = typeof siteConfig;

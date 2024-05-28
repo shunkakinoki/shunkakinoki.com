@@ -19,17 +19,25 @@ import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 
+// -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+interface RootLayoutProps {
+  children: React.ReactNode;
+  params: { locale: string };
+}
+
+// -----------------------------------------------------------------------------
+// Metadata
+// -----------------------------------------------------------------------------
+
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
 };
-
-interface RootLayoutProps {
-  children: React.ReactNode;
-  params: { locale: string };
-}
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -86,6 +94,10 @@ export async function generateMetadata({
   };
 }
 
+// -----------------------------------------------------------------------------
+// Page
+// -----------------------------------------------------------------------------
+
 export default async function RootLayout({
   children,
   params: { locale },
@@ -118,7 +130,7 @@ export default async function RootLayout({
                 <div className="relative flex min-h-screen flex-col bg-background">
                   <SiteHeader />
                   <main className="flex-1">
-                    <div className="container relative max-w-screen-md">
+                    <div className="container relative max-w-screen-md py-8 md:py-12 lg:py-16">
                       {children}
                     </div>
                   </main>
@@ -136,6 +148,10 @@ export default async function RootLayout({
     </>
   );
 }
+
+// -----------------------------------------------------------------------------
+// Config
+// -----------------------------------------------------------------------------
 
 export const experimental_ppr = true;
 export const revalidate = 300;

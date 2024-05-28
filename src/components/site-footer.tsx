@@ -1,10 +1,16 @@
 import { navConfig } from "@/config/nav";
 import { socialPriorityConfig } from "@/config/social";
 
+import LocaleSwitcher from "./locale-switcher";
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
 export function SiteFooter() {
   return (
-    <footer className="py-6 md:px-8 md:py-0">
-      <div className="mx-auto max-w-screen-md overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+    <footer>
+      <div className="mx-auto max-w-screen-md overflow-hidden px-6 lg:px-8">
         <nav
           className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
           aria-label="Footer"
@@ -34,9 +40,13 @@ export function SiteFooter() {
             </a>
           ))}
         </div>
-        <p className="mt-6 text-center text-xs leading-5 text-foreground/70">
-          &copy; {new Date().getFullYear()} Shun Kakinoki. All rights reserved.
-        </p>
+        <div className="mt-6 flex justify-center items-center space-x-2">
+          <p className="text-sm leading-5 text-foreground/70">
+            &copy; {new Date().getFullYear()} Shun Kakinoki. All rights
+            reserved.
+          </p>
+          <LocaleSwitcher />
+        </div>
       </div>
     </footer>
   );

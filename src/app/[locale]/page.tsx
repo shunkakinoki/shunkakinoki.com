@@ -16,6 +16,10 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
 
+// -----------------------------------------------------------------------------
+// Page
+// -----------------------------------------------------------------------------
+
 export default function IndexPage() {
   return (
     <>

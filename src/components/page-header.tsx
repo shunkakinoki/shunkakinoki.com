@@ -2,25 +2,23 @@ import Balance from "react-wrap-balancer";
 
 import { cn } from "@/lib/utils";
 
-function PageHeader({
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
+export function PageHeader({
   className,
   children,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <section
-      className={cn(
-        "flex flex-col gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20",
-        className,
-      )}
-      {...props}
-    >
+    <section className={cn("flex flex-col gap-2", className)} {...props}>
       {children}
     </section>
   );
 }
 
-function PageHeaderHeading({
+export function PageHeaderHeading({
   className,
   ...props
 }: React.HTMLAttributes<HTMLHeadingElement>) {
@@ -35,7 +33,7 @@ function PageHeaderHeading({
   );
 }
 
-function PageHeaderDescription({
+export function PageHeaderDescription({
   className,
   ...props
 }: React.HTMLAttributes<HTMLParagraphElement>) {
@@ -50,7 +48,7 @@ function PageHeaderDescription({
   );
 }
 
-function PageActions({
+export function PageActions({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
@@ -64,5 +62,3 @@ function PageActions({
     />
   );
 }
-
-export { PageHeader, PageHeaderHeading, PageHeaderDescription, PageActions };

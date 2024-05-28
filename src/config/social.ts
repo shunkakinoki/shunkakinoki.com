@@ -6,6 +6,10 @@ import {
 } from "@radix-ui/react-icons";
 import { FaEthereum, FaFacebook } from "react-icons/fa";
 
+// -----------------------------------------------------------------------------
+// Const
+// -----------------------------------------------------------------------------
+
 export const socialConfig = [
   {
     name: "Instagram",
@@ -44,6 +48,10 @@ export const socialConfig = [
     isPriority: false,
   },
 ];
+
+// -----------------------------------------------------------------------------
+// Priority Const
+// -----------------------------------------------------------------------------
 
 export const socialPriorityConfig = socialConfig.filter(
   (item) => item.isPriority,

@@ -1,11 +1,19 @@
 import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
 
-type Props = {
+// -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+type PathnamesProps = {
   params: { locale: string };
 };
 
-export default function PathnamesPage({ params: { locale } }: Props) {
+// -----------------------------------------------------------------------------
+// Page
+// -----------------------------------------------------------------------------
+
+export default function PathnamesPage({ params: { locale } }: PathnamesProps) {
   // Enable static rendering
   unstable_setRequestLocale(locale);
 

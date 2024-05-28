@@ -1,6 +1,10 @@
 import { cn } from "@/lib/utils";
 
-function SectionHeaderHeading({
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
+export function SectionHeaderHeading({
   className,
   ...props
 }: React.HTMLAttributes<HTMLHeadingElement>) {
@@ -14,5 +18,3 @@ function SectionHeaderHeading({
     />
   );
 }
-
-export { SectionHeaderHeading };

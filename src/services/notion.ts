@@ -5,6 +5,10 @@ import type {
   QueryDatabaseResponse,
 } from "@notionhq/client/build/src/api-endpoints.d";
 
+// -----------------------------------------------------------------------------
+// Types
+// -----------------------------------------------------------------------------
+
 declare type NotionPage = QueryDatabaseResponse["results"][number];
 declare type NotionProperty =
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -54,9 +58,17 @@ export type richText = {
   href: string | null;
 };
 
+// -----------------------------------------------------------------------------
+// Client
+// -----------------------------------------------------------------------------
+
 const notion = new Client({
   auth: process.env.NOTION_API_KEY,
 });
+
+// -----------------------------------------------------------------------------
+// Utils
+// -----------------------------------------------------------------------------
 
 export const queryDatabase = async ({
   database_id,

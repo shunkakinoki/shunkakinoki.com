@@ -6,6 +6,10 @@ import type { ThemeProviderProps } from "next-themes/dist/types";
 
 import { TooltipProvider } from "@/components/ui/tooltip";
 
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return (
     <JotaiProvider>

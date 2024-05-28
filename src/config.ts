@@ -1,5 +1,9 @@
 import type { Pathnames } from "next-intl/navigation";
 
+// -----------------------------------------------------------------------------
+// Const
+// -----------------------------------------------------------------------------
+
 export const port = process.env.PORT || 3000;
 export const host = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -20,5 +24,9 @@ export const pathnames = {
 } satisfies Pathnames<typeof locales>;
 
 export const localePrefix = "as-needed" as const;
+
+// -----------------------------------------------------------------------------
+// Types
+// -----------------------------------------------------------------------------
 
 export type AppPathnames = keyof typeof pathnames | string;

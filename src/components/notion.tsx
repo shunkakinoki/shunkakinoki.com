@@ -8,6 +8,10 @@ import { type FC, Fragment } from "react";
 import type { blockWithChildren, richText } from "@/services/notion";
 import "@/styles/notion.css";
 
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
 export type Props = {
   blocks: blockWithChildren[];
   content: GetPageResponse;
@@ -18,6 +22,10 @@ export type Props = {
 export type TextProps = {
   text: richText[];
 };
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
 
 export const Text: FC<TextProps> = ({ text }) => {
   return (
@@ -57,6 +65,10 @@ export const Text: FC<TextProps> = ({ text }) => {
     </>
   );
 };
+
+// -----------------------------------------------------------------------------
+// Renderer
+// -----------------------------------------------------------------------------
 
 const renderBlock = (block: blockWithChildren, theme: string) => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -155,20 +167,24 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
   }
 };
 
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
 export const Notion: FC<Props> = ({ blocks, content, locale }) => {
   const { theme } = useTheme();
 
   return (
     <section className="px-3 w-full text-black dark:text-white">
-      <div className="pb-3">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight text-warmGray-800 dark:text-white line-clamp-3 md:text-5xl lg:text-6xl">
-          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-          {/* @ts-ignore */}
-          {content.properties.Name?.title[0]?.plain_text}
-        </h1>
-        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-        {/* @ts-ignore */}
-        {content.properties.Date?.date && (
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
+      {content.properties.Date?.date && (
+        <div className="pb-3">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-warmGray-800 dark:text-white line-clamp-3 md:text-5xl lg:text-6xl">
+            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+            {/* @ts-ignore */}
+            {content.properties.Name?.title[0]?.plain_text}
+          </h1>
           <div className="flex flex-col justify-between items-start mt-2 w-full md:flex-row md:items-center">
             <div className="flex items-center">
               <p className="text-lg text-gray-500 dark:text-gray-300">
@@ -201,8 +217,8 @@ export const Notion: FC<Props> = ({ blocks, content, locale }) => {
             </h3>
           </div> */}
           </div>
-        )}
-      </div>
+        </div>
+      )}
       <div className="notion">
         {blocks.map((block) => {
           return (
