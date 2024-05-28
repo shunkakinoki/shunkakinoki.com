@@ -38,11 +38,11 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params: { locale },
 }: Omit<RootLayoutProps, "children">) {
-  const t = await getTranslations({ locale, namespace: "LocaleLayout" });
+  const t = await getTranslations({ locale });
 
   return {
     title: {
-      default: t("title"),
+      default: t("site.title"),
       template: `%s - ${siteConfig.name}`,
     },
     metadataBase: new URL(siteConfig.url),
@@ -138,3 +138,4 @@ export default async function RootLayout({
 }
 
 export const experimental_ppr = true;
+export const revalidate = 300;

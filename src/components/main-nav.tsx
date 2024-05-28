@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { Link } from "@/navigation";
 import { RocketIcon } from "@radix-ui/react-icons";
 
 export function MainNav() {

@@ -10,13 +10,15 @@ export const locales = ["en", "ja", "zh"] as const;
 
 export const pathnames = {
   "/": "/",
-  "/pathnames": {
-    en: "/pathnames",
-    ja: "/pathnames-ja",
-    zh: "/pathnames-zh",
-  },
+  "/about": "/about",
+  "/blog": "/blog",
+  "/cause": "/cause",
+  "/dashboard": "/dashboard",
+  "/mission": "/mission",
+  "/products": "/products",
+  "/values": "/values",
 } satisfies Pathnames<typeof locales>;
 
 export const localePrefix = "as-needed" as const;
 
-export type AppPathnames = keyof typeof pathnames;
+export type AppPathnames = keyof typeof pathnames | string;

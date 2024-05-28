@@ -1,7 +1,7 @@
 "use client";
 
 import { RocketIcon } from "@radix-ui/react-icons";
-import Link, { type LinkProps } from "next/link";
+import type { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -11,6 +11,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { navConfig } from "@/config/nav";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { Link } from "@/navigation";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -101,6 +102,7 @@ function MobileLink({
   const router = useRouter();
   return (
     <Link
+      // @ts-expect-error
       href={href}
       onClick={() => {
         router.push(href.toString());

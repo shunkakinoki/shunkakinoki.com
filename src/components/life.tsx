@@ -1,10 +1,11 @@
-import { cn } from "@/lib/utils";
 import {
   RocketLaunchIcon,
   ScaleIcon,
   VariableIcon,
 } from "@heroicons/react/24/outline";
-import Link from "next/link";
+
+import { cn } from "@/lib/utils";
+import { Link } from "@/navigation";
 
 import { SectionHeaderHeading } from "./section-header";
 
@@ -55,6 +56,7 @@ export function Life() {
             </div>
             <div className="mt-8">
               <h3 className="text-base font-semibold leading-6 text-foreground/80">
+                {/* @ts-expect-error */}
                 <Link href={action.href} className="focus:outline-none">
                   {/* Extend touch target to entire panel */}
                   <span className="absolute inset-0" aria-hidden="true" />
