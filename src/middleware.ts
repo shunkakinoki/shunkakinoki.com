@@ -16,9 +16,6 @@ export const intlMiddleware = createMiddleware({
 });
 
 export default function middleware(req: NextRequest) {
-  const publicPathnameRegex = RegExp(`^(/(${locales.join("|")}))?/?$`, "i");
-  const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
-
   // If matches one of the social config, redirect to the social page
   const path = req.nextUrl.pathname.slice(1).toLowerCase();
   const social = socialConfig.find(
@@ -29,9 +26,7 @@ export default function middleware(req: NextRequest) {
     return NextResponse.redirect(social.href);
   }
 
-  if (isPublicPage) {
-    return intlMiddleware(req);
-  }
+  return intlMiddleware(req);
 }
 
 // -----------------------------------------------------------------------------

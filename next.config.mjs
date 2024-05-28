@@ -23,6 +23,15 @@ const nextConfig = {
       fullUrl: true,
     },
   },
+  redirects: async () => {
+    return [
+      {
+        source: "/cal",
+        destination: "https://cal.com/shunkakinoki",
+        permanent: true,
+      },
+    ];
+  }
 };
 
 // -----------------------------------------------------------------------------
