@@ -1,4 +1,10 @@
-import type { Metadata, Viewport } from "next";
+import type { Viewport } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from "next-intl/server";
 
 import { Analytics } from "@/components/analytics";
 import { ThemeProvider } from "@/components/providers";
@@ -7,55 +13,11 @@ import { SiteHeader } from "@/components/site-header";
 import { SpeedInsights } from "@/components/speed-insights";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Toaster } from "@/components/ui/sonner";
+import { locales } from "@/config";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
-
-export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  metadataBase: new URL(siteConfig.url),
-  description: siteConfig.description,
-  authors: [
-    {
-      name: "shunkakinoki",
-      url: "https://shunkakinoki.com",
-    },
-  ],
-  creator: "shunkakinoki",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
-    title: siteConfig.name,
-    description: siteConfig.description,
-    siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
-    creator: "@shunkakinoki",
-  },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
-  manifest: `${siteConfig.url}/site.webmanifest`,
-};
 
 export const viewport: Viewport = {
   themeColor: [
@@ -66,9 +28,75 @@ export const viewport: Viewport = {
 
 interface RootLayoutProps {
   children: React.ReactNode;
+  params: { locale: string };
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: Omit<RootLayoutProps, "children">) {
+  const t = await getTranslations({ locale, namespace: "LocaleLayout" });
+
+  return {
+    title: {
+      default: t("title"),
+      template: `%s - ${siteConfig.name}`,
+    },
+    metadataBase: new URL(siteConfig.url),
+    description: siteConfig.description,
+    authors: [
+      {
+        name: "shunkakinoki",
+        url: "https://shunkakinoki.com",
+      },
+    ],
+    creator: "shunkakinoki",
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      url: siteConfig.url,
+      title: siteConfig.name,
+      description: siteConfig.description,
+      siteName: siteConfig.name,
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: siteConfig.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: siteConfig.name,
+      description: siteConfig.description,
+      images: [siteConfig.ogImage],
+      creator: "@shunkakinoki",
+    },
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon-16x16.png",
+      apple: "/apple-touch-icon.png",
+    },
+    manifest: `${siteConfig.url}/site.webmanifest`,
+  };
+}
+
+export default async function RootLayout({
+  children,
+  params: { locale },
+}: RootLayoutProps) {
+  // Enable static rendering
+  unstable_setRequestLocale(locale);
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
+
   return (
     <>
       <html lang="en" suppressHydrationWarning>
@@ -79,28 +107,30 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable,
           )}
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div vaul-drawer-wrapper="">
-              <div className="relative flex min-h-screen flex-col bg-background">
-                <SiteHeader />
-                <main className="flex-1">
-                  <div className="container relative max-w-screen-md">
-                    {children}
-                  </div>
-                </main>
-                <SiteFooter />
+          <NextIntlClientProvider messages={messages}>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <div vaul-drawer-wrapper="">
+                <div className="relative flex min-h-screen flex-col bg-background">
+                  <SiteHeader />
+                  <main className="flex-1">
+                    <div className="container relative max-w-screen-md">
+                      {children}
+                    </div>
+                  </main>
+                  <SiteFooter />
+                </div>
               </div>
-            </div>
-            <TailwindIndicator />
-            <Analytics />
-            <SpeedInsights />
-            <Toaster />
-          </ThemeProvider>
+              <TailwindIndicator />
+              <Analytics />
+              <SpeedInsights />
+              <Toaster />
+            </ThemeProvider>
+          </NextIntlClientProvider>
         </body>
       </html>
     </>
