@@ -2,9 +2,12 @@
 
 import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import clsx from "clsx";
+import { useLocale } from "next-intl";
 import { useTheme } from "next-themes";
 import { type FC, Fragment } from "react";
+import { useEffect } from "react";
 
+import { usePathname, useRouter } from "@/navigation";
 import type { blockWithChildren, richText } from "@/services/notion";
 import "@/styles/notion.css";
 
@@ -173,6 +176,16 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
 
 export const Notion: FC<Props> = ({ blocks, content, locale }) => {
   const { theme } = useTheme();
+  const router = useRouter();
+  const pathname = usePathname();
+  const currentLocale = useLocale();
+
+  // Switch locale to the current locale
+  useEffect(() => {
+    if (currentLocale !== locale) {
+      router.push(pathname, { locale });
+    }
+  }, [locale, currentLocale, pathname, router]);
 
   return (
     <section className="px-3 w-full text-black dark:text-white">
