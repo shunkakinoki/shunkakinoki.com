@@ -1,12 +1,30 @@
+import { unstable_setRequestLocale } from "next-intl/server";
+
 import { Life } from "@/components/life";
+
+import SlugPage from "../[slug]/page";
 
 // -----------------------------------------------------------------------------
 // Page
 // -----------------------------------------------------------------------------
 
-export default function AboutPage() {
+export default async function AboutPage({
+  params: { locale },
+}: { params: { locale: string } }) {
+  unstable_setRequestLocale(locale);
+
+  const aboutSlugs = {
+    en: "779208b885ac41c7913d0c3e7bb97ae6",
+    ja: "1e282a0dc8ac4aa3a311027b943b200c",
+    zh: "1a0ae715baf5459db23daf07b208d9ef",
+  };
+
+  const aboutSlug = aboutSlugs[locale as "en" | "ja" | "zh"] || aboutSlugs.en;
+
   return (
     <>
+      {/* @ts-expect-error */}
+      <SlugPage params={{ slug: aboutSlug }} />
       <Life />
     </>
   );
