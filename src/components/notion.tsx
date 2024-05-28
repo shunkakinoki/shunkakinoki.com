@@ -155,7 +155,7 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
   }
 };
 
-export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
+export const Notion: FC<Props> = ({ blocks, isDigest, content, locale }) => {
   const { theme } = useTheme();
 
   return (
@@ -166,26 +166,29 @@ export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
           {/* @ts-ignore */}
           {content.properties.Name?.title[0]?.plain_text}
         </h1>
-        <div className="flex flex-col justify-between items-start mt-2 w-full md:flex-row md:items-center">
-          <div className="flex items-center">
-            <p className="text-lg text-gray-500 dark:text-gray-300">
-              by Shun Kakinoki &middot;{" "}
-              {new Date(
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                //@ts-ignore
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-                content.properties.Date?.date?.start ??
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore */}
+        {content.properties.Date?.date && (
+          <div className="flex flex-col justify-between items-start mt-2 w-full md:flex-row md:items-center">
+            <div className="flex items-center">
+              <p className="text-lg text-gray-500 dark:text-gray-300">
+                by Shun Kakinoki &middot;{" "}
+                {new Date(
                   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                   //@ts-ignore
-                  content.properties.Created?.created_time,
-              ).toLocaleString(locale, {
-                month: "short",
-                day: "2-digit",
-                year: "numeric",
-              })}
-            </p>
-          </div>
-          {/* <div className="flex justify-center items-center">
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+                  content.properties.Date?.date?.start ??
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    //@ts-ignore
+                    content.properties.Created?.created_time,
+                ).toLocaleString(locale, {
+                  month: "short",
+                  day: "2-digit",
+                  year: "numeric",
+                })}
+              </p>
+            </div>
+            {/* <div className="flex justify-center items-center">
             {isLoading ||
               (views === 1 && (
                 <div className="flex space-x-4 animate-pulse">
@@ -197,7 +200,8 @@ export const Notion: FC<Props> = ({ blocks, content, pageId, locale }) => {
               &nbsp;Views
             </h3>
           </div> */}
-        </div>
+          </div>
+        )}
       </div>
       <div className="notion">
         {blocks.map((block) => {
