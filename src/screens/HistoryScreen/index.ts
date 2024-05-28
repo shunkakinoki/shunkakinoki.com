@@ -1,1 +1,0 @@
-export { HistoryScreen } from "./HistoryScreen";

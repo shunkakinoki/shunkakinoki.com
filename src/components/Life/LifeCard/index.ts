@@ -1,1 +1,0 @@
-export { LifeCard } from "./LifeCard";

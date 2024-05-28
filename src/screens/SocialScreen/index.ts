@@ -1,1 +1,0 @@
-export { SocialScreen } from "./SocialScreen";

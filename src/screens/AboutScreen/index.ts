@@ -1,1 +1,0 @@
-export { AboutScreen } from "./AboutScreen";
