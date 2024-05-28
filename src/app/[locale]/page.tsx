@@ -15,12 +15,21 @@ import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 // -----------------------------------------------------------------------------
 // Page
 // -----------------------------------------------------------------------------
 
-export default function IndexPage() {
+export default async function IndexPage({
+  params: { locale },
+}: { params: { locale: string } }) {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
+  unstable_setRequestLocale(locale);
+
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
@@ -93,7 +102,7 @@ export default function IndexPage() {
       <div className="flex flex-col space-y-10 md:space-y-16">
         <Products isPartial />
         <Life />
-        <Social />
+        <Social isPartial />
         <Newsletter />
       </div>
     </>
