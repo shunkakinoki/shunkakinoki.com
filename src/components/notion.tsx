@@ -155,7 +155,7 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
   }
 };
 
-export const Notion: FC<Props> = ({ blocks, isDigest, content, locale }) => {
+export const Notion: FC<Props> = ({ blocks, content, locale }) => {
   const { theme } = useTheme();
 
   return (
