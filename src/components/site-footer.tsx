@@ -9,8 +9,8 @@ import LocaleSwitcher from "./locale-switcher";
 
 export function SiteFooter() {
   return (
-    <footer className="py-6 md:px-8 md:py-0">
-      <div className="mx-auto max-w-screen-md overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+    <footer>
+      <div className="mx-auto max-w-screen-md overflow-hidden px-6 lg:px-8">
         <nav
           className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
           aria-label="Footer"
