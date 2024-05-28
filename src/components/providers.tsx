@@ -11,6 +11,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 // -----------------------------------------------------------------------------
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return (
     <JotaiProvider>
       <NextThemesProvider {...props}>

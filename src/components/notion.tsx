@@ -12,10 +12,10 @@ import type { blockWithChildren, richText } from "@/services/notion";
 import "@/styles/notion.css";
 
 // -----------------------------------------------------------------------------
-// Component
+// Props
 // -----------------------------------------------------------------------------
 
-export type Props = {
+export type NotionProps = {
   blocks: blockWithChildren[];
   content: GetPageResponse;
   pageId: string;
@@ -24,6 +24,84 @@ export type Props = {
 
 export type TextProps = {
   text: richText[];
+};
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
+export const Notion: FC<NotionProps> = ({ blocks, content, locale }) => {
+  const { theme } = useTheme();
+  const router = useRouter();
+  const pathname = usePathname();
+  const currentLocale = useLocale();
+
+  // Switch locale to the current locale
+  useEffect(() => {
+    if (locale && currentLocale !== locale) {
+      router.push(pathname, { locale });
+    }
+  }, [locale, currentLocale, pathname, router]);
+
+  return (
+    <section className="px-3 w-full text-black dark:text-white">
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
+      {content.properties.Date?.date && (
+        <div className="pb-3">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-warmGray-800 dark:text-white line-clamp-3 md:text-5xl lg:text-6xl">
+            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+            {/* @ts-ignore */}
+            {content.properties.Name?.title[0]?.plain_text}
+          </h1>
+          <div className="flex flex-col justify-between items-start mt-2 w-full md:flex-row md:items-center">
+            <div className="flex items-center">
+              <p className="text-lg text-gray-500 dark:text-gray-300">
+                by Shun Kakinoki &middot;{" "}
+                {new Date(
+                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                  //@ts-ignore
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+                  content.properties.Date?.date?.start ??
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    //@ts-ignore
+                    content.properties.Created?.created_time,
+                ).toLocaleString(locale, {
+                  month: "short",
+                  day: "2-digit",
+                  year: "numeric",
+                })}
+              </p>
+            </div>
+            {/* <div className="flex justify-center items-center">
+            {isLoading ||
+              (views === 1 && (
+                <div className="flex space-x-4 animate-pulse">
+                  <div className="w-8 h-3 bg-gray-300 dark:bg-gray-400 rounded-full" />
+                </div>
+              ))}
+            <h3 className="min-w-min text-sm text-warmGray-500 dark:text-warmGray-300 ">
+              {!isLoading && views !== 1 && views.toLocaleString()}
+              &nbsp;Views
+            </h3>
+          </div> */}
+          </div>
+        </div>
+      )}
+      <div className="notion">
+        {blocks.map((block) => {
+          return (
+            <Fragment key={block.id}>
+              {renderBlock(block, theme ?? "system")}
+            </Fragment>
+          );
+        })}
+      </div>
+      <div className="flex justify-center pt-6 pb-4 space-x-8">
+        {/* <LikeButton pageId={pageId} /> */}
+      </div>
+    </section>
+  );
 };
 
 // -----------------------------------------------------------------------------
@@ -168,82 +246,4 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
       break;
     default:
   }
-};
-
-// -----------------------------------------------------------------------------
-// Component
-// -----------------------------------------------------------------------------
-
-export const Notion: FC<Props> = ({ blocks, content, locale }) => {
-  const { theme } = useTheme();
-  const router = useRouter();
-  const pathname = usePathname();
-  const currentLocale = useLocale();
-
-  // Switch locale to the current locale
-  useEffect(() => {
-    if (currentLocale !== locale) {
-      router.push(pathname, { locale });
-    }
-  }, [locale, currentLocale, pathname, router]);
-
-  return (
-    <section className="px-3 w-full text-black dark:text-white">
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-ignore */}
-      {content.properties.Date?.date && (
-        <div className="pb-3">
-          <h1 className="mb-4 text-3xl font-bold tracking-tight text-warmGray-800 dark:text-white line-clamp-3 md:text-5xl lg:text-6xl">
-            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-            {/* @ts-ignore */}
-            {content.properties.Name?.title[0]?.plain_text}
-          </h1>
-          <div className="flex flex-col justify-between items-start mt-2 w-full md:flex-row md:items-center">
-            <div className="flex items-center">
-              <p className="text-lg text-gray-500 dark:text-gray-300">
-                by Shun Kakinoki &middot;{" "}
-                {new Date(
-                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                  //@ts-ignore
-                  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-                  content.properties.Date?.date?.start ??
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                    //@ts-ignore
-                    content.properties.Created?.created_time,
-                ).toLocaleString(locale, {
-                  month: "short",
-                  day: "2-digit",
-                  year: "numeric",
-                })}
-              </p>
-            </div>
-            {/* <div className="flex justify-center items-center">
-            {isLoading ||
-              (views === 1 && (
-                <div className="flex space-x-4 animate-pulse">
-                  <div className="w-8 h-3 bg-gray-300 dark:bg-gray-400 rounded-full" />
-                </div>
-              ))}
-            <h3 className="min-w-min text-sm text-warmGray-500 dark:text-warmGray-300 ">
-              {!isLoading && views !== 1 && views.toLocaleString()}
-              &nbsp;Views
-            </h3>
-          </div> */}
-          </div>
-        </div>
-      )}
-      <div className="notion">
-        {blocks.map((block) => {
-          return (
-            <Fragment key={block.id}>
-              {renderBlock(block, theme ?? "system")}
-            </Fragment>
-          );
-        })}
-      </div>
-      <div className="flex justify-center pt-6 pb-4 space-x-8">
-        {/* <LikeButton pageId={pageId} /> */}
-      </div>
-    </section>
-  );
 };

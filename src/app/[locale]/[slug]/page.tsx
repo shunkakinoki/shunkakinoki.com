@@ -8,6 +8,10 @@ import { getBlocks, getPage } from "@/services/notion";
 export default async function SlugPage({
   params,
 }: { params: { slug: string } }) {
+  // ---------------------------------------------------------------------------
+  // Services
+  // ---------------------------------------------------------------------------
+
   const page = await getPage(params.slug);
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
@@ -41,6 +45,10 @@ export default async function SlugPage({
     }
     return block;
   });
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
 
   return (
     <Notion blocks={blocksWithChildren} content={page} pageId={params.slug} />

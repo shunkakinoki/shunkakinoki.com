@@ -9,7 +9,15 @@ import SlugPage from "../[slug]/page";
 export default async function CausePage({
   params: { locale },
 }: { params: { locale: string } }) {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
   unstable_setRequestLocale(locale);
+
+  // ---------------------------------------------------------------------------
+  // Services
+  // ---------------------------------------------------------------------------
 
   const causeSlugs = {
     en: "a95efa449e314eefaae7557695b06003",
@@ -18,6 +26,10 @@ export default async function CausePage({
   };
 
   const causeSlug = causeSlugs[locale as "en" | "ja" | "zh"] || causeSlugs.en;
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
 
   // @ts-expect-error
   return <SlugPage params={{ slug: causeSlug }} />;

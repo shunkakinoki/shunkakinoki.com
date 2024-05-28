@@ -11,6 +11,10 @@ export function PageHeader({
   children,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return (
     <section className={cn("flex flex-col gap-2", className)} {...props}>
       {children}
@@ -22,6 +26,10 @@ export function PageHeaderHeading({
   className,
   ...props
 }: React.HTMLAttributes<HTMLHeadingElement>) {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return (
     <h1
       className={cn(
@@ -37,6 +45,10 @@ export function PageHeaderDescription({
   className,
   ...props
 }: React.HTMLAttributes<HTMLParagraphElement>) {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return (
     <Balance
       className={cn(
@@ -52,6 +64,10 @@ export function PageActions({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return (
     <div
       className={cn(

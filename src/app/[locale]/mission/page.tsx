@@ -9,7 +9,15 @@ import SlugPage from "../[slug]/page";
 export default async function MissionPage({
   params: { locale },
 }: { params: { locale: string } }) {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
   unstable_setRequestLocale(locale);
+
+  // ---------------------------------------------------------------------------
+  // Services
+  // ---------------------------------------------------------------------------
 
   const missionSlugs = {
     en: "8db37d862bdd4e9eb0723c14de4ca0c5",
@@ -19,6 +27,10 @@ export default async function MissionPage({
 
   const missionSlug =
     missionSlugs[locale as "en" | "ja" | "zh"] || missionSlugs.en;
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
 
   // @ts-expect-error
   return <SlugPage params={{ slug: missionSlug }} />;
