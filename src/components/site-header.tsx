@@ -1,5 +1,4 @@
 import { GitHubLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
 
 import { CommandMenu } from "@/components/command-menu";
 import { MainNav } from "@/components/main-nav";
@@ -20,11 +19,7 @@ export function SiteHeader() {
             <CommandMenu />
           </div>
           <nav className="flex items-center">
-            <Link
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={siteConfig.links.github} target="_blank" rel="noreferrer">
               <div
                 className={cn(
                   buttonVariants({
@@ -36,12 +31,8 @@ export function SiteHeader() {
                 <GitHubLogoIcon className="h-4 w-4 fill-current" />
                 <span className="sr-only">GitHub</span>
               </div>
-            </Link>
-            <Link
-              href={siteConfig.links.twitter}
-              target="_blank"
-              rel="noreferrer"
-            >
+            </a>
+            <a href={siteConfig.links.twitter} target="_blank" rel="noreferrer">
               <div
                 className={cn(
                   buttonVariants({
@@ -53,7 +44,7 @@ export function SiteHeader() {
                 <TwitterLogoIcon className="h-4 w-4 fill-current" />
                 <span className="sr-only">Twitter</span>
               </div>
-            </Link>
+            </a>
             <ModeToggle />
           </nav>
         </div>

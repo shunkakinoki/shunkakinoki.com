@@ -42,7 +42,7 @@ export async function generateMetadata({
 
   return {
     title: {
-      default: t("title"),
+      default: t("site.title"),
       template: `%s - ${siteConfig.name}`,
     },
     metadataBase: new URL(siteConfig.url),

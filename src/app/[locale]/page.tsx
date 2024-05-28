@@ -1,5 +1,5 @@
+import { Link } from "@/navigation";
 import { RocketIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
 
 import { Life } from "@/components/life";
 import { Newsletter } from "@/components/newsletter";
@@ -54,7 +54,7 @@ export default function IndexPage() {
             <RocketIcon className="mr-2 h-4 w-4" />
             About Me
           </Link>
-          <Link
+          <a
             target="_blank"
             rel="noreferrer"
             href={siteConfig.links.twitter}
@@ -63,7 +63,7 @@ export default function IndexPage() {
             <TwitterLogoIcon className="mr-2 h-4 w-4" />
             Twitter
             <ArrowUpRightFromSquareIcon className="ml-2 h-4 w-4" />
-          </Link>
+          </a>
         </PageActions>
       </PageHeader>
       {/* <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">

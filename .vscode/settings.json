@@ -4,12 +4,14 @@
     "quickfix.biome": "explicit",
     "source.organizeImports.biome": "explicit"
   },
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
   "[json]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "files.autoSave": "afterDelay",
-  "editor.formatOnSave": true,
   "[typescriptreact]": {
     "editor.defaultFormatter": "biomejs.biome"
-  }
+  },
+  "i18n-ally.localesPaths": ["./messages"],
+  "i18n-ally.keystyle": "nested"
 }

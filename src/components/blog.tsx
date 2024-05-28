@@ -1,5 +1,5 @@
+import { Link } from "@/navigation";
 import { queryDatabase } from "@/services/notion";
-import Link from "next/link";
 
 type ProductsProps = {
   isPartial?: boolean;
@@ -44,6 +44,7 @@ export async function Blog({ isPartial }: ProductsProps) {
           return (
             <div key={page.id} className="flex space-x-4">
               <Link
+                // @ts-expect-error
                 href={`/${page.id}`}
                 className="flex grow items-center font-extrabold text-warmGray-800 hover:text-coolGray-700 dark:text-coolGray-100 dark:hover:text-white hover:underline line-clamp-1"
               >
