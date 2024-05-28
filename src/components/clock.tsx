@@ -24,7 +24,7 @@ export const Clock = () => {
   // ---------------------------------------------------------------------------
 
   return (
-    <section className="py-12 md:py-16 lg:py-24 px-3 w-full text-black dark:text-white">
+    <section className="py-12 md:py-16 lg:py-24 w-full text-black dark:text-white">
       <div className="flex flex-col justify-center items-center">
         <h6 className="text-2xl md:text-3xl lg:text-4xl">
           {time.toLocaleString("en", {

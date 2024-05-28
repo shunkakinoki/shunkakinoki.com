@@ -44,7 +44,7 @@ export const Notion: FC<NotionProps> = ({ blocks, content, locale }) => {
   }, [locale, currentLocale, pathname, router]);
 
   return (
-    <section className="px-3 w-full text-black dark:text-white">
+    <section className="w-full text-black dark:text-white">
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
       {/* @ts-ignore */}
       {content.properties.Date?.date && (
