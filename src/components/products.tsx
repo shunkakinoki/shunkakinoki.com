@@ -43,7 +43,7 @@ export async function Products({ isPartial }: ProductsProps) {
   return (
     <section>
       <SectionHeaderHeading>Products</SectionHeaderHeading>
-      <div className="flex-col items-center px-6 mt-3 w-full sm:px-4 md:px-0">
+      <div className="flex-col items-center mt-3 w-full">
         <ul className="grid grid-cols-1 gap-3">
           {res.results.slice(0, isPartial ? 3 : -1).map((product) => (
             <ProductCard
@@ -111,7 +111,7 @@ export function ProductCard({
         className="block"
       >
         <div className="flex items-center p-4 sm:px-6">
-          <div className="hidden shrink-0 md:inline-block md:pr-2">
+          <div className="shrink-0 inline-block md:pr-2">
             <div className="w-16 h-16">{children}</div>
           </div>
           <div className="grow mr-1 ml-3">

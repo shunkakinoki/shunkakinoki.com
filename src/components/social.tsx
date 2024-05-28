@@ -3,15 +3,23 @@ import type { IconProps } from "@radix-ui/react-icons/dist/types";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
 import type { IconType } from "react-icons/lib";
 
-import { socialConfig } from "@/config/social";
+import { socialConfig, socialPriorityConfig } from "@/config/social";
 
 import { SectionHeaderHeading } from "./section-header";
+
+// -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+export interface SocialProps {
+  isPartial?: boolean;
+}
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export function Social() {
+export function Social({ isPartial = false }: SocialProps) {
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
@@ -19,12 +27,12 @@ export function Social() {
   return (
     <section>
       <SectionHeaderHeading>Social</SectionHeaderHeading>
-      <div className="flex-col items-center px-6 mt-3 w-full sm:px-4 md:px-0">
+      <div className="flex-col items-center mt-3 w-full">
         <ul className="grid grid-cols-2 gap-2 my-2 mt-4 w-full sm:grid-cols-3">
-          {socialConfig.map((social) => (
+          {(isPartial ? socialPriorityConfig : socialConfig).map((social) => (
             <SocialCard
               key={social.name}
-              isPriority
+              isPriority={social.isPriority}
               title={social.name}
               icon={social.icon}
               href={social.href}
