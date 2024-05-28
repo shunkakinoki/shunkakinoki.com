@@ -1,17 +1,38 @@
 import createMiddleware from "next-intl/middleware";
+import { type NextRequest, NextResponse } from "next/server";
 
 import { defaultLocale, localePrefix, locales, pathnames } from "@/config";
+import { socialConfig } from "./config/social";
 
 // -----------------------------------------------------------------------------
 // Middleware
 // -----------------------------------------------------------------------------
 
-export default createMiddleware({
+export const intlMiddleware = createMiddleware({
   defaultLocale,
   locales,
   pathnames,
   localePrefix,
 });
+
+export default function middleware(req: NextRequest) {
+  const publicPathnameRegex = RegExp(`^(/(${locales.join("|")}))?/?$`, "i");
+  const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
+
+  // If matches one of the social config, redirect to the social page
+  const path = req.nextUrl.pathname.slice(1).toLowerCase();
+  const social = socialConfig.find(
+    (social) => path === social.name.toLowerCase(),
+  );
+
+  if (social) {
+    return NextResponse.redirect(social.href);
+  }
+
+  if (isPublicPage) {
+    return intlMiddleware(req);
+  }
+}
 
 // -----------------------------------------------------------------------------
 // Const
