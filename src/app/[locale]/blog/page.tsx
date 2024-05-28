@@ -11,5 +11,5 @@ export default async function BlogPage({
 }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale);
 
-  return <Blog />;
+  return <Blog locale={locale} />;
 }

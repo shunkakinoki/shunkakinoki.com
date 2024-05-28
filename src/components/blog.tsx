@@ -2,19 +2,33 @@ import { Link } from "@/navigation";
 import { queryDatabase } from "@/services/notion";
 
 // -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+export interface BlogProps {
+  locale: string;
+}
+
+// -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export async function Blog() {
+export async function Blog({ locale }: BlogProps) {
   const res = (
     await queryDatabase({
       database_id: "e4ef762ca07f465e8f5cce906732140b",
       filter: {
-        or: [
+        and: [
           {
             property: "Published",
             checkbox: {
               equals: true,
+            },
+          },
+          {
+            property: "Locale",
+            select: {
+              equals: locale,
             },
           },
         ],
