@@ -9,7 +9,15 @@ import SlugPage from "../[slug]/page";
 export default async function valuesPage({
   params: { locale },
 }: { params: { locale: string } }) {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
   unstable_setRequestLocale(locale);
+
+  // ---------------------------------------------------------------------------
+  // Services
+  // ---------------------------------------------------------------------------
 
   const valuesSlugs = {
     en: "d9f72066ffeb4b06aa48c4f27678ade5",
@@ -19,6 +27,10 @@ export default async function valuesPage({
 
   const valuesSlug =
     valuesSlugs[locale as "en" | "ja" | "zh"] || valuesSlugs.en;
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
 
   // @ts-expect-error
   return <SlugPage params={{ slug: valuesSlug }} />;

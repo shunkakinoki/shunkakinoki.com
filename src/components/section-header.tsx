@@ -8,6 +8,10 @@ export function SectionHeaderHeading({
   className,
   ...props
 }: React.HTMLAttributes<HTMLHeadingElement>) {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return (
     <h3
       className={cn(

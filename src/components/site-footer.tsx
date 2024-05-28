@@ -8,6 +8,10 @@ import LocaleSwitcher from "./locale-switcher";
 // -----------------------------------------------------------------------------
 
 export function SiteFooter() {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return (
     <footer>
       <div className="mx-auto max-w-screen-md overflow-hidden px-6 lg:px-8">

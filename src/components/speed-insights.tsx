@@ -7,5 +7,9 @@ import { SpeedInsights as VercelSpeedInsights } from "@vercel/speed-insights/nex
 // -----------------------------------------------------------------------------
 
 export function SpeedInsights() {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return <VercelSpeedInsights />;
 }

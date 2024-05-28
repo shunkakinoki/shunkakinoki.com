@@ -14,6 +14,10 @@ export interface BlogProps {
 // -----------------------------------------------------------------------------
 
 export async function Blog({ locale }: BlogProps) {
+  // ---------------------------------------------------------------------------
+  // Service
+  // ---------------------------------------------------------------------------
+
   const res = (
     await queryDatabase({
       database_id: "e4ef762ca07f465e8f5cce906732140b",
@@ -39,6 +43,10 @@ export async function Blog({ locale }: BlogProps) {
     //@ts-ignore
     return !!db.properties.Category.select && !!db.properties.Date?.date;
   });
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
 
   return (
     <section>

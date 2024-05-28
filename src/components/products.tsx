@@ -17,6 +17,10 @@ type ProductsProps = {
 // -----------------------------------------------------------------------------
 
 export async function Products({ isPartial }: ProductsProps) {
+  // ---------------------------------------------------------------------------
+  // Service
+  // ---------------------------------------------------------------------------
+
   const res = await queryDatabase({
     database_id: "bd49167ff0b140aea87c4548f3fbbc82",
     sorts: [
@@ -31,6 +35,10 @@ export async function Products({ isPartial }: ProductsProps) {
           },
     ],
   });
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
 
   return (
     <section>
@@ -90,6 +98,10 @@ export function ProductCard({
   name,
   href,
 }: ProductCardProps) {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return (
     <li className="group col-span-1 hover:bg-gray-50 dark:bg-black dark:hover:bg-gray-900 rounded-lg border dark:border-gray-300 shadow-lg">
       <a

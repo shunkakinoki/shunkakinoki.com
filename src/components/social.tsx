@@ -12,6 +12,10 @@ import { SectionHeaderHeading } from "./section-header";
 // -----------------------------------------------------------------------------
 
 export function Social() {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return (
     <section>
       <SectionHeaderHeading>Social</SectionHeaderHeading>
@@ -57,6 +61,10 @@ export function SocialCard({
   username = "@shunkakinoki",
   ...props
 }: SocialCardProps) {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return (
     <li className="group col-span-1">
       <a href={href} target="_blank" rel="noopener noreferrer">

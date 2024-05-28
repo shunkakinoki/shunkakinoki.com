@@ -11,7 +11,15 @@ import SlugPage from "../[slug]/page";
 export default async function AboutPage({
   params: { locale },
 }: { params: { locale: string } }) {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
   unstable_setRequestLocale(locale);
+
+  // ---------------------------------------------------------------------------
+  // Services
+  // ---------------------------------------------------------------------------
 
   const aboutSlugs = {
     en: "779208b885ac41c7913d0c3e7bb97ae6",
@@ -20,6 +28,10 @@ export default async function AboutPage({
   };
 
   const aboutSlug = aboutSlugs[locale as "en" | "ja" | "zh"] || aboutSlugs.en;
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
 
   return (
     <>
