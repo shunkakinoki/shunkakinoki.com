@@ -2,12 +2,20 @@ import createMiddleware from "next-intl/middleware";
 
 import { defaultLocale, localePrefix, locales, pathnames } from "@/config";
 
+// -----------------------------------------------------------------------------
+// Middleware
+// -----------------------------------------------------------------------------
+
 export default createMiddleware({
   defaultLocale,
   locales,
   pathnames,
   localePrefix,
 });
+
+// -----------------------------------------------------------------------------
+// Const
+// -----------------------------------------------------------------------------
 
 export const config = {
   matcher: [

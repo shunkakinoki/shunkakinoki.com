@@ -2,6 +2,10 @@
 
 import { useEffect } from "react";
 
+// -----------------------------------------------------------------------------
+// Page
+// -----------------------------------------------------------------------------
+
 // biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
 export default function Error({
   error,

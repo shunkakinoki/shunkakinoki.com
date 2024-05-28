@@ -1,6 +1,11 @@
 import { navConfig } from "@/config/nav";
 import { socialPriorityConfig } from "@/config/social";
+
 import LocaleSwitcher from "./locale-switcher";
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
 
 export function SiteFooter() {
   return (

@@ -8,6 +8,10 @@ import { type FC, Fragment } from "react";
 import type { blockWithChildren, richText } from "@/services/notion";
 import "@/styles/notion.css";
 
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
 export type Props = {
   blocks: blockWithChildren[];
   content: GetPageResponse;
@@ -18,6 +22,10 @@ export type Props = {
 export type TextProps = {
   text: richText[];
 };
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
 
 export const Text: FC<TextProps> = ({ text }) => {
   return (
@@ -57,6 +65,10 @@ export const Text: FC<TextProps> = ({ text }) => {
     </>
   );
 };
+
+// -----------------------------------------------------------------------------
+// Renderer
+// -----------------------------------------------------------------------------
 
 const renderBlock = (block: blockWithChildren, theme: string) => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -154,6 +166,10 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
     default:
   }
 };
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
 
 export const Notion: FC<Props> = ({ blocks, content, locale }) => {
   const { theme } = useTheme();

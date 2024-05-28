@@ -1,6 +1,10 @@
 import { Notion } from "@/components/notion";
 import { getBlocks, getPage } from "@/services/notion";
 
+// -----------------------------------------------------------------------------
+// Page
+// -----------------------------------------------------------------------------
+
 export default async function SlugPage({
   params,
 }: { params: { slug: string } }) {

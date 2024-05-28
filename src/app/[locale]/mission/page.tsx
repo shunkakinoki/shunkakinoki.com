@@ -2,6 +2,10 @@ import { unstable_setRequestLocale } from "next-intl/server";
 
 import SlugPage from "../[slug]/page";
 
+// -----------------------------------------------------------------------------
+// Page
+// -----------------------------------------------------------------------------
+
 export default async function MissionPage({
   params: { locale },
 }: { params: { locale: string } }) {

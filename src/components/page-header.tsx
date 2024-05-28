@@ -2,7 +2,11 @@ import Balance from "react-wrap-balancer";
 
 import { cn } from "@/lib/utils";
 
-function PageHeader({
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
+export function PageHeader({
   className,
   children,
   ...props
@@ -20,7 +24,7 @@ function PageHeader({
   );
 }
 
-function PageHeaderHeading({
+export function PageHeaderHeading({
   className,
   ...props
 }: React.HTMLAttributes<HTMLHeadingElement>) {
@@ -35,7 +39,7 @@ function PageHeaderHeading({
   );
 }
 
-function PageHeaderDescription({
+export function PageHeaderDescription({
   className,
   ...props
 }: React.HTMLAttributes<HTMLParagraphElement>) {
@@ -50,7 +54,7 @@ function PageHeaderDescription({
   );
 }
 
-function PageActions({
+export function PageActions({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
@@ -64,5 +68,3 @@ function PageActions({
     />
   );
 }
-
-export { PageHeader, PageHeaderHeading, PageHeaderDescription, PageActions };

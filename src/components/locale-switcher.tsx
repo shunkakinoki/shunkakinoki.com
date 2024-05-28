@@ -1,4 +1,5 @@
 "use client";
+
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 
@@ -12,6 +13,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { locales } from "@/config";
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
 
 export default function LocaleSwitcher() {
   const t = useTranslations();

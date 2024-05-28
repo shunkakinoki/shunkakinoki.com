@@ -7,6 +7,10 @@ import { cn } from "@/lib/utils";
 import { Link } from "@/navigation";
 import { RocketIcon } from "@radix-ui/react-icons";
 
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
 export function MainNav() {
   const pathname = usePathname();
 

@@ -1,11 +1,11 @@
 import { Link } from "@/navigation";
 import { queryDatabase } from "@/services/notion";
 
-type ProductsProps = {
-  isPartial?: boolean;
-};
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
 
-export async function Blog({ isPartial }: ProductsProps) {
+export async function Blog() {
   const res = (
     await queryDatabase({
       database_id: "e4ef762ca07f465e8f5cce906732140b",
