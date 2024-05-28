@@ -1,5 +1,6 @@
 import { navConfig } from "@/config/nav";
 import { socialPriorityConfig } from "@/config/social";
+import LocaleSwitcher from "./locale-switcher";
 
 export function SiteFooter() {
   return (
@@ -34,9 +35,13 @@ export function SiteFooter() {
             </a>
           ))}
         </div>
-        <p className="mt-6 text-center text-xs leading-5 text-foreground/70">
-          &copy; {new Date().getFullYear()} Shun Kakinoki. All rights reserved.
-        </p>
+        <div className="mt-6 flex justify-center items-center space-x-2">
+          <p className="text-sm leading-5 text-foreground/70">
+            &copy; {new Date().getFullYear()} Shun Kakinoki. All rights
+            reserved.
+          </p>
+          <LocaleSwitcher />
+        </div>
       </div>
     </footer>
   );
