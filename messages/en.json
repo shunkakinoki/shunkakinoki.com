@@ -4,5 +4,8 @@
   },
   "site": {
     "title": "Shun Kakinoki"
+  },
+  "pathnames": {
+    "description": "EN"
   }
 }

@@ -138,3 +138,4 @@ export default async function RootLayout({
 }
 
 export const experimental_ppr = true;
+export const revalidate = 300;
