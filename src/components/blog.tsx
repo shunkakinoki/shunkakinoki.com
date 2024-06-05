@@ -39,9 +39,17 @@ export async function Blog({ locale }: BlogProps) {
       },
     })
   ).results.filter((db) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
-    return !!db.properties.Category.select && !!db.properties.Date?.date;
+    return (
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      !!db.properties.Date?.date &&
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      !!db.properties.Published.checkbox &&
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      !!db.properties.Locale?.select
+    );
   });
 
   // ---------------------------------------------------------------------------
