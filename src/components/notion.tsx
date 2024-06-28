@@ -19,7 +19,7 @@ export type NotionProps = {
   blocks: blockWithChildren[];
   content: GetPageResponse;
   pageId: string;
-  locale?: string;
+  locale?: "en" | "ja" | "zh" | undefined;
 };
 
 export type TextProps = {
