@@ -7,6 +7,7 @@ import { getPathname } from "@/navigation";
 // Sitemap
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default function sitemap(): MetadataRoute.Sitemap {
   const keys = Object.keys(pathnames) as Array<keyof typeof pathnames>;
 

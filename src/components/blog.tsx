@@ -20,6 +20,7 @@ export async function Blog({ locale }: BlogProps) {
 
   const res = (
     await queryDatabase({
+      // biome-ignore lint/style/useNamingConvention: <explanation>
       database_id: "e4ef762ca07f465e8f5cce906732140b",
       filter: {
         and: [
@@ -58,7 +59,7 @@ export async function Blog({ locale }: BlogProps) {
 
   return (
     <section>
-      <div className="flex-col space-y-3 w-full">
+      <div className="w-full flex-col space-y-3">
         {res.map((page) => {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
@@ -76,7 +77,7 @@ export async function Blog({ locale }: BlogProps) {
               <Link
                 // @ts-expect-error
                 href={`/${page.id}`}
-                className="flex grow items-center font-extrabold text-warmGray-800 hover:text-coolGray-700 dark:text-coolGray-100 dark:hover:text-white hover:underline line-clamp-1"
+                className="line-clamp-1 flex grow items-center font-extrabold text-warmGray-800 hover:text-coolGray-700 hover:underline dark:text-coolGray-100 dark:hover:text-white"
               >
                 <div className="text-xl md:text-2xl">
                   {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
@@ -84,7 +85,7 @@ export async function Blog({ locale }: BlogProps) {
                   {page.properties.Name?.title[0]?.plain_text || ""}
                 </div>
               </Link>
-              <div className="flex flex-none justify-center items-center text-sm text-gray-700 dark:text-gray-300">
+              <div className="flex flex-none items-center justify-center text-gray-700 text-sm dark:text-gray-300">
                 {date}
               </div>
             </div>

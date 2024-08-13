@@ -23,7 +23,7 @@ export function SiteFooter() {
             <div key={item.title} className="pb-6">
               <a
                 href={item.href}
-                className="text-sm leading-6 text-foreground/60 hover:text-foreground/80"
+                className="text-foreground/60 text-sm leading-6 hover:text-foreground/80"
               >
                 {item.title}
               </a>
@@ -44,8 +44,8 @@ export function SiteFooter() {
             </a>
           ))}
         </div>
-        <div className="mt-6 flex justify-center items-center space-x-2">
-          <p className="text-sm leading-5 text-foreground/70">
+        <div className="mt-6 flex items-center justify-center space-x-2">
+          <p className="text-foreground/70 text-sm leading-5">
             &copy; {new Date().getFullYear()} Shun Kakinoki. All rights
             reserved.
           </p>

@@ -1,3 +1,4 @@
+import type * as React from "react";
 import Balance from "react-wrap-balancer";
 
 import { cn } from "@/lib/utils";
@@ -33,7 +34,7 @@ export function PageHeaderHeading({
   return (
     <h1
       className={cn(
-        "text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]",
+        "font-bold text-3xl leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]",
         className,
       )}
       {...props}
@@ -52,7 +53,7 @@ export function PageHeaderDescription({
   return (
     <Balance
       className={cn(
-        "text-base md:text-lg font-light text-foreground",
+        "font-light text-base text-foreground md:text-lg",
         className,
       )}
       {...props}

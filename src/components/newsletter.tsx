@@ -13,7 +13,7 @@ export function Newsletter() {
         <div className="relative overflow-hidden rounded-2xl bg-indigo-600 px-6 py-8 shadow-xl sm:px-12 sm:py-10">
           <div
             aria-hidden="true"
-            className="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0"
+            className="-mt-72 sm:-mt-32 absolute inset-0 md:mt-0"
           >
             {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
             <svg
@@ -36,7 +36,7 @@ export function Newsletter() {
           </div>
           <div className="relative">
             <div>
-              <h2 className="text-lg font-extrabold tracking-tighter text-white sm:text-2xl">
+              <h2 className="font-extrabold text-lg text-white tracking-tighter sm:text-2xl">
                 Subscribe to my newsletter.
               </h2>
               <p className="mx-auto mt-2 max-w-2xl text-indigo-200">
@@ -55,10 +55,10 @@ export function Newsletter() {
                   placeholder="Enter your email"
                 />
               </div>
-              <div className="mt-4 sm:ml-3 sm:mt-0">
+              <div className="mt-4 sm:mt-0 sm:ml-3">
                 <button
                   type="submit"
-                  className="block w-full rounded-md border border-transparent bg-indigo-500 px-5 py-3 text-base font-medium text-white shadow hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 sm:px-10"
+                  className="block w-full rounded-md border border-transparent bg-indigo-500 px-5 py-3 font-medium text-base text-white shadow hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 sm:px-10"
                 >
                   Notify me
                 </button>

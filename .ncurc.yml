@@ -1,3 +1,4 @@
 upgrade: true
 reject:
   - "@radix-ui/react-alert-dialog"
+  - "react-day-picker"

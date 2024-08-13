@@ -5,6 +5,7 @@ import {
   getTranslations,
   unstable_setRequestLocale,
 } from "next-intl/server";
+import type * as React from "react";
 
 import { Analytics } from "@/components/analytics";
 import { ThemeProvider } from "@/components/providers";
@@ -98,6 +99,7 @@ export async function generateMetadata({
 // Page
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default async function RootLayout({
   children,
   params: { locale },
@@ -161,5 +163,6 @@ export default async function RootLayout({
 // Config
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/style/useNamingConvention: <explanation>
 export const experimental_ppr = true;
 export const revalidate = 300;

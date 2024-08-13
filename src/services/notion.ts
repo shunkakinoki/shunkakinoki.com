@@ -15,10 +15,12 @@ declare type NotionProperty =
   //@ts-ignore
   QueryDatabaseResponse["results"][number]["properties"];
 
+// biome-ignore lint/style/useNamingConvention: <explanation>
 export type blockWithChildren = ListBlockChildrenResponse["results"][number] & {
   children?: blockWithChildren[];
 };
 
+// biome-ignore lint/style/useNamingConvention: <explanation>
 export type richText = {
   type: "text";
   text: {
@@ -54,6 +56,7 @@ export type richText = {
       | "pink_background"
       | "red_background";
   };
+  // biome-ignore lint/style/useNamingConvention: <explanation>
   plain_text: string;
   href: string | null;
 };
@@ -76,6 +79,7 @@ export const queryDatabase = async ({
   sorts,
 }: QueryDatabaseParameters) => {
   const response = await notion.databases.query({
+    // biome-ignore lint/style/useNamingConvention: <explanation>
     database_id: database_id,
     filter: filter,
     sorts: sorts,
@@ -84,6 +88,7 @@ export const queryDatabase = async ({
 };
 
 export const getPage = async (pageId: string) => {
+  // biome-ignore lint/style/useNamingConvention: <explanation>
   const response = await notion.pages.retrieve({ page_id: pageId });
   return response;
 };
@@ -117,17 +122,19 @@ export const getBlocks = async (blockId: string) => {
   // eslint-disable-next-line no-constant-condition
   while (true) {
     const blocksList = await notion.blocks.children.list({
+      // biome-ignore lint/style/useNamingConvention: <explanation>
       start_cursor: cursor,
+      // biome-ignore lint/style/useNamingConvention: <explanation>
       block_id: blockId,
     });
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     blocks.push(...blocksList.results);
 
-    const next_cursor = blocksList.next_cursor;
-    if (!next_cursor) {
+    const nextCursor = blocksList.next_cursor;
+    if (!nextCursor) {
       break;
     }
-    cursor = next_cursor;
+    cursor = nextCursor;
   }
   return blocks;
 };

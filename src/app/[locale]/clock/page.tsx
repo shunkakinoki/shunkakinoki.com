@@ -4,6 +4,7 @@ import { Clock } from "@/components/clock";
 // Page
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default function ClockPage() {
   // ---------------------------------------------------------------------------
   // Render

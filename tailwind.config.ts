@@ -25,30 +25,37 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
+          // biome-ignore lint/style/useNamingConvention: <explanation>
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
+          // biome-ignore lint/style/useNamingConvention: <explanation>
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
+          // biome-ignore lint/style/useNamingConvention: <explanation>
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
+          // biome-ignore lint/style/useNamingConvention: <explanation>
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
+          // biome-ignore lint/style/useNamingConvention: <explanation>
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
+          // biome-ignore lint/style/useNamingConvention: <explanation>
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
         card: {
+          // biome-ignore lint/style/useNamingConvention: <explanation>
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
@@ -77,4 +84,5 @@ const config = {
   plugins: [require("@tailwindcss/forms"), require("tailwindcss-animate")],
 } satisfies Config;
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default config;

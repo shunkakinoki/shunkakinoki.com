@@ -23,6 +23,7 @@ const nextConfig = {
       fullUrl: true,
     },
   },
+  // biome-ignore lint/suspicious/useAwait: <explanation>
   redirects: async () => {
     return [
       {
@@ -31,11 +32,12 @@ const nextConfig = {
         permanent: true,
       },
     ];
-  }
+  },
 };
 
 // -----------------------------------------------------------------------------
 // Export
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default withNextIntl(nextConfig);

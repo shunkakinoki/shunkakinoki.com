@@ -1,3 +1,5 @@
+import type * as React from "react";
+
 import { cn } from "@/lib/utils";
 
 // -----------------------------------------------------------------------------
@@ -15,7 +17,7 @@ export function SectionHeaderHeading({
   return (
     <h3
       className={cn(
-        "text-xl font-bold leading-tight tracking-tighter md:text-2xl lg:leading-[1.1] mb-4",
+        "mb-4 font-bold text-xl leading-tight tracking-tighter md:text-2xl lg:leading-[1.1]",
         className,
       )}
       {...props}
