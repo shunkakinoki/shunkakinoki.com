@@ -4,6 +4,7 @@ import { Link } from "@/navigation";
 // Page
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default function NotFound() {
   // ---------------------------------------------------------------------------
   // Render

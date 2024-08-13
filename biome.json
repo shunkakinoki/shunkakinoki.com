@@ -7,12 +7,19 @@
     "ignore": ["src/components/ui/**"]
   },
   "formatter": {
+    "enabled": true,
     "indentStyle": "space"
   },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "all": true,
+      "style": {
+        "noImplicitBoolean": "off"
+      },
+      "nursery": {
+        "useSortedClasses": "warn"
+      }
     }
   },
   "vcs": {

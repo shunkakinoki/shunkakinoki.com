@@ -7,6 +7,7 @@ import { useEffect } from "react";
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default function Error({
   error,
   reset,

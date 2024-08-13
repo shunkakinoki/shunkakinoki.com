@@ -27,8 +27,8 @@ export function Social({ isPartial = false }: SocialProps) {
   return (
     <section>
       <SectionHeaderHeading>Social</SectionHeaderHeading>
-      <div className="flex-col items-center mt-3 w-full">
-        <ul className="grid grid-cols-2 gap-2 my-2 mt-4 w-full sm:grid-cols-3">
+      <div className="mt-3 w-full flex-col items-center">
+        <ul className="my-2 mt-4 grid w-full grid-cols-2 gap-2 sm:grid-cols-3">
           {(isPartial ? socialPriorityConfig : socialConfig).map((social) => (
             <SocialCard
               key={social.name}
@@ -76,20 +76,20 @@ export function SocialCard({
   return (
     <li className="group col-span-1">
       <a href={href} target="_blank" rel="noopener noreferrer">
-        <div className="flex items-center leading-5 text-left no-underline cursor-pointer">
-          <div className="box-border flex shrink-0 justify-center mr-4 w-8 text-3xl text-left text-gray-500 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-200">
-            <props.icon className="w-6 h-6" />
+        <div className="flex cursor-pointer items-center text-left leading-5 no-underline">
+          <div className="mr-4 box-border flex w-8 shrink-0 justify-center text-left text-3xl text-gray-500 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-200">
+            <props.icon className="h-6 w-6" />
           </div>
-          <div className="overflow-hidden text-left cursor-pointer">
-            <h4 className="inline-flex items-center text-sm font-medium leading-normal text-gray-500 group-hover:text-gray-800 dark:text-gray-300 dark:group-hover:text-gray-100">
+          <div className="cursor-pointer overflow-hidden text-left">
+            <h4 className="inline-flex items-center font-medium text-gray-500 text-sm leading-normal group-hover:text-gray-800 dark:text-gray-300 dark:group-hover:text-gray-100">
               {title}
               {isPriority && (
                 <span className="pl-2 text-green-400 dark:text-green-300">
-                  <CheckBadgeIcon className="w-4 h-4" />
+                  <CheckBadgeIcon className="h-4 w-4" />
                 </span>
               )}
             </h4>
-            <p className="block flex-nowrap w-full text-xs text-gray-600 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-gray-200 group-hover:underline truncate whitespace-nowrap">
+            <p className="block w-full flex-nowrap truncate whitespace-nowrap text-gray-600 text-xs group-hover:text-gray-900 group-hover:underline dark:text-gray-400 dark:group-hover:text-gray-200">
               {username}
             </p>
           </div>

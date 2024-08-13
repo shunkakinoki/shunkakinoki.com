@@ -16,6 +16,7 @@ export const intlMiddleware = createMiddleware({
   localePrefix,
 });
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default function middleware(req: NextRequest) {
   // If matches one of the social config, redirect to the social page
   const path = req.nextUrl.pathname.slice(1).toLowerCase();

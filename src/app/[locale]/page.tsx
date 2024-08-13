@@ -21,6 +21,8 @@ import { unstable_setRequestLocale } from "next-intl/server";
 // Page
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
+// biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function IndexPage({
   params: { locale },
 }: { params: { locale: string } }) {
@@ -52,7 +54,7 @@ export default async function IndexPage({
             href={siteConfig.links.github}
           >
             hacker
-            <ArrowUpRightFromSquareIcon className="inline-block h-3 w-3 mb-2" />
+            <ArrowUpRightFromSquareIcon className="mb-2 inline-block h-3 w-3" />
           </a>
           , &{" "}
           <a
@@ -62,7 +64,7 @@ export default async function IndexPage({
             href={siteConfig.links.pioneer}
           >
             pioneer
-            <ArrowUpRightFromSquareIcon className="inline-block h-3 w-3 mb-2" />
+            <ArrowUpRightFromSquareIcon className="mb-2 inline-block h-3 w-3" />
           </a>{" "}
           striving to obliterate the galaxy.
         </PageHeaderDescription>

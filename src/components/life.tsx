@@ -46,14 +46,14 @@ export function Life() {
   return (
     <section>
       <SectionHeaderHeading>Life</SectionHeaderHeading>
-      <div className="divide-y divide-gray-400 overflow-hidden rounded-lg shadow sm:grid sm:grid-cols-3 sm:gap-px sm:divide-y-0 sm:divide-x">
+      <div className="divide-y divide-gray-400 overflow-hidden rounded-lg shadow sm:grid sm:grid-cols-3 sm:gap-px sm:divide-x sm:divide-y-0">
         {actions.map((action, actionIdx) => (
           <div
             key={action.title}
             className={cn(
               actionIdx === 0 ? "sm:rounded-l-lg" : "",
               actionIdx === actions.length - 1 ? "sm:rounded-r-lg" : "",
-              "group relative p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 hover:bg-gray-900",
+              "group relative p-6 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-inset hover:bg-gray-900",
             )}
           >
             <div>
@@ -67,7 +67,7 @@ export function Life() {
               </span>
             </div>
             <div className="mt-8">
-              <h3 className="text-base font-semibold leading-6 text-foreground/80">
+              <h3 className="font-semibold text-base text-foreground/80 leading-6">
                 {/* @ts-expect-error */}
                 <Link href={action.href} className="focus:outline-none">
                   {/* Extend touch target to entire panel */}
@@ -77,7 +77,7 @@ export function Life() {
               </h3>
             </div>
             <span
-              className="pointer-events-none absolute right-6 top-6 text-gray-300 group-hover:text-gray-400"
+              className="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400"
               aria-hidden="true"
             >
               {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}

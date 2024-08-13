@@ -4,6 +4,7 @@ import { Products } from "@/components/products";
 // Page
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default function AboutPage() {
   // ---------------------------------------------------------------------------
   // Render

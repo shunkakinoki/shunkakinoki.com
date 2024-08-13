@@ -6,6 +6,8 @@ import SlugPage from "../[slug]/page";
 // Page
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
+// biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function valuesPage({
   params: { locale },
 }: { params: { locale: string } }) {

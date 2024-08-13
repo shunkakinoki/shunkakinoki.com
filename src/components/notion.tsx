@@ -49,14 +49,14 @@ export const Notion: FC<NotionProps> = ({ blocks, content, locale }) => {
       {/* @ts-ignore */}
       {content.properties.Date?.date && (
         <div className="pb-3">
-          <h1 className="mb-4 text-3xl font-bold tracking-tight text-warmGray-800 dark:text-white line-clamp-3 md:text-5xl lg:text-6xl">
+          <h1 className="mb-4 line-clamp-3 font-bold text-3xl text-warmGray-800 tracking-tight md:text-5xl lg:text-6xl dark:text-white">
             {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
             {/* @ts-ignore */}
             {content.properties.Name?.title[0]?.plain_text}
           </h1>
-          <div className="flex flex-col justify-between items-start mt-2 w-full md:flex-row md:items-center">
+          <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
             <div className="flex items-center">
-              <p className="text-lg text-gray-500 dark:text-gray-300">
+              <p className="text-gray-500 text-lg dark:text-gray-300">
                 by Shun Kakinoki &middot;{" "}
                 {new Date(
                   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -97,7 +97,7 @@ export const Notion: FC<NotionProps> = ({ blocks, content, locale }) => {
           );
         })}
       </div>
-      <div className="flex justify-center pt-6 pb-4 space-x-8">
+      <div className="flex justify-center space-x-8 pt-6 pb-4">
         {/* <LikeButton pageId={pageId} /> */}
       </div>
     </section>
@@ -122,7 +122,7 @@ export const Text: FC<TextProps> = ({ text }) => {
             key={value.plain_text}
             className={clsx(
               bold && "font-extrabold",
-              code && "py-3 px-2 font-mono",
+              code && "px-2 py-3 font-mono",
               italic && "italic",
               strikethrough && "line-through",
               underline && "underline",
@@ -151,7 +151,7 @@ export const Text: FC<TextProps> = ({ text }) => {
 // Renderer
 // -----------------------------------------------------------------------------
 
-const renderBlock = (block: blockWithChildren, theme: string) => {
+const renderBlock = (block: blockWithChildren, _theme: string) => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
   switch (block.type) {

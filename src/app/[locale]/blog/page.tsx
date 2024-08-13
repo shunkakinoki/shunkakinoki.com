@@ -6,6 +6,8 @@ import { Blog } from "@/components/blog";
 // Page
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
+// biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function BlogPage({
   params: { locale },
 }: { params: { locale: string } }) {

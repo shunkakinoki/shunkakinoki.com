@@ -18,6 +18,7 @@ import { locales } from "@/config";
 // Component
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default function LocaleSwitcher() {
   // ---------------------------------------------------------------------------
   // Hooks

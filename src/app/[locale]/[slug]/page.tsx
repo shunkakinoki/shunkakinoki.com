@@ -5,6 +5,7 @@ import { getBlocks, getPage } from "@/services/notion";
 // Page
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default async function SlugPage({
   params,
 }: { params: { slug: string } }) {

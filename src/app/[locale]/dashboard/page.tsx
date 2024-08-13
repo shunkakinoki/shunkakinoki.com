@@ -2,6 +2,7 @@
 // Page
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default function DashboardPage() {
   // ---------------------------------------------------------------------------
   // Render
