@@ -6,7 +6,8 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "concurrently \"pnpm:*:lint\"",
+    "biome:lint": "biome check --unsafe --no-errors-on-unmatched",
     "fix": "concurrently \"pnpm:*:fix\"",
     "biome:fix": "biome check --write --unsafe --no-errors-on-unmatched",
     "ncu:upgrade": "ncu -u"

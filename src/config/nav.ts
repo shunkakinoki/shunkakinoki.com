@@ -12,10 +12,6 @@ export const navConfig = [
     href: "/blog",
   },
   {
-    title: "Cal",
-    href: "/cal",
-  },
-  {
     title: "Clock",
     href: "/clock",
   },
@@ -26,6 +22,10 @@ export const navConfig = [
   {
     title: "History",
     href: "/history",
+  },
+  {
+    title: "Journal",
+    href: "/journal",
   },
   {
     title: "Products",
