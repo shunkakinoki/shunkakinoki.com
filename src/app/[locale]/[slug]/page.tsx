@@ -26,6 +26,10 @@ export default async function SlugPage({
   // ---------------------------------------------------------------------------
 
   const page = await getPage(params.slug);
+
+  // @ts-ignore
+  const pageEmoji = page?.icon?.emoji ?? "📄";
+
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
   if (page.properties?.Published && !page.properties?.Published?.checkbox) {
@@ -64,6 +68,14 @@ export default async function SlugPage({
   // ---------------------------------------------------------------------------
 
   return (
-    <Notion blocks={blocksWithChildren} content={page} pageId={params.slug} />
+    <>
+      <link
+        rel="icon"
+        href={`data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${pageEmoji}</text></svg>`}
+        type="image/svg+xml"
+        sizes="any"
+      />
+      <Notion blocks={blocksWithChildren} content={page} pageId={params.slug} />
+    </>
   );
 }

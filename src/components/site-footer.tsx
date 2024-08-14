@@ -14,9 +14,9 @@ export function SiteFooter() {
 
   return (
     <footer>
-      <div className="mx-auto max-w-screen-md overflow-hidden px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-md overflow-hidden px-6 lg:px-4">
         <nav
-          className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
+          className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12 md:space-x-8"
           aria-label="Footer"
         >
           {navConfig.map((item) => (

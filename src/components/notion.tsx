@@ -134,7 +134,7 @@ export const Text: FC<TextProps> = ({ text }) => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-1 justify-center gap-0.5 text-gray-400 leading-4 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400"
+                className="inline-flex flex-1 justify-center gap-0.5 text-gray-400 leading-4 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300"
               >
                 {plain_text === "Untitled" ? "<REDACTED>" : plain_text}
                 <ArrowUpRightFromSquareIcon className="h-2 w-2" />
@@ -215,16 +215,16 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
+            className="text-blue-600 hover:text-blue-400 hover:underline"
           >
             {url}
-            <ArrowUpRightFromSquareIcon className="ml-1 inline-block h-4 w-4 text-blue-500" />
+            <ArrowUpRightFromSquareIcon className="ml-1 inline-block h-4 w-4" />
           </a>
         </div>
       );
     case "quote":
       return (
-        <div className="border-gray-400 border-l-4 pl-4 text-gray-600 italic">
+        <div className="border-gray-400 border-l-4 pl-4 text-gray-600 italic dark:text-gray-400">
           {/* @ts-ignore */}
           <Text text={block.quote.rich_text as richText[]} />
         </div>
