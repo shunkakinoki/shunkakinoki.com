@@ -2,6 +2,10 @@ import { Notion } from "@/components/notion";
 import { getBlocks, getPage } from "@/services/notion";
 import type { Metadata } from "next";
 
+// -----------------------------------------------------------------------------
+// Metadata
+// -----------------------------------------------------------------------------
+
 export async function generateMetadata({
   params,
 }: { params: { slug: string } }): Promise<Metadata> {

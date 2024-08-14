@@ -224,7 +224,7 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
       );
     case "quote":
       return (
-        <div className="border-gray-400 border-l-4 pl-4 text-gray-600 italic dark:text-gray-400">
+        <div className="border-gray-400 border-l-4 pl-4 text-gray-800 italic dark:text-gray-300">
           {/* @ts-ignore */}
           <Text text={block.quote.rich_text as richText[]} />
         </div>
@@ -276,6 +276,18 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
       // );
       //   }
       break;
+    case "synced_block":
+      // Return the children of the block
+      return (
+        <div>
+          {/* @ts-ignore */}
+          {block.children.map((child) => {
+            return (
+              <Fragment key={child.id}>{renderBlock(child, _theme)}</Fragment>
+            );
+          })}
+        </div>
+      );
     default:
       // biome-ignore lint/suspicious/noConsoleLog: <explanation>
       // biome-ignore lint/style/useSingleCaseStatement: <explanation>
