@@ -41,7 +41,7 @@ export async function Journal() {
               <Link
                 // @ts-expect-error
                 href={`/${page.id}`}
-                className="line-clamp-1 flex grow items-center font-extrabold text-warmGray-800 hover:text-coolGray-700 hover:underline dark:text-coolGray-100 dark:hover:text-white"
+                className="line-clamp-1 flex grow items-center font-extrabold text-warmGray-800 hover:text-gray-700 hover:underline dark:text-gray-100 dark:hover:text-white"
               >
                 <div className="text-xl md:text-2xl">
                   {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}

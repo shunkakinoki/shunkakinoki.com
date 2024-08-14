@@ -134,9 +134,10 @@ export const Text: FC<TextProps> = ({ text }) => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-coolGray-500 dark:hover:text-coolGray-400"
+                className="inline-flex flex-1 justify-center gap-0.5 text-gray-400 leading-4 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400"
               >
                 {plain_text}
+                <ArrowUpRightFromSquareIcon className="h-2 w-2" />
               </a>
             ) : (
               plain_text
@@ -199,18 +200,22 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
         </li>
       );
     case "bookmark":
+    case "link_preview":
+      // @ts-ignore
+      // biome-ignore lint/style/useSingleCaseStatement: <explanation>
+      // biome-ignore lint/correctness/noSwitchDeclarations: <explanation>
+      const url = block.bookmark?.url ?? block.link_preview?.url;
+
       // Generate a notion style bookmark card
       return (
         <div className="my-4 rounded-lg border border-gray-200 p-4">
           <a
-            // @ts-ignore
-            href={block.bookmark.url}
+            href={url}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:underline"
           >
-            {/* @ts-ignore */}
-            {block.bookmark.url}
+            {url}
             <ArrowUpRightFromSquareIcon className="ml-1 inline-block h-4 w-4 text-blue-500" />
           </a>
         </div>
