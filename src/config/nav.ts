@@ -12,10 +12,6 @@ export const navConfig = [
     href: "/blog",
   },
   {
-    title: "Checklist",
-    href: "/checklist",
-  },
-  {
     title: "Clock",
     href: "/clock",
   },

@@ -210,7 +210,7 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
 
       // Generate a notion style bookmark card
       return (
-        <div className="my-4 rounded-lg border border-gray-200 p-4">
+        <div className="my-4 break-all rounded-lg border border-gray-200 p-4">
           <a
             href={url}
             target="_blank"
