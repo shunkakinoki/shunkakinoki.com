@@ -53,14 +53,14 @@ export function Life() {
             className={cn(
               actionIdx === 0 ? "sm:rounded-l-lg" : "",
               actionIdx === actions.length - 1 ? "sm:rounded-r-lg" : "",
-              "group relative p-6 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-inset hover:bg-gray-900",
+              "group relative p-6 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-inset hover:bg-gray-300 dark:hover:bg-gray-900",
             )}
           >
             <div>
               <span
                 className={cn(
                   action.iconBackground,
-                  "inline-flex rounded-lg p-3",
+                  "inline-flex rounded-lg p-3 text-white",
                 )}
               >
                 <action.icon className="h-6 w-6" aria-hidden="true" />
