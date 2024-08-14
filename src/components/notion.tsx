@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { usePathname, useRouter } from "@/navigation";
 import type { blockWithChildren, richText } from "@/services/notion";
 import "@/styles/notion.css";
+import { ArrowUpRightFromSquareIcon } from "lucide-react";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -197,6 +198,30 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
           <Text text={block.numbered_list_item.rich_text as richText[]} />
         </li>
       );
+    case "bookmark":
+      // Generate a notion style bookmark card
+      return (
+        <div className="my-4 rounded-lg border border-gray-200 p-4">
+          <a
+            // @ts-ignore
+            href={block.bookmark.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            {/* @ts-ignore */}
+            {block.bookmark.url}
+            <ArrowUpRightFromSquareIcon className="ml-1 inline-block h-4 w-4 text-blue-500" />
+          </a>
+        </div>
+      );
+    case "quote":
+      return (
+        <div className="border-gray-400 border-l-4 pl-4 text-gray-600 italic">
+          {/* @ts-ignore */}
+          <Text text={block.quote.rich_text as richText[]} />
+        </div>
+      );
     case "to_do":
       return (
         <div>
@@ -245,5 +270,9 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
       //   }
       break;
     default:
+      // biome-ignore lint/suspicious/noConsoleLog: <explanation>
+      // biome-ignore lint/style/useSingleCaseStatement: <explanation>
+      console.log(`Unsupported block type: ${JSON.stringify(block)}`);
+      return null;
   }
 };

@@ -1,5 +1,17 @@
 import { Notion } from "@/components/notion";
 import { getBlocks, getPage } from "@/services/notion";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: { params: { slug: string } }): Promise<Metadata> {
+  const page = await getPage(params.slug);
+
+  return {
+    //@ts-ignore
+    title: page.properties?.Name?.title[0]?.plain_text,
+  };
+}
 
 // -----------------------------------------------------------------------------
 // Page
