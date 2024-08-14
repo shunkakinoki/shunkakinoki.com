@@ -158,7 +158,7 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
   //@ts-ignore
   switch (block.type) {
     case "divider":
-      return <hr className="my-6 border-gray-200" />;
+      return <hr className="my-6 border-gray-200 dark:border-gray-400" />;
     case "paragraph":
       return (
         <p>
