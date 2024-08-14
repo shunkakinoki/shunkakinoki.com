@@ -30,7 +30,7 @@ export function SiteFooter() {
             </div>
           ))}
         </nav>
-        <div className="mt-6 flex justify-center space-x-5">
+        <div className="mt-8 flex justify-center space-x-5">
           {socialPriorityConfig.map((item) => (
             <a
               target="_blank"
