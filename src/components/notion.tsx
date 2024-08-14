@@ -136,7 +136,7 @@ export const Text: FC<TextProps> = ({ text }) => {
                 rel="noopener noreferrer"
                 className="inline-flex flex-1 justify-center gap-0.5 text-gray-400 leading-4 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400"
               >
-                {plain_text}
+                {plain_text === "Untitled" ? "<REDACTED>" : plain_text}
                 <ArrowUpRightFromSquareIcon className="h-2 w-2" />
               </a>
             ) : (
@@ -157,6 +157,8 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
   switch (block.type) {
+    case "divider":
+      return <hr className="my-6 border-gray-200" />;
     case "paragraph":
       return (
         <p>
