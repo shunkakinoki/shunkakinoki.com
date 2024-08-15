@@ -1,10 +1,32 @@
+import { incrementViewCount, incrementVisitorCount } from "@/services/redis";
+import { headers } from "next/headers";
 import { Suspense } from "react";
+
+// -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+export type ViewCountProps = {
+  id: string;
+};
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export function ViewCount() {
+export async function ViewCount({ id }: ViewCountProps) {
+  // ---------------------------------------------------------------------------
+  // Service
+  // ---------------------------------------------------------------------------
+
+  const headersList = headers();
+  const ip = headersList.get("x-forwarded-for") || "121.0.0.1";
+
+  const [{ views }] = await Promise.all([
+    incrementViewCount(id),
+    incrementVisitorCount(id, ip),
+  ]);
+
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
@@ -19,7 +41,7 @@ export function ViewCount() {
         }
       >
         <h3 className="min-w-min text-sm text-warmGray-500 dark:text-warmGray-300 ">
-          {/* {views.toLocaleString()} */}
+          {views.toLocaleString()}
           &nbsp;Views
         </h3>
       </Suspense>
