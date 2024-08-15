@@ -1,7 +1,5 @@
-import { unstable_setRequestLocale } from "next-intl/server";
-
 import { Life } from "@/components/life";
-
+import { unstable_setRequestLocale } from "next-intl/server";
 import SlugPage from "../[slug]/page";
 
 // -----------------------------------------------------------------------------

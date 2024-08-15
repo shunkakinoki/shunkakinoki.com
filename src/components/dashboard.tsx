@@ -5,7 +5,15 @@ import { DashboardCard } from "./dashboard-card";
 import { PageHeader, PageHeaderHeading } from "./page-header";
 
 export async function ViewCard() {
+  // ---------------------------------------------------------------------------
+  // Service
+  // ---------------------------------------------------------------------------
+
   const { totalViews } = await getTotalViewCount();
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
 
   return (
     <Suspense
@@ -23,7 +31,15 @@ export async function ViewCard() {
 }
 
 export async function VisitorCard() {
+  // ---------------------------------------------------------------------------
+  // Service
+  // ---------------------------------------------------------------------------
+
   const { totalVisitorCount } = await getTotalVisitorCount();
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
 
   return (
     <Suspense
@@ -59,6 +75,10 @@ export async function VisitorCard() {
 // }
 
 export const Dashboard: FC = () => {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return (
     <section className="mb-2 w-full">
       <PageHeader>

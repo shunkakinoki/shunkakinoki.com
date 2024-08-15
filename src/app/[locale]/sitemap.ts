@@ -1,7 +1,6 @@
-import type { MetadataRoute } from "next";
-
 import { defaultLocale, host, locales, pathnames } from "@/config";
 import { getPathname } from "@/navigation";
+import type { MetadataRoute } from "next";
 
 // -----------------------------------------------------------------------------
 // Sitemap

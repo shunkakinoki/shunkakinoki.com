@@ -1,8 +1,28 @@
+import { getSubscribersCount } from "@/services/buttondown";
+import { LightBulbIcon } from "@heroicons/react/24/outline";
+import { Suspense } from "react";
+import { NewsletterForm } from "./newsletter-form";
+
+// -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+type NewsletterProps = {
+  locale: string;
+  type: "journal" | "blog";
+};
+
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export function Newsletter() {
+export async function Newsletter({ locale, type }: NewsletterProps) {
+  // ---------------------------------------------------------------------------
+  // Service
+  // ---------------------------------------------------------------------------
+
+  const subscribersCount = await getSubscribersCount();
+
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
@@ -43,27 +63,21 @@ export function Newsletter() {
                 Get the latest posts delivered right to your inbox.
               </p>
             </div>
-            <form action="#" className="mt-6 sm:flex sm:max-w-lg">
-              <div className="min-w-0 flex-1">
-                <label htmlFor="cta-email" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  id="cta-email"
-                  type="email"
-                  className="block w-full rounded-md border border-transparent px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
-                  placeholder="Enter your email"
-                />
-              </div>
-              <div className="mt-4 sm:mt-0 sm:ml-3">
-                <button
-                  type="submit"
-                  className="block w-full rounded-md border border-transparent bg-indigo-500 px-5 py-3 font-medium text-base text-white shadow hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 sm:px-10"
-                >
-                  Notify me
-                </button>
-              </div>
-            </form>
+            <NewsletterForm tags={[type === "journal" ? "journal" : locale]} />
+            <p className="mx-auto mt-4 flex max-w-2xl items-center align-text-bottom font-medium text-indigo-50 text-xs">
+              <LightBulbIcon className="h-4 w-4 pr-1" />
+              <Suspense
+                fallback={
+                  <div className="flex animate-pulse space-x-4">
+                    <div className="h-3 w-6 rounded-full bg-gray-300 dark:bg-gray-400" />
+                  </div>
+                }
+              >
+                {subscribersCount ? (
+                  <>{subscribersCount?.toLocaleString()} Subscribers</>
+                ) : null}
+              </Suspense>
+            </p>
           </div>
         </div>
       </div>
