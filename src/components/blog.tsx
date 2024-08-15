@@ -41,13 +41,10 @@ export async function Blog({ locale }: BlogProps) {
     })
   ).results.filter((db) => {
     return (
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       //@ts-ignore
       !!db.properties.Date?.date &&
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       //@ts-ignore
       !!db.properties.Published.checkbox &&
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       //@ts-ignore
       !!db.properties.Locale?.select
     );
@@ -61,9 +58,7 @@ export async function Blog({ locale }: BlogProps) {
     <section>
       <div className="w-full flex-col space-y-3">
         {res.map((page) => {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           const date = new Date(page.properties.Date.date.start).toLocaleString(
             "en",
             {
@@ -80,7 +75,6 @@ export async function Blog({ locale }: BlogProps) {
                 className="line-clamp-1 flex grow items-center font-extrabold text-warmGray-800 hover:text-gray-700 hover:underline dark:text-gray-100 dark:hover:text-white"
               >
                 <div className="text-xl md:text-2xl">
-                  {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                   {/* @ts-ignore */}
                   {page.properties.Name?.title[0]?.plain_text || ""}
                 </div>

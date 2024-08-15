@@ -34,7 +34,7 @@ export function SiteFooter() {
                 href={item.href}
                 className={cn(
                   "text-sm leading-6 hover:text-foreground/80",
-                  pathname === item.href
+                  pathname.endsWith(item.href)
                     ? "text-foreground"
                     : "text-foreground/60",
                 )}
@@ -58,7 +58,7 @@ export function SiteFooter() {
             </a>
           ))}
         </div>
-        <div className="mt-6 flex items-center justify-center space-x-2">
+        <div className="my-6 flex items-center justify-center space-x-2">
           <p className="text-foreground/70 text-sm leading-5">
             &copy; {new Date().getFullYear()} Shun Kakinoki. All rights
             reserved.

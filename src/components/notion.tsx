@@ -51,12 +51,10 @@ export const Notion: FC<NotionProps> = ({
 
   return (
     <section className="w-full text-black dark:text-white">
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
       {/* @ts-ignore */}
       {content.properties.Date?.date && (
         <div className="pb-3">
           <h1 className="mb-4 line-clamp-3 font-bold text-3xl text-warmGray-800 tracking-tight md:text-5xl lg:text-6xl dark:text-white">
-            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
             {/* @ts-ignore */}
             {content.properties.Name?.title[0]?.plain_text}
           </h1>
@@ -65,11 +63,9 @@ export const Notion: FC<NotionProps> = ({
               <p className="text-gray-500 text-lg dark:text-gray-300">
                 by Shun Kakinoki &middot;{" "}
                 {new Date(
-                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                   //@ts-ignore
                   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
                   content.properties.Date?.date?.start ??
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                     //@ts-ignore
                     content.properties.Created?.created_time,
                 ).toLocaleString(locale, {
@@ -148,7 +144,6 @@ export const Text: FC<TextProps> = ({ text }) => {
 // -----------------------------------------------------------------------------
 
 const renderBlock = (block: blockWithChildren, _theme: string) => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
   switch (block.type) {
     case "divider":
@@ -241,12 +236,9 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
       );
     case "image":
       return (
-        // eslint-disable-next-line @next/next/no-img-element
         <img
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           //@ts-ignore
           alt={block.image?.caption[0]?.plain_text ?? "Notion Image"}
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           //@ts-ignore
           src={block.image?.file?.url ?? block.image?.external?.url}
         />
@@ -257,7 +249,6 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
       //   <Tweet
       //     tweetId={
       //       /twitter.com\/.*\/status(?:es)?\/([^/?]+)/.exec(
-      //         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       //         block["embed"].url,
       //       )[1]
       //     }

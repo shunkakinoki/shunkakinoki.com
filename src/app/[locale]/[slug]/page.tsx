@@ -47,7 +47,6 @@ export default async function SlugPage({
   // @ts-ignore
   const pageEmoji = page?.icon?.emoji ?? "📄";
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
   if (page.properties?.Published && !page.properties?.Published?.checkbox) {
     return {
@@ -65,7 +64,6 @@ export default async function SlugPage({
       .map(async (block) => {
         return {
           id: block.id,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           children: await getBlocks(block.id),
         };
       }),
