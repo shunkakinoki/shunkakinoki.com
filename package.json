@@ -63,7 +63,7 @@
     "next": "15.0.0-rc.0",
     "next-intl": "^3.17.2",
     "next-themes": "^0.3.0",
-    "react": "19.0.0-rc-187dd6a7-20240806",
+    "react": "link:@heroicons/react",
     "react-day-picker": "^8.10.1",
     "react-dom": "19.0.0-rc-187dd6a7-20240806",
     "react-hook-form": "^7.52.2",
