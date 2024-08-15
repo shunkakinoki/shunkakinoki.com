@@ -2,6 +2,7 @@ import { getTotalViewCount, getTotalVisitorCount } from "@/services/redis";
 import { EyeIcon } from "@heroicons/react/24/outline";
 import { type FC, Suspense } from "react";
 import { DashboardCard } from "./dashboard-card";
+import { PageHeader, PageHeaderHeading } from "./page-header";
 
 export async function ViewCard() {
   const { totalViews } = await getTotalViewCount();
@@ -60,9 +61,9 @@ export async function VisitorCard() {
 export const Dashboard: FC = () => {
   return (
     <section className="mb-2 w-full">
-      <div className="px-3 md:px-0">
-        <div className="font-medium text-lg leading-loose">Dashboard</div>
-      </div>
+      <PageHeader>
+        <PageHeaderHeading>Dashboard</PageHeaderHeading>
+      </PageHeader>
       <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
         <ViewCard />
         <VisitorCard />

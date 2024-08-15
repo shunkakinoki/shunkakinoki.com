@@ -11,7 +11,6 @@ import type {
 
 declare type NotionPage = QueryDatabaseResponse["results"][number];
 declare type NotionProperty =
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
   QueryDatabaseResponse["results"][number]["properties"];
 
@@ -111,7 +110,6 @@ export const getPageDate = (page: NotionPage) => {
     //@ts-ignore
     dateString = page.properties["publish date"].date.start;
   }
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   return new Date(dateString).toLocaleDateString();
 };
 
@@ -119,7 +117,6 @@ export const getBlocks = async (blockId: string) => {
   const blocks: blockWithChildren[] = [];
   let cursor: undefined | string = undefined;
 
-  // eslint-disable-next-line no-constant-condition
   while (true) {
     const blocksList = await notion.blocks.children.list({
       // biome-ignore lint/style/useNamingConvention: <explanation>
@@ -127,7 +124,6 @@ export const getBlocks = async (blockId: string) => {
       // biome-ignore lint/style/useNamingConvention: <explanation>
       block_id: blockId,
     });
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     blocks.push(...blocksList.results);
 
     const nextCursor = blocksList.next_cursor;
