@@ -24,7 +24,7 @@ export async function ViewCount({ pageId }: ViewCountProps) {
 
   const [{ views }] = await Promise.all([
     incrementViewCount(pageId),
-    incrementVisitorCount(pageId, ip),
+    incrementVisitorCount(ip, pageId),
   ]);
 
   // ---------------------------------------------------------------------------
