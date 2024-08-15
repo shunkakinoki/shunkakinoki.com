@@ -14,7 +14,7 @@ const redis = new Redis({
 export const ratelimit = new Ratelimit({
   redis: redis,
   limiter: Ratelimit.slidingWindow(1, "30 s"),
-  prefix: "shunkakinoki",
+  prefix: "@upstash/ratelimit",
   analytics: true,
 });
 

@@ -87,9 +87,12 @@ export default async function SlugPage({
   // Post the email if it does not exist
   const { emailId } = await getEmailId(pageId);
   if (!emailId) {
-    await fetch(`/api/email/${params.slug}`, {
-      method: "POST",
-    });
+    fetch(
+      `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/email?slug=${params.slug}&locale=${params.locale}`,
+      {
+        method: "POST",
+      },
+    );
   }
 
   // @ts-ignore
