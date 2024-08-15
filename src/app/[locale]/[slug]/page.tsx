@@ -2,7 +2,9 @@ import { Newsletter } from "@/components/newsletter";
 import { Notion } from "@/components/notion";
 import { ViewCount } from "@/components/view-count";
 import { extractValidUUID } from "@/lib/utils";
+import { createEmail } from "@/services/buttondown";
 import { getBlocks, getPage } from "@/services/notion";
+import { createEmailId, getEmailId } from "@/services/redis";
 import type { Metadata } from "next";
 
 // -----------------------------------------------------------------------------
@@ -78,6 +80,16 @@ export default async function SlugPage({
     }
     return block;
   });
+
+  const emailId = getEmailId(pageId);
+  if (!emailId) {
+    // Create a new email
+    const email = await createEmail(pageId);
+    // Save the email id
+    if (email?.id) {
+      await createEmailId(pageId, email?.id);
+    }
+  }
 
   // ---------------------------------------------------------------------------
   // Render
