@@ -76,7 +76,6 @@ export const incrementVisitorCount = async (
 
   // Execute redis commands
   const results = await redisCommands.exec();
-  console.info(results);
 
   // Check if the total view is new.
   isNewTotal = results[0] === "OK";

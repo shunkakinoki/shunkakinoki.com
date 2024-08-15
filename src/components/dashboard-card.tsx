@@ -20,7 +20,7 @@ export const DashboardCard: FC<Props> = ({ children, href, number, title }) => {
       >
         <div className="px-4 py-5 sm:p-6">
           <div className="flex items-center">
-            <div className="flex-shrink-0 rounded-md bg-indigo-500 p-3">
+            <div className="flex-shrink-0 rounded-md bg-indigo-500 p-3 text-white">
               {children}
             </div>
             <div className="ml-5 w-0 flex-1">
