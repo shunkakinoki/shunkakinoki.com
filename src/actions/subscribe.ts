@@ -58,10 +58,9 @@ export const subscribeAction = async (
       validatedFields.data.email,
       validatedFields.data.tags,
     );
-    console.info("result", JSON.stringify(data));
 
     // @ts-ignore
-    if (data?.error) {
+    if (data?.error || data?.code) {
       // @ts-ignore
       throw new Error(data?.error?.detail);
     }
