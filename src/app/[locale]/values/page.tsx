@@ -34,5 +34,5 @@ export default async function valuesPage({
   // ---------------------------------------------------------------------------
 
   // @ts-expect-error
-  return <SlugPage params={{ slug: valuesSlug }} />;
+  return <SlugPage params={{ locale: locale, slug: valuesSlug }} />;
 }

@@ -27,7 +27,7 @@ export async function generateMetadata({
 // biome-ignore lint/style/noDefaultExport: <explanation>
 export default async function SlugPage({
   params,
-}: { params: { locale: string; slug: string } }) {
+}: { params: { locale: string; slug: string; disableNewsletter?: boolean } }) {
   // ---------------------------------------------------------------------------
   // Services
   // ---------------------------------------------------------------------------
@@ -97,13 +97,15 @@ export default async function SlugPage({
         content={page}
         pageId={pageId}
       />
-      <Newsletter
-        type={
-          //@ts-ignore
-          page.properties?.Published ? "blog" : "journal"
-        }
-        locale={params.locale}
-      />
+      {params?.disableNewsletter ? undefined : (
+        <Newsletter
+          type={
+            //@ts-ignore
+            page.properties?.Published ? "blog" : "journal"
+          }
+          locale={params.locale}
+        />
+      )}
     </>
   );
 }

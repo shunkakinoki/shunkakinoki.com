@@ -33,5 +33,5 @@ export default async function CausePage({
   // ---------------------------------------------------------------------------
 
   // @ts-expect-error
-  return <SlugPage params={{ slug: causeSlug }} />;
+  return <SlugPage params={{ locale: locale, slug: causeSlug }} />;
 }
