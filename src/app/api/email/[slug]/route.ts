@@ -5,17 +5,7 @@ export const dynamic = "force-dynamic";
 import { extractValidUUID } from "@/lib/utils";
 import { createEmail } from "@/services/buttondown";
 import { getPage } from "@/services/notion";
-import { createEmailId, getEmailId } from "@/services/redis";
-import { Ratelimit } from "@upstash/ratelimit";
-import { Redis } from "@upstash/redis";
-
-// Create a new ratelimiter
-const ratelimit = new Ratelimit({
-  redis: Redis.fromEnv(),
-  limiter: Ratelimit.slidingWindow(1, "30 s"),
-  prefix: "@upstash/ratelimit",
-  analytics: true,
-});
+import { createEmailId, getEmailId, ratelimit } from "@/services/redis";
 
 export async function POST(
   _req: Request,
