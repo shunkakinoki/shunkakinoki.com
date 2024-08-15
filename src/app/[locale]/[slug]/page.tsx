@@ -1,9 +1,7 @@
-import { Newsletter } from "@/components/newsletter";
 import { Notion } from "@/components/notion";
 import { ViewCount } from "@/components/view-count";
 import { extractValidUUID } from "@/lib/utils";
 import { getBlocks, getPage } from "@/services/notion";
-import { getEmailId } from "@/services/redis";
 import type { Metadata } from "next";
 
 // -----------------------------------------------------------------------------
@@ -28,7 +26,7 @@ export async function generateMetadata({
 // biome-ignore lint/style/noDefaultExport: <explanation>
 export default async function SlugPage({
   params,
-}: { params: { locale: string; slug: string; disableNewsletter?: boolean } }) {
+}: { params: { locale: string; slug: string } }) {
   // ---------------------------------------------------------------------------
   // Services
   // ---------------------------------------------------------------------------
@@ -84,20 +82,6 @@ export default async function SlugPage({
     return block;
   });
 
-  // Post the email if it does not exist
-  const { emailId } = await getEmailId(pageId);
-  if (!emailId) {
-    fetch(
-      `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/email?slug=${params.slug}&locale=${params.locale}`,
-      {
-        method: "POST",
-      },
-    );
-  }
-
-  // @ts-ignore
-  const tags = [page.properties?.Published ? params.locale : "journal"];
-
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
@@ -116,7 +100,6 @@ export default async function SlugPage({
         content={page}
         pageId={pageId}
       />
-      {params?.disableNewsletter ? undefined : <Newsletter tags={tags} />}
     </>
   );
 }

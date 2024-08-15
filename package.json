@@ -7,7 +7,6 @@
     "biome:fix": "biome check --write --unsafe --no-errors-on-unmatched",
     "biome:lint": "biome check --unsafe --no-errors-on-unmatched",
     "build": "next build",
-    "client:buttondown": "npx openapi-typescript https://api.buttondown.email/v1/openapi.json --output src/client/buttondown.ts",
     "dev": "next dev --turbo",
     "fix": "concurrently \"pnpm:*:fix\"",
     "lint": "concurrently \"pnpm:*:lint\"",
