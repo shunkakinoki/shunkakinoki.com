@@ -9,8 +9,9 @@ import {
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import type { FC } from "react";
+import { PageHeader, PageHeaderHeading } from "./page-header";
 
-export interface Props {
+export interface HistoryStepProps {
   isBottom?: boolean;
   children: string;
   time: string;
@@ -26,11 +27,12 @@ const HistoryConnector: FC = () => {
   );
 };
 
-export const HistoryStep: FC<Props> = ({
+export const HistoryStep: FC<HistoryStepProps> = ({
   isBottom = false,
   children,
   time,
   type,
+  // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
 }) => {
   return (
     <li>
@@ -42,7 +44,7 @@ export const HistoryStep: FC<Props> = ({
           <div>
             <span
               className={clsx(
-                "flex h-8 w-8 items-center justify-center rounded-full ring-8 ring-white dark:text-gray-100 dark:ring-black",
+                "flex h-8 w-8 items-center justify-center rounded-full text-gray-100 ring-8 ring-white dark:ring-black",
                 type === "cake" && "bg-pink-500",
                 type === "chip" && "bg-gray-500",
                 type === "fire" && "bg-red-500",
@@ -89,12 +91,12 @@ export const HistoryYear: FC<HistoryYearProps> = ({ children }) => {
   );
 };
 
-export const History: FC<Props> = () => {
+export const History: FC = () => {
   return (
     <section key="history" className="mb-2 w-full">
-      <div className="px-3 md:px-0">
-        <div className="font-medium text-lg leading-loose">History</div>
-      </div>
+      <PageHeader>
+        <PageHeaderHeading>History</PageHeaderHeading>
+      </PageHeader>
       <div className="mt-3 w-full flex-col items-center px-6 sm:px-4 md:px-0">
         <HistoryYear>Present</HistoryYear>
         <ul className="my-3">

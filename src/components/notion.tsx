@@ -124,7 +124,7 @@ export const Text: FC<TextProps> = ({ text }) => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-1 justify-center gap-0.5 text-gray-400 leading-4 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300"
+                className="inline-flex flex-1 justify-center gap-0.5 text-indigo-500 leading-4 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200"
               >
                 {plain_text === "Untitled" ? "<REDACTED>" : plain_text}
                 <ArrowUpRightFromSquareIcon className="h-2 w-2" />

@@ -58,7 +58,7 @@ export function SiteFooter() {
             </a>
           ))}
         </div>
-        <div className="my-6 flex items-center justify-center space-x-2">
+        <div className="my-6 flex items-center justify-center space-x-4">
           <p className="text-foreground/70 text-sm leading-5">
             &copy; {new Date().getFullYear()} Shun Kakinoki. All rights
             reserved.
