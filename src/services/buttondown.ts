@@ -47,13 +47,11 @@ export const createEmail = async (
       subject: title,
       body: `A new post has been published on shunkakinoki.com. Check it out now!\n\n\nhttps://shunkakinoki.com/${pageId}`,
       filters: {
-        filters: [
-          tags.map((tag) => ({
-            field: "subscriber.tags",
-            operator: "contains",
-            value: tag,
-          })),
-        ],
+        filters: tags.map((tag) => ({
+          field: "subscriber.tags",
+          operator: "contains",
+          value: tag,
+        })),
         groups: [],
         predicate: "and",
       },
