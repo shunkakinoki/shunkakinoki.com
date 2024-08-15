@@ -50,8 +50,12 @@ export default async function SlugPage({
   // @ts-ignore
   const pageEmoji = page?.icon?.emoji ?? "📄";
 
-  //@ts-ignore
-  if (page.properties?.Published && !page.properties?.Published?.checkbox) {
+  if (
+    //@ts-ignore
+    (page.properties?.Published && !page.properties?.Published?.checkbox) ||
+    //@ts-ignore
+    (page.properties?.Date && !page.properties.Date?.date?.start)
+  ) {
     return {
       notFound: true,
       revalidate: 30,
@@ -81,10 +85,20 @@ export default async function SlugPage({
     return block;
   });
 
-  const emailId = getEmailId(pageId);
+  // @ts-ignore
+  const tags = [page.properties?.Published ? params.locale : "journal"];
+
+  const { emailId } = await getEmailId(pageId);
   if (!emailId) {
     // Create a new email
-    const email = await createEmail(pageId);
+    const email = await createEmail(
+      pageId,
+      // @ts-ignore
+      page.properties.Name?.title[0]?.plain_text ??
+        "New post on shunkakinoki.com",
+      tags,
+    );
+
     // Save the email id
     if (email?.id) {
       await createEmailId(pageId, email?.id);
@@ -109,15 +123,7 @@ export default async function SlugPage({
         content={page}
         pageId={pageId}
       />
-      {params?.disableNewsletter ? undefined : (
-        <Newsletter
-          type={
-            //@ts-ignore
-            page.properties?.Published ? "blog" : "journal"
-          }
-          locale={params.locale}
-        />
-      )}
+      {params?.disableNewsletter ? undefined : <Newsletter tags={tags} />}
     </>
   );
 }

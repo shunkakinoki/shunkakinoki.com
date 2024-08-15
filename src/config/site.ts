@@ -5,7 +5,6 @@
 export const siteConfig = {
   name: "Shun Kakinoki",
   url: "https://shunkakinoki.com",
-  ogImage: "https://shunkakinoki.com/og.png",
   description: "Shun Kakinoki's Personal Website",
   links: {
     twitter: "https://twitter.com/shunkakinoki",

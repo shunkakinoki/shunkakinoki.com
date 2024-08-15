@@ -8,15 +8,14 @@ import { NewsletterForm } from "./newsletter-form";
 // -----------------------------------------------------------------------------
 
 type NewsletterProps = {
-  locale: string;
-  type: "journal" | "blog";
+  tags: string[];
 };
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export async function Newsletter({ locale, type }: NewsletterProps) {
+export async function Newsletter({ tags }: NewsletterProps) {
   // ---------------------------------------------------------------------------
   // Service
   // ---------------------------------------------------------------------------
@@ -63,7 +62,7 @@ export async function Newsletter({ locale, type }: NewsletterProps) {
                 Get the latest posts delivered right to your inbox.
               </p>
             </div>
-            <NewsletterForm tags={[type === "journal" ? "journal" : locale]} />
+            <NewsletterForm tags={tags} />
             <p className="mx-auto mt-4 flex max-w-2xl items-center align-text-bottom font-medium text-indigo-50 text-xs">
               <LightBulbIcon className="h-4 w-4 pr-1" />
               <Suspense
