@@ -39,6 +39,7 @@ export const subscribeAction = async (
   // Validate form fields
   const validatedFields = subscribeSchema.safeParse({
     email: formData.get("email"),
+    tags: formData.getAll("tags"),
   });
 
   // Return errors if validation fails
