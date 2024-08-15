@@ -28,10 +28,12 @@ export async function POST(
   const pageId = extractValidUUID(params.slug);
 
   if (!pageId) {
-    return {
-      notFound: true,
-      revalidate: 30,
-    };
+    return new Response(
+      JSON.stringify({
+        error: "Invalid page id",
+      }),
+      { status: 400 },
+    );
   }
 
   // Get the page
