@@ -1,3 +1,4 @@
+import { Newsletter } from "@/components/newsletter";
 import { Notion } from "@/components/notion";
 import { ViewCount } from "@/components/view-count";
 import { extractValidUUID } from "@/lib/utils";
@@ -26,7 +27,7 @@ export async function generateMetadata({
 // biome-ignore lint/style/noDefaultExport: <explanation>
 export default async function SlugPage({
   params,
-}: { params: { slug: string } }) {
+}: { params: { locale: string; slug: string } }) {
   // ---------------------------------------------------------------------------
   // Services
   // ---------------------------------------------------------------------------
@@ -95,6 +96,13 @@ export default async function SlugPage({
         blocks={blocksWithChildren}
         content={page}
         pageId={pageId}
+      />
+      <Newsletter
+        type={
+          //@ts-ignore
+          page.properties?.Published ? "blog" : "journal"
+        }
+        locale={params.locale}
       />
     </>
   );

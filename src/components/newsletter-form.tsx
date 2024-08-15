@@ -4,10 +4,18 @@ import { type FormState, subscribeAction } from "@/actions/subscribe";
 import { useFormState } from "react-dom";
 
 // -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+type NewsletterFormProps = {
+  tags: string[];
+};
+
+// -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export function NewsletterForm() {
+export function NewsletterForm({ tags }: NewsletterFormProps) {
   // ---------------------------------------------------------------------------
   // Form
   // ---------------------------------------------------------------------------
@@ -16,6 +24,7 @@ export function NewsletterForm() {
     errors: {},
     message: null,
     state: "idle" as FormState,
+    tags: tags,
   };
   const [formState, dispatch] = useFormState(subscribeAction, initialState);
 

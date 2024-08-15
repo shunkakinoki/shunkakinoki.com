@@ -10,6 +10,7 @@ const subscribeSchema = z.object({
       invalid_type_error: "Please enter an email address.",
     })
     .email({ message: "Please enter a valid email address." }),
+  tags: z.array(z.string()),
 });
 
 // -----------------------------------------------------------------------------
@@ -42,6 +43,8 @@ export const subscribeAction = async (
 
   // Return errors if validation fails
   if (!validatedFields.success) {
+    console.error(validatedFields.error.flatten().fieldErrors);
+
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       state: "error",
@@ -50,7 +53,10 @@ export const subscribeAction = async (
   }
 
   try {
-    const data = await postSubscribe(validatedFields.data.email);
+    const data = await postSubscribe(
+      validatedFields.data.email,
+      validatedFields.data.tags,
+    );
     console.info("result", JSON.stringify(data));
 
     // @ts-ignore

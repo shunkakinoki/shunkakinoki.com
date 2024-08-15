@@ -4,10 +4,19 @@ import { Suspense } from "react";
 import { NewsletterForm } from "./newsletter-form";
 
 // -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+type NewsletterProps = {
+  locale: string;
+  type: "journal" | "blog";
+};
+
+// -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export async function Newsletter() {
+export async function Newsletter({ locale, type }: NewsletterProps) {
   // ---------------------------------------------------------------------------
   // Service
   // ---------------------------------------------------------------------------
@@ -54,7 +63,7 @@ export async function Newsletter() {
                 Get the latest posts delivered right to your inbox.
               </p>
             </div>
-            <NewsletterForm />
+            <NewsletterForm tags={[type === "journal" ? "journal" : locale]} />
             <p className="mx-auto mt-4 flex max-w-2xl items-center align-text-bottom font-medium text-indigo-50 text-xs">
               <LightBulbIcon className="h-4 w-4 pr-1" />
               <Suspense
