@@ -3,6 +3,7 @@ import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import type { IconProps } from "@radix-ui/react-icons/dist/types";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
 import type { IconType } from "react-icons/lib";
+import { PageHeader, PageHeaderHeading } from "./page-header";
 import { SectionHeaderHeading } from "./section-header";
 
 // -----------------------------------------------------------------------------
@@ -24,7 +25,13 @@ export function Social({ isPartial = false }: SocialProps) {
 
   return (
     <section>
-      <SectionHeaderHeading>Social</SectionHeaderHeading>
+      {isPartial ? (
+        <SectionHeaderHeading>Social</SectionHeaderHeading>
+      ) : (
+        <PageHeader>
+          <PageHeaderHeading>Social</PageHeaderHeading>
+        </PageHeader>
+      )}
       <div className="mt-3 w-full flex-col items-center">
         <ul className="my-2 mt-4 grid w-full grid-cols-2 gap-2 sm:grid-cols-3">
           {(isPartial ? socialPriorityConfig : socialConfig).map((social) => (
