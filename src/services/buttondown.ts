@@ -30,7 +30,11 @@ export const getEmail = async (emailId: string) => {
   });
 };
 
-export const createEmail = async (pageId: string, title: string) => {
+export const createEmail = async (
+  pageId: string,
+  title: string,
+  tags: string[],
+) => {
   return await fetch("https://api.buttondown.email/v1/emails", {
     method: "POST",
     cache: "no-store",
@@ -42,6 +46,15 @@ export const createEmail = async (pageId: string, title: string) => {
     body: JSON.stringify({
       subject: title,
       body: `A new post has been published on shunkakinoki.com. Check it out now!\n\n\nhttps://shunkakinoki.com/${pageId}`,
+      filters: [
+        tags.map((tag) => ({
+          field: "subscriber.tags",
+          operator: "contains",
+          value: tag,
+        })),
+      ],
+      groups: [],
+      predicate: "and",
     }),
   }).then((res) => res.json());
 };

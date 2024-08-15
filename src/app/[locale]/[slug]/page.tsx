@@ -85,6 +85,9 @@ export default async function SlugPage({
     return block;
   });
 
+  // @ts-ignore
+  const tags = [page.properties?.Published ? params.locale : "journal"];
+
   const { emailId } = await getEmailId(pageId);
   if (!emailId) {
     // Create a new email
@@ -119,15 +122,7 @@ export default async function SlugPage({
         content={page}
         pageId={pageId}
       />
-      {params?.disableNewsletter ? undefined : (
-        <Newsletter
-          type={
-            //@ts-ignore
-            page.properties?.Published ? "blog" : "journal"
-          }
-          locale={params.locale}
-        />
-      )}
+      {params?.disableNewsletter ? undefined : <Newsletter tags={tags} />}
     </>
   );
 }
