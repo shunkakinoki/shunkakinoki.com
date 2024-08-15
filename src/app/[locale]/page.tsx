@@ -104,7 +104,7 @@ export default async function IndexPage({
         <Products isPartial />
         <Life />
         <Social isPartial />
-        <Newsletter locale={locale} type="blog" />
+        <Newsletter tags={[locale]} />
       </div>
     </>
   );
