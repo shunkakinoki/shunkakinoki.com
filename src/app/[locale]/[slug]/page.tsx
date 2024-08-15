@@ -96,6 +96,7 @@ export default async function SlugPage({
       // @ts-ignore
       page.properties.Name?.title[0]?.plain_text ??
         "New post on shunkakinoki.com",
+      tags,
     );
 
     // Save the email id
