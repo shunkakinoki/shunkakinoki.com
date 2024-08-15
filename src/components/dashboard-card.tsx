@@ -1,7 +1,8 @@
-import { ExternalLinkIcon } from "@heroicons/react/outline";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import type { FC } from "react";
 
 export interface Props {
+  // biome-ignore lint/correctness/noUndeclaredVariables: <explanation>
   children: JSX.Element;
   href: string;
   number: number | undefined;
@@ -37,7 +38,7 @@ export const DashboardCard: FC<Props> = ({ children, href, number, title }) => {
               </dd>
             </div>
             <div className="flex-shrink-0 text-gray-500">
-              <ExternalLinkIcon className="h-6 w-6" />
+              <ArrowTopRightOnSquareIcon className="h-6 w-6" />
             </div>
           </div>
         </div>
