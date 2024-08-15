@@ -24,12 +24,26 @@ export const getSubscribersCount = async () => {
   return (await buttondownClient.GET("/subscribers")).data?.count;
 };
 
-export const postSubscribe = async (_email: string) => {
-  return await buttondownClient.POST("/subscribers", {
-    // @ts-expect-error
-    body: {
+export const getEmail = async (emailId: string) => {
+  return await buttondownClient.GET("/emails/{id}", {
+    params: { path: { id: emailId } },
+  });
+};
+
+export const postSubscribe = async (email: string, tags: string[]) => {
+  return await fetch("https://api.buttondown.email/v1/subscribers", {
+    method: "POST",
+    cache: "no-store",
+    headers: {
       // biome-ignore lint/style/useNamingConvention: <explanation>
-      email_address: "shunkakinoki@gmail.com",
+      Authorization: `Token ${process.env.BUTTONDOWN_API_KEY}`,
+      // biome-ignore lint/style/useNamingConvention: <explanation>
+      ContentType: "application/json",
     },
+    body: JSON.stringify({
+      // biome-ignore lint/style/useNamingConvention: <explanation>
+      email_address: email,
+      tags: tags,
+    }),
   });
 };

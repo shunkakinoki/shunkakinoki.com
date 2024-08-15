@@ -13,7 +13,24 @@ const redis = new Redis({
 // Utils
 // -----------------------------------------------------------------------------
 
+export const createEmailId = async (id: string, emailId: string) => {
+  // Store the email ID in Redis.
+  await redis.set(`emails:${id}`, emailId);
+  return {
+    emailId: emailId,
+  };
+};
+
+export const getEmailId = async (id: string) => {
+  // Retrieve the email ID from Redis.
+  const emailId = await redis.get(`emails:${id}`);
+  return {
+    emailId: emailId,
+  };
+};
+
 export const getTotalViewCount = async () => {
+  // Retrieve the total view count from Redis.
   const totalViews = await redis.get<number>("views:total");
   return {
     totalViews: totalViews,
@@ -21,6 +38,7 @@ export const getTotalViewCount = async () => {
 };
 
 export const getTotalVisitorCount = async () => {
+  // Retrieve the total visitor count from Redis.
   const totalVisitorCount = await redis.get<number>("visitors:total");
   return {
     totalVisitorCount: totalVisitorCount,

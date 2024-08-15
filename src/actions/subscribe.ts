@@ -51,10 +51,14 @@ export const subscribeAction = async (
 
   try {
     const data = await postSubscribe(validatedFields.data.email);
-    console.info(JSON.stringify(data.error?.detail));
-    if (data.error) {
-      throw new Error(data.error?.detail);
+    console.info("result", JSON.stringify(data));
+
+    // @ts-ignore
+    if (data?.error) {
+      // @ts-ignore
+      throw new Error(data?.error?.detail);
     }
+
     return {
       message: "User Created",
       state: "success",
