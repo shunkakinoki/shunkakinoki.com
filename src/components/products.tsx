@@ -1,5 +1,6 @@
 import { queryDatabase } from "@/services/notion";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import { PageHeader, PageHeaderHeading } from "./page-header";
 import { SectionHeaderHeading } from "./section-header";
 
 // -----------------------------------------------------------------------------
@@ -41,7 +42,13 @@ export async function Products({ isPartial }: ProductsProps) {
 
   return (
     <section>
-      <SectionHeaderHeading>Products</SectionHeaderHeading>
+      {isPartial ? (
+        <SectionHeaderHeading>Products</SectionHeaderHeading>
+      ) : (
+        <PageHeader>
+          <PageHeaderHeading>Products</PageHeaderHeading>
+        </PageHeader>
+      )}
       <div className="mt-3 w-full flex-col items-center">
         <ul className="grid grid-cols-1 gap-3">
           {res.results.slice(0, isPartial ? 3 : -1).map((product) => (
