@@ -40,7 +40,10 @@ export const incrementViewCount = async (id: string) => {
   };
 };
 
-export const incrementVisitorCount = async (id: string, ip: string) => {
+export const incrementVisitorCount = async (
+  ip: string,
+  id: string | null = null,
+) => {
   // Hash the IP address using SHA-256.
   const buffer = await crypto.subtle.digest(
     "SHA-256",
@@ -50,32 +53,52 @@ export const incrementVisitorCount = async (id: string, ip: string) => {
     .map((b) => b.toString(16).padStart(2, "0"))
     .join("");
 
-  // Check if the view is a duplicate (same IP address on the post within the
-  // last 24 hours).
-  const results = await redis
-    .multi()
-    .set(`view_deduplicates:${id}:${hash}`, true, {
+  // Initialize variables to track if the view is new.
+  let isNewPost = false;
+  let isNewTotal = false;
+
+  // Prepare redis commands
+  const redisCommands = redis.multi();
+
+  // Check if the total view is a duplicate (same IP address within the last 24 hours).
+  redisCommands.set(`visitor_deduplicates:total:${hash}`, true, {
+    nx: true,
+    ex: 86_400,
+  });
+
+  if (id !== null) {
+    // Check if the view is a duplicate for a specific post (same IP address on the post within the last 24 hours).
+    redisCommands.set(`visitor_deduplicates:${id}:${hash}`, true, {
       nx: true,
       ex: 86_400,
-    })
-    .set(`visitor_deduplicates:total:${hash}`, true, {
-      nx: true,
-      ex: 86_400,
-    })
-    .exec();
+    });
+  }
 
-  // Flag to indicate if the post is new.
-  const isNewPost = results[0] === "OK";
-  const isNewTotal = results[1] === "OK";
+  // Execute redis commands
+  const results = await redisCommands.exec();
+  console.info(results);
 
-  // Increment post visitor count if `isNew` is true.
-  const visitors = await redis.hincrby("visitors", id, isNewPost ? 1 : 0);
+  // Check if the total view is new.
+  isNewTotal = results[0] === "OK";
+  if (id !== null) {
+    // Check if the post view is new.
+    isNewPost = results[1] === "OK";
+  }
 
-  // Increment total visitor count if `isNew` is true.
+  // Increment post visitor count if `isNewPost` is true and id is provided.
+  let visitors = 0;
+  if (id !== null) {
+    visitors = await redis.hincrby("visitors", id, isNewPost ? 1 : 0);
+  }
+
+  // Increment total visitor count if `isNewTotal` is true.
   const totalVisitors = await redis.incrby(
     "visitors:total",
     isNewTotal ? 1 : 0,
   );
 
-  return { visitors: visitors, totalVisitors: totalVisitors };
+  return {
+    visitors: visitors === 0 ? totalVisitors : visitors,
+    totalVisitors: totalVisitors,
+  };
 };
