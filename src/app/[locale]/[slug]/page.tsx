@@ -85,6 +85,8 @@ export default async function SlugPage({
   if (!emailId) {
     // Create a new email
     const email = await createEmail(pageId);
+    console.info("Email created", email);
+
     // Save the email id
     if (email?.id) {
       await createEmailId(pageId, email?.id);
