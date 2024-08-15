@@ -4,7 +4,7 @@ import type { FC } from "react";
 export interface Props {
   // biome-ignore lint/correctness/noUndeclaredVariables: <explanation>
   children: JSX.Element;
-  href: string;
+  href?: string;
   number: number | undefined;
   title: string;
 }
@@ -13,9 +13,9 @@ export const DashboardCard: FC<Props> = ({ children, href, number, title }) => {
   return (
     <div className="overflow-hidden rounded-lg bg-white shadow hover:bg-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800">
       <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={href || "#"}
+        target={href ? "_blank" : undefined}
+        rel={href ? "noopener noreferrer" : undefined}
         className="block"
       >
         <div className="px-4 py-5 sm:p-6">

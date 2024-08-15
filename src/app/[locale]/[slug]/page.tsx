@@ -1,8 +1,8 @@
 import { Notion } from "@/components/notion";
 import { ViewCount } from "@/components/view-count";
+import { extractValidUUID } from "@/lib/utils";
 import { getBlocks, getPage } from "@/services/notion";
 import type { Metadata } from "next";
-import { fromString } from "uuidv4";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -32,7 +32,14 @@ export default async function SlugPage({
   // ---------------------------------------------------------------------------
 
   // Omit the slug to get the valid uuid
-  const pageId = fromString(params.slug);
+  const pageId = extractValidUUID(params.slug);
+
+  if (!pageId) {
+    return {
+      notFound: true,
+      revalidate: 30,
+    };
+  }
 
   // Get the page
   const page = await getPage(pageId);

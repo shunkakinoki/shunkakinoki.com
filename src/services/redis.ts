@@ -14,11 +14,17 @@ const redis = new Redis({
 // -----------------------------------------------------------------------------
 
 export const getTotalViewCount = async () => {
-  return await redis.get("views:total");
+  const totalViews = await redis.get<number>("views:total");
+  return {
+    totalViews: totalViews,
+  };
 };
 
 export const getTotalVisitorCount = async () => {
-  return await redis.get("visitors:total");
+  const totalVisitorCount = await redis.get<number>("visitors:total");
+  return {
+    totalVisitorCount: totalVisitorCount,
+  };
 };
 
 export const incrementViewCount = async (id: string) => {
