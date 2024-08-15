@@ -2,9 +2,8 @@ import { Newsletter } from "@/components/newsletter";
 import { Notion } from "@/components/notion";
 import { ViewCount } from "@/components/view-count";
 import { extractValidUUID } from "@/lib/utils";
-import { createEmail } from "@/services/buttondown";
 import { getBlocks, getPage } from "@/services/notion";
-import { createEmailId, getEmailId } from "@/services/redis";
+import { getEmailId } from "@/services/redis";
 import type { Metadata } from "next";
 
 // -----------------------------------------------------------------------------
@@ -85,25 +84,16 @@ export default async function SlugPage({
     return block;
   });
 
-  // @ts-ignore
-  const tags = [page.properties?.Published ? params.locale : "journal"];
-
+  // Post the email if it does not exist
   const { emailId } = await getEmailId(pageId);
   if (!emailId) {
-    // Create a new email
-    const email = await createEmail(
-      pageId,
-      // @ts-ignore
-      page.properties.Name?.title[0]?.plain_text ??
-        "New post on shunkakinoki.com",
-      tags,
-    );
-
-    // Save the email id
-    if (email?.id) {
-      await createEmailId(pageId, email?.id);
-    }
+    await fetch(`/api/email/${params.slug}`, {
+      method: "POST",
+    });
   }
+
+  // @ts-ignore
+  const tags = [page.properties?.Published ? params.locale : "journal"];
 
   // ---------------------------------------------------------------------------
   // Render
