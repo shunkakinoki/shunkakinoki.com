@@ -1,6 +1,20 @@
 "use server";
 
 import { postSubscribe } from "@/services/buttondown";
+import { z } from "zod";
+
+const subscribeSchema = z.object({
+  email: z
+    .string({
+      // biome-ignore lint/style/useNamingConvention: <explanation>
+      invalid_type_error: "Please enter an email address.",
+    })
+    .email({ message: "Please enter a valid email address." }),
+});
+
+// -----------------------------------------------------------------------------
+// Types
+// -----------------------------------------------------------------------------
 
 export type FormState = "idle" | "loading" | "success" | "error";
 
@@ -13,24 +27,42 @@ export type State = {
   state: FormState;
 };
 
+// -----------------------------------------------------------------------------
+// Action
+// -----------------------------------------------------------------------------
+
 export const subscribeAction = async (
   _prevState: State,
   formData: FormData,
 ): Promise<State> => {
-  const email = formData.get("email") as string;
+  // Validate form fields
+  const validatedFields = subscribeSchema.safeParse({
+    email: formData.get("email"),
+  });
 
-  // Await 300ms
-  await new Promise((resolve) => setTimeout(resolve, 300));
+  // Return errors if validation fails
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      state: "error",
+      message: "Missing Fields. Failed to Create User",
+    };
+  }
 
   try {
-    await postSubscribe(email);
+    const data = await postSubscribe(validatedFields.data.email);
+    console.info(JSON.stringify(data.error?.detail));
+    if (data.error) {
+      throw new Error(data.error?.detail);
+    }
     return {
       message: "User Created",
       state: "success",
     };
-  } catch (_error) {
+  } catch (err) {
+    console.error(err);
     return {
-      message: "Database Error: Failed to Create User",
+      message: err instanceof Error ? err.message : String(err),
       state: "error",
     };
   }
