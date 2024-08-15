@@ -7,14 +7,14 @@ import { Suspense } from "react";
 // -----------------------------------------------------------------------------
 
 export type ViewCountProps = {
-  id: string;
+  pageId: string;
 };
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export async function ViewCount({ id }: ViewCountProps) {
+export async function ViewCount({ pageId }: ViewCountProps) {
   // ---------------------------------------------------------------------------
   // Service
   // ---------------------------------------------------------------------------
@@ -23,8 +23,8 @@ export async function ViewCount({ id }: ViewCountProps) {
   const ip = headersList.get("x-forwarded-for") || "121.0.0.1";
 
   const [{ views }] = await Promise.all([
-    incrementViewCount(id),
-    incrementVisitorCount(id, ip),
+    incrementViewCount(pageId),
+    incrementVisitorCount(pageId, ip),
   ]);
 
   // ---------------------------------------------------------------------------

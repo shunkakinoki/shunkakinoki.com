@@ -2,6 +2,7 @@ import { Notion } from "@/components/notion";
 import { ViewCount } from "@/components/view-count";
 import { getBlocks, getPage } from "@/services/notion";
 import type { Metadata } from "next";
+import { fromString } from "uuidv4";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -30,7 +31,11 @@ export default async function SlugPage({
   // Services
   // ---------------------------------------------------------------------------
 
-  const page = await getPage(params.slug);
+  // Omit the slug to get the valid uuid
+  const pageId = fromString(params.slug);
+
+  // Get the page
+  const page = await getPage(pageId);
 
   // @ts-ignore
   const pageEmoji = page?.icon?.emoji ?? "📄";
@@ -81,10 +86,10 @@ export default async function SlugPage({
         sizes="any"
       />
       <Notion
-        viewCount={<ViewCount id={params.slug} />}
+        viewCount={<ViewCount pageId={pageId} />}
         blocks={blocksWithChildren}
         content={page}
-        pageId={params.slug}
+        pageId={pageId}
       />
     </>
   );
