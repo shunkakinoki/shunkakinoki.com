@@ -89,7 +89,7 @@ export default async function SlugPage({
   const tags = [page.properties?.Published ? params.locale : "journal"];
 
   const { emailId } = await getEmailId(pageId);
-  if (!emailId) {
+  if (emailId === null) {
     // Create a new email
     const email = await createEmail(
       pageId,
@@ -98,6 +98,7 @@ export default async function SlugPage({
         "New post on shunkakinoki.com",
       tags,
     );
+    console.info("email", email);
 
     // Save the email id
     if (email?.id) {

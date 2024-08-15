@@ -46,15 +46,17 @@ export const createEmail = async (
     body: JSON.stringify({
       subject: title,
       body: `A new post has been published on shunkakinoki.com. Check it out now!\n\n\nhttps://shunkakinoki.com/${pageId}`,
-      filters: [
-        tags.map((tag) => ({
-          field: "subscriber.tags",
-          operator: "contains",
-          value: tag,
-        })),
-      ],
-      groups: [],
-      predicate: "and",
+      filters: {
+        filters: [
+          tags.map((tag) => ({
+            field: "subscriber.tags",
+            operator: "contains",
+            value: tag,
+          })),
+        ],
+        groups: [],
+        predicate: "and",
+      },
     }),
   }).then((res) => res.json());
 };
