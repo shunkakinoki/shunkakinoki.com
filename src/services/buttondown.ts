@@ -30,16 +30,20 @@ export const getEmail = async (emailId: string) => {
   });
 };
 
-export const createEmail = async (pageId: string) => {
-  return (
-    await buttondownClient.POST("/emails", {
-      // @ts-expect-error
-      body: {
-        subject: "New post on shunkakinoki.com",
-        body: `A new post has been published on shunkakinoki.com. Check it out now!\n\n\nhttps://shunkakinoki.com/${pageId}`,
-      },
-    })
-  ).data;
+export const createEmail = async (pageId: string, title: string) => {
+  return await fetch("https://api.buttondown.email/v1/emails", {
+    method: "POST",
+    cache: "no-store",
+    headers: {
+      // biome-ignore lint/style/useNamingConvention: <explanation>
+      Authorization: `Token ${process.env.BUTTONDOWN_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      subject: title,
+      body: `A new post has been published on shunkakinoki.com. Check it out now!\n\n\nhttps://shunkakinoki.com/${pageId}`,
+    }),
+  }).then((res) => res.json());
 };
 
 export const postSubscribe = async (email: string, tags: string[]) => {
@@ -49,13 +53,12 @@ export const postSubscribe = async (email: string, tags: string[]) => {
     headers: {
       // biome-ignore lint/style/useNamingConvention: <explanation>
       Authorization: `Token ${process.env.BUTTONDOWN_API_KEY}`,
-      // biome-ignore lint/style/useNamingConvention: <explanation>
-      ContentType: "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       // biome-ignore lint/style/useNamingConvention: <explanation>
       email_address: email,
       tags: tags,
     }),
-  });
+  }).then((res) => res.json());
 };

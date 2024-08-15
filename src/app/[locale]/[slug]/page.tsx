@@ -50,8 +50,12 @@ export default async function SlugPage({
   // @ts-ignore
   const pageEmoji = page?.icon?.emoji ?? "📄";
 
-  //@ts-ignore
-  if (page.properties?.Published && !page.properties?.Published?.checkbox) {
+  if (
+    //@ts-ignore
+    (page.properties?.Published && !page.properties?.Published?.checkbox) ||
+    //@ts-ignore
+    (page.properties?.Date && !page.properties.Date?.date?.start)
+  ) {
     return {
       notFound: true,
       revalidate: 30,
@@ -81,11 +85,15 @@ export default async function SlugPage({
     return block;
   });
 
-  const emailId = getEmailId(pageId);
+  const { emailId } = await getEmailId(pageId);
   if (!emailId) {
     // Create a new email
-    const email = await createEmail(pageId);
-    console.info("Email created", email);
+    const email = await createEmail(
+      pageId,
+      // @ts-ignore
+      page.properties.Name?.title[0]?.plain_text ??
+        "New post on shunkakinoki.com",
+    );
 
     // Save the email id
     if (email?.id) {

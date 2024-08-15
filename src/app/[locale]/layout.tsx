@@ -1,12 +1,3 @@
-import type { Viewport } from "next";
-import { NextIntlClientProvider } from "next-intl";
-import {
-  getMessages,
-  getTranslations,
-  unstable_setRequestLocale,
-} from "next-intl/server";
-import type * as React from "react";
-
 import { Analytics } from "@/components/analytics";
 import { ThemeProvider } from "@/components/providers";
 import { SiteFooter } from "@/components/site-footer";
@@ -18,6 +9,14 @@ import { locales } from "@/config";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
+import type { Viewport } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from "next-intl/server";
+import type * as React from "react";
 import "@/styles/globals.css";
 
 // -----------------------------------------------------------------------------
@@ -54,7 +53,7 @@ export async function generateMetadata({
       default: t("site.title"),
       template: `%s - ${siteConfig.name}`,
     },
-    metadataBase: new URL(siteConfig.url),
+    metadataBase: new URL("https://shunkakinoki.com"),
     description: siteConfig.description,
     authors: [
       {
@@ -70,26 +69,12 @@ export async function generateMetadata({
       title: siteConfig.name,
       description: siteConfig.description,
       siteName: siteConfig.name,
-      images: [
-        {
-          url: siteConfig.ogImage,
-          width: 1200,
-          height: 630,
-          alt: siteConfig.name,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: siteConfig.name,
       description: siteConfig.description,
-      images: [siteConfig.ogImage],
       creator: "@shunkakinoki",
-    },
-    icons: {
-      icon: "/favicon.ico",
-      shortcut: "/favicon-16x16.png",
-      apple: "/apple-touch-icon.png",
     },
     manifest: `${siteConfig.url}/site.webmanifest`,
   };
