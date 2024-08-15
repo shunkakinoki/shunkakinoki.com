@@ -1,18 +1,19 @@
-export const runtime = "nodejs";
-
-export const dynamic = "force-dynamic";
-
 import { extractValidUUID } from "@/lib/utils";
 import { createEmail } from "@/services/buttondown";
 import { getPage } from "@/services/notion";
 import { createEmailId, getEmailId, ratelimit } from "@/services/redis";
+import type { NextRequest } from "next/server";
 
-export async function POST(
-  _req: Request,
-  { params }: { params: { slug: string } },
-) {
-  const identifier = "email";
-  const { success, limit, remaining } = await ratelimit.limit(identifier);
+// -----------------------------------------------------------------------------
+// Route
+// -----------------------------------------------------------------------------
+
+export async function POST(req: NextRequest) {
+  const searchParams = req.nextUrl.searchParams;
+  const slug = searchParams.get("slug");
+  const locale = searchParams.get("locale");
+
+  const { success, limit, remaining } = await ratelimit.limit(`email:${slug}`);
 
   const response = {
     success: success,
@@ -24,8 +25,18 @@ export async function POST(
     return new Response(JSON.stringify(response), { status: 429 });
   }
 
+  // biome-ignore lint/complexity/useSimplifiedLogicExpression: <explanation>
+  if (!locale || !slug) {
+    return new Response(
+      JSON.stringify({
+        error: "Invalid page slug",
+      }),
+      { status: 400 },
+    );
+  }
+
   // Omit the slug to get the valid uuid
-  const pageId = extractValidUUID(params.slug);
+  const pageId = extractValidUUID(slug);
 
   if (!pageId) {
     return new Response(
@@ -40,7 +51,7 @@ export async function POST(
   const page = await getPage(pageId);
 
   // @ts-ignore
-  const tags = [page.properties?.Published ? params.locale : "journal"];
+  const tags = [page.properties?.Published ? locale : "journal"];
 
   const { emailId } = await getEmailId(pageId);
   if (!emailId) {
@@ -62,3 +73,10 @@ export async function POST(
 
   return new Response(JSON.stringify(response));
 }
+
+// -----------------------------------------------------------------------------
+// Config
+// -----------------------------------------------------------------------------
+
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";

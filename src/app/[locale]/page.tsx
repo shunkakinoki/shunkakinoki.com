@@ -1,5 +1,4 @@
 import { Life } from "@/components/life";
-import { Newsletter } from "@/components/newsletter";
 import {
   PageActions,
   PageHeader,
@@ -104,7 +103,6 @@ export default async function IndexPage({
         <Products isPartial />
         <Life />
         <Social isPartial />
-        <Newsletter tags={[locale]} />
       </div>
     </>
   );

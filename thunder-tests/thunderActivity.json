@@ -1,0 +1,14 @@
+[
+  {
+    "_id": "535b742c-9d86-46cb-b6f0-06b46f54fd46",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/api/email/d85ae461-b284-48dd-8cd4-c889697f2294",
+    "url": "http://localhost:3000/api/email/d85ae461-b284-48dd-8cd4-c889697f2294",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2024-08-15T10:28:56.089Z",
+    "modified": "2024-08-15T10:28:56.089Z",
+    "headers": []
+  }
+]

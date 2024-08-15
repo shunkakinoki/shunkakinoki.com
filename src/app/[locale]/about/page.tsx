@@ -36,9 +36,7 @@ export default async function AboutPage({
   return (
     <>
       {/* @ts-expect-error */}
-      <SlugPage
-        params={{ locale: locale, slug: aboutSlug, disableNewsletter: true }}
-      />
+      <SlugPage params={{ locale: locale, slug: aboutSlug }} />
       <Life />
     </>
   );
