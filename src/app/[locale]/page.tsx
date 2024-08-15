@@ -1,6 +1,3 @@
-import { Link } from "@/navigation";
-import { RocketIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
-
 import { Life } from "@/components/life";
 import { Newsletter } from "@/components/newsletter";
 import {
@@ -14,6 +11,8 @@ import { Social } from "@/components/social";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { Link } from "@/navigation";
+import { RocketIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
 import { unstable_setRequestLocale } from "next-intl/server";
 

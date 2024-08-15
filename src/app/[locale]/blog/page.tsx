@@ -1,6 +1,5 @@
-import { unstable_setRequestLocale } from "next-intl/server";
-
 import { Blog } from "@/components/blog";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 // -----------------------------------------------------------------------------
 // Page

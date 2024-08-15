@@ -1,5 +1,4 @@
 import { unstable_setRequestLocale } from "next-intl/server";
-
 import SlugPage from "../[slug]/page";
 
 // -----------------------------------------------------------------------------
