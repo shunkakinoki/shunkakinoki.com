@@ -37,9 +37,11 @@ export const DashboardCard: FC<Props> = ({ children, href, number, title }) => {
                 )}
               </dd>
             </div>
-            <div className="flex-shrink-0 text-gray-500">
-              <ArrowTopRightOnSquareIcon className="h-6 w-6" />
-            </div>
+            {href ? (
+              <div className="flex-shrink-0 text-white">
+                <ArrowTopRightOnSquareIcon className="h-6 w-6" />
+              </div>
+            ) : null}
           </div>
         </div>
       </a>
