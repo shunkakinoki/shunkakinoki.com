@@ -30,6 +30,18 @@ export const getEmail = async (emailId: string) => {
   });
 };
 
+export const createEmail = async (pageId: string) => {
+  return (
+    await buttondownClient.POST("/emails", {
+      // @ts-expect-error
+      body: {
+        subject: "New post on shunkakinoki.com",
+        body: `A new post has been published on shunkakinoki.com. Check it out now!\n\n\nhttps://shunkakinoki.com/${pageId}`,
+      },
+    })
+  ).data;
+};
+
 export const postSubscribe = async (email: string, tags: string[]) => {
   return await fetch("https://api.buttondown.email/v1/subscribers", {
     method: "POST",
