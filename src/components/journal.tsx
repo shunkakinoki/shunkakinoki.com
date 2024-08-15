@@ -15,7 +15,13 @@ export async function Journal() {
       // biome-ignore lint/style/useNamingConvention: <explanation>
       database_id: "badf29d87d2f4e03b2c5451a627d8618",
     })
-  ).results;
+  ).results.filter((db) => {
+    return (
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      !!db.properties.Date?.date
+    );
+  });
 
   // ---------------------------------------------------------------------------
   // Render

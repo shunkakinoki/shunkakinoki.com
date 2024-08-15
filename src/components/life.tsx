@@ -1,12 +1,10 @@
+import { cn } from "@/lib/utils";
+import { Link } from "@/navigation";
 import {
   RocketLaunchIcon,
   ScaleIcon,
   VariableIcon,
 } from "@heroicons/react/24/outline";
-
-import { cn } from "@/lib/utils";
-import { Link } from "@/navigation";
-
 import { SectionHeaderHeading } from "./section-header";
 
 // -----------------------------------------------------------------------------

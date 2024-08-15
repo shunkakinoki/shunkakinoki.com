@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ -n "$CI" ] && exit 0
+
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$branch" = "main" ]; then
+    echo 'Direct push to main is not allowed. Create a pull request instead.'
+    exit 1
+fi

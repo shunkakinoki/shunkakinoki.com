@@ -1,7 +1,5 @@
-import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
-
 import { queryDatabase } from "@/services/notion";
-
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import { SectionHeaderHeading } from "./section-header";
 
 // -----------------------------------------------------------------------------

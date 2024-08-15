@@ -1,14 +1,13 @@
 "use client";
 
+import { usePathname, useRouter } from "@/navigation";
+import type { blockWithChildren, richText } from "@/services/notion";
 import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import clsx from "clsx";
 import { useLocale } from "next-intl";
 import { useTheme } from "next-themes";
-import { type FC, Fragment } from "react";
+import { type FC, Fragment, type ReactNode } from "react";
 import { useEffect } from "react";
-
-import { usePathname, useRouter } from "@/navigation";
-import type { blockWithChildren, richText } from "@/services/notion";
 import "@/styles/notion.css";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
 
@@ -17,6 +16,7 @@ import { ArrowUpRightFromSquareIcon } from "lucide-react";
 // -----------------------------------------------------------------------------
 
 export type NotionProps = {
+  viewCount: ReactNode;
   blocks: blockWithChildren[];
   content: GetPageResponse;
   pageId: string;
@@ -31,7 +31,12 @@ export type TextProps = {
 // Component
 // -----------------------------------------------------------------------------
 
-export const Notion: FC<NotionProps> = ({ blocks, content, locale }) => {
+export const Notion: FC<NotionProps> = ({
+  viewCount,
+  blocks,
+  content,
+  locale,
+}) => {
   const { theme } = useTheme();
   const router = useRouter();
   const pathname = usePathname();
@@ -74,18 +79,7 @@ export const Notion: FC<NotionProps> = ({ blocks, content, locale }) => {
                 })}
               </p>
             </div>
-            {/* <div className="flex justify-center items-center">
-            {isLoading ||
-              (views === 1 && (
-                <div className="flex space-x-4 animate-pulse">
-                  <div className="w-8 h-3 bg-gray-300 dark:bg-gray-400 rounded-full" />
-                </div>
-              ))}
-            <h3 className="min-w-min text-sm text-warmGray-500 dark:text-warmGray-300 ">
-              {!isLoading && views !== 1 && views.toLocaleString()}
-              &nbsp;Views
-            </h3>
-          </div> */}
+            {viewCount}
           </div>
         </div>
       )}

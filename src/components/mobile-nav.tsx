@@ -1,11 +1,5 @@
 "use client";
 
-import { RocketIcon } from "@radix-ui/react-icons";
-import type { LinkProps } from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import type * as React from "react";
-
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -13,6 +7,11 @@ import { navConfig } from "@/config/nav";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Link } from "@/navigation";
+import { RocketIcon } from "@radix-ui/react-icons";
+import type { LinkProps } from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import type * as React from "react";
 
 // -----------------------------------------------------------------------------
 // Component

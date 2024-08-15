@@ -1,8 +1,5 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
-
 import {
   Select,
   SelectContent,
@@ -13,6 +10,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { locales } from "@/config";
+import { useLocale, useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 // -----------------------------------------------------------------------------
 // Component
