@@ -1,8 +1,31 @@
+import { type FormState, subscribeAction } from "@/actions/subscribe";
+import { getSubscribersCount } from "@/services/buttondown";
+import { LightBulbIcon } from "@heroicons/react/24/outline";
+import { Suspense } from "react";
+import { useFormState } from "react-dom";
+
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export function Newsletter() {
+export async function Newsletter() {
+  // ---------------------------------------------------------------------------
+  // Service
+  // ---------------------------------------------------------------------------
+
+  const subscribersCount = await getSubscribersCount();
+
+  // ---------------------------------------------------------------------------
+  // Action
+  // ---------------------------------------------------------------------------
+
+  const initialState = {
+    errors: {},
+    message: null,
+    state: "idle" as FormState,
+  };
+  const [formState, dispatch] = useFormState(subscribeAction, initialState);
+
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
@@ -43,7 +66,7 @@ export function Newsletter() {
                 Get the latest posts delivered right to your inbox.
               </p>
             </div>
-            <form action="#" className="mt-6 sm:flex sm:max-w-lg">
+            <form action={dispatch} className="mt-6 sm:flex sm:max-w-lg">
               <div className="min-w-0 flex-1">
                 <label htmlFor="cta-email" className="sr-only">
                   Email address
@@ -64,6 +87,40 @@ export function Newsletter() {
                 </button>
               </div>
             </form>
+            {formState.state === "error" && (
+              <p
+                className="mt-2 px-5 text-red-300 text-sm dark:text-red-500"
+                id="email-error"
+              >
+                {formState?.message}
+              </p>
+            )}
+            {formState.state === "success" && (
+              <p
+                className="mt-2 px-5 text-green-300 text-sm dark:text-green-500"
+                id="email-success"
+              >
+                {formState?.message}
+              </p>
+            )}
+            <p className="mx-auto mt-4 flex max-w-2xl items-center align-text-bottom font-medium text-indigo-50 text-xs">
+              <LightBulbIcon className="h-4 w-4 pr-1" />
+              <Suspense
+                fallback={
+                  <div className="flex animate-pulse space-x-4">
+                    <div className="h-3 w-6 rounded-full bg-gray-300 dark:bg-gray-400" />
+                  </div>
+                }
+              >
+                {subscribersCount ? (
+                  <>
+                    &nbsp;
+                    {subscribersCount?.toLocaleString()}
+                    Subscribers
+                  </>
+                ) : null}
+              </Suspense>
+            </p>
           </div>
         </div>
       </div>
