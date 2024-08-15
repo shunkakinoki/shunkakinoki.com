@@ -1,4 +1,5 @@
 import type { paths as ButtonDownPaths } from "@/client/buttondown";
+import { findTagIdsByName } from "@/lib/tags";
 import createClient from "openapi-fetch";
 
 // -----------------------------------------------------------------------------
@@ -47,10 +48,10 @@ export const createEmail = async (
       subject: title,
       body: `A new post has been published on shunkakinoki.com. Check it out now!\n\n\nhttps://shunkakinoki.com/${pageId}`,
       filters: {
-        filters: tags.map((tag) => ({
+        filters: findTagIdsByName(tags).map((id) => ({
           field: "subscriber.tags",
           operator: "contains",
-          value: tag,
+          value: id,
         })),
         groups: [],
         predicate: "and",
