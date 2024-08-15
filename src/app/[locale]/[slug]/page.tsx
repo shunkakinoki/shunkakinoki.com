@@ -1,4 +1,5 @@
 import { Notion } from "@/components/notion";
+import { ViewCount } from "@/components/view-count";
 import { getBlocks, getPage } from "@/services/notion";
 import type { Metadata } from "next";
 
@@ -79,7 +80,12 @@ export default async function SlugPage({
         type="image/svg+xml"
         sizes="any"
       />
-      <Notion blocks={blocksWithChildren} content={page} pageId={params.slug} />
+      <Notion
+        viewCount={<ViewCount id={params.slug} />}
+        blocks={blocksWithChildren}
+        content={page}
+        pageId={params.slug}
+      />
     </>
   );
 }
