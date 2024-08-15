@@ -66,6 +66,7 @@
     "react-resizable-panels": "^2.0.23",
     "react-wrap-balancer": "^1.1.1",
     "sonner": "^1.5.0",
+    "swr": "2.2.6-beta.3",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.1",

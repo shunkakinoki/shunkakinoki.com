@@ -1,10 +1,8 @@
+import { socialConfig, socialPriorityConfig } from "@/config/social";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import type { IconProps } from "@radix-ui/react-icons/dist/types";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
 import type { IconType } from "react-icons/lib";
-
-import { socialConfig, socialPriorityConfig } from "@/config/social";
-
 import { SectionHeaderHeading } from "./section-header";
 
 // -----------------------------------------------------------------------------

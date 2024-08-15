@@ -1,11 +1,10 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Link } from "@/navigation";
 import { RocketIcon } from "@radix-ui/react-icons";
+import { usePathname } from "next/navigation";
 
 // -----------------------------------------------------------------------------
 // Component

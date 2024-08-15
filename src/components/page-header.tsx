@@ -1,7 +1,6 @@
+import { cn } from "@/lib/utils";
 import type * as React from "react";
 import Balance from "react-wrap-balancer";
-
-import { cn } from "@/lib/utils";
 
 // -----------------------------------------------------------------------------
 // Component
