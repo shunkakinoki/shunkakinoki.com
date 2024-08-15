@@ -1,5 +1,9 @@
+"use client";
+
 import { navConfig } from "@/config/nav";
 import { socialPriorityConfig } from "@/config/social";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 import LocaleSwitcher from "./locale-switcher";
 
 // -----------------------------------------------------------------------------
@@ -7,6 +11,12 @@ import LocaleSwitcher from "./locale-switcher";
 // -----------------------------------------------------------------------------
 
 export function SiteFooter() {
+  // ---------------------------------------------------------------------------
+  // Hooks
+  // ---------------------------------------------------------------------------
+
+  const pathname = usePathname();
+
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
@@ -22,7 +32,12 @@ export function SiteFooter() {
             <div key={item.title} className="pb-6">
               <a
                 href={item.href}
-                className="text-foreground/60 text-sm leading-6 hover:text-foreground/80"
+                className={cn(
+                  "text-sm leading-6 hover:text-foreground/80",
+                  pathname === item.href
+                    ? "text-foreground"
+                    : "text-foreground/60",
+                )}
               >
                 {item.title}
               </a>
