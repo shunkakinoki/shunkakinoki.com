@@ -1,5 +1,6 @@
 import { queryDatabase } from "@/services/notion";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import { getTranslations } from "next-intl/server";
 import { PageHeader, PageHeaderHeading } from "./page-header";
 import { SectionHeaderHeading } from "./section-header";
 
@@ -16,6 +17,12 @@ type ProductsProps = {
 // -----------------------------------------------------------------------------
 
 export async function Products({ isPartial }: ProductsProps) {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
+  const t = await getTranslations();
+
   // ---------------------------------------------------------------------------
   // Service
   // ---------------------------------------------------------------------------
@@ -43,10 +50,10 @@ export async function Products({ isPartial }: ProductsProps) {
   return (
     <section>
       {isPartial ? (
-        <SectionHeaderHeading>Products</SectionHeaderHeading>
+        <SectionHeaderHeading>{t("sections.products")}</SectionHeaderHeading>
       ) : (
         <PageHeader>
-          <PageHeaderHeading>Products</PageHeaderHeading>
+          <PageHeaderHeading>{t("sections.products")}</PageHeaderHeading>
         </PageHeader>
       )}
       <div className="mt-3 w-full flex-col items-center">

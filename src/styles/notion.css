@@ -11,7 +11,7 @@
 }
 
 .notion h1 {
-  @apply my-8 text-6xl font-semibold tracking-tight;
+  @apply my-8 text-6xl font-bold leading-tight tracking-tighter;
 }
 
 .notion h2 {

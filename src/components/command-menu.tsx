@@ -20,11 +20,15 @@ import { useCallback, useEffect, useState } from "react";
 
 export function CommandMenu({ ...props }: DialogProps) {
   // ---------------------------------------------------------------------------
-  // Hooks
+  // State Hooks
   // ---------------------------------------------------------------------------
 
   const [open, setOpen] = useState(false);
   const { setTheme } = useTheme();
+
+  // ---------------------------------------------------------------------------
+  // Effect Hooks
+  // ---------------------------------------------------------------------------
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -46,6 +50,10 @@ export function CommandMenu({ ...props }: DialogProps) {
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
   }, []);
+
+  // ---------------------------------------------------------------------------
+  // Callback Hooks
+  // ---------------------------------------------------------------------------
 
   const runCommand = useCallback((command: () => unknown) => {
     setOpen(false);

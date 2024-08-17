@@ -12,7 +12,7 @@ import LocaleSwitcher from "./locale-switcher";
 
 export function SiteFooter() {
   // ---------------------------------------------------------------------------
-  // Hooks
+  // Next Hooks
   // ---------------------------------------------------------------------------
 
   const pathname = usePathname();

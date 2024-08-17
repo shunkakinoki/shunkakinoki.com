@@ -8,94 +8,29 @@ import {
   TagIcon,
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
+import { useTranslations } from "next-intl";
 import type { FC } from "react";
 import { PageHeader, PageHeaderHeading } from "./page-header";
 
-export interface HistoryStepProps {
-  isBottom?: boolean;
-  children: string;
-  time: string;
-  type: "cake" | "chip" | "fire" | "globe" | "school" | "tag" | "work";
-}
-
-const HistoryConnector: FC = () => {
-  return (
-    <span
-      className="-ml-px absolute top-4 left-4 h-full w-0.5 bg-gray-200 dark:bg-gray-500"
-      aria-hidden="true"
-    />
-  );
-};
-
-export const HistoryStep: FC<HistoryStepProps> = ({
-  isBottom = false,
-  children,
-  time,
-  type,
-  // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
-}) => {
-  return (
-    <li>
-      <div
-        className={clsx("relative", isBottom && "pb-2", !isBottom && "pb-8")}
-      >
-        {!isBottom && <HistoryConnector />}
-        <div className="relative flex space-x-3">
-          <div>
-            <span
-              className={clsx(
-                "flex h-8 w-8 items-center justify-center rounded-full text-gray-100 ring-8 ring-white dark:ring-black",
-                type === "cake" && "bg-pink-500",
-                type === "chip" && "bg-gray-500",
-                type === "fire" && "bg-red-500",
-                type === "globe" && "bg-green-500",
-                type === "school" && "bg-yellow-500",
-                type === "tag" && "bg-blue-500",
-                type === "work" && "bg-indigo-500",
-              )}
-            >
-              {type === "cake" && <CakeIcon className="h-5 w-5" />}
-              {type === "chip" && <PaperClipIcon className="h-5 w-5" />}
-              {type === "fire" && <FireIcon className="h-5 w-5" />}
-              {type === "globe" && <GlobeAltIcon className="h-5 w-5" />}
-              {type === "school" && <AcademicCapIcon className="h-5 w-5" />}
-              {type === "tag" && <TagIcon className="h-5 w-5" />}
-              {type === "work" && <BriefcaseIcon className="h-5 w-5" />}
-            </span>
-          </div>
-          <div className="flex min-w-0 flex-1 items-center justify-between space-x-4">
-            <div>
-              <p className="line-clamp-3 text-gray-500 text-sm dark:text-gray-300">
-                {children}
-              </p>
-            </div>
-            <div className="whitespace-nowrap text-right text-gray-500 text-sm dark:text-gray-400">
-              <time>{time}</time>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-  );
-};
-
-interface HistoryYearProps {
-  children: string;
-}
-
-export const HistoryYear: FC<HistoryYearProps> = ({ children }) => {
-  return (
-    <h3 className="mt-2 mb-4 font-light text-gray-500 tracking-tight md:text-base dark:text-gray-100">
-      {children}
-    </h3>
-  );
-};
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
 
 export const History: FC = () => {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
+  const t = useTranslations();
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
   return (
     <section key="history" className="mb-2 w-full">
       <PageHeader>
-        <PageHeaderHeading>History</PageHeaderHeading>
+        <PageHeaderHeading>{t("sections.history")}</PageHeaderHeading>
       </PageHeader>
       <div className="mt-3 w-full flex-col items-center px-6 sm:px-4 md:px-0">
         <HistoryYear>Present</HistoryYear>
@@ -150,5 +85,117 @@ export const History: FC = () => {
         </>
       </div>
     </section>
+  );
+};
+
+// -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+export interface HistoryStepProps {
+  isBottom?: boolean;
+  children: string;
+  time: string;
+  type: "cake" | "chip" | "fire" | "globe" | "school" | "tag" | "work";
+}
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
+const HistoryConnector: FC = () => {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <span
+      className="-ml-px absolute top-4 left-4 h-full w-0.5 bg-gray-200 dark:bg-gray-500"
+      aria-hidden="true"
+    />
+  );
+};
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
+export const HistoryStep: FC<HistoryStepProps> = ({
+  isBottom = false,
+  children,
+  time,
+  type,
+  // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
+}) => {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <li>
+      <div
+        className={clsx("relative", isBottom && "pb-2", !isBottom && "pb-8")}
+      >
+        {!isBottom && <HistoryConnector />}
+        <div className="relative flex space-x-3">
+          <div>
+            <span
+              className={clsx(
+                "flex h-8 w-8 items-center justify-center rounded-full text-gray-100 ring-8 ring-white dark:ring-black",
+                type === "cake" && "bg-pink-500",
+                type === "chip" && "bg-gray-500",
+                type === "fire" && "bg-red-500",
+                type === "globe" && "bg-green-500",
+                type === "school" && "bg-yellow-500",
+                type === "tag" && "bg-blue-500",
+                type === "work" && "bg-indigo-500",
+              )}
+            >
+              {type === "cake" && <CakeIcon className="h-5 w-5" />}
+              {type === "chip" && <PaperClipIcon className="h-5 w-5" />}
+              {type === "fire" && <FireIcon className="h-5 w-5" />}
+              {type === "globe" && <GlobeAltIcon className="h-5 w-5" />}
+              {type === "school" && <AcademicCapIcon className="h-5 w-5" />}
+              {type === "tag" && <TagIcon className="h-5 w-5" />}
+              {type === "work" && <BriefcaseIcon className="h-5 w-5" />}
+            </span>
+          </div>
+          <div className="flex min-w-0 flex-1 items-center justify-between space-x-4">
+            <div>
+              <p className="line-clamp-3 text-gray-500 text-sm dark:text-gray-300">
+                {children}
+              </p>
+            </div>
+            <div className="whitespace-nowrap text-right text-gray-500 text-sm dark:text-gray-400">
+              <time>{time}</time>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  );
+};
+
+// -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+interface HistoryYearProps {
+  children: string;
+}
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
+export const HistoryYear: FC<HistoryYearProps> = ({ children }) => {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <h3 className="mt-2 mb-4 font-light text-gray-500 tracking-tight md:text-base dark:text-gray-100">
+      {children}
+    </h3>
   );
 };

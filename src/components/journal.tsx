@@ -1,11 +1,19 @@
 import { Link } from "@/navigation";
 import { queryDatabase } from "@/services/notion";
+import { getTranslations } from "next-intl/server";
+import { PageHeader, PageHeaderHeading } from "./page-header";
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
 export async function Journal() {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
+  const t = await getTranslations();
+
   // ---------------------------------------------------------------------------
   // Service
   // ---------------------------------------------------------------------------
@@ -28,7 +36,10 @@ export async function Journal() {
 
   return (
     <section>
-      <div className="w-full flex-col space-y-3">
+      <PageHeader>
+        <PageHeaderHeading>{t("sections.journal")}</PageHeaderHeading>
+      </PageHeader>
+      <div className="mt-6 w-full flex-col space-y-3">
         {res.map((page) => {
           // @ts-ignore
           const date = new Date(page.properties.Date.date.start).toLocaleString(

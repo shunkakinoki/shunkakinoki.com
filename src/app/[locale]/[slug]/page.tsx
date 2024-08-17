@@ -16,6 +16,8 @@ export async function generateMetadata({
   return {
     //@ts-ignore
     title: page.properties?.Name?.title[0]?.plain_text,
+    // @ts-ignore
+    description: page.properties?.Description?.rich_text[0]?.plain_text,
   };
 }
 

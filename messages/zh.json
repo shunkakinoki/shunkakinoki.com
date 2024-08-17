@@ -15,5 +15,14 @@
       "ja": "日本語",
       "zh": "中文"
     }
+  },
+  "sections": {
+    "history": "历史",
+    "dashboard": "仪表板",
+    "life": "生活",
+    "blog": "博客",
+    "journal": "Journal",
+    "social": "社会的",
+    "products": "产品"
   }
 }

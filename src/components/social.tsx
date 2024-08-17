@@ -1,6 +1,7 @@
 import { socialConfig, socialPriorityConfig } from "@/config/social";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import type { IconProps } from "@radix-ui/react-icons/dist/types";
+import { useTranslations } from "next-intl";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
 import type { IconType } from "react-icons/lib";
 import { PageHeader, PageHeaderHeading } from "./page-header";
@@ -20,16 +21,22 @@ export interface SocialProps {
 
 export function Social({ isPartial = false }: SocialProps) {
   // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
+  const t = useTranslations();
+
+  // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
   return (
     <section>
       {isPartial ? (
-        <SectionHeaderHeading>Social</SectionHeaderHeading>
+        <SectionHeaderHeading>{t("sections.social")}</SectionHeaderHeading>
       ) : (
         <PageHeader>
-          <PageHeaderHeading>Social</PageHeaderHeading>
+          <PageHeaderHeading>{t("sections.social")}</PageHeaderHeading>
         </PageHeader>
       )}
       <div className="mt-3 w-full flex-col items-center">
