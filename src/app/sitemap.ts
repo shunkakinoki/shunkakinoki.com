@@ -1,6 +1,24 @@
-import { defaultLocale, host, locales, pathnames } from "@/config";
-import { getPathname } from "@/navigation";
+import { defaultLocale, locales } from "@/config";
 import type { MetadataRoute } from "next";
+
+// -----------------------------------------------------------------------------
+// Const
+// -----------------------------------------------------------------------------
+
+const pathnames = [
+  "/",
+  "/about",
+  "/blog",
+  "/cause",
+  "/dashboard",
+  "/history",
+  "/journal",
+  "/mission",
+  "/products",
+  "/social",
+  "/values",
+];
+const host = "https://shunkakinoki.com";
 
 // -----------------------------------------------------------------------------
 // Sitemap
@@ -8,21 +26,16 @@ import type { MetadataRoute } from "next";
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
 export default function sitemap(): MetadataRoute.Sitemap {
-  const keys = Object.keys(pathnames) as Array<keyof typeof pathnames>;
-
-  function getUrl(
-    key: keyof typeof pathnames,
-    locale: (typeof locales)[number],
-  ) {
-    const pathname = getPathname({ locale, href: key });
+  function getUrl(pathname: string, locale: string) {
     return `${host}/${locale}${pathname === "/" ? "" : pathname}`;
   }
 
-  return keys.map((key) => ({
-    url: getUrl(key, defaultLocale),
+  return pathnames.map((pathname) => ({
+    url: getUrl(pathname, defaultLocale),
+    lastModified: new Date(),
     alternates: {
       languages: Object.fromEntries(
-        locales.map((locale) => [locale, getUrl(key, locale)]),
+        locales.map((locale) => [locale, getUrl(pathname, locale)]),
       ),
     },
   }));
