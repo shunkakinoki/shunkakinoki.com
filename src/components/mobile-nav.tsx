@@ -10,8 +10,7 @@ import { Link } from "@/navigation";
 import { RocketIcon } from "@radix-ui/react-icons";
 import type { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import type * as React from "react";
+import { type ReactNode, useState } from "react";
 
 // -----------------------------------------------------------------------------
 // Component
@@ -104,7 +103,7 @@ export function MobileNav() {
 
 interface MobileLinkProps extends LinkProps {
   onOpenChange?: (open: boolean) => void;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
