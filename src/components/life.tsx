@@ -50,7 +50,7 @@ export function Life() {
 
   return (
     <section>
-      <SectionHeaderHeading>{t("sections.life")}</SectionHeaderHeading>
+      <SectionHeaderHeading>{t("life.title")}</SectionHeaderHeading>
       <div className="divide-y divide-gray-400 overflow-hidden rounded-lg shadow sm:grid sm:grid-cols-3 sm:gap-px sm:divide-x sm:divide-y-0">
         {actions.map((action, actionIdx) => (
           <div

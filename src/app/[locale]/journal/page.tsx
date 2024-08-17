@@ -1,4 +1,29 @@
 import { Journal } from "@/components/journal";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+// -----------------------------------------------------------------------------
+// Metadata
+// -----------------------------------------------------------------------------
+
+export async function generateMetadata({
+  params: { locale },
+}: { params: { locale: string } }): Promise<Metadata> {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
+  const t = await getTranslations({ locale });
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
+  return {
+    title: t("journal.title"),
+    description: t("journal.description"),
+  };
+}
 
 // -----------------------------------------------------------------------------
 // Page

@@ -16,13 +16,35 @@
       "zh": "中文"
     }
   },
-  "sections": {
-    "history": "History",
-    "dashboard": "Dashboard",
-    "life": "Life",
-    "blog": "Blog",
-    "journal": "Journal",
-    "products": "Products",
-    "social": "Social"
+  "history": {
+    "title": "History",
+    "description": "History of Shun Kakinoki"
+  },
+  "products": {
+    "title": "Products",
+    "description": "Products by Shun Kakinoki"
+  },
+  "social": {
+    "title": "Social",
+    "description": "Social of Shun Kakinoki"
+  },
+  "blog": {
+    "description": "Blog by Shun Kakinoki",
+    "title": "Blog"
+  },
+  "journal": {
+    "title": "Journal",
+    "description": "Journal by Shun Kakinoki"
+  },
+  "clock": {
+    "title": "Clock",
+    "description": "Clock by Shun Kakinoki"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "description": "Dashboard of Shun Kakinoki"
+  },
+  "life": {
+    "title": "Life"
   }
 }

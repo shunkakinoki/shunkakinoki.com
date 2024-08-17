@@ -7,8 +7,16 @@ import { getTranslations } from "next-intl/server";
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
 export default async function manifest(): Promise<MetadataRoute.Manifest> {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
   const locale = "en";
   const t = await getTranslations({ locale });
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
 
   return {
     name: t("manifest.name"),

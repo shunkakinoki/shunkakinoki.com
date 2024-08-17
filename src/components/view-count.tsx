@@ -16,7 +16,7 @@ export type ViewCountProps = {
 
 export async function ViewCount({ pageId }: ViewCountProps) {
   // ---------------------------------------------------------------------------
-  // Service
+  // Services
   // ---------------------------------------------------------------------------
 
   const headersList = headers();

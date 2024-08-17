@@ -15,7 +15,7 @@ export async function Journal() {
   const t = await getTranslations();
 
   // ---------------------------------------------------------------------------
-  // Service
+  // Services
   // ---------------------------------------------------------------------------
 
   const res = (
@@ -37,9 +37,9 @@ export async function Journal() {
   return (
     <section>
       <PageHeader>
-        <PageHeaderHeading>{t("sections.journal")}</PageHeaderHeading>
+        <PageHeaderHeading>{t("journal.title")}</PageHeaderHeading>
       </PageHeader>
-      <div className="mt-6 w-full flex-col space-y-3">
+      <div className="mt-8 w-full flex-col space-y-3">
         {res.map((page) => {
           // @ts-ignore
           const date = new Date(page.properties.Date.date.start).toLocaleString(
