@@ -67,7 +67,7 @@ export async function Blog({ locale }: BlogProps) {
       <PageHeader>
         <PageHeaderHeading>{t("sections.blog")}</PageHeaderHeading>
       </PageHeader>
-      <div className="w-full flex-col space-y-3">
+      <div className="mt-6 w-full flex-col space-y-3">
         {res.map((page) => {
           // @ts-ignore
           const date = new Date(page.properties.Date.date.start).toLocaleString(
