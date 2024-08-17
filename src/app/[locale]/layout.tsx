@@ -1,30 +1,21 @@
-import { Analytics } from "@/components/analytics";
-import { ThemeProvider } from "@/components/providers";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { SpeedInsights } from "@/components/speed-insights";
-import { TailwindIndicator } from "@/components/tailwind-indicator";
-import { Toaster } from "@/components/ui/sonner";
 import { locales } from "@/config";
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/lib/fonts";
-import { cn } from "@/lib/utils";
-import type { Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
   getTranslations,
   unstable_setRequestLocale,
 } from "next-intl/server";
-import type * as React from "react";
-import "@/styles/globals.css";
+import type { ReactNode } from "react";
 
 // -----------------------------------------------------------------------------
 // Props
 // -----------------------------------------------------------------------------
 
-interface RootLayoutProps {
-  children: React.ReactNode;
+interface LocaleLayoutProps {
+  children: ReactNode;
   params: { locale: string };
 }
 
@@ -32,51 +23,28 @@ interface RootLayoutProps {
 // Metadata
 // -----------------------------------------------------------------------------
 
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-};
-
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
   params: { locale },
-}: Omit<RootLayoutProps, "children">) {
+}: Omit<LocaleLayoutProps, "children">) {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
   const t = await getTranslations({ locale });
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
 
   return {
     title: {
       default: t("site.title"),
       template: `%s - ${siteConfig.name}`,
     },
-    metadataBase: new URL("https://shunkakinoki.com"),
-    description: siteConfig.description,
-    authors: [
-      {
-        name: "shunkakinoki",
-        url: "https://shunkakinoki.com",
-      },
-    ],
-    creator: "shunkakinoki",
-    openGraph: {
-      type: "website",
-      locale: "en_US",
-      url: siteConfig.url,
-      title: siteConfig.name,
-      description: siteConfig.description,
-      siteName: siteConfig.name,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: siteConfig.name,
-      description: siteConfig.description,
-      creator: "@shunkakinoki",
-    },
-    manifest: `${siteConfig.url}/site.webmanifest`,
   };
 }
 
@@ -88,7 +56,7 @@ export async function generateMetadata({
 export default async function RootLayout({
   children,
   params: { locale },
-}: RootLayoutProps) {
+}: LocaleLayoutProps) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
@@ -105,48 +73,16 @@ export default async function RootLayout({
   // ---------------------------------------------------------------------------
 
   return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable,
-          )}
-        >
-          <NextIntlClientProvider messages={messages}>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              <div vaul-drawer-wrapper="">
-                <div className="relative flex min-h-screen flex-col bg-background">
-                  <SiteHeader />
-                  <main className="flex-1">
-                    <div className="container relative max-w-screen-md py-8 md:py-12 lg:py-16">
-                      {children}
-                    </div>
-                  </main>
-                  <SiteFooter />
-                </div>
-              </div>
-              <TailwindIndicator />
-              <Analytics />
-              <SpeedInsights />
-              <Toaster />
-            </ThemeProvider>
-          </NextIntlClientProvider>
-        </body>
-      </html>
-    </>
+    <NextIntlClientProvider messages={messages}>
+      <div className="relative flex min-h-screen flex-col bg-background">
+        <SiteHeader />
+        <main className="flex-1">
+          <div className="container relative max-w-screen-md py-8 md:py-12 lg:py-16">
+            {children}
+          </div>
+        </main>
+        <SiteFooter />
+      </div>
+    </NextIntlClientProvider>
   );
 }
-
-// -----------------------------------------------------------------------------
-// Config
-// -----------------------------------------------------------------------------
-
-// biome-ignore lint/style/useNamingConvention: <explanation>
-export const experimental_ppr = true;
-export const revalidate = 300;

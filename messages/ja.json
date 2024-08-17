@@ -43,5 +43,24 @@
   "social": {
     "title": "社交",
     "description": "柿木駿のソーシャル"
+  },
+  "life": {
+    "title": "人生"
+  },
+  "about": {
+    "title": "About",
+    "description": "柿木駿について"
+  },
+  "mission": {
+    "title": "ミッション",
+    "description": "柿木駿の使命"
+  },
+  "cause": {
+    "title": "大義",
+    "description": "柿木駿の大義"
+  },
+  "values": {
+    "title": "価値観",
+    "description": "柿木駿の価値観"
   }
 }

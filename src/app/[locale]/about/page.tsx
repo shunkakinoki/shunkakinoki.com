@@ -1,7 +1,6 @@
 import { Life } from "@/components/life";
-import { getPage } from "@/services/notion";
 import type { Metadata } from "next";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import SlugPage from "../[slug]/page";
 
 // -----------------------------------------------------------------------------
@@ -22,21 +21,18 @@ export async function generateMetadata({
   params: { locale },
 }: { params: { locale: string } }): Promise<Metadata> {
   // ---------------------------------------------------------------------------
-  // Services
+  // i18n
   // ---------------------------------------------------------------------------
 
-  const aboutSlug = aboutSlugs[locale as "en" | "ja" | "zh"] || aboutSlugs.en;
-  const page = await getPage(aboutSlug);
+  const t = await getTranslations({ locale });
 
   // ---------------------------------------------------------------------------
   // Return
   // ---------------------------------------------------------------------------
 
   return {
-    //@ts-ignore
-    title: page.properties?.Name?.title[0]?.plain_text,
-    // @ts-ignore
-    description: page.properties?.Description?.rich_text[0]?.plain_text,
+    title: t("about.title"),
+    description: t("about.description"),
   };
 }
 

@@ -43,5 +43,24 @@
   "social": {
     "title": "社会的",
     "description": "Shun Kakinoki的社交"
+  },
+  "life": {
+    "title": "生活"
+  },
+  "about": {
+    "title": "关于",
+    "description": "关于柿木舜"
+  },
+  "mission": {
+    "title": "使命",
+    "description": "柿舜的使命"
+  },
+  "cause": {
+    "title": "原因",
+    "description": "柿木舜的事业"
+  },
+  "values": {
+    "title": "价值观",
+    "description": "柿木舜的价值观"
   }
 }

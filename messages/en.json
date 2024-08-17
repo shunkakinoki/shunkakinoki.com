@@ -46,5 +46,21 @@
   },
   "life": {
     "title": "Life"
+  },
+  "about": {
+    "title": "About",
+    "description": "About Shun Kakinoki"
+  },
+  "mission": {
+    "title": "Mission",
+    "description": "Mission of Shun Kakinoki"
+  },
+  "cause": {
+    "title": "Cause",
+    "description": "Shun Kakinoki's Cause"
+  },
+  "values": {
+    "description": "Shun Kakinoki's Values",
+    "title": "Values"
   }
 }
