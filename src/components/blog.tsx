@@ -1,6 +1,6 @@
 import { Link } from "@/navigation";
 import { queryDatabase } from "@/services/notion";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { PageHeader, PageHeaderHeading } from "./page-header";
 
 // -----------------------------------------------------------------------------
@@ -20,7 +20,7 @@ export async function Blog({ locale }: BlogProps) {
   // i18n
   // ---------------------------------------------------------------------------
 
-  const t = useTranslations();
+  const t = await getTranslations();
 
   // ---------------------------------------------------------------------------
   // Service

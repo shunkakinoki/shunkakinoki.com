@@ -1,6 +1,6 @@
 import { queryDatabase } from "@/services/notion";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { PageHeader, PageHeaderHeading } from "./page-header";
 import { SectionHeaderHeading } from "./section-header";
 
@@ -21,7 +21,7 @@ export async function Products({ isPartial }: ProductsProps) {
   // i18n
   // ---------------------------------------------------------------------------
 
-  const t = useTranslations();
+  const t = await getTranslations();
 
   // ---------------------------------------------------------------------------
   // Service
