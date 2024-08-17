@@ -12,7 +12,7 @@ import { usePathname } from "next/navigation";
 
 export function MainNav() {
   // ---------------------------------------------------------------------------
-  // Hooks
+  // Next Hooks
   // ---------------------------------------------------------------------------
 
   const pathname = usePathname();

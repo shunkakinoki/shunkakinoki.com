@@ -17,6 +17,12 @@
     }
   },
   "sections": {
-    "history": "History"
+    "history": "History",
+    "dashboard": "Dashboard",
+    "life": "Life",
+    "blog": "Blog",
+    "journal": "Journal",
+    "products": "Products",
+    "social": "Social"
   }
 }

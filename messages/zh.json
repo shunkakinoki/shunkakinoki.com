@@ -17,6 +17,10 @@
     }
   },
   "sections": {
-    "history": "历史"
+    "history": "历史",
+    "dashboard": "仪表板",
+    "life": "生活",
+    "blog": "博客",
+    "journal": "Journal"
   }
 }

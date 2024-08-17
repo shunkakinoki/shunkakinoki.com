@@ -1,5 +1,7 @@
 import { Link } from "@/navigation";
 import { queryDatabase } from "@/services/notion";
+import { useTranslations } from "next-intl";
+import { PageHeader, PageHeaderHeading } from "./page-header";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -14,6 +16,12 @@ export interface BlogProps {
 // -----------------------------------------------------------------------------
 
 export async function Blog({ locale }: BlogProps) {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
+  const t = useTranslations();
+
   // ---------------------------------------------------------------------------
   // Service
   // ---------------------------------------------------------------------------
@@ -56,6 +64,9 @@ export async function Blog({ locale }: BlogProps) {
 
   return (
     <section>
+      <PageHeader>
+        <PageHeaderHeading>{t("sections.blog")}</PageHeaderHeading>
+      </PageHeader>
       <div className="w-full flex-col space-y-3">
         {res.map((page) => {
           // @ts-ignore

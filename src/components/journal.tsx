@@ -1,11 +1,19 @@
 import { Link } from "@/navigation";
 import { queryDatabase } from "@/services/notion";
+import { useTranslations } from "next-intl";
+import { PageHeader, PageHeaderHeading } from "./page-header";
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
 export async function Journal() {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
+  const t = useTranslations();
+
   // ---------------------------------------------------------------------------
   // Service
   // ---------------------------------------------------------------------------
@@ -28,6 +36,9 @@ export async function Journal() {
 
   return (
     <section>
+      <PageHeader>
+        <PageHeaderHeading>{t("sections.journal")}</PageHeaderHeading>
+      </PageHeader>
       <div className="w-full flex-col space-y-3">
         {res.map((page) => {
           // @ts-ignore
