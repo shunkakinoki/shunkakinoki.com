@@ -8,6 +8,7 @@ import {
   TagIcon,
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
+import { useTranslations } from "next-intl";
 import type { FC } from "react";
 import { PageHeader, PageHeaderHeading } from "./page-header";
 
@@ -92,10 +93,12 @@ export const HistoryYear: FC<HistoryYearProps> = ({ children }) => {
 };
 
 export const History: FC = () => {
+  const t = useTranslations();
+
   return (
     <section key="history" className="mb-2 w-full">
       <PageHeader>
-        <PageHeaderHeading>History</PageHeaderHeading>
+        <PageHeaderHeading>{t("sections.history")}</PageHeaderHeading>
       </PageHeader>
       <div className="mt-3 w-full flex-col items-center px-6 sm:px-4 md:px-0">
         <HistoryYear>Present</HistoryYear>
