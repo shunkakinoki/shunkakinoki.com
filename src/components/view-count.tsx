@@ -1,5 +1,5 @@
+import { getIp } from "@/lib/headers";
 import { incrementViewCount, incrementVisitorCount } from "@/services/redis";
-import { headers } from "next/headers";
 import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
@@ -19,12 +19,11 @@ export async function ViewCount({ pageId }: ViewCountProps) {
   // Services
   // ---------------------------------------------------------------------------
 
-  const headersList = headers();
-  const ip = headersList.get("x-forwarded-for") || "121.0.0.1";
+  const ip = getIp();
 
   const [{ views }] = await Promise.all([
     incrementViewCount(pageId),
-    incrementVisitorCount(ip, pageId),
+    incrementVisitorCount(ip ?? "121.0.0.1", pageId),
   ]);
 
   // ---------------------------------------------------------------------------
