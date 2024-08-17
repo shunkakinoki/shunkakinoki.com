@@ -33,10 +33,10 @@ export function Social({ isPartial = false }: SocialProps) {
   return (
     <section>
       {isPartial ? (
-        <SectionHeaderHeading>{t("sections.social")}</SectionHeaderHeading>
+        <SectionHeaderHeading>{t("social.title")}</SectionHeaderHeading>
       ) : (
         <PageHeader>
-          <PageHeaderHeading>{t("sections.social")}</PageHeaderHeading>
+          <PageHeaderHeading>{t("social.title")}</PageHeaderHeading>
         </PageHeader>
       )}
       <div className="mt-3 w-full flex-col items-center">

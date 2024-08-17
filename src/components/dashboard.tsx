@@ -23,7 +23,7 @@ export const Dashboard: FC = () => {
   return (
     <section className="mb-2 w-full">
       <PageHeader>
-        <PageHeaderHeading>{t("sections.dashboard")}</PageHeaderHeading>
+        <PageHeaderHeading>{t("dashboard.title")}</PageHeaderHeading>
       </PageHeader>
       <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
         <ViewCard />
@@ -40,7 +40,7 @@ export const Dashboard: FC = () => {
 
 export async function ViewCard() {
   // ---------------------------------------------------------------------------
-  // Service
+  // Services
   // ---------------------------------------------------------------------------
 
   const { totalViews } = await getTotalViewCount();
@@ -70,7 +70,7 @@ export async function ViewCard() {
 
 export async function VisitorCard() {
   // ---------------------------------------------------------------------------
-  // Service
+  // Services
   // ---------------------------------------------------------------------------
 
   const { totalVisitorCount } = await getTotalVisitorCount();

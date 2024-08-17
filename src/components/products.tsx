@@ -24,7 +24,7 @@ export async function Products({ isPartial }: ProductsProps) {
   const t = await getTranslations();
 
   // ---------------------------------------------------------------------------
-  // Service
+  // Services
   // ---------------------------------------------------------------------------
 
   const res = await queryDatabase({
@@ -50,10 +50,10 @@ export async function Products({ isPartial }: ProductsProps) {
   return (
     <section>
       {isPartial ? (
-        <SectionHeaderHeading>{t("sections.products")}</SectionHeaderHeading>
+        <SectionHeaderHeading>{t("products.title")}</SectionHeaderHeading>
       ) : (
         <PageHeader>
-          <PageHeaderHeading>{t("sections.products")}</PageHeaderHeading>
+          <PageHeaderHeading>{t("products.title")}</PageHeaderHeading>
         </PageHeader>
       )}
       <div className="mt-3 w-full flex-col items-center">

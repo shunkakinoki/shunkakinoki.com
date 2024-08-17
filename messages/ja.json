@@ -16,13 +16,32 @@
       "zh": "中文"
     }
   },
-  "sections": {
-    "history": "歴史",
-    "dashboard": "ダッシュボード",
-    "life": "人生",
-    "blog": "ブログ",
-    "journal": "Journal",
-    "social": "ソーシャル",
-    "products": "プロダクト"
+  "blog": {
+    "title": "ブログ",
+    "description": "柿木駿のブログ"
+  },
+  "clock": {
+    "title": "クロック",
+    "description": "柿木駿の時計"
+  },
+  "dashboard": {
+    "title": "ダッシュボード",
+    "description": "柿木駿のダッシュボード"
+  },
+  "history": {
+    "title": "経歴",
+    "description": "柿木駿の経歴"
+  },
+  "journal": {
+    "title": "日記",
+    "description": "柿木駿の日記"
+  },
+  "products": {
+    "title": "プロダクト",
+    "description": "柿木駿の商品"
+  },
+  "social": {
+    "title": "社交",
+    "description": "柿木駿のソーシャル"
   }
 }

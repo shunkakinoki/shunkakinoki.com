@@ -1,5 +1,29 @@
 import { Blog } from "@/components/blog";
-import { unstable_setRequestLocale } from "next-intl/server";
+import type { Metadata } from "next";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+
+// -----------------------------------------------------------------------------
+// Metadata
+// -----------------------------------------------------------------------------
+
+export async function generateMetadata({
+  params: { locale },
+}: { params: { locale: string } }): Promise<Metadata> {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
+  const t = await getTranslations({ locale });
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
+  return {
+    title: t("blog.title"),
+    description: t("blog.description"),
+  };
+}
 
 // -----------------------------------------------------------------------------
 // Page

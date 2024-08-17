@@ -16,13 +16,32 @@
       "zh": "中文"
     }
   },
-  "sections": {
-    "history": "历史",
-    "dashboard": "仪表板",
-    "life": "生活",
-    "blog": "博客",
-    "journal": "Journal",
-    "social": "社会的",
-    "products": "产品"
+  "blog": {
+    "title": "博客",
+    "description": "Shun Kakinoki的博客"
+  },
+  "clock": {
+    "title": "钟",
+    "description": "Shun Kakinoki的时钟"
+  },
+  "dashboard": {
+    "title": "仪表板",
+    "description": "Shun Kakinoki的仪表板"
+  },
+  "history": {
+    "title": "历史",
+    "description": "Shun Kakinoki的历史"
+  },
+  "journal": {
+    "title": "杂志",
+    "description": "Shun Kakinoki的日记"
+  },
+  "products": {
+    "title": "产品",
+    "description": "Shun Kakinoki的产品"
+  },
+  "social": {
+    "title": "社会的",
+    "description": "Shun Kakinoki的社交"
   }
 }
