@@ -139,7 +139,8 @@ export const Text: FC<TextProps> = ({ text }) => {
             key={value.plain_text}
             className={clsx(
               bold && "font-extrabold",
-              code && "px-2 py-3 font-mono",
+              code &&
+                "rounded-md border border-gray-400 bg-gray-300 px-1.5 py-1 font-mono text-gray-800 text-xs dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300",
               italic && "italic",
               strikethrough && "line-through",
               underline && "underline",
@@ -225,7 +226,7 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
 
       // Generate a notion style bookmark card
       return (
-        <div className="my-4 break-all rounded-lg border border-gray-200 p-4">
+        <div className="my-4 break-all rounded-lg border border-gray-300 p-3 dark:border-gray-600">
           <a
             href={url}
             target="_blank"
