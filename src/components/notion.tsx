@@ -140,7 +140,7 @@ export const Text: FC<TextProps> = ({ text }) => {
             className={clsx(
               bold && "font-extrabold",
               code &&
-                "rounded-md border border-gray-400 bg-gray-300 px-1.5 py-1 font-mono text-gray-800 text-xs dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300",
+                "rounded-md border border-gray-400 bg-gray-300 px-1.5 py-1 font-mono text-gray-800 text-xs dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100",
               italic && "italic",
               strikethrough && "line-through",
               underline && "underline",
