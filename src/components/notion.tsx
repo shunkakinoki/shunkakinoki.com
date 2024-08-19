@@ -139,7 +139,8 @@ export const Text: FC<TextProps> = ({ text }) => {
             key={value.plain_text}
             className={clsx(
               bold && "font-extrabold",
-              code && "px-2 py-3 font-mono",
+              code &&
+                "rounded-md border border-gray-400 bg-gray-300 px-1.5 py-1 font-mono text-gray-800 text-xs dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300",
               italic && "italic",
               strikethrough && "line-through",
               underline && "underline",
@@ -150,10 +151,10 @@ export const Text: FC<TextProps> = ({ text }) => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-1 justify-center gap-0.5 text-indigo-500 leading-4 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200"
+                className="inline-flex flex-1 justify-center gap-0.5 break-all text-indigo-500 leading-4 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200"
               >
                 {plain_text === "Untitled" ? "<REDACTED>" : plain_text}
-                <ArrowUpRightFromSquareIcon className="h-2 w-2" />
+                <ArrowUpRightFromSquareIcon className="h-2 w-2 shrink-0" />
               </a>
             ) : (
               plain_text
@@ -225,7 +226,7 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
 
       // Generate a notion style bookmark card
       return (
-        <div className="my-4 break-all rounded-lg border border-gray-200 p-4">
+        <div className="my-4 break-all rounded-lg border border-gray-300 p-3 dark:border-gray-600">
           <a
             href={url}
             target="_blank"
@@ -247,9 +248,13 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
     case "to_do":
       return (
         <div>
-          <label htmlFor={block.id}>
+          <label
+            className="flex cursor-not-allowed items-center gap-1.5"
+            htmlFor={block.id}
+          >
             <input
-              className="text-indigo-600 ring-indigo-300"
+              disabled
+              className="rounded-sm text-indigo-600 ring-indigo-300"
               type="checkbox"
               id={block.id}
               //@ts-ignore
