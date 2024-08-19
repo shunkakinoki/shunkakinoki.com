@@ -3,7 +3,7 @@
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Link } from "@/navigation";
-import { RocketIcon } from "@radix-ui/react-icons";
+import { LightLogo } from "@lightdotso/svg";
 import { usePathname } from "next/navigation";
 
 // -----------------------------------------------------------------------------
@@ -24,7 +24,7 @@ export function MainNav() {
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        <RocketIcon className="h-5 w-5" />
+        <LightLogo className="h-5 w-5" />
         <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>
