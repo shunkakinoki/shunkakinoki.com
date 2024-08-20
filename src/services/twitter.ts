@@ -1,17 +1,25 @@
-import { TwitterApi } from "twitter-api-v2";
+// import { TwitterApi } from "twitter-api-v2";
 
 // -----------------------------------------------------------------------------
 // Client
 // -----------------------------------------------------------------------------
 
-// biome-ignore lint/style/noNonNullAssertion: <explanation>
-const twitterClient = new TwitterApi(process.env.TWITTER_API_KEY!);
+// const _twitterClient = new TwitterApi(process.env.TWITTER_API_KEY!);
 
 // -----------------------------------------------------------------------------
 // Utils
 // -----------------------------------------------------------------------------
 
 export const getFollowerCount = async () => {
-  const user = await twitterClient.v2.userByUsername("shunkakinoki");
-  return user?.data?.public_metrics?.followers_count;
+  const metrics = await fetch(
+    "https://api2.typefully.com/metric/followers-count/?screen_name=shunkakinoki",
+  ).then((res) => res.json());
+  return metrics?.value;
+};
+
+export const getLatestPublishedTweetCount = async () => {
+  const metrics = await fetch(
+    "https://api2.typefully.com/metric/published-tweets-count/?screen_name=shunkakinoki",
+  ).then((res) => res.json());
+  return metrics?.value;
 };
