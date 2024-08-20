@@ -9,7 +9,7 @@ import { useTheme } from "next-themes";
 import { type FC, Fragment, type ReactNode } from "react";
 import { useEffect } from "react";
 import "@/styles/notion.css";
-import { ArrowUpRightFromSquareIcon } from "lucide-react";
+import { ArrowUpRightFromSquareIcon, BookmarkCheckIcon } from "lucide-react";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -216,6 +216,14 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
           {/* @ts-ignore */}
           <Text text={block.numbered_list_item.rich_text as richText[]} />
         </li>
+      );
+    case "callout":
+      return (
+        <div className="my-4 rounded-lg border border-gray-300 bg-gray-100 p-3 dark:border-gray-600 dark:bg-gray-800">
+          <BookmarkCheckIcon className="mr-2 inline-block h-4 w-4" />
+          {/* @ts-ignore */}
+          <Text text={block.callout.rich_text as richText[]} />
+        </div>
       );
     case "bookmark":
     case "link_preview":
