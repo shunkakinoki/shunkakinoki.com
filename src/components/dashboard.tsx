@@ -1,6 +1,15 @@
 import { getTotalViewCount, getTotalVisitorCount } from "@/services/redis";
-import { EyeIcon } from "@heroicons/react/24/outline";
+import {
+  getFollowerCount,
+  getLatestPublishedTweetCount,
+} from "@/services/twitter";
+import {
+  DocumentTextIcon,
+  EyeIcon,
+  UserGroupIcon,
+} from "@heroicons/react/24/outline";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import { TwitterLogoIcon } from "@radix-ui/react-icons";
 import { useTranslations } from "next-intl";
 import { type FC, Suspense } from "react";
 import { PageHeader, PageHeaderHeading } from "./page-header";
@@ -28,7 +37,8 @@ export const Dashboard: FC = () => {
       <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
         <ViewCard />
         <VisitorCard />
-        {/* <TwitterCard /> */}
+        <TwitterCard />
+        <TweetCard />
       </dl>
     </section>
   );
@@ -83,34 +93,60 @@ export async function VisitorCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Total Visitors">
-          <EyeIcon className="h-6 w-6" />
+          <UserGroupIcon className="h-6 w-6" />
         </DashboardCard>
       }
     >
       <DashboardCard number={totalVisitorCount ?? 0} title="Total Visitors">
-        <EyeIcon className="h-6 w-6" />
+        <UserGroupIcon className="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
 }
 
-// export async function TwitterCard() {
-//   const followerCount = await getFollowerCount();
+export async function TwitterCard() {
+  const followerCount = await getFollowerCount();
 
-//   return (
-//     <Suspense
-//       fallback={
-//         <DashboardCard number={undefined} title="Twitter Followers">
-//           <TwitterLogoIcon className="h-6 w-6" />
-//         </DashboardCard>
-//       }
-//     >
-//       <DashboardCard number={followerCount} title="Twitter Followers">
-//         <TwitterLogoIcon className="h-6 w-6" />
-//       </DashboardCard>
-//     </Suspense>
-//   );
-// }
+  return (
+    <Suspense
+      fallback={
+        <DashboardCard number={undefined} title="Twitter Followers">
+          <TwitterLogoIcon className="h-6 w-6" />
+        </DashboardCard>
+      }
+    >
+      <DashboardCard
+        number={followerCount}
+        title="Twitter Followers"
+        href="https://twitter.com/shunkakinoki"
+      >
+        <TwitterLogoIcon className="h-6 w-6" />
+      </DashboardCard>
+    </Suspense>
+  );
+}
+
+export async function TweetCard() {
+  const latestPublishedTweetCount = await getLatestPublishedTweetCount();
+
+  return (
+    <Suspense
+      fallback={
+        <DashboardCard number={undefined} title="Latest Published Tweets">
+          <DocumentTextIcon className="h-6 w-6" />
+        </DashboardCard>
+      }
+    >
+      <DashboardCard
+        number={latestPublishedTweetCount}
+        title="Latest Published Tweets"
+        href="https://twitter.com/shunkakinoki"
+      >
+        <DocumentTextIcon className="h-6 w-6" />
+      </DashboardCard>
+    </Suspense>
+  );
+}
 
 // -----------------------------------------------------------------------------
 // Props
