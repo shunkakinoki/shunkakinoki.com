@@ -1,6 +1,7 @@
 import { getTotalViewCount, getTotalVisitorCount } from "@/services/redis";
 import {
   getFollowerCount,
+  getImpressionCount,
   getLatestPublishedTweetCount,
 } from "@/services/twitter";
 import {
@@ -39,6 +40,7 @@ export const Dashboard: FC = () => {
         <VisitorCard />
         <TwitterCard />
         <TweetCard />
+        <TweetImpressionsCard />
       </dl>
     </section>
   );
@@ -141,6 +143,28 @@ export async function TweetCard() {
         number={latestPublishedTweetCount}
         title="Latest Published Tweets"
         href="https://twitter.com/shunkakinoki"
+      >
+        <DocumentTextIcon className="h-6 w-6" />
+      </DashboardCard>
+    </Suspense>
+  );
+}
+
+export async function TweetImpressionsCard() {
+  const latestPublishedTweetCount = await getImpressionCount();
+
+  return (
+    <Suspense
+      fallback={
+        <DashboardCard number={undefined} title="Latest Published Tweets">
+          <DocumentTextIcon className="h-6 w-6" />
+        </DashboardCard>
+      }
+    >
+      <DashboardCard
+        number={latestPublishedTweetCount}
+        title="Twitter Impressions"
+        href="https://typefully.com/shunkakinoki/stats"
       >
         <DocumentTextIcon className="h-6 w-6" />
       </DashboardCard>

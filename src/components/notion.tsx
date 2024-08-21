@@ -23,10 +23,6 @@ export type NotionProps = {
   locale?: "en" | "ja" | "zh" | undefined;
 };
 
-export type TextProps = {
-  text: richText[];
-};
-
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
@@ -118,10 +114,19 @@ export const Notion: FC<NotionProps> = ({
 };
 
 // -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+export type TextProps = {
+  className?: string;
+  text: richText[];
+};
+
+// -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export const Text: FC<TextProps> = ({ text }) => {
+export const Text: FC<TextProps> = ({ text, className }) => {
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
@@ -144,6 +149,7 @@ export const Text: FC<TextProps> = ({ text }) => {
               italic && "italic",
               strikethrough && "line-through",
               underline && "underline",
+              className,
             )}
           >
             {href ? (
@@ -248,29 +254,34 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
       );
     case "quote":
       return (
-        <div className="border-gray-400 border-l-4 pl-4 text-gray-800 italic dark:text-gray-300">
+        <div className="border-gray-400 border-l-4 pl-4 text-gray-800 italic dark:text-gray-200">
           {/* @ts-ignore */}
           <Text text={block.quote.rich_text as richText[]} />
         </div>
       );
     case "to_do":
       return (
-        <div>
+        <div className="flex items-start">
           <label
             className="flex cursor-not-allowed items-center gap-1.5"
             htmlFor={block.id}
           >
             <input
               disabled
-              className="rounded-sm text-indigo-600 ring-indigo-300"
+              className="mt-1 rounded-sm text-indigo-600 ring-indigo-300"
               type="checkbox"
               id={block.id}
               //@ts-ignore
               defaultChecked={block.to_do.checked}
-            />{" "}
-            {/* @ts-ignore */}
-            <Text text={block.to_do.rich_text as richText[]} />
+            />
           </label>
+          <div className="ml-1.5 flex-1">
+            <Text
+              className="inline-block whitespace-pre-wrap break-words"
+              //@ts-ignore
+              text={block.to_do.rich_text}
+            />
+          </div>
         </div>
       );
     case "image":
