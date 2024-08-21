@@ -11,7 +11,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Link } from "@/navigation";
-import { RocketIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
+import { LightLogo } from "@lightdotso/svg";
+import { TwitterLogoIcon } from "@radix-ui/react-icons";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
 import { unstable_setRequestLocale } from "next-intl/server";
 
@@ -68,7 +69,7 @@ export default async function IndexPage({
         </PageHeaderDescription>
         <PageActions>
           <Link href="/about" className={cn(buttonVariants())}>
-            <RocketIcon className="mr-2 h-4 w-4" />
+            <LightLogo className="mr-2 h-4 w-4" />
             About Me
           </Link>
           <a

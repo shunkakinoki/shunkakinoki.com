@@ -23,3 +23,10 @@ export const getLatestPublishedTweetCount = async () => {
   ).then((res) => res.json());
   return metrics?.value;
 };
+
+export const getImpressionCount = async () => {
+  const metrics = await fetch(
+    "https://api2.typefully.com/metric/impressions/?screen_name=shunkakinoki",
+  ).then((res) => res.json());
+  return metrics?.value;
+};

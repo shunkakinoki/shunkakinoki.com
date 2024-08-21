@@ -7,7 +7,7 @@ import { navConfig } from "@/config/nav";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Link } from "@/navigation";
-import { RocketIcon } from "@radix-ui/react-icons";
+import { LightLogo } from "@lightdotso/svg";
 import type { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import { type ReactNode, useState } from "react";
@@ -73,7 +73,7 @@ export function MobileNav() {
           className="flex items-center"
           onOpenChange={setOpen}
         >
-          <RocketIcon className="mr-2 h-4 w-4" />
+          <LightLogo className="mr-2 h-4 w-4" />
           <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
