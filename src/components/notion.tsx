@@ -263,23 +263,23 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
       return (
         <div className="flex items-start">
           <label
-            className="flex cursor-not-allowed items-center gap-1.5"
+            className="flex cursor-not-allowed items-center gap-1.5 pt-[0.30rem]"
             htmlFor={block.id}
           >
             <input
               disabled
-              className="mt-1 rounded-sm text-indigo-600 ring-indigo-300"
+              className="rounded-sm text-indigo-600 ring-indigo-300"
               type="checkbox"
               id={block.id}
-              //@ts-ignore
+              // @ts-ignore
               defaultChecked={block.to_do.checked}
             />
           </label>
           <div className="ml-1.5 flex-1">
             <Text
-              className="inline-block whitespace-pre-wrap break-words"
-              //@ts-ignore
+              // @ts-ignore
               text={block.to_do.rich_text}
+              className="inline-block whitespace-pre-wrap break-words leading-normal"
             />
           </div>
         </div>
