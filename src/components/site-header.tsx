@@ -3,8 +3,7 @@ import { MainNav } from "@/components/main-nav";
 import { MobileNav } from "@/components/mobile-nav";
 import { ModeToggle } from "@/components/mode-toggle";
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@lightdotso/ui/components/button";
+import { ButtonIcon } from "@lightdotso/ui/components/button-icon";
 import { GitHubLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 
 // -----------------------------------------------------------------------------
@@ -17,7 +16,7 @@ export function SiteHeader() {
   // ---------------------------------------------------------------------------
 
   return (
-    <header className="sticky top-0 z-50 w-full border-border/40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-border/40 border-b bg-opacity-95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-md items-center">
         <MainNav />
         <MobileNav />
@@ -26,32 +25,26 @@ export function SiteHeader() {
             <CommandMenu />
           </div>
           <nav className="flex items-center">
-            <a href={siteConfig.links.github} target="_blank" rel="noreferrer">
-              <div
-                className={cn(
-                  buttonVariants({
-                    variant: "ghost",
-                  }),
-                  "w-9 px-0",
-                )}
+            <ButtonIcon variant="ghost" asChild>
+              <a
+                href={siteConfig.links.github}
+                target="_blank"
+                rel="noreferrer"
               >
                 <GitHubLogoIcon className="h-4 w-4 fill-current" />
                 <span className="sr-only">GitHub</span>
-              </div>
-            </a>
-            <a href={siteConfig.links.twitter} target="_blank" rel="noreferrer">
-              <div
-                className={cn(
-                  buttonVariants({
-                    variant: "ghost",
-                  }),
-                  "w-9 px-0",
-                )}
+              </a>
+            </ButtonIcon>
+            <ButtonIcon variant="ghost" asChild>
+              <a
+                href={siteConfig.links.twitter}
+                target="_blank"
+                rel="noreferrer"
               >
                 <TwitterLogoIcon className="h-4 w-4 fill-current" />
                 <span className="sr-only">Twitter</span>
-              </div>
-            </a>
+              </a>
+            </ButtonIcon>
             <ModeToggle />
           </nav>
         </div>

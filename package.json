@@ -22,7 +22,7 @@
     "@lightdotso/styles": "^3.0.5",
     "@lightdotso/svg": "^0.0.10",
     "@lightdotso/tailwindcss": "^3.1.7",
-    "@lightdotso/ui": "^3.1.13",
+    "@lightdotso/ui": "^3.1.14",
     "@notionhq/client": "^2.2.15",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.0.5",

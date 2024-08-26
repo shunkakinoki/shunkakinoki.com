@@ -33,10 +33,8 @@ export function MainNav() {
         <Link
           href="/about"
           className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname.endsWith("/about")
-              ? "text-foreground"
-              : "text-foreground/60",
+            "transition-colors hover:text-text/80",
+            pathname.endsWith("/about") ? "text-text" : "text-text/60",
           )}
         >
           About
@@ -44,10 +42,8 @@ export function MainNav() {
         <Link
           href="/blog"
           className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.endsWith("/blog")
-              ? "text-foreground"
-              : "text-foreground/60",
+            "transition-colors hover:text-text/80",
+            pathname?.endsWith("/blog") ? "text-text" : "text-text/60",
           )}
         >
           Blog
@@ -55,10 +51,8 @@ export function MainNav() {
         <Link
           href="/dashboard"
           className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.endsWith("/dashboard")
-              ? "text-foreground"
-              : "text-foreground/60",
+            "transition-colors hover:text-text/80",
+            pathname?.endsWith("/dashboard") ? "text-text" : "text-text/60",
           )}
         >
           Dashboard

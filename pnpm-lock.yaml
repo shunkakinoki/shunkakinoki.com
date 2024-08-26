@@ -24,8 +24,8 @@ importers:
         specifier: ^3.1.7
         version: 3.1.7(ts-node@10.9.1(@types/node@22.5.0)(typescript@5.5.4))
       '@lightdotso/ui':
-        specifier: ^3.1.13
-        version: 3.1.13(@babel/core@7.25.2)(@emotion/is-prop-valid@1.3.0)(@tanstack/query-core@5.52.0)(@types/react-dom@18.3.0)(@types/react@18.3.4)(@upstash/redis@1.34.0)(blurhash@2.0.5)(bufferutil@4.0.8)(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react-is@19.0.0-rc-187dd6a7-20240806)(react-native@0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.4)(bufferutil@4.0.8)(react@19.0.0-rc-187dd6a7-20240806)(typescript@5.5.4)(utf-8-validate@5.0.10))(react@19.0.0-rc-187dd6a7-20240806)(tailwindcss@3.4.10(ts-node@10.9.1(@types/node@22.5.0)(typescript@5.5.4)))(typescript@5.5.4)(utf-8-validate@5.0.10)
+        specifier: ^3.1.14
+        version: 3.1.14(@babel/core@7.25.2)(@emotion/is-prop-valid@1.3.0)(@tanstack/query-core@5.52.0)(@types/react-dom@18.3.0)(@types/react@18.3.4)(@upstash/redis@1.34.0)(blurhash@2.0.5)(bufferutil@4.0.8)(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react-is@19.0.0-rc-187dd6a7-20240806)(react-native@0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.4)(bufferutil@4.0.8)(react@19.0.0-rc-187dd6a7-20240806)(typescript@5.5.4)(utf-8-validate@5.0.10))(react@19.0.0-rc-187dd6a7-20240806)(tailwindcss@3.4.10(ts-node@10.9.1(@types/node@22.5.0)(typescript@5.5.4)))(typescript@5.5.4)(utf-8-validate@5.0.10)
       '@notionhq/client':
         specifier: ^2.2.15
         version: 2.2.15
@@ -1447,8 +1447,8 @@ packages:
   '@lightdotso/schemas@3.1.8':
     resolution: {integrity: sha512-y9uTzsY+cY3fJqAhTKIwDIXIJUck076ftmh77Hcm2rnMAzTJDgV6ZVEe2O93x7xPhqLg1BbhwwW3Ux6/tF71fg==}
 
-  '@lightdotso/stores@0.1.10':
-    resolution: {integrity: sha512-bnCINbp4VEoli+GtmAo6N8OY/kMBUQ9mipJl7OEiUabeXOdizhjaaZcX6wGMxPM3uIluGA2Cu0lAz1wvjW+5Sw==}
+  '@lightdotso/stores@0.1.11':
+    resolution: {integrity: sha512-oAnShbZyW4tOs2GxMcN2G1Yguz/ze6+wiiKEesnirdjFP1AwXRAXOxaMjf9R938ukLkJyDzEmXk6ZXpDomaVRQ==}
 
   '@lightdotso/styles@3.0.5':
     resolution: {integrity: sha512-Coycx5NQObHITa8NxAU2ZI9gLfLZIntHIL9z7g7GzSgCv6KRpkx3cmKsyHxI1R9YkMy/NYEh+JyqItTbaS7Nxw==}
@@ -1456,18 +1456,24 @@ packages:
   '@lightdotso/svg@0.0.10':
     resolution: {integrity: sha512-VQFIvWlZgBSbPsgooJWR6AssoRq/fDyM97OGnlHtTOU7miRgraf9nw/PMRNp804/oJI33mYKZOZzG46lXj0OGw==}
 
+  '@lightdotso/svg@0.0.11':
+    resolution: {integrity: sha512-hQ86spdoHgZhbhVnoPrRsK7vkYkMSbqqD43/vPtZryhdhJxvKXQk2j4ajM9zVWdOfyEoRjgVdvKAmAvJ5MjTAg==}
+
   '@lightdotso/tailwindcss@3.1.7':
     resolution: {integrity: sha512-D0qcHNUNYYEoAfA4IT0j3QoR8ExzZvrrVZM4d5GQcTGRadc8LRFNvk6V4Zs6nzxFc3syZEqGAorbBuGSaXunVg==}
 
   '@lightdotso/types@0.0.8':
     resolution: {integrity: sha512-OSR6TxS411nfsSoy75Zp4teZlIM/otX5d3tcam6zksYOkpgBJUu4QGCVeOx0b7FT+5pM4wrQg+mgherML02lzw==}
 
-  '@lightdotso/ui@3.1.13':
-    resolution: {integrity: sha512-TDV4u+nTNlK3Lsec4p4uPOU0Vl5ELXdFOVFBCfkfghCEe9uYB5EsUaisLLtO5omTMh2Z9bpWnBm6SFyTB4DEkQ==}
+  '@lightdotso/ui@3.1.14':
+    resolution: {integrity: sha512-zCLuwAlVfzlLFe+Fsv1DO+4OYUc08IC+MKn1vHEkE/W99ZDKwJx6ExK5JxIR3bkoflIXqgg6d7bb3kooyHvUzQ==}
     peerDependencies:
       react: 19.0.0-rc-187dd6a7-20240806
       react-dom: 19.0.0-rc-187dd6a7-20240806
       react-is: 19.0.0-rc-187dd6a7-20240806
+
+  '@lightdotso/utils@3.1.10':
+    resolution: {integrity: sha512-rAGLugHUw43p9bBysz5PIxM5HTLU/BiBqi6ALxmBUvOJ7666mGmgHxN+yNjhMe1u5y2+g9FvTVBaXrLzlGE4sg==}
 
   '@lightdotso/utils@3.1.9':
     resolution: {integrity: sha512-ZMPhHhTRy2oAsQ88rkT5oJUxTUL4UK2K+x9+0BKU0ZuKbhKNQOlvKXzn90Ql4NCavoEY6XQjVRaIcZGNN9X+Sw==}
@@ -9136,13 +9142,13 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@lightdotso/stores@0.1.10(@types/react@18.3.4)(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)':
+  '@lightdotso/stores@0.1.11(@types/react@18.3.4)(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)':
     dependencies:
       '@lightdotso/client': 3.1.9(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)
       '@lightdotso/data': 0.1.8
       '@lightdotso/schemas': 3.1.8(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)
       '@lightdotso/types': 0.0.8(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
-      '@lightdotso/utils': 3.1.9(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
+      '@lightdotso/utils': 3.1.10(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
       '@tanstack/react-table': 8.20.5(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react@19.0.0-rc-187dd6a7-20240806)
       '@types/lodash': 4.17.7
       lodash: 4.17.21
@@ -9166,6 +9172,19 @@ snapshots:
   '@lightdotso/svg@0.0.10(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)':
     dependencies:
       '@lightdotso/utils': 3.1.9(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
+      class-variance-authority: 0.7.0
+      react: 19.0.0-rc-187dd6a7-20240806
+      react-dom: 19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806)
+      react-is: 19.0.0-rc-187dd6a7-20240806
+    transitivePeerDependencies:
+      - bufferutil
+      - typescript
+      - utf-8-validate
+      - zod
+
+  '@lightdotso/svg@0.0.11(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)':
+    dependencies:
+      '@lightdotso/utils': 3.1.10(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
       class-variance-authority: 0.7.0
       react: 19.0.0-rc-187dd6a7-20240806
       react-dom: 19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806)
@@ -9202,17 +9221,17 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@lightdotso/ui@3.1.13(@babel/core@7.25.2)(@emotion/is-prop-valid@1.3.0)(@tanstack/query-core@5.52.0)(@types/react-dom@18.3.0)(@types/react@18.3.4)(@upstash/redis@1.34.0)(blurhash@2.0.5)(bufferutil@4.0.8)(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react-is@19.0.0-rc-187dd6a7-20240806)(react-native@0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.4)(bufferutil@4.0.8)(react@19.0.0-rc-187dd6a7-20240806)(typescript@5.5.4)(utf-8-validate@5.0.10))(react@19.0.0-rc-187dd6a7-20240806)(tailwindcss@3.4.10(ts-node@10.9.1(@types/node@22.5.0)(typescript@5.5.4)))(typescript@5.5.4)(utf-8-validate@5.0.10)':
+  '@lightdotso/ui@3.1.14(@babel/core@7.25.2)(@emotion/is-prop-valid@1.3.0)(@tanstack/query-core@5.52.0)(@types/react-dom@18.3.0)(@types/react@18.3.4)(@upstash/redis@1.34.0)(blurhash@2.0.5)(bufferutil@4.0.8)(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react-is@19.0.0-rc-187dd6a7-20240806)(react-native@0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.4)(bufferutil@4.0.8)(react@19.0.0-rc-187dd6a7-20240806)(typescript@5.5.4)(utf-8-validate@5.0.10))(react@19.0.0-rc-187dd6a7-20240806)(tailwindcss@3.4.10(ts-node@10.9.1(@types/node@22.5.0)(typescript@5.5.4)))(typescript@5.5.4)(utf-8-validate@5.0.10)':
     dependencies:
       '@hookform/devtools': 4.3.1(@types/react@18.3.4)(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react@19.0.0-rc-187dd6a7-20240806)
       '@hookform/resolvers': 3.9.0(react-hook-form@7.53.0(react@19.0.0-rc-187dd6a7-20240806))
       '@lightdotso/const': 3.1.8(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
       '@lightdotso/data': 0.1.8
       '@lightdotso/demo': 0.0.10(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)
-      '@lightdotso/stores': 0.1.10(@types/react@18.3.4)(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)
-      '@lightdotso/svg': 0.0.10(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
+      '@lightdotso/stores': 0.1.11(@types/react@18.3.4)(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)
+      '@lightdotso/svg': 0.0.11(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
       '@lightdotso/types': 0.0.8(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
-      '@lightdotso/utils': 3.1.9(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
+      '@lightdotso/utils': 3.1.10(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
       '@lightdotso/wagmi': 3.1.9(@babel/core@7.25.2)(@tanstack/query-core@5.52.0)(@tanstack/react-query@5.52.1(react@19.0.0-rc-187dd6a7-20240806))(@types/react@18.3.4)(@upstash/redis@1.34.0)(bufferutil@4.0.8)(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react-is@19.0.0-rc-187dd6a7-20240806)(react-native@0.75.2(@babel/core@7.25.2)(@babel/preset-env@7.25.4(@babel/core@7.25.2))(@types/react@18.3.4)(bufferutil@4.0.8)(react@19.0.0-rc-187dd6a7-20240806)(typescript@5.5.4)(utf-8-validate@5.0.10))(react@19.0.0-rc-187dd6a7-20240806)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
       '@radix-ui/react-accordion': 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react@19.0.0-rc-187dd6a7-20240806)
       '@radix-ui/react-alert-dialog': 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react@19.0.0-rc-187dd6a7-20240806)
@@ -9255,6 +9274,7 @@ snapshots:
       embla-carousel-react: 8.2.0(react@19.0.0-rc-187dd6a7-20240806)
       framer-motion: 11.3.30(@emotion/is-prop-valid@1.3.0)(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react@19.0.0-rc-187dd6a7-20240806)
       glob: 11.0.0
+      input-otp: 1.2.4(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react@19.0.0-rc-187dd6a7-20240806)
       lodash: 4.17.21
       lucide-react: 0.263.1(react@19.0.0-rc-187dd6a7-20240806)
       next: 15.0.0-canary.120(@babel/core@7.25.2)(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react@19.0.0-rc-187dd6a7-20240806)
@@ -9308,6 +9328,21 @@ snapshots:
       - uWebSockets.js
       - utf-8-validate
       - vite
+
+  '@lightdotso/utils@3.1.10(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)':
+    dependencies:
+      '@lightdotso/const': 3.1.8(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
+      '@lightdotso/types': 0.0.8(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
+      clsx: 2.1.1
+      cross-env: 7.0.3
+      dotenv: 16.4.5
+      tailwind-merge: 2.5.2
+      viem: 2.20.0(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)
+    transitivePeerDependencies:
+      - bufferutil
+      - typescript
+      - utf-8-validate
+      - zod
 
   '@lightdotso/utils@3.1.9(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)(zod@3.23.8)':
     dependencies:

@@ -51,10 +51,7 @@ export function PageHeaderDescription({
 
   return (
     <Balance
-      className={cn(
-        "font-light text-base text-foreground md:text-lg",
-        className,
-      )}
+      className={cn("font-light text-base text-text md:text-lg", className)}
       {...props}
     />
   );

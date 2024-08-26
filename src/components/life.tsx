@@ -72,7 +72,7 @@ export function Life() {
               </span>
             </div>
             <div className="mt-8">
-              <h3 className="font-semibold text-base text-foreground/80 leading-6">
+              <h3 className="font-semibold text-base text-text/80 leading-6">
                 {/* @ts-expect-error */}
                 <Link href={action.href} className="focus:outline-none">
                   {/* Extend touch target to entire panel */}

@@ -74,7 +74,7 @@ export default async function RootLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <div className="relative flex min-h-screen flex-col bg-background">
+      <div className="relative flex min-h-screen flex-col">
         <SiteHeader />
         <main className="flex-1">
           <div className="container relative max-w-screen-md py-8 md:py-12 lg:py-16">
