@@ -96,7 +96,7 @@ export function SocialCard({
             <h4 className="inline-flex items-center font-medium text-sm text-text-weak leading-normal group-hover:text-text-stronger">
               {title}
               {isPriority && (
-                <span className="pl-2 text-success">
+                <span className="pl-2 text-text-success-weak group-hover:text-text-success">
                   <CheckBadgeIcon className="h-4 w-4" />
                 </span>
               )}
