@@ -51,14 +51,14 @@ export function Life() {
   return (
     <section>
       <SectionHeaderHeading>{t("life.title")}</SectionHeaderHeading>
-      <div className="divide-y divide-gray-400 overflow-hidden rounded-lg shadow sm:grid sm:grid-cols-3 sm:gap-px sm:divide-x sm:divide-y-0">
+      <div className="divide-y divide-border-strong overflow-hidden rounded-lg border border-border-strong bg-background-strong shadow sm:grid sm:grid-cols-3 sm:gap-px sm:divide-x sm:divide-y-0">
         {actions.map((action, actionIdx) => (
           <div
             key={action.title}
             className={cn(
               actionIdx === 0 ? "sm:rounded-l-lg" : "",
               actionIdx === actions.length - 1 ? "sm:rounded-r-lg" : "",
-              "group relative p-6 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-inset hover:bg-gray-300 dark:hover:bg-gray-900",
+              "group relative p-6 focus-within:ring-inset hover:bg-background-stronger",
             )}
           >
             <div>
@@ -82,7 +82,7 @@ export function Life() {
               </h3>
             </div>
             <span
-              className="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400"
+              className="pointer-events-none absolute top-6 right-6 text-text"
               aria-hidden="true"
             >
               {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}

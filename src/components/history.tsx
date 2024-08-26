@@ -110,7 +110,7 @@ const HistoryConnector: FC = () => {
 
   return (
     <span
-      className="-ml-px absolute top-4 left-4 h-full w-0.5 bg-gray-200 dark:bg-gray-500"
+      className="-ml-px absolute top-4 left-4 h-full w-0.5 bg-border"
       aria-hidden="true"
     />
   );
@@ -141,7 +141,7 @@ export const HistoryStep: FC<HistoryStepProps> = ({
           <div>
             <span
               className={clsx(
-                "flex h-8 w-8 items-center justify-center rounded-full text-gray-100 ring-8 ring-white dark:ring-black",
+                "flex h-8 w-8 items-center justify-center rounded-full text-white",
                 type === "cake" && "bg-pink-500",
                 type === "chip" && "bg-gray-500",
                 type === "fire" && "bg-red-500",
@@ -162,11 +162,9 @@ export const HistoryStep: FC<HistoryStepProps> = ({
           </div>
           <div className="flex min-w-0 flex-1 items-center justify-between space-x-4">
             <div>
-              <p className="line-clamp-3 text-gray-500 text-sm dark:text-gray-300">
-                {children}
-              </p>
+              <p className="line-clamp-3 text-sm text-text">{children}</p>
             </div>
-            <div className="whitespace-nowrap text-right text-gray-500 text-sm dark:text-gray-400">
+            <div className="whitespace-nowrap text-right text-sm text-text-weak">
               <time>{time}</time>
             </div>
           </div>
@@ -194,7 +192,7 @@ export const HistoryYear: FC<HistoryYearProps> = ({ children }) => {
   // ---------------------------------------------------------------------------
 
   return (
-    <h3 className="mt-2 mb-4 font-light text-gray-500 tracking-tight md:text-base dark:text-gray-100">
+    <h3 className="mt-2 mb-4 font-light text-text-weak tracking-tight md:text-base">
       {children}
     </h3>
   );

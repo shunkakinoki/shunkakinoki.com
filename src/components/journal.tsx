@@ -55,14 +55,14 @@ export async function Journal() {
               <Link
                 // @ts-expect-error
                 href={`/${page.id}`}
-                className="line-clamp-1 flex grow items-center font-extrabold text-warmGray-800 hover:text-gray-700 hover:underline dark:text-gray-100 dark:hover:text-white"
+                className="line-clamp-1 flex grow items-center font-extrabold text-text hover:text-text-weak hover:underline"
               >
                 <div className="text-xl md:text-2xl">
                   {/* @ts-ignore */}
                   {page.properties.Name?.title[0]?.plain_text || ""}
                 </div>
               </Link>
-              <div className="flex flex-none items-center justify-center text-gray-700 text-sm dark:text-gray-300">
+              <div className="flex flex-none items-center justify-center text-sm text-text-weak">
                 {date}
               </div>
             </div>

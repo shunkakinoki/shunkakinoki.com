@@ -89,19 +89,19 @@ export function SocialCard({
     <li className="group col-span-1">
       <a href={href} target="_blank" rel="noopener noreferrer">
         <div className="flex cursor-pointer items-center text-left leading-5 no-underline">
-          <div className="mr-4 box-border flex w-8 shrink-0 justify-center text-left text-3xl text-gray-500 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-200">
+          <div className="mr-4 box-border flex w-8 shrink-0 justify-center text-left text-3xl text-text-weak group-hover:text-text-stronger">
             <props.icon className="h-6 w-6" />
           </div>
           <div className="cursor-pointer overflow-hidden text-left">
-            <h4 className="inline-flex items-center font-medium text-gray-500 text-sm leading-normal group-hover:text-gray-800 dark:text-gray-300 dark:group-hover:text-gray-100">
+            <h4 className="inline-flex items-center font-medium text-sm text-text-weak leading-normal group-hover:text-text-stronger">
               {title}
               {isPriority && (
-                <span className="pl-2 text-green-400 dark:text-green-300">
+                <span className="pl-2 text-success">
                   <CheckBadgeIcon className="h-4 w-4" />
                 </span>
               )}
             </h4>
-            <p className="block w-full flex-nowrap truncate whitespace-nowrap text-gray-600 text-xs group-hover:text-gray-900 group-hover:underline dark:text-gray-400 dark:group-hover:text-gray-200">
+            <p className="block w-full flex-nowrap truncate whitespace-nowrap text-text-weak text-xs group-hover:text-text-strong group-hover:underline">
               {username}
             </p>
           </div>
