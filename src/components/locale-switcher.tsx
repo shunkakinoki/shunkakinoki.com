@@ -1,5 +1,6 @@
 "use client";
 
+import { locales } from "@/config";
 import {
   Select,
   SelectContent,
@@ -8,8 +9,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { locales } from "@/config";
+} from "@lightdotso/ui/components/select";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 

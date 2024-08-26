@@ -3,6 +3,7 @@
 import { navConfig } from "@/config/nav";
 import { socialPriorityConfig } from "@/config/social";
 import { cn } from "@/lib/utils";
+import { ButtonIcon } from "@lightdotso/ui/components/button-icon";
 import { usePathname } from "next/navigation";
 import LocaleSwitcher from "./locale-switcher";
 
@@ -33,10 +34,8 @@ export function SiteFooter() {
               <a
                 href={item.href}
                 className={cn(
-                  "text-sm leading-6 hover:text-foreground/80",
-                  pathname.endsWith(item.href)
-                    ? "text-foreground"
-                    : "text-foreground/60",
+                  "text-sm leading-6 hover:text-text/80",
+                  pathname.endsWith(item.href) ? "text-text" : "text-text/60",
                 )}
               >
                 {item.title}
@@ -46,20 +45,21 @@ export function SiteFooter() {
         </nav>
         <div className="mt-8 flex justify-center space-x-5">
           {socialPriorityConfig.map((item) => (
-            <a
-              target="_blank"
-              rel="noreferrer"
-              key={item.name}
-              href={item.href}
-              className="text-foreground/60 hover:text-foreground/70"
-            >
-              <span className="sr-only">{item.name}</span>
-              <item.icon className="h-6 w-6" aria-hidden="true" />
-            </a>
+            <ButtonIcon variant="ghost" size="sm" asChild key={item.name}>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={item.href}
+                className="text-text/60 hover:text-text/70"
+              >
+                <span className="sr-only">{item.name}</span>
+                <item.icon className="h-6 w-6" aria-hidden="true" />
+              </a>
+            </ButtonIcon>
           ))}
         </div>
         <div className="my-6 flex items-center justify-center space-x-4">
-          <p className="text-foreground/70 text-sm leading-5">
+          <p className="text-sm text-text/70 leading-5">
             &copy; {new Date().getFullYear()} Shun Kakinoki. All rights
             reserved.
           </p>

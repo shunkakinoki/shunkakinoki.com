@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from "@/navigation";
 import type { blockWithChildren, richText } from "@/services/notion";
+import { Checkbox } from "@lightdotso/ui/components/checkbox";
 import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import clsx from "clsx";
 import { useLocale } from "next-intl";
@@ -68,17 +69,17 @@ export const Notion: FC<NotionProps> = ({
   // ---------------------------------------------------------------------------
 
   return (
-    <section className="w-full text-black dark:text-white">
+    <section className="w-full text-text">
       {/* @ts-ignore */}
       {content.properties.Date?.date && (
         <div className="pb-3">
-          <h1 className="mb-4 line-clamp-3 font-bold text-3xl text-warmGray-800 tracking-tight md:text-5xl lg:text-6xl dark:text-white">
+          <h1 className="mb-4 line-clamp-3 font-bold text-3xl text-text tracking-tight md:text-5xl lg:text-6xl">
             {/* @ts-ignore */}
             {content.properties.Name?.title[0]?.plain_text}
           </h1>
           <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
             <div className="flex items-center">
-              <p className="text-gray-500 text-lg dark:text-gray-300">
+              <p className="text-text-weak">
                 by Shun Kakinoki &middot;{" "}
                 {new Date(
                   //@ts-ignore
@@ -145,7 +146,7 @@ export const Text: FC<TextProps> = ({ text, className }) => {
             className={clsx(
               bold && "font-extrabold",
               code &&
-                "rounded-md border border-gray-400 bg-gray-300 p-1 font-mono text-gray-800 text-xs dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100",
+                "rounded-md border border-border bg-background-strong px-1 font-mono text-sm text-text-weak",
               italic && "italic",
               strikethrough && "line-through",
               underline && "underline",
@@ -157,7 +158,7 @@ export const Text: FC<TextProps> = ({ text, className }) => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-1 justify-center gap-0.5 break-all text-indigo-500 leading-4 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-200"
+                className="inline-flex flex-1 justify-center gap-0.5 break-all text-text-info leading-4 hover:text-text-info-strong"
               >
                 {plain_text === "Untitled" ? "<REDACTED>" : plain_text}
                 <ArrowUpRightFromSquareIcon className="h-2 w-2 shrink-0" />
@@ -180,7 +181,7 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
   //@ts-ignore
   switch (block.type) {
     case "divider":
-      return <hr className="my-6 border-gray-200 dark:border-gray-400" />;
+      return <hr className="my-6 border border-border" />;
     case "paragraph":
       return (
         <p>
@@ -225,7 +226,7 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
       );
     case "callout":
       return (
-        <div className="my-4 rounded-lg border border-gray-300 bg-gray-100 p-3 dark:border-gray-600 dark:bg-gray-800">
+        <div className="my-4 rounded-lg border border-border bg-background-strong p-3">
           <BookmarkCheckIcon className="mr-2 inline-block h-4 w-4" />
           {/* @ts-ignore */}
           <Text text={block.callout.rich_text as richText[]} />
@@ -240,12 +241,12 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
 
       // Generate a notion style bookmark card
       return (
-        <div className="my-4 break-all rounded-lg border border-gray-300 p-3 dark:border-gray-600">
+        <div className="my-4 break-all rounded-lg border border-border p-3">
           <a
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-400 hover:underline"
+            className="text-text-info hover:text-text-info-stronger hover:underline"
           >
             {url}
             <ArrowUpRightFromSquareIcon className="ml-1 inline-block h-4 w-4" />
@@ -254,33 +255,26 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
       );
     case "quote":
       return (
-        <div className="border-gray-400 border-l-4 pl-4 text-gray-800 italic dark:text-gray-200">
+        <div className="border-border border-l-4 pl-4 text-text italic">
           {/* @ts-ignore */}
           <Text text={block.quote.rich_text as richText[]} />
         </div>
       );
     case "to_do":
       return (
-        <div className="flex items-start">
-          <label
-            className="flex cursor-not-allowed items-center gap-1.5 pt-[0.30rem]"
-            htmlFor={block.id}
-          >
-            <input
-              disabled
-              className="rounded-sm text-indigo-600 ring-indigo-300"
-              type="checkbox"
-              id={block.id}
-              // @ts-ignore
-              defaultChecked={block.to_do.checked}
-            />
-          </label>
-          <div className="ml-1.5 flex-1">
-            <Text
-              // @ts-ignore
-              text={block.to_do.rich_text}
-              className="inline-block whitespace-pre-wrap break-words leading-normal"
-            />
+        <div className="items-top flex space-x-2 py-2">
+          <Checkbox
+            className="mt-1 cursor-not-allowed font-medium text-sm leading-none"
+            id={block.id}
+          />
+          <div className="grid gap-1.5 leading-none">
+            <label htmlFor={block.id}>
+              <Text
+                // @ts-ignore
+                text={block.to_do.rich_text}
+                className="inline-block cursor-not-allowed whitespace-pre-wrap break-words font-medium text-sm text-text leading-normal"
+              />
+            </label>
           </div>
         </div>
       );

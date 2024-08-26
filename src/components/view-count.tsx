@@ -35,11 +35,11 @@ export async function ViewCount({ pageId }: ViewCountProps) {
       <Suspense
         fallback={
           <div className="flex animate-pulse space-x-4">
-            <div className="h-3 w-8 rounded-full bg-gray-300 dark:bg-gray-400" />
+            <div className="h-3 w-8 rounded-full bg-background-stronger" />
           </div>
         }
       >
-        <h3 className="min-w-min text-sm text-warmGray-500 dark:text-warmGray-300 ">
+        <h3 className="min-w-min text-sm text-text-weak">
           {views.toLocaleString()}
           &nbsp;Views
         </h3>

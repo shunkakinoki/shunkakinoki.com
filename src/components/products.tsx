@@ -117,7 +117,7 @@ export function ProductCard({
   // ---------------------------------------------------------------------------
 
   return (
-    <li className="group col-span-1 rounded-lg border shadow-lg hover:bg-gray-50 dark:border-gray-300 dark:bg-black dark:hover:bg-gray-900">
+    <li className="group col-span-1 rounded-lg border border-border-strong bg-background-strong shadow-lg hover:bg-background-stronger">
       <a
         href={href}
         target="_blank"
@@ -129,14 +129,14 @@ export function ProductCard({
             <div className="h-16 w-16">{children}</div>
           </div>
           <div className="mr-1 ml-3 grow">
-            <h4 className="font-medium text-gray-900 text-lg tracking-tight dark:text-gray-100">
+            <h4 className="font-medium text-lg text-text tracking-tight">
               {name}
             </h4>
-            <p className="line-clamp-3 text-gray-600 text-sm leading-5 dark:text-gray-300">
+            <p className="line-clamp-3 text-sm text-text-weak leading-5">
               {description}
             </p>
           </div>
-          <div className="shrink-0 text-gray-500">
+          <div className="shrink-0 text-text">
             <ArrowUpRightIcon className="h-6 w-6" />
           </div>
         </div>

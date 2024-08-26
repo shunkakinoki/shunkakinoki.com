@@ -2,14 +2,14 @@ import { Analytics } from "@/components/analytics";
 import { ThemeProvider } from "@/components/providers";
 import { SpeedInsights } from "@/components/speed-insights";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
-import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
+// import { Toaster } from "@lightdotso/ui/components/toast";
 import type { Viewport } from "next";
 import { getTranslations } from "next-intl/server";
-import "@/styles/globals.css";
 import type { ReactNode } from "react";
+import "@lightdotso/styles/global.css";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -80,7 +80,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <html lang="en" suppressHydrationWarning>
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased",
+            "min-h-screen font-sans antialiased",
             fontSans.variable,
           )}
         >
@@ -94,7 +94,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <TailwindIndicator />
             <Analytics />
             <SpeedInsights />
-            <Toaster />
+            {/* <Toaster /> */}
           </ThemeProvider>
         </body>
       </html>

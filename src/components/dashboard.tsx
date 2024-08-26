@@ -194,7 +194,7 @@ export const DashboardCard: FC<Props> = ({ children, href, number, title }) => {
   // ---------------------------------------------------------------------------
 
   return (
-    <div className="overflow-hidden rounded-lg bg-white shadow hover:bg-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800">
+    <div className="overflow-hidden rounded-lg bg-background-strong hover:bg-background-stronger">
       <a
         href={href || "#"}
         target={href ? "_blank" : undefined}
@@ -207,21 +207,19 @@ export const DashboardCard: FC<Props> = ({ children, href, number, title }) => {
               {children}
             </div>
             <div className="ml-5 w-0 flex-1">
-              <dt className="truncate font-medium text-gray-500 text-sm dark:text-gray-400">
-                {title}
-              </dt>
+              <dt className="truncate font-medium text-text-weak">{title}</dt>
               <dd className="flex items-baseline">
                 {number ? (
-                  <div className="font-semibold text-2xl text-gray-900 dark:text-gray-300">
+                  <div className="font-semibold text-2xl text-text">
                     {number.toLocaleString()}
                   </div>
                 ) : (
-                  <div className="h-8 w-9/12 animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
+                  <div className="h-8 w-9/12 animate-pulse rounded bg-background-stronger" />
                 )}
               </dd>
             </div>
             {href ? (
-              <div className="flex-shrink-0 text-white">
+              <div className="flex-shrink-0 text-text">
                 <ArrowTopRightOnSquareIcon className="h-6 w-6" />
               </div>
             ) : null}
