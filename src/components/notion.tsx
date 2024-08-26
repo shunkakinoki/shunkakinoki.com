@@ -146,7 +146,7 @@ export const Text: FC<TextProps> = ({ text, className }) => {
             className={clsx(
               bold && "font-extrabold",
               code &&
-                "rounded-md border border-border bg-background-strong p-1 font-mono text-sm text-text-weak",
+                "rounded-md border border-border bg-background-strong px-1 font-mono text-sm text-text-weak",
               italic && "italic",
               strikethrough && "line-through",
               underline && "underline",
@@ -262,17 +262,17 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
       );
     case "to_do":
       return (
-        <div className="items-top flex space-x-2">
+        <div className="items-top flex space-x-2 py-2">
           <Checkbox
-            className="cursor-not-allowed font-medium text-sm leading-none"
-            id="terms1"
+            className="mt-1 cursor-not-allowed font-medium text-sm leading-none"
+            id={block.id}
           />
           <div className="grid gap-1.5 leading-none">
-            <label htmlFor="terms1">
+            <label htmlFor={block.id}>
               <Text
                 // @ts-ignore
                 text={block.to_do.rich_text}
-                className="inline-block whitespace-pre-wrap break-words leading-normal"
+                className="inline-block cursor-not-allowed whitespace-pre-wrap break-words font-medium text-sm text-text leading-normal"
               />
             </label>
           </div>
