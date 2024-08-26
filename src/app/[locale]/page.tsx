@@ -8,10 +8,9 @@ import {
 import { Products } from "@/components/products";
 import { Social } from "@/components/social";
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
 import { Link } from "@/navigation";
 import { LightLogo } from "@lightdotso/svg";
-import { buttonVariants } from "@lightdotso/ui/components/button";
+import { Button } from "@lightdotso/ui/components/button";
 import { TwitterLogoIcon } from "@radix-ui/react-icons";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
 import { unstable_setRequestLocale } from "next-intl/server";
@@ -68,20 +67,19 @@ export default async function IndexPage({
           striving to obliterate the galaxy.
         </PageHeaderDescription>
         <PageActions>
-          <Link href="/about" className={cn(buttonVariants())}>
-            <LightLogo className="mr-2 h-4 w-4" />
-            About Me
-          </Link>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={siteConfig.links.twitter}
-            className={cn(buttonVariants({ variant: "outline" }))}
-          >
-            <TwitterLogoIcon className="mr-2 h-4 w-4" />
-            Twitter
-            <ArrowUpRightFromSquareIcon className="ml-2 h-4 w-4" />
-          </a>
+          <Button asChild>
+            <Link href="/about">
+              <LightLogo className="mr-2 h-4 w-4" />
+              About Me
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <a target="_blank" rel="noreferrer" href={siteConfig.links.twitter}>
+              <TwitterLogoIcon className="mr-2 h-4 w-4" />
+              Twitter
+              <ArrowUpRightFromSquareIcon className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
         </PageActions>
       </PageHeader>
       <div className="flex flex-col space-y-10 md:space-y-16">

@@ -5,6 +5,7 @@ import defaultConfig from "@lightdotso/tailwindcss";
 export default {
   ...defaultConfig,
   content: [
+    "./node_modules/@lightdotso/ui/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
