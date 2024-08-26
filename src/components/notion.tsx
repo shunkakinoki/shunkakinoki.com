@@ -10,7 +10,11 @@ import { useTheme } from "next-themes";
 import { type FC, Fragment, type ReactNode } from "react";
 import { useEffect } from "react";
 import "@/styles/notion.css";
-import { ArrowUpRightFromSquareIcon, BookmarkCheckIcon } from "lucide-react";
+import {
+  ArrowUpRightFromSquareIcon,
+  BookmarkCheckIcon,
+  Globe2Icon,
+} from "lucide-react";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -248,6 +252,7 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
             rel="noopener noreferrer"
             className="text-text-info hover:text-text-info-stronger hover:underline"
           >
+            <Globe2Icon className="mr-2 inline-block h-4 w-4 text-text-weak" />
             {url}
             <ArrowUpRightFromSquareIcon className="ml-1 inline-block h-4 w-4" />
           </a>
@@ -264,7 +269,8 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
       return (
         <div className="items-top flex space-x-2 py-2">
           <Checkbox
-            className="mt-1 cursor-not-allowed font-medium text-sm leading-none"
+            disabled
+            className="mt-0.5 cursor-not-allowed font-medium text-sm leading-none"
             id={block.id}
           />
           <div className="grid gap-1.5 leading-none">
