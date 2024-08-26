@@ -1,13 +1,17 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { navConfig } from "@/config/nav";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Link } from "@/navigation";
 import { LightLogo } from "@lightdotso/svg";
+import { Button } from "@lightdotso/ui/components/button";
+import { ScrollArea } from "@lightdotso/ui/components/scroll-area";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@lightdotso/ui/components/sheet";
 import type { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import { type ReactNode, useState } from "react";

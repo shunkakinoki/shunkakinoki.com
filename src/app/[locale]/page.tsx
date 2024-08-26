@@ -7,11 +7,11 @@ import {
 } from "@/components/page-header";
 import { Products } from "@/components/products";
 import { Social } from "@/components/social";
-import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Link } from "@/navigation";
 import { LightLogo } from "@lightdotso/svg";
+import { buttonVariants } from "@lightdotso/ui/components/button";
 import { TwitterLogoIcon } from "@radix-ui/react-icons";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
 import { unstable_setRequestLocale } from "next-intl/server";
@@ -84,22 +84,6 @@ export default async function IndexPage({
           </a>
         </PageActions>
       </PageHeader>
-      {/* <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
-        <Image
-          src="/examples/mail-dark.png"
-          width={1280}
-          height={727}
-          alt="Mail"
-          className="hidden dark:block"
-        />
-        <Image
-          src="/examples/mail-light.png"
-          width={1280}
-          height={727}
-          alt="Mail"
-          className="block dark:hidden"
-        />
-      </section> */}
       <div className="flex flex-col space-y-10 md:space-y-16">
         <Products isPartial />
         <Life />
