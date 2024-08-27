@@ -71,17 +71,17 @@ export function MobileNav() {
           <span className="sr-only">Toggle Menu</span>
         </ButtonIcon>
       </SheetTrigger>
-      <SheetContent className="pr-0">
+      <SheetContent className="p-4">
         <MobileLink
           href="/"
           className="flex items-center"
           onOpenChange={setOpen}
         >
-          <LightLogo className="mr-2 h-4 w-4" />
-          <span className="font-bold">{siteConfig.name}</span>
+          <LightLogo className="mr-2 h-6 w-6" />
+          <span className="font-bold text-xl">{siteConfig.name}</span>
         </MobileLink>
-        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-          <div className="flex flex-col space-y-3">
+        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-8">
+          <div className="flex flex-col space-y-4">
             {navConfig?.map(
               (item) =>
                 item.href && (

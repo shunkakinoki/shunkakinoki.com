@@ -34,7 +34,9 @@ export function MainNav() {
           href="/about"
           className={cn(
             "transition-colors hover:text-text/80",
-            pathname.endsWith("/about") ? "text-text" : "text-text/60",
+            pathname.endsWith("/about")
+              ? "font-medium text-text"
+              : "text-text/60",
           )}
         >
           About
@@ -43,7 +45,9 @@ export function MainNav() {
           href="/blog"
           className={cn(
             "transition-colors hover:text-text/80",
-            pathname?.endsWith("/blog") ? "text-text" : "text-text/60",
+            pathname?.endsWith("/blog")
+              ? "font-medium text-text"
+              : "text-text/60",
           )}
         >
           Blog
@@ -52,7 +56,9 @@ export function MainNav() {
           href="/dashboard"
           className={cn(
             "transition-colors hover:text-text/80",
-            pathname?.endsWith("/dashboard") ? "text-text" : "text-text/60",
+            pathname?.endsWith("/dashboard")
+              ? "font-medium text-text"
+              : "text-text/60",
           )}
         >
           Dashboard
