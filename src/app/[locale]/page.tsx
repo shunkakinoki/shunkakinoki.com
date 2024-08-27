@@ -82,7 +82,7 @@ export default async function IndexPage({
           </Button>
         </PageActions>
       </PageHeader>
-      <div className="flex flex-col space-y-10 md:space-y-16">
+      <div className="mt-4 flex flex-col space-y-10 md:space-y-16">
         <Products isPartial />
         <Life />
         <Social isPartial />

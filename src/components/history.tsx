@@ -32,7 +32,7 @@ export const History: FC = () => {
       <PageHeader>
         <PageHeaderHeading>{t("history.title")}</PageHeaderHeading>
       </PageHeader>
-      <div className="mt-3 w-full flex-col items-center px-6 sm:px-4 md:px-0">
+      <div className="mt-3 w-full flex-col items-center">
         <HistoryYear>Present</HistoryYear>
         <ul className="my-3">
           <HistoryStep time="January 2020 ~ Present" type="globe">

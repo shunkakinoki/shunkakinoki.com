@@ -24,18 +24,20 @@ export function SiteFooter() {
 
   return (
     <footer>
-      <div className="mx-auto max-w-screen-md overflow-hidden px-6 lg:px-4">
+      <div className="mx-auto max-w-screen-md overflow-hidden px-4">
         <nav
           className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12 md:space-x-8"
           aria-label="Footer"
         >
           {navConfig.map((item) => (
-            <div key={item.title} className="pb-6">
+            <div key={item.title} className="pb-4">
               <a
                 href={item.href}
                 className={cn(
                   "text-sm leading-6 hover:text-text/80",
-                  pathname.endsWith(item.href) ? "text-text" : "text-text/60",
+                  pathname.endsWith(item.href)
+                    ? "font-medium text-text"
+                    : "text-text/60",
                 )}
               >
                 {item.title}
