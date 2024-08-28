@@ -5,7 +5,7 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
-// import { Toaster } from "@lightdotso/ui/components/toast";
+import { Toaster } from "@lightdotso/ui/components/toast";
 import type { Viewport } from "next";
 import { getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
@@ -94,7 +94,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <TailwindIndicator />
             <Analytics />
             <SpeedInsights />
-            {/* <Toaster /> */}
+            <Toaster />
           </ThemeProvider>
         </body>
       </html>
