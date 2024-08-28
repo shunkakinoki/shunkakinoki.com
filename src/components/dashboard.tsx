@@ -5,6 +5,7 @@ import {
   getLatestPublishedTweetCount,
 } from "@/services/twitter";
 import {
+  DocumentMagnifyingGlassIcon,
   DocumentTextIcon,
   EyeIcon,
   UserGroupIcon,
@@ -166,7 +167,7 @@ export async function TweetImpressionsCard() {
         title="Twitter Impressions"
         href="https://typefully.com/shunkakinoki/stats"
       >
-        <DocumentTextIcon className="h-6 w-6" />
+        <DocumentMagnifyingGlassIcon className="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );

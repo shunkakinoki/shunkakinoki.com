@@ -1,3 +1,4 @@
+import withBundleAnalyzer from "@next/bundle-analyzer";
 import createNextIntlPlugin from "next-intl/plugin";
 
 // -----------------------------------------------------------------------------
@@ -35,9 +36,17 @@ const nextConfig = {
   },
 };
 
+const plugins = [
+  withBundleAnalyzer({
+    enabled: process.env.ANALYZE === "true",
+  }),
+  withNextIntl,
+];
 // -----------------------------------------------------------------------------
 // Export
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
-export default withNextIntl(nextConfig);
+export default plugins.reduce((acc, next) => {
+  return next(acc);
+}, nextConfig);

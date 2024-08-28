@@ -11,31 +11,31 @@
 }
 
 .notion h1 {
-  @apply my-8 text-6xl font-bold leading-tight tracking-tighter;
+  @apply my-8 text-4xl md:text-6xl font-bold leading-tight tracking-tighter;
 }
 
 .notion h2 {
-  @apply my-6 text-4xl font-semibold leading-tight;
+  @apply my-6 text-3xl md:text-4xl font-semibold leading-tight;
 }
 
 .notion h3 {
-  @apply my-5 text-2xl font-semibold leading-snug;
+  @apply my-5 text-2xl md:text-3xl font-semibold leading-snug;
 }
 
 .notion h4 {
-  @apply my-4 text-2xl;
+  @apply my-4 text-2xl md:text-3xl;
 }
 
 .notion h5 {
-  @apply my-3 text-3xl font-light;
+  @apply my-3 text-2xl md:text-3xl font-light;
 }
 
 .notion h6 {
-  @apply my-3 text-xl font-thin;
+  @apply my-3 text-xl md:text-2xl font-thin;
 }
 
 .notion ul {
-  @apply mx-4 my-6 text-lg font-semibold list-disc sm:my-9;
+  @apply mx-4 my-6 text-lg md:text-xl font-semibold list-disc sm:my-9;
 }
 
 .notion li {
@@ -43,7 +43,7 @@
 }
 
 .notion ol {
-  @apply mx-4 my-6 text-lg font-semibold list-decimal list-inside sm:my-9;
+  @apply mx-4 my-6 text-lg md:text-xl font-semibold list-decimal list-inside sm:my-9;
 }
 
 .notion table {
@@ -51,19 +51,19 @@
 }
 
 .notion th {
-  @apply relative font-serif text-2xl font-semibold leading-relaxed text-left border-collapse;
+  @apply relative font-serif text-xl md:text-2xl font-semibold leading-relaxed text-left border-collapse;
 }
 
 .notion td {
-  @apply px-4 py-2 font-serif leading-relaxed;
+  @apply px-4 py-2 font-serif text-lg md:text-xl leading-relaxed;
 }
 
 .notion blockquote {
-  @apply p-3 mx-16 my-auto font-serif text-xl italic;
+  @apply p-3 mx-16 my-auto font-serif text-lg md:text-xl italic;
 }
 
 .notion blockquote > p {
-  @apply max-w-screen-md mx-0 my-auto text-2xl font-bold;
+  @apply max-w-screen-md mx-0 my-auto text-lg md:text-xl font-bold;
 }
 
 .notion img {

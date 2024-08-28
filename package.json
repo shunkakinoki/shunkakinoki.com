@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "analyze": "ANALYZE=true next build",
     "biome:cmd": "biome check --write --unsafe --no-errors-on-unmatched",
     "biome:fix": "biome check --write --unsafe --no-errors-on-unmatched",
     "biome:lint": "biome check --unsafe --no-errors-on-unmatched",
@@ -23,6 +24,7 @@
     "@lightdotso/svg": "^0.0.10",
     "@lightdotso/tailwindcss": "^3.1.7",
     "@lightdotso/ui": "^3.1.14",
+    "@next/bundle-analyzer": "^14.2.7",
     "@notionhq/client": "^2.2.15",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.0.5",

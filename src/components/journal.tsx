@@ -59,6 +59,7 @@ export async function Journal() {
               >
                 <div className="text-xl md:text-2xl">
                   {/* @ts-ignore */}
+                  {page?.icon?.emoji ?? "📄"} {/* @ts-ignore */}
                   {page.properties.Name?.title[0]?.plain_text || ""}
                 </div>
               </Link>
