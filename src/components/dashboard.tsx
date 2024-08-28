@@ -9,6 +9,7 @@ import {
   DocumentMagnifyingGlassIcon,
   DocumentTextIcon,
   EyeIcon,
+  GlobeAmericasIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
@@ -182,12 +183,12 @@ export async function CloudflareCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Cloudflare Analytics">
-          <DocumentMagnifyingGlassIcon className="h-6 w-6" />
+          <GlobeAmericasIcon className="h-6 w-6" />
         </DashboardCard>
       }
     >
       <DashboardCard number={data} title="Cloudflare Analytics">
-        <DocumentMagnifyingGlassIcon className="h-6 w-6" />
+        <GlobeAmericasIcon className="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
