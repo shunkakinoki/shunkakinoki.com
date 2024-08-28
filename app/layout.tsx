@@ -5,9 +5,9 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
-// import { Toaster } from "@lightdotso/ui/components/toast";
 import type { Viewport } from "next";
 import { getTranslations } from "next-intl/server";
+import Script from "next/script";
 import type { ReactNode } from "react";
 import "@lightdotso/styles/global.css";
 
@@ -84,17 +84,21 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable,
           )}
         >
+          <Script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "3fff5b53524d4928bae2c465c1ac14f2", "spa": true}'
+          />
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <div vaul-drawer-wrapper="">{children}</div>
+            {children}
             <TailwindIndicator />
             <Analytics />
             <SpeedInsights />
-            {/* <Toaster /> */}
           </ThemeProvider>
         </body>
       </html>
