@@ -1,3 +1,4 @@
+import { queryCloudflareAnalytics } from "@/services/cloudflare";
 import { getTotalViewCount, getTotalVisitorCount } from "@/services/redis";
 import {
   getFollowerCount,
@@ -42,6 +43,7 @@ export const Dashboard: FC = () => {
         <TwitterCard />
         <TweetCard />
         <TweetImpressionsCard />
+        <CloudflareCard />
       </dl>
     </section>
   );
@@ -167,6 +169,24 @@ export async function TweetImpressionsCard() {
         title="Twitter Impressions"
         href="https://typefully.com/shunkakinoki/stats"
       >
+        <DocumentMagnifyingGlassIcon className="h-6 w-6" />
+      </DashboardCard>
+    </Suspense>
+  );
+}
+
+export async function CloudflareCard() {
+  const data = await queryCloudflareAnalytics();
+
+  return (
+    <Suspense
+      fallback={
+        <DashboardCard number={undefined} title="Cloudflare Analytics">
+          <DocumentMagnifyingGlassIcon className="h-6 w-6" />
+        </DashboardCard>
+      }
+    >
+      <DashboardCard number={data} title="Cloudflare Analytics">
         <DocumentMagnifyingGlassIcon className="h-6 w-6" />
       </DashboardCard>
     </Suspense>
