@@ -1,3 +1,4 @@
+import { queryCloudflareAnalytics } from "@/services/cloudflare";
 import { getTotalViewCount, getTotalVisitorCount } from "@/services/redis";
 import {
   getFollowerCount,
@@ -8,6 +9,7 @@ import {
   DocumentMagnifyingGlassIcon,
   DocumentTextIcon,
   EyeIcon,
+  GlobeAmericasIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
@@ -42,6 +44,7 @@ export const Dashboard: FC = () => {
         <TwitterCard />
         <TweetCard />
         <TweetImpressionsCard />
+        <CloudflareCard />
       </dl>
     </section>
   );
@@ -168,6 +171,24 @@ export async function TweetImpressionsCard() {
         href="https://typefully.com/shunkakinoki/stats"
       >
         <DocumentMagnifyingGlassIcon className="h-6 w-6" />
+      </DashboardCard>
+    </Suspense>
+  );
+}
+
+export async function CloudflareCard() {
+  const data = await queryCloudflareAnalytics();
+
+  return (
+    <Suspense
+      fallback={
+        <DashboardCard number={undefined} title="Cloudflare Analytics">
+          <GlobeAmericasIcon className="h-6 w-6" />
+        </DashboardCard>
+      }
+    >
+      <DashboardCard number={data} title="Cloudflare Analytics">
+        <GlobeAmericasIcon className="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
