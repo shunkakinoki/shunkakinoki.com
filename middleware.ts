@@ -1,9 +1,8 @@
+import { defaultLocale, localePrefix, locales, pathnames } from "@/config";
+import { internalConfig } from "@/config/internal";
+import { socialConfig } from "@/config/social";
 import createMiddleware from "next-intl/middleware";
 import { type NextRequest, NextResponse } from "next/server";
-
-import { defaultLocale, localePrefix, locales, pathnames } from "@/config";
-import { internalConfig } from "./config/internal";
-import { socialConfig } from "./config/social";
 
 // -----------------------------------------------------------------------------
 // Middleware
