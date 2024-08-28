@@ -7,6 +7,7 @@ import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import type { Viewport } from "next";
 import { getTranslations } from "next-intl/server";
+import Script from "next/script";
 import type { ReactNode } from "react";
 import "@lightdotso/styles/global.css";
 
@@ -83,6 +84,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable,
           )}
         >
+          <Script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "3fff5b53524d4928bae2c465c1ac14f2", "spa": true}'
+          />
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
