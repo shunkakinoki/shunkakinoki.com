@@ -26,7 +26,7 @@ export async function Journal() {
   ).results.filter((db) => {
     return (
       //@ts-ignore
-      !!db.properties.Date?.date
+      !!db.properties.Date?.date && !!db?.icon?.emoji
     );
   });
 
