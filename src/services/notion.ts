@@ -4,6 +4,7 @@ import type {
   QueryDatabaseParameters,
   QueryDatabaseResponse,
 } from "@notionhq/client/build/src/api-endpoints.d";
+import { cache } from "react";
 
 // -----------------------------------------------------------------------------
 // Types
@@ -72,6 +73,17 @@ const notion = new Client({
 // Utils
 // -----------------------------------------------------------------------------
 
+export const retrieveDatabase = async ({
+  database_id,
+  // biome-ignore lint/style/useNamingConvention: <explanation>
+}: { database_id: string }) => {
+  const response = await notion.databases.retrieve({
+    // biome-ignore lint/style/useNamingConvention: <explanation>
+    database_id: database_id,
+  });
+  return response;
+};
+
 export const queryDatabase = async ({
   database_id,
   filter,
@@ -134,3 +146,26 @@ export const getBlocks = async (blockId: string) => {
   }
   return blocks;
 };
+
+export const getDatabaseStats = async () => {
+  const response = await fetch(
+    "https://shunkakinoki.notion.site/api/v3/queryCollection",
+    {
+      headers: {
+        "cache-control": "no-cache",
+        "content-type": "application/json",
+      },
+      body: '{"source":{"type":"collection","id":"10c3fb1a-29ed-450c-8fe4-69ba3c341adb","spaceId":"e205c9f3-fa7b-4acc-b9d5-a76b150dcfce"},"collectionView":{"id":"2bcd2adf-e8d0-4778-8b98-aa632d7362cb","spaceId":"e205c9f3-fa7b-4acc-b9d5-a76b150dcfce"},"loader":{"reducers":{"collection_group_results":{"type":"results","limit":50},"table:uncategorized:htQ<:max":{"type":"aggregation","aggregation":{"property":"htQ<","aggregator":"max"}},"table:uncategorized:mLup:max":{"type":"aggregation","aggregation":{"property":"mLup","aggregator":"max"}},"table:uncategorized:A[_n:max":{"type":"aggregation","aggregation":{"property":"A[_n","aggregator":"max"}},"table:uncategorized:L\\\\Bo:sum":{"type":"aggregation","aggregation":{"property":"L\\\\Bo","aggregator":"sum"}},"table:uncategorized:QCJk:sum":{"type":"aggregation","aggregation":{"property":"QCJk","aggregator":"sum"}},"table:uncategorized:\\\\iGG:sum":{"type":"aggregation","aggregation":{"property":"\\\\iGG","aggregator":"sum"}},"table:uncategorized:UeRe:sum":{"type":"aggregation","aggregation":{"property":"UeRe","aggregator":"sum"}},"table:uncategorized:@Jfv:sum":{"type":"aggregation","aggregation":{"property":"@Jfv","aggregator":"sum"}},"table:uncategorized:B?Vi:percent_checked":{"type":"aggregation","aggregation":{"property":"B?Vi","aggregator":"percent_checked"}},"table:uncategorized:bpQ^:sum":{"type":"aggregation","aggregation":{"property":"bpQ^","aggregator":"sum"}}},"sort":[{"property":"Q|ST","direction":"descending"}],"searchQuery":"","userTimeZone":"Asia/Tokyo"},"aggregationStatus":"full"}',
+      method: "POST",
+    },
+  );
+
+  const data = await response.json();
+  return data?.result?.reducerResults;
+};
+
+// -----------------------------------------------------------------------------
+// Cached
+// -----------------------------------------------------------------------------
+
+export const getCachedDatabaseStats = cache(getDatabaseStats);
