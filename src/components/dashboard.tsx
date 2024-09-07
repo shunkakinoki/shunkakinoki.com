@@ -1,4 +1,7 @@
+import { InternalConfig } from "@/config/internal";
+import { SocialConfig } from "@/config/social";
 import { queryCloudflareAnalytics } from "@/services/cloudflare";
+import { getCachedDatabaseStats } from "@/services/notion";
 import { getTotalViewCount, getTotalVisitorCount } from "@/services/redis";
 import {
   getFollowerCount,
@@ -10,12 +13,18 @@ import {
   DocumentTextIcon,
   EyeIcon,
   GlobeAmericasIcon,
+  StarIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { TwitterLogoIcon } from "@radix-ui/react-icons";
+import { DumbbellIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { type FC, Suspense } from "react";
+import { FaRunning } from "react-icons/fa";
+import { GiWeightLiftingUp } from "react-icons/gi";
+import { MdSportsMartialArts } from "react-icons/md";
+import { SiBlockbench } from "react-icons/si";
 import { PageHeader, PageHeaderHeading } from "./page-header";
 
 // -----------------------------------------------------------------------------
@@ -45,6 +54,12 @@ export const Dashboard: FC = () => {
         <TweetCard />
         <TweetImpressionsCard />
         <CloudflareCard />
+        <TotalLiftedCard />
+        <TotalRunningCard />
+        <SquatCard />
+        <BenchCard />
+        <DeadLiftCard />
+        <MaxedOutCard />
       </dl>
     </section>
   );
@@ -124,7 +139,7 @@ export async function TwitterCard() {
       <DashboardCard
         number={followerCount}
         title="Twitter Followers"
-        href="https://twitter.com/shunkakinoki"
+        href={SocialConfig.X}
       >
         <TwitterLogoIcon className="h-6 w-6" />
       </DashboardCard>
@@ -146,7 +161,8 @@ export async function TweetCard() {
       <DashboardCard
         number={latestPublishedTweetCount}
         title="Latest Published Tweets"
-        href="https://twitter.com/shunkakinoki"
+        href={SocialConfig.X}
+        suffix="tweets"
       >
         <DocumentTextIcon className="h-6 w-6" />
       </DashboardCard>
@@ -160,15 +176,15 @@ export async function TweetImpressionsCard() {
   return (
     <Suspense
       fallback={
-        <DashboardCard number={undefined} title="Latest Published Tweets">
-          <DocumentTextIcon className="h-6 w-6" />
+        <DashboardCard number={undefined} title="Twitter Impressions">
+          <DocumentMagnifyingGlassIcon className="h-6 w-6" />
         </DashboardCard>
       }
     >
       <DashboardCard
         number={latestPublishedTweetCount}
         title="Twitter Impressions"
-        href="https://typefully.com/shunkakinoki/stats"
+        href={SocialConfig.TypefullyStats}
       >
         <DocumentMagnifyingGlassIcon className="h-6 w-6" />
       </DashboardCard>
@@ -195,6 +211,197 @@ export async function CloudflareCard() {
 }
 
 // -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
+export async function TotalLiftedCard() {
+  // ---------------------------------------------------------------------------
+  // Services
+  // ---------------------------------------------------------------------------
+
+  const res = await getCachedDatabaseStats();
+  const totalLifted =
+    res?.["table:uncategorized:L\\Bo:sum"]?.aggregationResult?.value;
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <Suspense
+      fallback={
+        <DashboardCard number={undefined} title="Total Lifted">
+          <DumbbellIcon className="h-6 w-6" />
+        </DashboardCard>
+      }
+    >
+      <DashboardCard
+        number={totalLifted}
+        title="Total Lifted"
+        href={InternalConfig.Stats}
+        suffix="lbs"
+      >
+        <DumbbellIcon className="h-6 w-6" />
+      </DashboardCard>
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
+export async function TotalRunningCard() {
+  const res = await getCachedDatabaseStats();
+  const totalRunning =
+    res?.["table:uncategorized:QCJk:sum"]?.aggregationResult?.value;
+
+  return (
+    <Suspense
+      fallback={
+        <DashboardCard number={undefined} title="Total Running">
+          <FaRunning className="h-6 w-6" />
+        </DashboardCard>
+      }
+    >
+      <DashboardCard
+        number={totalRunning}
+        title="Total Running"
+        suffix="km"
+        href={InternalConfig.Stats}
+      >
+        <FaRunning className="h-6 w-6" />
+      </DashboardCard>
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
+export async function SquatCard() {
+  // ---------------------------------------------------------------------------
+  // Services
+  // ---------------------------------------------------------------------------
+
+  const res = await getCachedDatabaseStats();
+  const maxSquat =
+    res?.["table:uncategorized:htQ<:max"]?.aggregationResult?.value;
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <Suspense
+      fallback={
+        <DashboardCard number={undefined} title="Max Squat">
+          <MdSportsMartialArts className="h-6 w-6" />
+        </DashboardCard>
+      }
+    >
+      <DashboardCard
+        number={maxSquat}
+        title="Max Squat"
+        href={InternalConfig.Stats}
+        suffix="lbs"
+      >
+        <MdSportsMartialArts className="h-6 w-6" />
+      </DashboardCard>
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
+export async function BenchCard() {
+  const res = await getCachedDatabaseStats();
+  const maxBench =
+    res?.["table:uncategorized:mLup:max"]?.aggregationResult?.value;
+
+  return (
+    <Suspense
+      fallback={
+        <DashboardCard number={undefined} title="Max Bench">
+          <SiBlockbench className="h-6 w-6" />
+        </DashboardCard>
+      }
+    >
+      <DashboardCard
+        number={maxBench}
+        title="Max Bench"
+        href={InternalConfig.Stats}
+        suffix="lbs"
+      >
+        <SiBlockbench className="h-6 w-6" />
+      </DashboardCard>
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
+export async function DeadLiftCard() {
+  const res = await getCachedDatabaseStats();
+  const maxDeadLift =
+    res?.["table:uncategorized:A[_n:max"]?.aggregationResult?.value;
+
+  return (
+    <Suspense
+      fallback={
+        <DashboardCard number={undefined} title="Max DeadLift">
+          <GiWeightLiftingUp className="h-6 w-6" />
+        </DashboardCard>
+      }
+    >
+      <DashboardCard
+        number={maxDeadLift}
+        title="Max DeadLift"
+        href={InternalConfig.Stats}
+        suffix="lbs"
+      >
+        <GiWeightLiftingUp className="h-6 w-6" />
+      </DashboardCard>
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------------------
+
+export async function MaxedOutCard() {
+  const res = await getCachedDatabaseStats();
+  const maxedOutValue =
+    res?.["table:uncategorized:B?Vi:percent_checked"]?.aggregationResult?.value;
+  const maxedOutPercentage = Number((maxedOutValue * 100).toFixed(2));
+
+  return (
+    <Suspense
+      fallback={
+        <DashboardCard number={undefined} title="Maxed Out">
+          <StarIcon className="h-6 w-6" />
+        </DashboardCard>
+      }
+    >
+      <DashboardCard
+        number={maxedOutPercentage}
+        title="Maxed Out"
+        suffix="%"
+        href={InternalConfig.Stats}
+      >
+        <StarIcon className="h-6 w-6" />
+      </DashboardCard>
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
 // Props
 // -----------------------------------------------------------------------------
 
@@ -203,6 +410,7 @@ export interface Props {
   children: JSX.Element;
   href?: string;
   number: number | undefined;
+  suffix?: string;
   title: string;
 }
 
@@ -210,7 +418,13 @@ export interface Props {
 // Component
 // -----------------------------------------------------------------------------
 
-export const DashboardCard: FC<Props> = ({ children, href, number, title }) => {
+export const DashboardCard: FC<Props> = ({
+  children,
+  href,
+  number,
+  suffix,
+  title,
+}) => {
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
@@ -234,6 +448,11 @@ export const DashboardCard: FC<Props> = ({ children, href, number, title }) => {
                 {number ? (
                   <div className="font-semibold text-2xl text-text">
                     {number.toLocaleString()}
+                    {suffix ? (
+                      <span className="ml-1 text-lg text-text-weak">
+                        {suffix}
+                      </span>
+                    ) : null}
                   </div>
                 ) : (
                   <div className="h-8 w-9/12 animate-pulse rounded bg-background-stronger" />
