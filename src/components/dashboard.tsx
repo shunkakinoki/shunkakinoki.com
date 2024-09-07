@@ -18,10 +18,13 @@ import {
 } from "@heroicons/react/24/outline";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { TwitterLogoIcon } from "@radix-ui/react-icons";
-import { DumbbellIcon, PersonStandingIcon } from "lucide-react";
+import { DumbbellIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { type FC, Suspense } from "react";
 import { FaRunning } from "react-icons/fa";
+import { GiWeightLiftingUp } from "react-icons/gi";
+import { MdSportsMartialArts } from "react-icons/md";
+import { SiBlockbench } from "react-icons/si";
 import { PageHeader, PageHeaderHeading } from "./page-header";
 
 // -----------------------------------------------------------------------------
@@ -294,7 +297,7 @@ export async function SquatCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Max Squat">
-          <PersonStandingIcon className="h-6 w-6" />
+          <MdSportsMartialArts className="h-6 w-6" />
         </DashboardCard>
       }
     >
@@ -304,7 +307,7 @@ export async function SquatCard() {
         href={InternalConfig.Stats}
         suffix="lbs"
       >
-        <PersonStandingIcon className="h-6 w-6" />
+        <MdSportsMartialArts className="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -323,7 +326,7 @@ export async function BenchCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Max Bench">
-          <PersonStandingIcon className="h-6 w-6" />
+          <SiBlockbench className="h-6 w-6" />
         </DashboardCard>
       }
     >
@@ -333,7 +336,7 @@ export async function BenchCard() {
         href={InternalConfig.Stats}
         suffix="lbs"
       >
-        <PersonStandingIcon className="h-6 w-6" />
+        <SiBlockbench className="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -352,7 +355,7 @@ export async function DeadLiftCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Max DeadLift">
-          <FaRunning className="h-6 w-6" />
+          <GiWeightLiftingUp className="h-6 w-6" />
         </DashboardCard>
       }
     >
@@ -362,7 +365,7 @@ export async function DeadLiftCard() {
         href={InternalConfig.Stats}
         suffix="lbs"
       >
-        <FaRunning className="h-6 w-6" />
+        <GiWeightLiftingUp className="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
