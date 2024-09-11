@@ -1,8 +1,9 @@
 import { Notion } from "@/components/notion";
 import { ViewCount } from "@/components/view-count";
 import { extractValidUUID } from "@/lib/utils";
-import { getBlocks, getPage } from "@/services/notion";
+import { type blockWithChildren, getBlocks, getPage } from "@/services/notion";
 import type { Metadata } from "next";
+import ogs from "open-graph-scraper";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -84,6 +85,40 @@ export default async function SlugPage({
     return block;
   });
 
+  const fetchOpenGraphData = async (block: blockWithChildren) => {
+    // @ts-ignore
+    const url = block.bookmark?.url ?? block.link_preview?.url;
+    const ogData = await ogs({ url: url });
+    if (!ogData.error) {
+      // @ts-ignore
+      block.openGraphData = JSON.stringify(ogData);
+    }
+    return block;
+  };
+
+  const processBlock = async (block: blockWithChildren) => {
+    if (block?.children) {
+      block.children = await Promise.all(
+        block.children.map(async (child) => {
+          // @ts-ignore
+          if (child.type === "link_preview" || child.type === "bookmark") {
+            return await fetchOpenGraphData(child);
+          }
+          return child;
+        }),
+      );
+    }
+    // @ts-ignore
+    if (block.type === "link_preview" || block.type === "bookmark") {
+      return fetchOpenGraphData(block);
+    }
+    return block;
+  };
+
+  const blocksWithOpenGraphData = await Promise.all(
+    blocksWithChildren.map(processBlock),
+  );
+
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
@@ -98,7 +133,7 @@ export default async function SlugPage({
       />
       <Notion
         viewCount={<ViewCount pageId={pageId} />}
-        blocks={blocksWithChildren}
+        blocks={blocksWithOpenGraphData}
         content={page}
         pageId={pageId}
       />

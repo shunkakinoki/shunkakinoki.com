@@ -70,6 +70,7 @@
     "next": "15.0.0-canary.120",
     "next-intl": "^3.17.6",
     "next-themes": "^0.3.0",
+    "open-graph-scraper": "^6.8.1",
     "openapi-fetch": "^0.11.1",
     "react": "19.0.0-rc-187dd6a7-20240806",
     "react-day-picker": "^8.10.1",

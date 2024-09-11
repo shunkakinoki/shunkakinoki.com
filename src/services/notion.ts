@@ -18,6 +18,8 @@ declare type NotionProperty =
 // biome-ignore lint/style/useNamingConvention: <explanation>
 export type blockWithChildren = ListBlockChildrenResponse["results"][number] & {
   children?: blockWithChildren[];
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  openGraphData?: any;
 };
 
 // biome-ignore lint/style/useNamingConvention: <explanation>
