@@ -15,6 +15,7 @@ import {
   BookmarkCheckIcon,
   Globe2Icon,
 } from "lucide-react";
+import type { SuccessResult } from "open-graph-scraper/types";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -77,7 +78,7 @@ export const Notion: FC<NotionProps> = ({
       {/* @ts-ignore */}
       {content.properties.Date?.date && (
         <div className="pb-3">
-          <h1 className="mb-4 line-clamp-3 font-bold text-3xl text-text tracking-tight md:text-5xl lg:text-6xl">
+          <h1 className="line-clamp-3 pb-4 font-bold text-3xl text-text tracking-tight md:text-5xl lg:text-6xl">
             {/* @ts-ignore */}
             {content.properties.Name?.title[0]?.plain_text}
           </h1>
@@ -237,11 +238,12 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
         </div>
       );
     case "bookmark":
-    case "link_preview":
+    case "link_preview": {
       // @ts-ignore
-      // biome-ignore lint/style/useSingleCaseStatement: <explanation>
-      // biome-ignore lint/correctness/noSwitchDeclarations: <explanation>
       const url = block.bookmark?.url ?? block.link_preview?.url;
+      const ogData = block?.openGraphData
+        ? (JSON.parse(block?.openGraphData) as SuccessResult)
+        : null;
 
       // Generate a notion style bookmark card
       return (
@@ -250,14 +252,32 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-text-info hover:text-text-info-stronger hover:underline"
+            className="group transition-opacity duration-300 hover:opacity-80"
           >
-            <Globe2Icon className="mr-2 inline-block h-4 w-4 text-text-weak" />
-            {url}
-            <ArrowUpRightFromSquareIcon className="ml-1 inline-block h-4 w-4" />
+            {ogData?.result?.ogImage ? (
+              <div className="relative">
+                <img
+                  className="!pt-0"
+                  src={ogData?.result?.ogImage[0]?.url}
+                  alt={ogData.result.ogTitle}
+                />
+                <div className="absolute bottom-6 left-2 rounded-md bg-black bg-opacity-50 p-1 text-white text-xs">
+                  {ogData.result.ogTitle}
+                </div>
+              </div>
+            ) : null}
+            <div className="inline-flex items-center">
+              <Globe2Icon className="mr-2 inline-block h-4 w-4 text-text-weak" />
+              <span className="mr-1.5 text-text-weak">From:</span>
+              <span className="text-text-info group-hover:text-text-info-stronger group-hover:underline">
+                {url}
+              </span>
+              <ArrowUpRightFromSquareIcon className="ml-1 inline-block h-4 w-4 text-text-info group-hover:text-text-info-strong" />
+            </div>
           </a>
         </div>
       );
+    }
     case "quote":
       return (
         <div className="border-border border-l-4 pl-4 text-text italic">

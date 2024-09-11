@@ -1,6 +1,10 @@
 import { Client } from "@notionhq/client";
 import type {
+  DatabaseObjectResponse,
   ListBlockChildrenResponse,
+  PageObjectResponse,
+  PartialDatabaseObjectResponse,
+  PartialPageObjectResponse,
   QueryDatabaseParameters,
   QueryDatabaseResponse,
 } from "@notionhq/client/build/src/api-endpoints.d";
@@ -15,9 +19,17 @@ declare type NotionProperty =
   //@ts-ignore
   QueryDatabaseResponse["results"][number]["properties"];
 
+export type NotionPageObject =
+  | PageObjectResponse
+  | PartialPageObjectResponse
+  | PartialDatabaseObjectResponse
+  | DatabaseObjectResponse;
+
 // biome-ignore lint/style/useNamingConvention: <explanation>
 export type blockWithChildren = ListBlockChildrenResponse["results"][number] & {
   children?: blockWithChildren[];
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  openGraphData?: any;
 };
 
 // biome-ignore lint/style/useNamingConvention: <explanation>
