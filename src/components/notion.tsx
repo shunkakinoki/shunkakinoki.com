@@ -78,7 +78,7 @@ export const Notion: FC<NotionProps> = ({
       {/* @ts-ignore */}
       {content.properties.Date?.date && (
         <div className="pb-3">
-          <h1 className="line-clamp-3 pb-4 font-bold text-3xl text-text tracking-tight md:text-5xl lg:text-6xl">
+          <h1 className="-mb-[0.2em] line-clamp-3 pt-[0.2em] pb-1.5 font-bold text-3xl text-text tracking-tight md:text-5xl lg:text-6xl">
             {/* @ts-ignore */}
             {content.properties.Name?.title[0]?.plain_text}
           </h1>

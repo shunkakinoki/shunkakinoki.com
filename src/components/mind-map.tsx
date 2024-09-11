@@ -34,38 +34,45 @@ export const MindMap: FC<MindMapProps> = ({ content }) => {
 
   return (
     <>
-      <h1 className="pb-4 font-bold text-3xl text-text tracking-tight">
+      <h1 className="py-4 font-semibold text-2xl leading-snug md:text-3xl">
         Workout Data
       </h1>
-      <Table>
-        <TableCaption>
-          {/* @ts-ignore */}
-          Workout Data for {content.properties.Property.title[0].plain_text}
-        </TableCaption>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Metric</TableHead>
-            <TableHead className="text-right">Value</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {nonNullNumberProperties.map(([key, value]) => (
-            <TableRow key={key}>
-              <TableCell className="font-medium">{key}</TableCell>
-              <TableCell className="text-right">
-                {(value as { number: number }).number.toLocaleString()}{" "}
-                {/* Add suffix based on the property name */}
-                {(key === "Deadlift" ||
-                  key === "Bench Press" ||
-                  key === "Squat" ||
-                  key === "Total Lifted") &&
-                  "lbs"}
-                {key.endsWith("Running") && "km"}
-              </TableCell>
+      <div className="rounded-md border border-border bg-background p-4">
+        <Table>
+          <TableCaption>
+            {/* @ts-ignore */}
+            Workout Data for {content.properties.Property.title[0].plain_text}
+          </TableCaption>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Metric</TableHead>
+              <TableHead className="text-right">Value</TableHead>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+          </TableHeader>
+          <TableBody>
+            {nonNullNumberProperties.map(([key, value]) => (
+              <TableRow key={key}>
+                <TableCell className="font-medium">{key}</TableCell>
+                <TableCell className="text-right">
+                  {(value as { number: number }).number.toLocaleString()}{" "}
+                  {/* Add suffix based on the property name */}
+                  {(key === "Deadlift" ||
+                    key === "Bench Press" ||
+                    key === "Squat" ||
+                    key === "Total Lifted") &&
+                    "lbs"}
+                  {(key === "Running" ||
+                    key === "Biking" ||
+                    key === "Swimming") &&
+                    "km"}
+                  {key === "Body Weight" && "lbs"}
+                  {key === "Calories" && "kcal"}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
     </>
   );
 };
