@@ -1,7 +1,15 @@
+import { MindMap } from "@/components/mind-map";
 import { Notion } from "@/components/notion";
 import { ViewCount } from "@/components/view-count";
 import { extractValidUUID } from "@/lib/utils";
-import { type blockWithChildren, getBlocks, getPage } from "@/services/notion";
+import {
+  type NotionPageObject,
+  type blockWithChildren,
+  getBlocks,
+  getPage,
+  queryDatabase,
+} from "@/services/notion";
+import type {} from "@notionhq/client/build/src/api-endpoints";
 import type { Metadata } from "next";
 import ogs from "open-graph-scraper";
 
@@ -95,7 +103,6 @@ export default async function SlugPage({
     }
     return block;
   };
-
   const processBlock = async (block: blockWithChildren) => {
     if (block?.children) {
       block.children = await Promise.all(
@@ -114,10 +121,41 @@ export default async function SlugPage({
     }
     return block;
   };
-
   const blocksWithOpenGraphData = await Promise.all(
     blocksWithChildren.map(processBlock),
   );
+
+  let mindMap: NotionPageObject[] | null = null;
+
+  if (
+    //@ts-ignore
+    page.parent.type === "database_id" &&
+    //@ts-ignore
+    page.parent.database_id === "badf29d8-7d2f-4e03-b2c5-451a627d8618"
+  ) {
+    mindMap = (
+      await queryDatabase({
+        // biome-ignore lint/style/useNamingConvention: <explanation>
+        database_id: "be3e2449e1324b518f78c21e168f5a78",
+        filter: {
+          and: [
+            {
+              property: "Date",
+              date: {
+                // @ts-ignore
+                equals: page.properties.Date.date.start,
+              },
+            },
+          ],
+        },
+      })
+    ).results.filter((db) => {
+      return (
+        //@ts-ignore
+        !!db.properties["Total Lifted"]?.number
+      );
+    });
+  }
 
   // ---------------------------------------------------------------------------
   // Render
@@ -137,6 +175,8 @@ export default async function SlugPage({
         content={page}
         pageId={pageId}
       />
+      {/* @ts-ignore */}
+      {mindMap && mindMap.length > 0 && <MindMap content={mindMap[0]} />}
     </>
   );
 }
