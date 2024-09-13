@@ -256,7 +256,7 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
             className="group transition-opacity duration-300 hover:opacity-80"
           >
             {ogData?.result?.ogImage?.[0]?.url ? (
-              <div className="relative">
+              <div className="relative aspect-video">
                 <BaseImage
                   width={1200}
                   height={630}
