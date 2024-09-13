@@ -1,6 +1,5 @@
 import { queryDatabase } from "@/services/notion";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
-import { BaseImage } from "@lightdotso/elements/base-image";
 import { getTranslations } from "next-intl/server";
 import { PageHeader, PageHeaderHeading } from "../components/page-header";
 import { SectionHeaderHeading } from "../components/section-header";
@@ -73,7 +72,7 @@ export async function Products({ isPartial }: ProductsProps) {
             >
               {/* @ts-ignore */}
               {product.properties.Image?.files[0] ? (
-                <BaseImage
+                <img
                   className="h-full w-full rounded-md"
                   //@ts-ignore
                   alt={product.properties.Name?.title[0]?.plain_text || ""}
