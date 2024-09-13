@@ -1,13 +1,21 @@
 import { Link } from "@/navigation";
 import { queryDatabase } from "@/services/notion";
 import { getTranslations } from "next-intl/server";
-import { PageHeader, PageHeaderHeading } from "./page-header";
+import { PageHeader, PageHeaderHeading } from "../components/page-header.ts";
+
+// -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+export interface MindProps {
+  dateStart: string;
+}
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export async function Journal() {
+export async function Mind({ dateStart }: MindProps) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
@@ -18,15 +26,25 @@ export async function Journal() {
   // Services
   // ---------------------------------------------------------------------------
 
-  const res = (
+  const mindMap = (
     await queryDatabase({
       // biome-ignore lint/style/useNamingConvention: <explanation>
-      database_id: "badf29d87d2f4e03b2c5451a627d8618",
+      database_id: "be3e2449e1324b518f78c21e168f5a78",
+      filter: {
+        and: [
+          {
+            property: "Date",
+            date: {
+              equals: dateStart,
+            },
+          },
+        ],
+      },
     })
   ).results.filter((db) => {
     return (
       //@ts-ignore
-      !!db.properties.Date?.date && !!db?.icon?.emoji
+      !!db.properties["Total Lifted"]?.number
     );
   });
 
@@ -37,10 +55,10 @@ export async function Journal() {
   return (
     <section>
       <PageHeader>
-        <PageHeaderHeading>{t("journal.title")}</PageHeaderHeading>
+        <PageHeaderHeading>{t("Mind.title")}</PageHeaderHeading>
       </PageHeader>
-      <div className="mt-8 w-full flex-col space-y-3">
-        {res.map((page) => {
+      <div class="mt-8 w-full flex-col space-y-3">
+        {mindMap.map((page) => {
           // @ts-ignore
           const date = new Date(page.properties.Date.date.start).toLocaleString(
             "en",
@@ -51,19 +69,18 @@ export async function Journal() {
             },
           );
           return (
-            <div key={page.id} className="flex space-x-4">
+            <div key={page.id} class="flex space-x-4">
               <Link
                 // @ts-expect-error
                 href={`/${page.id}`}
-                className="line-clamp-1 flex grow items-center font-extrabold text-text hover:text-text-weak hover:underline"
+                class="line-clamp-1 flex grow items-center font-extrabold text-text hover:text-text-weak hover:underline"
               >
-                <div className="text-xl md:text-2xl">
+                <div class="text-xl md:text-2xl">
                   {/* @ts-ignore */}
-                  {page?.icon?.emoji ?? "📄"} {/* @ts-ignore */}
                   {page.properties.Name?.title[0]?.plain_text || ""}
                 </div>
               </Link>
-              <div className="flex flex-none items-center justify-center text-sm text-text-weak">
+              <div class="flex flex-none items-center justify-center text-sm text-text-weak">
                 {date}
               </div>
             </div>

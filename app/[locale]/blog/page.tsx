@@ -1,4 +1,4 @@
-import { Blog } from "@/components/blog";
+import { Blog } from "@/sections/blog";
 import type { Metadata } from "next";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 

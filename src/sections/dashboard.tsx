@@ -25,7 +25,7 @@ import { FaRunning } from "react-icons/fa";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { MdSportsMartialArts } from "react-icons/md";
 import { SiBlockbench } from "react-icons/si";
-import { PageHeader, PageHeaderHeading } from "./page-header";
+import { PageHeader, PageHeaderHeading } from "../components/page-header.ts";
 
 // -----------------------------------------------------------------------------
 // Component
@@ -43,11 +43,11 @@ export const Dashboard: FC = () => {
   // ---------------------------------------------------------------------------
 
   return (
-    <section className="mb-2 w-full">
+    <section class="mb-2 w-full">
       <PageHeader>
         <PageHeaderHeading>{t("dashboard.title")}</PageHeaderHeading>
       </PageHeader>
-      <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
         <ViewCard />
         <VisitorCard />
         <TwitterCard />
@@ -84,12 +84,12 @@ export async function ViewCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Total Views">
-          <EyeIcon className="h-6 w-6" />
+          <EyeIcon class="h-6 w-6" />
         </DashboardCard>
       }
     >
       <DashboardCard number={totalViews ?? 0} title="Total Views">
-        <EyeIcon className="h-6 w-6" />
+        <EyeIcon class="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -114,12 +114,12 @@ export async function VisitorCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Total Visitors">
-          <UserGroupIcon className="h-6 w-6" />
+          <UserGroupIcon class="h-6 w-6" />
         </DashboardCard>
       }
     >
       <DashboardCard number={totalVisitorCount ?? 0} title="Total Visitors">
-        <UserGroupIcon className="h-6 w-6" />
+        <UserGroupIcon class="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -132,7 +132,7 @@ export async function TwitterCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Twitter Followers">
-          <TwitterLogoIcon className="h-6 w-6" />
+          <TwitterLogoIcon class="h-6 w-6" />
         </DashboardCard>
       }
     >
@@ -141,7 +141,7 @@ export async function TwitterCard() {
         title="Twitter Followers"
         href={SocialConfig.X}
       >
-        <TwitterLogoIcon className="h-6 w-6" />
+        <TwitterLogoIcon class="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -154,7 +154,7 @@ export async function TweetCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Latest Published Tweets">
-          <DocumentTextIcon className="h-6 w-6" />
+          <DocumentTextIcon class="h-6 w-6" />
         </DashboardCard>
       }
     >
@@ -164,7 +164,7 @@ export async function TweetCard() {
         href={SocialConfig.X}
         suffix="tweets"
       >
-        <DocumentTextIcon className="h-6 w-6" />
+        <DocumentTextIcon class="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -177,7 +177,7 @@ export async function TweetImpressionsCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Twitter Impressions">
-          <DocumentMagnifyingGlassIcon className="h-6 w-6" />
+          <DocumentMagnifyingGlassIcon class="h-6 w-6" />
         </DashboardCard>
       }
     >
@@ -186,7 +186,7 @@ export async function TweetImpressionsCard() {
         title="Twitter Impressions"
         href={SocialConfig.TypefullyStats}
       >
-        <DocumentMagnifyingGlassIcon className="h-6 w-6" />
+        <DocumentMagnifyingGlassIcon class="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -199,12 +199,12 @@ export async function CloudflareCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Cloudflare Analytics">
-          <GlobeAmericasIcon className="h-6 w-6" />
+          <GlobeAmericasIcon class="h-6 w-6" />
         </DashboardCard>
       }
     >
       <DashboardCard number={data} title="Cloudflare Analytics">
-        <GlobeAmericasIcon className="h-6 w-6" />
+        <GlobeAmericasIcon class="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -231,7 +231,7 @@ export async function TotalLiftedCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Total Lifted">
-          <DumbbellIcon className="h-6 w-6" />
+          <DumbbellIcon class="h-6 w-6" />
         </DashboardCard>
       }
     >
@@ -241,7 +241,7 @@ export async function TotalLiftedCard() {
         href={InternalConfig.Stats}
         suffix="lbs"
       >
-        <DumbbellIcon className="h-6 w-6" />
+        <DumbbellIcon class="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -260,7 +260,7 @@ export async function TotalRunningCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Total Running">
-          <FaRunning className="h-6 w-6" />
+          <FaRunning class="h-6 w-6" />
         </DashboardCard>
       }
     >
@@ -270,7 +270,7 @@ export async function TotalRunningCard() {
         suffix="km"
         href={InternalConfig.Stats}
       >
-        <FaRunning className="h-6 w-6" />
+        <FaRunning class="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -297,7 +297,7 @@ export async function SquatCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Max Squat">
-          <MdSportsMartialArts className="h-6 w-6" />
+          <MdSportsMartialArts class="h-6 w-6" />
         </DashboardCard>
       }
     >
@@ -307,7 +307,7 @@ export async function SquatCard() {
         href={InternalConfig.Stats}
         suffix="lbs"
       >
-        <MdSportsMartialArts className="h-6 w-6" />
+        <MdSportsMartialArts class="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -326,7 +326,7 @@ export async function BenchCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Max Bench">
-          <SiBlockbench className="h-6 w-6" />
+          <SiBlockbench class="h-6 w-6" />
         </DashboardCard>
       }
     >
@@ -336,7 +336,7 @@ export async function BenchCard() {
         href={InternalConfig.Stats}
         suffix="lbs"
       >
-        <SiBlockbench className="h-6 w-6" />
+        <SiBlockbench class="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -355,7 +355,7 @@ export async function DeadLiftCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Max DeadLift">
-          <GiWeightLiftingUp className="h-6 w-6" />
+          <GiWeightLiftingUp class="h-6 w-6" />
         </DashboardCard>
       }
     >
@@ -365,7 +365,7 @@ export async function DeadLiftCard() {
         href={InternalConfig.Stats}
         suffix="lbs"
       >
-        <GiWeightLiftingUp className="h-6 w-6" />
+        <GiWeightLiftingUp class="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -385,7 +385,7 @@ export async function MaxedOutCard() {
     <Suspense
       fallback={
         <DashboardCard number={undefined} title="Maxed Out">
-          <StarIcon className="h-6 w-6" />
+          <StarIcon class="h-6 w-6" />
         </DashboardCard>
       }
     >
@@ -395,7 +395,7 @@ export async function MaxedOutCard() {
         suffix="%"
         href={InternalConfig.Stats}
       >
-        <StarIcon className="h-6 w-6" />
+        <StarIcon class="h-6 w-6" />
       </DashboardCard>
     </Suspense>
   );
@@ -430,38 +430,36 @@ export const DashboardCard: FC<Props> = ({
   // ---------------------------------------------------------------------------
 
   return (
-    <div className="overflow-hidden rounded-lg bg-background-strong hover:bg-background-stronger">
+    <div class="overflow-hidden rounded-lg bg-background-strong hover:bg-background-stronger">
       <a
         href={href || "#"}
         target={href ? "_blank" : undefined}
         rel={href ? "noopener noreferrer" : undefined}
-        className="block"
+        class="block"
       >
-        <div className="px-4 py-5 sm:p-6">
-          <div className="flex items-center">
-            <div className="flex-shrink-0 rounded-md bg-indigo-500 p-3 text-white">
+        <div class="px-4 py-5 sm:p-6">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 rounded-md bg-indigo-500 p-3 text-white">
               {children}
             </div>
-            <div className="ml-5 w-0 flex-1">
-              <dt className="truncate font-medium text-text-weak">{title}</dt>
-              <dd className="flex items-baseline">
+            <div class="ml-5 w-0 flex-1">
+              <dt class="truncate font-medium text-text-weak">{title}</dt>
+              <dd class="flex items-baseline">
                 {number ? (
-                  <div className="font-semibold text-2xl text-text">
+                  <div class="font-semibold text-2xl text-text">
                     {number.toLocaleString()}
                     {suffix ? (
-                      <span className="ml-1 text-lg text-text-weak">
-                        {suffix}
-                      </span>
+                      <span class="ml-1 text-lg text-text-weak">{suffix}</span>
                     ) : null}
                   </div>
                 ) : (
-                  <div className="h-8 w-9/12 animate-pulse rounded bg-background-stronger" />
+                  <div class="h-8 w-9/12 animate-pulse rounded bg-background-stronger" />
                 )}
               </dd>
             </div>
             {href ? (
-              <div className="flex-shrink-0 text-text">
-                <ArrowTopRightOnSquareIcon className="h-6 w-6" />
+              <div class="flex-shrink-0 text-text">
+                <ArrowTopRightOnSquareIcon class="h-6 w-6" />
               </div>
             ) : null}
           </div>

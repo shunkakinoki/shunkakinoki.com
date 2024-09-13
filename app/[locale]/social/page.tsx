@@ -1,4 +1,4 @@
-import { Social } from "@/components/social";
+import { Social } from "@/sections/social";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 

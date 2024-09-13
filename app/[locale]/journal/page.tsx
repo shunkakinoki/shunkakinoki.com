@@ -1,4 +1,4 @@
-import { Journal } from "@/components/journal";
+import { Journal } from "@/sections/journal";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
