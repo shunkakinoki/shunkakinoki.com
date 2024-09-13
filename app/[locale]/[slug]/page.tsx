@@ -92,10 +92,8 @@ export default async function SlugPage({
     // @ts-ignore
     const url = block.bookmark?.url ?? block.link_preview?.url;
     const ogData = await getCachedOpenGraphData({ url: url });
-    if (ogData) {
-      // @ts-ignore
-      block.openGraphData = JSON.stringify(ogData);
-    }
+    // @ts-ignore
+    block.openGraphData = ogData;
     return block;
   };
   const processBlock = async (block: blockWithChildren) => {
