@@ -6,7 +6,7 @@ import {
   VariableIcon,
 } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
-import { SectionHeaderHeading } from "./section-header";
+import { SectionHeaderHeading } from "../components/section-header";
 
 // -----------------------------------------------------------------------------
 // Const

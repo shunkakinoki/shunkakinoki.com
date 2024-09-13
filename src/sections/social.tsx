@@ -4,8 +4,8 @@ import type { IconProps } from "@radix-ui/react-icons/dist/types";
 import { useTranslations } from "next-intl";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
 import type { IconType } from "react-icons/lib";
-import { PageHeader, PageHeaderHeading } from "./page-header";
-import { SectionHeaderHeading } from "./section-header";
+import { PageHeader, PageHeaderHeading } from "../components/page-header";
+import { SectionHeaderHeading } from "../components/section-header";
 
 // -----------------------------------------------------------------------------
 // Props

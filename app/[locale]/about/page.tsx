@@ -1,4 +1,4 @@
-import { Life } from "@/components/life";
+import { Life } from "@/sections/life";
 import type { Metadata } from "next";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import SlugPage from "../[slug]/page";

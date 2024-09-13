@@ -1,4 +1,4 @@
-import { History } from "@/components/history";
+import { History } from "@/sections/history";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 

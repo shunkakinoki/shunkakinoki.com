@@ -1,4 +1,4 @@
-import { Dashboard } from "@/components/dashboard";
+import { Dashboard } from "@/sections/dashboard";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 

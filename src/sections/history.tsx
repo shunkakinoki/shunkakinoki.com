@@ -10,7 +10,7 @@ import {
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import type { FC } from "react";
-import { PageHeader, PageHeaderHeading } from "./page-header";
+import { PageHeader, PageHeaderHeading } from "../components/page-header";
 
 // -----------------------------------------------------------------------------
 // Component

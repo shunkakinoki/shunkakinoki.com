@@ -1,13 +1,21 @@
 import { Link } from "@/navigation";
 import { queryDatabase } from "@/services/notion";
 import { getTranslations } from "next-intl/server";
-import { PageHeader, PageHeaderHeading } from "./page-header";
+import { PageHeader, PageHeaderHeading } from "../components/page-header";
+
+// -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+export interface BlogProps {
+  locale: string;
+}
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export async function Journal() {
+export async function Blog({ locale }: BlogProps) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
@@ -21,12 +29,32 @@ export async function Journal() {
   const res = (
     await queryDatabase({
       // biome-ignore lint/style/useNamingConvention: <explanation>
-      database_id: "badf29d87d2f4e03b2c5451a627d8618",
+      database_id: "e4ef762ca07f465e8f5cce906732140b",
+      filter: {
+        and: [
+          {
+            property: "Published",
+            checkbox: {
+              equals: true,
+            },
+          },
+          {
+            property: "Locale",
+            select: {
+              equals: locale,
+            },
+          },
+        ],
+      },
     })
   ).results.filter((db) => {
     return (
       //@ts-ignore
-      !!db.properties.Date?.date && !!db?.icon?.emoji
+      !!db.properties.Date?.date &&
+      //@ts-ignore
+      !!db.properties.Published.checkbox &&
+      //@ts-ignore
+      !!db.properties.Locale?.select
     );
   });
 
@@ -37,7 +65,7 @@ export async function Journal() {
   return (
     <section>
       <PageHeader>
-        <PageHeaderHeading>{t("journal.title")}</PageHeaderHeading>
+        <PageHeaderHeading>{t("blog.title")}</PageHeaderHeading>
       </PageHeader>
       <div className="mt-8 w-full flex-col space-y-3">
         {res.map((page) => {
@@ -59,7 +87,6 @@ export async function Journal() {
               >
                 <div className="text-xl md:text-2xl">
                   {/* @ts-ignore */}
-                  {page?.icon?.emoji ?? "📄"} {/* @ts-ignore */}
                   {page.properties.Name?.title[0]?.plain_text || ""}
                 </div>
               </Link>

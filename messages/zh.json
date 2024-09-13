@@ -62,5 +62,8 @@
   "values": {
     "title": "价值观",
     "description": "柿木舜的价值观"
+  },
+  "Mind": {
+    "title": "头脑"
   }
 }

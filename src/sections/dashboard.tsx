@@ -25,7 +25,7 @@ import { FaRunning } from "react-icons/fa";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { MdSportsMartialArts } from "react-icons/md";
 import { SiBlockbench } from "react-icons/si";
-import { PageHeader, PageHeaderHeading } from "./page-header";
+import { PageHeader, PageHeaderHeading } from "../components/page-header";
 
 // -----------------------------------------------------------------------------
 // Component

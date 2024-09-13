@@ -62,5 +62,8 @@
   "values": {
     "description": "Shun Kakinoki's Values",
     "title": "Values"
+  },
+  "Mind": {
+    "title": "Mind"
   }
 }

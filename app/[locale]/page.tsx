@@ -1,14 +1,14 @@
-import { Life } from "@/components/life";
 import {
   PageActions,
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@/components/page-header";
-import { Products } from "@/components/products";
-import { Social } from "@/components/social";
 import { siteConfig } from "@/config/site";
 import { Link } from "@/navigation";
+import { Life } from "@/sections/life";
+import { Products } from "@/sections/products";
+import { Social } from "@/sections/social";
 import { LightLogo } from "@lightdotso/svg";
 import { Button } from "@lightdotso/ui/components/button";
 import { TwitterLogoIcon } from "@radix-ui/react-icons";

@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from "@/navigation";
 import type { blockWithChildren, richText } from "@/services/notion";
+import { BaseImage } from "@lightdotso/elements/base-image";
 import { Checkbox } from "@lightdotso/ui/components/checkbox";
 import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import clsx from "clsx";
@@ -254,12 +255,14 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
             rel="noopener noreferrer"
             className="group transition-opacity duration-300 hover:opacity-80"
           >
-            {ogData?.result?.ogImage ? (
-              <div className="relative">
-                <img
+            {ogData?.result?.ogImage?.[0]?.url ? (
+              <div className="relative aspect-video">
+                <BaseImage
+                  width={1200}
+                  height={630}
                   className="!pt-0"
                   src={ogData?.result?.ogImage[0]?.url}
-                  alt={ogData.result.ogTitle}
+                  alt={ogData.result.ogTitle ?? ""}
                 />
                 <div className="absolute bottom-6 left-2 rounded-md bg-black bg-opacity-50 p-1 text-white text-xs">
                   {ogData.result.ogTitle}
@@ -306,7 +309,9 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
       );
     case "image":
       return (
-        <img
+        <BaseImage
+          width={1200}
+          height={630}
           //@ts-ignore
           alt={block.image?.caption[0]?.plain_text ?? "Notion Image"}
           //@ts-ignore
@@ -344,9 +349,6 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
         </div>
       );
     default:
-      // biome-ignore lint/suspicious/noConsoleLog: <explanation>
-      // biome-ignore lint/style/useSingleCaseStatement: <explanation>
-      console.log(`Unsupported block type: ${JSON.stringify(block)}`);
       return null;
   }
 };

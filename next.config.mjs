@@ -24,6 +24,15 @@ const nextConfig = {
       fullUrl: true,
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        hostname: "assets.light.so",
+        protocol: "https",
+        pathname: "**",
+      },
+    ],
+  },
   // biome-ignore lint/suspicious/useAwait: <explanation>
   redirects: async () => {
     return [

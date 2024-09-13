@@ -1,8 +1,8 @@
 import { queryDatabase } from "@/services/notion";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import { getTranslations } from "next-intl/server";
-import { PageHeader, PageHeaderHeading } from "./page-header";
-import { SectionHeaderHeading } from "./section-header";
+import { PageHeader, PageHeaderHeading } from "../components/page-header";
+import { SectionHeaderHeading } from "../components/section-header";
 
 // -----------------------------------------------------------------------------
 // Props
