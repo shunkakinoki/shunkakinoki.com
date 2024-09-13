@@ -3,9 +3,10 @@ import { ViewCount } from "@/components/view-count";
 import { extractValidUUID } from "@/lib/utils";
 import { Mind } from "@/sections/mind";
 import { type blockWithChildren, getBlocks, getPage } from "@/services/notion";
-import type {} from "@notionhq/client/build/src/api-endpoints";
+import { getCachedOpenGraphData } from "@/services/ogs";
 import type { Metadata } from "next";
-import ogs from "open-graph-scraper";
+import type { SuccessResult } from "open-graph-scraper/types";
+import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -63,6 +64,7 @@ export default async function SlugPage({
       revalidate: 30,
     };
   }
+
   const blocks = await getBlocks(params.slug);
   const childBlocks = await Promise.all(
     blocks
@@ -90,7 +92,9 @@ export default async function SlugPage({
   const fetchOpenGraphData = async (block: blockWithChildren) => {
     // @ts-ignore
     const url = block.bookmark?.url ?? block.link_preview?.url;
-    const ogData = await ogs({ url: url });
+    const ogData = JSON.parse(
+      await getCachedOpenGraphData({ url: url }),
+    ) as SuccessResult;
     if (!ogData.error) {
       // @ts-ignore
       block.openGraphData = JSON.stringify(ogData);
@@ -143,10 +147,12 @@ export default async function SlugPage({
           //@ts-ignore
           page.parent.database_id ===
             "badf29d8-7d2f-4e03-b2c5-451a627d8618" && (
-            <Mind
-              // @ts-ignore
-              dateStart={page.properties.Date.date.start}
-            />
+            <Suspense>
+              <Mind
+                // @ts-ignore
+                dateStart={page.properties.Date.date.start}
+              />
+            </Suspense>
           )
       }
     </>
