@@ -1,7 +1,7 @@
 import { Life } from "@/sections/life";
 import type { Metadata } from "next";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import SlugPage from "../[slug]/page.ts";
+import SlugPage from "../[slug]/page";
 
 // -----------------------------------------------------------------------------
 // Const

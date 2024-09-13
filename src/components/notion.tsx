@@ -75,17 +75,17 @@ export const Notion: FC<NotionProps> = ({
   // ---------------------------------------------------------------------------
 
   return (
-    <section class="w-full text-text">
+    <section className="w-full text-text">
       {/* @ts-ignore */}
       {content.properties.Date?.date && (
-        <div class="pb-3">
-          <h1 class="-mb-[0.2em] line-clamp-3 pt-[0.2em] pb-1.5 font-bold text-3xl text-text tracking-tight md:text-5xl lg:text-6xl">
+        <div className="pb-3">
+          <h1 className="-mb-[0.2em] line-clamp-3 pt-[0.2em] pb-1.5 font-bold text-3xl text-text tracking-tight md:text-5xl lg:text-6xl">
             {/* @ts-ignore */}
             {content.properties.Name?.title[0]?.plain_text}
           </h1>
-          <div class="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
-            <div class="flex items-center">
-              <p class="text-text-weak">
+          <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
+            <div className="flex items-center">
+              <p className="text-text-weak">
                 by Shun Kakinoki &middot;{" "}
                 {new Date(
                   //@ts-ignore
@@ -104,7 +104,7 @@ export const Notion: FC<NotionProps> = ({
           </div>
         </div>
       )}
-      <div class="notion">
+      <div className="notion">
         {blocks.map((block) => {
           return (
             <Fragment key={block.id}>
@@ -113,7 +113,7 @@ export const Notion: FC<NotionProps> = ({
           );
         })}
       </div>
-      <div class="flex justify-center space-x-8 pt-6 pb-4">
+      <div className="flex justify-center space-x-8 pt-6 pb-4">
         {/* <LikeButton pageId={pageId} /> */}
       </div>
     </section>
@@ -149,7 +149,7 @@ export const Text: FC<TextProps> = ({ text, className }) => {
         return (
           <span
             key={value.plain_text}
-            class={clsx(
+            className={clsx(
               bold && "font-extrabold",
               code &&
                 "rounded-md border border-border bg-background-strong px-1 font-mono text-sm text-text-weak",
@@ -164,10 +164,10 @@ export const Text: FC<TextProps> = ({ text, className }) => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex flex-1 justify-center gap-0.5 break-all text-text-info leading-4 hover:text-text-info-strong"
+                className="inline-flex flex-1 justify-center gap-0.5 break-all text-text-info leading-4 hover:text-text-info-strong"
               >
                 {plain_text === "Untitled" ? "<REDACTED>" : plain_text}
-                <ArrowUpRightFromSquareIcon class="h-2 w-2 shrink-0" />
+                <ArrowUpRightFromSquareIcon className="h-2 w-2 shrink-0" />
               </a>
             ) : (
               plain_text
@@ -187,7 +187,7 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
   //@ts-ignore
   switch (block.type) {
     case "divider":
-      return <hr class="my-6 border border-border" />;
+      return <hr className="my-6 border border-border" />;
     case "paragraph":
       return (
         <p>
@@ -232,8 +232,8 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
       );
     case "callout":
       return (
-        <div class="my-4 rounded-lg border border-border bg-background-strong p-3">
-          <BookmarkCheckIcon class="mr-2 inline-block h-4 w-4" />
+        <div className="my-4 rounded-lg border border-border bg-background-strong p-3">
+          <BookmarkCheckIcon className="mr-2 inline-block h-4 w-4" />
           {/* @ts-ignore */}
           <Text text={block.callout.rich_text as richText[]} />
         </div>
@@ -248,34 +248,34 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
 
       // Generate a notion style bookmark card
       return (
-        <div class="my-4 break-all rounded-lg border border-border p-3">
+        <div className="my-4 break-all rounded-lg border border-border p-3">
           <a
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            class="group transition-opacity duration-300 hover:opacity-80"
+            className="group transition-opacity duration-300 hover:opacity-80"
           >
             {ogData?.result?.ogImage?.[0]?.url ? (
-              <div class="relative">
+              <div className="relative">
                 <BaseImage
                   width={1200}
                   height={630}
-                  class="!pt-0"
+                  className="!pt-0"
                   src={ogData?.result?.ogImage[0]?.url}
                   alt={ogData.result.ogTitle ?? ""}
                 />
-                <div class="absolute bottom-6 left-2 rounded-md bg-black bg-opacity-50 p-1 text-white text-xs">
+                <div className="absolute bottom-6 left-2 rounded-md bg-black bg-opacity-50 p-1 text-white text-xs">
                   {ogData.result.ogTitle}
                 </div>
               </div>
             ) : null}
-            <div class="inline-flex items-center">
-              <Globe2Icon class="mr-2 inline-block h-4 w-4 text-text-weak" />
-              <span class="mr-1.5 text-text-weak">From:</span>
-              <span class="text-text-info group-hover:text-text-info-stronger group-hover:underline">
+            <div className="inline-flex items-center">
+              <Globe2Icon className="mr-2 inline-block h-4 w-4 text-text-weak" />
+              <span className="mr-1.5 text-text-weak">From:</span>
+              <span className="text-text-info group-hover:text-text-info-stronger group-hover:underline">
                 {url}
               </span>
-              <ArrowUpRightFromSquareIcon class="ml-1 inline-block h-4 w-4 text-text-info group-hover:text-text-info-strong" />
+              <ArrowUpRightFromSquareIcon className="ml-1 inline-block h-4 w-4 text-text-info group-hover:text-text-info-strong" />
             </div>
           </a>
         </div>
@@ -283,25 +283,25 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
     }
     case "quote":
       return (
-        <div class="border-border border-l-4 pl-4 text-text italic">
+        <div className="border-border border-l-4 pl-4 text-text italic">
           {/* @ts-ignore */}
           <Text text={block.quote.rich_text as richText[]} />
         </div>
       );
     case "to_do":
       return (
-        <div class="items-top flex space-x-2 py-2">
+        <div className="items-top flex space-x-2 py-2">
           <Checkbox
             disabled
-            class="mt-0.5 cursor-not-allowed font-medium text-sm leading-none"
+            className="mt-0.5 cursor-not-allowed font-medium text-sm leading-none"
             id={block.id}
           />
-          <div class="grid gap-1.5 leading-none">
-            <label for={block.id}>
+          <div className="grid gap-1.5 leading-none">
+            <label htmlFor={block.id}>
               <Text
                 // @ts-ignore
                 text={block.to_do.rich_text}
-                class="inline-block cursor-not-allowed whitespace-pre-wrap break-words font-medium text-sm text-text leading-normal"
+                className="inline-block cursor-not-allowed whitespace-pre-wrap break-words font-medium text-sm text-text leading-normal"
               />
             </label>
           </div>
