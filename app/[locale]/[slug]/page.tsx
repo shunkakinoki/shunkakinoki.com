@@ -5,7 +5,6 @@ import { Mind } from "@/sections/mind";
 import { type blockWithChildren, getBlocks, getPage } from "@/services/notion";
 import { getCachedOpenGraphData } from "@/services/ogs";
 import type { Metadata } from "next";
-import type { SuccessResult } from "open-graph-scraper/types";
 import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
@@ -92,10 +91,8 @@ export default async function SlugPage({
   const fetchOpenGraphData = async (block: blockWithChildren) => {
     // @ts-ignore
     const url = block.bookmark?.url ?? block.link_preview?.url;
-    const ogData = JSON.parse(
-      await getCachedOpenGraphData({ url: url }),
-    ) as SuccessResult;
-    if (!ogData.error) {
+    const ogData = await getCachedOpenGraphData({ url: url });
+    if (ogData) {
       // @ts-ignore
       block.openGraphData = JSON.stringify(ogData);
     }
