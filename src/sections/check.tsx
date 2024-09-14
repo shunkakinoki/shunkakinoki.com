@@ -1,5 +1,5 @@
 import { Checklist } from "@/components/check-list";
-import { queryDatabase } from "@/services/notion";
+import { getCachedQueryDatabase } from "@/services/notion";
 import { getTranslations } from "next-intl/server";
 import { PageHeader, PageHeaderHeading } from "../components/page-header";
 
@@ -27,7 +27,7 @@ export async function Check({ dateStart }: CheckProps) {
   // ---------------------------------------------------------------------------
 
   const checklist = (
-    await queryDatabase({
+    await getCachedQueryDatabase({
       // biome-ignore lint/style/useNamingConvention: <explanation>
       database_id: "ccf0648ddaab42a38644f209e6cd641f",
       filter: {

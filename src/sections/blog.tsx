@@ -1,5 +1,5 @@
 import { Link } from "@/navigation";
-import { queryDatabase } from "@/services/notion";
+import { getCachedQueryDatabase } from "@/services/notion";
 import { getTranslations } from "next-intl/server";
 import { PageHeader, PageHeaderHeading } from "../components/page-header";
 
@@ -27,7 +27,7 @@ export async function Blog({ locale }: BlogProps) {
   // ---------------------------------------------------------------------------
 
   const res = (
-    await queryDatabase({
+    await getCachedQueryDatabase({
       // biome-ignore lint/style/useNamingConvention: <explanation>
       database_id: "e4ef762ca07f465e8f5cce906732140b",
       filter: {

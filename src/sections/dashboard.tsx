@@ -1,12 +1,12 @@
 import { InternalConfig } from "@/config/internal";
 import { SocialConfig } from "@/config/social";
-import { queryCloudflareAnalytics } from "@/services/cloudflare";
+import { getCachedCloudflareAnalytics } from "@/services/cloudflare";
 import { getCachedDatabaseStats } from "@/services/notion";
 import { getTotalViewCount, getTotalVisitorCount } from "@/services/redis";
 import {
-  getFollowerCount,
-  getImpressionCount,
-  getLatestPublishedTweetCount,
+  getCachedFollowerCount,
+  getCachedImpressionCount,
+  getCachedLatestPublishedTweetCount,
 } from "@/services/twitter";
 import {
   DocumentMagnifyingGlassIcon,
@@ -126,7 +126,7 @@ export async function VisitorCard() {
 }
 
 export async function TwitterCard() {
-  const followerCount = await getFollowerCount();
+  const followerCount = await getCachedFollowerCount();
 
   return (
     <Suspense
@@ -148,7 +148,7 @@ export async function TwitterCard() {
 }
 
 export async function TweetCard() {
-  const latestPublishedTweetCount = await getLatestPublishedTweetCount();
+  const latestPublishedTweetCount = await getCachedLatestPublishedTweetCount();
 
   return (
     <Suspense
@@ -171,7 +171,7 @@ export async function TweetCard() {
 }
 
 export async function TweetImpressionsCard() {
-  const latestPublishedTweetCount = await getImpressionCount();
+  const latestPublishedTweetCount = await getCachedImpressionCount();
 
   return (
     <Suspense
@@ -193,7 +193,7 @@ export async function TweetImpressionsCard() {
 }
 
 export async function CloudflareCard() {
-  const data = await queryCloudflareAnalytics();
+  const data = await getCachedCloudflareAnalytics();
 
   return (
     <Suspense

@@ -96,7 +96,7 @@ export const retrieveDatabase = async ({
   return response;
 };
 
-export const queryDatabase = async ({
+export const getCachedQueryDatabase = async ({
   database_id,
   filter,
   sorts,
@@ -179,6 +179,14 @@ export const getDatabaseStats = async () => {
 // -----------------------------------------------------------------------------
 // Cached
 // -----------------------------------------------------------------------------
+
+export const getCachedgetCachedQueryDatabase = unstable_cache(
+  getCachedQueryDatabase,
+  ["query-database"],
+  {
+    revalidate: 300,
+  },
+);
 
 export const getCachedBlocks = unstable_cache(getBlocks, ["blocks"], {
   revalidate: 30,
