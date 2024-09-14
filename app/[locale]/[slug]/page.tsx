@@ -3,7 +3,11 @@ import { ViewCount } from "@/components/view-count";
 import { extractValidUUID } from "@/lib/utils";
 import { Check } from "@/sections/check";
 import { Mind } from "@/sections/mind";
-import { type blockWithChildren, getBlocks, getPage } from "@/services/notion";
+import {
+  type blockWithChildren,
+  getCachedBlocks,
+  getCachedPage,
+} from "@/services/notion";
 import { getCachedOpenGraphData } from "@/services/ogs";
 import type { Metadata } from "next";
 import { Suspense } from "react";
@@ -15,7 +19,7 @@ import { Suspense } from "react";
 export async function generateMetadata({
   params,
 }: { params: { slug: string } }): Promise<Metadata> {
-  const page = await getPage(params.slug);
+  const page = await getCachedPage(params.slug);
 
   return {
     //@ts-ignore
@@ -48,7 +52,7 @@ export default async function SlugPage({
   }
 
   // Get the page
-  const page = await getPage(pageId);
+  const page = await getCachedPage(pageId);
 
   // @ts-ignore
   const pageEmoji = page?.icon?.emoji ?? "📄";
@@ -65,7 +69,7 @@ export default async function SlugPage({
     };
   }
 
-  const blocks = await getBlocks(params.slug);
+  const blocks = await getCachedBlocks(params.slug);
   const childBlocks = await Promise.all(
     blocks
       .filter((block) => {
@@ -75,7 +79,7 @@ export default async function SlugPage({
       .map(async (block) => {
         return {
           id: block.id,
-          children: await getBlocks(block.id),
+          children: await getCachedBlocks(block.id),
         };
       }),
   );
