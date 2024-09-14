@@ -65,5 +65,8 @@
   },
   "Mind": {
     "title": "Mind"
+  },
+  "Check": {
+    "title": "Checklist"
   }
 }

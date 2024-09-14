@@ -1,4 +1,4 @@
-import { MindMap } from "@/components/mind-map";
+import { Checklist } from "@/components/check-list";
 import { queryDatabase } from "@/services/notion";
 import { getTranslations } from "next-intl/server";
 import { PageHeader, PageHeaderHeading } from "../components/page-header";
@@ -7,7 +7,7 @@ import { PageHeader, PageHeaderHeading } from "../components/page-header";
 // Props
 // -----------------------------------------------------------------------------
 
-export interface MindProps {
+export interface CheckProps {
   dateStart: string;
 }
 
@@ -15,7 +15,7 @@ export interface MindProps {
 // Component
 // -----------------------------------------------------------------------------
 
-export async function Mind({ dateStart }: MindProps) {
+export async function Check({ dateStart }: CheckProps) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
@@ -26,12 +26,12 @@ export async function Mind({ dateStart }: MindProps) {
   // Services
   // ---------------------------------------------------------------------------
 
-  const mindMap = (
+  const checklist = (
     await queryDatabase({
       // biome-ignore lint/style/useNamingConvention: <explanation>
-      database_id: "be3e2449e1324b518f78c21e168f5a78",
+      database_id: "ccf0648ddaab42a38644f209e6cd641f",
       filter: {
-        and: [
+        or: [
           {
             property: "Date",
             date: {
@@ -52,17 +52,19 @@ export async function Mind({ dateStart }: MindProps) {
   // Render
   // ---------------------------------------------------------------------------
 
-  if (mindMap.length === 0) {
+  if (checklist.length === 0) {
     return null;
   }
 
   return (
     <section>
       <PageHeader>
-        <PageHeaderHeading>{t("Mind.title")}</PageHeaderHeading>
+        <PageHeaderHeading>{t("Check.title")}</PageHeaderHeading>
       </PageHeader>
       <div className="mt-8 w-full flex-col space-y-3">
-        {mindMap.length > 0 && mindMap[0] && <MindMap content={mindMap[0]} />}
+        {checklist.length > 0 && checklist[0] && (
+          <Checklist content={checklist[0]} />
+        )}
       </div>
     </section>
   );

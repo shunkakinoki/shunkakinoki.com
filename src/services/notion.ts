@@ -8,7 +8,7 @@ import type {
   QueryDatabaseParameters,
   QueryDatabaseResponse,
 } from "@notionhq/client/build/src/api-endpoints.d";
-import { cache } from "react";
+import { unstable_cache } from "next/cache";
 
 // -----------------------------------------------------------------------------
 // Types
@@ -139,7 +139,7 @@ export const getPageDate = (page: NotionPage) => {
 
 export const getBlocks = async (blockId: string) => {
   const blocks: blockWithChildren[] = [];
-  let cursor: undefined | string = undefined;
+  let cursor: undefined | string;
 
   while (true) {
     const blocksList = await notion.blocks.children.list({
@@ -180,4 +180,18 @@ export const getDatabaseStats = async () => {
 // Cached
 // -----------------------------------------------------------------------------
 
-export const getCachedDatabaseStats = cache(getDatabaseStats);
+export const getCachedBlocks = unstable_cache(getBlocks, ["blocks"], {
+  revalidate: 30,
+});
+
+export const getCachedPage = unstable_cache(getPage, ["page"], {
+  revalidate: 300,
+});
+
+export const getCachedDatabaseStats = unstable_cache(
+  getDatabaseStats,
+  ["stats"],
+  {
+    revalidate: 300,
+  },
+);
