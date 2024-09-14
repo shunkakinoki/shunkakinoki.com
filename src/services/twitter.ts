@@ -1,5 +1,7 @@
 // import { TwitterApi } from "twitter-api-v2";
 
+import { unstable_cache } from "next/cache";
+
 // -----------------------------------------------------------------------------
 // Client
 // -----------------------------------------------------------------------------
@@ -30,3 +32,31 @@ export const getImpressionCount = async () => {
   ).then((res) => res.json());
   return metrics?.value;
 };
+
+// -----------------------------------------------------------------------------
+// Cached
+// -----------------------------------------------------------------------------
+
+export const getCachedFollowerCount = unstable_cache(
+  getFollowerCount,
+  ["twitter-follower-count"],
+  {
+    revalidate: 300,
+  },
+);
+
+export const getCachedLatestPublishedTweetCount = unstable_cache(
+  getLatestPublishedTweetCount,
+  ["twitter-latest-published-tweet-count"],
+  {
+    revalidate: 300,
+  },
+);
+
+export const getCachedImpressionCount = unstable_cache(
+  getImpressionCount,
+  ["twitter-impression-count"],
+  {
+    revalidate: 300,
+  },
+);

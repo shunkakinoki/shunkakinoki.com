@@ -1,4 +1,10 @@
-export const queryCloudflareAnalytics = async () => {
+import { unstable_cache } from "next/cache";
+
+// -----------------------------------------------------------------------------
+// Utils
+// -----------------------------------------------------------------------------
+
+export const getCloudflareAnalytics = async () => {
   const url = "https://api.cloudflare.com/client/v4/graphql";
   const payload = {
     operationName: "RumAnalyticsTimeseriesBydatetimeHourGroupedByall",
@@ -72,3 +78,15 @@ export const queryCloudflareAnalytics = async () => {
   const data = await response.json();
   return data?.data?.viewer?.accounts?.[0]?.series?.[0]?.sum?.visits;
 };
+
+// -----------------------------------------------------------------------------
+// Cached
+// -----------------------------------------------------------------------------
+
+export const getCachedCloudflareAnalytics = unstable_cache(
+  getCloudflareAnalytics,
+  ["cloudflare-analytics"],
+  {
+    revalidate: 300,
+  },
+);
