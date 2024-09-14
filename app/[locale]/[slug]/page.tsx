@@ -1,6 +1,7 @@
 import { Notion } from "@/components/notion";
 import { ViewCount } from "@/components/view-count";
 import { extractValidUUID } from "@/lib/utils";
+import { Check } from "@/sections/check";
 import { Mind } from "@/sections/mind";
 import { type blockWithChildren, getBlocks, getPage } from "@/services/notion";
 import { getCachedOpenGraphData } from "@/services/ogs";
@@ -142,12 +143,20 @@ export default async function SlugPage({
           //@ts-ignore
           page.parent.database_id ===
             "badf29d8-7d2f-4e03-b2c5-451a627d8618" && (
-            <Suspense>
-              <Mind
-                // @ts-ignore
-                dateStart={page.properties.Date.date.start}
-              />
-            </Suspense>
+            <>
+              <Suspense>
+                <Check
+                  // @ts-ignore
+                  dateStart={page.properties.Date.date.start}
+                />
+              </Suspense>
+              <Suspense>
+                <Mind
+                  // @ts-ignore
+                  dateStart={page.properties.Date.date.start}
+                />
+              </Suspense>
+            </>
           )
       }
     </>
