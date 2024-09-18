@@ -178,11 +178,20 @@ export const Text: FC<TextProps> = ({ text, className }) => {
           >
             {href ? (
               <Link
-                href={href}
+                href={
+                  process.env.VERCEL_ENV === "production" &&
+                  href.includes("shunkakinoki.com")
+                    ? href.replace("https://shunkakinoki.com", "")
+                    : href
+                }
                 target={
-                  href.includes("shunkakinoki.com") ? undefined : "_blank"
+                  process.env.VERCEL_ENV === "production" &&
+                  href.includes("shunkakinoki.com")
+                    ? undefined
+                    : "_blank"
                 }
                 rel={
+                  process.env.VERCEL_ENV === "production" &&
                   href.includes("shunkakinoki.com")
                     ? undefined
                     : "noopener noreferrer"
@@ -274,9 +283,20 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
       return (
         <div className="my-4 break-all rounded-lg border border-border p-3">
           <Link
-            href={url}
-            target={url.includes("shunkakinoki.com") ? undefined : "_blank"}
+            href={
+              process.env.VERCEL_ENV === "production" &&
+              url.includes("shunkakinoki.com")
+                ? url.replace("https://shunkakinoki.com", "")
+                : url
+            }
+            target={
+              process.env.VERCEL_ENV === "production" &&
+              url.includes("shunkakinoki.com")
+                ? undefined
+                : "_blank"
+            }
             rel={
+              process.env.VERCEL_ENV === "production" &&
               url.includes("shunkakinoki.com")
                 ? undefined
                 : "noopener noreferrer"
