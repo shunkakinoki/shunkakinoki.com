@@ -55,7 +55,7 @@ export default function middleware(req: NextRequest) {
   );
 
   if (rewriteLink) {
-    return NextResponse.rewrite(new URL(rewriteLink.href, req.url));
+    req.nextUrl.pathname = rewriteLink.href;
   }
 
   return intlMiddleware(req);

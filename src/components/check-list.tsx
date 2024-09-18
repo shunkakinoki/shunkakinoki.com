@@ -47,7 +47,7 @@ export const Checklist: FC<ChecklistProps> = ({ content }) => {
     <div className="rounded-md border border-border bg-background p-4">
       <Table>
         <TableCaption>
-          Checklist for organizing my priorities. More can be found{" "}
+          Checklist for organizing my priorities. Full list can be found{" "}
           <ExternalLink href={InternalConfig.Checklist}>here</ExternalLink>
         </TableCaption>
         <TableHeader>
