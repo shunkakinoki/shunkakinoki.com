@@ -340,7 +340,7 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
           />
           {/* @ts-ignore */}
           {block.image?.caption && (
-            <div className="w-full text-center text-sm text-text-weak">
+            <div className="w-full text-center text-sm text-text-weak italic">
               {/* @ts-ignore */}
               <Text text={block.image?.caption as richText[]} />
             </div>
