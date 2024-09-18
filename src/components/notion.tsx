@@ -14,23 +14,24 @@
 
 "use client";
 
+import "@/styles/notion.css";
 import { usePathname, useRouter } from "@/navigation";
 import type { blockWithChildren, richText } from "@/services/notion";
 import { BaseImage } from "@lightdotso/elements/base-image";
 import { Checkbox } from "@lightdotso/ui/components/checkbox";
 import type { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import clsx from "clsx";
-import { useLocale } from "next-intl";
-import { useTheme } from "next-themes";
-import { type FC, Fragment, type ReactNode } from "react";
-import { useEffect } from "react";
-import "@/styles/notion.css";
 import {
   ArrowUpRightFromSquareIcon,
   BookmarkCheckIcon,
   Globe2Icon,
 } from "lucide-react";
+import { useLocale } from "next-intl";
+import { useTheme } from "next-themes";
+import Link from "next/link";
 import type { SuccessResult } from "open-graph-scraper/types";
+import { type FC, Fragment, type ReactNode } from "react";
+import { useEffect } from "react";
 import { Tweet } from "react-tweet";
 
 // -----------------------------------------------------------------------------
@@ -155,6 +156,7 @@ export const Text: FC<TextProps> = ({ text, className }) => {
 
   return (
     <>
+      {/* biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation> */}
       {text?.map((value) => {
         const {
           annotations: { bold, code, italic, strikethrough, underline },
@@ -175,15 +177,21 @@ export const Text: FC<TextProps> = ({ text, className }) => {
             )}
           >
             {href ? (
-              <a
+              <Link
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={
+                  href.includes("shunkakinoki.com") ? undefined : "_blank"
+                }
+                rel={
+                  href.includes("shunkakinoki.com")
+                    ? undefined
+                    : "noopener noreferrer"
+                }
                 className="inline-flex flex-1 justify-center gap-0.5 break-all text-text-info leading-4 hover:text-text-info-strong"
               >
                 {plain_text === "Untitled" ? "<REDACTED>" : plain_text}
                 <ArrowUpRightFromSquareIcon className="h-2 w-2 shrink-0" />
-              </a>
+              </Link>
             ) : (
               plain_text
             )}
@@ -265,7 +273,7 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
       // Generate a notion style bookmark card
       return (
         <div className="my-4 break-all rounded-lg border border-border p-3">
-          <a
+          <Link
             href={url}
             target={url.includes("shunkakinoki.com") ? undefined : "_blank"}
             rel={
@@ -297,7 +305,7 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
               </span>
               <ArrowUpRightFromSquareIcon className="ml-1 inline-block h-4 w-4 shrink-0 text-text-info group-hover:text-text-info-strong" />
             </div>
-          </a>
+          </Link>
         </div>
       );
     }
