@@ -69,15 +69,6 @@ export default async function SlugPage({
   // @ts-ignore
   const pageEmoji = page?.icon?.emoji ?? "📄";
 
-  if (
-    //@ts-ignore
-    (page.properties?.Published && !page.properties?.Published?.checkbox) ||
-    //@ts-ignore
-    (page.properties?.Date && !page.properties.Date?.date?.start)
-  ) {
-    notFound();
-  }
-
   const blocks = await getCachedBlocks(params.slug);
   const childBlocks = await Promise.all(
     blocks
