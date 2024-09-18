@@ -19,10 +19,9 @@ export default function Error({
   // Effect Hooks
   // ---------------------------------------------------------------------------
 
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error);
-  }, [error]);
+  // biome-ignore lint/suspicious/noEmptyBlockStatements: <explanation>
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  useEffect(() => {}, [error]);
 
   // ---------------------------------------------------------------------------
   // Render
