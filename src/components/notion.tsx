@@ -251,8 +251,12 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
         <div className="my-4 break-all rounded-lg border border-border p-3">
           <a
             href={url}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={url.includes("shunkakinoki.com") ? undefined : "_blank"}
+            rel={
+              url.includes("shunkakinoki.com")
+                ? undefined
+                : "noopener noreferrer"
+            }
             className="group transition-opacity duration-300 hover:opacity-80"
           >
             {ogData?.result?.ogImage?.[0]?.url ? (
