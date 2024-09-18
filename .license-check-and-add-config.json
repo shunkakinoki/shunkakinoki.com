@@ -1,0 +1,55 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awjh/license-check-and-add/master/config-schema.json",
+  "ignore": [
+    ".git",
+    ".husky",
+    ".next",
+    ".vscode",
+    "messages",
+    "node_modules",
+    "public",
+    "**/.env",
+    "**/.env.local",
+    "**/.DS_Store",
+    "**/*.alt.txt",
+    "**/*.d.ts",
+    "**/*.pem",
+    "**/robots.txt",
+    "**/*.tsbuildinfo",
+    ".env",
+    ".gitignore",
+    ".license-check-and-add-config.json",
+    "biome.json",
+    "pnpm-lock.yaml",
+    "README.md",
+    "tsconfig.json"
+  ],
+  "license": "LICENSE.header",
+  "defaultFormat": {
+    "eachLine": {
+      "prepend": "# "
+    },
+    "append": ""
+  },
+  "licenseFormats": {
+    "js|cjs|mjs|ts|tsx|rs|sol|swift|kt|nr|udl": {
+      "eachLine": {
+        "prepend": "// "
+      },
+      "append": ""
+    },
+    "mdx": {
+      "eachLine": {
+        "prepend": "{/*",
+        "append": "*/}"
+      }
+    },
+    "sh": {
+      "eachLine": {
+        "prepend": "# "
+      },
+      "append": ""
+    }
+  },
+  "trailingWhitespace": "TRIM"
+}
