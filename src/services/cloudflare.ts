@@ -99,7 +99,7 @@ export const getCloudflareAnalytics = async () => {
 
 export const getCachedCloudflareAnalytics = unstable_cache(
   getCloudflareAnalytics,
-  ["cloudflare-analytics"],
+  ["cloudflare", "cloudflare-analytics"],
   {
     revalidate: 300,
   },

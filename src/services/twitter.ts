@@ -53,7 +53,7 @@ export const getImpressionCount = async () => {
 
 export const getCachedFollowerCount = unstable_cache(
   getFollowerCount,
-  ["twitter-follower-count"],
+  ["twitter", "follower-count"],
   {
     revalidate: 300,
   },
@@ -61,7 +61,7 @@ export const getCachedFollowerCount = unstable_cache(
 
 export const getCachedLatestPublishedTweetCount = unstable_cache(
   getLatestPublishedTweetCount,
-  ["twitter-latest-published-tweet-count"],
+  ["twitter", "latest-published-tweet-count"],
   {
     revalidate: 300,
   },
@@ -69,7 +69,7 @@ export const getCachedLatestPublishedTweetCount = unstable_cache(
 
 export const getCachedImpressionCount = unstable_cache(
   getImpressionCount,
-  ["twitter-impression-count"],
+  ["twitter", "impression-count"],
   {
     revalidate: 300,
   },

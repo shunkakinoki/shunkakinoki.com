@@ -196,23 +196,23 @@ export const getDatabaseStats = async () => {
 
 export const getCachedgetCachedQueryDatabase = unstable_cache(
   getCachedQueryDatabase,
-  ["query-database"],
+  ["notion", "query-database"],
   {
     revalidate: 300,
   },
 );
 
-export const getCachedBlocks = unstable_cache(getBlocks, ["blocks"], {
+export const getCachedBlocks = unstable_cache(getBlocks, ["notion", "blocks"], {
   revalidate: 30,
 });
 
-export const getCachedPage = unstable_cache(getPage, ["page"], {
+export const getCachedPage = unstable_cache(getPage, ["notion", "page"], {
   revalidate: 300,
 });
 
 export const getCachedDatabaseStats = unstable_cache(
   getDatabaseStats,
-  ["stats"],
+  ["notion", "stats"],
   {
     revalidate: 300,
   },

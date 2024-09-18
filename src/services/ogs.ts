@@ -24,6 +24,6 @@ export const getCachedOpenGraphData = unstable_cache(
     // Throw an error if the URL is not valid
     throw new Error("Invalid URL");
   },
-  ["open-graph-data"],
+  ["ogs", "open-graph-data"],
   { revalidate: false },
 );
