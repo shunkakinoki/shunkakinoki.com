@@ -156,6 +156,7 @@ export const Text: FC<TextProps> = ({ text, className }) => {
 
   return (
     <>
+      {/* biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation> */}
       {text?.map((value) => {
         const {
           annotations: { bold, code, italic, strikethrough, underline },
