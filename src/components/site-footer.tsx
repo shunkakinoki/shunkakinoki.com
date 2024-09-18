@@ -23,7 +23,7 @@ export function SiteFooter() {
   // ---------------------------------------------------------------------------
 
   return (
-    <footer>
+    <footer className="bg-background-body">
       <div className="mx-auto max-w-screen-md overflow-hidden px-8">
         <nav
           className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12 md:space-x-8"

@@ -61,6 +61,5 @@ export default async function valuesPage({
   // Render
   // ---------------------------------------------------------------------------
 
-  // @ts-expect-error
   return <SlugPage params={{ locale: locale, slug: valuesSlug }} />;
 }

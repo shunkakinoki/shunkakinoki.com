@@ -68,5 +68,9 @@
   },
   "Check": {
     "title": "チェックリスト"
+  },
+  "posts": {
+    "title": "投稿",
+    "description": "投稿者：柿木 俊"
   }
 }

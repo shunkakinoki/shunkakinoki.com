@@ -61,6 +61,5 @@ export default async function MissionPage({
   // Render
   // ---------------------------------------------------------------------------
 
-  // @ts-expect-error
   return <SlugPage params={{ locale: locale, slug: missionSlug }} />;
 }

@@ -1,6 +1,8 @@
 "use client";
 
+import { InternalConfig } from "@/config/internal";
 import type { NotionPageObject } from "@/services/notion";
+import { ExternalLink } from "@lightdotso/elements/external-link";
 import {
   Table,
   TableBody,
@@ -25,47 +27,36 @@ export type ChecklistProps = {
 // -----------------------------------------------------------------------------
 
 export const Checklist: FC<ChecklistProps> = ({ content }) => {
-  // @ts-ignore
-  const properties = content.properties;
-  const nonNullNumberProperties = Object.entries(properties).filter(
-    // @ts-ignore
-    ([_, value]) => value.type === "number" && value.number !== null,
-  );
+  // Get the properties of the `Category` property
 
   return (
     <div className="rounded-md border border-border bg-background p-4">
       <Table>
         <TableCaption>
-          {/* @ts-ignore */}
-          Workout Data for {content.properties.Property.title[0].plain_text}
+          Checklist for organizing my priorities. More can be found{" "}
+          <ExternalLink href={InternalConfig.Checklist}>here</ExternalLink>
         </TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead>Metric</TableHead>
-            <TableHead className="text-right">Value</TableHead>
+            <TableHead>Title</TableHead>
+            <TableHead className="text-right">Link</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {nonNullNumberProperties.map(([key, value]) => (
-            <TableRow key={key}>
-              <TableCell className="font-medium">{key}</TableCell>
-              <TableCell className="text-right">
-                {(value as { number: number }).number.toLocaleString()}{" "}
-                {/* Add suffix based on the property name */}
-                {(key === "Deadlift" ||
-                  key === "Bench Press" ||
-                  key === "Squat" ||
-                  key === "Total Lifted") &&
-                  "lbs"}
-                {(key === "Running" ||
-                  key === "Biking" ||
-                  key === "Swimming") &&
-                  "km"}
-                {key === "Body Weight" && "lbs"}
-                {key === "Calories" && "kcal"}
-              </TableCell>
-            </TableRow>
-          ))}
+          <TableRow>
+            <TableCell>
+              {/* @ts-ignore */}
+              {content.properties.Name?.title[0]?.plain_text}
+            </TableCell>
+            <TableCell className="text-right">
+              <ExternalLink
+                // @ts-ignore
+                href={content.public_url}
+              >
+                URL
+              </ExternalLink>
+            </TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </div>

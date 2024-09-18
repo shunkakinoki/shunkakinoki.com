@@ -10,6 +10,7 @@ import {
 } from "@/services/notion";
 import { getCachedOpenGraphData } from "@/services/ogs";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
@@ -45,10 +46,7 @@ export default async function SlugPage({
   const pageId = extractValidUUID(params.slug);
 
   if (!pageId) {
-    return {
-      notFound: true,
-      revalidate: 30,
-    };
+    notFound();
   }
 
   // Get the page
@@ -63,10 +61,7 @@ export default async function SlugPage({
     //@ts-ignore
     (page.properties?.Date && !page.properties.Date?.date?.start)
   ) {
-    return {
-      notFound: true,
-      revalidate: 30,
-    };
+    notFound();
   }
 
   const blocks = await getCachedBlocks(params.slug);
@@ -147,7 +142,7 @@ export default async function SlugPage({
           //@ts-ignore
           page.parent.database_id ===
             "badf29d8-7d2f-4e03-b2c5-451a627d8618" && (
-            <>
+            <div className="flex flex-col gap-4 md:gap-8">
               <Suspense>
                 <Check
                   // @ts-ignore
@@ -160,7 +155,7 @@ export default async function SlugPage({
                   dateStart={page.properties.Date.date.start}
                 />
               </Suspense>
-            </>
+            </div>
           )
       }
     </>

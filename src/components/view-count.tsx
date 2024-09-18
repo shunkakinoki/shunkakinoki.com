@@ -21,10 +21,15 @@ export async function ViewCount({ pageId }: ViewCountProps) {
 
   const ip = getIp();
 
-  const [{ views }] = await Promise.all([
-    incrementViewCount(pageId),
-    incrementVisitorCount(ip ?? "121.0.0.1", pageId),
-  ]);
+  // Only run on prodution
+  let views = 0;
+  if (process.env.NODE_ENV === "production") {
+    const result = await Promise.all([
+      incrementViewCount(pageId),
+      incrementVisitorCount(ip ?? "121.0.0.1", pageId),
+    ]);
+    views = result[0].views;
+  }
 
   // ---------------------------------------------------------------------------
   // Render

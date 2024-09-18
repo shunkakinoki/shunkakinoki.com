@@ -68,5 +68,9 @@
   },
   "Check": {
     "title": "清单"
+  },
+  "posts": {
+    "title": "帖子",
+    "description": "舜 Kakinoki 的帖子"
   }
 }

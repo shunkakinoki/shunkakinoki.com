@@ -1,6 +1,8 @@
 "use client";
 
+import { InternalConfig } from "@/config/internal";
 import type { NotionPageObject } from "@/services/notion";
+import { ExternalLink } from "@lightdotso/elements/external-link";
 import {
   Table,
   TableBody,
@@ -37,7 +39,8 @@ export const MindMap: FC<MindMapProps> = ({ content }) => {
       <Table>
         <TableCaption>
           {/* @ts-ignore */}
-          Workout Data for {content.properties.Property.title[0].plain_text}
+          Workout Data for {content.properties.Property.title[0].plain_text}.
+          More <ExternalLink href={InternalConfig.Gym}>here</ExternalLink>
         </TableCaption>
         <TableHeader>
           <TableRow>

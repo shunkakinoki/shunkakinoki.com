@@ -41,6 +41,25 @@ export function PageHeaderHeading({
   );
 }
 
+export function PageHeaderSubheading({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLHeadingElement>) {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <h2
+      className={cn(
+        "font-semibold text-text text-xl md:text-2xl lg:text-3xl",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
 export function PageHeaderDescription({
   className,
   ...props
