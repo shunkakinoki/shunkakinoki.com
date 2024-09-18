@@ -1,5 +1,6 @@
 "use client";
 
+import { InternalConfig } from "@/config/internal";
 import type { NotionPageObject } from "@/services/notion";
 import { ExternalLink } from "@lightdotso/elements/external-link";
 import {
@@ -26,14 +27,14 @@ export type ChecklistProps = {
 // -----------------------------------------------------------------------------
 
 export const Checklist: FC<ChecklistProps> = ({ content }) => {
+  // Get the properties of the `Category` property
+
   return (
     <div className="rounded-md border border-border bg-background p-4">
       <Table>
         <TableCaption>
           Checklist for organizing my priorities. More can be found{" "}
-          <ExternalLink href="https://shunkakinoki.com/checklist">
-            here
-          </ExternalLink>
+          <ExternalLink href={InternalConfig.Checklist}>here</ExternalLink>
         </TableCaption>
         <TableHeader>
           <TableRow>
