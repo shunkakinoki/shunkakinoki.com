@@ -68,5 +68,9 @@
   },
   "Check": {
     "title": "Checklist"
+  },
+  "posts": {
+    "title": "Posts",
+    "description": "Posts by Shun Kakinoki"
   }
 }

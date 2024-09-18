@@ -17,6 +17,7 @@ import {
   Globe2Icon,
 } from "lucide-react";
 import type { SuccessResult } from "open-graph-scraper/types";
+import { Tweet } from "react-tweet";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -83,7 +84,7 @@ export const Notion: FC<NotionProps> = ({
             {/* @ts-ignore */}
             {content.properties.Name?.title[0]?.plain_text}
           </h1>
-          <div className="mt-4 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
+          <div className="mt-4 flex w-full flex-col items-start justify-between md:mt-6 md:flex-row md:items-center">
             <div className="flex items-center">
               <p className="text-text-weak">
                 by Shun Kakinoki &middot;{" "}
@@ -183,7 +184,7 @@ export const Text: FC<TextProps> = ({ text, className }) => {
 // Renderer
 // -----------------------------------------------------------------------------
 
-const renderBlock = (block: blockWithChildren, _theme: string) => {
+const renderBlock = (block: blockWithChildren, theme: string) => {
   //@ts-ignore
   switch (block.type) {
     case "divider":
@@ -323,22 +324,22 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
         />
       );
     case "embed":
-      //   if (block["embed"].url.includes("twitter.com")) {
-      // return (
-      //   <Tweet
-      //     tweetId={
-      //       /twitter.com\/.*\/status(?:es)?\/([^/?]+)/.exec(
-      //         block["embed"].url,
-      //       )[1]
-      //     }
-      //     options={{
-      //       theme: theme,
-      //       align: "center",
-      //       cards: "hidden",
-      //     }}
-      //   />
-      // );
-      //   }
+      {
+        // biome-ignore lint/performance/useTopLevelRegex: <explanation>
+        const tweetId = /x.com\/.*\/status(?:es)?\/([^/?]+)/.exec(
+          // @ts-ignore
+          // biome-ignore lint/complexity/useLiteralKeys: <explanation>
+          block["embed"].url,
+        )?.[1];
+
+        if (tweetId) {
+          return (
+            <div className={`${theme} flex w-full justify-center`}>
+              <Tweet id={tweetId} />
+            </div>
+          );
+        }
+      }
       break;
     case "synced_block":
       // Return the children of the block
@@ -347,7 +348,7 @@ const renderBlock = (block: blockWithChildren, _theme: string) => {
           {/* @ts-ignore */}
           {block.children.map((child) => {
             return (
-              <Fragment key={child.id}>{renderBlock(child, _theme)}</Fragment>
+              <Fragment key={child.id}>{renderBlock(child, theme)}</Fragment>
             );
           })}
         </div>

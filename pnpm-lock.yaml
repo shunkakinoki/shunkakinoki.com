@@ -194,6 +194,9 @@ importers:
       react-resizable-panels:
         specifier: ^2.1.2
         version: 2.1.2(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react@19.0.0-rc-187dd6a7-20240806)
+      react-tweet:
+        specifier: ^3.2.1
+        version: 3.2.1(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react@19.0.0-rc-187dd6a7-20240806)
       react-wrap-balancer:
         specifier: ^1.1.1
         version: 1.1.1(react@19.0.0-rc-187dd6a7-20240806)
@@ -1578,8 +1581,8 @@ packages:
   '@metamask/sdk@0.28.2':
     resolution: {integrity: sha512-pylk1uJAZYyO3HcNW/TNfII3+T+Yx6qrFYaC/HmuSIuRJeXsdZuExSbNQ236iQocIy3L7JjI+GQKbv3TbN+HQQ==}
     peerDependencies:
-      react: 19.0.0-rc-7771d3a7-20240827
-      react-dom: 19.0.0-rc-7771d3a7-20240827
+      react: ^18.2.0
+      react-dom: ^18.2.0
     peerDependenciesMeta:
       react:
         optional: true
@@ -6663,6 +6666,12 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
+  react-tweet@3.2.1:
+    resolution: {integrity: sha512-dktP3RMuwRB4pnSDocKpSsW5Hq1IXRW6fONkHhxT5EBIXsKZzdQuI70qtub1XN2dtZdkJWWxfBm/Q+kN+vRYFA==}
+    peerDependencies:
+      react: '>= 18.0.0'
+      react-dom: '>= 18.0.0'
+
   react-use-measure@2.1.1:
     resolution: {integrity: sha512-nocZhN26cproIiIduswYpV5y5lQpSQS1y/4KuvUCjSKmw7ZWIS/+g3aFnX3WdBkyuGUtTLif3UTqnLLhbDoQig==}
     peerDependencies:
@@ -7200,6 +7209,11 @@ packages:
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  swr@2.2.5:
+    resolution: {integrity: sha512-QtxqyclFeAsxEUeZIYmsaQ0UjimSq1RZ9Un7I68/0ClKK/U3LoyQunwkQfJZr2fc22DfIXLNDc2wFyTEikCUpg==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0
 
   swr@2.2.6-beta.3:
     resolution: {integrity: sha512-m6Ms7v9QYEoqIaW+5QFBXscNHNa+eVxynrW+WBzJQ3veFxoPdYvAXHKlgRTq5mJkL4Q3JKH/10V6iPvmv9g00Q==}
@@ -15711,6 +15725,14 @@ snapshots:
       react: 19.0.0-rc-187dd6a7-20240806
       react-dom: 19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806)
 
+  react-tweet@3.2.1(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react@19.0.0-rc-187dd6a7-20240806):
+    dependencies:
+      '@swc/helpers': 0.5.13
+      clsx: 2.1.1
+      react: 19.0.0-rc-187dd6a7-20240806
+      react-dom: 19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806)
+      swr: 2.2.5(react@19.0.0-rc-187dd6a7-20240806)
+
   react-use-measure@2.1.1(react-dom@19.0.0-rc-187dd6a7-20240806(react@19.0.0-rc-187dd6a7-20240806))(react@19.0.0-rc-187dd6a7-20240806):
     dependencies:
       debounce: 1.2.1
@@ -16273,6 +16295,12 @@ snapshots:
   supports-color@9.4.0: {}
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  swr@2.2.5(react@19.0.0-rc-187dd6a7-20240806):
+    dependencies:
+      client-only: 0.0.1
+      react: 19.0.0-rc-187dd6a7-20240806
+      use-sync-external-store: 1.2.2(react@19.0.0-rc-187dd6a7-20240806)
 
   swr@2.2.6-beta.3(react@19.0.0-rc-187dd6a7-20240806):
     dependencies:

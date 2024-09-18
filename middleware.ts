@@ -1,5 +1,6 @@
 import { defaultLocale, localePrefix, locales, pathnames } from "@/config";
 import { internalConfig } from "@/config/internal";
+import { rewriteConfig } from "@/config/rewrite";
 import { socialConfig } from "@/config/social";
 import createMiddleware from "next-intl/middleware";
 import { type NextRequest, NextResponse } from "next/server";
@@ -32,6 +33,15 @@ export default function middleware(req: NextRequest) {
 
   if (link) {
     return NextResponse.redirect(link.href);
+  }
+
+  // Check if the path matches one of the rewrite config
+  const rewriteLink = rewriteConfig.find(
+    (rewrite) => path === rewrite.name.toLowerCase(),
+  );
+
+  if (rewriteLink) {
+    return NextResponse.rewrite(new URL(rewriteLink.href, req.url));
   }
 
   return intlMiddleware(req);

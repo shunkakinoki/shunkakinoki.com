@@ -69,3 +69,7 @@
 .notion img {
   @apply w-full relative mx-auto py-3 rounded-sm;
 }
+
+.notion .react-tweet-theme {
+  --tweet-body-font-size: 1rem;
+}
