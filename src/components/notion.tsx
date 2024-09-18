@@ -156,7 +156,6 @@ export const Text: FC<TextProps> = ({ text, className }) => {
 
   return (
     <>
-      {/* biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation> */}
       {text?.map((value) => {
         const {
           annotations: { bold, code, italic, strikethrough, underline },
@@ -178,24 +177,9 @@ export const Text: FC<TextProps> = ({ text, className }) => {
           >
             {href ? (
               <Link
-                href={
-                  process.env.VERCEL_ENV === "production" &&
-                  href.includes("shunkakinoki.com")
-                    ? href.replace("https://shunkakinoki.com", "")
-                    : href
-                }
-                target={
-                  process.env.VERCEL_ENV === "production" &&
-                  href.includes("shunkakinoki.com")
-                    ? undefined
-                    : "_blank"
-                }
-                rel={
-                  process.env.VERCEL_ENV === "production" &&
-                  href.includes("shunkakinoki.com")
-                    ? undefined
-                    : "noopener noreferrer"
-                }
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex flex-1 justify-center gap-0.5 break-all text-text-info leading-4 hover:text-text-info-strong"
               >
                 {plain_text === "Untitled" ? "<REDACTED>" : plain_text}
@@ -215,7 +199,6 @@ export const Text: FC<TextProps> = ({ text, className }) => {
 // Renderer
 // -----------------------------------------------------------------------------
 
-// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
 const renderBlock = (block: blockWithChildren, theme: string) => {
   //@ts-ignore
   switch (block.type) {
@@ -283,24 +266,9 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
       return (
         <div className="my-4 break-all rounded-lg border border-border p-3">
           <Link
-            href={
-              process.env.VERCEL_ENV === "production" &&
-              url.includes("shunkakinoki.com")
-                ? url.replace("https://shunkakinoki.com", "")
-                : url
-            }
-            target={
-              process.env.VERCEL_ENV === "production" &&
-              url.includes("shunkakinoki.com")
-                ? undefined
-                : "_blank"
-            }
-            rel={
-              process.env.VERCEL_ENV === "production" &&
-              url.includes("shunkakinoki.com")
-                ? undefined
-                : "noopener noreferrer"
-            }
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group transition-opacity duration-300 hover:opacity-80"
           >
             {ogData?.result?.ogImage?.[0]?.url ? (
