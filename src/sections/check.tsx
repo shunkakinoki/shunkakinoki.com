@@ -45,7 +45,7 @@ export async function Check({ dateStart }: CheckProps) {
       // biome-ignore lint/style/useNamingConvention: <explanation>
       database_id: "ccf0648ddaab42a38644f209e6cd641f",
       filter: {
-        or: [
+        and: [
           {
             property: "Date",
             date: {
@@ -55,7 +55,13 @@ export async function Check({ dateStart }: CheckProps) {
         ],
       },
     })
-  ).results;
+  ).results.filter((db) => {
+    return (
+      //@ts-ignore
+      // biome-ignore lint/complexity/useLiteralKeys: <explanation>
+      !!db.properties["Name"]?.title[0]?.plain_text
+    );
+  });
 
   // ---------------------------------------------------------------------------
   // Render
