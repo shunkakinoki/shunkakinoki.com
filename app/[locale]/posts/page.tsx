@@ -44,5 +44,5 @@ export default async function PostsPage({
   // Render
   // ---------------------------------------------------------------------------
 
-  return <Posts locale={locale} />;
+  return <Posts />;
 }

@@ -59,6 +59,5 @@ export default async function CausePage({
   // Render
   // ---------------------------------------------------------------------------
 
-  // @ts-expect-error
   return <SlugPage params={{ locale: locale, slug: causeSlug }} />;
 }
