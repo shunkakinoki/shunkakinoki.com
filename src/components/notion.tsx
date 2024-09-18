@@ -198,6 +198,7 @@ export const Text: FC<TextProps> = ({ text, className }) => {
 // Renderer
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
 const renderBlock = (block: blockWithChildren, theme: string) => {
   //@ts-ignore
   switch (block.type) {
@@ -283,18 +284,18 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
                   src={ogData?.result?.ogImage[0]?.url}
                   alt={ogData.result.ogTitle ?? ""}
                 />
-                <div className="absolute bottom-6 left-2 rounded-md bg-black bg-opacity-50 p-1 text-white text-xs">
+                <div className="absolute bottom-6 left-2 line-clamp-1 rounded-md bg-black bg-opacity-50 p-1 text-white text-xs">
                   {ogData.result.ogTitle}
                 </div>
               </div>
             ) : null}
             <div className="inline-flex items-center">
-              <Globe2Icon className="mr-2 inline-block h-4 w-4 text-text-weak" />
-              <span className="mr-1.5 text-text-weak">From:</span>
-              <span className="text-text-info group-hover:text-text-info-stronger group-hover:underline">
+              <Globe2Icon className="mr-2 inline-block h-4 w-4 shrink-0 text-text-weak" />
+              <span className="mr-1.5 shrink-0 text-text-weak">From:</span>
+              <span className="line-clamp-1 text-text-info group-hover:text-text-info-stronger group-hover:underline">
                 {url}
               </span>
-              <ArrowUpRightFromSquareIcon className="ml-1 inline-block h-4 w-4 text-text-info group-hover:text-text-info-strong" />
+              <ArrowUpRightFromSquareIcon className="ml-1 inline-block h-4 w-4 shrink-0 text-text-info group-hover:text-text-info-strong" />
             </div>
           </a>
         </div>
@@ -328,14 +329,23 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
       );
     case "image":
       return (
-        <BaseImage
-          width={1200}
-          height={630}
-          //@ts-ignore
-          alt={block.image?.caption[0]?.plain_text ?? "Notion Image"}
-          //@ts-ignore
-          src={block.image?.file?.url ?? block.image?.external?.url}
-        />
+        <div className="my-4">
+          <BaseImage
+            width={1200}
+            height={630}
+            //@ts-ignore
+            alt={block.image?.caption[0]?.plain_text ?? "Notion Image"}
+            //@ts-ignore
+            src={block.image?.file?.url ?? block.image?.external?.url}
+          />
+          {/* @ts-ignore */}
+          {block.image?.caption && (
+            <div className="w-full text-center text-sm text-text-weak italic">
+              {/* @ts-ignore */}
+              <Text text={block.image?.caption as richText[]} />
+            </div>
+          )}
+        </div>
       );
     case "embed":
       {
