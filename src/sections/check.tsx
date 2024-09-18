@@ -1,7 +1,7 @@
 import { Checklist } from "@/components/check-list";
 import { getCachedQueryDatabase } from "@/services/notion";
 import { getTranslations } from "next-intl/server";
-import { PageHeader, PageHeaderHeading } from "../components/page-header";
+import { PageHeader, PageHeaderSubheading } from "../components/page-header";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -41,12 +41,7 @@ export async function Check({ dateStart }: CheckProps) {
         ],
       },
     })
-  ).results.filter((db) => {
-    return (
-      //@ts-ignore
-      !!db.properties["Total Lifted"]?.number
-    );
-  });
+  ).results;
 
   // ---------------------------------------------------------------------------
   // Render
@@ -59,7 +54,7 @@ export async function Check({ dateStart }: CheckProps) {
   return (
     <section>
       <PageHeader>
-        <PageHeaderHeading>{t("Check.title")}</PageHeaderHeading>
+        <PageHeaderSubheading>{t("Check.title")}</PageHeaderSubheading>
       </PageHeader>
       <div className="mt-8 w-full flex-col space-y-3">
         {checklist.length > 0 && checklist[0] && (

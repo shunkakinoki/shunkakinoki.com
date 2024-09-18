@@ -83,7 +83,7 @@ export const Notion: FC<NotionProps> = ({
             {/* @ts-ignore */}
             {content.properties.Name?.title[0]?.plain_text}
           </h1>
-          <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
+          <div className="mt-4 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
             <div className="flex items-center">
               <p className="text-text-weak">
                 by Shun Kakinoki &middot;{" "}

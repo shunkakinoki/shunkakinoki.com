@@ -1,7 +1,7 @@
 import { MindMap } from "@/components/mind-map";
 import { getCachedQueryDatabase } from "@/services/notion";
 import { getTranslations } from "next-intl/server";
-import { PageHeader, PageHeaderHeading } from "../components/page-header";
+import { PageHeader, PageHeaderSubheading } from "../components/page-header";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -44,7 +44,10 @@ export async function Mind({ dateStart }: MindProps) {
   ).results.filter((db) => {
     return (
       //@ts-ignore
-      !!db.properties["Total Lifted"]?.number
+      !!db.properties["Total Lifted"]?.number ||
+      //@ts-ignore
+      // biome-ignore lint/complexity/useLiteralKeys: <explanation>
+      !!db.properties["Running"]?.number
     );
   });
 
@@ -59,7 +62,7 @@ export async function Mind({ dateStart }: MindProps) {
   return (
     <section>
       <PageHeader>
-        <PageHeaderHeading>{t("Mind.title")}</PageHeaderHeading>
+        <PageHeaderSubheading>{t("Mind.title")}</PageHeaderSubheading>
       </PageHeader>
       <div className="mt-8 w-full flex-col space-y-3">
         {mindMap.length > 0 && mindMap[0] && <MindMap content={mindMap[0]} />}

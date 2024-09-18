@@ -1,6 +1,7 @@
 "use client";
 
 import type { NotionPageObject } from "@/services/notion";
+import { ExternalLink } from "@lightdotso/elements/external-link";
 import {
   Table,
   TableBody,
@@ -37,7 +38,9 @@ export const MindMap: FC<MindMapProps> = ({ content }) => {
       <Table>
         <TableCaption>
           {/* @ts-ignore */}
-          Workout Data for {content.properties.Property.title[0].plain_text}
+          Workout Data for {content.properties.Property.title[0].plain_text}.
+          More can be found{" "}
+          <ExternalLink href="https://shunkakinoki.com/gym">here</ExternalLink>
         </TableCaption>
         <TableHeader>
           <TableRow>

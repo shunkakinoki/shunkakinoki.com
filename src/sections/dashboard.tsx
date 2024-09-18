@@ -162,7 +162,6 @@ export async function TweetCard() {
         number={latestPublishedTweetCount}
         title="Latest Published Tweets"
         href={SocialConfig.X}
-        suffix="tweets"
       >
         <DocumentTextIcon className="h-6 w-6" />
       </DashboardCard>

@@ -147,7 +147,7 @@ export default async function SlugPage({
           //@ts-ignore
           page.parent.database_id ===
             "badf29d8-7d2f-4e03-b2c5-451a627d8618" && (
-            <>
+            <div className="flex flex-col gap-4 md:gap-8">
               <Suspense>
                 <Check
                   // @ts-ignore
@@ -160,7 +160,7 @@ export default async function SlugPage({
                   dateStart={page.properties.Date.date.start}
                 />
               </Suspense>
-            </>
+            </div>
           )
       }
     </>
