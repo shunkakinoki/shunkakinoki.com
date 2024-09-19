@@ -98,6 +98,7 @@ export const MindMap: FC<MindMapProps> = ({ content }) => {
                   "km"}
                 {key === "Body Weight" && "lbs"}
                 {key === "Calories" && "kcal"}
+                {key === "Work" && "mins"}
               </TableCell>
             </TableRow>
           ))}
