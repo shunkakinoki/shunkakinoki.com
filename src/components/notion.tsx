@@ -328,6 +328,7 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
       return (
         <div className="my-4">
           <BaseImage
+            onErrorHide
             width={1200}
             height={630}
             //@ts-ignore
