@@ -37,12 +37,21 @@ export async function Journal() {
       // biome-ignore lint/style/useNamingConvention: <explanation>
       database_id: "badf29d87d2f4e03b2c5451a627d8618",
     })
-  ).results.filter((db) => {
-    return (
-      //@ts-ignore
-      !!db.properties.Date?.date && !!db?.icon?.emoji
-    );
-  });
+  ).results
+    .filter((db) => {
+      return (
+        //@ts-ignore
+        !!db.properties.Date?.date && !!db?.icon?.emoji
+      );
+    })
+    .sort((a, b) => {
+      return (
+        //@ts-ignore
+        new Date(b.properties.Date.date.start) -
+        //@ts-ignore
+        new Date(a.properties.Date.date.start)
+      );
+    });
 
   // ---------------------------------------------------------------------------
   // Render

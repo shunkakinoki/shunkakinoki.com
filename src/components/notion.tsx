@@ -33,6 +33,7 @@ import type { SuccessResult } from "open-graph-scraper/types";
 import { type FC, Fragment, type ReactNode } from "react";
 import { useEffect } from "react";
 import { Tweet } from "react-tweet";
+import { CaptionImage } from "./caption-image";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -272,19 +273,10 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
             className="group transition-opacity duration-300 hover:opacity-80"
           >
             {ogData?.result?.ogImage?.[0]?.url ? (
-              <div className="relative aspect-video">
-                <BaseImage
-                  onErrorHide
-                  width={1200}
-                  height={630}
-                  className="!pt-0"
-                  src={ogData?.result?.ogImage[0]?.url}
-                  alt={ogData.result.ogTitle ?? ""}
-                />
-                <div className="absolute bottom-6 left-2 line-clamp-1 rounded-md bg-black bg-opacity-50 p-1 text-white text-xs">
-                  {ogData.result.ogTitle}
-                </div>
-              </div>
+              <CaptionImage
+                src={ogData?.result?.ogImage[0]?.url}
+                alt={ogData.result.ogTitle ?? ""}
+              />
             ) : null}
             <div className="inline-flex items-center">
               <Globe2Icon className="mr-2 inline-block h-4 w-4 shrink-0 text-text-weak" />
