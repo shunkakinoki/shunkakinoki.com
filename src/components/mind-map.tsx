@@ -47,6 +47,24 @@ export const MindMap: FC<MindMapProps> = ({ content }) => {
     // @ts-ignore
     ([_, value]) => value.type === "number" && value.number !== null,
   );
+  const nonNullTimeProperties = Object.entries(properties).filter(
+    ([_, value]) =>
+      // @ts-ignore
+      value.type === "date" &&
+      // @ts-ignore
+      value.date !== null &&
+      // @ts-ignore
+      value.date.start !== null &&
+      // @ts-ignore
+      value.date.start.includes("T"),
+  );
+  const checkboxProperties = Object.entries(properties).filter(
+    ([_, value]) =>
+      // @ts-ignore
+      value.type === "checkbox" &&
+      // @ts-ignore
+      value.checkbox !== null,
+  );
 
   return (
     <div className="rounded-md border border-border bg-background p-4">
@@ -80,6 +98,24 @@ export const MindMap: FC<MindMapProps> = ({ content }) => {
                   "km"}
                 {key === "Body Weight" && "lbs"}
                 {key === "Calories" && "kcal"}
+              </TableCell>
+            </TableRow>
+          ))}
+          {nonNullTimeProperties.map(([key, value]) => (
+            <TableRow key={key}>
+              <TableCell className="font-medium">{key}</TableCell>
+              <TableCell className="text-right">
+                {/* @ts-ignore */}
+                {new Date(value.date.start).toLocaleTimeString()}
+              </TableCell>
+            </TableRow>
+          ))}
+          {checkboxProperties.map(([key, value]) => (
+            <TableRow key={key}>
+              <TableCell className="font-medium">{key}</TableCell>
+              <TableCell className="text-right">
+                {/* @ts-ignore */}
+                {value.checkbox ? "Yes" : "No"}
               </TableCell>
             </TableRow>
           ))}
