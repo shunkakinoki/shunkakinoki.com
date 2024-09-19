@@ -274,6 +274,7 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
             {ogData?.result?.ogImage?.[0]?.url ? (
               <div className="relative aspect-video">
                 <BaseImage
+                  onErrorHide
                   width={1200}
                   height={630}
                   className="!pt-0"
