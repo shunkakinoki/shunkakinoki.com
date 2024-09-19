@@ -64,6 +64,7 @@ export const Checklist: FC<ChecklistProps> = ({ content }) => {
             </TableCell>
             <TableCell className="text-right">
               <ExternalLink
+                className="w-12"
                 // @ts-ignore
                 href={content.public_url}
               >
