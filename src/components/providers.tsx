@@ -14,7 +14,10 @@
 
 "use client";
 
-// import { TooltipProvider } from "@lightdotso/ui";
+import { getQueryClient } from "@/lib/query";
+import { TooltipProvider } from "@lightdotso/ui/components/tooltip";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Provider as JotaiProvider } from "jotai";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import type { ThemeProviderProps } from "next-themes/dist/types";
@@ -24,16 +27,22 @@ import type { ThemeProviderProps } from "next-themes/dist/types";
 // -----------------------------------------------------------------------------
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+  const queryClient = getQueryClient();
+
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
   return (
-    <JotaiProvider>
-      <NextThemesProvider {...props}>
-        {/* <TooltipProvider delayDuration={0}>{children}</TooltipProvider> */}
-        {children}
-      </NextThemesProvider>
-    </JotaiProvider>
+    <QueryClientProvider client={queryClient}>
+      <JotaiProvider>
+        <NextThemesProvider {...props}>
+          <TooltipProvider delayDuration={300}>{children}</TooltipProvider>
+          <ReactQueryDevtools
+            initialIsOpen={process.env.NODE_ENV === "development"}
+          />
+        </NextThemesProvider>
+      </JotaiProvider>
+    </QueryClientProvider>
   );
 }

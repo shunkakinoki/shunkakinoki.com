@@ -15,15 +15,28 @@
 "use server";
 
 import { ITEMS_PER_PAGE } from "@/const";
-import { getCachedQueryDatabase } from "@/services/notion";
+import {
+  type NotionPageObject,
+  getCachedQueryDatabase,
+} from "@/services/notion";
+
+// -----------------------------------------------------------------------------
+// Types
+// -----------------------------------------------------------------------------
+
+export type JournalResponse = {
+  entries: NotionPageObject[];
+  nextCursor: string | undefined;
+  hasMore: boolean;
+};
 
 // -----------------------------------------------------------------------------
 // Action
 // -----------------------------------------------------------------------------
 
 export async function getJournalAction(
-  startCursor: string | undefined = undefined,
-) {
+  startCursor?: string | undefined,
+): Promise<JournalResponse> {
   // ---------------------------------------------------------------------------
   // Services
   // ---------------------------------------------------------------------------
@@ -54,7 +67,7 @@ export async function getJournalAction(
 
   return {
     entries,
-    nextCursor: res.next_cursor,
+    nextCursor: res.next_cursor ?? undefined,
     hasMore: !!res.has_more,
   };
 }

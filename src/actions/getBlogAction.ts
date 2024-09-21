@@ -15,7 +15,20 @@
 "use server";
 
 import { ITEMS_PER_PAGE } from "@/const";
-import { getCachedQueryDatabase } from "@/services/notion";
+import {
+  type NotionPageObject,
+  getCachedQueryDatabase,
+} from "@/services/notion";
+
+// -----------------------------------------------------------------------------
+// Types
+// -----------------------------------------------------------------------------
+
+export type BlogResponse = {
+  entries: NotionPageObject[];
+  nextCursor: string | undefined;
+  hasMore: boolean;
+};
 
 // -----------------------------------------------------------------------------
 // Action
@@ -23,8 +36,8 @@ import { getCachedQueryDatabase } from "@/services/notion";
 
 export async function getBlogAction(
   locale: string,
-  startCursor: string | undefined = undefined,
-) {
+  startCursor?: string | undefined,
+): Promise<BlogResponse> {
   // ---------------------------------------------------------------------------
   // Services
   // ---------------------------------------------------------------------------
@@ -81,7 +94,7 @@ export async function getBlogAction(
 
   return {
     entries,
-    nextCursor: res.next_cursor,
+    nextCursor: res.next_cursor ?? undefined,
     hasMore: !!res.has_more,
   };
 }

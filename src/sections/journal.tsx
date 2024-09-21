@@ -14,33 +14,34 @@
 
 "use client";
 
-import { getJournalAction } from "@/actions/getJournalAction";
+import {
+  type JournalResponse,
+  getJournalAction,
+} from "@/actions/getJournalAction";
 import { InfiniteScroll } from "@/components/inifinite-scroll";
 import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import { Link } from "@/navigation";
 import type { NotionPageObject } from "@/services/notion";
+import { type InfiniteData, useInfiniteQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
-import { useCallback, useState } from "react";
 
 // -----------------------------------------------------------------------------
 // Props
 // -----------------------------------------------------------------------------
 
 interface JournalProps {
-  initialEntries: NotionPageObject[];
-  initialHasMore: boolean;
-  initialNextCursor: string | undefined;
+  initialData: {
+    entries: NotionPageObject[];
+    nextCursor: string | undefined;
+    hasMore: boolean;
+  };
 }
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export function Journal({
-  initialEntries,
-  initialHasMore,
-  initialNextCursor,
-}: JournalProps) {
+export function Journal({ initialData }: JournalProps) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
@@ -48,37 +49,28 @@ export function Journal({
   const t = useTranslations();
 
   // ---------------------------------------------------------------------------
-  // State Hooks
+  // Query
   // ---------------------------------------------------------------------------
 
-  const [entries, setEntries] = useState<NotionPageObject[]>(initialEntries);
-  const [hasMore, setHasMore] = useState(initialHasMore);
-  const [isLoading, setIsLoading] = useState(false);
-  const [nextCursor, setNextCursor] = useState<string | undefined>(
-    initialNextCursor,
-  );
-
-  // ---------------------------------------------------------------------------
-  // Callback Hooks
-  // ---------------------------------------------------------------------------
-
-  const loadMoreEntries = useCallback(async () => {
-    if (isLoading) {
-      return;
-    }
-    setIsLoading(true);
-    try {
-      const result = await getJournalAction(nextCursor);
-      setEntries((prev) => [...prev, ...result.entries]);
-      setNextCursor(result.nextCursor ?? undefined);
-      setHasMore(result.hasMore);
-    } catch (error) {
-      // biome-ignore lint/suspicious/noConsole: <explanation>
-      console.error("Error loading journal entries:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [nextCursor, isLoading]);
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useInfiniteQuery<
+      JournalResponse,
+      Error,
+      InfiniteData<JournalResponse>,
+      string[],
+      string | undefined
+    >({
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      queryKey: ["journal"],
+      queryFn: ({ pageParam }) => getJournalAction(pageParam),
+      getNextPageParam: (lastPage) => lastPage.nextCursor || undefined,
+      initialPageParam: undefined,
+      initialData: {
+        pages: [initialData],
+        pageParams: [undefined],
+      },
+    });
 
   // ---------------------------------------------------------------------------
   // Render Utils
@@ -104,8 +96,7 @@ export function Journal({
         >
           <div className="text-xl md:text-2xl">
             {/* @ts-ignore */}
-            {entry.icon?.emoji ?? "📄"}
-            {/* @ts-ignore */}
+            {entry.icon?.emoji ?? "📄"} {/* @ts-ignore */}
             {entry.properties.Name?.title[0]?.plain_text || ""}
           </div>
         </Link>
@@ -127,10 +118,10 @@ export function Journal({
       </PageHeader>
       <div className="mt-8 w-full flex-col space-y-3">
         <InfiniteScroll
-          items={entries}
-          loadMore={loadMoreEntries}
-          hasMore={hasMore}
-          isLoading={isLoading}
+          items={data?.pages.flatMap((page) => page.entries)}
+          loadMore={() => fetchNextPage()}
+          hasMore={hasNextPage}
+          isLoading={isFetchingNextPage}
           renderItem={renderJournalEntry}
         />
       </div>
