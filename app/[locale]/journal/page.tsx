@@ -14,6 +14,11 @@
 
 import { getJournalAction } from "@/actions/getJournalAction";
 import { Journal } from "@/sections/journal";
+import {
+  HydrationBoundary,
+  QueryClient,
+  dehydrate,
+} from "@tanstack/react-query";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
@@ -51,17 +56,23 @@ export default async function JournalPage() {
   // Actions
   // ---------------------------------------------------------------------------
 
-  const res = await getJournalAction();
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchInfiniteQuery({
+    queryKey: ["journal"],
+    queryFn: ({ pageParam }) => getJournalAction(pageParam),
+    initialPageParam: undefined,
+  });
+
+  const initialData = await getJournalAction();
 
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
   return (
-    <Journal
-      initialEntries={res.entries}
-      initialHasMore={res.hasMore}
-      initialNextCursor={res.nextCursor ?? undefined}
-    />
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <Journal initialData={initialData} />
+    </HydrationBoundary>
   );
 }

@@ -14,6 +14,11 @@
 
 import { getPostsAction } from "@/actions/getPostsAction";
 import { Posts } from "@/sections/posts";
+import {
+  HydrationBoundary,
+  QueryClient,
+  dehydrate,
+} from "@tanstack/react-query";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
@@ -51,17 +56,23 @@ export default async function PostsPage() {
   // Actions
   // ---------------------------------------------------------------------------
 
-  const res = await getPostsAction();
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchInfiniteQuery({
+    queryKey: ["posts"],
+    queryFn: ({ pageParam }) => getPostsAction(pageParam),
+    initialPageParam: undefined,
+  });
+
+  const initialData = await getPostsAction();
 
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
   return (
-    <Posts
-      initialEntries={res.entries}
-      initialHasMore={res.hasMore}
-      initialNextCursor={res.nextCursor ?? undefined}
-    />
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <Posts initialData={initialData} />
+    </HydrationBoundary>
   );
 }

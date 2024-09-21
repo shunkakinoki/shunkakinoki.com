@@ -14,6 +14,11 @@
 
 import { getBlogAction } from "@/actions/getBlogAction";
 import { Blog } from "@/sections/blog";
+import {
+  HydrationBoundary,
+  QueryClient,
+  dehydrate,
+} from "@tanstack/react-query";
 import type { Metadata } from "next";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
@@ -59,18 +64,23 @@ export default async function BlogPage({
   // Actions
   // ---------------------------------------------------------------------------
 
-  const res = await getBlogAction(locale);
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchInfiniteQuery({
+    queryKey: ["blog"],
+    queryFn: ({ pageParam }) => getBlogAction(locale, pageParam),
+    initialPageParam: undefined,
+  });
+
+  const initialData = await getBlogAction(locale);
 
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
   return (
-    <Blog
-      locale={locale}
-      initialEntries={res.entries}
-      initialHasMore={res.hasMore}
-      initialNextCursor={res.nextCursor ?? undefined}
-    />
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <Blog locale={locale} initialData={initialData} />
+    </HydrationBoundary>
   );
 }

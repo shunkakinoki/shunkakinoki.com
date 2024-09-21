@@ -122,6 +122,12 @@ importers:
       '@tailwindcss/forms':
         specifier: ^0.5.9
         version: 0.5.9(tailwindcss@3.4.12(ts-node@10.9.1(@types/node@22.5.5)(typescript@5.6.2)))
+      '@tanstack/react-query':
+        specifier: ^5.56.2
+        version: 5.56.2(react@19.0.0-rc-187dd6a7-20240806)
+      '@tanstack/react-query-devtools':
+        specifier: ^5.56.2
+        version: 5.56.2(@tanstack/react-query@5.56.2(react@19.0.0-rc-187dd6a7-20240806))(react@19.0.0-rc-187dd6a7-20240806)
       '@upstash/ratelimit':
         specifier: ^2.0.3
         version: 2.0.3
@@ -1584,8 +1590,8 @@ packages:
   '@metamask/sdk@0.28.4':
     resolution: {integrity: sha512-RjWBKPNesjeua2SXIDF9IvYALOSsOQyqHv5DPPK0Voskytk7y+2n/33ocbC1BH5hTLI4hDPH+BuCpXJRWs3/Yg==}
     peerDependencies:
-      react: 19.0.0-rc-7771d3a7-20240827
-      react-dom: 19.0.0-rc-7771d3a7-20240827
+      react: ^18.2.0
+      react-dom: ^18.2.0
     peerDependenciesMeta:
       react:
         optional: true

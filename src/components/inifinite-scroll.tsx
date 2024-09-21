@@ -23,7 +23,7 @@ import { type ReactNode, useCallback, useEffect, useRef } from "react";
 
 interface InfiniteScrollProps<T> {
   items: T[];
-  loadMore: () => Promise<void>;
+  loadMore: () => void;
   hasMore: boolean;
   isLoading: boolean;
   renderItem: (item: T, index: number) => ReactNode;
@@ -96,13 +96,13 @@ export function InfiniteScroll<T>({
       ))}
       <div className="mt-4 flex justify-center">
         {isLoading && (
-          <Button isLoading variant="outline">
+          <Button isLoading disabled variant="outline">
             Loading more items...
           </Button>
         )}
         {!hasMore && (
           <Button disabled variant="outline">
-            No more items to load
+            All loaded!
           </Button>
         )}
       </div>

@@ -14,13 +14,14 @@
 
 "use client";
 
+import type { BlogResponse } from "@/actions/getBlogAction";
 import { getBlogAction } from "@/actions/getBlogAction";
 import { InfiniteScroll } from "@/components/inifinite-scroll";
 import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import { Link } from "@/navigation";
 import type { NotionPageObject } from "@/services/notion";
+import { type InfiniteData, useInfiniteQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
-import { useCallback, useState } from "react";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -28,21 +29,18 @@ import { useCallback, useState } from "react";
 
 export interface BlogProps {
   locale: string;
-  initialEntries: NotionPageObject[];
-  initialHasMore: boolean;
-  initialNextCursor: string | undefined;
+  initialData: {
+    entries: NotionPageObject[];
+    nextCursor: string | undefined;
+    hasMore: boolean;
+  };
 }
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export function Blog({
-  locale,
-  initialEntries,
-  initialHasMore,
-  initialNextCursor,
-}: BlogProps) {
+export function Blog({ locale, initialData }: BlogProps) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
@@ -50,37 +48,28 @@ export function Blog({
   const t = useTranslations();
 
   // ---------------------------------------------------------------------------
-  // State Hooks
+  // Query
   // ---------------------------------------------------------------------------
 
-  const [entries, setEntries] = useState<NotionPageObject[]>(initialEntries);
-  const [hasMore, setHasMore] = useState(initialHasMore);
-  const [isLoading, setIsLoading] = useState(false);
-  const [nextCursor, setNextCursor] = useState<string | undefined>(
-    initialNextCursor,
-  );
-
-  // ---------------------------------------------------------------------------
-  // Callback Hooks
-  // ---------------------------------------------------------------------------
-
-  const loadMoreEntries = useCallback(async () => {
-    if (isLoading) {
-      return;
-    }
-    setIsLoading(true);
-    try {
-      const result = await getBlogAction(locale, nextCursor);
-      setEntries((prev) => [...prev, ...result.entries]);
-      setNextCursor(result.nextCursor ?? undefined);
-      setHasMore(result.hasMore);
-    } catch (error) {
-      // biome-ignore lint/suspicious/noConsole: <explanation>
-      console.error("Error loading journal entries:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [locale, nextCursor, isLoading]);
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useInfiniteQuery<
+      BlogResponse,
+      Error,
+      InfiniteData<BlogResponse>,
+      string[],
+      string | undefined
+    >({
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      queryKey: ["blog"],
+      queryFn: ({ pageParam }) => getBlogAction(locale, pageParam),
+      getNextPageParam: (lastPage) => lastPage.nextCursor || undefined,
+      initialPageParam: undefined,
+      initialData: {
+        pages: [initialData],
+        pageParams: [undefined],
+      },
+    });
 
   // ---------------------------------------------------------------------------
   // Render Utils
@@ -127,10 +116,10 @@ export function Blog({
       </PageHeader>
       <div className="mt-8 w-full flex-col space-y-3">
         <InfiniteScroll
-          items={entries}
-          loadMore={loadMoreEntries}
-          hasMore={hasMore}
-          isLoading={isLoading}
+          items={data?.pages.flatMap((page) => page.entries)}
+          loadMore={() => fetchNextPage()}
+          hasMore={hasNextPage}
+          isLoading={isFetchingNextPage}
           renderItem={renderBlogEntry}
         />
       </div>
