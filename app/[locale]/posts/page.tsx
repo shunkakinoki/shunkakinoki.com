@@ -12,9 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import { getPostsAction } from "@/actions/getPostsAction";
 import { Posts } from "@/sections/posts";
 import type { Metadata } from "next";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -45,18 +46,22 @@ export async function generateMetadata({
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
-export default async function PostsPage({
-  params: { locale },
-}: { params: { locale: string } }) {
+export default async function PostsPage() {
   // ---------------------------------------------------------------------------
-  // i18n
+  // Actions
   // ---------------------------------------------------------------------------
 
-  unstable_setRequestLocale(locale);
+  const res = await getPostsAction();
 
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
-  return <Posts />;
+  return (
+    <Posts
+      initialEntries={res.entries}
+      initialHasMore={res.hasMore}
+      initialNextCursor={res.nextCursor ?? undefined}
+    />
+  );
 }

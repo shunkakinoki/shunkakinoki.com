@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import { PageHeader, PageHeaderHeading } from "@/components/page-header";
+import { SectionHeaderHeading } from "@/components/section-header";
 import { socialConfig, socialPriorityConfig } from "@/config/social";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import type { IconProps } from "@radix-ui/react-icons/dist/types";
 import { useTranslations } from "next-intl";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
 import type { IconType } from "react-icons/lib";
-import { PageHeader, PageHeaderHeading } from "../components/page-header";
-import { SectionHeaderHeading } from "../components/section-header";
 
 // -----------------------------------------------------------------------------
 // Props

@@ -23,7 +23,7 @@ import SlugPage from "../[slug]/page";
 const causeSlugs = {
   en: "a95efa449e314eefaae7557695b06003",
   ja: "748fb4a50dc94ababcb15a4376405022",
-  zh: "a554db2d6f11472bbddec998f5a5f46b",
+  zh: "f100c1d222a5401aaf1a897b53763519",
 };
 
 // -----------------------------------------------------------------------------

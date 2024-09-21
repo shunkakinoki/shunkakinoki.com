@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import { SectionHeaderHeading } from "@/components/section-header";
 import { cn } from "@/lib/utils";
 import { Link } from "@/navigation";
 import {
@@ -20,7 +21,6 @@ import {
   VariableIcon,
 } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
-import { SectionHeaderHeading } from "../components/section-header";
 
 // -----------------------------------------------------------------------------
 // Const

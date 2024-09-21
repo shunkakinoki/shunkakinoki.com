@@ -13,9 +13,9 @@
 // limitations under the License.
 
 import { Checklist } from "@/components/check-list";
+import { PageHeader, PageHeaderSubheading } from "@/components/page-header";
 import { getCachedQueryDatabase } from "@/services/notion";
 import { getTranslations } from "next-intl/server";
-import { PageHeader, PageHeaderSubheading } from "../components/page-header";
 
 // -----------------------------------------------------------------------------
 // Props

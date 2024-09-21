@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import { getBlogAction } from "@/actions/getBlogAction";
 import { Blog } from "@/sections/blog";
 import type { Metadata } from "next";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
@@ -55,8 +56,21 @@ export default async function BlogPage({
   unstable_setRequestLocale(locale);
 
   // ---------------------------------------------------------------------------
+  // Actions
+  // ---------------------------------------------------------------------------
+
+  const res = await getBlogAction(locale);
+
+  // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
-  return <Blog locale={locale} />;
+  return (
+    <Blog
+      locale={locale}
+      initialEntries={res.entries}
+      initialHasMore={res.hasMore}
+      initialNextCursor={res.nextCursor ?? undefined}
+    />
+  );
 }

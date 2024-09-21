@@ -12,46 +12,109 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+"use client";
+
+import { getJournalAction } from "@/actions/getJournalAction";
+import { InfiniteScroll } from "@/components/inifinite-scroll";
+import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import { Link } from "@/navigation";
-import { getCachedQueryDatabase } from "@/services/notion";
-import { getTranslations } from "next-intl/server";
-import { PageHeader, PageHeaderHeading } from "../components/page-header";
+import type { NotionPageObject } from "@/services/notion";
+import { useTranslations } from "next-intl";
+import { useCallback, useState } from "react";
+
+// -----------------------------------------------------------------------------
+// Props
+// -----------------------------------------------------------------------------
+
+interface JournalProps {
+  initialEntries: NotionPageObject[];
+  initialHasMore: boolean;
+  initialNextCursor: string | undefined;
+}
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export async function Journal() {
+export function Journal({
+  initialEntries,
+  initialHasMore,
+  initialNextCursor,
+}: JournalProps) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations();
+  const t = useTranslations();
 
   // ---------------------------------------------------------------------------
-  // Services
+  // State Hooks
   // ---------------------------------------------------------------------------
 
-  const res = (
-    await getCachedQueryDatabase({
-      // biome-ignore lint/style/useNamingConvention: <explanation>
-      database_id: "badf29d87d2f4e03b2c5451a627d8618",
-    })
-  ).results
-    .filter((db) => {
-      return (
-        //@ts-ignore
-        !!db.properties.Date?.date && !!db?.icon?.emoji
-      );
-    })
-    .sort((a, b) => {
-      return (
-        //@ts-ignore
-        new Date(b.properties.Date.date.start) -
-        //@ts-ignore
-        new Date(a.properties.Date.date.start)
-      );
-    });
+  const [entries, setEntries] = useState<NotionPageObject[]>(initialEntries);
+  const [hasMore, setHasMore] = useState(initialHasMore);
+  const [isLoading, setIsLoading] = useState(false);
+  const [nextCursor, setNextCursor] = useState<string | undefined>(
+    initialNextCursor,
+  );
+
+  // ---------------------------------------------------------------------------
+  // Callback Hooks
+  // ---------------------------------------------------------------------------
+
+  const loadMoreEntries = useCallback(async () => {
+    if (isLoading) {
+      return;
+    }
+    setIsLoading(true);
+    try {
+      const result = await getJournalAction(nextCursor);
+      setEntries((prev) => [...prev, ...result.entries]);
+      setNextCursor(result.nextCursor ?? undefined);
+      setHasMore(result.hasMore);
+    } catch (error) {
+      // biome-ignore lint/suspicious/noConsole: <explanation>
+      console.error("Error loading journal entries:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [nextCursor, isLoading]);
+
+  // ---------------------------------------------------------------------------
+  // Render Utils
+  // ---------------------------------------------------------------------------
+
+  const renderJournalEntry = (entry: NotionPageObject) => {
+    //@ts-ignore
+    const date = new Date(entry.properties.Date.date.start).toLocaleString(
+      "en",
+      {
+        month: "short",
+        day: "2-digit",
+        year: "numeric",
+      },
+    );
+
+    return (
+      <div key={entry.id} className="flex space-x-4">
+        <Link
+          //@ts-ignore
+          href={`/${entry.id}`}
+          className="line-clamp-1 flex grow items-center font-extrabold text-text hover:text-text-weak hover:underline"
+        >
+          <div className="text-xl md:text-2xl">
+            {/* @ts-ignore */}
+            {entry.icon?.emoji ?? "📄"}
+            {/* @ts-ignore */}
+            {entry.properties.Name?.title[0]?.plain_text || ""}
+          </div>
+        </Link>
+        <div className="flex flex-none items-center justify-center text-sm text-text-weak">
+          {date}
+        </div>
+      </div>
+    );
+  };
 
   // ---------------------------------------------------------------------------
   // Render
@@ -63,35 +126,13 @@ export async function Journal() {
         <PageHeaderHeading>{t("journal.title")}</PageHeaderHeading>
       </PageHeader>
       <div className="mt-8 w-full flex-col space-y-3">
-        {res.map((page) => {
-          // @ts-ignore
-          const date = new Date(page.properties.Date.date.start).toLocaleString(
-            "en",
-            {
-              month: "short",
-              day: "2-digit",
-              year: "numeric",
-            },
-          );
-          return (
-            <div key={page.id} className="flex space-x-4">
-              <Link
-                // @ts-expect-error
-                href={`/${page.id}`}
-                className="line-clamp-1 flex grow items-center font-extrabold text-text hover:text-text-weak hover:underline"
-              >
-                <div className="text-xl md:text-2xl">
-                  {/* @ts-ignore */}
-                  {page?.icon?.emoji ?? "📄"} {/* @ts-ignore */}
-                  {page.properties.Name?.title[0]?.plain_text || ""}
-                </div>
-              </Link>
-              <div className="flex flex-none items-center justify-center text-sm text-text-weak">
-                {date}
-              </div>
-            </div>
-          );
-        })}
+        <InfiniteScroll
+          items={entries}
+          loadMore={loadMoreEntries}
+          hasMore={hasMore}
+          isLoading={isLoading}
+          renderItem={renderJournalEntry}
+        />
       </div>
     </section>
   );
