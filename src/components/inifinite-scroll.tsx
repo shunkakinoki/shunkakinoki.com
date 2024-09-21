@@ -94,7 +94,7 @@ export function InfiniteScroll<T>({
           {renderItem(item, index)}
         </div>
       ))}
-      <div className="flex justify-center">
+      <div className="mt-4 flex justify-center">
         {isLoading && (
           <Button isLoading variant="outline">
             Loading more items...

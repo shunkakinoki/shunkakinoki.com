@@ -14,6 +14,7 @@
 
 "use server";
 
+import { ITEMS_PER_PAGE } from "@/const";
 import { getCachedQueryDatabase } from "@/services/notion";
 
 // -----------------------------------------------------------------------------
@@ -24,12 +25,6 @@ export async function getJournalAction(
   startCursor: string | undefined = undefined,
 ) {
   // ---------------------------------------------------------------------------
-  // Constants
-  // ---------------------------------------------------------------------------
-
-  const itemsPerPage = 3;
-
-  // ---------------------------------------------------------------------------
   // Services
   // ---------------------------------------------------------------------------
 
@@ -39,7 +34,7 @@ export async function getJournalAction(
     // biome-ignore lint/style/useNamingConvention: <explanation>
     start_cursor: startCursor,
     // biome-ignore lint/style/useNamingConvention: <explanation>
-    page_size: itemsPerPage,
+    page_size: ITEMS_PER_PAGE,
   });
 
   const entries = res.results
