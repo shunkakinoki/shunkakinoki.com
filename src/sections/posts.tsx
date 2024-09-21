@@ -59,7 +59,7 @@ export function Posts({ initialData }: PostsProps) {
     >({
       refetchOnMount: false,
       refetchOnReconnect: false,
-      queryKey: ["blog"],
+      queryKey: ["posts"],
       queryFn: ({ pageParam }) => getPostsAction(pageParam),
       getNextPageParam: (lastPage) => lastPage.nextCursor || undefined,
       initialPageParam: undefined,

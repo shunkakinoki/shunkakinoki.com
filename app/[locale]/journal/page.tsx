@@ -59,7 +59,7 @@ export default async function JournalPage() {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchInfiniteQuery({
-    queryKey: ["posts"],
+    queryKey: ["journal"],
     queryFn: ({ pageParam }) => getJournalAction(pageParam),
     initialPageParam: undefined,
   });
