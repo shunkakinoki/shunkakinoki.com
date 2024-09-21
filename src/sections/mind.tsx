@@ -13,9 +13,9 @@
 // limitations under the License.
 
 import { MindMap } from "@/components/mind-map";
+import { PageHeader, PageHeaderSubheading } from "@/components/page-header";
 import { getCachedQueryDatabase } from "@/services/notion";
 import { getTranslations } from "next-intl/server";
-import { PageHeader, PageHeaderSubheading } from "../components/page-header";
 
 // -----------------------------------------------------------------------------
 // Props

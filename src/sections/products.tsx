@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import { PageHeader, PageHeaderHeading } from "@/components/page-header";
+import { SectionHeaderHeading } from "@/components/section-header";
 import { getCachedQueryDatabase } from "@/services/notion";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import { getTranslations } from "next-intl/server";
-import { PageHeader, PageHeaderHeading } from "../components/page-header";
-import { SectionHeaderHeading } from "../components/section-header";
 
 // -----------------------------------------------------------------------------
 // Props

@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import { Link } from "@/navigation";
 import { getCachedQueryDatabase } from "@/services/notion";
 import { getTranslations } from "next-intl/server";
-import { PageHeader, PageHeaderHeading } from "../components/page-header";
 
 // -----------------------------------------------------------------------------
 // Component

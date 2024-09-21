@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import { InternalConfig } from "@/config/internal";
 import { SocialConfig } from "@/config/social";
 import { getCachedCloudflareAnalytics } from "@/services/cloudflare";
@@ -39,7 +40,6 @@ import { FaRunning } from "react-icons/fa";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { MdSportsMartialArts } from "react-icons/md";
 import { SiBlockbench } from "react-icons/si";
-import { PageHeader, PageHeaderHeading } from "../components/page-header";
 
 // -----------------------------------------------------------------------------
 // Component

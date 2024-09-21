@@ -114,12 +114,18 @@ export const getCachedQueryDatabase = async ({
   database_id,
   filter,
   sorts,
+  start_cursor,
+  page_size,
 }: QueryDatabaseParameters) => {
   const response = await notion.databases.query({
     // biome-ignore lint/style/useNamingConvention: <explanation>
     database_id: database_id,
     filter: filter,
     sorts: sorts,
+    // biome-ignore lint/style/useNamingConvention: <explanation>
+    start_cursor: start_cursor,
+    // biome-ignore lint/style/useNamingConvention: <explanation>
+    page_size: page_size,
   });
   return response;
 };

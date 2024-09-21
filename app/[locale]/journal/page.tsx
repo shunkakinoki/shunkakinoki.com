@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import { getJournalAction } from "@/actions/getJournalAction";
 import { Journal } from "@/sections/journal";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
@@ -47,8 +48,20 @@ export async function generateMetadata({
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function JournalPage() {
   // ---------------------------------------------------------------------------
+  // Actions
+  // ---------------------------------------------------------------------------
+
+  const res = await getJournalAction();
+
+  // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
-  return <Journal />;
+  return (
+    <Journal
+      initialEntries={res.entries}
+      initialHasMore={res.hasMore}
+      initialNextCursor={res.nextCursor ?? undefined}
+    />
+  );
 }

@@ -12,10 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+"use client";
+
+import { getBlogAction } from "@/actions/getBlogAction";
+import { InfiniteScroll } from "@/components/inifinite-scroll";
+import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import { Link } from "@/navigation";
-import { getCachedQueryDatabase } from "@/services/notion";
-import { getTranslations } from "next-intl/server";
-import { PageHeader, PageHeaderHeading } from "../components/page-header";
+import type { NotionPageObject } from "@/services/notion";
+import { useTranslations } from "next-intl";
+import { useCallback, useState } from "react";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -23,54 +28,93 @@ import { PageHeader, PageHeaderHeading } from "../components/page-header";
 
 export interface BlogProps {
   locale: string;
+  initialEntries: NotionPageObject[];
+  initialHasMore: boolean;
+  initialNextCursor: string | undefined;
 }
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export async function Blog({ locale }: BlogProps) {
+export function Blog({
+  locale,
+  initialEntries,
+  initialHasMore,
+  initialNextCursor,
+}: BlogProps) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations();
+  const t = useTranslations();
 
   // ---------------------------------------------------------------------------
-  // Services
+  // State Hooks
   // ---------------------------------------------------------------------------
 
-  const res = (
-    await getCachedQueryDatabase({
-      // biome-ignore lint/style/useNamingConvention: <explanation>
-      database_id: "e4ef762ca07f465e8f5cce906732140b",
-      filter: {
-        and: [
-          {
-            property: "Published",
-            checkbox: {
-              equals: true,
-            },
-          },
-          {
-            property: "Locale",
-            select: {
-              equals: locale,
-            },
-          },
-        ],
+  const [entries, setEntries] = useState<NotionPageObject[]>(initialEntries);
+  const [hasMore, setHasMore] = useState(initialHasMore);
+  const [isLoading, setIsLoading] = useState(false);
+  const [nextCursor, setNextCursor] = useState<string | undefined>(
+    initialNextCursor,
+  );
+
+  // ---------------------------------------------------------------------------
+  // Callback Hooks
+  // ---------------------------------------------------------------------------
+
+  const loadMoreEntries = useCallback(async () => {
+    if (isLoading) {
+      return;
+    }
+    setIsLoading(true);
+    try {
+      const result = await getBlogAction(locale, nextCursor);
+      setEntries((prev) => [...prev, ...result.entries]);
+      setNextCursor(result.nextCursor ?? undefined);
+      setHasMore(result.hasMore);
+    } catch (error) {
+      // biome-ignore lint/suspicious/noConsole: <explanation>
+      console.error("Error loading journal entries:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [locale, nextCursor, isLoading]);
+
+  // ---------------------------------------------------------------------------
+  // Render Utils
+  // ---------------------------------------------------------------------------
+
+  const renderBlogEntry = (entry: NotionPageObject) => {
+    // @ts-ignore
+    const date = new Date(entry.properties.Date.date.start).toLocaleString(
+      "en",
+      {
+        month: "short",
+        day: "2-digit",
+        year: "numeric",
       },
-    })
-  ).results.filter((db) => {
-    return (
-      //@ts-ignore
-      !!db.properties.Date?.date &&
-      //@ts-ignore
-      !!db.properties.Published.checkbox &&
-      //@ts-ignore
-      !!db.properties.Locale?.select
     );
-  });
+
+    return (
+      <div key={entry.id} className="flex space-x-4">
+        <Link
+          // @ts-ignore
+          href={`/${entry.id}`}
+          className="line-clamp-1 flex grow items-center font-extrabold text-text hover:text-text-weak hover:underline"
+        >
+          <div className="text-xl md:text-2xl">
+            {/* @ts-ignore */}
+            {entry.properties.Name?.title[0]?.plain_text || ""}
+          </div>
+        </Link>
+        <div className="flex flex-none items-center justify-center text-sm text-text-weak">
+          {date}
+        </div>
+      </div>
+    );
+  };
 
   // ---------------------------------------------------------------------------
   // Render
@@ -82,34 +126,13 @@ export async function Blog({ locale }: BlogProps) {
         <PageHeaderHeading>{t("blog.title")}</PageHeaderHeading>
       </PageHeader>
       <div className="mt-8 w-full flex-col space-y-3">
-        {res.map((page) => {
-          // @ts-ignore
-          const date = new Date(page.properties.Date.date.start).toLocaleString(
-            "en",
-            {
-              month: "short",
-              day: "2-digit",
-              year: "numeric",
-            },
-          );
-          return (
-            <div key={page.id} className="flex space-x-4">
-              <Link
-                // @ts-expect-error
-                href={`/${page.id}`}
-                className="line-clamp-1 flex grow items-center font-extrabold text-text hover:text-text-weak hover:underline"
-              >
-                <div className="text-xl md:text-2xl">
-                  {/* @ts-ignore */}
-                  {page.properties.Name?.title[0]?.plain_text || ""}
-                </div>
-              </Link>
-              <div className="flex flex-none items-center justify-center text-sm text-text-weak">
-                {date}
-              </div>
-            </div>
-          );
-        })}
+        <InfiniteScroll
+          items={entries}
+          loadMore={loadMoreEntries}
+          hasMore={hasMore}
+          isLoading={isLoading}
+          renderItem={renderBlogEntry}
+        />
       </div>
     </section>
   );

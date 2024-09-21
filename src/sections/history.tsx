@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import {
   AcademicCapIcon,
   BriefcaseIcon,
@@ -24,7 +25,6 @@ import {
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import type { FC } from "react";
-import { PageHeader, PageHeaderHeading } from "../components/page-header";
 
 // -----------------------------------------------------------------------------
 // Component
