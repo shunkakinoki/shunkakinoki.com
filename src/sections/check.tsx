@@ -77,9 +77,7 @@ export async function Check({ dateStart }: CheckProps) {
         <PageHeaderSubheading>{t("Check.title")}</PageHeaderSubheading>
       </PageHeader>
       <div className="mt-8 w-full flex-col space-y-3">
-        {checklist.length > 0 && checklist[0] && (
-          <Checklist content={checklist[0]} />
-        )}
+        {checklist && <Checklist content={checklist} />}
       </div>
     </section>
   );
