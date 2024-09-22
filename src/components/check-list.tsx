@@ -33,16 +33,14 @@ import type { FC } from "react";
 // -----------------------------------------------------------------------------
 
 export type ChecklistProps = {
-  content: NotionPageObject;
+  contents: NotionPageObject[];
 };
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
-export const Checklist: FC<ChecklistProps> = ({ content }) => {
-  // Get the properties of the `Category` property
-
+export const Checklist: FC<ChecklistProps> = ({ contents }) => {
   return (
     <div className="rounded-md border border-border bg-background p-4">
       <Table>
@@ -57,21 +55,23 @@ export const Checklist: FC<ChecklistProps> = ({ content }) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
-            <TableCell>
-              {/* @ts-ignore */}
-              {content.properties.Name?.title[0]?.plain_text}
-            </TableCell>
-            <TableCell className="text-right">
-              <ExternalLink
-                className="w-12"
-                // @ts-ignore
-                href={content.public_url}
-              >
-                URL
-              </ExternalLink>
-            </TableCell>
-          </TableRow>
+          {contents.map((content) => (
+            <TableRow key={content.id}>
+              <TableCell>
+                {/* @ts-ignore */}
+                {content.properties.Name?.title[0]?.plain_text}
+              </TableCell>
+              <TableCell className="text-right">
+                <ExternalLink
+                  className="w-12"
+                  // @ts-ignore
+                  href={content.public_url}
+                >
+                  URL
+                </ExternalLink>
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </div>
