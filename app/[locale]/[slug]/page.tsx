@@ -69,59 +69,59 @@ export default async function SlugPage({
   // @ts-ignore
   const pageEmoji = page?.icon?.emoji ?? "📄";
 
-  const blocks = await getCachedBlocks(params.slug);
-  const childBlocks = await Promise.all(
-    blocks
-      .filter((block) => {
-        //@ts-ignore
-        return block.has_children;
-      })
-      .map(async (block) => {
-        return {
-          id: block.id,
-          children: await getCachedBlocks(block.id),
-        };
+  const getCachedBlocksRecursively = async (
+    blockId: string,
+  ): Promise<blockWithChildren[]> => {
+    const blocks = await getCachedBlocks(blockId);
+    return await Promise.all(
+      blocks.map(async (block) => {
+        // @ts-ignore
+        if (block.has_children) {
+          const children = await getCachedBlocksRecursively(block.id);
+          return { ...block, children };
+        }
+        return block;
       }),
-  );
-  const blocksWithChildren = blocks.map((block) => {
-    //@ts-ignore
-    if (block.has_children) {
-      block.children = childBlocks.find((x) => {
-        return x.id === block.id;
-      })?.children;
-    }
-    return block;
-  });
+    );
+  };
 
   const fetchOpenGraphData = async (block: blockWithChildren) => {
     // @ts-ignore
     const url = block.bookmark?.url ?? block.link_preview?.url;
-    const ogData = await getCachedOpenGraphData({ url: url });
-    // @ts-ignore
-    block.openGraphData = ogData;
+    if (url) {
+      const ogData = await getCachedOpenGraphData({ url });
+      block.openGraphData = ogData;
+    }
     return block;
   };
-  const processBlock = async (block: blockWithChildren) => {
-    if (block?.children) {
+
+  const processBlockRecursively = async (
+    block: blockWithChildren,
+  ): Promise<blockWithChildren> => {
+    if (block.children) {
       block.children = await Promise.all(
-        block.children.map(async (child) => {
-          // @ts-ignore
-          if (child.type === "link_preview" || child.type === "bookmark") {
-            return await fetchOpenGraphData(child);
-          }
-          return child;
-        }),
+        block.children.map(processBlockRecursively),
       );
     }
+
     // @ts-ignore
     if (block.type === "link_preview" || block.type === "bookmark") {
-      return fetchOpenGraphData(block);
+      return await fetchOpenGraphData(block);
     }
+
     return block;
   };
-  const blocksWithOpenGraphData = await Promise.all(
-    blocksWithChildren.map(processBlock),
-  );
+
+  // Main function
+  const getProcessedBlocks = async (
+    slug: string,
+  ): Promise<blockWithChildren[]> => {
+    const blocks = await getCachedBlocksRecursively(slug);
+    return await Promise.all(blocks.map(processBlockRecursively));
+  };
+
+  // Usage
+  const blocksWithOpenGraphData = await getProcessedBlocks(params.slug);
 
   // ---------------------------------------------------------------------------
   // Render

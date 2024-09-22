@@ -200,7 +200,11 @@ export const Text: FC<TextProps> = ({ text, className }) => {
 // Renderer
 // -----------------------------------------------------------------------------
 
-const renderBlock = (block: blockWithChildren, theme: string) => {
+const renderBlock = (
+  block: blockWithChildren,
+  theme: string,
+  isNested = false,
+) => {
   //@ts-ignore
   switch (block.type) {
     case "divider":
@@ -238,6 +242,12 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
         <li>
           {/* @ts-ignore */}
           <Text text={block.bulleted_list_item.rich_text as richText[]} />
+          {/* @ts-ignore */}
+          {block.has_children && block.children && (
+            <ul className={isNested ? "" : "ml-4 list-inside list-disc"}>
+              {block.children.map((child) => renderBlock(child, theme, true))}
+            </ul>
+          )}
         </li>
       );
     case "numbered_list_item":
@@ -245,6 +255,12 @@ const renderBlock = (block: blockWithChildren, theme: string) => {
         <li>
           {/* @ts-ignore */}
           <Text text={block.numbered_list_item.rich_text as richText[]} />
+          {/* @ts-ignore */}
+          {block.has_children && block.children && (
+            <ol className={isNested ? "" : "ml-4 list-inside list-decimal"}>
+              {block.children.map((child) => renderBlock(child, theme, true))}
+            </ol>
+          )}
         </li>
       );
     case "callout":

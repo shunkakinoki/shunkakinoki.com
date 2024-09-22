@@ -50,16 +50,8 @@ limitations under the License.
   @apply my-3 text-xl md:text-2xl font-thin;
 }
 
-.notion ul {
-  @apply mx-4 my-6 text-lg md:text-xl font-semibold list-disc sm:my-9;
-}
-
 .notion li {
   @apply my-1;
-}
-
-.notion ol {
-  @apply mx-4 my-6 text-lg md:text-xl font-semibold list-decimal list-inside sm:my-9;
 }
 
 .notion table {
