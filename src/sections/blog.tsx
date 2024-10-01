@@ -20,6 +20,7 @@ import { InfiniteScroll } from "@/components/inifinite-scroll";
 import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import { Link } from "@/navigation";
 import type { NotionPageObject } from "@/services/notion";
+import { ExternalLink } from "@lightdotso/elements/external-link";
 import { type InfiniteData, useInfiniteQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 
@@ -88,19 +89,31 @@ export function Blog({ locale, initialData }: BlogProps) {
 
     return (
       <div key={entry.id} className="flex space-x-4">
-        <Link
-          // @ts-ignore
-          href={`/${entry.id}`}
-          className="line-clamp-1 flex grow items-center font-extrabold text-text hover:text-text-weak hover:underline"
-        >
-          <div className="text-xl md:text-2xl">
+        {/* @ts-ignore */}
+        {entry.properties["External Link"]?.url ? (
+          <div className="grow">
+            <ExternalLink
+              // @ts-ignore
+              href={entry.properties["External Link"].url}
+              className="text-text hover:text-text-weak"
+            >
+              <span className="line-clamp-1 text-left font-extrabold text-xl md:text-2x">
+                {/* @ts-ignore */}
+                {entry.properties.Name?.title[0]?.plain_text || ""}
+              </span>
+            </ExternalLink>
+          </div>
+        ) : (
+          <Link
+            // @ts-ignore
+            href={`/${entry.id}`}
+            className="line-clamp-1 grow text-left font-extrabold text-text text-xl hover:text-text-weak hover:underline md:text-2x"
+          >
             {/* @ts-ignore */}
             {entry.properties.Name?.title[0]?.plain_text || ""}
-          </div>
-        </Link>
-        <div className="flex flex-none items-center justify-center text-sm text-text-weak">
-          {date}
-        </div>
+          </Link>
+        )}
+        <div className="flex-none text-sm text-text-weak">{date}</div>
       </div>
     );
   };

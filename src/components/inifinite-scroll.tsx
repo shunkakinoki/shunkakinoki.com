@@ -15,7 +15,13 @@
 "use client";
 
 import { Button } from "@lightdotso/ui/components/button";
-import { type ReactNode, useCallback, useEffect, useRef } from "react";
+import {
+  type ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -41,6 +47,12 @@ export function InfiniteScroll<T>({
   renderItem,
 }: InfiniteScrollProps<T>) {
   // ---------------------------------------------------------------------------
+  // State Hooks
+  // ---------------------------------------------------------------------------
+
+  const [lastItemObserved, setLastItemObserved] = useState(false);
+
+  // ---------------------------------------------------------------------------
   // Ref Hooks
   // ---------------------------------------------------------------------------
 
@@ -60,6 +72,7 @@ export function InfiniteScroll<T>({
       }
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0]?.isIntersecting && hasMore) {
+          setLastItemObserved(true);
           loadMore();
         }
       });
@@ -100,7 +113,7 @@ export function InfiniteScroll<T>({
             Loading more items...
           </Button>
         )}
-        {!hasMore && (
+        {!hasMore && lastItemObserved && (
           <Button disabled variant="outline">
             All loaded!
           </Button>
