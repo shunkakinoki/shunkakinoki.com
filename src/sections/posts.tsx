@@ -90,7 +90,7 @@ export function Posts({ initialData }: PostsProps) {
           href={`/${entry.id}`}
           className="line-clamp-1 flex grow items-center font-extrabold text-text hover:text-text-weak hover:underline"
         >
-          <div className="text-xl md:text-2xl">
+          <div className="text-lg md:text-xl">
             {/* @ts-ignore */}
             {entry.properties.Name?.title[0]?.plain_text || ""}
           </div>

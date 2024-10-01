@@ -97,7 +97,7 @@ export function Blog({ locale, initialData }: BlogProps) {
               href={entry.properties["External Link"].url}
               className="text-text hover:text-text-weak"
             >
-              <span className="line-clamp-1 text-left font-extrabold text-xl md:text-2x">
+              <span className="line-clamp-1 text-left font-extrabold text-lg md:text-xl">
                 {/* @ts-ignore */}
                 {entry.properties.Name?.title[0]?.plain_text || ""}
               </span>
@@ -107,7 +107,7 @@ export function Blog({ locale, initialData }: BlogProps) {
           <Link
             // @ts-ignore
             href={`/${entry.id}`}
-            className="line-clamp-1 grow text-left font-extrabold text-text text-xl hover:text-text-weak hover:underline md:text-2x"
+            className="line-clamp-1 grow text-left font-extrabold text-lg text-text hover:text-text-weak hover:underline md:text-xl"
           >
             {/* @ts-ignore */}
             {entry.properties.Name?.title[0]?.plain_text || ""}
