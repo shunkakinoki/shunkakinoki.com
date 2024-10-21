@@ -35,7 +35,7 @@ const nextConfig = {
       fullUrl: true,
     },
   },
-  ppr: true,
+  ppr: "incremental",
   images: {
     remotePatterns: [
       {
