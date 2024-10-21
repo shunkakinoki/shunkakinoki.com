@@ -56,24 +56,31 @@ export async function generateMetadata({
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function valuesPage({
-  params: { locale },
-}: { params: { locale: string } }) {
+  params,
+}: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  unstable_setRequestLocale(locale);
+  unstable_setRequestLocale((await params).locale);
 
   // ---------------------------------------------------------------------------
   // Services
   // ---------------------------------------------------------------------------
 
   const valuesSlug =
-    valuesSlugs[locale as "en" | "ja" | "zh"] || valuesSlugs.en;
+    valuesSlugs[(await params).locale as "en" | "ja" | "zh"] || valuesSlugs.en;
 
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
-  return <SlugPage params={{ locale: locale, slug: valuesSlug }} />;
+  return (
+    <SlugPage
+      params={Promise.resolve({
+        locale: (await params).locale,
+        slug: valuesSlug,
+      })}
+    />
+  );
 }

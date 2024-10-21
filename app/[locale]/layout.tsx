@@ -30,7 +30,7 @@ import type { ReactNode } from "react";
 
 interface LocaleLayoutProps {
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 // -----------------------------------------------------------------------------
@@ -42,13 +42,13 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: Omit<LocaleLayoutProps, "children">) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations({ locale });
+  const t = await getTranslations({ locale: (await params).locale });
 
   // ---------------------------------------------------------------------------
   // Return
@@ -69,14 +69,14 @@ export async function generateMetadata({
 // biome-ignore lint/style/noDefaultExport: <explanation>
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: LocaleLayoutProps) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
   // Enable static rendering
-  unstable_setRequestLocale(locale);
+  unstable_setRequestLocale((await params).locale);
 
   // Providing all messages to the client
   // side is the easiest way to get started

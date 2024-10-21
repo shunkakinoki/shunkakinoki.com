@@ -31,13 +31,13 @@ const causeSlugs = {
 // -----------------------------------------------------------------------------
 
 export async function generateMetadata({
-  params: { locale },
-}: { params: { locale: string } }): Promise<Metadata> {
+  params,
+}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations({ locale });
+  const t = await getTranslations({ locale: (await params).locale });
 
   // ---------------------------------------------------------------------------
   // Return
@@ -55,23 +55,31 @@ export async function generateMetadata({
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function CausePage({
-  params: { locale },
-}: { params: { locale: string } }) {
+  params,
+}: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  unstable_setRequestLocale(locale);
+  unstable_setRequestLocale((await params).locale);
 
   // ---------------------------------------------------------------------------
   // Services
   // ---------------------------------------------------------------------------
 
-  const causeSlug = causeSlugs[locale as "en" | "ja" | "zh"] || causeSlugs.en;
+  const causeSlug =
+    causeSlugs[(await params).locale as "en" | "ja" | "zh"] || causeSlugs.en;
 
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
-  return <SlugPage params={{ locale: locale, slug: causeSlug }} />;
+  return (
+    <SlugPage
+      params={Promise.resolve({
+        locale: (await params).locale,
+        slug: causeSlug,
+      })}
+    />
+  );
 }

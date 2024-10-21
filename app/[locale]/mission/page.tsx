@@ -56,24 +56,32 @@ export async function generateMetadata({
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function MissionPage({
-  params: { locale },
-}: { params: { locale: string } }) {
+  params,
+}: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  unstable_setRequestLocale(locale);
+  unstable_setRequestLocale((await params).locale);
 
   // ---------------------------------------------------------------------------
   // Services
   // ---------------------------------------------------------------------------
 
   const missionSlug =
-    missionSlugs[locale as "en" | "ja" | "zh"] || missionSlugs.en;
+    missionSlugs[(await params).locale as "en" | "ja" | "zh"] ||
+    missionSlugs.en;
 
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
-  return <SlugPage params={{ locale: locale, slug: missionSlug }} />;
+  return (
+    <SlugPage
+      params={Promise.resolve({
+        locale: (await params).locale,
+        slug: missionSlug,
+      })}
+    />
+  );
 }

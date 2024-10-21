@@ -36,13 +36,13 @@ import { unstable_setRequestLocale } from "next-intl/server";
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function IndexPage({
-  params: { locale },
-}: { params: { locale: string } }) {
+  params,
+}: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  unstable_setRequestLocale(locale);
+  unstable_setRequestLocale((await params).locale);
 
   // ---------------------------------------------------------------------------
   // Render
