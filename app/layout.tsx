@@ -54,6 +54,20 @@ export async function generateMetadata() {
     },
     metadataBase: new URL("https://shunkakinoki.com"),
     description: siteConfig.description,
+    icons: [
+      {
+        rel: "icon",
+        type: "image/png",
+        url: "https://assets.light.so/favicon.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        url: "https://assets.light.so/favicon-dark.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
     authors: [
       {
         name: "shunkakinoki",
