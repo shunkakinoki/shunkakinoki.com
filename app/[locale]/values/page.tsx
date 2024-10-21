@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import type { Metadata } from "next";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import SlugPage from "../[slug]/page";
 
 // -----------------------------------------------------------------------------
@@ -62,7 +62,7 @@ export default async function valuesPage({
   // i18n
   // ---------------------------------------------------------------------------
 
-  unstable_setRequestLocale((await params).locale);
+  setRequestLocale((await params).locale);
 
   // ---------------------------------------------------------------------------
   // Services

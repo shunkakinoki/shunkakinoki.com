@@ -20,7 +20,7 @@ import { NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
   getTranslations,
-  unstable_setRequestLocale,
+  setRequestLocale,
 } from "next-intl/server";
 import type { ReactNode } from "react";
 
@@ -76,7 +76,7 @@ export default async function RootLayout({
   // ---------------------------------------------------------------------------
 
   // Enable static rendering
-  unstable_setRequestLocale((await params).locale);
+  setRequestLocale((await params).locale);
 
   // Providing all messages to the client
   // side is the easiest way to get started

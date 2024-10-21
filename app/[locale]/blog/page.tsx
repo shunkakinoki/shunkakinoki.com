@@ -20,7 +20,7 @@ import {
   dehydrate,
 } from "@tanstack/react-query";
 import type { Metadata } from "next";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -58,7 +58,7 @@ export default async function BlogPage({
   // i18n
   // ---------------------------------------------------------------------------
 
-  unstable_setRequestLocale((await params).locale);
+  setRequestLocale((await params).locale);
 
   // ---------------------------------------------------------------------------
   // Actions
