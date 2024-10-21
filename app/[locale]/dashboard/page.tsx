@@ -14,7 +14,7 @@
 
 import { Dashboard } from "@/sections/dashboard";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -44,7 +44,15 @@ export async function generateMetadata({
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
-export default function DashboardPage() {
+export default async function DashboardPage({
+  params,
+}: { params: Promise<{ locale: string }> }) {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
+  setRequestLocale((await params).locale);
+
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
