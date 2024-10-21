@@ -20,20 +20,20 @@ import {
   dehydrate,
 } from "@tanstack/react-query";
 import type { Metadata } from "next";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 // -----------------------------------------------------------------------------
 // Metadata
 // -----------------------------------------------------------------------------
 
 export async function generateMetadata({
-  params: { locale },
-}: { params: { locale: string } }): Promise<Metadata> {
+  params,
+}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations({ locale });
+  const t = await getTranslations({ locale: (await params).locale });
 
   // ---------------------------------------------------------------------------
   // Return
@@ -52,13 +52,13 @@ export async function generateMetadata({
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function BlogPage({
-  params: { locale },
-}: { params: { locale: string } }) {
+  params,
+}: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  unstable_setRequestLocale(locale);
+  setRequestLocale((await params).locale);
 
   // ---------------------------------------------------------------------------
   // Actions
@@ -68,11 +68,12 @@ export default async function BlogPage({
 
   await queryClient.prefetchInfiniteQuery({
     queryKey: ["blog"],
-    queryFn: ({ pageParam }) => getBlogAction(locale, pageParam),
+    queryFn: async ({ pageParam }) =>
+      getBlogAction((await params).locale, pageParam),
     initialPageParam: undefined,
   });
 
-  const initialData = await getBlogAction(locale);
+  const initialData = await getBlogAction((await params).locale);
 
   // ---------------------------------------------------------------------------
   // Render
@@ -80,7 +81,7 @@ export default async function BlogPage({
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <Blog locale={locale} initialData={initialData} />
+      <Blog locale={(await params).locale} initialData={initialData} />
     </HydrationBoundary>
   );
 }

@@ -14,7 +14,7 @@
 
 import { Life } from "@/sections/life";
 import type { Metadata } from "next";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import SlugPage from "../[slug]/page";
 
 // -----------------------------------------------------------------------------
@@ -32,13 +32,13 @@ const aboutSlugs = {
 // -----------------------------------------------------------------------------
 
 export async function generateMetadata({
-  params: { locale },
-}: { params: { locale: string } }): Promise<Metadata> {
+  params,
+}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations({ locale });
+  const t = await getTranslations({ locale: (await params).locale });
 
   // ---------------------------------------------------------------------------
   // Return
@@ -57,19 +57,20 @@ export async function generateMetadata({
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function AboutPage({
-  params: { locale },
-}: { params: { locale: string } }) {
+  params,
+}: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  unstable_setRequestLocale(locale);
+  setRequestLocale((await params).locale);
 
   // ---------------------------------------------------------------------------
   // Services
   // ---------------------------------------------------------------------------
 
-  const aboutSlug = aboutSlugs[locale as "en" | "ja" | "zh"] || aboutSlugs.en;
+  const aboutSlug =
+    aboutSlugs[(await params).locale as "en" | "ja" | "zh"] || aboutSlugs.en;
 
   // ---------------------------------------------------------------------------
   // Render
@@ -77,7 +78,12 @@ export default async function AboutPage({
 
   return (
     <>
-      <SlugPage params={{ locale: locale, slug: aboutSlug }} />
+      <SlugPage
+        params={Promise.resolve({
+          locale: (await params).locale,
+          slug: aboutSlug,
+        })}
+      />
       <Life />
     </>
   );

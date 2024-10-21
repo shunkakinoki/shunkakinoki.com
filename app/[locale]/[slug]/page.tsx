@@ -33,8 +33,8 @@ import { Suspense } from "react";
 
 export async function generateMetadata({
   params,
-}: { params: { slug: string } }): Promise<Metadata> {
-  const page = await getCachedPage(params.slug);
+}: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const page = await getCachedPage((await params).slug);
 
   return {
     //@ts-ignore
@@ -51,13 +51,13 @@ export async function generateMetadata({
 // biome-ignore lint/style/noDefaultExport: <explanation>
 export default async function SlugPage({
   params,
-}: { params: { locale: string; slug: string } }) {
+}: { params: Promise<{ locale: string; slug: string }> }) {
   // ---------------------------------------------------------------------------
   // Services
   // ---------------------------------------------------------------------------
 
   // Omit the slug to get the valid uuid
-  const pageId = extractValidUUID(params.slug);
+  const pageId = extractValidUUID((await params).slug);
 
   if (!pageId) {
     notFound();
@@ -121,7 +121,7 @@ export default async function SlugPage({
   };
 
   // Usage
-  const blocksWithOpenGraphData = await getProcessedBlocks(params.slug);
+  const blocksWithOpenGraphData = await getProcessedBlocks((await params).slug);
 
   // ---------------------------------------------------------------------------
   // Render

@@ -14,20 +14,20 @@
 
 import { Products } from "@/sections/products";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 // -----------------------------------------------------------------------------
 // Metadata
 // -----------------------------------------------------------------------------
 
 export async function generateMetadata({
-  params: { locale },
-}: { params: { locale: string } }): Promise<Metadata> {
+  params,
+}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations({ locale });
+  const t = await getTranslations({ locale: (await params).locale });
 
   // ---------------------------------------------------------------------------
   // Return
@@ -44,7 +44,15 @@ export async function generateMetadata({
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
-export default function ProductsPage() {
+export default async function ProductsPage({
+  params,
+}: { params: Promise<{ locale: string }> }) {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
+  setRequestLocale((await params).locale);
+
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------

@@ -27,7 +27,7 @@ import { LightLogo } from "@lightdotso/svg";
 import { Button } from "@lightdotso/ui/components/button";
 import { TwitterLogoIcon } from "@radix-ui/react-icons";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 // -----------------------------------------------------------------------------
 // Page
@@ -36,13 +36,13 @@ import { unstable_setRequestLocale } from "next-intl/server";
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function IndexPage({
-  params: { locale },
-}: { params: { locale: string } }) {
+  params,
+}: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
-  unstable_setRequestLocale(locale);
+  setRequestLocale((await params).locale);
 
   // ---------------------------------------------------------------------------
   // Render

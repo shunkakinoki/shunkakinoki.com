@@ -12,23 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Link } from "@/navigation";
+import { locales } from "@/config";
+import { getRequestConfig } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 // -----------------------------------------------------------------------------
-// Page
+// Utils
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
-export default function NotFound() {
-  // ---------------------------------------------------------------------------
-  // Render
-  // ---------------------------------------------------------------------------
+export default getRequestConfig(async ({ locale }) => {
+  // Validate that the incoming `locale` parameter is valid
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  if (!locales.includes(locale as any)) {
+    notFound();
+  }
 
-  return (
-    <div>
-      <h2>Not Found</h2>
-      <p>Could not find requested resource</p>
-      <Link href="/">Return Home</Link>
-    </div>
-  );
-}
+  return {
+    messages: (await import(`../../messages/${locale}.json`)).default,
+  };
+});

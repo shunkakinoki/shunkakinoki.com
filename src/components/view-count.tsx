@@ -33,7 +33,7 @@ export async function ViewCount({ pageId }: ViewCountProps) {
   // Services
   // ---------------------------------------------------------------------------
 
-  const ip = getIp();
+  const ip = await getIp();
 
   // Only run on prodution
   let views = 0;
