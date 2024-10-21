@@ -30,14 +30,12 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    ppr: true,
-  },
   logging: {
     fetches: {
       fullUrl: true,
     },
   },
+  ppr: true,
   images: {
     remotePatterns: [
       {
