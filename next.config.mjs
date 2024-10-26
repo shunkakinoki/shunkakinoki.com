@@ -30,12 +30,16 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    ppr: "incremental",
+    // biome-ignore lint/style/useNamingConvention: <explanation>
+    dynamicIO: true,
+  },
   logging: {
     fetches: {
       fullUrl: true,
     },
   },
-  ppr: "incremental",
   images: {
     remotePatterns: [
       {

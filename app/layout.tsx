@@ -140,4 +140,3 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
 // biome-ignore lint/style/useNamingConvention: <explanation>
 export const experimental_ppr = true;
-export const revalidate = 300;
