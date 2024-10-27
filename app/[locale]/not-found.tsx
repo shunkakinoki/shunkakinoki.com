@@ -12,7 +12,39 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-"use client";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { connection } from "next/server";
+import { Suspense } from "react";
+
+// -----------------------------------------------------------------------------
+// Metadata
+// -----------------------------------------------------------------------------
+
+export async function generateMetadata({
+  params,
+}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
+  const t = await getTranslations({ locale: (await params).locale });
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
+  return {
+    title: t("notFound.title"),
+    description: t("notFound.description"),
+  };
+}
 
 // -----------------------------------------------------------------------------
 // Page
@@ -20,10 +52,32 @@
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
-export default function NotFoundPage() {
+export default async function NotFoundPage() {
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
-  return null;
+  return (
+    <Suspense fallback={null}>
+      <NotFoundInnerPage />
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// Inner Page
+// -----------------------------------------------------------------------------
+
+async function NotFoundInnerPage() {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return <div>Not Found</div>;
 }
