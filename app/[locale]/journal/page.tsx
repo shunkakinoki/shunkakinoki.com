@@ -60,7 +60,7 @@ export default async function JournalPage() {
   await connection();
 
   // ---------------------------------------------------------------------------
-  // Actions
+  // Query
   // ---------------------------------------------------------------------------
 
   const queryClient = new QueryClient();
@@ -70,6 +70,10 @@ export default async function JournalPage() {
     queryFn: ({ pageParam }) => getJournalAction(pageParam),
     initialPageParam: undefined,
   });
+
+  // ---------------------------------------------------------------------------
+  // Actions
+  // ---------------------------------------------------------------------------
 
   const initialData = await getJournalAction();
 

@@ -22,6 +22,7 @@ import {
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { connection } from "next/server";
+import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -68,7 +69,7 @@ export default async function BlogPage({
   setRequestLocale((await params).locale);
 
   // ---------------------------------------------------------------------------
-  // Actions
+  // Query
   // ---------------------------------------------------------------------------
 
   const queryClient = new QueryClient();
@@ -80,6 +81,10 @@ export default async function BlogPage({
     initialPageParam: undefined,
   });
 
+  // ---------------------------------------------------------------------------
+  // Actions
+  // ---------------------------------------------------------------------------
+
   const initialData = await getBlogAction((await params).locale);
 
   // ---------------------------------------------------------------------------
@@ -87,8 +92,10 @@ export default async function BlogPage({
   // ---------------------------------------------------------------------------
 
   return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
-      <Blog locale={(await params).locale} initialData={initialData} />
-    </HydrationBoundary>
+    <Suspense>
+      <HydrationBoundary state={dehydrate(queryClient)}>
+        <Blog locale={(await params).locale} initialData={initialData} />
+      </HydrationBoundary>
+    </Suspense>
   );
 }

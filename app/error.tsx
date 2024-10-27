@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-"use client"; // Error components must be Client Components
+"use client";
 
 import { useEffect } from "react";
 
