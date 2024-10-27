@@ -22,6 +22,7 @@ import { cn } from "@/lib/utils";
 import type { Viewport } from "next";
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
+import { connection } from "next/server";
 import type { ReactNode } from "react";
 import "@lightdotso/styles/global.css";
 
@@ -45,6 +46,12 @@ export const viewport: Viewport = {
 };
 
 export async function generateMetadata() {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------

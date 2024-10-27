@@ -15,6 +15,7 @@
 import { Dashboard } from "@/sections/dashboard";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { connection } from "next/server";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -23,6 +24,12 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 export async function generateMetadata({
   params,
 }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------

@@ -14,6 +14,7 @@
 
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { connection } from "next/server";
 import SlugPage from "../[slug]/page";
 
 // -----------------------------------------------------------------------------
@@ -33,6 +34,12 @@ const missionSlugs = {
 export async function generateMetadata({
   params,
 }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
