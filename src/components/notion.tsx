@@ -204,6 +204,7 @@ const renderBlock = (
   block: blockWithChildren,
   theme: string,
   isNested = false,
+  // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
 ) => {
   //@ts-ignore
   switch (block.type) {

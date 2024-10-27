@@ -22,6 +22,7 @@ import {
   getTranslations,
   setRequestLocale,
 } from "next-intl/server";
+import { connection } from "next/server";
 import type { ReactNode } from "react";
 
 // -----------------------------------------------------------------------------
@@ -71,6 +72,12 @@ export default async function RootLayout({
   children,
   params,
 }: LocaleLayoutProps) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
