@@ -17,8 +17,12 @@ import { ViewCount } from "@/components/view-count";
 import { extractValidUUID } from "@/lib/utils";
 import { Check } from "@/sections/check";
 import { Mind } from "@/sections/mind";
-import { type blockWithChildren, getBlocks, getPage } from "@/services/notion";
-import { getOpenGraphData } from "@/services/ogs";
+import {
+  type blockWithChildren,
+  getCachedBlocks,
+  getCachedPage,
+} from "@/services/notion";
+import { getCachedOpenGraphData } from "@/services/ogs";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -30,7 +34,7 @@ import { Suspense } from "react";
 export async function generateMetadata({
   params,
 }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const page = await getPage((await params).slug);
+  const page = await getCachedPage((await params).slug);
 
   return {
     //@ts-ignore
@@ -60,20 +64,20 @@ export default async function SlugPage({
   }
 
   // Get the page
-  const page = await getPage(pageId);
+  const page = await getCachedPage(pageId);
 
   // @ts-ignore
   const pageEmoji = page?.icon?.emoji ?? "📄";
 
-  const getBlocksRecursively = async (
+  const getCachedBlocksRecursively = async (
     blockId: string,
   ): Promise<blockWithChildren[]> => {
-    const blocks = await getBlocks(blockId);
+    const blocks = await getCachedBlocks(blockId);
     return await Promise.all(
       blocks.map(async (block) => {
         // @ts-ignore
         if (block.has_children) {
-          const children = await getBlocksRecursively(block.id);
+          const children = await getCachedBlocksRecursively(block.id);
           return { ...block, children };
         }
         return block;
@@ -85,7 +89,7 @@ export default async function SlugPage({
     // @ts-ignore
     const url = block.bookmark?.url ?? block.link_preview?.url;
     if (url) {
-      const ogData = await getOpenGraphData({ url });
+      const ogData = await getCachedOpenGraphData({ url });
       block.openGraphData = ogData;
     }
     return block;
@@ -112,7 +116,7 @@ export default async function SlugPage({
   const getProcessedBlocks = async (
     slug: string,
   ): Promise<blockWithChildren[]> => {
-    const blocks = await getBlocksRecursively(slug);
+    const blocks = await getCachedBlocksRecursively(slug);
     return await Promise.all(blocks.map(processBlockRecursively));
   };
 
