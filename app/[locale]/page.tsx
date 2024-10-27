@@ -28,16 +28,42 @@ import { Button } from "@lightdotso/ui/components/button";
 import { TwitterLogoIcon } from "@radix-ui/react-icons";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
 import { setRequestLocale } from "next-intl/server";
+import { connection } from "next/server";
+import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Page
 // -----------------------------------------------------------------------------
 
-// biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default async function IndexPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <Suspense fallback={null}>
+      <IndexInnerPage params={params} />
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// InnerPage
+// -----------------------------------------------------------------------------
+
+async function IndexInnerPage({
+  params,
+}: { params: Promise<{ locale: string }> }) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------

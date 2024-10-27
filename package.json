@@ -8,7 +8,7 @@
     "biome:fix": "biome check --write --unsafe --no-errors-on-unmatched",
     "biome:lint": "biome check --unsafe --no-errors-on-unmatched",
     "build": "next build",
-    "dev": "next dev --turbo",
+    "dev": "next dev --turbopack",
     "fix": "concurrently \"pnpm:*:fix\"",
     "license:cmd": "license-check-and-add -f .license-check-and-add-config.json",
     "license:fix": "license-check-and-add -f .license-check-and-add-config.json add",
