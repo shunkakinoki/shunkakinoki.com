@@ -14,7 +14,7 @@
 
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { connection } from "next/server";
+import { Suspense } from "react";
 import SlugPage from "../[slug]/page";
 
 // -----------------------------------------------------------------------------
@@ -60,12 +60,6 @@ export default async function MissionPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
-
-  await connection();
-
-  // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
@@ -84,11 +78,13 @@ export default async function MissionPage({
   // ---------------------------------------------------------------------------
 
   return (
-    <SlugPage
-      params={Promise.resolve({
-        locale: (await params).locale,
-        slug: missionSlug,
-      })}
-    />
+    <Suspense fallback={null}>
+      <SlugPage
+        params={Promise.resolve({
+          locale: (await params).locale,
+          slug: missionSlug,
+        })}
+      />
+    </Suspense>
   );
 }

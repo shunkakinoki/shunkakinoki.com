@@ -21,7 +21,7 @@ import {
 } from "@tanstack/react-query";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { connection } from "next/server";
+import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -55,12 +55,6 @@ export async function generateMetadata({
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function PostsPage() {
   // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
-
-  await connection();
-
-  // ---------------------------------------------------------------------------
   // Query
   // ---------------------------------------------------------------------------
 
@@ -83,8 +77,10 @@ export default async function PostsPage() {
   // ---------------------------------------------------------------------------
 
   return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
-      <Posts initialData={initialData} />
-    </HydrationBoundary>
+    <Suspense fallback={null}>
+      <HydrationBoundary state={dehydrate(queryClient)}>
+        <Posts initialData={initialData} />
+      </HydrationBoundary>
+    </Suspense>
   );
 }

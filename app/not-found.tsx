@@ -12,47 +12,43 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-"use client";
+import {} from "@tanstack/react-query";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
-import { useEffect } from "react";
+// -----------------------------------------------------------------------------
+// Metadata
+// -----------------------------------------------------------------------------
+
+export async function generateMetadata({
+  params,
+}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
+  const t = await getTranslations({ locale: (await params).locale });
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
+  return {
+    title: t("notFound.title"),
+    description: t("notFound.description"),
+  };
+}
 
 // -----------------------------------------------------------------------------
 // Page
 // -----------------------------------------------------------------------------
 
-// biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
 // biome-ignore lint/style/noDefaultExport: <explanation>
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
-  // ---------------------------------------------------------------------------
-  // Effect Hooks
-  // ---------------------------------------------------------------------------
-
-  // biome-ignore lint/suspicious/noEmptyBlockStatements: <explanation>
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-  useEffect(() => {}, [error]);
-
+// biome-ignore lint/suspicious/useAwait: <explanation>
+export default async function NotFoundPage() {
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
-  return (
-    <div>
-      <h2>Something went wrong!</h2>
-      {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
-      <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
-      >
-        Try again
-      </button>
-    </div>
-  );
+  return null;
 }

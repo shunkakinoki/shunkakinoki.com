@@ -15,7 +15,7 @@
 import { Social } from "@/sections/social";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { connection } from "next/server";
+import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -49,12 +49,6 @@ export default async function AboutPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
-
-  await connection();
-
-  // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
@@ -64,5 +58,9 @@ export default async function AboutPage({
   // Render
   // ---------------------------------------------------------------------------
 
-  return <Social />;
+  return (
+    <Suspense fallback={null}>
+      <Social />
+    </Suspense>
+  );
 }

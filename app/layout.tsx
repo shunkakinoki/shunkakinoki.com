@@ -24,7 +24,6 @@ import { getTranslations } from "next-intl/server";
 import Script from "next/script";
 import type { ReactNode } from "react";
 import "@lightdotso/styles/global.css";
-import { connection } from "next/server";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -46,12 +45,6 @@ export const viewport: Viewport = {
 };
 
 export async function generateMetadata() {
-  // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
-
-  await connection();
-
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
