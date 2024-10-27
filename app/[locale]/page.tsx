@@ -28,6 +28,7 @@ import { Button } from "@lightdotso/ui/components/button";
 import { TwitterLogoIcon } from "@radix-ui/react-icons";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
 import { setRequestLocale } from "next-intl/server";
+import { connection } from "next/server";
 
 // -----------------------------------------------------------------------------
 // Page
@@ -38,6 +39,12 @@ import { setRequestLocale } from "next-intl/server";
 export default async function IndexPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------

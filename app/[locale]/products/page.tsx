@@ -15,6 +15,7 @@
 import { Products } from "@/sections/products";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { connection } from "next/server";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -47,6 +48,12 @@ export async function generateMetadata({
 export default async function ProductsPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------

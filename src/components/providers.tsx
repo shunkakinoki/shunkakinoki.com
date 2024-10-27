@@ -16,22 +16,31 @@
 
 import { getQueryClient } from "@/lib/query";
 import { TooltipProvider } from "@lightdotso/ui/components/tooltip";
-import { QueryClientProvider } from "@tanstack/react-query";
+import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Provider as JotaiProvider } from "jotai";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import type { ThemeProviderProps } from "next-themes/dist/types";
+import { useEffect, useState } from "react";
 
 // -----------------------------------------------------------------------------
 // Component
 // -----------------------------------------------------------------------------
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  const queryClient = getQueryClient();
+  const [queryClient, setQueryClient] = useState<QueryClient | undefined>();
+
+  useEffect(() => {
+    setQueryClient(getQueryClient());
+  }, []);
 
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
+
+  if (!queryClient) {
+    return null;
+  }
 
   return (
     <QueryClientProvider client={queryClient}>
