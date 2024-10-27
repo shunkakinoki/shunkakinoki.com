@@ -28,7 +28,15 @@ import { useEffect, useState } from "react";
 // -----------------------------------------------------------------------------
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+  // ---------------------------------------------------------------------------
+  // State Hooks
+  // ---------------------------------------------------------------------------
+
   const [queryClient, setQueryClient] = useState<QueryClient | undefined>();
+
+  // ---------------------------------------------------------------------------
+  // Effect Hooks
+  // ---------------------------------------------------------------------------
 
   useEffect(() => {
     setQueryClient(getQueryClient());
