@@ -104,33 +104,28 @@ export default function RootLayout({ children }: RootLayoutProps) {
   // ---------------------------------------------------------------------------
 
   return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <body
-          className={cn(
-            "min-h-screen font-sans antialiased",
-            fontSans.variable,
-          )}
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn("min-h-screen font-sans antialiased", fontSans.variable)}
+      >
+        <Script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "3fff5b53524d4928bae2c465c1ac14f2"}'
+        />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
-          <Script
-            defer
-            src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon='{"token": "3fff5b53524d4928bae2c465c1ac14f2"}'
-          />
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            <TailwindIndicator />
-            <Analytics />
-            <SpeedInsights />
-          </ThemeProvider>
-        </body>
-      </html>
-    </>
+          {children}
+          <TailwindIndicator />
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
 
