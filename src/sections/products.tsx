@@ -14,7 +14,7 @@
 
 import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import { SectionHeaderHeading } from "@/components/section-header";
-import { getQueryDatabase } from "@/services/notion";
+import { getCachedQueryDatabase } from "@/services/notion";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import { getTranslations } from "next-intl/server";
 
@@ -41,7 +41,7 @@ export async function Products({ isPartial }: ProductsProps) {
   // Services
   // ---------------------------------------------------------------------------
 
-  const res = await getQueryDatabase({
+  const res = await getCachedQueryDatabase({
     // biome-ignore lint/style/useNamingConvention: <explanation>
     database_id: "bd49167ff0b140aea87c4548f3fbbc82",
     sorts: [

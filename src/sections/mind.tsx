@@ -14,7 +14,7 @@
 
 import { MindMap } from "@/components/mind-map";
 import { PageHeader, PageHeaderSubheading } from "@/components/page-header";
-import { getQueryDatabase } from "@/services/notion";
+import { getCachedQueryDatabase } from "@/services/notion";
 import { getTranslations } from "next-intl/server";
 
 // -----------------------------------------------------------------------------
@@ -41,7 +41,7 @@ export async function Mind({ dateStart }: MindProps) {
   // ---------------------------------------------------------------------------
 
   const mindMap = (
-    await getQueryDatabase({
+    await getCachedQueryDatabase({
       // biome-ignore lint/style/useNamingConvention: <explanation>
       database_id: "be3e2449e1324b518f78c21e168f5a78",
       filter: {

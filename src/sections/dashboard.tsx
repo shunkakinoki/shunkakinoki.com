@@ -15,13 +15,13 @@
 import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import { InternalConfig } from "@/config/internal";
 import { SocialConfig } from "@/config/social";
-import { getCloudflareAnalytics } from "@/services/cloudflare";
-import { getDatabaseStats } from "@/services/notion";
+import { getCachedCloudflareAnalytics } from "@/services/cloudflare";
+import { getCachedDatabaseStats } from "@/services/notion";
 import { getTotalViewCount, getTotalVisitorCount } from "@/services/redis";
 import {
-  getFollowerCount,
-  getImpressionCount,
-  getLatestPublishedTweetCount,
+  getCachedFollowerCount,
+  getCachedImpressionCount,
+  getCachedLatestPublishedTweetCount,
 } from "@/services/twitter";
 import {
   DocumentMagnifyingGlassIcon,
@@ -140,7 +140,7 @@ export async function VisitorCard() {
 }
 
 export async function TwitterCard() {
-  const followerCount = await getFollowerCount();
+  const followerCount = await getCachedFollowerCount();
 
   return (
     <Suspense
@@ -162,7 +162,7 @@ export async function TwitterCard() {
 }
 
 export async function TweetCard() {
-  const latestPublishedTweetCount = await getLatestPublishedTweetCount();
+  const latestPublishedTweetCount = await getCachedLatestPublishedTweetCount();
 
   return (
     <Suspense
@@ -184,7 +184,7 @@ export async function TweetCard() {
 }
 
 export async function TweetImpressionsCard() {
-  const latestPublishedTweetCount = await getImpressionCount();
+  const latestPublishedTweetCount = await getCachedImpressionCount();
 
   return (
     <Suspense
@@ -206,7 +206,7 @@ export async function TweetImpressionsCard() {
 }
 
 export async function CloudflareCard() {
-  const data = await getCloudflareAnalytics();
+  const data = await getCachedCloudflareAnalytics();
 
   return (
     <Suspense
@@ -232,7 +232,7 @@ export async function TotalLiftedCard() {
   // Services
   // ---------------------------------------------------------------------------
 
-  const res = await getDatabaseStats();
+  const res = await getCachedDatabaseStats();
   const totalLifted =
     res?.["table:uncategorized:L\\Bo:sum"]?.aggregationResult?.value;
 
@@ -265,7 +265,7 @@ export async function TotalLiftedCard() {
 // -----------------------------------------------------------------------------
 
 export async function TotalRunningCard() {
-  const res = await getDatabaseStats();
+  const res = await getCachedDatabaseStats();
   const totalRunning =
     res?.["table:uncategorized:QCJk:sum"]?.aggregationResult?.value;
 
@@ -298,7 +298,7 @@ export async function SquatCard() {
   // Services
   // ---------------------------------------------------------------------------
 
-  const res = await getDatabaseStats();
+  const res = await getCachedDatabaseStats();
   const maxSquat =
     res?.["table:uncategorized:htQ<:max"]?.aggregationResult?.value;
 
@@ -331,7 +331,7 @@ export async function SquatCard() {
 // -----------------------------------------------------------------------------
 
 export async function BenchCard() {
-  const res = await getDatabaseStats();
+  const res = await getCachedDatabaseStats();
   const maxBench =
     res?.["table:uncategorized:mLup:max"]?.aggregationResult?.value;
 
@@ -360,7 +360,7 @@ export async function BenchCard() {
 // -----------------------------------------------------------------------------
 
 export async function DeadLiftCard() {
-  const res = await getDatabaseStats();
+  const res = await getCachedDatabaseStats();
   const maxDeadLift =
     res?.["table:uncategorized:A[_n:max"]?.aggregationResult?.value;
 
@@ -389,7 +389,7 @@ export async function DeadLiftCard() {
 // -----------------------------------------------------------------------------
 
 export async function MaxedOutCard() {
-  const res = await getDatabaseStats();
+  const res = await getCachedDatabaseStats();
   const maxedOutValue =
     res?.["table:uncategorized:B?Vi:percent_checked"]?.aggregationResult?.value;
   const maxedOutPercentage = Number((maxedOutValue * 100).toFixed(2));
