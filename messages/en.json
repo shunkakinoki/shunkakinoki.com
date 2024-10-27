@@ -72,9 +72,5 @@
   "posts": {
     "title": "Posts",
     "description": "Posts by Shun Kakinoki"
-  },
-  "notFound": {
-    "title": "Not Found",
-    "description": "Not Found"
   }
 }

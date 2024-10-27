@@ -72,9 +72,5 @@
   "posts": {
     "title": "帖子",
     "description": "舜 Kakinoki 的帖子"
-  },
-  "notFound": {
-    "title": "未找到",
-    "description": "未找到"
   }
 }
