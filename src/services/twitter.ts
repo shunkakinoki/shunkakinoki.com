@@ -12,10 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// import { TwitterApi } from "twitter-api-v2";
-
-import { unstable_cache } from "next/cache";
-
 // -----------------------------------------------------------------------------
 // Client
 // -----------------------------------------------------------------------------
@@ -27,6 +23,8 @@ import { unstable_cache } from "next/cache";
 // -----------------------------------------------------------------------------
 
 export const getFollowerCount = async () => {
+  "use cache";
+
   const metrics = await fetch(
     "https://api2.typefully.com/metric/followers-count/?screen_name=shunkakinoki",
   ).then((res) => res.json());
@@ -34,6 +32,8 @@ export const getFollowerCount = async () => {
 };
 
 export const getLatestPublishedTweetCount = async () => {
+  "use cache";
+
   const metrics = await fetch(
     "https://api2.typefully.com/metric/published-tweets-count/?screen_name=shunkakinoki",
   ).then((res) => res.json());
@@ -41,36 +41,10 @@ export const getLatestPublishedTweetCount = async () => {
 };
 
 export const getImpressionCount = async () => {
+  "use cache";
+
   const metrics = await fetch(
     "https://api2.typefully.com/metric/impressions/?screen_name=shunkakinoki",
   ).then((res) => res.json());
   return metrics?.value;
 };
-
-// -----------------------------------------------------------------------------
-// Cached
-// -----------------------------------------------------------------------------
-
-export const getCachedFollowerCount = unstable_cache(
-  getFollowerCount,
-  ["twitter", "follower-count"],
-  {
-    revalidate: 300,
-  },
-);
-
-export const getCachedLatestPublishedTweetCount = unstable_cache(
-  getLatestPublishedTweetCount,
-  ["twitter", "latest-published-tweet-count"],
-  {
-    revalidate: 300,
-  },
-);
-
-export const getCachedImpressionCount = unstable_cache(
-  getImpressionCount,
-  ["twitter", "impression-count"],
-  {
-    revalidate: 300,
-  },
-);

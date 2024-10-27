@@ -12,13 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { unstable_cache } from "next/cache";
-
 // -----------------------------------------------------------------------------
 // Utils
 // -----------------------------------------------------------------------------
 
 export const getCloudflareAnalytics = async () => {
+  "use cache";
   const url = "https://api.cloudflare.com/client/v4/graphql";
   const payload = {
     operationName: "RumAnalyticsTimeseriesBydatetimeHourGroupedByall",
@@ -92,15 +91,3 @@ export const getCloudflareAnalytics = async () => {
   const data = await response.json();
   return data?.data?.viewer?.accounts?.[0]?.series?.[0]?.sum?.visits;
 };
-
-// -----------------------------------------------------------------------------
-// Cached
-// -----------------------------------------------------------------------------
-
-export const getCachedCloudflareAnalytics = unstable_cache(
-  getCloudflareAnalytics,
-  ["cloudflare", "cloudflare-analytics"],
-  {
-    revalidate: 300,
-  },
-);

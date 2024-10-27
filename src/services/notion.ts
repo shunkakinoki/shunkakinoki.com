@@ -22,7 +22,6 @@ import type {
   QueryDatabaseParameters,
   QueryDatabaseResponse,
 } from "@notionhq/client/build/src/api-endpoints.d";
-import { unstable_cache } from "next/cache";
 
 // -----------------------------------------------------------------------------
 // Types
@@ -103,6 +102,8 @@ export const retrieveDatabase = async ({
   database_id,
   // biome-ignore lint/style/useNamingConvention: <explanation>
 }: { database_id: string }) => {
+  "use cache";
+
   const response = await notion.databases.retrieve({
     // biome-ignore lint/style/useNamingConvention: <explanation>
     database_id: database_id,
@@ -110,7 +111,7 @@ export const retrieveDatabase = async ({
   return response;
 };
 
-export const getCachedQueryDatabase = async ({
+export const getQueryDatabase = async ({
   database_id,
   filter,
   sorts,
@@ -131,18 +132,24 @@ export const getCachedQueryDatabase = async ({
 };
 
 export const getPage = async (pageId: string) => {
+  "use cache";
+
   // biome-ignore lint/style/useNamingConvention: <explanation>
   const response = await notion.pages.retrieve({ page_id: pageId });
   return response;
 };
 
 export const getPageTitle = (property: NotionProperty) => {
+  "use cache";
+
   return property.Name.type === "title"
     ? property.Name.title[0].plain_text
     : "";
 };
 
 export const getPageDate = (page: NotionPage) => {
+  "use cache";
+
   //@ts-ignore
   let dateString = page.last_edited_time;
   if (
@@ -180,6 +187,8 @@ export const getBlocks = async (blockId: string) => {
 };
 
 export const getDatabaseStats = async () => {
+  "use cache";
+
   const response = await fetch(
     "https://shunkakinoki.notion.site/api/v3/queryCollection",
     {
@@ -195,31 +204,3 @@ export const getDatabaseStats = async () => {
   const data = await response.json();
   return data?.result?.reducerResults;
 };
-
-// -----------------------------------------------------------------------------
-// Cached
-// -----------------------------------------------------------------------------
-
-export const getCachedgetCachedQueryDatabase = unstable_cache(
-  getCachedQueryDatabase,
-  ["notion", "query-database"],
-  {
-    revalidate: 300,
-  },
-);
-
-export const getCachedBlocks = unstable_cache(getBlocks, ["notion", "blocks"], {
-  revalidate: 30,
-});
-
-export const getCachedPage = unstable_cache(getPage, ["notion", "page"], {
-  revalidate: 300,
-});
-
-export const getCachedDatabaseStats = unstable_cache(
-  getDatabaseStats,
-  ["notion", "stats"],
-  {
-    revalidate: 300,
-  },
-);
