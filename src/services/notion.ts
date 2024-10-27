@@ -22,6 +22,7 @@ import type {
   QueryDatabaseParameters,
   QueryDatabaseResponse,
 } from "@notionhq/client/build/src/api-endpoints.d";
+import { unstable_cacheLife as cacheLife } from "next/cache";
 
 // -----------------------------------------------------------------------------
 // Types
@@ -104,6 +105,8 @@ export const retrieveDatabase = async ({
 }: { database_id: string }) => {
   "use cache";
 
+  cacheLife("minutes");
+
   const response = await notion.databases.retrieve({
     // biome-ignore lint/style/useNamingConvention: <explanation>
     database_id: database_id,
@@ -118,6 +121,10 @@ export const getQueryDatabase = async ({
   start_cursor,
   page_size,
 }: QueryDatabaseParameters) => {
+  "use cache";
+
+  cacheLife("minutes");
+
   const response = await notion.databases.query({
     // biome-ignore lint/style/useNamingConvention: <explanation>
     database_id: database_id,
@@ -134,6 +141,8 @@ export const getQueryDatabase = async ({
 export const getPage = async (pageId: string) => {
   "use cache";
 
+  cacheLife("minutes");
+
   // biome-ignore lint/style/useNamingConvention: <explanation>
   const response = await notion.pages.retrieve({ page_id: pageId });
   return response;
@@ -142,6 +151,8 @@ export const getPage = async (pageId: string) => {
 export const getPageTitle = (property: NotionProperty) => {
   "use cache";
 
+  cacheLife("minutes");
+
   return property.Name.type === "title"
     ? property.Name.title[0].plain_text
     : "";
@@ -149,6 +160,8 @@ export const getPageTitle = (property: NotionProperty) => {
 
 export const getPageDate = (page: NotionPage) => {
   "use cache";
+
+  cacheLife("days");
 
   //@ts-ignore
   let dateString = page.last_edited_time;
@@ -165,6 +178,10 @@ export const getPageDate = (page: NotionPage) => {
 };
 
 export const getBlocks = async (blockId: string) => {
+  "use cache";
+
+  cacheLife("minutes");
+
   const blocks: blockWithChildren[] = [];
   let cursor: undefined | string;
 
@@ -188,6 +205,8 @@ export const getBlocks = async (blockId: string) => {
 
 export const getDatabaseStats = async () => {
   "use cache";
+
+  cacheLife("days");
 
   const response = await fetch(
     "https://shunkakinoki.notion.site/api/v3/queryCollection",
