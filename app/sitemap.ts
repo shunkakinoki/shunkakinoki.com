@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { defaultLocale, locales } from "@/config";
+import { routing } from "@/i18n/routing";
 import type { MetadataRoute } from "next";
 
 // -----------------------------------------------------------------------------
@@ -45,11 +45,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   return pathnames.map((pathname) => ({
-    url: getUrl(pathname, defaultLocale),
+    url: getUrl(pathname, routing.defaultLocale),
     lastModified: new Date(),
     alternates: {
       languages: Object.fromEntries(
-        locales.map((locale) => [locale, getUrl(pathname, locale)]),
+        routing.locales.map((locale) => [locale, getUrl(pathname, locale)]),
       ),
     },
   }));

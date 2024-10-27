@@ -12,12 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { routing } from "@/i18n/routing";
-import { createNavigation } from "next-intl/navigation";
+import { defineRouting } from "next-intl/routing";
 
-// -----------------------------------------------------------------------------
-// Const
-// -----------------------------------------------------------------------------
-
-export const { Link, getPathname, redirect, usePathname, useRouter } =
-  createNavigation(routing);
+export const routing = defineRouting({
+  locales: ["en", "ja", "zh"],
+  defaultLocale: "en",
+  localePrefix: "as-needed",
+  pathnames: {
+    "/": "/",
+    "/about": "/about",
+    "/blog": "/blog",
+    "/cause": "/cause",
+    "/dashboard": "/dashboard",
+    "/mission": "/mission",
+    "/products": "/products",
+    "/values": "/values",
+  },
+});

@@ -14,8 +14,8 @@
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { locales } from "@/config";
 import { siteConfig } from "@/config/site";
+import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
@@ -38,7 +38,7 @@ interface LocaleLayoutProps {
 // -----------------------------------------------------------------------------
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
