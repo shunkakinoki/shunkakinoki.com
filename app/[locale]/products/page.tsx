@@ -15,7 +15,6 @@
 import { Products } from "@/sections/products";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -58,9 +57,5 @@ export default async function ProductsPage({
   // Render
   // ---------------------------------------------------------------------------
 
-  return (
-    <Suspense fallback={null}>
-      <Products />
-    </Suspense>
-  );
+  return <Products />;
 }

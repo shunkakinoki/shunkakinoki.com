@@ -22,6 +22,7 @@ import {
   getTranslations,
   setRequestLocale,
 } from "next-intl/server";
+import { connection } from "next/server";
 import { type ReactNode, Suspense } from "react";
 
 // -----------------------------------------------------------------------------
@@ -63,14 +64,37 @@ export async function generateMetadata({
 }
 
 // -----------------------------------------------------------------------------
-// Page
+// Layout
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
+// biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function RootLayout({
   children,
   params,
 }: LocaleLayoutProps) {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <Suspense fallback={null}>
+      <RootInnerLayout params={params}>{children}</RootInnerLayout>
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// Inner Layout
+// -----------------------------------------------------------------------------
+
+export async function RootInnerLayout({ children, params }: LocaleLayoutProps) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
@@ -87,18 +111,16 @@ export default async function RootLayout({
   // ---------------------------------------------------------------------------
 
   return (
-    <Suspense fallback={null}>
-      <NextIntlClientProvider messages={messages}>
-        <div className="relative flex min-h-screen flex-col">
-          <SiteHeader />
-          <main className="flex-1">
-            <div className="relative mx-auto max-w-screen-md bg-background-body px-4 py-8 md:py-12 lg:py-16">
-              {children}
-            </div>
-          </main>
-          <SiteFooter />
-        </div>
-      </NextIntlClientProvider>
-    </Suspense>
+    <NextIntlClientProvider messages={messages}>
+      <div className="relative flex min-h-screen flex-col">
+        <SiteHeader />
+        <main className="flex-1">
+          <div className="relative mx-auto max-w-screen-md bg-background-body px-4 py-8 md:py-12 lg:py-16">
+            {children}
+          </div>
+        </main>
+        <SiteFooter />
+      </div>
+    </NextIntlClientProvider>
   );
 }

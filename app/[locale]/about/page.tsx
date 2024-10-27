@@ -15,7 +15,6 @@
 import { Life } from "@/sections/life";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Suspense } from "react";
 import SlugPage from "../[slug]/page";
 
 // -----------------------------------------------------------------------------
@@ -52,12 +51,12 @@ export async function generateMetadata({
 }
 
 // -----------------------------------------------------------------------------
-// Page
+//  Page
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
-export default async function AboutPage({
+export default async function AboutInnerPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
@@ -78,7 +77,7 @@ export default async function AboutPage({
   // ---------------------------------------------------------------------------
 
   return (
-    <Suspense fallback={null}>
+    <>
       <SlugPage
         params={Promise.resolve({
           locale: (await params).locale,
@@ -86,6 +85,6 @@ export default async function AboutPage({
         })}
       />
       <Life />
-    </Suspense>
+    </>
   );
 }

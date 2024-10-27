@@ -14,7 +14,6 @@
 
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Suspense } from "react";
 import SlugPage from "../[slug]/page";
 
 // -----------------------------------------------------------------------------
@@ -76,13 +75,11 @@ export default async function CausePage({
   // ---------------------------------------------------------------------------
 
   return (
-    <Suspense fallback={null}>
-      <SlugPage
-        params={Promise.resolve({
-          locale: (await params).locale,
-          slug: causeSlug,
-        })}
-      />
-    </Suspense>
+    <SlugPage
+      params={Promise.resolve({
+        locale: (await params).locale,
+        slug: causeSlug,
+      })}
+    />
   );
 }

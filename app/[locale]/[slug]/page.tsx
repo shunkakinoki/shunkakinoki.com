@@ -59,9 +59,17 @@ export default async function SlugPage({
   // Omit the slug to get the valid uuid
   const pageId = extractValidUUID((await params).slug);
 
+  // ---------------------------------------------------------------------------
+  // Not Found
+  // ---------------------------------------------------------------------------
+
   if (!pageId) {
-    notFound();
+    return notFound();
   }
+
+  // ---------------------------------------------------------------------------
+  // Services
+  // ---------------------------------------------------------------------------
 
   // Get the page
   const page = await getCachedPage(pageId);

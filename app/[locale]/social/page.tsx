@@ -15,7 +15,6 @@
 import { Social } from "@/sections/social";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -58,9 +57,5 @@ export default async function AboutPage({
   // Render
   // ---------------------------------------------------------------------------
 
-  return (
-    <Suspense fallback={null}>
-      <Social />
-    </Suspense>
-  );
+  return <Social />;
 }

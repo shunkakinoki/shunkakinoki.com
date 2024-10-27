@@ -21,6 +21,7 @@ import {
 } from "@tanstack/react-query";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { connection } from "next/server";
 import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
@@ -54,6 +55,28 @@ export async function generateMetadata({
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function JournalPage() {
   // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <Suspense fallback={null}>
+      <JournalInnerPage />
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// Inner Page
+// -----------------------------------------------------------------------------
+
+async function JournalInnerPage() {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
   // Query
   // ---------------------------------------------------------------------------
 
@@ -76,10 +99,8 @@ export default async function JournalPage() {
   // ---------------------------------------------------------------------------
 
   return (
-    <Suspense fallback={null}>
-      <HydrationBoundary state={dehydrate(queryClient)}>
-        <Journal initialData={initialData} />
-      </HydrationBoundary>
-    </Suspense>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <Journal initialData={initialData} />
+    </HydrationBoundary>
   );
 }

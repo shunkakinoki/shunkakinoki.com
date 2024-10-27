@@ -15,7 +15,6 @@
 import { History } from "@/sections/history";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -58,9 +57,5 @@ export default async function HistoryPage({
   // Render
   // ---------------------------------------------------------------------------
 
-  return (
-    <Suspense fallback={null}>
-      <History />
-    </Suspense>
-  );
+  return <History />;
 }

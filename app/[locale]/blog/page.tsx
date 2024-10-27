@@ -21,6 +21,7 @@ import {
 } from "@tanstack/react-query";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { connection } from "next/server";
 import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
@@ -56,6 +57,30 @@ export default async function BlogPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <Suspense fallback={null}>
+      <BlogInnerPage params={params} />
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// Inner Page
+// -----------------------------------------------------------------------------
+
+async function BlogInnerPage({
+  params,
+}: { params: Promise<{ locale: string }> }) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
@@ -85,10 +110,8 @@ export default async function BlogPage({
   // ---------------------------------------------------------------------------
 
   return (
-    <Suspense fallback={null}>
-      <HydrationBoundary state={dehydrate(queryClient)}>
-        <Blog locale={(await params).locale} initialData={initialData} />
-      </HydrationBoundary>
-    </Suspense>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <Blog locale={(await params).locale} initialData={initialData} />
+    </HydrationBoundary>
   );
 }
