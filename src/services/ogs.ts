@@ -12,18 +12,36 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { unstable_cache } from "next/cache";
+import { unstable_cacheLife as cacheLife } from "next/cache";
 import ogs from "open-graph-scraper";
 
-export const getCachedOpenGraphData = unstable_cache(
-  async ({ url }: { url: string }) => {
-    const ogData = await ogs({ url: url });
-    if (!ogData.error) {
-      return JSON.stringify(ogData);
-    }
-    // Throw an error if the URL is not valid
-    throw new Error("Invalid URL");
-  },
-  ["ogs", "open-graph-data"],
-  { revalidate: false },
-);
+// -----------------------------------------------------------------------------
+// Service
+// -----------------------------------------------------------------------------
+
+export const getOpenGraphData = async ({ url }: { url: string }) => {
+  // ---------------------------------------------------------------------------
+  // Cache
+  // ---------------------------------------------------------------------------
+
+  "use cache";
+
+  cacheLife("minutes");
+
+  // ---------------------------------------------------------------------------
+  // Query
+  // ---------------------------------------------------------------------------
+
+  const ogData = await ogs({ url: url });
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
+  if (!ogData.error) {
+    return JSON.stringify(ogData);
+  }
+
+  // Throw an error if the URL is not valid
+  throw new Error("Invalid URL");
+};

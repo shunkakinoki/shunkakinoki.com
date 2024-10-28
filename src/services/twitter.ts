@@ -14,7 +14,7 @@
 
 // import { TwitterApi } from "twitter-api-v2";
 
-import { unstable_cache } from "next/cache";
+import { unstable_cacheLife as cacheLife } from "next/cache";
 
 // -----------------------------------------------------------------------------
 // Client
@@ -27,50 +27,73 @@ import { unstable_cache } from "next/cache";
 // -----------------------------------------------------------------------------
 
 export const getFollowerCount = async () => {
+  // ---------------------------------------------------------------------------
+  // Cache
+  // ---------------------------------------------------------------------------
+
+  "use cache";
+
+  cacheLife("minutes");
+
+  // ---------------------------------------------------------------------------
+  // Query
+  // ---------------------------------------------------------------------------
+
   const metrics = await fetch(
     "https://api2.typefully.com/metric/followers-count/?screen_name=shunkakinoki",
   ).then((res) => res.json());
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
   return metrics?.value;
 };
 
 export const getLatestPublishedTweetCount = async () => {
+  // ---------------------------------------------------------------------------
+  // Cache
+  // ---------------------------------------------------------------------------
+
+  "use cache";
+
+  cacheLife("minutes");
+
+  // ---------------------------------------------------------------------------
+  // Query
+  // ---------------------------------------------------------------------------
+
   const metrics = await fetch(
     "https://api2.typefully.com/metric/published-tweets-count/?screen_name=shunkakinoki",
   ).then((res) => res.json());
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
   return metrics?.value;
 };
 
 export const getImpressionCount = async () => {
+  // ---------------------------------------------------------------------------
+  // Cache
+  // ---------------------------------------------------------------------------
+
+  "use cache";
+
+  cacheLife("minutes");
+
+  // ---------------------------------------------------------------------------
+  // Query
+  // ---------------------------------------------------------------------------
+
   const metrics = await fetch(
     "https://api2.typefully.com/metric/impressions/?screen_name=shunkakinoki",
   ).then((res) => res.json());
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
   return metrics?.value;
 };
-
-// -----------------------------------------------------------------------------
-// Cached
-// -----------------------------------------------------------------------------
-
-export const getCachedFollowerCount = unstable_cache(
-  getFollowerCount,
-  ["twitter", "follower-count"],
-  {
-    revalidate: 300,
-  },
-);
-
-export const getCachedLatestPublishedTweetCount = unstable_cache(
-  getLatestPublishedTweetCount,
-  ["twitter", "latest-published-tweet-count"],
-  {
-    revalidate: 300,
-  },
-);
-
-export const getCachedImpressionCount = unstable_cache(
-  getImpressionCount,
-  ["twitter", "impression-count"],
-  {
-    revalidate: 300,
-  },
-);
