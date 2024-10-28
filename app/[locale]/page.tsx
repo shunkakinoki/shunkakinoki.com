@@ -28,6 +28,7 @@ import { Button } from "@lightdotso/ui/components/button";
 import { TwitterLogoIcon } from "@radix-ui/react-icons";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
 import { setRequestLocale } from "next-intl/server";
+import { connection } from "next/server";
 import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
@@ -39,6 +40,12 @@ import { Suspense } from "react";
 export default async function IndexPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
@@ -58,10 +65,10 @@ async function IndexInnerPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
-  // Cache
+  // Server
   // ---------------------------------------------------------------------------
 
-  // "use disabled cache";
+  await connection();
 
   // ---------------------------------------------------------------------------
   // i18n

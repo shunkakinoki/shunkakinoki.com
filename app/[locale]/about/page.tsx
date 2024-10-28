@@ -15,6 +15,7 @@
 import { Life } from "@/sections/life";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { connection } from "next/server";
 import SlugPage from "../[slug]/page";
 
 // -----------------------------------------------------------------------------
@@ -35,10 +36,10 @@ export async function generateMetadata({
   params,
 }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // ---------------------------------------------------------------------------
-  // Cache
+  // Server
   // ---------------------------------------------------------------------------
 
-  // "use disabled cache";
+  await connection();
 
   // ---------------------------------------------------------------------------
   // i18n
@@ -65,6 +66,12 @@ export async function generateMetadata({
 export default async function AboutInnerPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------

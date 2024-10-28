@@ -21,6 +21,7 @@ import {
 } from "@tanstack/react-query";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { connection } from "next/server";
 import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
@@ -31,10 +32,10 @@ export async function generateMetadata({
   params,
 }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // ---------------------------------------------------------------------------
-  // Cache
+  // Server
   // ---------------------------------------------------------------------------
 
-  // "use disabled cache";
+  await connection();
 
   // ---------------------------------------------------------------------------
   // i18n
@@ -60,6 +61,12 @@ export async function generateMetadata({
 // biome-ignore lint/style/noDefaultExport: <explanation>
 export default async function PostsPage() {
   // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
@@ -76,10 +83,10 @@ export default async function PostsPage() {
 
 async function PostsInnerPage() {
   // ---------------------------------------------------------------------------
-  // Cache
+  // Server
   // ---------------------------------------------------------------------------
 
-  "use cache";
+  await connection();
 
   // ---------------------------------------------------------------------------
   // Query

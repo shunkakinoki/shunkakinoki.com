@@ -21,6 +21,7 @@ import {
 } from "@tanstack/react-query";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { connection } from "next/server";
 import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
@@ -31,10 +32,10 @@ export async function generateMetadata({
   params,
 }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // ---------------------------------------------------------------------------
-  // Cache
+  // Server
   // ---------------------------------------------------------------------------
 
-  // "use disabled cache";
+  await connection();
 
   // ---------------------------------------------------------------------------
   // i18n
@@ -60,6 +61,12 @@ export async function generateMetadata({
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function JournalPage() {
   // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
@@ -76,10 +83,10 @@ export default async function JournalPage() {
 
 async function JournalInnerPage() {
   // ---------------------------------------------------------------------------
-  // Cache
+  // Server
   // ---------------------------------------------------------------------------
 
-  "use cache";
+  await connection();
 
   // ---------------------------------------------------------------------------
   // Query

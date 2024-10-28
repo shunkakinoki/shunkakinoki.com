@@ -16,13 +16,13 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
-import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
   getTranslations,
   setRequestLocale,
 } from "next-intl/server";
+import { connection } from "next/server";
 import { type ReactNode, Suspense } from "react";
 
 // -----------------------------------------------------------------------------
@@ -48,7 +48,13 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: Omit<LocaleLayoutProps, "children">): Promise<Metadata> {
+}: Omit<LocaleLayoutProps, "children">) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
@@ -78,6 +84,12 @@ export default async function RootLayout({
   params,
 }: LocaleLayoutProps) {
   // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
@@ -94,10 +106,10 @@ export default async function RootLayout({
 
 export async function RootInnerLayout({ children, params }: LocaleLayoutProps) {
   // ---------------------------------------------------------------------------
-  // Cache
+  // Server
   // ---------------------------------------------------------------------------
 
-  // "use disabled cache";
+  await connection();
 
   // ---------------------------------------------------------------------------
   // i18n

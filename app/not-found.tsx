@@ -14,7 +14,7 @@
 
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { Suspense } from "react";
+import { connection } from "next/server";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -24,10 +24,10 @@ export async function generateMetadata({
   params,
 }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // ---------------------------------------------------------------------------
-  // Cache
+  // Server
   // ---------------------------------------------------------------------------
 
-  // "use disabled cache";
+  await connection();
 
   // ---------------------------------------------------------------------------
   // i18n
@@ -53,27 +53,10 @@ export async function generateMetadata({
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function NotFoundPage() {
   // ---------------------------------------------------------------------------
-  // Render
+  // Server
   // ---------------------------------------------------------------------------
 
-  return (
-    <Suspense fallback={null}>
-      <NotFoundInnerPage />
-    </Suspense>
-  );
-}
-
-// -----------------------------------------------------------------------------
-// Inner Page
-// -----------------------------------------------------------------------------
-
-// biome-ignore lint/suspicious/useAwait: <explanation>
-async function NotFoundInnerPage() {
-  // ---------------------------------------------------------------------------
-  // Cache
-  // ---------------------------------------------------------------------------
-
-  "use cache";
+  await connection();
 
   // ---------------------------------------------------------------------------
   // Render
