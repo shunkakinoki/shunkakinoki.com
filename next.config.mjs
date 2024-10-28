@@ -32,11 +32,7 @@ const nextConfig = {
   },
   experimental: {
     ppr: "incremental",
-    // biome-ignore lint/style/useNamingConvention: <explanation>
-    dynamicIO: true,
-    turbo: {
-      treeShaking: true,
-    },
+    // dynamicIO: true,
   },
   logging: {
     fetches: {
