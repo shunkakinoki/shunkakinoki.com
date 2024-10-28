@@ -162,8 +162,8 @@ importers:
         specifier: ^2.10.1
         version: 2.10.1(@types/react@18.3.12)(react@19.0.0-rc-65a56d0e-20241020)
       lucide-react:
-        specifier: ^0.453.0
-        version: 0.453.0(react@19.0.0-rc-65a56d0e-20241020)
+        specifier: ^0.454.0
+        version: 0.454.0(react@19.0.0-rc-65a56d0e-20241020)
       next:
         specifier: 15.0.2-canary.7
         version: 15.0.2-canary.7(@babel/core@7.25.2)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)
@@ -198,8 +198,8 @@ importers:
         specifier: 19.0.0-rc-65a56d0e-20241020
         version: 19.0.0-rc-65a56d0e-20241020
       react-resizable-panels:
-        specifier: ^2.1.5
-        version: 2.1.5(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)
+        specifier: ^2.1.6
+        version: 2.1.6(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)
       react-tweet:
         specifier: ^3.2.1
         version: 3.2.1(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)
@@ -222,8 +222,8 @@ importers:
         specifier: ^1.18.1
         version: 1.18.1
       uuid:
-        specifier: ^10.0.0
-        version: 10.0.0
+        specifier: ^11.0.1
+        version: 11.0.1
       vaul:
         specifier: ^1.1.0
         version: 1.1.0(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)
@@ -265,8 +265,8 @@ importers:
         specifier: ^15.2.10
         version: 15.2.10
       npm-check-updates:
-        specifier: ^17.1.6
-        version: 17.1.6
+        specifier: ^17.1.8
+        version: 17.1.8
       npm-package-json-lint:
         specifier: ^8.0.0
         version: 8.0.0(typescript@5.6.3)
@@ -5702,8 +5702,8 @@ packages:
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
-  lucide-react@0.453.0:
-    resolution: {integrity: sha512-kL+RGZCcJi9BvJtzg2kshO192Ddy9hv3ij+cPrVPWSRzgCWCVazoQJxOjAwgK53NomL07HB7GPHW120FimjNhQ==}
+  lucide-react@0.454.0:
+    resolution: {integrity: sha512-hw7zMDwykCLnEzgncEEjHeA6+45aeEzRYuKHuyRSOPkhko+J3ySGjGIzu+mmMfDFG1vazHepMaYFYHbTFAZAAQ==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
@@ -6132,8 +6132,8 @@ packages:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
 
-  npm-check-updates@17.1.6:
-    resolution: {integrity: sha512-9I0b60plxMrOLuQT3W7f0Aq5FQSMeR1HWGXbkhq9xPTGyOPbS/Oz9wCy2aK6I2hu+vLRHMhU27ObDs1+oU3QfA==}
+  npm-check-updates@17.1.8:
+    resolution: {integrity: sha512-oVPYIdl4NHyz6+TXWWko7c1+cqp7bm+D2fNPjIWQxWm+plJ7cyePc2WcXRKbfuVEnR2QtvBhL58rolkk/H687g==}
     engines: {node: ^18.18.0 || >=20.0.0, npm: '>=8.12.1'}
     hasBin: true
 
@@ -6748,8 +6748,8 @@ packages:
       '@types/react':
         optional: true
 
-  react-resizable-panels@2.1.5:
-    resolution: {integrity: sha512-JMSe18rYupmx+dzYcdfWYZ93ZdxqQmLum3xWDVSUMI0UVwl9bB9gUaFmPbxYoO4G+m5sqgdXQCYQxnOysytfnw==}
+  react-resizable-panels@2.1.6:
+    resolution: {integrity: sha512-oIqo/7pp2TsR+Dp1qZMr1l4RBDV4Zz/0HEG5zxliBJoHqqFnG0MbmFbk+5Q1VMGfPQ4uhXxefunLC1o7v38PDQ==}
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
       react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
@@ -7692,8 +7692,8 @@ packages:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
 
-  uuid@10.0.0:
-    resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
+  uuid@11.0.1:
+    resolution: {integrity: sha512-wt9UB5EcLhnboy1UvA1mvGPXkIIrHSu+3FmUksARfdVw9tuPf3CH/CohxO0Su1ApoKAeT6BVzAJIvjTuQVSmuQ==}
     hasBin: true
 
   uuid@3.3.2:
@@ -9738,7 +9738,7 @@ snapshots:
       react-hook-form: 7.53.1(react@19.0.0-rc-65a56d0e-20241020)
       react-icons: 5.3.0(react@19.0.0-rc-65a56d0e-20241020)
       react-is: 19.0.0-rc-65a56d0e-20241020
-      react-resizable-panels: 2.1.5(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)
+      react-resizable-panels: 2.1.6(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)
       superjson: 2.2.1
       tailwindcss-animate: 1.0.7(tailwindcss@3.4.14(ts-node@10.9.1(@types/node@22.8.1)(typescript@5.6.3)))
       vaul: 0.9.4(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)
@@ -14794,7 +14794,7 @@ snapshots:
     dependencies:
       react: 19.0.0-rc-65a56d0e-20241020
 
-  lucide-react@0.453.0(react@19.0.0-rc-65a56d0e-20241020):
+  lucide-react@0.454.0(react@19.0.0-rc-65a56d0e-20241020):
     dependencies:
       react: 19.0.0-rc-65a56d0e-20241020
 
@@ -15294,7 +15294,7 @@ snapshots:
 
   normalize-path@3.0.0: {}
 
-  npm-check-updates@17.1.6: {}
+  npm-check-updates@17.1.8: {}
 
   npm-package-json-lint-config-default@7.0.1(npm-package-json-lint@8.0.0(typescript@5.6.3)):
     dependencies:
@@ -15960,7 +15960,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.12
 
-  react-resizable-panels@2.1.5(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020):
+  react-resizable-panels@2.1.6(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020):
     dependencies:
       react: 19.0.0-rc-65a56d0e-20241020
       react-dom: 19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020)
@@ -16910,7 +16910,7 @@ snapshots:
 
   utils-merge@1.0.1: {}
 
-  uuid@10.0.0: {}
+  uuid@11.0.1: {}
 
   uuid@3.3.2: {}
 
