@@ -21,7 +21,6 @@ import {
 } from "@tanstack/react-query";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { connection } from "next/server";
 import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
@@ -32,10 +31,10 @@ export async function generateMetadata({
   params,
 }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // ---------------------------------------------------------------------------
-  // Server
+  // Cache
   // ---------------------------------------------------------------------------
 
-  await connection();
+  // "use disabled cache";
 
   // ---------------------------------------------------------------------------
   // i18n
@@ -81,10 +80,10 @@ async function BlogInnerPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
-  // Server
+  // Cache
   // ---------------------------------------------------------------------------
 
-  await connection();
+  "use cache";
 
   // ---------------------------------------------------------------------------
   // i18n

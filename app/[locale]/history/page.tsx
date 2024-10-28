@@ -15,7 +15,6 @@
 import { History } from "@/sections/history";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { connection } from "next/server";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -25,10 +24,10 @@ export async function generateMetadata({
   params,
 }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // ---------------------------------------------------------------------------
-  // Server
+  // Cache
   // ---------------------------------------------------------------------------
 
-  await connection();
+  // "use disabled cache";
 
   // ---------------------------------------------------------------------------
   // i18n

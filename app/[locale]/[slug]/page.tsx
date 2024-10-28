@@ -25,7 +25,6 @@ import {
 import { getCachedOpenGraphData } from "@/services/ogs";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { connection } from "next/server";
 import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
@@ -36,10 +35,10 @@ export async function generateMetadata({
   params,
 }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   // ---------------------------------------------------------------------------
-  // Server
+  // Cache
   // ---------------------------------------------------------------------------
 
-  await connection();
+  // "use disabled cache";
 
   // ---------------------------------------------------------------------------
   // Services
@@ -87,10 +86,10 @@ async function SlugInnerPage({
   params,
 }: { params: Promise<{ locale: string; slug: string }> }) {
   // ---------------------------------------------------------------------------
-  // Server
+  // Cache
   // ---------------------------------------------------------------------------
 
-  await connection();
+  "use cache";
 
   // ---------------------------------------------------------------------------
   // Validation
