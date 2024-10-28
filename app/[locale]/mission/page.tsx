@@ -12,8 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+// import type { Metadata } from "next";
+// import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { connection } from "next/server";
 import SlugPage from "../[slug]/page";
 
@@ -31,30 +32,30 @@ const missionSlugs = {
 // Metadata
 // -----------------------------------------------------------------------------
 
-export async function generateMetadata({
-  params,
-}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
+// export async function generateMetadata({
+//   params,
+// }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+//   // ---------------------------------------------------------------------------
+//   // Server
+//   // ---------------------------------------------------------------------------
 
-  await connection();
+//   await connection();
 
-  // ---------------------------------------------------------------------------
-  // i18n
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // i18n
+//   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations({ locale: (await params).locale });
+//   const t = await getTranslations({ locale: (await params).locale });
 
-  // ---------------------------------------------------------------------------
-  // Return
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // Return
+//   // ---------------------------------------------------------------------------
 
-  return {
-    title: t("mission.title"),
-    description: t("mission.description"),
-  };
-}
+//   return {
+//     title: t("mission.title"),
+//     description: t("mission.description"),
+//   };
+// }
 
 // -----------------------------------------------------------------------------
 // Page
@@ -65,6 +66,12 @@ export async function generateMetadata({
 export default async function MissionPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------

@@ -19,6 +19,13 @@ import { getRequestConfig } from "next-intl/server";
 // Utils
 // -----------------------------------------------------------------------------
 
+// biome-ignore lint/suspicious/useAwait: <explanation>
+export const now = async () => {
+  "use cache";
+
+  return new Date();
+};
+
 // biome-ignore lint/style/noDefaultExport: <explanation>
 export default getRequestConfig(async ({ requestLocale }) => {
   // This typically corresponds to the `[locale]` segment
@@ -33,5 +40,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   return {
     messages: (await import(`../../messages/${locale}.json`)).default,
+    now: await now(),
   };
 });

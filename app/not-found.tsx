@@ -12,39 +12,38 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+// import type { Metadata } from "next";
+// import { getTranslations } from "next-intl/server";
 import { connection } from "next/server";
-import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Metadata
 // -----------------------------------------------------------------------------
 
-export async function generateMetadata({
-  params,
-}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
+// export async function generateMetadata({
+//   params,
+// }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+//   // ---------------------------------------------------------------------------
+//   // Server
+//   // ---------------------------------------------------------------------------
 
-  await connection();
+//   await connection();
 
-  // ---------------------------------------------------------------------------
-  // i18n
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // i18n
+//   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations({ locale: (await params).locale });
+//   const t = await getTranslations({ locale: (await params).locale });
 
-  // ---------------------------------------------------------------------------
-  // Return
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // Return
+//   // ---------------------------------------------------------------------------
 
-  return {
-    title: t("notFound.title"),
-    description: t("notFound.description"),
-  };
-}
+//   return {
+//     title: t("notFound.title"),
+//     description: t("notFound.description"),
+//   };
+// }
 
 // -----------------------------------------------------------------------------
 // Page
@@ -53,22 +52,6 @@ export async function generateMetadata({
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function NotFoundPage() {
-  // ---------------------------------------------------------------------------
-  // Render
-  // ---------------------------------------------------------------------------
-
-  return (
-    <Suspense fallback={null}>
-      <NotFoundInnerPage />
-    </Suspense>
-  );
-}
-
-// -----------------------------------------------------------------------------
-// Inner Page
-// -----------------------------------------------------------------------------
-
-async function NotFoundInnerPage() {
   // ---------------------------------------------------------------------------
   // Server
   // ---------------------------------------------------------------------------
@@ -81,9 +64,3 @@ async function NotFoundInnerPage() {
 
   return <div>Not Found</div>;
 }
-
-// -----------------------------------------------------------------------------
-// Config
-// -----------------------------------------------------------------------------
-
-export const dynamic = "force-dynamic";

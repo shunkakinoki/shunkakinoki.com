@@ -13,8 +13,9 @@
 // limitations under the License.
 
 import { Clock } from "@/sections/clock";
-import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+// import type { Metadata } from "next";
+// import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { connection } from "next/server";
 import { Suspense } from "react";
 
@@ -22,30 +23,30 @@ import { Suspense } from "react";
 // Metadata
 // -----------------------------------------------------------------------------
 
-export async function generateMetadata({
-  params,
-}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
+// export async function generateMetadata({
+//   params,
+// }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+//   // ---------------------------------------------------------------------------
+//   // Server
+//   // ---------------------------------------------------------------------------
 
-  await connection();
+//   await connection();
 
-  // ---------------------------------------------------------------------------
-  // i18n
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // i18n
+//   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations({ locale: (await params).locale });
+//   const t = await getTranslations({ locale: (await params).locale });
 
-  // ---------------------------------------------------------------------------
-  // Return
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // Return
+//   // ---------------------------------------------------------------------------
 
-  return {
-    title: t("clock.title"),
-    description: t("clock.description"),
-  };
-}
+//   return {
+//     title: t("clock.title"),
+//     description: t("clock.description"),
+//   };
+// }
 
 // -----------------------------------------------------------------------------
 // Page
@@ -55,6 +56,12 @@ export async function generateMetadata({
 export default async function ClockPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------

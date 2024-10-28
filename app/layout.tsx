@@ -19,10 +19,9 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
-import type { Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
-import { connection } from "next/server";
 import type { ReactNode } from "react";
 import "@lightdotso/styles/global.css";
 
@@ -45,13 +44,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export async function generateMetadata() {
-  // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
-
-  await connection();
-
+export async function generateMetadata(): Promise<Metadata> {
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------

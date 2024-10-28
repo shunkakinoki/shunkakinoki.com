@@ -14,12 +14,12 @@
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { siteConfig } from "@/config/site";
+// import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
-  getTranslations,
+  // getTranslations,
   setRequestLocale,
 } from "next-intl/server";
 import { connection } from "next/server";
@@ -46,32 +46,32 @@ export function generateStaticParams() {
 // Metadata
 // -----------------------------------------------------------------------------
 
-export async function generateMetadata({
-  params,
-}: Omit<LocaleLayoutProps, "children">) {
-  // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
+// export async function generateMetadata({
+//   params,
+// }: Omit<LocaleLayoutProps, "children">) {
+//   // ---------------------------------------------------------------------------
+//   // Server
+//   // ---------------------------------------------------------------------------
 
-  await connection();
+//   await connection();
 
-  // ---------------------------------------------------------------------------
-  // i18n
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // i18n
+//   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations({ locale: (await params).locale });
+//   const t = await getTranslations({ locale: (await params).locale });
 
-  // ---------------------------------------------------------------------------
-  // Return
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // Return
+//   // ---------------------------------------------------------------------------
 
-  return {
-    title: {
-      default: t("site.title"),
-      template: `%s - ${siteConfig.name}`,
-    },
-  };
-}
+//   return {
+//     title: {
+//       default: t("site.title"),
+//       template: `%s - ${siteConfig.name}`,
+//     },
+//   };
+// }
 
 // -----------------------------------------------------------------------------
 // Layout
@@ -83,6 +83,12 @@ export default async function RootLayout({
   children,
   params,
 }: LocaleLayoutProps) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------

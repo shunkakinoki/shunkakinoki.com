@@ -19,8 +19,8 @@ import {
   QueryClient,
   dehydrate,
 } from "@tanstack/react-query";
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+// import type { Metadata } from "next";
+// import { getTranslations } from "next-intl/server";
 import { connection } from "next/server";
 import { Suspense } from "react";
 
@@ -28,30 +28,30 @@ import { Suspense } from "react";
 // Metadata
 // -----------------------------------------------------------------------------
 
-export async function generateMetadata({
-  params,
-}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
+// export async function generateMetadata({
+//   params,
+// }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+//   // ---------------------------------------------------------------------------
+//   // Server
+//   // ---------------------------------------------------------------------------
 
-  await connection();
+//   await connection();
 
-  // ---------------------------------------------------------------------------
-  // i18n
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // i18n
+//   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations({ locale: (await params).locale });
+//   const t = await getTranslations({ locale: (await params).locale });
 
-  // ---------------------------------------------------------------------------
-  // Return
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // Return
+//   // ---------------------------------------------------------------------------
 
-  return {
-    title: t("posts.title"),
-    description: t("posts.description"),
-  };
-}
+//   return {
+//     title: t("posts.title"),
+//     description: t("posts.description"),
+//   };
+// }
 
 // -----------------------------------------------------------------------------
 // Page
@@ -60,6 +60,12 @@ export async function generateMetadata({
 // biome-ignore lint/suspicious/useAwait: <explanation>
 // biome-ignore lint/style/noDefaultExport: <explanation>
 export default async function PostsPage() {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
