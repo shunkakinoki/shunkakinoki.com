@@ -22,7 +22,7 @@ import type {
   QueryDatabaseParameters,
   QueryDatabaseResponse,
 } from "@notionhq/client/build/src/api-endpoints.d";
-import { unstable_cache } from "next/cache";
+import { unstable_cacheLife as cacheLife } from "next/cache";
 
 // -----------------------------------------------------------------------------
 // Types
@@ -99,24 +99,53 @@ const notion = new Client({
 // Utils
 // -----------------------------------------------------------------------------
 
-export const retrieveDatabase = async ({
+export const getDatabase = async ({
   database_id,
   // biome-ignore lint/style/useNamingConvention: <explanation>
 }: { database_id: string }) => {
+  // ---------------------------------------------------------------------------
+  // Cache
+  // ---------------------------------------------------------------------------
+
+  "use cache";
+
+  cacheLife("hours");
+
+  // ---------------------------------------------------------------------------
+  // Query
+  // ---------------------------------------------------------------------------
+
   const response = await notion.databases.retrieve({
     // biome-ignore lint/style/useNamingConvention: <explanation>
     database_id: database_id,
   });
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
   return response;
 };
 
-export const getCachedQueryDatabase = async ({
+export const getQueryDatabase = async ({
   database_id,
   filter,
   sorts,
   start_cursor,
   page_size,
 }: QueryDatabaseParameters) => {
+  // ---------------------------------------------------------------------------
+  // Cache
+  // ---------------------------------------------------------------------------
+
+  "use cache";
+
+  cacheLife("hours");
+
+  // ---------------------------------------------------------------------------
+  // Query
+  // ---------------------------------------------------------------------------
+
   const response = await notion.databases.query({
     // biome-ignore lint/style/useNamingConvention: <explanation>
     database_id: database_id,
@@ -127,39 +156,56 @@ export const getCachedQueryDatabase = async ({
     // biome-ignore lint/style/useNamingConvention: <explanation>
     page_size: page_size,
   });
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
   return response;
 };
 
 export const getPage = async (pageId: string) => {
+  // ---------------------------------------------------------------------------
+  // Cache
+  // ---------------------------------------------------------------------------
+
+  "use cache";
+
+  cacheLife("hours");
+
+  // ---------------------------------------------------------------------------
+  // Query
+  // ---------------------------------------------------------------------------
+
   // biome-ignore lint/style/useNamingConvention: <explanation>
   const response = await notion.pages.retrieve({ page_id: pageId });
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
   return response;
 };
 
-export const getPageTitle = (property: NotionProperty) => {
-  return property.Name.type === "title"
-    ? property.Name.title[0].plain_text
-    : "";
-};
-
-export const getPageDate = (page: NotionPage) => {
-  //@ts-ignore
-  let dateString = page.last_edited_time;
-  if (
-    //@ts-ignore
-    page.properties["publish date"].type === "date" &&
-    //@ts-ignore
-    page.properties["publish date"].date !== null
-  ) {
-    //@ts-ignore
-    dateString = page.properties["publish date"].date.start;
-  }
-  return new Date(dateString).toLocaleDateString();
-};
-
 export const getBlocks = async (blockId: string) => {
+  // ---------------------------------------------------------------------------
+  // Cache
+  // ---------------------------------------------------------------------------
+
+  "use cache";
+
+  cacheLife("minutes");
+
+  // ---------------------------------------------------------------------------
+  // Initialize
+  // ---------------------------------------------------------------------------
+
   const blocks: blockWithChildren[] = [];
   let cursor: undefined | string;
+
+  // ---------------------------------------------------------------------------
+  // Loop
+  // ---------------------------------------------------------------------------
 
   while (true) {
     const blocksList = await notion.blocks.children.list({
@@ -176,10 +222,27 @@ export const getBlocks = async (blockId: string) => {
     }
     cursor = nextCursor;
   }
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
   return blocks;
 };
 
 export const getDatabaseStats = async () => {
+  // ---------------------------------------------------------------------------
+  // Cache
+  // ---------------------------------------------------------------------------
+
+  "use cache";
+
+  cacheLife("hours");
+
+  // ---------------------------------------------------------------------------
+  // Query
+  // ---------------------------------------------------------------------------
+
   const response = await fetch(
     "https://shunkakinoki.notion.site/api/v3/queryCollection",
     {
@@ -193,33 +256,35 @@ export const getDatabaseStats = async () => {
   );
 
   const data = await response.json();
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
   return data?.result?.reducerResults;
 };
 
 // -----------------------------------------------------------------------------
-// Cached
+// Utils
 // -----------------------------------------------------------------------------
 
-export const getCachedgetCachedQueryDatabase = unstable_cache(
-  getCachedQueryDatabase,
-  ["notion", "query-database"],
-  {
-    revalidate: 300,
-  },
-);
+export const extractPageTitle = (property: NotionProperty) => {
+  return property.Name.type === "title"
+    ? property.Name.title[0].plain_text
+    : "";
+};
 
-export const getCachedBlocks = unstable_cache(getBlocks, ["notion", "blocks"], {
-  revalidate: 30,
-});
-
-export const getCachedPage = unstable_cache(getPage, ["notion", "page"], {
-  revalidate: 300,
-});
-
-export const getCachedDatabaseStats = unstable_cache(
-  getDatabaseStats,
-  ["notion", "stats"],
-  {
-    revalidate: 300,
-  },
-);
+export const extractPageDate = (page: NotionPage) => {
+  //@ts-ignore
+  let dateString = page.last_edited_time;
+  if (
+    //@ts-ignore
+    page.properties["publish date"].type === "date" &&
+    //@ts-ignore
+    page.properties["publish date"].date !== null
+  ) {
+    //@ts-ignore
+    dateString = page.properties["publish date"].date.start;
+  }
+  return new Date(dateString).toLocaleDateString();
+};

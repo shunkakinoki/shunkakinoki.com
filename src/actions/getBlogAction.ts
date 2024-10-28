@@ -15,10 +15,7 @@
 "use server";
 
 import { ITEMS_PER_PAGE } from "@/const";
-import {
-  type NotionPageObject,
-  getCachedQueryDatabase,
-} from "@/services/notion";
+import { type NotionPageObject, getQueryDatabase } from "@/services/notion";
 
 // -----------------------------------------------------------------------------
 // Types
@@ -42,7 +39,7 @@ export async function getBlogAction(
   // Services
   // ---------------------------------------------------------------------------
 
-  const res = await getCachedQueryDatabase({
+  const res = await getQueryDatabase({
     // biome-ignore lint/style/useNamingConvention: <explanation>
     database_id: "e4ef762ca07f465e8f5cce906732140b",
     filter: {
