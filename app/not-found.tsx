@@ -12,38 +12,38 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+// import type { Metadata } from "next";
+// import { getTranslations } from "next-intl/server";
 import { connection } from "next/server";
 
 // -----------------------------------------------------------------------------
 // Metadata
 // -----------------------------------------------------------------------------
 
-export async function generateMetadata({
-  params,
-}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
+// export async function generateMetadata({
+//   params,
+// }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+//   // ---------------------------------------------------------------------------
+//   // Server
+//   // ---------------------------------------------------------------------------
 
-  await connection();
+//   await connection();
 
-  // ---------------------------------------------------------------------------
-  // i18n
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // i18n
+//   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations({ locale: (await params).locale });
+//   const t = await getTranslations({ locale: (await params).locale });
 
-  // ---------------------------------------------------------------------------
-  // Return
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // Return
+//   // ---------------------------------------------------------------------------
 
-  return {
-    title: t("notFound.title"),
-    description: t("notFound.description"),
-  };
-}
+//   return {
+//     title: t("notFound.title"),
+//     description: t("notFound.description"),
+//   };
+// }
 
 // -----------------------------------------------------------------------------
 // Page

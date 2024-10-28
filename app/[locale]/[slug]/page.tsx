@@ -23,41 +23,40 @@ import {
   getCachedPage,
 } from "@/services/notion";
 import { getCachedOpenGraphData } from "@/services/ogs";
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { connection } from "next/server";
 import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Metadata
 // -----------------------------------------------------------------------------
 
-export async function generateMetadata({
-  params,
-}: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
+// export async function generateMetadata({
+//   params,
+// }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+//   // ---------------------------------------------------------------------------
+//   // Server
+//   // ---------------------------------------------------------------------------
 
-  await connection();
+//   await connection();
 
-  // ---------------------------------------------------------------------------
-  // Services
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // Services
+//   // ---------------------------------------------------------------------------
 
-  const page = await getCachedPage((await params).slug);
+//   const page = await getCachedPage((await params).slug);
 
-  // ---------------------------------------------------------------------------
-  // Return
-  // ---------------------------------------------------------------------------
+//   // ---------------------------------------------------------------------------
+//   // Return
+//   // ---------------------------------------------------------------------------
 
-  return {
-    //@ts-ignore
-    title: page.properties?.Name?.title[0]?.plain_text,
-    // @ts-ignore
-    description: page.properties?.Description?.rich_text[0]?.plain_text,
-  };
-}
+//   return {
+//     //@ts-ignore
+//     title: page.properties?.Name?.title[0]?.plain_text,
+//     // @ts-ignore
+//     description: page.properties?.Description?.rich_text[0]?.plain_text,
+//   };
+// }
 
 // -----------------------------------------------------------------------------
 // Page
@@ -68,36 +67,6 @@ export async function generateMetadata({
 export default async function SlugPage({
   params,
 }: { params: Promise<{ locale: string; slug: string }> }) {
-  // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
-
-  await connection();
-
-  // ---------------------------------------------------------------------------
-  // Render
-  // ---------------------------------------------------------------------------
-
-  return (
-    <Suspense fallback={null}>
-      <SlugInnerPage params={params} />
-    </Suspense>
-  );
-}
-
-// -----------------------------------------------------------------------------
-// InnerPage
-// -----------------------------------------------------------------------------
-
-async function SlugInnerPage({
-  params,
-}: { params: Promise<{ locale: string; slug: string }> }) {
-  // ---------------------------------------------------------------------------
-  // Server
-  // ---------------------------------------------------------------------------
-
-  await connection();
-
   // ---------------------------------------------------------------------------
   // Validation
   // ---------------------------------------------------------------------------
