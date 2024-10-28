@@ -25,6 +25,7 @@ import {
 import { getCachedOpenGraphData } from "@/services/ogs";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { connection } from "next/server";
 import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
@@ -34,7 +35,21 @@ import { Suspense } from "react";
 export async function generateMetadata({
   params,
 }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
+  // Services
+  // ---------------------------------------------------------------------------
+
   const page = await getCachedPage((await params).slug);
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
 
   return {
     //@ts-ignore
@@ -49,19 +64,52 @@ export async function generateMetadata({
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
+// biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function SlugPage({
   params,
 }: { params: Promise<{ locale: string; slug: string }> }) {
   // ---------------------------------------------------------------------------
-  // Services
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <Suspense fallback={null}>
+      <SlugInnerPage params={params} />
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// InnerPage
+// -----------------------------------------------------------------------------
+
+async function SlugInnerPage({
+  params,
+}: { params: Promise<{ locale: string; slug: string }> }) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
+  // Validation
   // ---------------------------------------------------------------------------
 
   // Omit the slug to get the valid uuid
   const pageId = extractValidUUID((await params).slug);
 
+  // ---------------------------------------------------------------------------
+  // Not Found
+  // ---------------------------------------------------------------------------
+
   if (!pageId) {
-    notFound();
+    return notFound();
   }
+
+  // ---------------------------------------------------------------------------
+  // Services
+  // ---------------------------------------------------------------------------
 
   // Get the page
   const page = await getCachedPage(pageId);
@@ -148,13 +196,13 @@ export default async function SlugPage({
           page.parent.database_id ===
             "badf29d8-7d2f-4e03-b2c5-451a627d8618" && (
             <div className="flex flex-col gap-4 md:gap-8">
-              <Suspense>
+              <Suspense fallback={null}>
                 <Check
                   // @ts-ignore
                   dateStart={page.properties.Date.date.start}
                 />
               </Suspense>
-              <Suspense>
+              <Suspense fallback={null}>
                 <Mind
                   // @ts-ignore
                   dateStart={page.properties.Date.date.start}

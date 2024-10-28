@@ -13,19 +13,9 @@
 // limitations under the License.
 
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { connection } from "next/server";
-import SlugPage from "../[slug]/page";
-
-// -----------------------------------------------------------------------------
-// Const
-// -----------------------------------------------------------------------------
-
-const missionSlugs = {
-  en: "8db37d862bdd4e9eb0723c14de4ca0c5",
-  ja: "a53125f645464bc6aed2ddb0fd29f82d",
-  zh: "a554db2d6f11472bbddec998f5a5f46b",
-};
+import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -51,8 +41,8 @@ export async function generateMetadata({
   // ---------------------------------------------------------------------------
 
   return {
-    title: t("mission.title"),
-    description: t("mission.description"),
+    title: t("notFound.title"),
+    description: t("notFound.description"),
   };
 }
 
@@ -62,33 +52,38 @@ export async function generateMetadata({
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
-export default async function MissionPage({
-  params,
-}: { params: Promise<{ locale: string }> }) {
-  // ---------------------------------------------------------------------------
-  // i18n
-  // ---------------------------------------------------------------------------
-
-  setRequestLocale((await params).locale);
-
-  // ---------------------------------------------------------------------------
-  // Services
-  // ---------------------------------------------------------------------------
-
-  const missionSlug =
-    missionSlugs[(await params).locale as "en" | "ja" | "zh"] ||
-    missionSlugs.en;
-
+export default async function NotFoundPage() {
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
   return (
-    <SlugPage
-      params={Promise.resolve({
-        locale: (await params).locale,
-        slug: missionSlug,
-      })}
-    />
+    <Suspense fallback={null}>
+      <NotFoundInnerPage />
+    </Suspense>
   );
 }
+
+// -----------------------------------------------------------------------------
+// Inner Page
+// -----------------------------------------------------------------------------
+
+async function NotFoundInnerPage() {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return <div>Not Found</div>;
+}
+
+// -----------------------------------------------------------------------------
+// Config
+// -----------------------------------------------------------------------------
+
+export const dynamic = "force-dynamic";

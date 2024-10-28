@@ -14,15 +14,16 @@
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { locales } from "@/config";
 import { siteConfig } from "@/config/site";
+import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
   getTranslations,
   setRequestLocale,
 } from "next-intl/server";
-import type { ReactNode } from "react";
+import { connection } from "next/server";
+import { type ReactNode, Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Props
@@ -34,16 +35,26 @@ interface LocaleLayoutProps {
 }
 
 // -----------------------------------------------------------------------------
-// Metadata
+// Paths
 // -----------------------------------------------------------------------------
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({ locale }));
 }
+
+// -----------------------------------------------------------------------------
+// Metadata
+// -----------------------------------------------------------------------------
 
 export async function generateMetadata({
   params,
 }: Omit<LocaleLayoutProps, "children">) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
@@ -63,14 +74,37 @@ export async function generateMetadata({
 }
 
 // -----------------------------------------------------------------------------
-// Page
+// Layout
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
+// biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function RootLayout({
   children,
   params,
 }: LocaleLayoutProps) {
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <Suspense fallback={null}>
+      <RootInnerLayout params={params}>{children}</RootInnerLayout>
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// Inner Layout
+// -----------------------------------------------------------------------------
+
+export async function RootInnerLayout({ children, params }: LocaleLayoutProps) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------

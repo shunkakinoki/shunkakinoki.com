@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { defaultLocale, localePrefix, locales, pathnames } from "@/config";
 import { internalConfig } from "@/config/internal";
 import { rewriteConfig } from "@/config/rewrite";
 import { socialConfig } from "@/config/social";
+import { routing } from "@/i18n/routing";
 import createMiddleware from "next-intl/middleware";
 import { type NextRequest, NextResponse } from "next/server";
 
@@ -23,12 +23,7 @@ import { type NextRequest, NextResponse } from "next/server";
 // Middleware
 // -----------------------------------------------------------------------------
 
-export const intlMiddleware = createMiddleware({
-  defaultLocale,
-  locales,
-  pathnames,
-  localePrefix,
-});
+export const intlMiddleware = createMiddleware(routing);
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
 export default function middleware(req: NextRequest) {

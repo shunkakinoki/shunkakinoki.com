@@ -15,6 +15,7 @@
 import { Life } from "@/sections/life";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { connection } from "next/server";
 import SlugPage from "../[slug]/page";
 
 // -----------------------------------------------------------------------------
@@ -35,6 +36,12 @@ export async function generateMetadata({
   params,
 }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
@@ -51,12 +58,12 @@ export async function generateMetadata({
 }
 
 // -----------------------------------------------------------------------------
-// Page
+//  Page
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
-export default async function AboutPage({
+export default async function AboutInnerPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------

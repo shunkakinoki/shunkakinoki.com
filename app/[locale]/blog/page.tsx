@@ -21,6 +21,8 @@ import {
 } from "@tanstack/react-query";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { connection } from "next/server";
+import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -29,6 +31,12 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 export async function generateMetadata({
   params,
 }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
@@ -55,13 +63,37 @@ export default async function BlogPage({
   params,
 }: { params: Promise<{ locale: string }> }) {
   // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <Suspense fallback={null}>
+      <BlogInnerPage params={params} />
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// Inner Page
+// -----------------------------------------------------------------------------
+
+async function BlogInnerPage({
+  params,
+}: { params: Promise<{ locale: string }> }) {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
 
   setRequestLocale((await params).locale);
 
   // ---------------------------------------------------------------------------
-  // Actions
+  // Query
   // ---------------------------------------------------------------------------
 
   const queryClient = new QueryClient();
@@ -72,6 +104,10 @@ export default async function BlogPage({
       getBlogAction((await params).locale, pageParam),
     initialPageParam: undefined,
   });
+
+  // ---------------------------------------------------------------------------
+  // Actions
+  // ---------------------------------------------------------------------------
 
   const initialData = await getBlogAction((await params).locale);
 

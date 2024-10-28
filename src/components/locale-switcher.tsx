@@ -14,7 +14,7 @@
 
 "use client";
 
-import { locales } from "@/config";
+import { routing } from "@/i18n/routing";
 import {
   Select,
   SelectContent,
@@ -58,7 +58,7 @@ export default function LocaleSwitcher() {
       <SelectContent defaultValue={locale}>
         <SelectGroup>
           <SelectLabel>{t("locale.label")}</SelectLabel>
-          {locales.map((cur) => (
+          {routing.locales.map((cur) => (
             <SelectItem key={cur} value={cur}>
               {t(`locale.options.${cur}`, { locale: cur })}
             </SelectItem>

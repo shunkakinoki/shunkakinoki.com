@@ -12,17 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { createLocalizedPathnamesNavigation } from "next-intl/navigation";
-
-import { localePrefix, locales, pathnames } from "@/config";
+import { routing } from "@/i18n/routing";
+import { createNavigation } from "next-intl/navigation";
 
 // -----------------------------------------------------------------------------
 // Const
 // -----------------------------------------------------------------------------
 
 export const { Link, getPathname, redirect, usePathname, useRouter } =
-  createLocalizedPathnamesNavigation({
-    locales,
-    pathnames,
-    localePrefix,
-  });
+  createNavigation(routing);

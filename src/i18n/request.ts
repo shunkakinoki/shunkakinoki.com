@@ -12,20 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { locales } from "@/config";
+import { routing } from "@/i18n/routing";
 import { getRequestConfig } from "next-intl/server";
-import { notFound } from "next/navigation";
 
 // -----------------------------------------------------------------------------
 // Utils
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
-export default getRequestConfig(async ({ locale }) => {
-  // Validate that the incoming `locale` parameter is valid
+export default getRequestConfig(async ({ requestLocale }) => {
+  // This typically corresponds to the `[locale]` segment
+  let locale = await requestLocale;
+
+  // Ensure that the incoming locale is valid
+  // biome-ignore lint/complexity/useSimplifiedLogicExpression: <explanation>
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  if (!locales.includes(locale as any)) {
-    notFound();
+  if (!locale || !routing.locales.includes(locale as any)) {
+    locale = routing.defaultLocale;
   }
 
   return {

@@ -21,6 +21,8 @@ import {
 } from "@tanstack/react-query";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { connection } from "next/server";
+import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
 // Metadata
@@ -29,6 +31,12 @@ import { getTranslations } from "next-intl/server";
 export async function generateMetadata({
   params,
 }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
   // ---------------------------------------------------------------------------
   // i18n
   // ---------------------------------------------------------------------------
@@ -49,11 +57,33 @@ export async function generateMetadata({
 // Page
 // -----------------------------------------------------------------------------
 
-// biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default async function PostsPage() {
   // ---------------------------------------------------------------------------
-  // Actions
+  // Render
+  // ---------------------------------------------------------------------------
+
+  return (
+    <Suspense fallback={null}>
+      <PostsInnerPage />
+    </Suspense>
+  );
+}
+
+// -----------------------------------------------------------------------------
+// Inner Page
+// -----------------------------------------------------------------------------
+
+async function PostsInnerPage() {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
+  // Query
   // ---------------------------------------------------------------------------
 
   const queryClient = new QueryClient();
@@ -63,6 +93,10 @@ export default async function PostsPage() {
     queryFn: ({ pageParam }) => getPostsAction(pageParam),
     initialPageParam: undefined,
   });
+
+  // ---------------------------------------------------------------------------
+  // Actions
+  // ---------------------------------------------------------------------------
 
   const initialData = await getPostsAction();
 

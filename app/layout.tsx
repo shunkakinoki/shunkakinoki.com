@@ -22,6 +22,7 @@ import { cn } from "@/lib/utils";
 import type { Viewport } from "next";
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
+import { connection } from "next/server";
 import type { ReactNode } from "react";
 import "@lightdotso/styles/global.css";
 
@@ -45,7 +46,21 @@ export const viewport: Viewport = {
 };
 
 export async function generateMetadata() {
+  // ---------------------------------------------------------------------------
+  // Server
+  // ---------------------------------------------------------------------------
+
+  await connection();
+
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
+
   const t = await getTranslations({ locale: "en" });
+
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
 
   return {
     title: {
@@ -104,33 +119,28 @@ export default function RootLayout({ children }: RootLayoutProps) {
   // ---------------------------------------------------------------------------
 
   return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <body
-          className={cn(
-            "min-h-screen font-sans antialiased",
-            fontSans.variable,
-          )}
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn("min-h-screen font-sans antialiased", fontSans.variable)}
+      >
+        <Script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "3fff5b53524d4928bae2c465c1ac14f2"}'
+        />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
-          <Script
-            defer
-            src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon='{"token": "3fff5b53524d4928bae2c465c1ac14f2"}'
-          />
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            <TailwindIndicator />
-            <Analytics />
-            <SpeedInsights />
-          </ThemeProvider>
-        </body>
-      </html>
-    </>
+          {children}
+          <TailwindIndicator />
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
 
@@ -140,4 +150,3 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
 // biome-ignore lint/style/useNamingConvention: <explanation>
 export const experimental_ppr = true;
-export const revalidate = 300;

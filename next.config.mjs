@@ -30,12 +30,15 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    ppr: "incremental",
+    // dynamicIO: true,
+  },
   logging: {
     fetches: {
       fullUrl: true,
     },
   },
-  ppr: "incremental",
   images: {
     remotePatterns: [
       {
