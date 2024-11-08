@@ -15,7 +15,7 @@
 import { unstable_cacheLife as cacheLife } from "next/cache";
 
 // -----------------------------------------------------------------------------
-// Service
+// Services
 // -----------------------------------------------------------------------------
 
 export const getCloudflareAnalytics = async () => {

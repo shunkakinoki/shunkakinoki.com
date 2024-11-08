@@ -33,7 +33,7 @@ export const ratelimit = new Ratelimit({
 });
 
 // -----------------------------------------------------------------------------
-// Utils
+// Services
 // -----------------------------------------------------------------------------
 
 export const createEmailId = async (id: string, emailId: string) => {
