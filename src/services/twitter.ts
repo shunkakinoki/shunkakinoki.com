@@ -23,7 +23,7 @@ import { unstable_cacheLife as cacheLife } from "next/cache";
 // const _twitterClient = new TwitterApi(process.env.TWITTER_API_KEY!);
 
 // -----------------------------------------------------------------------------
-// Utils
+// Services
 // -----------------------------------------------------------------------------
 
 export const getFollowerCount = async () => {

@@ -16,7 +16,7 @@ import { unstable_cacheLife as cacheLife } from "next/cache";
 import ogs from "open-graph-scraper";
 
 // -----------------------------------------------------------------------------
-// Service
+// Services
 // -----------------------------------------------------------------------------
 
 export const getOpenGraphData = async ({ url }: { url: string }) => {
