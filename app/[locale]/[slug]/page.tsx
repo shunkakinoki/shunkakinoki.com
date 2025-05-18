@@ -20,7 +20,6 @@ import { Mind } from "@/sections/mind";
 import { type blockWithChildren, getBlocks, getPage } from "@/services/notion";
 import { getOpenGraphData } from "@/services/ogs";
 import type { Metadata } from "next";
-import { unstable_cacheLife as cacheLife } from "next/cache";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
@@ -36,8 +35,6 @@ export async function generateMetadata({
   // ---------------------------------------------------------------------------
 
   "use cache";
-
-  cacheLife("hours");
 
   // ---------------------------------------------------------------------------
   // Services
