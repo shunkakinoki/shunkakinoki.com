@@ -19,7 +19,8 @@ import { Check } from "@/sections/check";
 import { Mind } from "@/sections/mind";
 import { type blockWithChildren, getBlocks, getPage } from "@/services/notion";
 import { getOpenGraphData } from "@/services/ogs";
-// import type { Metadata } from "next";
+import type { Metadata } from "next";
+import { unstable_cacheLife as cacheLife } from "next/cache";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
@@ -27,32 +28,34 @@ import { Suspense } from "react";
 // Metadata
 // -----------------------------------------------------------------------------
 
-// export async function generateMetadata({
-//   params,
-// }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-//   // ---------------------------------------------------------------------------
-//   // Server
-//   // ---------------------------------------------------------------------------
+export async function generateMetadata({
+  params,
+}: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  // ---------------------------------------------------------------------------
+  // Cache
+  // ---------------------------------------------------------------------------
 
-//   await connection();
+  "use cache";
 
-//   // ---------------------------------------------------------------------------
-//   // Services
-//   // ---------------------------------------------------------------------------
+  cacheLife("hours");
 
-//   const page = await Page((await params).slug);
+  // ---------------------------------------------------------------------------
+  // Services
+  // ---------------------------------------------------------------------------
 
-//   // ---------------------------------------------------------------------------
-//   // Return
-//   // ---------------------------------------------------------------------------
+  const page = await getPage((await params).slug);
 
-//   return {
-//     //@ts-ignore
-//     title: page.properties?.Name?.title[0]?.plain_text,
-//     // @ts-ignore
-//     description: page.properties?.Description?.rich_text[0]?.plain_text,
-//   };
-// }
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
+
+  return {
+    //@ts-ignore
+    title: page.properties?.Name?.title[0]?.plain_text,
+    // @ts-ignore
+    description: page.properties?.Description?.rich_text[0]?.plain_text,
+  };
+}
 
 // -----------------------------------------------------------------------------
 // Page
