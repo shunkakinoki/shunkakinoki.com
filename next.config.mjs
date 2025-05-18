@@ -42,7 +42,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "assets.light.so",
+        hostname: "assets.shunkakinoki.com",
         protocol: "https",
         pathname: "**",
       },
