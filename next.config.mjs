@@ -31,7 +31,6 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    ppr: "incremental",
     // biome-ignore lint/style/useNamingConvention: <explanation>
     dynamicIO: true,
   },
