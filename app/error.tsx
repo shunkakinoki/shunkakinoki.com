@@ -19,8 +19,7 @@
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
-// biome-ignore lint/suspicious/useAwait: <explanation>
-export default async function ErrorPage() {
+export default function ErrorPage() {
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
