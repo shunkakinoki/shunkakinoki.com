@@ -14,6 +14,7 @@
 
 import { Life } from "@/sections/life";
 import type { Metadata } from "next";
+import type { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { connection } from "next/server";
 import SlugPage from "../[slug]/page";
@@ -45,7 +46,7 @@ export async function generateMetadata({
   // i18n
   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations({ locale: (await params).locale });
+  const t = await getTranslations({ locale: (await params).locale as Locale });
 
   // ---------------------------------------------------------------------------
   // Return
@@ -76,7 +77,7 @@ export default async function AboutInnerPage({
   // i18n
   // ---------------------------------------------------------------------------
 
-  setRequestLocale((await params).locale);
+  setRequestLocale((await params).locale as Locale);
 
   // ---------------------------------------------------------------------------
   // Services

@@ -17,8 +17,9 @@ import { SiteHeader } from "@/components/site-header";
 // import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
+import type { Locale } from "next-intl";
 import {
-  getMessages,
+  // getMessages,
   // getTranslations,
   setRequestLocale,
 } from "next-intl/server";
@@ -116,18 +117,14 @@ export async function RootInnerLayout({ children, params }: LocaleLayoutProps) {
   // ---------------------------------------------------------------------------
 
   // Enable static rendering
-  setRequestLocale((await params).locale);
-
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  const messages = await getMessages();
+  setRequestLocale((await params).locale as Locale);
 
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
   return (
-    <NextIntlClientProvider messages={messages}>
+    <NextIntlClientProvider>
       <div className="relative flex min-h-screen flex-col">
         <SiteHeader />
         <main className="flex-1">

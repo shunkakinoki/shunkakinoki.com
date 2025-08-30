@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import type { Metadata } from "next";
+import type { Locale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { setRequestLocale } from "next-intl/server";
 import { connection } from "next/server";
@@ -45,7 +46,7 @@ export async function generateMetadata({
   // i18n
   // ---------------------------------------------------------------------------
 
-  const t = await getTranslations({ locale: (await params).locale });
+  const t = await getTranslations({ locale: (await params).locale as Locale });
 
   // ---------------------------------------------------------------------------
   // Return
@@ -76,7 +77,7 @@ export default async function CausePage({
   // i18n
   // ---------------------------------------------------------------------------
 
-  setRequestLocale((await params).locale);
+  setRequestLocale((await params).locale as Locale);
 
   // ---------------------------------------------------------------------------
   // Services

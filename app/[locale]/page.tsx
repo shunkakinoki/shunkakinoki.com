@@ -27,6 +27,7 @@ import { LightLogo } from "@lightdotso/svg";
 import { Button } from "@lightdotso/ui/components/button";
 import { TwitterLogoIcon } from "@radix-ui/react-icons";
 import { ArrowUpRightFromSquareIcon } from "lucide-react";
+import type { Locale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { connection } from "next/server";
 import { Suspense } from "react";
@@ -74,7 +75,7 @@ async function IndexInnerPage({
   // i18n
   // ---------------------------------------------------------------------------
 
-  setRequestLocale((await params).locale);
+  setRequestLocale((await params).locale as Locale);
 
   // ---------------------------------------------------------------------------
   // Render

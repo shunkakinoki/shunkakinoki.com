@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import { routing } from "@/i18n/routing";
+import { hasLocale } from "next-intl";
 import { getRequestConfig } from "next-intl/server";
 
 // -----------------------------------------------------------------------------
@@ -29,16 +30,13 @@ export const now = async () => {
 // biome-ignore lint/style/noDefaultExport: <explanation>
 export default getRequestConfig(async ({ requestLocale }) => {
   // This typically corresponds to the `[locale]` segment
-  let locale = await requestLocale;
-
-  // Ensure that the incoming locale is valid
-  // biome-ignore lint/complexity/useSimplifiedLogicExpression: <explanation>
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  if (!locale || !routing.locales.includes(locale as any)) {
-    locale = routing.defaultLocale;
-  }
+  const requested = await requestLocale;
+  const locale = hasLocale(routing.locales, requested)
+    ? requested
+    : routing.defaultLocale;
 
   return {
+    locale,
     messages: (await import(`../../messages/${locale}.json`)).default,
     now: await now(),
   };
