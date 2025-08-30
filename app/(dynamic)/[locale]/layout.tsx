@@ -45,8 +45,7 @@ export function generateStaticParams() {
 // biome-ignore lint/suspicious/useAwait: <explanation>
 export default async function RootLayout({
   children,
-  params,
-}: LocaleLayoutProps) {
+}: Omit<LocaleLayoutProps, "params">) {
   // ---------------------------------------------------------------------------
   // Server
   // ---------------------------------------------------------------------------
