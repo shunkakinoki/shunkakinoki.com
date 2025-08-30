@@ -31,8 +31,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    // biome-ignore lint/style/useNamingConvention: <explanation>
-    dynamicIO: true,
+    cacheComponents: true,
   },
   logging: {
     fetches: {
