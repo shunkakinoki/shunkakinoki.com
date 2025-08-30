@@ -31,7 +31,9 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    cacheComponents: true,
+    // Temporarily disabled cacheComponents due to prerendering conflicts with dynamic routes
+    // cacheComponents: true,
+    useCache: true,
   },
   logging: {
     fetches: {

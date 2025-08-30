@@ -12,60 +12,41 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import type { Metadata } from "next";
-import type { Locale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { routing } from "@/i18n/routing";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import { connection } from "next/server";
-import SlugPage from "../../(dynamic)/[locale]/[slug]/page";
+import { type ReactNode, Suspense } from "react";
 
 // -----------------------------------------------------------------------------
-// Const
+// Props
 // -----------------------------------------------------------------------------
 
-const valuesSlugs = {
-  en: "d9f72066ffeb4b06aa48c4f27678ade5",
-  ja: "40db409b208d4134a29710eccd0c8fa3",
-  zh: "7b999c038a4544cdacf93b39c182e22e",
-};
-
-// -----------------------------------------------------------------------------
-// Metadata
-// -----------------------------------------------------------------------------
-
-export async function generateMetadata({
-  params,
-}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  // ---------------------------------------------------------------------------
-  // Cache
-  // ---------------------------------------------------------------------------
-
-  "use cache";
-
-  // ---------------------------------------------------------------------------
-  // i18n
-  // ---------------------------------------------------------------------------
-
-  const t = await getTranslations({ locale: (await params).locale as Locale });
-
-  // ---------------------------------------------------------------------------
-  // Return
-  // ---------------------------------------------------------------------------
-
-  return {
-    title: t("values.title"),
-    description: t("values.description"),
-  };
+interface LocaleLayoutProps {
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
 }
 
 // -----------------------------------------------------------------------------
-// Page
+// Paths
+// -----------------------------------------------------------------------------
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+// -----------------------------------------------------------------------------
+// Layout
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
 // biome-ignore lint/suspicious/useAwait: <explanation>
-export default async function valuesPage({
+export default async function RootLayout({
+  children,
   params,
-}: { params: Promise<{ locale: string }> }) {
+}: LocaleLayoutProps) {
   // ---------------------------------------------------------------------------
   // Server
   // ---------------------------------------------------------------------------
@@ -76,25 +57,30 @@ export default async function valuesPage({
   // i18n
   // ---------------------------------------------------------------------------
 
-  setRequestLocale((await params).locale as Locale);
+  // Enable static rendering
+  // Note: setRequestLocale is not used here as we want dynamic rendering
 
-  // ---------------------------------------------------------------------------
-  // Services
-  // ---------------------------------------------------------------------------
-
-  const valuesSlug =
-    valuesSlugs[(await params).locale as "en" | "ja" | "zh"] || valuesSlugs.en;
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
 
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
   return (
-    <SlugPage
-      params={Promise.resolve({
-        locale: (await params).locale,
-        slug: valuesSlug,
-      })}
-    />
+    <Suspense fallback={null}>
+      <NextIntlClientProvider messages={messages}>
+        <div className="relative flex min-h-screen flex-col">
+          <SiteHeader />
+          <main className="flex-1">
+            <div className="relative mx-auto max-w-screen-md bg-background-body px-4 py-8 md:py-12 lg:py-16">
+              {children}
+            </div>
+          </main>
+          <SiteFooter />
+        </div>
+      </NextIntlClientProvider>
+    </Suspense>
   );
 }

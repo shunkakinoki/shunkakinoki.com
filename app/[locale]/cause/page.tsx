@@ -17,7 +17,7 @@ import type { Locale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { setRequestLocale } from "next-intl/server";
 import { connection } from "next/server";
-import SlugPage from "../[slug]/page";
+import SlugPage from "../../(dynamic)/[locale]/[slug]/page";
 
 // -----------------------------------------------------------------------------
 // Const
