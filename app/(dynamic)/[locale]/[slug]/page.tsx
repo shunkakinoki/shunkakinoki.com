@@ -19,40 +19,15 @@ import { Check } from "@/sections/check";
 import { Mind } from "@/sections/mind";
 import { type blockWithChildren, getBlocks, getPage } from "@/services/notion";
 import { getOpenGraphData } from "@/services/ogs";
-// import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 // -----------------------------------------------------------------------------
-// Metadata
+// Config
 // -----------------------------------------------------------------------------
 
-// export async function generateMetadata({
-//   params,
-// }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-//   // ---------------------------------------------------------------------------
-//   // Server
-//   // ---------------------------------------------------------------------------
-
-//   await connection();
-
-//   // ---------------------------------------------------------------------------
-//   // Services
-//   // ---------------------------------------------------------------------------
-
-//   const page = await Page((await params).slug);
-
-//   // ---------------------------------------------------------------------------
-//   // Return
-//   // ---------------------------------------------------------------------------
-
-//   return {
-//     //@ts-ignore
-//     title: page.properties?.Name?.title[0]?.plain_text,
-//     // @ts-ignore
-//     description: page.properties?.Description?.rich_text[0]?.plain_text,
-//   };
-// }
+// Force dynamic rendering for routes that depend on external data
+export const dynamic = "force-dynamic";
 
 // -----------------------------------------------------------------------------
 // Page

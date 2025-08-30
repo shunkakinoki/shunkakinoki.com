@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// import type { Metadata } from "next";
-// import { getTranslations, setRequestLocale } from "next-intl/server";
-import { setRequestLocale } from "next-intl/server";
+import type { Metadata } from "next";
+import type { Locale } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { connection } from "next/server";
-import SlugPage from "../[slug]/page";
+import SlugPage from "../../(dynamic)/[locale]/[slug]/page";
 
 // -----------------------------------------------------------------------------
 // Const
@@ -32,30 +32,30 @@ const valuesSlugs = {
 // Metadata
 // -----------------------------------------------------------------------------
 
-// export async function generateMetadata({
-//   params,
-// }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-//   // ---------------------------------------------------------------------------
-//   // Server
-//   // ---------------------------------------------------------------------------
+export async function generateMetadata({
+  params,
+}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  // ---------------------------------------------------------------------------
+  // Cache
+  // ---------------------------------------------------------------------------
 
-//   await connection();
+  "use cache";
 
-//   // ---------------------------------------------------------------------------
-//   // i18n
-//   // ---------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
 
-//   const t = await getTranslations({ locale: (await params).locale });
+  const t = await getTranslations({ locale: (await params).locale as Locale });
 
-//   // ---------------------------------------------------------------------------
-//   // Return
-//   // ---------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
 
-//   return {
-//     title: t("values.title"),
-//     description: t("values.description"),
-//   };
-// }
+  return {
+    title: t("values.title"),
+    description: t("values.description"),
+  };
+}
 
 // -----------------------------------------------------------------------------
 // Page
@@ -76,7 +76,7 @@ export default async function valuesPage({
   // i18n
   // ---------------------------------------------------------------------------
 
-  setRequestLocale((await params).locale);
+  setRequestLocale((await params).locale as Locale);
 
   // ---------------------------------------------------------------------------
   // Services

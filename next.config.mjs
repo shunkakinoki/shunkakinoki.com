@@ -31,9 +31,9 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    ppr: "incremental",
-    // biome-ignore lint/style/useNamingConvention: <explanation>
-    dynamicIO: true,
+    // Temporarily disabled cacheComponents due to prerendering conflicts with dynamic routes
+    // cacheComponents: true,
+    useCache: true,
   },
   logging: {
     fetches: {
@@ -43,7 +43,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "assets.light.so",
+        hostname: "assets.shunkakinoki.com",
         protocol: "https",
         pathname: "**",
       },

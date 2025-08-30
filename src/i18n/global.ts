@@ -12,17 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-"use client";
+import type { routing } from "@/i18n/routing";
+import type en from "../../messages/en.json";
 
-// -----------------------------------------------------------------------------
-// Page
-// -----------------------------------------------------------------------------
-
-// biome-ignore lint/style/noDefaultExport: <explanation>
-export default function ErrorPage() {
-  // ---------------------------------------------------------------------------
-  // Render
-  // ---------------------------------------------------------------------------
-
-  return null;
+declare module "next-intl" {
+  interface AppConfig {
+    // biome-ignore lint/style/useNamingConvention: <explanation>
+    Locale: (typeof routing.locales)[number];
+    // biome-ignore lint/style/useNamingConvention: <explanation>
+    Messages: typeof en;
+  }
 }

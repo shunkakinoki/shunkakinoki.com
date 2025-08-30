@@ -12,49 +12,40 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Dashboard } from "@/sections/dashboard";
-import type { Metadata } from "next";
-import type { Locale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { routing } from "@/i18n/routing";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import { connection } from "next/server";
+import { type ReactNode, Suspense } from "react";
 
 // -----------------------------------------------------------------------------
-// Metadata
+// Props
 // -----------------------------------------------------------------------------
 
-export async function generateMetadata({
-  params,
-}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  // ---------------------------------------------------------------------------
-  // Cache
-  // ---------------------------------------------------------------------------
-
-  "use cache";
-
-  // ---------------------------------------------------------------------------
-  // i18n
-  // ---------------------------------------------------------------------------
-
-  const t = await getTranslations({ locale: (await params).locale as Locale });
-
-  // ---------------------------------------------------------------------------
-  // Return
-  // ---------------------------------------------------------------------------
-
-  return {
-    title: t("dashboard.title"),
-    description: t("dashboard.description"),
-  };
+interface LocaleLayoutProps {
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
 }
 
 // -----------------------------------------------------------------------------
-// Page
+// Paths
+// -----------------------------------------------------------------------------
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+// -----------------------------------------------------------------------------
+// Layout
 // -----------------------------------------------------------------------------
 
 // biome-ignore lint/style/noDefaultExport: <explanation>
-export default async function DashboardPage({
-  params,
-}: { params: Promise<{ locale: string }> }) {
+// biome-ignore lint/suspicious/useAwait: <explanation>
+export default async function RootLayout({
+  children,
+}: Omit<LocaleLayoutProps, "params">) {
   // ---------------------------------------------------------------------------
   // Server
   // ---------------------------------------------------------------------------
@@ -65,11 +56,30 @@ export default async function DashboardPage({
   // i18n
   // ---------------------------------------------------------------------------
 
-  setRequestLocale((await params).locale as Locale);
+  // Enable static rendering
+  // Note: setRequestLocale is not used here as we want dynamic rendering
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
 
   // ---------------------------------------------------------------------------
   // Render
   // ---------------------------------------------------------------------------
 
-  return <Dashboard />;
+  return (
+    <Suspense fallback={null}>
+      <NextIntlClientProvider messages={messages}>
+        <div className="relative flex min-h-screen flex-col">
+          <SiteHeader />
+          <main className="flex-1">
+            <div className="relative mx-auto max-w-screen-md bg-background-body px-4 py-8 md:py-12 lg:py-16">
+              {children}
+            </div>
+          </main>
+          <SiteFooter />
+        </div>
+      </NextIntlClientProvider>
+    </Suspense>
+  );
 }

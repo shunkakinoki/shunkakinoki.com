@@ -19,8 +19,9 @@ import {
   QueryClient,
   dehydrate,
 } from "@tanstack/react-query";
-// import type { Metadata } from "next";
-// import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+import type { Locale } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { connection } from "next/server";
 import { Suspense } from "react";
 
@@ -28,30 +29,30 @@ import { Suspense } from "react";
 // Metadata
 // -----------------------------------------------------------------------------
 
-// export async function generateMetadata({
-//   params,
-// }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-//   // ---------------------------------------------------------------------------
-//   // Server
-//   // ---------------------------------------------------------------------------
+export async function generateMetadata({
+  params,
+}: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  // ---------------------------------------------------------------------------
+  // Cache
+  // ---------------------------------------------------------------------------
 
-//   await connection();
+  "use cache";
 
-//   // ---------------------------------------------------------------------------
-//   // i18n
-//   // ---------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
+  // i18n
+  // ---------------------------------------------------------------------------
 
-//   const t = await getTranslations({ locale: (await params).locale });
+  const t = await getTranslations({ locale: (await params).locale as Locale });
 
-//   // ---------------------------------------------------------------------------
-//   // Return
-//   // ---------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
+  // Return
+  // ---------------------------------------------------------------------------
 
-//   return {
-//     title: t("journal.title"),
-//     description: t("journal.description"),
-//   };
-// }
+  return {
+    title: t("journal.title"),
+    description: t("journal.description"),
+  };
+}
 
 // -----------------------------------------------------------------------------
 // Page
