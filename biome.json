@@ -1,37 +1,22 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
-  "files": {
-    "ignore": ["src/client/**", "src/components/ui/**"]
-  },
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "formatter": {
     "enabled": true,
+    "formatWithErrors": true,
     "indentStyle": "space"
   },
   "linter": {
     "enabled": true,
     "rules": {
-      "all": true,
-      "correctness": {
-        "noUndeclaredDependencies": "off",
-        "useImportExtensions": "off"
-      },
-      "style": {
-        "noImplicitBoolean": "off"
-      },
-      "nursery": {
-        "useSortedClasses": "warn"
-      },
-      "suspicious": {
-        "noReactSpecificProps": "off"
-      }
+      "recommended": true
     }
   },
+  "files": {
+    "includes": ["src/**/*", "!.conductor/**/*"]
+  },
   "vcs": {
-    "enabled": true,
     "clientKind": "git",
+    "enabled": true,
     "useIgnoreFile": true
   }
 }
