@@ -30,7 +30,7 @@ export default function Home() {
           href="https://x.com/shunkakinoki"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-neutral-500 transition-colors hover:text-white"
+          className="text-neutral-400 transition-colors hover:text-white"
           aria-label="X (Twitter)"
         >
           <XIcon className="size-5" />
@@ -39,7 +39,7 @@ export default function Home() {
           href="https://github.com/shunkakinoki"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-neutral-500 transition-colors hover:text-white"
+          className="text-neutral-400 transition-colors hover:text-white"
           aria-label="GitHub"
         >
           <Github className="size-5" />
@@ -48,7 +48,7 @@ export default function Home() {
           href="https://linkedin.com/in/shunkakinoki"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-neutral-500 transition-colors hover:text-white"
+          className="text-neutral-400 transition-colors hover:text-white"
           aria-label="LinkedIn"
         >
           <Linkedin className="size-5" />
