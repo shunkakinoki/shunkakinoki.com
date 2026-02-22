@@ -15,7 +15,7 @@ function XIcon({ className }: { className?: string }) {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black flex flex-col items-center justify-center p-8">
+    <main className="min-h-screen bg-black flex flex-col items-center justify-center p-8" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
       <div className="text-center">
         <h1 className="text-white font-black text-7xl md:text-8xl lg:text-9xl leading-none tracking-tighter">
           SHUN
