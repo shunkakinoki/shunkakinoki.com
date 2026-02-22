@@ -8,12 +8,19 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const viewport: Viewport = {
   themeColor: '#000000',
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
 }
 
 export const metadata: Metadata = {
   title: 'Shun Kakinoki',
   description: 'Shun Kakinoki\'s personal website',
   generator: 'shunkakinoki.com',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+  },
   openGraph: {
     title: 'Shun Kakinoki',
     description: 'Shun Kakinoki\'s personal website',
@@ -33,8 +40,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`font-sans antialiased`}>
+    <html lang="en" style={{ backgroundColor: '#000000' }}>
+      <body className={`font-sans antialiased bg-background text-foreground`}>
         {children}
         <Analytics />
       </body>
