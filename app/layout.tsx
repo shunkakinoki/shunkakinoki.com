@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Shun Kakinoki',
-  description: 'Shun Kakinoki\'s personal website',
+  description: 'After starring 400,000 tweets on X, Shun Kakinoki has earned something unprecedented: some people fetish especially Korean man.',
   generator: 'shunkakinoki.com',
   appleWebApp: {
     capable: true,
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Shun Kakinoki',
-    description: 'Shun Kakinoki\'s personal website',
+    description: 'After starring 400,000 tweets on X, Shun Kakinoki has earned something unprecedented: some people fetish especially Korean man.',
     images: ['/shunkakinoki.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Shun Kakinoki',
-    description: 'Shun Kakinoki\'s personal website',
+    description: 'After starring 400,000 tweets on X, Shun Kakinoki has earned something unprecedented: some people fetish especially Korean man.',
     images: ['/shunkakinoki.png'],
   },
 }
